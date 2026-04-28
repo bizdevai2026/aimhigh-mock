@@ -559,6 +559,14 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   min-width: 3.5rem;
   text-align: right;
 }
+.mock-session-progress-text.urgent {
+  color: var(--mock-coral);
+  animation: pulseUrgent 1s infinite ease-in-out;
+}
+@keyframes pulseUrgent {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.6; }
+}
 .mock-session-card {
   background: linear-gradient(160deg, var(--mock-card) 0%, var(--mock-card-hi) 100%);
   border: 1px solid var(--mock-border-hi);
