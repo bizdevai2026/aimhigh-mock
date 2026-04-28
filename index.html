@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Mock Prep</title>
+  <link rel="stylesheet" href="mock.css" />
+</head>
+<body class="mock-page">
+  <header class="mock-header">
+    <div class="mock-header-inner">
+      <h1>Mock Prep</h1>
+      <p class="mock-subtitle">Year 7 setting practice</p>
+    </div>
+  </header>
+
+  <main class="mock-main">
+    <section class="mock-status" id="mockStatus" aria-live="polite">
+      <p class="mock-status-line">Loading today's status&hellip;</p>
+    </section>
+
+    <nav class="mock-tiles" aria-label="Mock prep modes">
+      <a class="mock-tile mock-tile-daily" href="daily.html">
+        <span class="mock-tile-eyebrow">Every evening</span>
+        <span class="mock-tile-title">Daily warm-up</span>
+        <span class="mock-tile-meta">10 mixed questions &middot; ~5 min</span>
+        <span class="mock-tile-desc">Fresh questions every day. Builds speed and surfaces weak spots.</span>
+      </a>
+
+      <a class="mock-tile mock-tile-subject" href="subject.html">
+        <span class="mock-tile-eyebrow">Closer to exam</span>
+        <span class="mock-tile-title">Subject mock</span>
+        <span class="mock-tile-meta">Single subject &middot; ~15 min</span>
+        <span class="mock-tile-desc">Mixed topics from one subject. Closest match to the real test.</span>
+      </a>
+
+      <a class="mock-tile mock-tile-paper" href="paper.html">
+        <span class="mock-tile-eyebrow">Final week</span>
+        <span class="mock-tile-title">Full mock paper</span>
+        <span class="mock-tile-meta">Multi-subject &middot; 30&ndash;45 min</span>
+        <span class="mock-tile-desc">Timer on. No second tries. Simulates the real setting test.</span>
+      </a>
+
+      <a class="mock-tile mock-tile-dashboard" href="dashboard.html">
+        <span class="mock-tile-eyebrow">For parents</span>
+        <span class="mock-tile-title">Parent dashboard</span>
+        <span class="mock-tile-meta">Last 7 days at a glance</span>
+        <span class="mock-tile-desc">See weak topics, scores, and what to drill next.</span>
+      </a>
+    </nav>
+  </main>
+
+  <script type="module" src="mock.js"></script>
+</body>
+</html>

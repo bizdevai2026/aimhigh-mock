@@ -1,0 +1,20 @@
+# OS / system files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*~
+*.bak
+
+# Logs
+*.log
+
+# Temp / cache
+*.tmp
+*.cache
+.cache/

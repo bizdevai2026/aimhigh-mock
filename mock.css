@@ -1,0 +1,206 @@
+/* Mock Prep — standalone styles, isolated from AimHigh's styles.css.
+   Distinct accent (amber) so parents can tell the two surfaces apart at a glance. */
+
+:root {
+  --mock-bg: #fffaf0;
+  --mock-card: #ffffff;
+  --mock-text: #1f2937;
+  --mock-muted: #6b7280;
+  --mock-accent: #d97706;
+  --mock-accent-strong: #b45309;
+  --mock-accent-soft: #fef3c7;
+  --mock-border: #e5e7eb;
+  --mock-radius: 12px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body.mock-page {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background:
+    radial-gradient(900px 480px at 50% -180px, rgba(217, 119, 6, 0.10), transparent 70%),
+    linear-gradient(180deg, #fff7ed 0%, var(--mock-bg) 600px);
+  background-attachment: fixed;
+  color: var(--mock-text);
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-text-size-adjust: 100%;
+}
+
+.mock-header {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--mock-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+}
+
+.mock-header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.mock-header h1 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--mock-accent-strong);
+}
+
+.mock-subtitle {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--mock-muted);
+  font-weight: 500;
+}
+
+.mock-back {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--mock-accent-strong);
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  margin-left: -0.5rem;
+  border-radius: 6px;
+}
+
+.mock-back:hover, .mock-back:focus {
+  background: var(--mock-accent-soft);
+}
+
+.mock-main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 3rem;
+}
+
+.mock-status {
+  background: var(--mock-card);
+  border: 1px solid var(--mock-border);
+  border-radius: var(--mock-radius);
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.mock-status-line {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--mock-muted);
+}
+
+.mock-tiles {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+@media (min-width: 600px) {
+  .mock-tiles {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.mock-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: var(--mock-card);
+  border: 1px solid var(--mock-border);
+  border-radius: var(--mock-radius);
+  padding: 1rem 1.1rem;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+  transition: transform 80ms ease, border-color 80ms ease, box-shadow 80ms ease;
+}
+
+.mock-tile:hover, .mock-tile:focus {
+  transform: translateY(-1px);
+  border-color: var(--mock-accent);
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.12);
+  outline: none;
+}
+
+.mock-tile-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--mock-accent-strong);
+}
+
+.mock-tile-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--mock-text);
+  margin-top: 0.1rem;
+}
+
+.mock-tile-meta {
+  font-size: 0.82rem;
+  color: var(--mock-muted);
+  margin-bottom: 0.35rem;
+}
+
+.mock-tile-desc {
+  font-size: 0.92rem;
+  color: var(--mock-text);
+  line-height: 1.45;
+}
+
+.mock-stub {
+  background: var(--mock-card);
+  border: 1px solid var(--mock-border);
+  border-radius: var(--mock-radius);
+  padding: 1.25rem 1.25rem 1.4rem;
+}
+
+.mock-stub h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.mock-stub p {
+  margin: 0 0 1rem;
+  color: var(--mock-text);
+}
+
+.mock-stub-list {
+  margin: 0 0 1.1rem;
+  padding-left: 1.2rem;
+  color: var(--mock-text);
+}
+
+.mock-stub-list li {
+  margin-bottom: 0.3rem;
+}
+
+.mock-button {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background: var(--mock-accent);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.mock-button:hover, .mock-button:focus {
+  background: var(--mock-accent-strong);
+  outline: none;
+}
