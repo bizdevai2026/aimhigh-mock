@@ -3,25 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Daily warm-up &middot; Mock Prep</title>
+  <title>WARM-UP &middot; AimHigh Mock Prep</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="mock.css" />
 </head>
-<body class="mock-page">
+<body class="mock-page mode-warmup">
   <header class="mock-header">
     <div class="mock-header-inner">
-      <a class="mock-back" href="index.html" aria-label="Back to Mock Prep home">&larr; Mock Prep</a>
-      <h1>Daily warm-up</h1>
+      <a class="mock-back" href="index.html">&larr; Mock Prep</a>
     </div>
   </header>
 
-  <main class="mock-main">
-    <section class="mock-stub">
-      <h2>Building this next</h2>
-      <p>Daily warm-up will draw 10 fresh questions across all 7 subjects, never repeating within 7 days. Misses feed the weakness tracker so the parent dashboard knows what to drill next.</p>
-      <a class="mock-button" href="index.html">Back to Mock Prep</a>
+  <main class="mock-main" id="warmupRoot">
+    <section class="mock-stub-hero">
+      <span class="mock-stub-tag">Every day</span>
+      <h1 class="mock-stub-title">WARM-UP</h1>
+      <p class="mock-stub-quote">"Show up. Every day."</p>
+    </section>
+
+    <section class="mock-stub-card">
+      <h2>What this is</h2>
+      <p>10 mixed questions across all 7 subjects. Fresh every day &mdash; nothing repeats within seven days. Misses feed the Coach so it knows what to drill next.</p>
+      <ul class="mock-stub-list">
+        <li>Roughly 5 minutes total</li>
+        <li>Tap-to-answer, instant feedback, no second tries</li>
+        <li>+10 XP per correct &mdash; hit 30 XP today to keep your streak</li>
+        <li>Personal best tracked daily</li>
+      </ul>
+      <p class="mock-coach-empty">Loading questions&hellip;</p>
+      <a class="mock-button mock-button-ghost" href="index.html">Back to home</a>
     </section>
   </main>
 
-  <script type="module" src="mock.js"></script>
+  <script type="module" src="warmup.js"></script>
 </body>
 </html>

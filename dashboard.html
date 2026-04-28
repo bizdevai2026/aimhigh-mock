@@ -3,29 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Parent dashboard &middot; Mock Prep</title>
+  <title>COACH &middot; AimHigh Mock Prep</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="mock.css" />
 </head>
-<body class="mock-page">
+<body class="mock-page mode-coach">
   <header class="mock-header">
     <div class="mock-header-inner">
-      <a class="mock-back" href="index.html" aria-label="Back to Mock Prep home">&larr; Mock Prep</a>
-      <h1>Parent dashboard</h1>
+      <a class="mock-back" href="index.html">&larr; Mock Prep</a>
     </div>
   </header>
 
-  <main class="mock-main">
-    <section class="mock-stub">
-      <h2>Coming next to this page</h2>
-      <ul class="mock-stub-list">
-        <li>Today's warm-up score and per-question breakdown</li>
-        <li>Weak topics ranked over the last 7 days</li>
-        <li>What I plugged overnight (new questions added for weak topics)</li>
-      </ul>
-      <a class="mock-button" href="index.html">Back to Mock Prep</a>
+  <main class="mock-main" id="coachRoot">
+    <section class="mock-stub-hero">
+      <span class="mock-stub-tag">For parents</span>
+      <h1 class="mock-stub-title">COACH</h1>
+      <p class="mock-stub-quote">"What to drill next."</p>
+    </section>
+
+    <section class="mock-coach-block" id="coachToday">
+      <h2>Today's session</h2>
+      <p class="mock-coach-empty" id="coachTodayEmpty">No warm-up done yet today.</p>
+    </section>
+
+    <section class="mock-coach-block" id="coachWeak">
+      <h2>Weak topics &mdash; last 7 days</h2>
+      <p class="mock-coach-empty" id="coachWeakEmpty">Nothing flagged yet. Run a few warm-ups first.</p>
+    </section>
+
+    <section class="mock-coach-block" id="coachHistory">
+      <h2>Last 7 days</h2>
+      <p class="mock-coach-empty" id="coachHistoryEmpty">No sessions logged yet.</p>
     </section>
   </main>
 
-  <script type="module" src="mock.js"></script>
+  <script type="module" src="dashboard.js"></script>
 </body>
 </html>

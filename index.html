@@ -3,49 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Mock Prep</title>
+  <title>AimHigh Mock Prep — Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="mock.css" />
 </head>
-<body class="mock-page">
+<body class="mock-page mock-landing">
   <header class="mock-header">
     <div class="mock-header-inner">
-      <h1>Mock Prep</h1>
-      <p class="mock-subtitle">Year 7 setting practice</p>
+      <a class="mock-brand" href="index.html" aria-label="Mock Prep home">
+        <span class="mock-brand-mark" aria-hidden="true">AH</span>
+        <span class="mock-brand-text">
+          <span class="mock-brand-line-1">AIMHIGH</span>
+          <span class="mock-brand-line-2">MOCK PREP</span>
+        </span>
+      </a>
+      <span class="mock-header-streak" aria-label="Current streak">
+        <span aria-hidden="true">&#128293;</span>
+        <span class="mock-header-streak-count" id="headerStreak">0</span>
+      </span>
     </div>
   </header>
 
   <main class="mock-main">
-    <section class="mock-status" id="mockStatus" aria-live="polite">
-      <p class="mock-status-line">Loading today's status&hellip;</p>
+    <section class="mock-hero" aria-label="Today's training status">
+      <div class="mock-hero-streak-row">
+        <span class="mock-hero-flame" aria-hidden="true">&#128293;</span>
+        <span class="mock-hero-streak-text">
+          <span class="mock-hero-streak-num" id="heroStreakNum">0</span>
+          <span class="mock-hero-streak-label">Day streak</span>
+        </span>
+        <span class="mock-hero-freezes" id="heroFreezes">
+          <span><strong>2</strong> freezes saved</span>
+          <span>1 missed day allowed</span>
+        </span>
+      </div>
+
+      <div class="mock-hero-xp">
+        <div class="mock-hero-xp-head">
+          <span class="mock-hero-xp-label">Today's goal</span>
+          <span class="mock-hero-xp-value" id="heroXpValue">0/30 XP</span>
+        </div>
+        <div class="mock-hero-xp-bar" role="progressbar" aria-valuemin="0" aria-valuemax="30" aria-valuenow="0" id="heroXpBar">
+          <div class="mock-hero-xp-fill" id="heroXpFill"></div>
+        </div>
+      </div>
+
+      <div class="mock-hero-bottom">
+        <div class="mock-hero-tier">
+          <span class="mock-hero-tier-label">This week</span>
+          <span class="mock-hero-tier-value tier-bronze" id="heroTier">BRONZE</span>
+        </div>
+        <div class="mock-hero-countdown" id="heroCountdownContainer">
+          <span class="mock-hero-countdown-label">Exam in</span>
+          <span class="mock-hero-countdown-value" id="heroCountdownValue" style="display:none">--</span>
+          <button type="button" class="mock-hero-countdown-set" id="heroCountdownSet">Set exam date</button>
+          <button type="button" class="mock-hero-countdown-edit" id="heroCountdownEdit" style="display:none">Change date</button>
+          <input type="date" class="mock-hero-date-input" id="heroDateInput" style="display:none" />
+        </div>
+      </div>
     </section>
 
-    <nav class="mock-tiles" aria-label="Mock prep modes">
-      <a class="mock-tile mock-tile-daily" href="daily.html">
-        <span class="mock-tile-eyebrow">Every evening</span>
-        <span class="mock-tile-title">Daily warm-up</span>
-        <span class="mock-tile-meta">10 mixed questions &middot; ~5 min</span>
-        <span class="mock-tile-desc">Fresh questions every day. Builds speed and surfaces weak spots.</span>
+    <section class="mock-mission">
+      <h2 class="mock-mission-title">Today's training</h2>
+      <p class="mock-mission-sub">Pick a session and earn the day.</p>
+    </section>
+
+    <nav class="mock-tiles" aria-label="Training modes">
+      <a class="mock-tile mock-tile-warmup" href="daily.html">
+        <span class="mock-tile-status">Building</span>
+        <span class="mock-tile-tag">Every day</span>
+        <span class="mock-tile-title">WARM-UP</span>
+        <span class="mock-tile-meta">10 questions &middot; ~5 min</span>
+        <span class="mock-tile-quote">Show up. Every day.</span>
+        <span class="mock-tile-arrow" aria-hidden="true">&rarr;</span>
       </a>
 
-      <a class="mock-tile mock-tile-subject" href="subject.html">
-        <span class="mock-tile-eyebrow">Closer to exam</span>
-        <span class="mock-tile-title">Subject mock</span>
-        <span class="mock-tile-meta">Single subject &middot; ~15 min</span>
-        <span class="mock-tile-desc">Mixed topics from one subject. Closest match to the real test.</span>
+      <a class="mock-tile mock-tile-sprint" href="subject.html">
+        <span class="mock-tile-status">Building</span>
+        <span class="mock-tile-tag">Closer to exam</span>
+        <span class="mock-tile-title">SPRINT</span>
+        <span class="mock-tile-meta">One subject &middot; ~15 min</span>
+        <span class="mock-tile-quote">One subject, full focus.</span>
+        <span class="mock-tile-arrow" aria-hidden="true">&rarr;</span>
       </a>
 
-      <a class="mock-tile mock-tile-paper" href="paper.html">
-        <span class="mock-tile-eyebrow">Final week</span>
-        <span class="mock-tile-title">Full mock paper</span>
+      <a class="mock-tile mock-tile-distance" href="paper.html">
+        <span class="mock-tile-status">Building</span>
+        <span class="mock-tile-tag">Final week</span>
+        <span class="mock-tile-title">FULL DISTANCE</span>
         <span class="mock-tile-meta">Multi-subject &middot; 30&ndash;45 min</span>
-        <span class="mock-tile-desc">Timer on. No second tries. Simulates the real setting test.</span>
+        <span class="mock-tile-quote">Race-day simulation.</span>
+        <span class="mock-tile-arrow" aria-hidden="true">&rarr;</span>
       </a>
 
-      <a class="mock-tile mock-tile-dashboard" href="dashboard.html">
-        <span class="mock-tile-eyebrow">For parents</span>
-        <span class="mock-tile-title">Parent dashboard</span>
-        <span class="mock-tile-meta">Last 7 days at a glance</span>
-        <span class="mock-tile-desc">See weak topics, scores, and what to drill next.</span>
+      <a class="mock-tile mock-tile-coach" href="dashboard.html">
+        <span class="mock-tile-status">Building</span>
+        <span class="mock-tile-tag">For parents</span>
+        <span class="mock-tile-title">COACH</span>
+        <span class="mock-tile-meta">Last 7 days &middot; weak topic ranking</span>
+        <span class="mock-tile-quote">What to drill next.</span>
+        <span class="mock-tile-arrow" aria-hidden="true">&rarr;</span>
       </a>
     </nav>
   </main>
