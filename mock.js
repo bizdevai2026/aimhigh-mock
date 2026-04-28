@@ -17,6 +17,8 @@ import {
   todayIso
 } from "./engagement.js";
 
+import { readSoundOn, toggleSound } from "./sounds.js";
+
 function $(id) { return document.getElementById(id); }
 
 function paintHeader(streak) {
@@ -135,11 +137,33 @@ function wireExamDateSetter() {
   });
 }
 
+function injectSoundToggle() {
+  const inner = document.querySelector(".mock-header-inner");
+  if (!inner) return;
+  if (inner.querySelector(".mock-sound-toggle")) return; // already injected
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "mock-sound-toggle";
+  btn.setAttribute("aria-label", "Toggle sound");
+  btn.title = "Toggle sound";
+  function paintBtn() {
+    btn.textContent = readSoundOn() ? "🔊" : "🔇"; // 🔊 / 🔇
+    btn.setAttribute("aria-pressed", readSoundOn() ? "true" : "false");
+  }
+  paintBtn();
+  btn.addEventListener("click", function () {
+    toggleSound();
+    paintBtn();
+  });
+  inner.appendChild(btn);
+}
+
 function boot() {
   // Hero card lives on the landing page only. Header streak chip on
   // multiple pages — paintHero is safe (id checks short-circuit).
   paintHero();
   wireExamDateSetter();
+  injectSoundToggle();
 }
 
 if (document.readyState === "loading") {

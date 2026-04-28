@@ -7,6 +7,7 @@
 //
 // All read-only — never mutates state from here.
 
+import "./mock.js"; // shared header behaviour (sound toggle)
 import {
   readResults,
   weakTopics,

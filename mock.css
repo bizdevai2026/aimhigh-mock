@@ -155,6 +155,30 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   border-radius: 7px;
   letter-spacing: 0.02em;
 }
+
+.mock-sound-toggle {
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid var(--mock-border);
+  color: var(--mock-text-dim);
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  display: inline-grid;
+  place-items: center;
+  transition: border-color 100ms ease, background 100ms ease;
+}
+.mock-sound-toggle:hover, .mock-sound-toggle:focus {
+  border-color: var(--mock-lime);
+  background: var(--mock-lime-soft);
+  outline: none;
+}
+/* When the streak chip is also present (landing page), the streak chip
+   keeps the auto margin and the sound toggle sits to its right. */
+.mock-header-streak + .mock-sound-toggle { margin-left: 0.4rem; }
 .mock-back:hover, .mock-back:focus {
   color: var(--mock-lime);
   background: var(--mock-lime-soft);

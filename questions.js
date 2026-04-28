@@ -11,7 +11,7 @@
 // items the learner has not seen in the last 7 days, then balancing
 // across subjects so a warm-up doesn't end up as 10 maths questions.
 
-import { readSeen } from "./engagement.js";
+import { readSeen, weakTopics } from "./engagement.js";
 
 const SUBJECTS = [
   { id: "science",   name: "Science"          },
@@ -63,10 +63,10 @@ export function pickWarmupQuestions(pool, n) {
   const seen = readSeen();
   const now = Date.now();
 
+  // Group the pool by cooldown state.
   const fresh = [];
   const stale = [];
   const recent = [];
-
   pool.forEach(function (q) {
     const s = seen[q.id];
     if (!s) { fresh.push(q); return; }
@@ -74,22 +74,54 @@ export function pickWarmupQuestions(pool, n) {
     recent.push(q);
   });
 
-  const ordered = shuffle(fresh).concat(shuffle(stale)).concat(shuffle(recent));
+  // Identify "weak" subject::topic keys from the last 7 days. Anything
+  // with 2+ misses counts. Used to bias the picker.
+  const weak = weakTopics(7);
+  const weakKeys = {};
+  weak.forEach(function (w) {
+    if (w.missCount >= 2) {
+      weakKeys[w.subject + "::" + w.topic] = true;
+    }
+  });
 
-  // Pass 1 — at most PER_SUBJECT_CAP per subject, to keep mix wide
+  function isWeak(q) { return !!weakKeys[q.subject + "::" + q.topic]; }
+
+  // Aim: ~60% weak / ~40% other when weak topics exist. If no weak
+  // topics yet, fall back to plain anti-repeat ordering.
+  const weakTarget = Object.keys(weakKeys).length > 0 ? Math.ceil(n * 0.6) : 0;
+
+  const orderedFresh = shuffle(fresh);
+  const orderedStale = shuffle(stale);
+  const orderedRecent = shuffle(recent);
+  const baseOrder = orderedFresh.concat(orderedStale).concat(orderedRecent);
+
+  // First pass: pick weak items up to weakTarget, respecting per-subject cap.
   const picked = [];
   const subjectCounts = {};
-  for (let i = 0; i < ordered.length && picked.length < n; i++) {
-    const q = ordered[i];
+  function tryAdd(q) {
+    if (picked.indexOf(q) >= 0) return false;
     const c = subjectCounts[q.subject] || 0;
-    if (c >= PER_SUBJECT_CAP) continue;
+    if (c >= PER_SUBJECT_CAP) return false;
     picked.push(q);
     subjectCounts[q.subject] = c + 1;
+    return true;
   }
 
-  // Pass 2 — top up if cap was too tight
-  for (let i = 0; i < ordered.length && picked.length < n; i++) {
-    const q = ordered[i];
+  if (weakTarget > 0) {
+    for (let i = 0; i < baseOrder.length && picked.length < weakTarget; i++) {
+      const q = baseOrder[i];
+      if (isWeak(q)) tryAdd(q);
+    }
+  }
+
+  // Second pass: fill rest with the cooldown-ordered pool, capped per subject.
+  for (let i = 0; i < baseOrder.length && picked.length < n; i++) {
+    tryAdd(baseOrder[i]);
+  }
+
+  // Third pass: top up if the per-subject cap left us short.
+  for (let i = 0; i < baseOrder.length && picked.length < n; i++) {
+    const q = baseOrder[i];
     if (picked.indexOf(q) >= 0) continue;
     picked.push(q);
   }

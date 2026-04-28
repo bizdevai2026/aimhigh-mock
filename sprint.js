@@ -5,8 +5,10 @@
 // aware via questions.pickSubjectQuestions). Otherwise it renders a
 // subject picker — 7 tiles, click one to start.
 
+import "./mock.js"; // shared header behaviour (sound toggle)
 import { loadAllQuestions, pickSubjectQuestions, listSubjects, subjectName } from "./questions.js";
 import { noteSessionResult, readStreak } from "./engagement.js";
+import { playCorrect, playWrong, playLevelUp } from "./sounds.js";
 
 const ROUND_SIZE = 15;
 const CORRECT_AUTOADVANCE_MS = 700;
@@ -171,8 +173,10 @@ function onAnswer(chosenIdx, btnEl) {
     correct: correct
   });
   if (correct) {
+    playCorrect();
     setTimeout(advance, CORRECT_AUTOADVANCE_MS);
   } else {
+    playWrong();
     showWrongFeedback(q);
   }
 }
@@ -228,6 +232,7 @@ function paintResult(score, total, after) {
   const xpGained = after.xpGained;
   const goalHitNow = after.xp.before < after.xp.goal && after.xp.after >= after.xp.goal;
   const streak = readStreak();
+  if (goalHitNow) playLevelUp();
   let streakLine;
   if (goalHitNow) {
     streakLine = "<span>&#128293; <strong>" + streak.current + "-day streak</strong> &mdash; locked in for today</span>";

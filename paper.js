@@ -6,8 +6,10 @@
 //
 // Two states: idle (intro + START button) and running (timer + session).
 
+import "./mock.js"; // shared header behaviour (sound toggle)
 import { loadAllQuestions, listSubjects, subjectName } from "./questions.js";
 import { noteSessionResult, readStreak } from "./engagement.js";
+import { playLevelUp } from "./sounds.js";
 
 const ROUND_SIZE = 30;
 const ROUND_MINUTES = 30;
@@ -250,6 +252,7 @@ function paintResult(score, total, after, timedOut) {
   const xpGained = after.xpGained;
   const goalHitNow = after.xp.before < after.xp.goal && after.xp.after >= after.xp.goal;
   const streak = readStreak();
+  if (goalHitNow) playLevelUp();
   let streakLine;
   if (goalHitNow) {
     streakLine = "<span>&#128293; <strong>" + streak.current + "-day streak</strong> &mdash; goal hit</span>";

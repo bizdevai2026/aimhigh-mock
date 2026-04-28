@@ -5,8 +5,10 @@
 // with tap-to-answer + instant feedback, and finalises the session
 // via engagement.noteSessionResult so streak/XP/tier update correctly.
 
+import "./mock.js"; // shared header behaviour (sound toggle, streak chip)
 import { loadAllQuestions, pickWarmupQuestions, subjectName } from "./questions.js";
 import { noteSessionResult, readStreak, readXpToday } from "./engagement.js";
+import { playCorrect, playWrong, playLevelUp } from "./sounds.js";
 
 const ROUND_SIZE = 10;
 const CORRECT_AUTOADVANCE_MS = 850;
@@ -134,11 +136,11 @@ function onAnswer(chosenIdx, btnEl) {
     correct: correct
   });
 
-  // Sound feedback (if a tone helper is wired later, hook here)
-
   if (correct) {
+    playCorrect();
     setTimeout(advance, CORRECT_AUTOADVANCE_MS);
   } else {
+    playWrong();
     showWrongFeedback(q);
   }
 }
@@ -196,6 +198,7 @@ function paintResult(score, total, after) {
   const xpGained = after.xpGained;
   const goalHitNow = after.xp.before < after.xp.goal && after.xp.after >= after.xp.goal;
   const streak = readStreak();
+  if (goalHitNow) playLevelUp();
 
   let streakLine;
   if (goalHitNow) {
