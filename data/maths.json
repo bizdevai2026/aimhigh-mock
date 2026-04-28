@@ -313,5 +313,73 @@
     "options": ["1/4", "1/6", "4/6", "1/2"],
     "answer": 1,
     "explainer": "There's one 4 out of six equally likely outcomes, so 1/6."
+  },
+  {
+    "id": "math-functions-001",
+    "subject": "maths",
+    "topic": "function-machines",
+    "prompt": "A function machine does \"+5\" then \"×2\". What does it output for input 3?",
+    "options": ["8", "11", "16", "13"],
+    "answer": 2,
+    "explainer": "Input 3, then +5 = 8, then ×2 = 16. Order matters — do the steps left to right."
+  },
+  {
+    "id": "math-functions-002",
+    "subject": "maths",
+    "topic": "function-machines",
+    "prompt": "A function machine does \"×3\" then \"−4\". The output is 11. What was the input?",
+    "options": ["3", "4", "5", "7"],
+    "answer": 2,
+    "explainer": "Work backwards (inverse): from 11, +4 = 15, then ÷3 = 5. Always reverse the operations and the order."
+  },
+  {
+    "id": "math-powers-001",
+    "subject": "maths",
+    "topic": "powers",
+    "prompt": "What is 2⁴?",
+    "options": ["6", "8", "12", "16"],
+    "answer": 3,
+    "explainer": "2⁴ = 2 × 2 × 2 × 2 = 16. The little 4 means \"multiply 2 by itself four times\"."
+  },
+  {
+    "id": "math-powers-002",
+    "subject": "maths",
+    "topic": "powers",
+    "prompt": "What is the cube of 4 (i.e. 4³)?",
+    "options": ["12", "16", "32", "64"],
+    "answer": 3,
+    "explainer": "4³ = 4 × 4 × 4 = 64. Cubed means \"multiplied by itself three times\"."
+  },
+  {
+    "id": "math-powers-003",
+    "subject": "maths",
+    "topic": "powers",
+    "prompt": "Which of these is a square number?",
+    "options": ["12", "27", "49", "50"],
+    "answer": 2,
+    "explainer": "49 = 7 × 7 = 7². Square numbers come from multiplying a whole number by itself: 1, 4, 9, 16, 25, 36, 49, 64..."
+  },
+  {
+    "id": "math-area-001",
+    "subject": "maths",
+    "topic": "area",
+    "prompt": "A compound shape is made of a 4 cm × 3 cm rectangle next to a 2 cm × 3 cm rectangle. Total area?",
+    "options": ["12 cm²", "14 cm²", "18 cm²", "24 cm²"],
+    "answer": 2,
+    "explainer": "Split the shape into rectangles, find each area, then add. 4×3 = 12, 2×3 = 6. Total = 18 cm²."
+  },
+  {
+    "id": "math-fractions-005",
+    "subject": "maths",
+    "topic": "fractions",
+    "prompt": "Order from smallest to largest: 1/2, 2/3, 3/4.",
+    "options": [
+      "3/4, 2/3, 1/2",
+      "1/2, 2/3, 3/4",
+      "2/3, 1/2, 3/4",
+      "1/2, 3/4, 2/3"
+    ],
+    "answer": 1,
+    "explainer": "Convert to a common denominator of 12: 6/12, 8/12, 9/12. So in order: 1/2 < 2/3 < 3/4."
   }
 ]

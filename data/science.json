@@ -286,5 +286,226 @@
     "options": ["Eye colour", "Blood group", "Body weight", "Number of fingers"],
     "answer": 2,
     "explainer": "Diet and exercise change weight a lot. Eye colour, blood group and finger count are mainly inherited."
+  },
+  {
+    "id": "sci-forces-005",
+    "subject": "science",
+    "topic": "distance-time",
+    "prompt": "On a distance-time graph, a horizontal line means the object is:",
+    "options": ["Speeding up", "Slowing down", "Not moving", "Going backwards"],
+    "answer": 2,
+    "explainer": "Distance isn't changing — the object is at rest. A sloped line means it's moving; a steeper slope means faster."
+  },
+  {
+    "id": "sci-forces-006",
+    "subject": "science",
+    "topic": "distance-time",
+    "prompt": "On a distance-time graph, the steeper the line, the:",
+    "options": ["Slower the object", "Faster the object", "Heavier the object", "Bigger the object"],
+    "answer": 1,
+    "explainer": "Steep slope = lots of distance covered in a short time = fast. Gentle slope = slow."
+  },
+  {
+    "id": "sci-forces-007",
+    "subject": "science",
+    "topic": "forces-motion",
+    "prompt": "Speed equals:",
+    "options": ["Distance × time", "Distance ÷ time", "Time ÷ distance", "Distance + time"],
+    "answer": 1,
+    "explainer": "Speed = distance ÷ time. A car covering 60 miles in 1 hour has a speed of 60 mph."
+  },
+  {
+    "id": "sci-mixtures-001",
+    "subject": "science",
+    "topic": "mixtures",
+    "prompt": "Which of these is a pure substance?",
+    "options": ["Air", "Sea water", "Distilled water", "Orange juice"],
+    "answer": 2,
+    "explainer": "A pure substance has only one type of particle. Distilled water = just H₂O. The others are mixtures."
+  },
+  {
+    "id": "sci-mixtures-002",
+    "subject": "science",
+    "topic": "mixtures",
+    "prompt": "How would you separate salt from salty water?",
+    "options": ["Filtering", "Evaporation", "Magnet", "Stirring"],
+    "answer": 1,
+    "explainer": "Heat the water until it evaporates — salt is left behind. Filtering doesn't work because salt has dissolved."
+  },
+  {
+    "id": "sci-mixtures-003",
+    "subject": "science",
+    "topic": "mixtures",
+    "prompt": "Distillation is used to separate:",
+    "options": [
+      "Sand from water",
+      "A pure liquid from a solution",
+      "A magnetic metal from a non-magnet",
+      "Two solids of different colour"
+    ],
+    "answer": 1,
+    "explainer": "Distillation boils the liquid off, then condenses the vapour. Useful for getting pure water from salt water."
+  },
+  {
+    "id": "sci-mixtures-004",
+    "subject": "science",
+    "topic": "mixtures",
+    "prompt": "Chromatography is mainly used to:",
+    "options": [
+      "Separate different coloured dyes in an ink",
+      "Filter sand from water",
+      "Cool a hot liquid",
+      "Stick metals together"
+    ],
+    "answer": 0,
+    "explainer": "Different dyes travel up the paper at different speeds, so they spread into separate spots."
+  },
+  {
+    "id": "sci-skeleton-001",
+    "subject": "science",
+    "topic": "skeleton-and-movement",
+    "prompt": "The skeleton's main jobs include:",
+    "options": [
+      "Support, protection and movement",
+      "Digesting food",
+      "Making blood pressure",
+      "Cooling the body only"
+    ],
+    "answer": 0,
+    "explainer": "Bones support the body's shape, protect organs (skull, ribs) and act as anchors for muscles to pull on."
+  },
+  {
+    "id": "sci-skeleton-002",
+    "subject": "science",
+    "topic": "skeleton-and-movement",
+    "prompt": "Your knee is an example of which type of joint?",
+    "options": ["Ball-and-socket", "Hinge", "Pivot", "Sliding"],
+    "answer": 1,
+    "explainer": "Hinge joints bend one way only (like a door). The shoulder is ball-and-socket — it can rotate."
+  },
+  {
+    "id": "sci-skeleton-003",
+    "subject": "science",
+    "topic": "skeleton-and-movement",
+    "prompt": "Your biceps and triceps are an antagonistic muscle pair. This means:",
+    "options": [
+      "They both work in the same direction",
+      "When one contracts, the other relaxes",
+      "They are the same muscle",
+      "They never move"
+    ],
+    "answer": 1,
+    "explainer": "Muscles can only pull, not push. So they work in pairs — one contracts to bend the arm, the other contracts to straighten it."
+  },
+  {
+    "id": "sci-energy-005",
+    "subject": "science",
+    "topic": "energy",
+    "prompt": "The principle of conservation of energy says that energy:",
+    "options": [
+      "Disappears when something stops",
+      "Is created by friction",
+      "Cannot be created or destroyed, only transferred",
+      "Only comes from the sun"
+    ],
+    "answer": 2,
+    "explainer": "Energy never vanishes — it just moves between stores. A bouncing ball loses height because energy transfers to heat and sound, not because it disappears."
+  },
+  {
+    "id": "sci-energy-006",
+    "subject": "science",
+    "topic": "energy",
+    "prompt": "Which is a renewable energy resource?",
+    "options": ["Coal", "Oil", "Wind", "Natural gas"],
+    "answer": 2,
+    "explainer": "Renewables won't run out on human timescales — wind, solar, hydro, tidal, geothermal. Fossil fuels are non-renewable."
+  },
+  {
+    "id": "sci-energy-007",
+    "subject": "science",
+    "topic": "energy",
+    "prompt": "A bouncing ball loses height each bounce because:",
+    "options": [
+      "Energy is destroyed",
+      "Energy transfers to heat and sound on each bounce",
+      "It gets heavier",
+      "Gravity gets stronger"
+    ],
+    "answer": 1,
+    "explainer": "Total energy is the same, but some moves to thermal and sound stores at each bounce — less is left for kinetic and gravitational potential."
+  },
+  {
+    "id": "sci-reactions-001",
+    "subject": "science",
+    "topic": "chemical-reactions",
+    "prompt": "When an acid reacts with a metal, the products are:",
+    "options": [
+      "A salt + hydrogen gas",
+      "Water only",
+      "Carbon dioxide only",
+      "A new acid"
+    ],
+    "answer": 0,
+    "explainer": "Acid + metal → salt + hydrogen. You can test for hydrogen with a lit splint — it makes a squeaky pop."
+  },
+  {
+    "id": "sci-reactions-002",
+    "subject": "science",
+    "topic": "chemical-reactions",
+    "prompt": "When magnesium burns in oxygen, what is produced?",
+    "options": ["Magnesium oxide", "Water", "Carbon dioxide", "Magnesium chloride"],
+    "answer": 0,
+    "explainer": "Metal + oxygen → metal oxide. The bright white flame of burning magnesium gives off a white powder of magnesium oxide."
+  },
+  {
+    "id": "sci-reactions-003",
+    "subject": "science",
+    "topic": "chemical-reactions",
+    "prompt": "In a displacement reaction, a more reactive metal:",
+    "options": [
+      "Joins onto a less reactive metal",
+      "Pushes a less reactive metal out of its compound",
+      "Disappears completely",
+      "Becomes less reactive"
+    ],
+    "answer": 1,
+    "explainer": "More reactive metals \"push out\" less reactive ones. Iron + copper sulfate → iron sulfate + copper."
+  },
+  {
+    "id": "sci-sound-005",
+    "subject": "science",
+    "topic": "sound-waves",
+    "prompt": "An echo is caused by:",
+    "options": [
+      "A loud sound only",
+      "Sound being absorbed",
+      "Sound bouncing off a hard surface",
+      "Sound disappearing"
+    ],
+    "answer": 2,
+    "explainer": "When sound hits a hard surface, it reflects. We hear the reflection a moment later as an echo."
+  },
+  {
+    "id": "sci-sound-006",
+    "subject": "science",
+    "topic": "sound-waves",
+    "prompt": "Which part of the ear vibrates first when sound enters?",
+    "options": ["Cochlea", "Eardrum", "Outer ear bones", "Brain"],
+    "answer": 1,
+    "explainer": "Sound waves travel down the ear canal and make the eardrum vibrate. Tiny bones then carry the vibration to the cochlea."
+  },
+  {
+    "id": "sci-variation-003",
+    "subject": "science",
+    "topic": "variation",
+    "prompt": "Continuous variation means:",
+    "options": [
+      "There are only two possible options",
+      "Values fall along a smooth scale (like height)",
+      "It can't be measured",
+      "It's always inherited"
+    ],
+    "answer": 1,
+    "explainer": "Continuous: any value in a range (height, weight). Discontinuous: only specific options (blood group, eye colour)."
   }
 ]
