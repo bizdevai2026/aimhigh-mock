@@ -1,0 +1,145 @@
+[
+  {
+    "id": "comp-esafety-001",
+    "subject": "computing",
+    "topic": "e-safety",
+    "prompt": "Someone you don't know online asks for your home address. What should you do?",
+    "options": [
+      "Give it to them — they seem nice",
+      "Don't give it; tell a trusted adult",
+      "Share it but ask them not to tell anyone",
+      "Give a slightly wrong address"
+    ],
+    "answer": 1,
+    "explainer": "Never share personal info (address, phone, school) with strangers online. Tell a trusted adult — that's always the right move."
+  },
+  {
+    "id": "comp-esafety-002",
+    "subject": "computing",
+    "topic": "e-safety",
+    "prompt": "Which is the strongest password?",
+    "options": ["password123", "Tiger", "p@5sW0rd!92", "12345678"],
+    "answer": 2,
+    "explainer": "Strong passwords mix upper, lower, numbers, symbols, and are at least 8 characters. \"password123\" and \"12345678\" are on every hacker's first list."
+  },
+  {
+    "id": "comp-algorithms-001",
+    "subject": "computing",
+    "topic": "algorithms",
+    "prompt": "What is an algorithm?",
+    "options": [
+      "A type of computer",
+      "A step-by-step set of instructions to solve a problem",
+      "A programming language",
+      "A type of file"
+    ],
+    "answer": 1,
+    "explainer": "An algorithm is the recipe — the precise sequence of steps. A program is one way of writing it down for a computer."
+  },
+  {
+    "id": "comp-algorithms-002",
+    "subject": "computing",
+    "topic": "algorithms",
+    "prompt": "Which symbol is used in a flowchart for a decision?",
+    "options": ["Rectangle", "Diamond", "Oval", "Circle"],
+    "answer": 1,
+    "explainer": "Diamond = decision (yes/no). Rectangle = process. Oval = start/end."
+  },
+  {
+    "id": "comp-scratch-001",
+    "subject": "computing",
+    "topic": "scratch-programming",
+    "prompt": "In programming, a \"loop\" lets you:",
+    "options": [
+      "Stop the program",
+      "Repeat instructions",
+      "Save the program",
+      "Make the screen bigger"
+    ],
+    "answer": 1,
+    "explainer": "Loops repeat instructions. \"Repeat 10\" runs the same block ten times — much shorter than typing the same code ten times."
+  },
+  {
+    "id": "comp-scratch-002",
+    "subject": "computing",
+    "topic": "scratch-programming",
+    "prompt": "An \"IF... THEN...\" block in Scratch is an example of:",
+    "options": ["A sequence", "A loop (repetition)", "Selection (a decision)", "An input"],
+    "answer": 2,
+    "explainer": "Selection = the program chooses what to do based on a condition. Sequence = step-by-step. Repetition = looping."
+  },
+  {
+    "id": "comp-scratch-003",
+    "subject": "computing",
+    "topic": "scratch-programming",
+    "prompt": "A variable in a program is:",
+    "options": [
+      "A type of sprite",
+      "A name that holds a value you can change",
+      "A picture file",
+      "A kind of loop"
+    ],
+    "answer": 1,
+    "explainer": "Variables store values (like a score) that the program can read or update."
+  },
+  {
+    "id": "comp-hardware-001",
+    "subject": "computing",
+    "topic": "hardware-software",
+    "prompt": "Which of these is hardware?",
+    "options": ["The web browser", "The keyboard", "Your saved file", "An app"],
+    "answer": 1,
+    "explainer": "Hardware = the physical parts you can touch (keyboard, screen, CPU). Software = programs (browser, app, file)."
+  },
+  {
+    "id": "comp-hardware-002",
+    "subject": "computing",
+    "topic": "hardware-software",
+    "prompt": "Which is an output device?",
+    "options": ["Microphone", "Mouse", "Speaker", "Keyboard"],
+    "answer": 2,
+    "explainer": "Output sends information from the computer to you — speaker, screen, printer. Input is the other way (keyboard, mouse, microphone)."
+  },
+  {
+    "id": "comp-networks-001",
+    "subject": "computing",
+    "topic": "networks",
+    "prompt": "What does \"LAN\" stand for?",
+    "options": [
+      "Large Area Network",
+      "Local Area Network",
+      "Long Active Network",
+      "Limited Access Network"
+    ],
+    "answer": 1,
+    "explainer": "LAN = Local Area Network — covers a small area like a school or home. WAN = Wide Area Network covers larger areas (the internet is a WAN)."
+  },
+  {
+    "id": "comp-networks-002",
+    "subject": "computing",
+    "topic": "networks",
+    "prompt": "What is the internet?",
+    "options": [
+      "A single computer in America",
+      "A worldwide network of connected networks",
+      "Just websites",
+      "A type of cable"
+    ],
+    "answer": 1,
+    "explainer": "The internet is a global network of networks. The World Wide Web is one service that runs on top of it (websites and links)."
+  },
+  {
+    "id": "comp-networks-003",
+    "subject": "computing",
+    "topic": "networks",
+    "prompt": "What is a URL?",
+    "options": [
+      "A type of computer chip",
+      "The address of a website",
+      "A graphics card",
+      "A wireless protocol"
+    ],
+    "answer": 1,
+    "explainer": "URL = Uniform Resource Locator. It's the web address you type, like https://example.com."
+  }
+]

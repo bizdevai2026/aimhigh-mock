@@ -1,0 +1,264 @@
+// AimHigh Mock Prep — daily warm-up runner.
+//
+// Renders into <main id="warmupRoot">. Picks 10 mixed-subject questions
+// using questions.js (anti-repeat aware), shows them one at a time
+// with tap-to-answer + instant feedback, and finalises the session
+// via engagement.noteSessionResult so streak/XP/tier update correctly.
+
+import { loadAllQuestions, pickWarmupQuestions, subjectName } from "./questions.js";
+import { noteSessionResult, readStreak, readXpToday } from "./engagement.js";
+
+const ROUND_SIZE = 10;
+const CORRECT_AUTOADVANCE_MS = 850;
+const LETTERS = ["A", "B", "C", "D", "E", "F"];
+
+const root = document.getElementById("warmupRoot");
+
+let session = null;
+
+start();
+
+async function start() {
+  if (!root) return;
+  paintLoading();
+  let pool;
+  try {
+    pool = await loadAllQuestions();
+  } catch (e) {
+    paintError("Couldn't load questions. Check your connection and refresh.");
+    return;
+  }
+  if (!pool || pool.length === 0) {
+    paintError("No questions available yet. Content is being added.");
+    return;
+  }
+  beginSession(pool);
+}
+
+function beginSession(pool) {
+  const items = pickWarmupQuestions(pool, ROUND_SIZE);
+  if (items.length === 0) {
+    paintError("No questions ready for today's warm-up. Try again tomorrow.");
+    return;
+  }
+  session = {
+    pool: pool,
+    items: items,
+    index: 0,
+    results: [], // { id, subject, topic, correct }
+    startedAt: Date.now()
+  };
+  paintQuestion();
+}
+
+// ---------- Painters --------------------------------------------------------
+
+function paintLoading() {
+  root.innerHTML =
+    "<section class=\"mock-stub-card\">" +
+      "<p class=\"mock-coach-empty\">Loading questions&hellip;</p>" +
+    "</section>";
+}
+
+function paintError(msg) {
+  root.innerHTML =
+    "<section class=\"mock-stub-card\">" +
+      "<h2>Not ready yet</h2>" +
+      "<p>" + escapeHtml(msg) + "</p>" +
+      "<a class=\"mock-button\" href=\"index.html\">Back to home</a>" +
+    "</section>";
+}
+
+function paintQuestion() {
+  if (!session) return;
+  const q = session.items[session.index];
+  const total = session.items.length;
+  const i = session.index;
+  const pct = Math.round((i / total) * 100);
+
+  root.innerHTML =
+    "<section class=\"mock-session\">" +
+      "<div class=\"mock-session-progress\">" +
+        "<div class=\"mock-session-progress-bar\">" +
+          "<div class=\"mock-session-progress-fill\" style=\"width:" + pct + "%\"></div>" +
+        "</div>" +
+        "<span class=\"mock-session-progress-text\">" + (i + 1) + "/" + total + "</span>" +
+      "</div>" +
+      "<div class=\"mock-session-card\" id=\"sessionCard\">" +
+        "<span class=\"mock-session-subject\">" + escapeHtml(subjectLabel(q)) + "</span>" +
+        "<p class=\"mock-session-prompt\">" + escapeHtml(q.prompt) + "</p>" +
+        "<div class=\"mock-session-options\" id=\"sessionOptions\"></div>" +
+      "</div>" +
+    "</section>";
+
+  // Apply a per-subject tile-color so the subject label uses the right hue
+  const card = document.getElementById("sessionCard");
+  if (card) card.style.setProperty("--tile-color", subjectColor(q.subject));
+
+  const optsEl = document.getElementById("sessionOptions");
+  q.options.forEach(function (opt, idx) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "mock-session-option";
+    btn.dataset.idx = String(idx);
+    btn.innerHTML =
+      "<span class=\"mock-session-option-letter\">" + LETTERS[idx] + "</span>" +
+      "<span>" + escapeHtml(opt) + "</span>";
+    btn.addEventListener("click", function () { onAnswer(idx, btn); });
+    optsEl.appendChild(btn);
+  });
+}
+
+function onAnswer(chosenIdx, btnEl) {
+  const q = session.items[session.index];
+  const correct = chosenIdx === q.answer;
+
+  // Disable all buttons
+  const allBtns = root.querySelectorAll(".mock-session-option");
+  allBtns.forEach(function (b) { b.disabled = true; });
+
+  // Mark chosen state
+  btnEl.classList.add(correct ? "is-correct" : "is-wrong");
+
+  // Always reveal correct answer
+  if (!correct) {
+    const correctBtn = root.querySelector('.mock-session-option[data-idx="' + q.answer + '"]');
+    if (correctBtn) correctBtn.classList.add("is-correct");
+  }
+
+  // Record result
+  session.results.push({
+    id: q.id,
+    subject: q.subject,
+    topic: q.topic,
+    correct: correct
+  });
+
+  // Sound feedback (if a tone helper is wired later, hook here)
+
+  if (correct) {
+    setTimeout(advance, CORRECT_AUTOADVANCE_MS);
+  } else {
+    showWrongFeedback(q);
+  }
+}
+
+function showWrongFeedback(q) {
+  const card = document.getElementById("sessionCard");
+  if (!card) { advance(); return; }
+  const fb = document.createElement("div");
+  fb.className = "mock-session-feedback wrong";
+  fb.innerHTML = "<span>Not this time</span>";
+  if (q.explainer) {
+    const ex = document.createElement("div");
+    ex.className = "mock-session-feedback-explainer";
+    ex.textContent = q.explainer;
+    fb.appendChild(ex);
+  }
+  card.appendChild(fb);
+
+  const cont = document.createElement("button");
+  cont.type = "button";
+  cont.className = "mock-button";
+  cont.textContent = "Continue";
+  cont.style.marginTop = "0.5rem";
+  cont.addEventListener("click", advance);
+  card.appendChild(cont);
+}
+
+function advance() {
+  session.index += 1;
+  if (session.index >= session.items.length) {
+    finalise();
+  } else {
+    paintQuestion();
+  }
+}
+
+function finalise() {
+  const correctCount = session.results.filter(function (r) { return r.correct; }).length;
+  const total = session.items.length;
+  const durationSec = Math.round((Date.now() - session.startedAt) / 1000);
+
+  const after = noteSessionResult({
+    mode: "warmup",
+    subject: null,
+    items: session.results,
+    score: correctCount,
+    total: total,
+    durationSec: durationSec
+  });
+
+  paintResult(correctCount, total, after);
+}
+
+function paintResult(score, total, after) {
+  const xpGained = after.xpGained;
+  const goalHitNow = after.xp.before < after.xp.goal && after.xp.after >= after.xp.goal;
+  const streak = readStreak();
+
+  let streakLine;
+  if (goalHitNow) {
+    streakLine =
+      "<span>&#128293; <strong>" + streak.current + "-day streak</strong> &mdash; kept it alive</span>";
+  } else if (after.xp.after >= after.xp.goal) {
+    streakLine =
+      "<span>&#128293; <strong>" + streak.current + "-day streak</strong> &mdash; goal already hit today</span>";
+  } else {
+    const remaining = after.xp.goal - after.xp.after;
+    streakLine =
+      "<span>" + remaining + " XP to go &mdash; train again to keep the streak</span>";
+  }
+
+  root.innerHTML =
+    "<section class=\"mock-result\">" +
+      "<span class=\"mock-result-eyebrow\">Warm-up complete</span>" +
+      "<span class=\"mock-result-score\">" + score + "</span>" +
+      "<span class=\"mock-result-score-meta\">out of " + total + "</span>" +
+      "<span class=\"mock-result-xp\">+" + xpGained + " XP</span>" +
+      "<div class=\"mock-result-streak\">" + streakLine + "</div>" +
+      "<div class=\"mock-result-actions\">" +
+        "<button type=\"button\" class=\"mock-button\" id=\"trainAgainBtn\">Train again</button>" +
+        "<a class=\"mock-button mock-button-ghost\" href=\"index.html\">Done for today</a>" +
+      "</div>" +
+    "</section>";
+
+  const again = document.getElementById("trainAgainBtn");
+  if (again) again.addEventListener("click", function () {
+    if (!session) return;
+    beginSession(session.pool);
+  });
+}
+
+// ---------- Helpers ---------------------------------------------------------
+
+function subjectLabel(q) {
+  const sub = subjectName(q.subject || "").toUpperCase();
+  if (q.topic) {
+    return sub + " · " + String(q.topic).replace(/-/g, " ").toUpperCase();
+  }
+  return sub;
+}
+
+function subjectColor(subject) {
+  // Loose subject-to-colour mapping reusing the tile palette in mock.css.
+  switch (subject) {
+    case "science":   return "#84cc16"; // lime
+    case "maths":     return "#22d3ee"; // cyan
+    case "english":   return "#f97316"; // coral
+    case "french":    return "#fbbf24"; // fire
+    case "history":   return "#c2750a"; // bronze
+    case "geography": return "#22d3ee"; // cyan
+    case "computing": return "#84cc16"; // lime
+    default:          return "#84cc16";
+  }
+}
+
+function escapeHtml(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}

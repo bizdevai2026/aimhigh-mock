@@ -1,0 +1,130 @@
+[
+  {
+    "id": "hist-norman-001",
+    "subject": "history",
+    "topic": "norman-conquest",
+    "prompt": "In what year did William of Normandy invade England?",
+    "options": ["1042", "1066", "1086", "1215"],
+    "answer": 1,
+    "explainer": "1066 — the Battle of Hastings. Often used as the date that marks the end of Anglo-Saxon England."
+  },
+  {
+    "id": "hist-norman-002",
+    "subject": "history",
+    "topic": "norman-conquest",
+    "prompt": "Which battle in 1066 made William the new king of England?",
+    "options": ["Battle of Stamford Bridge", "Battle of Hastings", "Battle of Bosworth", "Battle of Agincourt"],
+    "answer": 1,
+    "explainer": "Battle of Hastings, 14 October 1066. Harold Godwinson was killed; William became known as William the Conqueror."
+  },
+  {
+    "id": "hist-norman-003",
+    "subject": "history",
+    "topic": "norman-conquest",
+    "prompt": "What was the Domesday Book?",
+    "options": [
+      "A Bible written by William",
+      "A survey of English land and wealth",
+      "A list of Saxon kings",
+      "A military training manual"
+    ],
+    "answer": 1,
+    "explainer": "Completed in 1086, the Domesday Book recorded who owned what land and how much it was worth — so William could tax it."
+  },
+  {
+    "id": "hist-medieval-001",
+    "subject": "history",
+    "topic": "medieval-england",
+    "prompt": "In the feudal system, who was at the top?",
+    "options": ["Knights", "Peasants", "The King", "Bishops only"],
+    "answer": 2,
+    "explainer": "King → Barons → Knights → Peasants. The King granted land in return for loyalty and military service."
+  },
+  {
+    "id": "hist-medieval-002",
+    "subject": "history",
+    "topic": "medieval-england",
+    "prompt": "What was Magna Carta (1215)?",
+    "options": [
+      "A peace treaty with France",
+      "A charter limiting the king's power",
+      "A list of saints",
+      "A new set of taxes"
+    ],
+    "answer": 1,
+    "explainer": "Barons forced King John to sign Magna Carta, which set limits on what the king could do — early step toward the rule of law."
+  },
+  {
+    "id": "hist-blackdeath-001",
+    "subject": "history",
+    "topic": "black-death",
+    "prompt": "When did the Black Death first reach England?",
+    "options": ["1066", "1215", "1348", "1485"],
+    "answer": 2,
+    "explainer": "Arrived in 1348. It killed perhaps a third of the English population within a few years."
+  },
+  {
+    "id": "hist-blackdeath-002",
+    "subject": "history",
+    "topic": "black-death",
+    "prompt": "What kind of disease was the Black Death (mostly)?",
+    "options": ["A virus carried by birds", "A plague spread by fleas on rats", "A waterborne illness", "A plant disease"],
+    "answer": 1,
+    "explainer": "Bubonic plague, mainly spread by fleas living on black rats that travelled with traders."
+  },
+  {
+    "id": "hist-blackdeath-003",
+    "subject": "history",
+    "topic": "black-death",
+    "prompt": "After the Black Death, peasant wages tended to:",
+    "options": ["Fall sharply", "Stay the same", "Rise (because workers were scarce)", "Disappear entirely"],
+    "answer": 2,
+    "explainer": "So many people had died that workers could demand more pay. This shifted power away from landowners."
+  },
+  {
+    "id": "hist-tudors-001",
+    "subject": "history",
+    "topic": "tudors",
+    "prompt": "Who was the first Tudor monarch?",
+    "options": ["Henry VII", "Henry VIII", "Elizabeth I", "Mary I"],
+    "answer": 0,
+    "explainer": "Henry VII (Henry Tudor) won the Battle of Bosworth in 1485 and started the Tudor line."
+  },
+  {
+    "id": "hist-tudors-002",
+    "subject": "history",
+    "topic": "tudors",
+    "prompt": "How many wives did Henry VIII have?",
+    "options": ["Two", "Four", "Six", "Eight"],
+    "answer": 2,
+    "explainer": "Six wives. Mnemonic for their fates: divorced, beheaded, died; divorced, beheaded, survived."
+  },
+  {
+    "id": "hist-tudors-003",
+    "subject": "history",
+    "topic": "tudors",
+    "prompt": "Why did Henry VIII break with the Catholic Church?",
+    "options": [
+      "He wanted a divorce the Pope wouldn't grant",
+      "He didn't like the food",
+      "He wanted to learn French",
+      "The Pope owed him money"
+    ],
+    "answer": 0,
+    "explainer": "The Pope refused to annul Henry's marriage to Catherine of Aragon, so Henry made himself head of the new Church of England."
+  },
+  {
+    "id": "hist-tudors-004",
+    "subject": "history",
+    "topic": "tudors",
+    "prompt": "Elizabeth I's reign is sometimes called the \"Golden Age\" because of:",
+    "options": [
+      "Her love of yellow clothes",
+      "Defeating the Spanish Armada and a flourishing of arts (e.g. Shakespeare)",
+      "Discovering gold in England",
+      "Inventing the printing press"
+    ],
+    "answer": 1,
+    "explainer": "1588 Armada victory plus Shakespeare and exploration made her reign a high point of English culture and power."
+  }
+]

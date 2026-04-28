@@ -1,0 +1,120 @@
+[
+  {
+    "id": "geo-mapskills-001",
+    "subject": "geography",
+    "topic": "map-skills",
+    "prompt": "On an OS map, contour lines that are close together show:",
+    "options": ["Flat ground", "Steep slopes", "Rivers", "Roads"],
+    "answer": 1,
+    "explainer": "Closely spaced contours = the land rises sharply over a short distance — a steep slope. Wide spacing = gentle gradient."
+  },
+  {
+    "id": "geo-mapskills-002",
+    "subject": "geography",
+    "topic": "map-skills",
+    "prompt": "On a 1 : 25,000 map, 1 cm on the map equals:",
+    "options": ["25 cm in real life", "25 m in real life", "250 m in real life", "25 km in real life"],
+    "answer": 2,
+    "explainer": "1 cm on map = 25,000 cm in real life = 250 m. So 4 cm on the map = 1 km."
+  },
+  {
+    "id": "geo-mapskills-003",
+    "subject": "geography",
+    "topic": "map-skills",
+    "prompt": "A four-figure grid reference points to:",
+    "options": [
+      "An exact spot",
+      "A 1 km × 1 km square",
+      "A 100 m × 100 m square",
+      "A whole country"
+    ],
+    "answer": 1,
+    "explainer": "Four figures (e.g. 2438) identify the bottom-left corner of a 1 km square. Six figures pinpoint within that square."
+  },
+  {
+    "id": "geo-uk-001",
+    "subject": "geography",
+    "topic": "uk-geography",
+    "prompt": "Which is the capital of Wales?",
+    "options": ["Cardiff", "Swansea", "Edinburgh", "Belfast"],
+    "answer": 0,
+    "explainer": "Cardiff. Edinburgh is Scotland's capital; Belfast is Northern Ireland's; London is England's."
+  },
+  {
+    "id": "geo-uk-002",
+    "subject": "geography",
+    "topic": "uk-geography",
+    "prompt": "Which is the longest river in the UK?",
+    "options": ["The Thames", "The Severn", "The Mersey", "The Tyne"],
+    "answer": 1,
+    "explainer": "The River Severn (~354 km). The Thames is the longest entirely in England, but the Severn is overall longer in the UK."
+  },
+  {
+    "id": "geo-continents-001",
+    "subject": "geography",
+    "topic": "continents-and-oceans",
+    "prompt": "How many continents are there?",
+    "options": ["Five", "Six", "Seven", "Eight"],
+    "answer": 2,
+    "explainer": "Seven: Africa, Antarctica, Asia, Australia/Oceania, Europe, North America, South America."
+  },
+  {
+    "id": "geo-continents-002",
+    "subject": "geography",
+    "topic": "continents-and-oceans",
+    "prompt": "Which is the largest ocean?",
+    "options": ["Atlantic", "Indian", "Arctic", "Pacific"],
+    "answer": 3,
+    "explainer": "The Pacific is the largest, covering about a third of Earth's surface."
+  },
+  {
+    "id": "geo-continents-003",
+    "subject": "geography",
+    "topic": "continents-and-oceans",
+    "prompt": "Which continent is Egypt in?",
+    "options": ["Asia", "Africa", "Europe", "South America"],
+    "answer": 1,
+    "explainer": "Africa. The Sinai Peninsula technically extends into Asia, but Egypt is mostly in north-east Africa."
+  },
+  {
+    "id": "geo-weather-001",
+    "subject": "geography",
+    "topic": "weather-and-climate",
+    "prompt": "What's the difference between weather and climate?",
+    "options": [
+      "They mean the same thing",
+      "Weather is short-term, climate is the long-term pattern",
+      "Climate is rain only, weather is everything else",
+      "Climate only affects mountains"
+    ],
+    "answer": 1,
+    "explainer": "Weather is what's happening right now (today's rain). Climate is the average pattern over many years (how much rain a place usually gets)."
+  },
+  {
+    "id": "geo-weather-002",
+    "subject": "geography",
+    "topic": "weather-and-climate",
+    "prompt": "Which instrument measures rainfall?",
+    "options": ["Anemometer", "Barometer", "Rain gauge", "Thermometer"],
+    "answer": 2,
+    "explainer": "Rain gauge collects falling rain. Anemometer = wind speed. Barometer = air pressure. Thermometer = temperature."
+  },
+  {
+    "id": "geo-settlement-001",
+    "subject": "geography",
+    "topic": "settlement",
+    "prompt": "Which is most likely a rural settlement?",
+    "options": ["A small village in the countryside", "A city centre", "A large industrial estate", "A motorway service station"],
+    "answer": 0,
+    "explainer": "Rural means countryside, low population density. Urban = towns and cities."
+  },
+  {
+    "id": "geo-rivers-001",
+    "subject": "geography",
+    "topic": "rivers",
+    "prompt": "Which part of a river usually has the fastest flow?",
+    "options": ["The source (start)", "The middle course", "The mouth (where it meets the sea)", "All parts equally"],
+    "answer": 1,
+    "explainer": "The middle course usually has the most volume of water and a moderate gradient — fastest. Source has little water; mouth has wide, slow water."
+  }
+]

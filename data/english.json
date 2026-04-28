@@ -1,0 +1,251 @@
+[
+  {
+    "id": "eng-wordclass-001",
+    "subject": "english",
+    "topic": "word-classes",
+    "prompt": "Identify the verb: \"She walked quickly to the shop.\"",
+    "options": ["She", "walked", "quickly", "shop"],
+    "answer": 1,
+    "explainer": "A verb is a doing or being word. \"Walked\" is the action."
+  },
+  {
+    "id": "eng-wordclass-002",
+    "subject": "english",
+    "topic": "word-classes",
+    "prompt": "Identify the adjective: \"The huge dog barked loudly.\"",
+    "options": ["huge", "dog", "barked", "loudly"],
+    "answer": 0,
+    "explainer": "An adjective describes a noun. \"Huge\" describes \"dog\"."
+  },
+  {
+    "id": "eng-wordclass-003",
+    "subject": "english",
+    "topic": "word-classes",
+    "prompt": "Identify the adverb: \"He spoke softly.\"",
+    "options": ["He", "spoke", "softly", "There is no adverb"],
+    "answer": 2,
+    "explainer": "An adverb usually tells us how, when or where a verb happens. \"Softly\" tells us how he spoke."
+  },
+  {
+    "id": "eng-wordclass-004",
+    "subject": "english",
+    "topic": "word-classes",
+    "prompt": "Which word is a pronoun?",
+    "options": ["table", "she", "quickly", "happy"],
+    "answer": 1,
+    "explainer": "A pronoun stands in for a noun. \"She\" replaces a person's name."
+  },
+  {
+    "id": "eng-wordclass-005",
+    "subject": "english",
+    "topic": "word-classes",
+    "prompt": "Which word is a preposition?",
+    "options": ["under", "running", "loud", "they"],
+    "answer": 0,
+    "explainer": "Prepositions show position or direction (under, over, into, across, beside, between)."
+  },
+  {
+    "id": "eng-wordclass-006",
+    "subject": "english",
+    "topic": "word-classes",
+    "prompt": "Which word is a conjunction?",
+    "options": ["and", "carefully", "small", "him"],
+    "answer": 0,
+    "explainer": "Conjunctions join words, phrases or clauses (and, but, or, because, although)."
+  },
+  {
+    "id": "eng-punctuation-001",
+    "subject": "english",
+    "topic": "punctuation",
+    "prompt": "Which sentence is punctuated correctly?",
+    "options": [
+      "Where are you going.",
+      "where are you going?",
+      "Where are you going?",
+      "Where, are you going?"
+    ],
+    "answer": 2,
+    "explainer": "Questions need a capital at the start and a question mark at the end."
+  },
+  {
+    "id": "eng-punctuation-002",
+    "subject": "english",
+    "topic": "punctuation",
+    "prompt": "Which uses the apostrophe correctly?",
+    "options": ["the dogs bone", "the dog's bone", "the dogs' bone", "the dog,s bone"],
+    "answer": 1,
+    "explainer": "One dog owns the bone, so the apostrophe goes before the s. Two dogs would be \"the dogs' bone\"."
+  },
+  {
+    "id": "eng-punctuation-003",
+    "subject": "english",
+    "topic": "punctuation",
+    "prompt": "Which sentence shows direct speech correctly?",
+    "options": [
+      "She said. I'm tired.",
+      "She said, \"I'm tired.\"",
+      "She said \"im tired\"",
+      "She said: I'm tired"
+    ],
+    "answer": 1,
+    "explainer": "Use a comma before the speech marks, capital letter inside, and end punctuation inside the closing speech marks."
+  },
+  {
+    "id": "eng-punctuation-004",
+    "subject": "english",
+    "topic": "punctuation",
+    "prompt": "Which sentence uses commas correctly?",
+    "options": [
+      "I bought, apples, oranges and bananas.",
+      "I bought apples oranges and bananas.",
+      "I bought apples, oranges and bananas.",
+      "I, bought, apples, oranges, and bananas."
+    ],
+    "answer": 2,
+    "explainer": "Commas separate items in a list. The last two items are usually joined by \"and\" instead of a comma."
+  },
+  {
+    "id": "eng-figlang-001",
+    "subject": "english",
+    "topic": "figurative-language",
+    "prompt": "\"The classroom was a zoo.\" This is an example of:",
+    "options": ["Simile", "Metaphor", "Onomatopoeia", "Alliteration"],
+    "answer": 1,
+    "explainer": "A metaphor says something IS something else. A simile would use \"like\" or \"as\" — \"like a zoo\"."
+  },
+  {
+    "id": "eng-figlang-002",
+    "subject": "english",
+    "topic": "figurative-language",
+    "prompt": "\"Her smile shone like the sun.\" This is an example of:",
+    "options": ["Metaphor", "Simile", "Personification", "Hyperbole"],
+    "answer": 1,
+    "explainer": "Similes compare two things using \"like\" or \"as\"."
+  },
+  {
+    "id": "eng-figlang-003",
+    "subject": "english",
+    "topic": "figurative-language",
+    "prompt": "\"The wind whispered through the trees.\" This is:",
+    "options": ["Personification", "Simile", "Alliteration", "Onomatopoeia"],
+    "answer": 0,
+    "explainer": "Personification gives a human action (whispering) to a non-human thing (the wind)."
+  },
+  {
+    "id": "eng-figlang-004",
+    "subject": "english",
+    "topic": "figurative-language",
+    "prompt": "\"Slithering, slimy snakes\" is an example of:",
+    "options": ["Simile", "Metaphor", "Alliteration", "Personification"],
+    "answer": 2,
+    "explainer": "Alliteration is the same starting sound repeated across nearby words (here, the \"s\" sound)."
+  },
+  {
+    "id": "eng-figlang-005",
+    "subject": "english",
+    "topic": "figurative-language",
+    "prompt": "\"Bang! Crash! Splat!\" These are:",
+    "options": ["Similes", "Metaphors", "Onomatopoeia", "Adverbs"],
+    "answer": 2,
+    "explainer": "Onomatopoeia is a word that sounds like the noise it describes."
+  },
+  {
+    "id": "eng-sentence-001",
+    "subject": "english",
+    "topic": "sentence-types",
+    "prompt": "What type of sentence is \"Don't forget your bag.\"?",
+    "options": ["Statement", "Question", "Command", "Exclamation"],
+    "answer": 2,
+    "explainer": "Commands tell someone to do (or not do) something."
+  },
+  {
+    "id": "eng-sentence-002",
+    "subject": "english",
+    "topic": "sentence-types",
+    "prompt": "What type of sentence is \"The match starts at three o'clock.\"?",
+    "options": ["Statement", "Question", "Command", "Exclamation"],
+    "answer": 0,
+    "explainer": "Statements give information and end with a full stop."
+  },
+  {
+    "id": "eng-tenses-001",
+    "subject": "english",
+    "topic": "tenses",
+    "prompt": "What is the past tense of \"run\"?",
+    "options": ["runned", "ran", "running", "runs"],
+    "answer": 1,
+    "explainer": "\"Run\" is irregular — its past tense is \"ran\". The past participle is \"run\" (have run)."
+  },
+  {
+    "id": "eng-tenses-002",
+    "subject": "english",
+    "topic": "tenses",
+    "prompt": "Which sentence is in the present continuous?",
+    "options": ["She runs every morning.", "She is running now.", "She ran yesterday.", "She will run tomorrow."],
+    "answer": 1,
+    "explainer": "Present continuous = is/are + verb-ing. It describes something happening now."
+  },
+  {
+    "id": "eng-spelling-001",
+    "subject": "english",
+    "topic": "spelling",
+    "prompt": "What is the plural of \"fox\"?",
+    "options": ["foxs", "foxes", "foxen", "foxies"],
+    "answer": 1,
+    "explainer": "Words ending in -x add -es to make the plural: fox → foxes."
+  },
+  {
+    "id": "eng-spelling-002",
+    "subject": "english",
+    "topic": "spelling",
+    "prompt": "What is the plural of \"child\"?",
+    "options": ["childs", "childes", "children", "childies"],
+    "answer": 2,
+    "explainer": "\"Children\" is irregular — you just have to learn it."
+  },
+  {
+    "id": "eng-spelling-003",
+    "subject": "english",
+    "topic": "spelling",
+    "prompt": "Which is spelt correctly?",
+    "options": ["recieve", "receive", "receeve", "receve"],
+    "answer": 1,
+    "explainer": "I before E except after C: receive, ceiling, deceive."
+  },
+  {
+    "id": "eng-vocab-001",
+    "subject": "english",
+    "topic": "vocabulary",
+    "prompt": "Which word is a synonym for \"happy\"?",
+    "options": ["sad", "joyful", "tired", "angry"],
+    "answer": 1,
+    "explainer": "A synonym means the same (or nearly the same). Joyful = happy."
+  },
+  {
+    "id": "eng-vocab-002",
+    "subject": "english",
+    "topic": "vocabulary",
+    "prompt": "Which word is an antonym for \"tiny\"?",
+    "options": ["small", "miniature", "huge", "narrow"],
+    "answer": 2,
+    "explainer": "An antonym means the opposite. \"Huge\" is the opposite of \"tiny\"."
+  },
+  {
+    "id": "eng-vocab-003",
+    "subject": "english",
+    "topic": "vocabulary",
+    "prompt": "What does \"reluctant\" mean?",
+    "options": ["very keen", "unwilling", "exhausted", "noisy"],
+    "answer": 1,
+    "explainer": "\"Reluctant\" means hesitant or unwilling to do something."
+  },
+  {
+    "id": "eng-comprehension-001",
+    "subject": "english",
+    "topic": "comprehension",
+    "prompt": "\"Mia gripped her bag tightly and stared at the floor.\" What does this suggest?",
+    "options": ["She is bored", "She is nervous", "She is angry", "She is asleep"],
+    "answer": 1,
+    "explainer": "Gripping tightly and avoiding eye contact are clues — they suggest anxiety or nerves."
+  }
+]
