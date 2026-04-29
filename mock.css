@@ -1265,6 +1265,65 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   margin-left: 0.4rem;
 }
 
+/* Listen button — French TTS via Web Speech API */
+.mock-listen-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.5rem 0 0.6rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(34, 211, 238, 0.10);
+  border: 1px solid rgba(34, 211, 238, 0.45);
+  border-radius: 999px;
+  color: var(--mock-cyan);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 120ms ease, transform 100ms ease;
+}
+.mock-listen-btn:hover  { background: rgba(34, 211, 238, 0.18); transform: translateY(-1px); }
+.mock-listen-btn:active { transform: translateY(0); }
+.mock-listen-icon { font-size: 1.05rem; }
+
+/* Spelling/typing question input (French listen-and-type) */
+.mock-spell-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+.mock-spell-input {
+  font-family: var(--mock-font-body);
+  font-size: 1.1rem;
+  background: var(--mock-card);
+  border: 1px solid var(--mock-border-hi);
+  border-radius: 0.5rem;
+  padding: 0.85rem 1rem;
+  color: var(--mock-text-strong);
+}
+.mock-spell-input:focus {
+  border-color: var(--mock-lime);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(132, 204, 22, 0.18);
+}
+.mock-spell-input:disabled {
+  opacity: 0.7;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Correct feedback (match the existing .wrong feedback style) */
+.mock-session-feedback.correct {
+  margin-top: 0.7rem;
+  padding: 0.7rem 0.9rem;
+  background: rgba(132, 204, 22, 0.10);
+  border: 1px solid rgba(132, 204, 22, 0.4);
+  border-radius: 0.5rem;
+  color: var(--mock-text-strong);
+  font-size: 0.92rem;
+}
+.mock-session-feedback.correct strong { color: var(--mock-lime); }
+
 /* ---------- GREETING + PROFILE CHIP + STUB NAME ---------- */
 
 .mock-greeting {

@@ -217,6 +217,91 @@ export function playTap() {
   noise(20, 0.02, 0, 3200);
 }
 
+// ---------- French language helpers ----------------------------------------
+//
+// Listening + speaking is a KS3 modern foreign language requirement.
+// We use the browser's built-in SpeechSynthesis (Web Speech API) for
+// French TTS — high quality on iOS Safari (Audrey/Thomas) and Chrome
+// Android (Google TTS). Falls back silently if unavailable.
+//
+// Listening is independent of the in-app sound toggle: a parent who
+// muted the engagement chimes still wants the kid to hear French
+// pronunciation. Listen is gated only by SpeechSynthesis availability.
+
+let _frenchVoice = null;
+
+export function speechAvailable() {
+  return typeof window !== "undefined" &&
+         typeof window.speechSynthesis !== "undefined" &&
+         typeof window.SpeechSynthesisUtterance !== "undefined";
+}
+
+function pickFrenchVoice() {
+  if (!speechAvailable()) return null;
+  const voices = window.speechSynthesis.getVoices();
+  if (!voices || !voices.length) return null;
+  let v = voices.find(function (x) { return x.lang === "fr-FR"; });
+  if (v) return v;
+  v = voices.find(function (x) { return x.lang && x.lang.indexOf("fr") === 0; });
+  return v || null;
+}
+
+if (speechAvailable() && "onvoiceschanged" in window.speechSynthesis) {
+  // Voices populate asynchronously on Chrome — refresh when ready.
+  window.speechSynthesis.addEventListener("voiceschanged", function () {
+    _frenchVoice = pickFrenchVoice();
+  });
+}
+
+export function speakFrench(text) {
+  if (!speechAvailable() || !text) return;
+  try { window.speechSynthesis.cancel(); } catch (e) {}
+  const utt = new window.SpeechSynthesisUtterance(String(text));
+  utt.lang = "fr-FR";
+  utt.rate = 0.92;
+  if (!_frenchVoice) _frenchVoice = pickFrenchVoice();
+  if (_frenchVoice) utt.voice = _frenchVoice;
+  window.speechSynthesis.speak(utt);
+}
+
+// Builds a "🔊 Listen" button that speaks the given French text on tap.
+// Append it to the question card. Returns null if speech is unavailable
+// or no audio is provided.
+export function makeListenButton(audioText) {
+  if (!audioText || !speechAvailable()) return null;
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "mock-listen-btn";
+  btn.setAttribute("aria-label", "Listen — French pronunciation");
+  btn.innerHTML = "<span class=\"mock-listen-icon\" aria-hidden=\"true\">&#128266;</span><span>Listen</span>";
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    speakFrench(audioText);
+  });
+  return btn;
+}
+
+// Lenient French answer comparison — case-insensitive, accent-tolerant,
+// whitespace-collapsed, apostrophe-normalised. So "j'ai treize ans"
+// matches "J'ai treize ans" and "Jai treize ans" alike.
+export function normaliseFrenchAnswer(s) {
+  return String(s == null ? "" : s)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[‘’`']/g, "'")
+    .replace(/[.,!?]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+export function frenchSpellMatches(input, question) {
+  const t = normaliseFrenchAnswer(input);
+  if (!t) return false;
+  const targets = [question.answer].concat(question.alternates || []);
+  return targets.some(function (a) { return normaliseFrenchAnswer(a) === t; });
+}
+
 // ---------- Signature stingers ---------------------------------------------
 //
 // These are reserved for moments that should feel like *the app talking

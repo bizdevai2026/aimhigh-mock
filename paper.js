@@ -9,7 +9,7 @@
 import "./mock.js"; // shared header behaviour (sound toggle)
 import { loadAllQuestions, listSubjects, subjectName } from "./questions.js";
 import { noteSessionResult, readStreak } from "./engagement.js";
-import { playLevelUp, playModeStartMock } from "./sounds.js";
+import { playLevelUp, playModeStartMock, makeListenButton } from "./sounds.js";
 import { getVisual } from "./visuals.js";
 import { isParentRole } from "./profile.js";
 
@@ -210,11 +210,16 @@ function begin() {
 
 // Mixed-subject picker for the paper. Goal: every subject represented,
 // then top up with whatever else is fresh (cooldown-aware).
+//
+// Spell-type questions (text-input French spelling) are filtered out
+// here — the mock paper is a multi-subject MCQ paper, mixing typing in
+// would be jarring. Spell questions still surface in WARM-UP and SPRINT.
 function pickPaperQuestions(p, n) {
   const subjects = listSubjects();
   const bySubject = {};
   subjects.forEach(function (s) { bySubject[s.id] = []; });
   p.forEach(function (q) {
+    if (q && q.type === "spell") return;
     if (bySubject[q.subject]) bySubject[q.subject].push(q);
   });
   // shuffle each subject's pool
@@ -299,6 +304,18 @@ function paintQuestion() {
     "</section>";
 
   paintTimer();
+
+  // Listen button on French questions (any with `audio`) — KS3 MFL
+  // listening practice survives even in mock-paper conditions.
+  const card = document.getElementById("sessionCard");
+  if (card && q.audio) {
+    const btn = makeListenButton(q.audio);
+    if (btn) {
+      const subj = card.querySelector(".mock-session-subject");
+      if (subj && subj.nextSibling) card.insertBefore(btn, subj.nextSibling);
+      else card.appendChild(btn);
+    }
+  }
 
   const optsEl = document.getElementById("sessionOptions");
   q.options.forEach(function (opt, idx) {

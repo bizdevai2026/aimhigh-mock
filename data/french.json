@@ -4,189 +4,315 @@
     "subject": "french",
     "topic": "age-and-names",
     "prompt": "What does \"Je m'appelle Julien\" mean?",
-    "options": ["I see Julien", "I am called Julien", "I like Julien", "I am Julien's friend"],
+    "options": [
+      "I see Julien",
+      "I am called Julien",
+      "I like Julien",
+      "I am Julien's friend"
+    ],
     "answer": 1,
-    "explainer": "\"Je m'appelle\" literally means \"I call myself\". Use it to introduce yourself."
+    "explainer": "\"Je m'appelle\" literally means \"I call myself\". Use it to introduce yourself.",
+    "audio": "Je m'appelle Julien"
   },
   {
     "id": "fr-age-002",
     "subject": "french",
     "topic": "age-and-names",
     "prompt": "How do you say \"I am 12 years old\" in French?",
-    "options": ["Je suis douze ans", "J'ai douze ans", "Je veux douze ans", "Il est douze ans"],
+    "options": [
+      "Je suis douze ans",
+      "J'ai douze ans",
+      "Je veux douze ans",
+      "Il est douze ans"
+    ],
     "answer": 1,
-    "explainer": "In French you HAVE your age — \"j'ai\" (\"I have\") not \"je suis\" (\"I am\")."
+    "explainer": "In French you HAVE your age — \"j'ai\" (\"I have\") not \"je suis\" (\"I am\").",
+    "audio": "J'ai douze ans"
   },
   {
     "id": "fr-age-003",
     "subject": "french",
     "topic": "age-and-names",
     "prompt": "What number is \"douze\"?",
-    "options": ["10", "11", "12", "20"],
+    "options": [
+      "10",
+      "11",
+      "12",
+      "20"
+    ],
     "answer": 2,
-    "explainer": "Douze = 12. Useful sequence: dix, onze, douze, treize, quatorze, quinze."
+    "explainer": "Douze = 12. Useful sequence: dix, onze, douze, treize, quatorze, quinze.",
+    "audio": "douze"
   },
   {
     "id": "fr-age-004",
     "subject": "french",
     "topic": "age-and-names",
     "prompt": "What does \"frère\" mean?",
-    "options": ["Sister", "Brother", "Cousin", "Friend"],
+    "options": [
+      "Sister",
+      "Brother",
+      "Cousin",
+      "Friend"
+    ],
     "answer": 1,
-    "explainer": "Frère = brother. Sister is sœur. Petit frère = little brother."
+    "explainer": "Frère = brother. Sister is sœur. Petit frère = little brother.",
+    "audio": "frère"
   },
   {
     "id": "fr-age-005",
     "subject": "french",
     "topic": "age-and-names",
     "prompt": "What does \"ma sœur\" mean?",
-    "options": ["My sister", "My brother", "My friend", "My mother"],
+    "options": [
+      "My sister",
+      "My brother",
+      "My friend",
+      "My mother"
+    ],
     "answer": 0,
-    "explainer": "Ma sœur = my sister. \"Ma\" is feminine \"my\"; brother would use \"mon\"."
+    "explainer": "Ma sœur = my sister. \"Ma\" is feminine \"my\"; brother would use \"mon\".",
+    "audio": "ma sœur"
   },
   {
     "id": "fr-numbers-001",
     "subject": "french",
     "topic": "birthday-and-months",
     "prompt": "What month is \"mai\"?",
-    "options": ["March", "April", "May", "June"],
+    "options": [
+      "March",
+      "April",
+      "May",
+      "June"
+    ],
     "answer": 2,
-    "explainer": "Mai = May. Easy to remember — almost the same word."
+    "explainer": "Mai = May. Easy to remember — almost the same word.",
+    "audio": "mai"
   },
   {
     "id": "fr-numbers-002",
     "subject": "french",
     "topic": "birthday-and-months",
     "prompt": "What is the French word for \"September\"?",
-    "options": ["septembre", "septième", "septième mois", "sept"],
+    "options": [
+      "septembre",
+      "septième",
+      "septième mois",
+      "sept"
+    ],
     "answer": 0,
-    "explainer": "Septembre. Most months are similar to English: janvier, février, mars, avril, mai..."
+    "explainer": "Septembre. Most months are similar to English: janvier, février, mars, avril, mai...",
+    "audio": "septembre"
   },
   {
     "id": "fr-numbers-003",
     "subject": "french",
     "topic": "birthday-and-months",
     "prompt": "How do you write \"30\" in French?",
-    "options": ["trente", "treize", "trois", "vingt"],
+    "options": [
+      "trente",
+      "treize",
+      "trois",
+      "vingt"
+    ],
     "answer": 0,
-    "explainer": "Trente = 30. Don't confuse with treize (13)."
+    "explainer": "Trente = 30. Don't confuse with treize (13).",
+    "audio": "trente"
   },
   {
     "id": "fr-numbers-004",
     "subject": "french",
     "topic": "birthday-and-months",
     "prompt": "What does \"vingt-deux\" mean?",
-    "options": ["12", "20", "22", "32"],
+    "options": [
+      "12",
+      "20",
+      "22",
+      "32"
+    ],
     "answer": 2,
-    "explainer": "Vingt = 20, deux = 2, so vingt-deux = 22."
+    "explainer": "Vingt = 20, deux = 2, so vingt-deux = 22.",
+    "audio": "vingt-deux"
   },
   {
     "id": "fr-numbers-005",
     "subject": "french",
     "topic": "birthday-and-months",
     "prompt": "What does \"je suis de Paris\" mean?",
-    "options": ["I live in Paris", "I am from Paris", "I am Paris", "I go to Paris"],
+    "options": [
+      "I live in Paris",
+      "I am from Paris",
+      "I am Paris",
+      "I go to Paris"
+    ],
     "answer": 1,
-    "explainer": "\"Je suis de\" = \"I am from\". Use it for the place you come from."
+    "explainer": "\"Je suis de\" = \"I am from\". Use it for the place you come from.",
+    "audio": "Je suis de Paris"
   },
   {
     "id": "fr-numbers-006",
     "subject": "french",
     "topic": "birthday-and-months",
     "prompt": "Which number is \"soixante-dix\"?",
-    "options": ["60", "70", "80", "90"],
+    "options": [
+      "60",
+      "70",
+      "80",
+      "90"
+    ],
     "answer": 1,
-    "explainer": "Soixante (60) + dix (10) = 70. French builds 70 as \"sixty-ten\"."
+    "explainer": "Soixante (60) + dix (10) = 70. French builds 70 as \"sixty-ten\".",
+    "audio": "soixante-dix"
   },
   {
     "id": "fr-hair-001",
     "subject": "french",
     "topic": "hair-and-eyes",
     "prompt": "What does \"j'ai les cheveux blonds\" mean?",
-    "options": ["I have blue eyes", "I have blonde hair", "I have a blonde brother", "I like blonde hair"],
+    "options": [
+      "I have blue eyes",
+      "I have blonde hair",
+      "I have a blonde brother",
+      "I like blonde hair"
+    ],
     "answer": 1,
-    "explainer": "Cheveux = hair (always plural). Blonds = blonde."
+    "explainer": "Cheveux = hair (always plural). Blonds = blonde.",
+    "audio": "J'ai les cheveux blonds"
   },
   {
     "id": "fr-hair-002",
     "subject": "french",
     "topic": "hair-and-eyes",
     "prompt": "How do you say \"I have green eyes\" in French?",
-    "options": ["J'ai les yeux verts", "Je suis vert", "J'ai les cheveux verts", "Je vois vert"],
+    "options": [
+      "J'ai les yeux verts",
+      "Je suis vert",
+      "J'ai les cheveux verts",
+      "Je vois vert"
+    ],
     "answer": 0,
-    "explainer": "Yeux = eyes. Verts = green (plural to match les yeux)."
+    "explainer": "Yeux = eyes. Verts = green (plural to match les yeux).",
+    "audio": "J'ai les yeux verts"
   },
   {
     "id": "fr-hair-003",
     "subject": "french",
     "topic": "hair-and-eyes",
     "prompt": "What does \"courts\" mean when describing hair?",
-    "options": ["Long", "Short", "Curly", "Straight"],
+    "options": [
+      "Long",
+      "Short",
+      "Curly",
+      "Straight"
+    ],
     "answer": 1,
-    "explainer": "Courts = short (cheveux courts). Long is \"longs\"."
+    "explainer": "Courts = short (cheveux courts). Long is \"longs\".",
+    "audio": "courts"
   },
   {
     "id": "fr-hair-004",
     "subject": "french",
     "topic": "hair-and-eyes",
     "prompt": "What does \"une barbe\" mean?",
-    "options": ["A bag", "A beard", "A hat", "A boat"],
+    "options": [
+      "A bag",
+      "A beard",
+      "A hat",
+      "A boat"
+    ],
     "answer": 1,
-    "explainer": "Une barbe = a beard. Une moustache = a moustache."
+    "explainer": "Une barbe = a beard. Une moustache = a moustache.",
+    "audio": "une barbe"
   },
   {
     "id": "fr-hair-005",
     "subject": "french",
     "topic": "hair-and-eyes",
     "prompt": "What does \"je porte des lunettes\" mean?",
-    "options": ["I wear glasses", "I wear shoes", "I have a moustache", "I am tall"],
+    "options": [
+      "I wear glasses",
+      "I wear shoes",
+      "I have a moustache",
+      "I am tall"
+    ],
     "answer": 0,
-    "explainer": "Porter = to wear. Lunettes = glasses (always plural in French)."
+    "explainer": "Porter = to wear. Lunettes = glasses (always plural in French).",
+    "audio": "Je porte des lunettes"
   },
   {
     "id": "fr-hair-006",
     "subject": "french",
     "topic": "hair-and-eyes",
     "prompt": "\"J'ai les yeux marron.\" What colour are the eyes?",
-    "options": ["Blue", "Brown", "Green", "Grey"],
+    "options": [
+      "Blue",
+      "Brown",
+      "Green",
+      "Grey"
+    ],
     "answer": 1,
-    "explainer": "Marron = brown. Strange feature: \"marron\" doesn't change for plural — always \"yeux marron\"."
+    "explainer": "Marron = brown. Strange feature: \"marron\" doesn't change for plural — always \"yeux marron\".",
+    "audio": "J'ai les yeux marron"
   },
   {
     "id": "fr-home-001",
     "subject": "french",
     "topic": "home-and-where-from",
     "prompt": "What does \"je vis dans une grande maison\" mean?",
-    "options": ["I see a big house", "I want a big house", "I live in a big house", "I have a big house"],
+    "options": [
+      "I see a big house",
+      "I want a big house",
+      "I live in a big house",
+      "I have a big house"
+    ],
     "answer": 2,
-    "explainer": "Vivre = to live. \"Je vis\" = \"I live\". Grande = big (feminine, to match maison)."
+    "explainer": "Vivre = to live. \"Je vis\" = \"I live\". Grande = big (feminine, to match maison).",
+    "audio": "Je vis dans une grande maison"
   },
   {
     "id": "fr-home-002",
     "subject": "french",
     "topic": "home-and-where-from",
     "prompt": "What does \"un appartement\" mean?",
-    "options": ["A house", "A flat (apartment)", "A garden", "A street"],
+    "options": [
+      "A house",
+      "A flat (apartment)",
+      "A garden",
+      "A street"
+    ],
     "answer": 1,
-    "explainer": "Un appartement = a flat. Une maison = a house."
+    "explainer": "Un appartement = a flat. Une maison = a house.",
+    "audio": "un appartement"
   },
   {
     "id": "fr-home-003",
     "subject": "french",
     "topic": "home-and-where-from",
     "prompt": "\"Sur la côte\" means:",
-    "options": ["In the centre", "On the outskirts", "On the coast", "In the country"],
+    "options": [
+      "In the centre",
+      "On the outskirts",
+      "On the coast",
+      "In the country"
+    ],
     "answer": 2,
-    "explainer": "La côte = the coast. Dans le centre = in the centre. Dans la banlieue = on the outskirts."
+    "explainer": "La côte = the coast. Dans le centre = in the centre. Dans la banlieue = on the outskirts.",
+    "audio": "sur la côte"
   },
   {
     "id": "fr-family-001",
     "subject": "french",
     "topic": "family",
     "prompt": "What does \"ma grand-mère\" mean?",
-    "options": ["My grandmother", "My grandfather", "My mother", "My aunty"],
+    "options": [
+      "My grandmother",
+      "My grandfather",
+      "My mother",
+      "My aunty"
+    ],
     "answer": 0,
-    "explainer": "Grand-mère = grandmother. Grand-père = grandfather."
+    "explainer": "Grand-mère = grandmother. Grand-père = grandfather.",
+    "audio": "ma grand-mère"
   },
   {
     "id": "fr-family-002",
@@ -200,43 +326,68 @@
       "J'ai bien mon frère"
     ],
     "answer": 0,
-    "explainer": "Je m'entends bien avec... = I get on well with... \"Je m'entends mal avec...\" = I don't get on well with..."
+    "explainer": "Je m'entends bien avec... = I get on well with... \"Je m'entends mal avec...\" = I don't get on well with...",
+    "audio": "Je m'entends bien avec mon frère"
   },
   {
     "id": "fr-family-003",
     "subject": "french",
     "topic": "family",
     "prompt": "\"Mon oncle\" means:",
-    "options": ["My grandfather", "My uncle", "My cousin", "My nephew"],
+    "options": [
+      "My grandfather",
+      "My uncle",
+      "My cousin",
+      "My nephew"
+    ],
     "answer": 1,
-    "explainer": "Mon oncle = my uncle. Ma tante = my aunty."
+    "explainer": "Mon oncle = my uncle. Ma tante = my aunty.",
+    "audio": "mon oncle"
   },
   {
     "id": "fr-adj-001",
     "subject": "french",
     "topic": "adjectives",
     "prompt": "Choose the correct form: \"Ma sœur est ___\" (tall).",
-    "options": ["grand", "grande", "grands", "grandes"],
+    "options": [
+      "grand",
+      "grande",
+      "grands",
+      "grandes"
+    ],
     "answer": 1,
-    "explainer": "Sœur is feminine singular, so the adjective takes -e: \"grande\". For a brother (masculine) it would be \"grand\"."
+    "explainer": "Sœur is feminine singular, so the adjective takes -e: \"grande\". For a brother (masculine) it would be \"grand\".",
+    "audio": "Ma sœur est grande"
   },
   {
     "id": "fr-adj-002",
     "subject": "french",
     "topic": "adjectives",
     "prompt": "Choose the correct form: \"Mon père est ___\" (fun).",
-    "options": ["marrant", "marrante", "marrants", "marrantes"],
+    "options": [
+      "marrant",
+      "marrante",
+      "marrants",
+      "marrantes"
+    ],
     "answer": 0,
-    "explainer": "Père is masculine singular, so the adjective stays in its base form: \"marrant\"."
+    "explainer": "Père is masculine singular, so the adjective stays in its base form: \"marrant\".",
+    "audio": "Mon père est marrant"
   },
   {
     "id": "fr-adj-003",
     "subject": "french",
     "topic": "adjectives",
     "prompt": "How do you say \"shy\" (masculine) in French?",
-    "options": ["timide", "marrant", "fort", "petit"],
+    "options": [
+      "timide",
+      "marrant",
+      "fort",
+      "petit"
+    ],
     "answer": 0,
-    "explainer": "Timide = shy. Useful: \"timide\" doesn't change for masculine vs feminine — same form."
+    "explainer": "Timide = shy. Useful: \"timide\" doesn't change for masculine vs feminine — same form.",
+    "audio": "timide"
   },
   {
     "id": "fr-adj-004",
@@ -250,14 +401,20 @@
       "with / without / almost"
     ],
     "answer": 0,
-    "explainer": "These are intensifiers. \"Mon frère est très grand\" = \"My brother is very tall\"."
+    "explainer": "These are intensifiers. \"Mon frère est très grand\" = \"My brother is very tall\".",
+    "audio": "très, assez, un peu"
   },
   {
     "id": "fr-verbs-001",
     "subject": "french",
     "topic": "verbs",
     "prompt": "In French, which verb do you use to talk about age?",
-    "options": ["être (to be)", "avoir (to have)", "aller (to go)", "faire (to do/make)"],
+    "options": [
+      "être (to be)",
+      "avoir (to have)",
+      "aller (to go)",
+      "faire (to do/make)"
+    ],
     "answer": 1,
     "explainer": "In French you HAVE your age. \"J'ai treize ans\" literally means \"I have thirteen years\"."
   },
@@ -273,7 +430,8 @@
       "Tu es de Biarritz"
     ],
     "answer": 2,
-    "explainer": "Elle = she. Il = he. Je = I. Tu = you (informal)."
+    "explainer": "Elle = she. Il = he. Je = I. Tu = you (informal).",
+    "audio": "Elle est de Biarritz"
   },
   {
     "id": "fr-negation-001",
@@ -287,16 +445,23 @@
       "Je ne porte des lunettes pas."
     ],
     "answer": 1,
-    "explainer": "In the negative, \"des\" or \"une\" change to \"de\" before the noun. So \"Je ne porte pas DE lunettes\"."
+    "explainer": "In the negative, \"des\" or \"une\" change to \"de\" before the noun. So \"Je ne porte pas DE lunettes\".",
+    "audio": "Je ne porte pas de lunettes"
   },
   {
     "id": "fr-family-004",
     "subject": "french",
     "topic": "family",
     "prompt": "What does \"ma mère\" mean?",
-    "options": ["My mother", "My father", "My aunt", "My sister"],
+    "options": [
+      "My mother",
+      "My father",
+      "My aunt",
+      "My sister"
+    ],
     "answer": 0,
-    "explainer": "Ma mère = my mother. Mon père = my father."
+    "explainer": "Ma mère = my mother. Mon père = my father.",
+    "audio": "ma mère"
   },
   {
     "id": "fr-family-005",
@@ -310,52 +475,83 @@
       "My family is in four places"
     ],
     "answer": 0,
-    "explainer": "\"Il y a\" = there is / there are. So: \"In my family, there are four people.\""
+    "explainer": "\"Il y a\" = there is / there are. So: \"In my family, there are four people.\"",
+    "audio": "Dans ma famille, il y a quatre personnes"
   },
   {
     "id": "fr-family-006",
     "subject": "french",
     "topic": "family",
     "prompt": "What does \"mon cousin\" mean?",
-    "options": ["My uncle", "My cousin (male)", "My brother", "My friend"],
+    "options": [
+      "My uncle",
+      "My cousin (male)",
+      "My brother",
+      "My friend"
+    ],
     "answer": 1,
-    "explainer": "Mon cousin = my (male) cousin. Female cousin = ma cousine."
+    "explainer": "Mon cousin = my (male) cousin. Female cousin = ma cousine.",
+    "audio": "mon cousin"
   },
   {
     "id": "fr-family-007",
     "subject": "french",
     "topic": "family",
     "prompt": "What does \"j'ai un chien\" mean?",
-    "options": ["I have a cat", "I have a dog", "I want a dog", "I see a dog"],
+    "options": [
+      "I have a cat",
+      "I have a dog",
+      "I want a dog",
+      "I see a dog"
+    ],
     "answer": 1,
-    "explainer": "Un chien = a dog. Un chat = a cat. Useful for the pets topic."
+    "explainer": "Un chien = a dog. Un chat = a cat. Useful for the pets topic.",
+    "audio": "J'ai un chien"
   },
   {
     "id": "fr-home-004",
     "subject": "french",
     "topic": "home-and-where-from",
     "prompt": "What does \"j'habite à Paris\" mean?",
-    "options": ["I am from Paris", "I live in Paris", "I love Paris", "I visit Paris"],
+    "options": [
+      "I am from Paris",
+      "I live in Paris",
+      "I love Paris",
+      "I visit Paris"
+    ],
     "answer": 1,
-    "explainer": "Habiter = to live (in a place). \"J'habite à...\" + city. \"Je suis de...\" = I'm from..."
+    "explainer": "Habiter = to live (in a place). \"J'habite à...\" + city. \"Je suis de...\" = I'm from...",
+    "audio": "J'habite à Paris"
   },
   {
     "id": "fr-home-005",
     "subject": "french",
     "topic": "home-and-where-from",
     "prompt": "What does \"à la campagne\" mean?",
-    "options": ["In the city", "In the countryside", "On the coast", "In the mountains"],
+    "options": [
+      "In the city",
+      "In the countryside",
+      "On the coast",
+      "In the mountains"
+    ],
     "answer": 1,
-    "explainer": "La campagne = the countryside. Other useful: la ville (the city), la montagne (the mountain), la côte (the coast)."
+    "explainer": "La campagne = the countryside. Other useful: la ville (the city), la montagne (the mountain), la côte (the coast).",
+    "audio": "à la campagne"
   },
   {
     "id": "fr-home-006",
     "subject": "french",
     "topic": "home-and-where-from",
     "prompt": "Which is a French-speaking country in West Africa?",
-    "options": ["Brazil", "Sénégal", "Norway", "Greece"],
+    "options": [
+      "Brazil",
+      "Sénégal",
+      "Norway",
+      "Greece"
+    ],
     "answer": 1,
-    "explainer": "Sénégal is one of many French-speaking African countries (also Côte d'Ivoire, Mali, Cameroun)."
+    "explainer": "Sénégal is one of many French-speaking African countries (also Côte d'Ivoire, Mali, Cameroun).",
+    "audio": "Sénégal"
   },
   {
     "id": "fr-home-007",
@@ -369,25 +565,38 @@
       "My house is old"
     ],
     "answer": 1,
-    "explainer": "Petite = small (feminine, agreeing with maison). Big = grande. New = nouvelle. Old = vieille."
+    "explainer": "Petite = small (feminine, agreeing with maison). Big = grande. New = nouvelle. Old = vieille.",
+    "audio": "Ma maison est petite"
   },
   {
     "id": "fr-personality-001",
     "subject": "french",
     "topic": "personality",
     "prompt": "What does \"sympa\" mean?",
-    "options": ["Mean", "Nice / friendly", "Tall", "Tired"],
+    "options": [
+      "Mean",
+      "Nice / friendly",
+      "Tall",
+      "Tired"
+    ],
     "answer": 1,
-    "explainer": "Sympa (short for sympathique) = nice or friendly. Same form for masculine and feminine."
+    "explainer": "Sympa (short for sympathique) = nice or friendly. Same form for masculine and feminine.",
+    "audio": "sympa"
   },
   {
     "id": "fr-personality-002",
     "subject": "french",
     "topic": "personality",
     "prompt": "What does \"méchant\" mean?",
-    "options": ["Funny", "Mean / nasty", "Old", "Quiet"],
+    "options": [
+      "Funny",
+      "Mean / nasty",
+      "Old",
+      "Quiet"
+    ],
     "answer": 1,
-    "explainer": "Méchant(e) = mean, nasty, naughty. Opposite of sympa or gentil."
+    "explainer": "Méchant(e) = mean, nasty, naughty. Opposite of sympa or gentil.",
+    "audio": "méchant"
   },
   {
     "id": "fr-personality-003",
@@ -401,15 +610,123 @@
       "J'ai mon frère marrant"
     ],
     "answer": 1,
-    "explainer": "J'aime = I like. Parce que = because. Marrant = funny. Useful pattern: \"opinion + parce que + reason\"."
+    "explainer": "J'aime = I like. Parce que = because. Marrant = funny. Useful pattern: \"opinion + parce que + reason\".",
+    "audio": "J'aime mon frère parce qu'il est marrant"
   },
   {
     "id": "fr-personality-004",
     "subject": "french",
     "topic": "personality",
     "prompt": "What does \"drôle\" mean?",
-    "options": ["Quiet", "Funny", "Strict", "Lazy"],
+    "options": [
+      "Quiet",
+      "Funny",
+      "Strict",
+      "Lazy"
+    ],
     "answer": 1,
-    "explainer": "Drôle = funny. Same form for masculine and feminine. Marrant(e) is another common word for funny."
+    "explainer": "Drôle = funny. Same form for masculine and feminine. Marrant(e) is another common word for funny.",
+    "audio": "drôle"
+  },
+  {
+    "id": "fr-spell-001",
+    "subject": "french",
+    "topic": "spelling",
+    "type": "spell",
+    "audio": "J'ai douze ans",
+    "prompt": "Listen, then type what you hear (use the Listen button to repeat).",
+    "answer": "J'ai douze ans",
+    "alternates": [
+      "jai douze ans"
+    ],
+    "explainer": "In French you HAVE your age — \"j'ai\" + number + \"ans\" — not \"je suis\"."
+  },
+  {
+    "id": "fr-spell-002",
+    "subject": "french",
+    "topic": "spelling",
+    "type": "spell",
+    "audio": "Je m'appelle Alex",
+    "prompt": "Listen, then type what you hear.",
+    "answer": "Je m'appelle Alex",
+    "alternates": [
+      "je mappelle Alex"
+    ],
+    "explainer": "\"Je m'appelle\" literally means \"I call myself\". Note the apostrophe."
+  },
+  {
+    "id": "fr-spell-003",
+    "subject": "french",
+    "topic": "spelling",
+    "type": "spell",
+    "audio": "ma sœur",
+    "prompt": "Listen, then type what you hear (the œ is one letter — type \"oe\" if you can't reach it).",
+    "answer": "ma sœur",
+    "alternates": [
+      "ma soeur"
+    ],
+    "explainer": "Sœur = sister. The \"oe\" ligature is fine; many keyboards type it as two letters."
+  },
+  {
+    "id": "fr-spell-004",
+    "subject": "french",
+    "topic": "spelling",
+    "type": "spell",
+    "audio": "J'habite à Paris",
+    "prompt": "Listen, then type what you hear.",
+    "answer": "J'habite à Paris",
+    "alternates": [
+      "jhabite a Paris",
+      "j'habite a Paris"
+    ],
+    "explainer": "Habiter = to live (in a place). The \"h\" is silent in French."
+  },
+  {
+    "id": "fr-spell-005",
+    "subject": "french",
+    "topic": "spelling",
+    "type": "spell",
+    "audio": "Il y a quatre personnes",
+    "prompt": "Listen, then type what you hear.",
+    "answer": "Il y a quatre personnes",
+    "alternates": [],
+    "explainer": "\"Il y a\" = there is / there are. Useful for describing your family size."
+  },
+  {
+    "id": "fr-spell-006",
+    "subject": "french",
+    "topic": "spelling",
+    "type": "spell",
+    "audio": "J'aime les chiens",
+    "prompt": "Listen, then type what you hear.",
+    "answer": "J'aime les chiens",
+    "alternates": [
+      "jaime les chiens"
+    ],
+    "explainer": "J'aime = I like / I love. \"Les chiens\" = dogs (plural)."
+  },
+  {
+    "id": "fr-spell-007",
+    "subject": "french",
+    "topic": "spelling",
+    "type": "spell",
+    "audio": "J'ai les cheveux blonds",
+    "prompt": "Listen, then type what you hear.",
+    "answer": "J'ai les cheveux blonds",
+    "alternates": [
+      "jai les cheveux blonds"
+    ],
+    "explainer": "Cheveux = hair (always plural in French). Blonds matches the plural noun."
+  },
+  {
+    "id": "fr-spell-008",
+    "subject": "french",
+    "topic": "spelling",
+    "type": "spell",
+    "audio": "Je suis de Londres",
+    "prompt": "Listen, then type what you hear.",
+    "answer": "Je suis de Londres",
+    "alternates": [],
+    "explainer": "\"Je suis de\" = I am from. Londres = London (most cities have French names)."
   }
 ]

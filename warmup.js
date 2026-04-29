@@ -8,7 +8,7 @@
 import "./mock.js"; // shared header behaviour (sound toggle, streak chip)
 import { loadAllQuestions, pickWarmupQuestions, subjectName } from "./questions.js";
 import { noteSessionResult, readStreak, readXpToday } from "./engagement.js";
-import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playTap, playModeStartWarmup } from "./sounds.js";
+import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playTap, playModeStartWarmup, makeListenButton, frenchSpellMatches } from "./sounds.js";
 import { getVisual } from "./visuals.js";
 import { isParentRole } from "./profile.js";
 
@@ -164,6 +164,7 @@ function paintError(msg) {
 function paintQuestion() {
   if (!session) return;
   const q = session.items[session.index];
+  if (q.type === "spell") { paintSpellQuestion(q); return; }
   const total = session.items.length;
   const i = session.index;
   const pct = Math.round((i / total) * 100);
@@ -188,6 +189,10 @@ function paintQuestion() {
   const card = document.getElementById("sessionCard");
   if (card) card.style.setProperty("--tile-color", subjectColor(q.subject));
 
+  // Listen button — appears whenever the question carries an `audio`
+  // field (used on French questions for KS3 listening practice).
+  attachListen(card, q);
+
   const optsEl = document.getElementById("sessionOptions");
   q.options.forEach(function (opt, idx) {
     const btn = document.createElement("button");
@@ -200,6 +205,95 @@ function paintQuestion() {
     btn.addEventListener("click", function () { onAnswer(idx, btn); });
     optsEl.appendChild(btn);
   });
+}
+
+// Spelling/typing question — listen, type, lenient match. Mirrors the
+// MCQ result-recording flow so streaks and resume state stay coherent.
+function paintSpellQuestion(q) {
+  const total = session.items.length;
+  const i = session.index;
+  const pct = Math.round((i / total) * 100);
+  root.innerHTML =
+    "<section class=\"mock-session\">" +
+      "<div class=\"mock-session-progress\">" +
+        "<div class=\"mock-session-progress-bar\">" +
+          "<div class=\"mock-session-progress-fill\" style=\"width:" + pct + "%\"></div>" +
+        "</div>" +
+        "<span class=\"mock-session-progress-text\">" + (i + 1) + "/" + total + "</span>" +
+      "</div>" +
+      "<div class=\"mock-session-card\" id=\"sessionCard\">" +
+        "<span class=\"mock-session-subject\">" + escapeHtml(subjectLabel(q)) + "</span>" +
+        "<p class=\"mock-session-prompt\">" + escapeHtml(q.prompt) + "</p>" +
+        "<form id=\"spellForm\" class=\"mock-spell-form\" novalidate>" +
+          "<input id=\"spellInput\" class=\"mock-spell-input\" type=\"text\" autocomplete=\"off\" autocapitalize=\"off\" autocorrect=\"off\" spellcheck=\"false\" placeholder=\"Type in French\" required autofocus />" +
+          "<button type=\"submit\" class=\"mock-button\">Check</button>" +
+        "</form>" +
+      "</div>" +
+    "</section>";
+  const card = document.getElementById("sessionCard");
+  if (card) card.style.setProperty("--tile-color", subjectColor(q.subject));
+  attachListen(card, q);
+  document.getElementById("spellForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const inp = document.getElementById("spellInput");
+    const correct = frenchSpellMatches(inp.value, q);
+    inp.disabled = true;
+    onSpellAnswered(q, correct);
+  });
+}
+
+function onSpellAnswered(q, correct) {
+  session.results.push({ id: q.id, subject: q.subject, topic: q.topic, correct: correct });
+  saveResumeState();
+  if (correct) {
+    session.streak = (session.streak || 0) + 1;
+    playCorrect();
+    if (session.streak === 3) playStreak3();
+    else if (session.streak === 5) playStreak5();
+    else if (session.streak >= 7 && session.streak % 2 === 1) playStreak3();
+    showSpellFeedback(q, true);
+    setTimeout(advance, CORRECT_AUTOADVANCE_MS);
+  } else {
+    session.streak = 0;
+    playWrong();
+    showSpellFeedback(q, false);
+  }
+}
+
+function showSpellFeedback(q, correct) {
+  const card = document.getElementById("sessionCard");
+  if (!card) { advance(); return; }
+  const fb = document.createElement("div");
+  fb.className = "mock-session-feedback " + (correct ? "correct" : "wrong");
+  if (correct) {
+    fb.innerHTML = "<span>Nice &mdash; <strong>" + escapeHtml(q.answer) + "</strong></span>";
+  } else {
+    fb.innerHTML = "<span>Not quite. The answer was: <strong>" + escapeHtml(q.answer) + "</strong></span>";
+    if (q.explainer) {
+      const ex = document.createElement("div");
+      ex.className = "mock-session-feedback-explainer";
+      ex.textContent = q.explainer;
+      fb.appendChild(ex);
+    }
+    const cont = document.createElement("button");
+    cont.type = "button";
+    cont.className = "mock-button";
+    cont.textContent = "Continue";
+    cont.style.marginTop = "0.5rem";
+    cont.addEventListener("click", advance);
+    fb.appendChild(cont);
+  }
+  card.appendChild(fb);
+}
+
+function attachListen(card, q) {
+  if (!card || !q || !q.audio) return;
+  const btn = makeListenButton(q.audio);
+  if (!btn) return;
+  // Insert just below the subject label so it's discoverable above the prompt.
+  const subj = card.querySelector(".mock-session-subject");
+  if (subj && subj.nextSibling) card.insertBefore(btn, subj.nextSibling);
+  else card.appendChild(btn);
 }
 
 function onAnswer(chosenIdx, btnEl) {
