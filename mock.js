@@ -14,7 +14,8 @@ import {
   readWeek,
   readExamDate,
   writeExamDate,
-  todayIso
+  todayIso,
+  weakTopics
 } from "./engagement.js";
 
 import { readSoundOn, toggleSound } from "./sounds.js";
@@ -430,6 +431,41 @@ function maybeShowOnboardingTour() {
   document.body.appendChild(overlay);
 }
 
+// Home-page shortcut for the kid: "Your weakest right now — drill it."
+// Reads the same weakTopics(7) ranking the Coach uses; only paints if
+// at least one miss has been logged in the last 7 days. Card links
+// straight to a 5-question topic drill.
+function paintWeakestShortcut() {
+  if (!isChildRole()) return;
+  const tilesNav = document.querySelector(".mock-tiles");
+  if (!tilesNav) return;
+  if (document.getElementById("weakestShortcut")) return;
+  const weak = weakTopics(7);
+  if (!weak.length) return;
+  const top = weak[0];
+  if (!top || top.missCount < 1) return;
+
+  const subjectLabel = SUBJECT_NAMES[top.subject] || top.subject;
+  const topicLabel = String(top.topic).replace(/-/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+  const href = "subject.html?s=" + encodeURIComponent(top.subject) + "&t=" + encodeURIComponent(top.topic);
+
+  const card = document.createElement("a");
+  card.id = "weakestShortcut";
+  card.className = "mock-weakest-shortcut";
+  card.href = href;
+  card.innerHTML =
+    "<div class=\"mock-weakest-head\">" +
+      "<span class=\"mock-weakest-eyebrow\">Drill your weakest</span>" +
+      "<span class=\"mock-weakest-arrow\" aria-hidden=\"true\">&rarr;</span>" +
+    "</div>" +
+    "<div class=\"mock-weakest-body\">" +
+      "<span class=\"mock-weakest-subject\">" + escapeHtml(subjectLabel) + "</span>" +
+      "<span class=\"mock-weakest-topic\">" + escapeHtml(topicLabel) + "</span>" +
+    "</div>" +
+    "<div class=\"mock-weakest-meta\">" + top.missCount + " miss" + (top.missCount === 1 ? "" : "es") + " in last 7 days &middot; 5-question drill</div>";
+  tilesNav.parentNode.insertBefore(card, tilesNav);
+}
+
 function boot() {
   // Auth gate — anyone without a session gets sent to welcome.html.
   // Welcome page itself never loads mock.js so there's no loop.
@@ -445,6 +481,7 @@ function boot() {
   paintProfileLine();
   paintTodayStrip();
   applyParentHomeView();
+  paintWeakestShortcut();
   maybeShowOnboardingTour();
 }
 

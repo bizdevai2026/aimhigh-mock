@@ -250,16 +250,28 @@ function paintWeak() {
   const weak = weakTopics(7);
   if (weak.length === 0) return;
 
+  // Child sees clickable rows that jump straight to a 5-question topic
+  // drill. Parent view stays read-only — drilling would imply the parent
+  // is training, which it isn't.
+  const childCanDrill = !isParentRole();
+
   let rowsHtml = "";
   weak.slice(0, 8).forEach(function (w) {
-    rowsHtml +=
-      "<li class=\"mock-coach-row\">" +
-        "<div class=\"mock-coach-row-left\">" +
-          "<span class=\"mock-coach-row-subject\">" + escapeHtml(subjectName(w.subject)) + "</span>" +
-          "<span class=\"mock-coach-row-topic\">" + escapeHtml(prettyTopic(w.topic)) + "</span>" +
-        "</div>" +
-        "<span class=\"mock-coach-row-stat\">" + w.missCount + " miss" + (w.missCount === 1 ? "" : "es") + "</span>" +
-      "</li>";
+    const inner =
+      "<div class=\"mock-coach-row-left\">" +
+        "<span class=\"mock-coach-row-subject\">" + escapeHtml(subjectName(w.subject)) + "</span>" +
+        "<span class=\"mock-coach-row-topic\">" + escapeHtml(prettyTopic(w.topic)) + "</span>" +
+      "</div>" +
+      "<span class=\"mock-coach-row-stat\">" + w.missCount + " miss" + (w.missCount === 1 ? "" : "es") + "</span>";
+    if (childCanDrill) {
+      const href = "subject.html?s=" + encodeURIComponent(w.subject) + "&t=" + encodeURIComponent(w.topic);
+      rowsHtml +=
+        "<li class=\"mock-coach-row mock-coach-row-link\">" +
+          "<a class=\"mock-coach-row-anchor\" href=\"" + href + "\">" + inner + "</a>" +
+        "</li>";
+    } else {
+      rowsHtml += "<li class=\"mock-coach-row\">" + inner + "</li>";
+    }
   });
   block.innerHTML =
     "<h2>Weak topics &mdash; last 7 days</h2>" +

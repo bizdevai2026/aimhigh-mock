@@ -1182,6 +1182,89 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 .mock-data-msg.ok  { color: var(--mock-lime); }
 .mock-data-msg.err { color: #fca5a5; }
 
+/* "Drill your weakest" home shortcut — child only, only when 7-day
+   weakness data exists. Sits above the four mode tiles. */
+.mock-weakest-shortcut {
+  display: block;
+  margin: 0 0 1rem;
+  padding: 0.95rem 1.1rem;
+  background: linear-gradient(135deg, rgba(248, 113, 113, 0.18) 0%, rgba(248, 113, 113, 0.05) 100%);
+  border: 1px solid rgba(248, 113, 113, 0.4);
+  border-radius: 0.75rem;
+  color: var(--mock-text-strong);
+  text-decoration: none;
+  transition: transform 100ms ease, border-color 150ms ease;
+}
+.mock-weakest-shortcut:hover {
+  transform: translateY(-1px);
+  border-color: rgba(248, 113, 113, 0.65);
+}
+.mock-weakest-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mock-weakest-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fca5a5;
+  font-weight: 700;
+}
+.mock-weakest-arrow {
+  font-family: var(--mock-font-display);
+  color: #fca5a5;
+  font-size: 1.2rem;
+}
+.mock-weakest-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin-top: 0.45rem;
+}
+.mock-weakest-subject {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--mock-muted);
+  text-transform: uppercase;
+}
+.mock-weakest-topic {
+  font-family: var(--mock-font-display);
+  font-size: 1.45rem;
+  letter-spacing: 0.04em;
+  color: var(--mock-text-strong);
+}
+.mock-weakest-meta {
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--mock-text-dim);
+}
+
+/* Tappable weak-topic rows in Coach (child only) */
+.mock-coach-row-link {
+  padding: 0;
+}
+.mock-coach-row-anchor {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.7rem 0.9rem;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 0.4rem;
+  transition: background 120ms ease;
+}
+.mock-coach-row-anchor:hover {
+  background: rgba(132, 204, 22, 0.08);
+}
+.mock-coach-row-anchor::after {
+  content: "→";
+  color: var(--mock-muted);
+  margin-left: 0.4rem;
+}
+
 /* ---------- GREETING + PROFILE CHIP + STUB NAME ---------- */
 
 .mock-greeting {
