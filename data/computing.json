@@ -388,5 +388,89 @@
     ],
     "answer": 1,
     "explainer": "URL = Uniform Resource Locator. It's the web address you type, like https://example.com."
+  },
+  {
+    "id": "comp-smallbasic-001",
+    "subject": "computing",
+    "topic": "small-basic",
+    "prompt": "Microsoft Small Basic is an example of:",
+    "options": [
+      "A block-based language",
+      "A text-based programming language",
+      "A spreadsheet",
+      "A web browser"
+    ],
+    "answer": 1,
+    "explainer": "You type code as text in Small Basic — a step up from drag-and-drop blocks like Scratch."
+  },
+  {
+    "id": "comp-smallbasic-002",
+    "subject": "computing",
+    "topic": "small-basic",
+    "prompt": "In Small Basic, which line writes \"Hello\" to the screen?",
+    "options": [
+      "Print Hello",
+      "TextWindow.WriteLine(\"Hello\")",
+      "console.log(\"Hello\")",
+      "say Hello"
+    ],
+    "answer": 1,
+    "explainer": "TextWindow.WriteLine prints the text and moves to the next line. TextWindow.Write keeps the cursor on the same line."
+  },
+  {
+    "id": "comp-smallbasic-003",
+    "subject": "computing",
+    "topic": "small-basic",
+    "prompt": "In Small Basic, which line stores the number 7 in a variable called score?",
+    "options": [
+      "score == 7",
+      "let score be 7",
+      "score = 7",
+      "store(score, 7)"
+    ],
+    "answer": 2,
+    "explainer": "A single \"=\" assigns. Two equals \"==\" is for comparison in many languages — Small Basic uses just \"=\" for both, but reading order matters."
+  },
+  {
+    "id": "comp-smallbasic-004",
+    "subject": "computing",
+    "topic": "small-basic",
+    "prompt": "Which Small Basic statement repeats a block 5 times?",
+    "options": [
+      "Loop 5 times",
+      "For i = 1 To 5 ... EndFor",
+      "Repeat(5)",
+      "While 5"
+    ],
+    "answer": 1,
+    "explainer": "For/EndFor is Small Basic's count-controlled loop. The variable i counts up each repeat."
+  },
+  {
+    "id": "comp-smallbasic-005",
+    "subject": "computing",
+    "topic": "small-basic",
+    "prompt": "How does Small Basic mark a line as a comment (note for humans, ignored by the computer)?",
+    "options": [
+      "// like this",
+      "# like this",
+      "' like this",
+      "<!-- like this -->"
+    ],
+    "answer": 2,
+    "explainer": "A single quote \"'\" starts a comment in Small Basic. Comments help future you (and others) understand the code."
+  },
+  {
+    "id": "comp-smallbasic-006",
+    "subject": "computing",
+    "topic": "small-basic",
+    "prompt": "What's the main advantage of moving from block-based (Scratch) to text-based (Small Basic) coding?",
+    "options": [
+      "It looks prettier",
+      "It's closer to how professional languages (Python, JavaScript, C#) work",
+      "It runs faster on phones",
+      "It uses less battery"
+    ],
+    "answer": 1,
+    "explainer": "Text-based coding teaches you syntax and structure used by real-world languages — a foundation for Python, JavaScript and beyond."
   }
 ]
