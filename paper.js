@@ -9,7 +9,7 @@
 import "./mock.js"; // shared header behaviour (sound toggle)
 import { loadAllQuestions, listSubjects, subjectName } from "./questions.js";
 import { noteSessionResult, readStreak } from "./engagement.js";
-import { playLevelUp } from "./sounds.js";
+import { playLevelUp, playModeStartMock } from "./sounds.js";
 import { getVisual } from "./visuals.js";
 
 const ROUND_SIZE = 30;
@@ -96,6 +96,7 @@ function begin() {
     startedAt: Date.now()
   };
   endsAt = Date.now() + ROUND_MINUTES * 60 * 1000;
+  playModeStartMock();
   startTimer();
   paintQuestion();
 }

@@ -17,6 +17,7 @@ import {
 } from "./engagement.js";
 
 import { subjectName, listSubjects } from "./questions.js";
+import { playCoachEnter } from "./sounds.js";
 
 paint();
 
@@ -25,6 +26,10 @@ function paint() {
   paintToday();
   paintWeak();
   paintHistory();
+  // Audio is gesture-locked on mobile until first tap — playing here will
+  // be silent on a cold-load Coach view and fire on subsequent taps. That
+  // is the right behaviour: no surprise audio on a parent-only page.
+  playCoachEnter();
 }
 
 // --- LADDER BY SUBJECT ------------------------------------------------------

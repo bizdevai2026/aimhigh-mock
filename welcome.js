@@ -2,6 +2,7 @@
 // first visit, redirects to the landing page on subsequent visits.
 
 import { readProfile, writeProfile } from "./profile.js";
+import { playWelcomeStinger } from "./sounds.js";
 
 const existing = readProfile();
 if (existing && existing.name) {
@@ -17,6 +18,9 @@ if (form) {
     const name = (input.value || "").trim().slice(0, 30);
     if (!name) { input.focus(); return; }
     writeProfile({ name: name, createdAt: Date.now() });
-    location.href = "index.html";
+    // Signature stinger fires inside the submit gesture — guarantees iOS
+    // audio unlocks. Brief delay before navigation lets the riff breathe.
+    playWelcomeStinger();
+    setTimeout(function () { location.href = "index.html"; }, 650);
   });
 }

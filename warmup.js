@@ -8,7 +8,7 @@
 import "./mock.js"; // shared header behaviour (sound toggle, streak chip)
 import { loadAllQuestions, pickWarmupQuestions, subjectName } from "./questions.js";
 import { noteSessionResult, readStreak, readXpToday } from "./engagement.js";
-import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playTap } from "./sounds.js";
+import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playTap, playModeStartWarmup } from "./sounds.js";
 import { getVisual } from "./visuals.js";
 
 const ROUND_SIZE = 10;
@@ -52,6 +52,7 @@ function beginSession(pool) {
     streak: 0,
     startedAt: Date.now()
   };
+  playModeStartWarmup();
   paintQuestion();
 }
 

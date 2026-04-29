@@ -38,6 +38,48 @@ function ctx() {
   return _ctx;
 }
 
+// iOS Safari, Chrome mobile and most touch browsers create the AudioContext
+// in a "suspended" state until a user gesture occurs. Without this, the
+// first sound on the welcome screen is silent and feels broken. We listen
+// once for any user gesture (tap, touch, click, or key) and silently
+// warm the context — playing a near-zero-duration buffer is the iOS
+// idiom for "audio is now allowed". After the first gesture we remove
+// every listener and never run again.
+let _armed = false;
+function armAudioContext() {
+  if (_armed) return;
+  _armed = true;
+  const ac = ctx();
+  if (!ac) return;
+  if (ac.state === "suspended" && typeof ac.resume === "function") {
+    try { ac.resume(); } catch (e) {}
+  }
+  try {
+    const buf = ac.createBuffer(1, 1, 22050);
+    const src = ac.createBufferSource();
+    src.buffer = buf;
+    src.connect(ac.destination);
+    src.start(0);
+  } catch (e) {}
+}
+
+function installFirstGestureUnlock() {
+  if (typeof document === "undefined") return;
+  function fire() {
+    armAudioContext();
+    document.removeEventListener("pointerdown", fire, true);
+    document.removeEventListener("touchstart", fire, true);
+    document.removeEventListener("click", fire, true);
+    document.removeEventListener("keydown", fire, true);
+  }
+  document.addEventListener("pointerdown", fire, true);
+  document.addEventListener("touchstart", fire, true);
+  document.addEventListener("click", fire, true);
+  document.addEventListener("keydown", fire, true);
+}
+
+installFirstGestureUnlock();
+
 // Private — adds one shaped sine/triangle/sawtooth note to the mix.
 // Args: frequency (Hz), duration (ms), waveform, peak gain, start delay (ms),
 // optional master gain node (lets multiple notes share an envelope).
@@ -173,4 +215,68 @@ export function playTap() {
   if (!isOn()) return;
   note(880.00, 28, "sine", 0.07, 0);
   noise(20, 0.02, 0, 3200);
+}
+
+// ---------- Signature stingers ---------------------------------------------
+//
+// These are reserved for moments that should feel like *the app talking
+// back* — name accepted, mode entered, coach opened. Each one is unique
+// to its moment so the kid learns the audio language of the app.
+
+// Welcome stinger — plays the moment the kid commits their name on the
+// welcome screen. Ascending arpeggio + held high chord + sparkle: the
+// "AimHigh" signature.
+export function playWelcomeStinger() {
+  if (!isOn()) return;
+  // Rising arpeggio
+  note(523.25,  60, "sine",     0.14,   0);  // C5
+  note(659.25,  60, "sine",     0.14,  60);  // E5
+  note(783.99,  70, "sine",     0.16, 120);  // G5
+  note(1046.50, 90, "sine",     0.18, 200);  // C6
+  // Held high chord — root + fifth
+  note(1318.51, 360, "sine",    0.16, 300);  // E6
+  note(1567.98, 360, "sine",    0.10, 300);  // G6
+  // Sparkle layer
+  note(2093.00, 140, "sine",    0.07, 360);  // C7
+  note(2637.00, 140, "sine",    0.05, 440);  // E7
+  // Brief lift wash
+  noise(60, 0.04, 320, 1800);
+}
+
+// WARM-UP entrance — light, friendly two-note "ready" chirp.
+export function playModeStartWarmup() {
+  if (!isOn()) return;
+  noise(20, 0.03, 0, 3500);
+  note(783.99,  60, "sine", 0.14,  20);  // G5
+  note(1046.50, 90, "sine", 0.16,  80);  // C6
+}
+
+// SPRINT entrance — sharp single "go" beat with bright top.
+export function playModeStartSprint() {
+  if (!isOn()) return;
+  noise(15, 0.05, 0, 5000);
+  note(1174.66, 130, "sine",     0.18, 0);   // D6
+  note(1760.00, 80,  "triangle", 0.06, 30);  // A6 shimmer
+}
+
+// FULL MOCK entrance — three-note dramatic build for the 30-min commitment.
+export function playModeStartMock() {
+  if (!isOn()) return;
+  // Low foundation
+  note(196.00, 160, "triangle", 0.16,   0);  // G3
+  // Mid climb
+  note(261.63, 120, "triangle", 0.14, 130);  // C4
+  // Held peak with octave shimmer
+  note(783.99, 100, "sine",     0.14, 250);  // G5
+  note(1046.50, 360, "sine",    0.18, 350);  // C6
+  note(2093.00, 360, "sine",    0.08, 350);  // C7 shimmer
+  noise(120, 0.04, 350, 4200);
+}
+
+// COACH entrance — calm two-note bell, like opening a notebook.
+export function playCoachEnter() {
+  if (!isOn()) return;
+  note(880.00, 240, "sine", 0.13,   0);  // A5
+  note(1318.51, 240, "sine", 0.10,  30); // E6
+  note(1318.51, 140, "sine", 0.05, 200); // E6 light tail
 }

@@ -25,7 +25,7 @@ import {
   topicLadder,
   subjectLadder
 } from "./engagement.js";
-import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect } from "./sounds.js";
+import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playModeStartSprint, playModeStartWarmup } from "./sounds.js";
 import { getVisual } from "./visuals.js";
 
 const SPRINT_SIZE = 15;
@@ -158,6 +158,7 @@ function runSprint(subjectId) {
   const items = pickSubjectQuestions(pool, subjectId, SPRINT_SIZE);
   if (items.length === 0) { paintError("No questions yet for " + subjectName(subjectId) + "."); return; }
   document.body.style.setProperty("--tile-color", subjectTone(subjectId));
+  playModeStartSprint();
   beginSession({
     mode: "sprint",
     subjectId: subjectId,
@@ -172,6 +173,7 @@ function runTopicDrill(subjectId, topic) {
   const items = pickTopicQuestions(pool, subjectId, topic, DRILL_SIZE);
   if (items.length === 0) { paintError("No questions yet for " + prettyTopic(topic) + "."); return; }
   document.body.style.setProperty("--tile-color", subjectTone(subjectId));
+  playModeStartWarmup();
   beginSession({
     mode: "drill",
     subjectId: subjectId,
