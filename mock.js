@@ -18,6 +18,7 @@ import {
 } from "./engagement.js";
 
 import { readSoundOn, toggleSound } from "./sounds.js";
+import { profileName, requireProfileOrRedirect, clearProfile } from "./profile.js";
 
 function $(id) { return document.getElementById(id); }
 
@@ -158,12 +159,53 @@ function injectSoundToggle() {
   inner.appendChild(btn);
 }
 
+function paintProfileLine() {
+  const name = profileName();
+  const greetEl = document.getElementById("heroGreeting");
+  if (greetEl && name) {
+    greetEl.textContent = "Hi, " + name + ".";
+  }
+  const dashEl = document.getElementById("dashGreeting");
+  if (dashEl && name) {
+    dashEl.textContent = name + "'s training";
+  }
+}
+
+function injectProfileChip() {
+  const inner = document.querySelector(".mock-header-inner");
+  if (!inner) return;
+  if (inner.querySelector(".mock-profile-chip")) return;
+  const name = profileName();
+  if (!name) return;
+  const chip = document.createElement("button");
+  chip.type = "button";
+  chip.className = "mock-profile-chip";
+  chip.title = "Sign out (clears your saved progress on this device)";
+  chip.setAttribute("aria-label", "Profile menu");
+  chip.textContent = name.charAt(0).toUpperCase();
+  chip.addEventListener("click", function () {
+    const ok = confirm("Sign out " + name + "? This clears your saved progress on this device.");
+    if (ok) {
+      clearProfile();
+      location.replace("welcome.html");
+    }
+  });
+  // Insert at the start of the header so it sits next to the brand.
+  inner.appendChild(chip);
+}
+
 function boot() {
+  // Profile gate — anyone without a profile gets sent to welcome.html.
+  // Welcome page itself never loads mock.js so there's no loop.
+  if (!requireProfileOrRedirect()) return;
+
   // Hero card lives on the landing page only. Header streak chip on
   // multiple pages — paintHero is safe (id checks short-circuit).
   paintHero();
   wireExamDateSetter();
   injectSoundToggle();
+  injectProfileChip();
+  paintProfileLine();
 }
 
 if (document.readyState === "loading") {

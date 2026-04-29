@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Welcome &middot; AimHigh Mock Prep</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="mock.css" />
+</head>
+<body class="mock-page mock-welcome-page">
+  <main class="mock-welcome-stage">
+    <section class="mock-welcome-card">
+      <div class="mock-welcome-emblem" aria-hidden="true">AH</div>
+      <h1 class="mock-welcome-title">AIMHIGH</h1>
+      <p class="mock-welcome-sub">MOCK PREP</p>
+      <p class="mock-welcome-tagline">Train daily for your May setting tests. Streaks, XP, weekly tier &mdash; the lot.</p>
+
+      <form id="welcomeForm" class="mock-welcome-form">
+        <label for="welcomeName" class="mock-welcome-label">First, what shall we call you?</label>
+        <input
+          type="text"
+          id="welcomeName"
+          class="mock-welcome-input"
+          maxlength="30"
+          autocomplete="given-name"
+          placeholder="Type your first name"
+          required
+          autofocus />
+        <button type="submit" class="mock-button mock-welcome-submit">Start training</button>
+      </form>
+
+      <p class="mock-welcome-fineprint">Your name and progress live on this device only. Nothing is sent anywhere.</p>
+    </section>
+  </main>
+
+  <script type="module" src="welcome.js"></script>
+</body>
+</html>
