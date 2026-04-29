@@ -87,6 +87,12 @@ export function signedInRole() {
 
 export function isChildRole()  { return signedInRole() === "child"; }
 export function isParentRole() { return signedInRole() === "parent"; }
+export function isDemoRole()   { return signedInRole() === "demo"; }
+
+// Start a demo (preview) session — no PIN, no profile required, all
+// engagement writes silently no-op. Used to show the app to someone
+// without polluting the trainee's saved progress.
+export function startDemoSession() { writeSession("demo"); }
 
 export function signedInName() {
   const role = signedInRole();
@@ -95,6 +101,7 @@ export function signedInName() {
     return c ? c.name : null;
   }
   if (role === "parent") return "Parent";
+  if (role === "demo")   return "Demo";
   return null;
 }
 
@@ -188,21 +195,21 @@ export function profileName() {
 }
 
 // Replaces the old requireProfileOrRedirect — sends to welcome.html if
-// nobody is signed in OR if the device hasn't been set up yet.
+// nobody is signed in. Demo sessions count as signed-in (no profiles
+// needed). Setup is required only when the user picks a real role —
+// the welcome screen handles that gate itself.
 export function requireSignInOrRedirect() {
+  if (signedInRole()) return true; // any role (child / parent / demo) is fine
   if (!isFullySetUp()) {
     if (!/welcome\.html(\?|$)/.test(location.pathname)) {
       location.replace("welcome.html");
     }
     return false;
   }
-  if (!signedInRole()) {
-    if (!/welcome\.html(\?|$)/.test(location.pathname)) {
-      location.replace("welcome.html");
-    }
-    return false;
+  if (!/welcome\.html(\?|$)/.test(location.pathname)) {
+    location.replace("welcome.html");
   }
-  return true;
+  return false;
 }
 
 // Backward-compat shim — older code calls requireProfileOrRedirect.

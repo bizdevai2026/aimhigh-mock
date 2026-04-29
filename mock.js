@@ -19,7 +19,7 @@ import {
 } from "./engagement.js";
 
 import { readSoundOn, toggleSound } from "./sounds.js";
-import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole } from "./profile.js";
+import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js";
 import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js";
 
 function $(id) { return document.getElementById(id); }
@@ -252,7 +252,11 @@ function injectProfileChip() {
   const inner = document.querySelector(".mock-header-inner");
   if (!inner) return;
   if (inner.querySelector(".mock-profile-wrap")) return;
-  const name = profileName();
+  const role = signedInRole();
+  if (!role) return;
+
+  const demo = role === "demo";
+  const name = demo ? "Demo" : profileName();
   if (!name) return;
 
   // Wrapper anchors the absolute-positioned panel under the chip.
@@ -261,14 +265,14 @@ function injectProfileChip() {
 
   const chip = document.createElement("button");
   chip.type = "button";
-  chip.className = "mock-profile-chip";
-  chip.setAttribute("aria-label", "Profile menu");
+  chip.className = "mock-profile-chip" + (demo ? " role-demo" : "");
+  chip.setAttribute("aria-label", demo ? "Demo session menu" : "Profile menu");
   chip.setAttribute("aria-haspopup", "true");
   chip.setAttribute("aria-expanded", "false");
-  chip.title = "Profile menu";
-  chip.textContent = name.charAt(0).toUpperCase();
+  chip.title = demo ? "Demo session — tap to exit" : "Profile menu";
+  chip.textContent = demo ? "D" : name.charAt(0).toUpperCase();
 
-  // Two-tap sign-out: panel with explicit Sign out / Cancel buttons,
+  // Two-tap sign-out / exit-demo: panel with explicit confirm + cancel,
   // dismissed by an outside click. iOS' native confirm() is risky on a
   // single tap (and confusing for kids), so we own the affordance.
   const panel = document.createElement("div");
@@ -278,15 +282,15 @@ function injectProfileChip() {
 
   const signedAs = document.createElement("p");
   signedAs.className = "mock-profile-panel-name";
-  signedAs.textContent = "Signed in as ";
+  signedAs.textContent = demo ? "" : "Signed in as ";
   const nameStrong = document.createElement("strong");
-  nameStrong.textContent = name;
+  nameStrong.textContent = demo ? "Demo session" : name;
   signedAs.appendChild(nameStrong);
 
   const signOutBtn = document.createElement("button");
   signOutBtn.type = "button";
   signOutBtn.className = "mock-profile-signout";
-  signOutBtn.textContent = "Sign out";
+  signOutBtn.textContent = demo ? "Exit demo" : "Sign out";
 
   const cancelBtn = document.createElement("button");
   cancelBtn.type = "button";
@@ -295,7 +299,9 @@ function injectProfileChip() {
 
   const warn = document.createElement("p");
   warn.className = "mock-profile-warn";
-  warn.textContent = "Signs you out. Your saved progress stays — sign back in with your PIN.";
+  warn.textContent = demo
+    ? "Exits the demo. Nothing was saved during this session."
+    : "Signs you out. Your saved progress stays — sign back in with your PIN.";
 
   panel.appendChild(signedAs);
   panel.appendChild(signOutBtn);
@@ -362,6 +368,22 @@ function applyParentHomeView() {
     const banner = document.createElement("div");
     banner.className = "mock-parent-banner";
     banner.textContent = "Parent view — read only. Your visit doesn't affect their streak or XP.";
+    main.insertBefore(banner, main.firstChild);
+  }
+}
+
+// Demo session: visible on every page so the user always knows
+// nothing they do here will be persisted. All engagement writers in
+// engagement.js no-op when isDemoMode is true; this banner is the
+// human-facing companion.
+function applyDemoBanner() {
+  if (!isDemoRole()) return;
+  document.body.classList.add("role-demo");
+  const main = document.querySelector(".mock-main");
+  if (main && !document.querySelector(".mock-demo-banner")) {
+    const banner = document.createElement("div");
+    banner.className = "mock-demo-banner";
+    banner.textContent = "Demo session — nothing is saved. Tap “D” top-right to exit.";
     main.insertBefore(banner, main.firstChild);
   }
 }
@@ -498,6 +520,7 @@ function boot() {
   paintProfileLine();
   paintTodayStrip();
   applyParentHomeView();
+  applyDemoBanner();
   paintWeakestShortcut();
   maybeShowOnboardingTour();
 }

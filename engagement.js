@@ -29,6 +29,26 @@ const DEFAULTS = {
 
 const TIER_ORDER = ["BRONZE", "SILVER", "GOLD", "DIAMOND"];
 
+// --- Demo mode check --------------------------------------------------------
+// All engagement writers consult this. When a demo session is active
+// (welcome screen "Demo (preview only)" button), every persistence call
+// silently no-ops while readers continue to return real state. Lets a
+// parent show the app to a friend / teacher / school without polluting
+// the trainee's streak, XP, results log or seen/miss data.
+//
+// Inlined here rather than imported from profile.js to avoid a circular
+// dependency (profile.js doesn't currently import engagement, and
+// keeping it that way means the gate is robust to future refactors).
+
+function isDemoMode() {
+  try {
+    const raw = localStorage.getItem(PREFIX + "session");
+    if (!raw) return false;
+    const s = JSON.parse(raw);
+    return !!(s && s.role === "demo");
+  } catch (e) { return false; }
+}
+
 // --- Storage primitives -----------------------------------------------------
 
 function readJson(key, fallback) {
@@ -109,6 +129,7 @@ function writeStreak(s) { writeJson(KEYS.streak, s); }
 function bumpStreakIfFirstHitToday() {
   const today = todayIso();
   const s = readStreak();
+  if (isDemoMode()) return s; // synthetic — don't bump
 
   if (s.lastDateIso === today) return s; // already counted today
 
@@ -165,6 +186,10 @@ function addXpToday(delta) {
     cur.earned = 0;
   }
   const before = cur.earned;
+  if (isDemoMode()) {
+    // Synthetic after-state for the result screen; never persisted.
+    return { before: before, after: before + delta, goal: cur.goal };
+  }
   cur.earned = (cur.earned || 0) + delta;
   writeJson(KEYS.xpToday, cur);
   return { before: before, after: cur.earned, goal: cur.goal };
@@ -194,6 +219,7 @@ export function readWeek() {
 
 function bumpWeekIfFirstHitToday() {
   const w = readWeek();
+  if (isDemoMode()) return w;
   const today = todayIso();
   const lastHit = readString(PREFIX + "week-last-hit-day");
   if (lastHit !== today) {
@@ -207,7 +233,10 @@ function bumpWeekIfFirstHitToday() {
 // --- Exam date --------------------------------------------------------------
 
 export function readExamDate() { return readString(KEYS.examDate); }
-export function writeExamDate(iso) { writeString(KEYS.examDate, iso); }
+export function writeExamDate(iso) {
+  if (isDemoMode()) return;
+  writeString(KEYS.examDate, iso);
+}
 
 // --- Session results log ----------------------------------------------------
 // Each result: { ts, dateIso, mode, subject, items: [{ id, subject, topic, correct }], score, total, durationSec }
@@ -217,6 +246,7 @@ export function readResults() {
 }
 
 export function appendResult(result) {
+  if (isDemoMode()) return;
   const all = readResults();
   all.push(result);
   // Prune to last 60 sessions to keep storage bounded
@@ -258,6 +288,7 @@ export function readSeen() {
 }
 
 export function markSeen(questionId, correct) {
+  if (isDemoMode()) return;
   const s = readSeen();
   const prev = s[questionId] || {};
   let nextStage;
@@ -301,6 +332,7 @@ export function readMisses() {
 }
 
 export function noteMiss(subject, topic, questionId) {
+  if (isDemoMode()) return;
   const all = readMisses();
   all.push({ subject: subject, topic: topic, questionId: questionId, ts: Date.now() });
   // Prune to last 200

@@ -19,7 +19,8 @@ import {
   resetChildPinViaParent,
   signedInRole,
   clearLegacyProfile,
-  migratedChildName
+  migratedChildName,
+  startDemoSession
 } from "./profile.js?v=20260501";
 
 import { playWelcomeStinger } from "./sounds.js?v=20260501";
@@ -175,9 +176,18 @@ function paintRolePick() {
         "<span class=\"mock-role-label\">Coach view</span>" +
         "<span class=\"mock-role-name\">Parent</span>" +
       "</button>" +
-    "</div>";
+    "</div>" +
+    "<button type=\"button\" id=\"demoBtn\" class=\"mock-welcome-link mock-welcome-link-muted\">" +
+      "Demo &mdash; preview without saving" +
+    "</button>";
   byId("roleChild").addEventListener("click", function () { go("login-child"); });
   byId("roleParent").addEventListener("click", function () { go("login-parent"); });
+  byId("demoBtn").addEventListener("click", enterDemo);
+}
+
+function enterDemo() {
+  startDemoSession();
+  location.replace("index.html");
 }
 
 // --- Returning: PIN login --------------------------------------------------

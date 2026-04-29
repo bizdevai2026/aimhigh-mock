@@ -1052,6 +1052,25 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   letter-spacing: 0.02em;
 }
 
+/* Demo session banner — shown on every page when role === "demo"  */
+.mock-demo-banner {
+  margin: 0 0 0.9rem;
+  padding: 0.65rem 0.9rem;
+  background: rgba(255, 0, 110, 0.10);
+  border: 1px solid rgba(255, 0, 110, 0.40);
+  border-radius: 0.5rem;
+  color: var(--mock-magenta);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Demo profile chip — magenta gradient so it's instantly distinct */
+.mock-profile-chip.role-demo {
+  background: linear-gradient(135deg, var(--mock-magenta), var(--mock-fire));
+  color: var(--mock-bg);
+}
+
 /* Coach role badge — sits above the dashGreeting line */
 .mock-coach-role-badge {
   display: inline-block;
