@@ -1067,6 +1067,81 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   border: 1px solid rgba(132, 204, 22, 0.4);
 }
 
+/* Onboarding tour — child only, first sign-in */
+.mock-tour-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.92);
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+  animation: mockTourFade 220ms ease;
+}
+@keyframes mockTourFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.mock-tour-card {
+  max-width: 360px;
+  width: 100%;
+  background: linear-gradient(160deg, var(--mock-card) 0%, var(--mock-card-hi) 100%);
+  border: 1px solid var(--mock-border-hi);
+  border-radius: 1rem;
+  padding: 1.6rem 1.4rem 1.2rem;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+  animation: mockTourPop 260ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes mockTourPop {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+.mock-tour-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+.mock-tour-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--mock-border-hi);
+  transition: background 200ms ease, box-shadow 200ms ease;
+}
+.mock-tour-dot.active {
+  background: var(--mock-lime);
+  box-shadow: 0 0 10px rgba(132, 204, 22, 0.55);
+}
+.mock-tour-title {
+  margin: 0 0 0.7rem;
+  font-family: var(--mock-font-display);
+  font-size: 1.7rem;
+  letter-spacing: 0.04em;
+  color: var(--mock-text-strong);
+}
+.mock-tour-body {
+  margin: 0 0 1.3rem;
+  color: var(--mock-text-dim);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.mock-tour-next {
+  width: 100%;
+  margin: 0 0 0.5rem;
+}
+.mock-tour-skip {
+  background: transparent;
+  border: 0;
+  color: var(--mock-muted);
+  font-size: 0.78rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.mock-tour-skip:hover { color: var(--mock-text-dim); }
+
 /* ---------- GREETING + PROFILE CHIP + STUB NAME ---------- */
 
 .mock-greeting {

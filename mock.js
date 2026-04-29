@@ -365,6 +365,71 @@ function applyParentHomeView() {
   }
 }
 
+// Personalised onboarding tour — child only, runs once on the first
+// visit to the home page after sign-in. Uses the child's name in the
+// first card so it feels like the app talking back. Skipping or
+// finishing both mark it seen so it never returns.
+const TOUR_KEY = "aimhigh-mock-tour-seen";
+
+function maybeShowOnboardingTour() {
+  if (!isChildRole()) return;
+  if (!document.querySelector(".mock-hero")) return; // home page only
+  try { if (localStorage.getItem(TOUR_KEY) === "true") return; } catch (e) { return; }
+
+  const name = profileName() || "Trainee";
+  const cards = [
+    {
+      title: "Welcome, " + name + "!",
+      body: "AimHigh is your training app for May. Three modes, one Coach. Show up daily and your streak grows.",
+      next: "Tell me more"
+    },
+    {
+      title: "Streaks &amp; freezes",
+      body: "Hit your daily 30 XP goal to keep your streak alive. Miss a day and a freeze covers you — you start with two. Each 5-day streak earns one back, max two saved.",
+      next: "Got it"
+    },
+    {
+      title: "Four modes",
+      body: "WARM-UP daily. SPRINT one subject. FULL MOCK the whole paper. COACH ranks your weak topics so you know what to drill next.",
+      next: "Let's go"
+    }
+  ];
+
+  let step = 0;
+
+  const overlay = document.createElement("div");
+  overlay.className = "mock-tour-overlay";
+
+  function paintCard() {
+    const c = cards[step];
+    const dotsHtml = cards.map(function (_, i) {
+      return "<span class=\"mock-tour-dot " + (i === step ? "active" : "") + "\"></span>";
+    }).join("");
+    overlay.innerHTML =
+      "<div class=\"mock-tour-card\" role=\"dialog\" aria-modal=\"true\">" +
+        "<div class=\"mock-tour-dots\" aria-hidden=\"true\">" + dotsHtml + "</div>" +
+        "<h2 class=\"mock-tour-title\">" + escapeHtml(c.title) + "</h2>" +
+        "<p class=\"mock-tour-body\">" + escapeHtml(c.body) + "</p>" +
+        "<button type=\"button\" class=\"mock-button mock-tour-next\">" + escapeHtml(c.next) + "</button>" +
+        "<button type=\"button\" class=\"mock-tour-skip\">Skip</button>" +
+      "</div>";
+    overlay.querySelector(".mock-tour-next").addEventListener("click", advance);
+    overlay.querySelector(".mock-tour-skip").addEventListener("click", finish);
+  }
+  function advance() {
+    step += 1;
+    if (step >= cards.length) { finish(); return; }
+    paintCard();
+  }
+  function finish() {
+    try { localStorage.setItem(TOUR_KEY, "true"); } catch (e) {}
+    overlay.remove();
+  }
+
+  paintCard();
+  document.body.appendChild(overlay);
+}
+
 function boot() {
   // Auth gate — anyone without a session gets sent to welcome.html.
   // Welcome page itself never loads mock.js so there's no loop.
@@ -380,6 +445,7 @@ function boot() {
   paintProfileLine();
   paintTodayStrip();
   applyParentHomeView();
+  maybeShowOnboardingTour();
 }
 
 if (document.readyState === "loading") {
