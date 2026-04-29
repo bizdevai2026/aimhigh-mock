@@ -8,7 +8,7 @@
 import "./mock.js"; // shared header behaviour (sound toggle, streak chip)
 import { loadAllQuestions, pickWarmupQuestions, subjectName } from "./questions.js";
 import { noteSessionResult, readStreak, readXpToday } from "./engagement.js";
-import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playTap, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches } from "./sounds.js";
+import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playTap, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticCorrect, hapticWrong, hapticStreak, hapticPerfect } from "./sounds.js";
 import { getVisual } from "./visuals.js";
 import { isParentRole } from "./profile.js";
 
@@ -249,14 +249,16 @@ function onSpellAnswered(q, correct) {
   if (correct) {
     session.streak = (session.streak || 0) + 1;
     playCorrect();
-    if (session.streak === 3) playStreak3();
-    else if (session.streak === 5) playStreak5();
-    else if (session.streak >= 7 && session.streak % 2 === 1) playStreak3();
+    hapticCorrect();
+    if (session.streak === 3) { playStreak3(); hapticStreak(); }
+    else if (session.streak === 5) { playStreak5(); hapticStreak(); }
+    else if (session.streak >= 7 && session.streak % 2 === 1) { playStreak3(); hapticStreak(); }
     showSpellFeedback(q, true);
     setTimeout(advance, CORRECT_AUTOADVANCE_MS);
   } else {
     session.streak = 0;
     playWrong();
+    hapticWrong();
     showSpellFeedback(q, false);
   }
 }
@@ -395,14 +397,16 @@ function onSpeakAnswered(q, correct, heard) {
   if (correct) {
     session.streak = (session.streak || 0) + 1;
     playCorrect();
-    if (session.streak === 3) playStreak3();
-    else if (session.streak === 5) playStreak5();
-    else if (session.streak >= 7 && session.streak % 2 === 1) playStreak3();
+    hapticCorrect();
+    if (session.streak === 3) { playStreak3(); hapticStreak(); }
+    else if (session.streak === 5) { playStreak5(); hapticStreak(); }
+    else if (session.streak >= 7 && session.streak % 2 === 1) { playStreak3(); hapticStreak(); }
     showSpeakFeedback(q, true, heard);
     setTimeout(advance, CORRECT_AUTOADVANCE_MS);
   } else {
     session.streak = 0;
     playWrong();
+    hapticWrong();
     showSpeakFeedback(q, false, heard);
   }
 }
@@ -465,13 +469,15 @@ function onAnswer(chosenIdx, btnEl) {
   if (correct) {
     session.streak = (session.streak || 0) + 1;
     playCorrect();
-    if (session.streak === 3) playStreak3();
-    else if (session.streak === 5) playStreak5();
-    else if (session.streak >= 7 && session.streak % 2 === 1) playStreak3();
+    hapticCorrect();
+    if (session.streak === 3) { playStreak3(); hapticStreak(); }
+    else if (session.streak === 5) { playStreak5(); hapticStreak(); }
+    else if (session.streak >= 7 && session.streak % 2 === 1) { playStreak3(); hapticStreak(); }
     setTimeout(advance, CORRECT_AUTOADVANCE_MS);
   } else {
     session.streak = 0;
     playWrong();
+    hapticWrong();
     showWrongFeedback(q);
   }
 }
@@ -531,8 +537,8 @@ function paintResult(score, total, after) {
   const goalHitNow = after.xp.before < after.xp.goal && after.xp.after >= after.xp.goal;
   const streak = readStreak();
   const perfect = score === total && total > 0;
-  if (perfect) playPerfect();
-  else if (goalHitNow) playLevelUp();
+  if (perfect) { playPerfect(); hapticPerfect(); }
+  else if (goalHitNow) { playLevelUp(); hapticStreak(); }
 
   let streakLine;
   if (goalHitNow) {

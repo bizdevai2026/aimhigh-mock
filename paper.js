@@ -9,7 +9,7 @@
 import "./mock.js"; // shared header behaviour (sound toggle)
 import { loadAllQuestions, listSubjects, subjectName } from "./questions.js";
 import { noteSessionResult, readStreak } from "./engagement.js";
-import { playLevelUp, playModeStartMock, makeListenButton } from "./sounds.js";
+import { playLevelUp, playModeStartMock, makeListenButton, hapticStreak } from "./sounds.js";
 import { getVisual } from "./visuals.js";
 import { isParentRole } from "./profile.js";
 
@@ -381,7 +381,7 @@ function paintResult(score, total, after, timedOut) {
   const xpGained = after.xpGained;
   const goalHitNow = after.xp.before < after.xp.goal && after.xp.after >= after.xp.goal;
   const streak = readStreak();
-  if (goalHitNow) playLevelUp();
+  if (goalHitNow) { playLevelUp(); hapticStreak(); }
   let streakLine;
   if (goalHitNow) {
     streakLine = "<span>&#128293; <strong>" + streak.current + "-day streak</strong> &mdash; goal hit</span>";

@@ -669,7 +669,7 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   border-color: var(--mock-lime);
   background: var(--mock-lime-soft);
   color: var(--mock-text-strong);
-  animation: pulseCorrect 350ms ease;
+  animation: pulseCorrect 600ms ease-out;
 }
 .mock-session-option.is-correct .mock-session-option-letter {
   background: var(--mock-lime);
@@ -689,9 +689,10 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 .mock-session-option:disabled { cursor: default; }
 
 @keyframes pulseCorrect {
-  0%   { transform: scale(1); }
-  40%  { transform: scale(1.025); }
-  100% { transform: scale(1); }
+  0%   { transform: scale(1);     box-shadow: 0 0 0 0   rgba(255, 61, 0, 0.55); }
+  25%  { transform: scale(1.06);  box-shadow: 0 0 0 14px rgba(255, 61, 0, 0); }
+  55%  { transform: scale(1.015); }
+  100% { transform: scale(1);     box-shadow: 0 0 0 0   rgba(255, 61, 0, 0); }
 }
 @keyframes shakeWrong {
   0%, 100% { transform: translateX(0); }

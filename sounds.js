@@ -133,21 +133,47 @@ function noise(durationMs, gainPeak, startDelayMs, filterFreq) {
 // ---------- Public sounds ----------------------------------------------------
 
 // Correct answer — 4 patterns rotated randomly so it never feels stale.
-// Each is a quick 2-3 note motif under 250ms. Mid-volume, sine waves.
+// Each motif is a quick 2-3 note rise plus an octave shimmer; a high
+// sparkle tail fires after every correct so the reward feels lifted
+// rather than polite. Targeting Duolingo-grade vibrancy.
 const CORRECT_PATTERNS = [
-  // Major third up (C5, E5)
-  function () { note(523.25, 80, "sine", 0.16, 0); note(659.25, 110, "sine", 0.16, 80); },
-  // Perfect fourth up (G4, C5)
-  function () { note(392.00, 80, "sine", 0.16, 0); note(523.25, 110, "sine", 0.16, 80); },
-  // Major triad (C5, E5, G5)
-  function () { note(523.25, 70, "sine", 0.14, 0); note(659.25, 70, "sine", 0.14, 70); note(783.99, 110, "sine", 0.16, 140); },
-  // Soft bell (D5 + A5 layered)
-  function () { note(587.33, 140, "sine", 0.14, 0); note(880.00, 140, "sine", 0.10, 20); }
+  // Major third up + octave shimmer
+  function () {
+    note(523.25, 80,  "sine", 0.18,  0);   // C5
+    note(659.25, 110, "sine", 0.18, 80);   // E5
+    note(1318.51, 100, "sine", 0.10, 100); // E6 shimmer
+  },
+  // Perfect fourth up + octave shimmer
+  function () {
+    note(392.00, 80,  "sine", 0.18,  0);   // G4
+    note(523.25, 130, "sine", 0.18, 80);   // C5
+    note(1046.50, 100, "sine", 0.10, 100); // C6 shimmer
+  },
+  // Major triad held, with a high octave on the final note
+  function () {
+    note(523.25, 70,  "sine", 0.16,   0);  // C5
+    note(659.25, 70,  "sine", 0.16,  70);  // E5
+    note(783.99, 220, "sine", 0.20, 140);  // G5 (held)
+    note(1567.98, 200, "sine", 0.10, 160); // G6 shimmer
+  },
+  // Soft bell stack — D5 + A5 + D6 layered
+  function () {
+    note(587.33, 180, "sine", 0.16,  0);   // D5
+    note(880.00, 180, "sine", 0.12, 20);   // A5
+    note(1174.66, 150, "sine", 0.08, 60);  // D6
+  }
 ];
+function playCorrectTail() {
+  // Bright sparkle tail — fires after every motif. Gives the "win lift".
+  note(2093.00, 110, "sine", 0.07, 100);  // C7
+  note(2637.00, 110, "sine", 0.05, 150);  // E7
+  noise(40, 0.03, 80, 5200);              // shimmer wash
+}
 export function playCorrect() {
   if (!isOn()) return;
   const pick = CORRECT_PATTERNS[Math.floor(Math.random() * CORRECT_PATTERNS.length)];
   pick();
+  playCorrectTail();
 }
 
 // Wrong — descending dull tone + a tiny noise puff for "thud" feel.
@@ -173,12 +199,15 @@ export function playLevelUp() {
   note(2637.00, 120, "sine", 0.05, 420);
 }
 
-// 3-in-a-row — short rising arpeggio, light.
+// 3-in-a-row — short rising arpeggio with held peak + sparkle tail.
 export function playStreak3() {
   if (!isOn()) return;
-  note(523.25, 60, "sine", 0.14, 0);
-  note(659.25, 60, "sine", 0.14, 60);
-  note(783.99, 90, "sine", 0.16, 120);
+  note(523.25, 60,  "sine", 0.16,   0);  // C5
+  note(659.25, 60,  "sine", 0.16,  60);  // E5
+  note(783.99, 100, "sine", 0.18, 120);  // G5
+  note(1046.50, 200, "sine", 0.20, 220); // C6 (held peak)
+  note(2093.00, 110, "sine", 0.08, 290); // C7 sparkle
+  noise(60, 0.04, 220, 4500);            // soft shimmer wash
 }
 
 // 5-in-a-row — wider arpeggio with held final note.
@@ -443,4 +472,24 @@ export function playCoachEnter() {
   note(880.00, 240, "sine", 0.13,   0);  // A5
   note(1318.51, 240, "sine", 0.10,  30); // E6
   note(1318.51, 140, "sine", 0.05, 200); // E6 light tail
+}
+
+// ---------- Haptic feedback ------------------------------------------------
+//
+// Brief vibration patterns to make answers feel tactile on mobile. The
+// Vibration API is supported on Android Chrome/Edge/Firefox; iOS Safari
+// blocks it for security reasons (the call is harmless there — silent).
+// Independent of the in-app sound toggle: a parent who muted sound at
+// 8 a.m. still wants the kid to feel the streak buzz.
+export function hapticCorrect() {
+  try { if (typeof navigator !== "undefined" && navigator.vibrate) navigator.vibrate(20); } catch (e) {}
+}
+export function hapticWrong() {
+  try { if (typeof navigator !== "undefined" && navigator.vibrate) navigator.vibrate(80); } catch (e) {}
+}
+export function hapticStreak() {
+  try { if (typeof navigator !== "undefined" && navigator.vibrate) navigator.vibrate([30, 60, 30, 60, 60]); } catch (e) {}
+}
+export function hapticPerfect() {
+  try { if (typeof navigator !== "undefined" && navigator.vibrate) navigator.vibrate([60, 80, 60, 80, 120, 80, 220]); } catch (e) {}
 }
