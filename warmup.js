@@ -8,7 +8,7 @@
 import "./mock.js"; // shared header behaviour (sound toggle, streak chip)
 import { loadAllQuestions, pickWarmupQuestions, subjectName } from "./questions.js";
 import { noteSessionResult, readStreak, readXpToday } from "./engagement.js";
-import { playCorrect, playWrong, playLevelUp } from "./sounds.js";
+import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playTap } from "./sounds.js";
 
 const ROUND_SIZE = 10;
 const CORRECT_AUTOADVANCE_MS = 850;
@@ -48,6 +48,7 @@ function beginSession(pool) {
     items: items,
     index: 0,
     results: [], // { id, subject, topic, correct }
+    streak: 0,
     startedAt: Date.now()
   };
   paintQuestion();
@@ -137,9 +138,14 @@ function onAnswer(chosenIdx, btnEl) {
   });
 
   if (correct) {
+    session.streak = (session.streak || 0) + 1;
     playCorrect();
+    if (session.streak === 3) playStreak3();
+    else if (session.streak === 5) playStreak5();
+    else if (session.streak >= 7 && session.streak % 2 === 1) playStreak3();
     setTimeout(advance, CORRECT_AUTOADVANCE_MS);
   } else {
+    session.streak = 0;
     playWrong();
     showWrongFeedback(q);
   }
@@ -198,7 +204,9 @@ function paintResult(score, total, after) {
   const xpGained = after.xpGained;
   const goalHitNow = after.xp.before < after.xp.goal && after.xp.after >= after.xp.goal;
   const streak = readStreak();
-  if (goalHitNow) playLevelUp();
+  const perfect = score === total && total > 0;
+  if (perfect) playPerfect();
+  else if (goalHitNow) playLevelUp();
 
   let streakLine;
   if (goalHitNow) {

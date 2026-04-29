@@ -25,7 +25,7 @@ import {
   topicLadder,
   subjectLadder
 } from "./engagement.js";
-import { playCorrect, playWrong, playLevelUp } from "./sounds.js";
+import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect } from "./sounds.js";
 
 const SPRINT_SIZE = 15;
 const DRILL_SIZE = 5;
@@ -189,6 +189,7 @@ function beginSession(opts) {
     items: opts.items,
     index: 0,
     results: [],
+    streak: 0,
     startedAt: Date.now(),
     titleEyebrow: opts.titleEyebrow,
     backHref: opts.backHref
@@ -258,8 +259,18 @@ function onAnswer(chosenIdx, btnEl) {
     if (correctBtn) correctBtn.classList.add("is-correct");
   }
   session.results.push({ id: q.id, subject: q.subject, topic: q.topic, correct: correct });
-  if (correct) { playCorrect(); setTimeout(advance, CORRECT_AUTOADVANCE_MS); }
-  else { playWrong(); showWrongFeedback(q); }
+  if (correct) {
+    session.streak = (session.streak || 0) + 1;
+    playCorrect();
+    if (session.streak === 3) playStreak3();
+    else if (session.streak === 5) playStreak5();
+    else if (session.streak >= 7 && session.streak % 2 === 1) playStreak3();
+    setTimeout(advance, CORRECT_AUTOADVANCE_MS);
+  } else {
+    session.streak = 0;
+    playWrong();
+    showWrongFeedback(q);
+  }
 }
 
 function showWrongFeedback(q) {
@@ -308,7 +319,9 @@ function finalise() {
 function paintResult(score, total, after) {
   const xpGained = after.xpGained;
   const goalHitNow = after.xp.before < after.xp.goal && after.xp.after >= after.xp.goal;
-  if (goalHitNow) playLevelUp();
+  const perfect = score === total && total > 0;
+  if (perfect) playPerfect();
+  else if (goalHitNow) playLevelUp();
   const streak = readStreak();
   let streakLine;
   if (goalHitNow) {
