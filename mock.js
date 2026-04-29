@@ -102,12 +102,16 @@ function paintCountdown(examDate) {
 
   if (examDate) {
     const days = daysBetween(todayIso(), examDate);
-    if (days != null && days >= 0) {
-      valueEl.textContent = "T-" + days;
-    } else if (days != null && days < 0) {
+    if (days == null) {
+      valueEl.textContent = "—";
+    } else if (days < 0) {
       valueEl.textContent = "Done";
+    } else if (days === 0) {
+      valueEl.textContent = "Today";
+    } else if (days === 1) {
+      valueEl.textContent = "Tomorrow";
     } else {
-      valueEl.textContent = "--";
+      valueEl.textContent = days + " days to go";
     }
     valueEl.style.display = "";
     setBtn.style.display = "none";
