@@ -52,7 +52,7 @@ function paintIntro() {
   root.innerHTML =
     "<section class=\"mock-stub-hero\">" +
       "<span class=\"mock-stub-tag\">Final week</span>" +
-      "<h1 class=\"mock-stub-title\">FULL DISTANCE</h1>" +
+      "<h1 class=\"mock-stub-title\">FULL MOCK</h1>" +
       "<p class=\"mock-stub-quote\">\"Race-day simulation.\"</p>" +
     "</section>" +
     "<section class=\"mock-stub-card\">" +
