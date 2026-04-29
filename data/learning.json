@@ -1,0 +1,382 @@
+[
+  {
+    "subject": "science",
+    "topic": "cells",
+    "title": "Cells — the building blocks",
+    "subtitle": "What every living thing is made of",
+    "readTimeMin": 4,
+    "visual": "cell-comparison",
+    "sections": [
+      {
+        "heading": "What is a cell?",
+        "body": "Every living thing is made of cells. You are made of trillions. A cell is the smallest unit that can do all the jobs of being alive — taking in food, getting rid of waste, growing, and copying itself.\n\nThere are two big families: animal cells and plant cells. They share a lot but plant cells have extra parts because plants make their own food."
+      },
+      {
+        "heading": "The main parts (organelles)",
+        "list": [
+          "Nucleus — the control centre. Holds the DNA instructions.",
+          "Cytoplasm — the jelly inside, where chemical reactions happen.",
+          "Cell membrane — the skin that decides what gets in and out.",
+          "Mitochondria — release energy from food (in animal AND plant cells).",
+          "Cell wall — only in plant cells. Stiff outer layer for shape and support.",
+          "Chloroplasts — only in plant cells. Green dots that catch sunlight to make food (photosynthesis).",
+          "Vacuole — only in plant cells (large one). A bag of water that keeps the plant rigid."
+        ]
+      },
+      {
+        "heading": "How small are they?",
+        "body": "Most cells are too small to see without a microscope. A typical animal cell is about 0.02 mm wide — you'd fit fifty of them across the dot above this 'i'."
+      }
+    ],
+    "tips": [
+      "Easy memory: animal cells = NCM (Nucleus, Cytoplasm, Membrane). Plant cells add WCV (Wall, Chloroplasts, Vacuole).",
+      "Plants are green because chloroplasts contain chlorophyll, which reflects green light.",
+      "Mitochondria are sometimes called the cell's 'power plants' — they release energy from glucose."
+    ]
+  },
+  {
+    "subject": "science",
+    "topic": "particles-states",
+    "title": "Particles & states of matter",
+    "subtitle": "Why solids, liquids and gases behave differently",
+    "readTimeMin": 4,
+    "visual": "particle-states",
+    "sections": [
+      {
+        "heading": "Everything is made of particles",
+        "body": "Every substance — your desk, your drink, the air — is made of tiny particles you can't see. The way those particles are arranged decides whether the substance is a solid, a liquid or a gas."
+      },
+      {
+        "heading": "The three states",
+        "list": [
+          "Solid — particles packed tight in a regular pattern. They vibrate but can't move past each other. Fixed shape, fixed volume.",
+          "Liquid — particles still touching but can slide past each other. Takes the shape of its container, fixed volume.",
+          "Gas — particles spread far apart, moving fast in all directions. Fills any container, expands to fit."
+        ]
+      },
+      {
+        "heading": "Heating and cooling",
+        "body": "Add heat → particles get more energy → they move more. Solid melts to liquid. Liquid evaporates (or boils) to gas. Cooling reverses each step: gas condenses to liquid, liquid freezes to solid.\n\nThe particles themselves don't change. Only their arrangement and how much they move."
+      }
+    ],
+    "tips": [
+      "Water is an unusual exception: ice (solid) is LESS dense than water (liquid). That's why ice floats.",
+      "Gases are mostly empty space — that's why they squish so easily under pressure.",
+      "When you smell something, gas particles from that thing have travelled through the air to your nose."
+    ]
+  },
+  {
+    "subject": "science",
+    "topic": "universe",
+    "title": "The Universe — Sun, Earth, Moon",
+    "subtitle": "How our corner of space works",
+    "readTimeMin": 4,
+    "visual": "solar-system",
+    "sections": [
+      {
+        "heading": "The Solar System",
+        "body": "Our Sun is a star. Around it orbit eight planets, lots of moons, asteroids and comets. The order of the planets, closest to the Sun first: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune."
+      },
+      {
+        "heading": "Why we have day and night",
+        "body": "Earth spins on its own axis once every 24 hours. The side facing the Sun has day. The side facing away has night. The Sun isn't moving across the sky — WE are moving."
+      },
+      {
+        "heading": "Why we have seasons",
+        "body": "Earth's axis is tilted at about 23.5°. As Earth orbits the Sun once a year, different hemispheres point towards the Sun at different times. When it's tilted towards us → longer days, more direct sunlight → summer. Tilted away → winter."
+      },
+      {
+        "heading": "Phases of the Moon",
+        "body": "The Sun always lights up half the Moon. As the Moon orbits Earth (about every 28 days), we see different proportions of the lit half. New Moon (lit half facing away) → crescent → half → full Moon (lit half facing us) → and back again."
+      }
+    ],
+    "tips": [
+      "Mnemonic for planet order: \"My Very Educated Mother Just Served Us Noodles\" — Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune.",
+      "Pluto isn't on the list — it was reclassified as a 'dwarf planet' in 2006.",
+      "Earth orbits the Sun once a year — that's 365.25 days, which is why we add a leap day every 4 years."
+    ]
+  },
+  {
+    "subject": "maths",
+    "topic": "shape",
+    "title": "Triangles, polygons & shape names",
+    "subtitle": "Naming shapes by their sides and angles",
+    "readTimeMin": 4,
+    "visual": "triangle-types",
+    "sections": [
+      {
+        "heading": "Triangles by their sides",
+        "list": [
+          "Equilateral — all 3 sides equal, all 3 angles equal (each 60°).",
+          "Isosceles — exactly 2 sides equal. The two angles opposite those equal sides are also equal.",
+          "Scalene — all 3 sides different, all 3 angles different.",
+          "Right-angled — one angle is exactly 90° (a right angle)."
+        ]
+      },
+      {
+        "heading": "The angle rule",
+        "body": "The three angles inside ANY triangle add up to 180°. So if you know two angles, you can always work out the third by subtracting them from 180°."
+      },
+      {
+        "heading": "Polygons by side count",
+        "list": [
+          "3 sides — triangle",
+          "4 sides — quadrilateral (square, rectangle, rhombus, parallelogram, trapezium, kite are all quadrilaterals)",
+          "5 sides — pentagon",
+          "6 sides — hexagon",
+          "7 sides — heptagon",
+          "8 sides — octagon",
+          "10 sides — decagon"
+        ]
+      }
+    ],
+    "tips": [
+      "The Greek prefixes give it away: penta=5, hexa=6, octa=8 (think octopus, eight legs).",
+      "A 'regular' polygon means all sides equal AND all angles equal. A regular triangle = equilateral. A regular quadrilateral = a square.",
+      "Quick check: angles in a triangle ALWAYS = 180°. Angles in a quadrilateral always = 360°."
+    ]
+  },
+  {
+    "subject": "maths",
+    "topic": "powers",
+    "title": "Square & cube numbers",
+    "subtitle": "Multiplying a number by itself",
+    "readTimeMin": 3,
+    "sections": [
+      {
+        "heading": "Square numbers",
+        "body": "A square number is what you get when you multiply a whole number by itself.\n\n1² = 1 × 1 = 1\n2² = 2 × 2 = 4\n3² = 3 × 3 = 9\n4² = 4 × 4 = 16\n5² = 5 × 5 = 25\n\nThe little 2 means \"squared\" — you literally make a square that's that wide and that tall."
+      },
+      {
+        "heading": "Cube numbers",
+        "body": "A cube number is what you get when you multiply a whole number by itself THREE times. The little 3 means \"cubed\".\n\n1³ = 1 × 1 × 1 = 1\n2³ = 2 × 2 × 2 = 8\n3³ = 3 × 3 × 3 = 27\n4³ = 4 × 4 × 4 = 64\n5³ = 5 × 5 × 5 = 125"
+      },
+      {
+        "heading": "Square root",
+        "body": "The square root is the reverse of squaring. The square root of 49 is 7, because 7 × 7 = 49. The symbol is √. So √49 = 7."
+      }
+    ],
+    "tips": [
+      "Memorise the squares from 1² to 12² — they come up in tons of questions.",
+      "The first few cube numbers: 1, 8, 27, 64, 125, 216, 343, 512, 729, 1000.",
+      "If a number is squared, it can NEVER be negative (a positive × positive = positive; a negative × negative = positive)."
+    ]
+  },
+  {
+    "subject": "english",
+    "topic": "word-classes",
+    "title": "Word classes — the parts of speech",
+    "subtitle": "What each word in a sentence is doing",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "The main word classes",
+        "list": [
+          "Noun — a person, place, thing or idea. (cat, London, freedom)",
+          "Verb — a doing or being word. (run, is, think)",
+          "Adjective — describes a noun. (happy, blue, ancient)",
+          "Adverb — describes a verb (or an adjective). Often ends in -ly. (quickly, very, well)",
+          "Pronoun — stands in for a noun. (he, she, it, they, we)",
+          "Preposition — shows position or direction. (under, above, between, into)",
+          "Conjunction — joins words or sentences. (and, but, because, although)",
+          "Determiner — comes before a noun, points it out. (the, a, this, my, some)"
+        ]
+      },
+      {
+        "heading": "How to spot them in a sentence",
+        "body": "Take: \"The huge dog barked loudly under the table.\"\n\n• The = determiner\n• huge = adjective (describes 'dog')\n• dog = noun\n• barked = verb\n• loudly = adverb (describes how it barked)\n• under = preposition\n• the = determiner\n• table = noun"
+      }
+    ],
+    "tips": [
+      "Adverbs often end in -ly (quickly, slowly, happily) — but not always (well, fast, often).",
+      "If you can put 'a' or 'the' in front of a word and it makes sense, it's a noun.",
+      "Adjectives describe NOUNS. Adverbs describe VERBS. That's the most common confusion."
+    ]
+  },
+  {
+    "subject": "english",
+    "topic": "figurative-language",
+    "title": "Similes, metaphors & co.",
+    "subtitle": "How writers paint with words",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "Simile",
+        "body": "A simile compares two things using the words 'like' or 'as'.\n\n• \"Her hair shone like the sun.\"\n• \"He was as quiet as a mouse.\"\n\nThe LIKE or AS is the giveaway."
+      },
+      {
+        "heading": "Metaphor",
+        "body": "A metaphor says something IS something else. It's a stronger comparison — no 'like' or 'as'.\n\n• \"The classroom was a zoo.\" (it WAS a zoo, not LIKE a zoo)\n• \"He's a rock in a crisis.\""
+      },
+      {
+        "heading": "Personification",
+        "body": "Giving a non-human thing human qualities or actions.\n\n• \"The wind whispered through the trees.\"\n• \"Time crawled.\"\n\nWind doesn't actually whisper. Time doesn't actually crawl. But the writer makes them feel alive."
+      },
+      {
+        "heading": "Alliteration & onomatopoeia",
+        "list": [
+          "Alliteration — same starting sound repeated. \"Slithering, slimy snakes.\"",
+          "Onomatopoeia — a word that sounds like the thing it describes. \"Bang!\" \"Crash!\" \"Splat!\""
+        ]
+      }
+    ],
+    "tips": [
+      "Simile = LIKE / AS. Metaphor = IS / WAS. That's the cleanest split.",
+      "Personification almost always uses a verb a human would do (whispered, danced, laughed).",
+      "When you spot any of these in a poem or story, ask: 'What effect does it have? What picture does it put in my head?' That's the analysis bit examiners want."
+    ]
+  },
+  {
+    "subject": "history",
+    "topic": "norman-conquest",
+    "title": "The Norman Conquest",
+    "subtitle": "1066 — the year everything changed",
+    "readTimeMin": 5,
+    "visual": "feudal-pyramid",
+    "sections": [
+      {
+        "heading": "The story",
+        "body": "When King Edward the Confessor died in early 1066, three different men thought they should be the next King of England. Harold Godwinson (an English earl) was crowned almost immediately. But Harald Hardrada (a Viking) and William of Normandy (a Frenchman) both invaded.\n\nHarold beat Hardrada at Stamford Bridge in September 1066 — then had to march south because William had landed on the south coast. Harold's exhausted army met William at the Battle of Hastings on 14 October 1066. Harold was killed (the Bayeux Tapestry shows an arrow striking his eye). William won. He was crowned King of England on Christmas Day 1066."
+      },
+      {
+        "heading": "What changed afterwards",
+        "body": "William didn't just win one battle — he changed England. He replaced almost every English noble with a Norman one. He built castles (mostly motte-and-bailey, made of earth and timber) all over the country to hold down the population.\n\nHe ordered the Domesday Book in 1086 — a massive survey recording who owned what, so he could tax it properly. He brought Norman French as the language of the court — that's why English now has both Saxon words like 'cow' and French-origin words like 'beef'."
+      },
+      {
+        "heading": "The feudal system",
+        "body": "Society was organised as a pyramid:\n\n• King (William) at the top — owned all the land in theory\n• Barons — held big chunks from the King in return for loyalty + soldiers\n• Knights — held smaller chunks from the Barons in return for fighting\n• Peasants — at the bottom — worked the land\n\nThis is what the diagram above shows."
+      }
+    ],
+    "tips": [
+      "Date to know cold: 14 October 1066, Battle of Hastings.",
+      "Don't confuse Harold (English, 1066) with Harald (Viking, also 1066). Both lost. William won.",
+      "The Bayeux Tapestry is a 70-metre embroidery telling the Norman version of events. It's the closest thing to a contemporary news report from 1066."
+    ]
+  },
+  {
+    "subject": "geography",
+    "topic": "map-skills",
+    "title": "Reading a map — symbols, scale, contours",
+    "subtitle": "Turning a flat map into a 3D understanding",
+    "readTimeMin": 5,
+    "visual": "contour-hill",
+    "sections": [
+      {
+        "heading": "Map symbols",
+        "body": "An OS (Ordnance Survey) map uses tiny pictures called symbols to represent things on the ground — a church, a campsite, a footpath, woodland. The map's KEY (or legend) explains what each symbol means.\n\nAlways check the key first. Symbols are standard: a blue triangle for a campsite, a black cross for a church without a tower, a brown dotted line for a footpath, etc."
+      },
+      {
+        "heading": "Scale",
+        "body": "Scale tells you how distance on the map matches distance in real life. Common UK map scales:\n\n• 1 : 25,000 — 1 cm on the map = 25,000 cm = 250 m in real life. So 4 cm = 1 km.\n• 1 : 50,000 — 1 cm on the map = 500 m in real life. So 2 cm = 1 km.\n\nTo find a real distance: measure on the map, then multiply by the scale."
+      },
+      {
+        "heading": "Grid references",
+        "body": "OS maps have a grid of squares (each 1 km × 1 km). To pinpoint a place:\n\n• Four-figure grid reference (e.g. 2438) — gives you the bottom-left corner of one 1 km square. Read along the bottom (eastings) first, then up the side (northings). Memory rule: \"along the corridor, then up the stairs\".\n• Six-figure grid reference (e.g. 245384) — divides each 1 km square into a 10 × 10 grid, pinpointing a 100 m square."
+      },
+      {
+        "heading": "Contour lines",
+        "body": "Brown lines on an OS map joining points of equal height. They turn a flat map into 3D in your head:\n\n• Lines close together = steep slope (the land rises sharply over a short distance).\n• Lines far apart = gentle slope.\n• Concentric rings = a hill (the smallest ring at the centre is the summit). The diagram above shows this.\n\nThe number on each contour tells you the height in metres above sea level."
+      }
+    ],
+    "tips": [
+      "Bearings are measured CLOCKWISE from north, in degrees, written as 3 digits. So east = 090°, south = 180°, west = 270°.",
+      "Closely spaced contours on a route mean a hard climb — useful when planning a walk.",
+      "Standard 8-point compass: N, NE, E, SE, S, SW, W, NW. Each is 45° apart."
+    ]
+  },
+  {
+    "subject": "computing",
+    "topic": "e-safety",
+    "title": "E-safety basics",
+    "subtitle": "Staying safe online — the things that actually matter",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "Personal information",
+        "body": "Never share your real name (full), home address, school, phone number, or family details with strangers online. This includes in chat rooms, game lobbies, and social media DMs from people you don't know in real life.\n\nIf someone you've never met asks for any of this, the right move is always: don't reply, don't send anything, and tell a trusted adult (parent, teacher)."
+      },
+      {
+        "heading": "Strong passwords",
+        "body": "A strong password:\n\n• Is at least 8 characters long\n• Mixes UPPER and lower case letters\n• Includes numbers and a symbol or two\n• Isn't a real word, your name, or your birthday\n\n\"Tiger123\" is weak. \"p@5sW0rd!92\" is strong. Better still: a memorable phrase like \"3Blue!Cats#JumpHigh\"."
+      },
+      {
+        "heading": "Digital footprint",
+        "body": "Everything you post, like, search and login to online leaves a trail — your 'digital footprint'. Screenshots happen. Even after you 'delete' something, someone may have already saved it.\n\nThe rule of thumb: don't post anything you wouldn't be comfortable showing your grandmother, or a future employer. Embarrassing photos can resurface years later."
+      },
+      {
+        "heading": "Copyright",
+        "body": "Anything original someone creates — a song, a video, a piece of writing, a photo — is automatically theirs by law. That's copyright. Using their work without permission can be illegal, even for a school project.\n\nIf you want music for a video, look for 'royalty-free' tracks (legal to use freely) or get the creator's permission."
+      }
+    ],
+    "tips": [
+      "Set social profiles to PRIVATE by default — only people you've accepted can see your posts.",
+      "If you're being bullied online: save evidence (screenshots), don't reply, tell a trusted adult, and use the platform's REPORT button. Replying often makes it worse.",
+      "If something online makes you uncomfortable, you don't have to figure out why — just close it and tell someone. Trust the feeling."
+    ]
+  },
+  {
+    "subject": "computing",
+    "topic": "computational-thinking",
+    "title": "Computational thinking",
+    "subtitle": "How programmers break problems apart",
+    "readTimeMin": 3,
+    "sections": [
+      {
+        "heading": "Decomposition",
+        "body": "Big problems are scary. Computational thinking starts by breaking a problem into smaller, manageable pieces.\n\nExample: \"Make a game.\" Decompose into: design the player character; write the movement code; design the enemies; write the score logic; design the menu screen. Now each piece is doable on its own."
+      },
+      {
+        "heading": "Pattern recognition",
+        "body": "Look for similarities between the smaller pieces — and similarities to problems you've already solved. If two enemies move the same way, write the movement code ONCE and use it for both. If you've made a score counter before, you can reuse the same approach.\n\nSpotting patterns saves time."
+      },
+      {
+        "heading": "Abstraction",
+        "body": "Strip away the unnecessary detail. Focus only on what matters for the problem.\n\nA London Underground map is a brilliant example of abstraction. The actual track in real life is twisty and not to scale — but the map straightens it all out and just shows you which stations connect. That's abstraction: hide what you don't need."
+      },
+      {
+        "heading": "Algorithms",
+        "body": "Once you've decomposed, spotted patterns, and abstracted away the noise, write a step-by-step set of instructions to solve the problem. That's an algorithm. A programmer then translates the algorithm into code."
+      }
+    ],
+    "tips": [
+      "Order to remember: DPAA — Decompose, Patterns, Abstract, Algorithm.",
+      "An algorithm is the recipe. Code is the recipe written in a language a computer understands.",
+      "Whenever you find yourself doing the same thing twice in code, that's a sign you can spot a pattern and simplify."
+    ]
+  },
+  {
+    "subject": "french",
+    "topic": "age-and-names",
+    "title": "Saying your name & age",
+    "subtitle": "Year 7 French — the very first phrases",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "Saying your name",
+        "body": "\"Je m'appelle ___\" = \"My name is ___\" (literally \"I call myself\").\n\nIf someone asks you \"Comment tu t'appelles?\" (\"What's your name?\"), reply \"Je m'appelle Alex\" (or whatever your name is).\n\nThe \"m'\" is a contraction of \"me\" — it shrinks because the next word starts with a vowel sound. French does this all the time."
+      },
+      {
+        "heading": "Saying your age",
+        "body": "Important: in French you HAVE your age. Not \"I AM twelve\" but \"I HAVE twelve years\".\n\n\"J'ai douze ans\" = \"I am 12 years old\" (literally \"I have twelve years\")\n\nIf someone asks \"Quel âge as-tu?\" (\"How old are you?\"), reply \"J'ai ___ ans\"."
+      },
+      {
+        "heading": "Numbers 1–20",
+        "list": [
+          "1 un / 2 deux / 3 trois / 4 quatre / 5 cinq",
+          "6 six / 7 sept / 8 huit / 9 neuf / 10 dix",
+          "11 onze / 12 douze / 13 treize / 14 quatorze / 15 quinze",
+          "16 seize / 17 dix-sept / 18 dix-huit / 19 dix-neuf / 20 vingt"
+        ]
+      },
+      {
+        "heading": "Pleased to meet you",
+        "body": "After someone tells you their name, the polite response is \"Enchanté\" (boy speaking) or \"Enchantée\" (girl speaking) — \"Pleased to meet you\". They sound exactly the same out loud; only the spelling differs."
+      }
+    ],
+    "tips": [
+      "Use the LISTEN button on French questions to hear native pronunciation. Use SLOW for tricky bits.",
+      "\"Je suis\" = I AM. \"J'ai\" = I HAVE. Don't mix them up — age uses j'ai, not je suis.",
+      "Treize (13) and trente (30) sound similar but not the same. Treize ends with a soft 'z' sound; trente ends like 'tont'."
+    ]
+  }
+]

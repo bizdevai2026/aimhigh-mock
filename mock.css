@@ -1114,6 +1114,141 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 }
 .mock-button-warn:hover { background: rgba(248, 113, 113, 0.24); }
 
+/* ---- LEARN mode ---------------------------------------------------------- */
+
+/* Home-page CTA: invitational amber card above the four mode tiles */
+.mock-learn-cta {
+  display: block;
+  margin: 0 0 1.1rem;
+  padding: 1rem 1.1rem;
+  background: linear-gradient(135deg, rgba(255, 179, 0, 0.16) 0%, rgba(255, 179, 0, 0.05) 100%);
+  border: 1px solid rgba(255, 179, 0, 0.40);
+  border-radius: 0.8rem;
+  color: var(--mock-text-strong);
+  text-decoration: none;
+  transition: transform 100ms ease, border-color 150ms ease;
+}
+.mock-learn-cta:hover { transform: translateY(-1px); border-color: rgba(255, 179, 0, 0.65); }
+.mock-learn-cta-head {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.mock-learn-cta-eyebrow {
+  font-family: var(--mock-font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  color: var(--mock-fire);
+}
+.mock-learn-cta-arrow {
+  font-family: var(--mock-font-display);
+  color: var(--mock-fire);
+  font-size: 1.2rem;
+}
+.mock-learn-cta-title {
+  display: block;
+  font-family: var(--mock-font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: var(--mock-text-strong);
+  margin-top: 0.4rem;
+}
+.mock-learn-cta-meta {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--mock-text-dim);
+}
+
+/* Subject hub on learn — reuses .mock-tile with extra "ready" badge */
+.mock-learn-subject-tile { /* identical to .mock-tile */ }
+
+/* Topic-list view on learn — "Coming soon" topics get a muted treatment */
+.mock-topic-tile-soon {
+  opacity: 0.78;
+  border-style: dashed;
+}
+.mock-topic-tile-soon:hover { opacity: 1; }
+
+/* Topic-detail layout */
+.mock-learn-visual {
+  margin: 0 0 1.2rem;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--mock-border-hi);
+  border-radius: 0.7rem;
+  display: grid;
+  place-items: center;
+}
+.mock-learn-visual svg {
+  max-width: 100%;
+  height: auto;
+}
+.mock-learn-article {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+.mock-learn-section {
+  background: var(--mock-card);
+  border: 1px solid var(--mock-border-hi);
+  border-radius: 0.7rem;
+  padding: 1rem 1.1rem;
+}
+.mock-learn-heading {
+  font-family: var(--mock-font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: var(--mock-fire);
+  margin: 0 0 0.5rem;
+}
+.mock-learn-body {
+  margin: 0 0 0.6rem;
+  color: var(--mock-text-dim);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+.mock-learn-body:last-child { margin-bottom: 0; }
+.mock-learn-list {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  color: var(--mock-text-dim);
+  line-height: 1.55;
+  font-size: 0.94rem;
+}
+.mock-learn-list li::marker { color: var(--mock-lime); }
+
+/* Tips section — distinct scarlet-tinted treatment */
+.mock-learn-tips {
+  background: linear-gradient(135deg, rgba(255, 61, 0, 0.10) 0%, rgba(255, 179, 0, 0.05) 100%);
+  border: 1px solid rgba(255, 61, 0, 0.35);
+  border-radius: 0.7rem;
+  padding: 1rem 1.1rem;
+}
+.mock-learn-tips .mock-learn-heading { color: var(--mock-lime); }
+.mock-learn-tips-list li {
+  font-style: italic;
+  color: var(--mock-text-strong);
+}
+
+/* Bottom CTA: drill-this-topic + back */
+.mock-learn-cta-row,
+.mock-learn-article + .mock-learn-cta,
+section.mock-learn-cta {
+  /* the bottom cta uses a different wrapper class */
+}
+section.mock-learn-cta {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 1.2rem 0 1.5rem;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
 /* Coach role badge — sits above the dashGreeting line */
 .mock-coach-role-badge {
   display: inline-block;

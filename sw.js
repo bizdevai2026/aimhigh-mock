@@ -26,6 +26,7 @@ const SHELL = [
   "./subject.html",
   "./paper.html",
   "./dashboard.html",
+  "./learn.html",
   "./mock.css?v=20260501",
   "./mock.js?v=20260501",
   "./welcome.js?v=20260501",
@@ -33,6 +34,7 @@ const SHELL = [
   "./sprint.js?v=20260501",
   "./paper.js?v=20260501",
   "./dashboard.js?v=20260501",
+  "./learn.js?v=20260501",
   "./profile.js",
   "./engagement.js",
   "./questions.js",
@@ -49,7 +51,8 @@ const SHELL = [
   "./data/french.json",
   "./data/history.json",
   "./data/geography.json",
-  "./data/computing.json"
+  "./data/computing.json",
+  "./data/learning.json"
 ];
 
 self.addEventListener("install", function (event) {
