@@ -1384,6 +1384,65 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   margin-top: 0.6rem;
 }
 
+/* ---- Coach calendar heatmap (last 6 weeks) ------------------------------- */
+.mock-cal-grid-head {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  font-size: 0.62rem;
+  color: var(--mock-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0.4rem 0 0.35rem;
+}
+.mock-cal-dow { text-align: center; }
+.mock-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+.mock-cal-cell {
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.045);
+  transition: transform 100ms ease;
+}
+.mock-cal-cell:hover { transform: scale(1.08); }
+.mock-cal-cell.cal-0 { background: rgba(255, 255, 255, 0.045); }
+.mock-cal-cell.cal-1 { background: rgba(132, 204, 22, 0.20); }
+.mock-cal-cell.cal-2 { background: rgba(132, 204, 22, 0.45); }
+.mock-cal-cell.cal-3 { background: rgba(132, 204, 22, 0.70); }
+.mock-cal-cell.cal-4 { background: rgba(132, 204, 22, 0.95); }
+.mock-cal-cell.is-today {
+  outline: 2px solid var(--mock-text-strong);
+  outline-offset: -1px;
+}
+.mock-cal-cell.is-future {
+  background: transparent;
+  border: 1px dashed var(--mock-border-hi);
+}
+.mock-cal-legend {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.7rem;
+  color: var(--mock-muted);
+}
+.mock-cal-legend-cell {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+}
+.mock-cal-legend-cell.cal-0 { background: rgba(255, 255, 255, 0.045); }
+.mock-cal-legend-cell.cal-1 { background: rgba(132, 204, 22, 0.20); }
+.mock-cal-legend-cell.cal-2 { background: rgba(132, 204, 22, 0.45); }
+.mock-cal-legend-cell.cal-3 { background: rgba(132, 204, 22, 0.70); }
+.mock-cal-legend-cell.cal-4 { background: rgba(132, 204, 22, 0.95); }
+.mock-cal-legend-text { padding: 0 0.25rem; }
+
 /* ---------- GREETING + PROFILE CHIP + STUB NAME ---------- */
 
 .mock-greeting {

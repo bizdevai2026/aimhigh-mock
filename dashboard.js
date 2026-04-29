@@ -13,6 +13,7 @@ import {
   weakTopics,
   todayIso,
   isoOffset,
+  isoWeekStart,
   subjectLadder
 } from "./engagement.js";
 
@@ -28,11 +29,118 @@ function paint() {
   paintToday();
   paintWeak();
   paintHistory();
+  paintCalendar();
   paintDataTools();
   // Audio is gesture-locked on mobile until first tap — playing here will
   // be silent on a cold-load Coach view and fire on subsequent taps. That
   // is the right behaviour: no surprise audio on a parent-only page.
   playCoachEnter();
+}
+
+// --- Calendar heatmap ------------------------------------------------------
+//
+// Six-week grid (rows = weeks, oldest at top; columns = Mon–Sun) where
+// each cell's intensity reflects XP earned that day. Lets a parent
+// spot rhythm and consistency at a glance — not just "did he train",
+// but "which days, how heavily, with what regularity".
+//
+// Read-only: aggregates from readResults(), never writes state.
+// Auto-injects after the 7-day history block; safe to re-run (idempotent).
+
+function paintCalendar() {
+  const main = document.querySelector(".mock-main");
+  if (!main) return;
+  if (document.getElementById("coachCalendar")) return;
+
+  const today = todayIso();
+  const xpByDay = dailyXpFromResults();
+
+  // Anchor on this week's Monday and step back five weeks.
+  const thisMonday = isoWeekStart(today);
+  const firstMonday = isoOffset(thisMonday, -7 * 5);
+
+  let totalSessions = 0;
+  let activeDays = 0;
+  Object.keys(xpByDay).forEach(function (iso) {
+    if (xpByDay[iso] > 0) activeDays += 1;
+  });
+
+  let cellsHtml = "";
+  for (let w = 0; w < 6; w++) {
+    const weekStart = isoOffset(firstMonday, 7 * w);
+    for (let d = 0; d < 7; d++) {
+      const iso = isoOffset(weekStart, d);
+      const xp = xpByDay[iso] || 0;
+      const isToday = iso === today;
+      const isFuture = iso > today; // ISO YYYY-MM-DD compares lexicographically
+      let tier = 0;
+      if (!isFuture) {
+        if (xp >= 100) tier = 4;
+        else if (xp >= 60) tier = 3;
+        else if (xp >= 30) tier = 2;
+        else if (xp > 0)   tier = 1;
+      }
+      const cls = "mock-cal-cell cal-" + tier
+        + (isToday  ? " is-today"  : "")
+        + (isFuture ? " is-future" : "");
+      const label = isFuture
+        ? iso + " — upcoming"
+        : iso + " — " + xp + " XP" + (xp >= 30 ? " (goal hit)" : "");
+      cellsHtml += "<div class=\"" + cls + "\" title=\"" + label + "\" aria-label=\"" + label + "\"></div>";
+    }
+  }
+
+  const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    .map(function (d) { return "<div class=\"mock-cal-dow\">" + d + "</div>"; })
+    .join("");
+
+  // Total sessions over the visible window
+  readResults().forEach(function (r) {
+    if (!r || !r.dateIso) return;
+    if (r.dateIso < firstMonday || r.dateIso > today) return;
+    totalSessions += 1;
+  });
+
+  const block = document.createElement("section");
+  block.id = "coachCalendar";
+  block.className = "mock-coach-block";
+  block.innerHTML =
+    "<h2>Last 6 weeks</h2>" +
+    "<p class=\"mock-coach-empty\" style=\"margin-bottom:0.6rem\">" +
+      activeDays + " active day" + (activeDays === 1 ? "" : "s") +
+      " &middot; " + totalSessions + " session" + (totalSessions === 1 ? "" : "s") +
+    "</p>" +
+    "<div class=\"mock-cal-grid-head\">" + dayLabels + "</div>" +
+    "<div class=\"mock-cal-grid\">" + cellsHtml + "</div>" +
+    "<div class=\"mock-cal-legend\">" +
+      "<span class=\"mock-cal-legend-text\">Less</span>" +
+      "<span class=\"mock-cal-legend-cell cal-0\"></span>" +
+      "<span class=\"mock-cal-legend-cell cal-1\"></span>" +
+      "<span class=\"mock-cal-legend-cell cal-2\"></span>" +
+      "<span class=\"mock-cal-legend-cell cal-3\"></span>" +
+      "<span class=\"mock-cal-legend-cell cal-4\"></span>" +
+      "<span class=\"mock-cal-legend-text\">More</span>" +
+    "</div>";
+
+  // Insert after the History block so it sits below the 7-day list.
+  const history = document.getElementById("coachHistory");
+  if (history && history.parentNode === main) {
+    history.parentNode.insertBefore(block, history.nextSibling);
+  } else {
+    main.appendChild(block);
+  }
+}
+
+function dailyXpFromResults() {
+  const out = {};
+  readResults().forEach(function (r) {
+    if (!r || !r.dateIso) return;
+    const correct = (r.score != null)
+      ? r.score
+      : (r.items || []).filter(function (it) { return it.correct; }).length;
+    out[r.dateIso] = (out[r.dateIso] || 0) + correct * 10;
+  });
+  return out;
 }
 
 // --- Data tools (parent-only) ----------------------------------------------
