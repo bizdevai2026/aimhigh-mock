@@ -1071,6 +1071,39 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   color: var(--mock-bg);
 }
 
+/* Holiday-mode paused banner — amber tint, on every page when paused */
+.mock-paused-banner {
+  margin: 0 0 0.9rem;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 179, 0, 0.10);
+  border: 1px solid rgba(255, 179, 0, 0.45);
+  border-radius: 0.55rem;
+  color: var(--mock-fire);
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+}
+.mock-paused-banner strong {
+  color: var(--mock-text-strong);
+  font-family: var(--mock-font-display);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-right: 0.4em;
+}
+
+/* Parent-control button variants — pause (amber) and reset (red) */
+.mock-button-paused {
+  background: rgba(255, 179, 0, 0.12);
+  border: 1px solid rgba(255, 179, 0, 0.45);
+  color: var(--mock-fire);
+}
+.mock-button-paused:hover { background: rgba(255, 179, 0, 0.22); }
+.mock-button-warn {
+  background: rgba(248, 113, 113, 0.14);
+  border: 1px solid rgba(248, 113, 113, 0.45);
+  color: #fca5a5;
+}
+.mock-button-warn:hover { background: rgba(248, 113, 113, 0.24); }
+
 /* Coach role badge — sits above the dashGreeting line */
 .mock-coach-role-badge {
   display: inline-block;

@@ -18,7 +18,8 @@ const KEYS = {
   examDate:  PREFIX + "exam-date",
   results:   PREFIX + "results",
   seen:      PREFIX + "seen",
-  misses:    PREFIX + "misses"
+  misses:    PREFIX + "misses",
+  pause:     PREFIX + "pause"
 };
 
 const DEFAULTS = {
@@ -47,6 +48,36 @@ function isDemoMode() {
     const s = JSON.parse(raw);
     return !!(s && s.role === "demo");
   } catch (e) { return false; }
+}
+
+// Holiday-mode pause (parent-controlled). When active, all engagement
+// writers no-op so the kid can be away without breaking the streak.
+// On resume, lastDateIso is fast-forwarded to yesterday so the streak
+// picks up cleanly on the next training session.
+export function isPaused() {
+  try { return localStorage.getItem(KEYS.pause) === "true"; }
+  catch (e) { return false; }
+}
+
+export function setPaused(yes) {
+  if (yes) {
+    try { localStorage.setItem(KEYS.pause, "true"); } catch (e) {}
+    return;
+  }
+  // Resuming: nudge lastDateIso so the next-day-after-pause counts as
+  // continuous. If the kid never started a streak, leave streak alone.
+  const s = readStreak();
+  if (s && s.lastDateIso) {
+    s.lastDateIso = isoOffset(todayIso(), -1); // yesterday
+    writeJson(KEYS.streak, s);
+  }
+  try { localStorage.removeItem(KEYS.pause); } catch (e) {}
+}
+
+// Single guard used by every engagement writer. True when either the
+// session is in demo mode OR a parent has paused training.
+function shouldSkipWrites() {
+  return isDemoMode() || isPaused();
 }
 
 // --- Storage primitives -----------------------------------------------------
@@ -129,7 +160,7 @@ function writeStreak(s) { writeJson(KEYS.streak, s); }
 function bumpStreakIfFirstHitToday() {
   const today = todayIso();
   const s = readStreak();
-  if (isDemoMode()) return s; // synthetic — don't bump
+  if (shouldSkipWrites()) return s; // synthetic — don't bump
 
   if (s.lastDateIso === today) return s; // already counted today
 
@@ -186,7 +217,7 @@ function addXpToday(delta) {
     cur.earned = 0;
   }
   const before = cur.earned;
-  if (isDemoMode()) {
+  if (shouldSkipWrites()) {
     // Synthetic after-state for the result screen; never persisted.
     return { before: before, after: before + delta, goal: cur.goal };
   }
@@ -219,7 +250,7 @@ export function readWeek() {
 
 function bumpWeekIfFirstHitToday() {
   const w = readWeek();
-  if (isDemoMode()) return w;
+  if (shouldSkipWrites()) return w;
   const today = todayIso();
   const lastHit = readString(PREFIX + "week-last-hit-day");
   if (lastHit !== today) {
@@ -234,7 +265,7 @@ function bumpWeekIfFirstHitToday() {
 
 export function readExamDate() { return readString(KEYS.examDate); }
 export function writeExamDate(iso) {
-  if (isDemoMode()) return;
+  if (shouldSkipWrites()) return;
   writeString(KEYS.examDate, iso);
 }
 
@@ -246,7 +277,7 @@ export function readResults() {
 }
 
 export function appendResult(result) {
-  if (isDemoMode()) return;
+  if (shouldSkipWrites()) return;
   const all = readResults();
   all.push(result);
   // Prune to last 60 sessions to keep storage bounded
@@ -288,7 +319,7 @@ export function readSeen() {
 }
 
 export function markSeen(questionId, correct) {
-  if (isDemoMode()) return;
+  if (shouldSkipWrites()) return;
   const s = readSeen();
   const prev = s[questionId] || {};
   let nextStage;
@@ -332,7 +363,7 @@ export function readMisses() {
 }
 
 export function noteMiss(subject, topic, questionId) {
-  if (isDemoMode()) return;
+  if (shouldSkipWrites()) return;
   const all = readMisses();
   all.push({ subject: subject, topic: topic, questionId: questionId, ts: Date.now() });
   // Prune to last 200

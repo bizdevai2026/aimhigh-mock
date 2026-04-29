@@ -14,7 +14,9 @@ import {
   todayIso,
   isoOffset,
   isoWeekStart,
-  subjectLadder
+  subjectLadder,
+  isPaused,
+  setPaused
 } from "./engagement.js";
 
 import { subjectName, listSubjects } from "./questions.js";
@@ -155,16 +157,21 @@ function paintDataTools() {
   const main = document.querySelector(".mock-main");
   if (!main) return;
   if (document.getElementById("coachData")) return;
+  const paused = isPaused();
   const block = document.createElement("section");
   block.id = "coachData";
   block.className = "mock-coach-block";
   block.innerHTML =
-    "<h2>Data tools</h2>" +
-    "<p class=\"mock-coach-empty\" style=\"margin-bottom: 0.6rem\">Back up or restore the trainee's progress and profile. Useful when moving devices.</p>" +
+    "<h2>Parent controls</h2>" +
+    "<p class=\"mock-coach-empty\" style=\"margin-bottom: 0.6rem\">Back up, restore, pause for holiday, or reset training data. The trainee's name and PIN are always preserved unless you remove them via import.</p>" +
     "<div class=\"mock-data-actions\">" +
       "<button type=\"button\" class=\"mock-button\" id=\"dataExportBtn\">Export progress</button>" +
       "<label class=\"mock-button mock-button-ghost\" for=\"dataImportInput\">Import progress</label>" +
       "<input type=\"file\" id=\"dataImportInput\" accept=\"application/json\" style=\"display:none\" />" +
+      "<button type=\"button\" class=\"mock-button mock-button-paused\" id=\"pauseToggleBtn\">" +
+        (paused ? "Resume progress" : "Pause progress") +
+      "</button>" +
+      "<button type=\"button\" class=\"mock-button mock-button-warn\" id=\"resetTrainingBtn\">Reset training data</button>" +
     "</div>" +
     "<p id=\"dataMsg\" class=\"mock-data-msg\" aria-live=\"polite\"></p>";
   main.appendChild(block);
@@ -174,6 +181,63 @@ function paintDataTools() {
     if (file) importProgress(file);
     e.target.value = "";
   });
+  document.getElementById("pauseToggleBtn").addEventListener("click", togglePause);
+  document.getElementById("resetTrainingBtn").addEventListener("click", resetTrainingData);
+}
+
+// Holiday-mode toggle. While paused, all engagement writers no-op so the
+// streak survives an arbitrary gap. On resume, lastDateIso is fast-forwarded
+// to yesterday so the next training session continues the streak naturally.
+function togglePause() {
+  const paused = isPaused();
+  const ok = paused
+    ? confirm(
+        "Resume training?\n\n" +
+        "The streak will pick up from where it was. Your trainee's next " +
+        "session that hits the daily goal will continue the streak."
+      )
+    : confirm(
+        "Pause training?\n\n" +
+        "Used for holidays — the streak is preserved while paused. Your " +
+        "trainee can still play during the pause but nothing counts " +
+        "(no XP, no streak progress, no weak-topic logging).\n\n" +
+        "Resume from this same panel when they're back."
+      );
+  if (!ok) return;
+  setPaused(!paused);
+  showDataMsg(paused ? "Resumed." : "Paused. Resume when ready.", "ok");
+  setTimeout(function () { location.reload(); }, 700);
+}
+
+// Wipe training data only — profile + PIN preserved. Useful after a demo
+// went into the wrong account, or to start a fresh term.
+function resetTrainingData() {
+  const ok = confirm(
+    "Reset training data?\n\n" +
+    "Wipes streak, XP, weekly tier, results log, weak topics, and the " +
+    "anti-repeat seen log. Trainee's name + PIN are preserved.\n\n" +
+    "This cannot be undone unless you exported first."
+  );
+  if (!ok) return;
+  const keysToWipe = [
+    "aimhigh-mock-streak",
+    "aimhigh-mock-xp-today",
+    "aimhigh-mock-week",
+    "aimhigh-mock-week-last-hit-day",
+    "aimhigh-mock-results",
+    "aimhigh-mock-seen",
+    "aimhigh-mock-misses",
+    "aimhigh-mock-tour-seen",
+    "aimhigh-mock-resume-warmup",
+    "aimhigh-mock-resume-sprint",
+    "aimhigh-mock-resume-paper",
+    "aimhigh-mock-pause"
+  ];
+  keysToWipe.forEach(function (k) {
+    try { localStorage.removeItem(k); } catch (e) {}
+  });
+  showDataMsg("Training data reset. Profile + PIN preserved.", "ok");
+  setTimeout(function () { location.reload(); }, 800);
 }
 
 function showDataMsg(text, kind) {

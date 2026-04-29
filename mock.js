@@ -15,7 +15,8 @@ import {
   readExamDate,
   writeExamDate,
   todayIso,
-  weakTopics
+  weakTopics,
+  isPaused
 } from "./engagement.js";
 
 import { readSoundOn, toggleSound } from "./sounds.js";
@@ -372,6 +373,24 @@ function applyParentHomeView() {
   }
 }
 
+// Holiday-mode pause: parent-controlled freeze. While active, every
+// engagement writer no-ops in engagement.js; this banner is the
+// human-facing cue. Visible on every page so the kid always knows
+// they're in holiday mode and the streak is safe.
+function applyPausedBanner() {
+  if (!isPaused()) return;
+  document.body.classList.add("is-paused");
+  const main = document.querySelector(".mock-main");
+  if (main && !document.querySelector(".mock-paused-banner")) {
+    const banner = document.createElement("div");
+    banner.className = "mock-paused-banner";
+    banner.innerHTML =
+      "<strong>Holiday mode</strong> &middot; streak paused. Training still " +
+      "works but nothing counts. Parent: open Coach to resume.";
+    main.insertBefore(banner, main.firstChild);
+  }
+}
+
 // Demo session: visible on every page so the user always knows
 // nothing they do here will be persisted. All engagement writers in
 // engagement.js no-op when isDemoMode is true; this banner is the
@@ -521,6 +540,7 @@ function boot() {
   paintTodayStrip();
   applyParentHomeView();
   applyDemoBanner();
+  applyPausedBanner();
   paintWeakestShortcut();
   maybeShowOnboardingTour();
 }
