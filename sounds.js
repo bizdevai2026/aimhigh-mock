@@ -38,6 +38,64 @@ function ctx() {
   return _ctx;
 }
 
+// Synthesised reverb. Runs once per AudioContext lifetime — every note
+// sends a portion of its signal here so the whole audio palette gets a
+// musical tail rather than the dry "PacMan" feel. Impulse response is
+// generated from white noise with an exponential decay so we don't need
+// to ship any sample files. Wet level kept conservative (~0.22) so the
+// reverb shapes the sounds without smearing them.
+let _reverbInput = null;
+function getReverbInput(ac) {
+  if (_reverbInput) return _reverbInputGain ? _reverbInputGain : _reverbInput;
+  const sr = ac.sampleRate;
+  const durSec = 0.7;
+  const len = Math.floor(sr * durSec);
+  const impulse = ac.createBuffer(2, len, sr);
+  const decay = 2.6;
+  for (let ch = 0; ch < 2; ch++) {
+    const data = impulse.getChannelData(ch);
+    for (let i = 0; i < len; i++) {
+      const t = i / len;
+      data[i] = (Math.random() * 2 - 1) * Math.pow(1 - t, decay);
+    }
+  }
+  const conv = ac.createConvolver();
+  conv.buffer = impulse;
+  const wet = ac.createGain();
+  wet.gain.value = 0.22;
+  const input = ac.createGain();
+  input.gain.value = 1;
+  input.connect(conv);
+  conv.connect(wet);
+  wet.connect(ac.destination);
+  _reverbInput = input;
+  return _reverbInput;
+}
+
+// Sub-bass thump — kicks under the melodic content on rewards so they
+// land with weight. Very short (~80ms), pitched low (~110 Hz), gentle
+// downward pitch sweep for a "doof" rather than a sine beep. Not routed
+// to reverb (we want it punchy, not smeared).
+function sub(freq, durationMs, gainPeak, startDelayMs) {
+  if (isOn() === false) return;
+  const ac = ctx();
+  if (!ac) return;
+  const start = ac.currentTime + (startDelayMs || 0) / 1000;
+  const end = start + durationMs / 1000;
+  const osc = ac.createOscillator();
+  const gain = ac.createGain();
+  osc.type = "sine";
+  osc.frequency.setValueAtTime(freq, start);
+  osc.frequency.exponentialRampToValueAtTime(Math.max(20, freq * 0.55), end);
+  gain.gain.setValueAtTime(0.0001, start);
+  gain.gain.exponentialRampToValueAtTime(gainPeak || 0.18, start + 0.005);
+  gain.gain.exponentialRampToValueAtTime(0.0001, end);
+  osc.connect(gain);
+  gain.connect(ac.destination);
+  osc.start(start);
+  osc.stop(end + 0.05);
+}
+
 // iOS Safari, Chrome mobile and most touch browsers create the AudioContext
 // in a "suspended" state until a user gesture occurs. Without this, the
 // first sound on the welcome screen is silent and feels broken. We listen
@@ -101,6 +159,26 @@ function note(freq, durationMs, type, gainPeak, startDelayMs, master) {
   gain.gain.exponentialRampToValueAtTime(0.0001, end);
   osc.connect(gain);
   gain.connect(master || ac.destination);
+  // Detune-doubled second voice for richer tone (4 cents up). Adds the
+  // subtle "chorus" feel that separates modern app sounds from PacMan.
+  if (!master) {
+    const osc2 = ac.createOscillator();
+    osc2.type = type || "sine";
+    osc2.frequency.setValueAtTime(freq, start);
+    osc2.detune.setValueAtTime(4, start);
+    const g2 = ac.createGain();
+    g2.gain.setValueAtTime(0.0001, start);
+    g2.gain.exponentialRampToValueAtTime((gainPeak || 0.18) * 0.55, start + 0.012);
+    g2.gain.exponentialRampToValueAtTime(0.0001, end);
+    osc2.connect(g2);
+    g2.connect(ac.destination);
+    osc2.start(start);
+    osc2.stop(end + 0.05);
+    // Reverb send — only for the master-routed top-level voices, not
+    // for the master-attached helper notes (which were already mixed).
+    const verbIn = getReverbInput(ac);
+    if (verbIn) gain.connect(verbIn);
+  }
   osc.start(start);
   osc.stop(end + 0.05);
 }
@@ -171,6 +249,8 @@ function playCorrectTail() {
 }
 export function playCorrect() {
   if (!isOn()) return;
+  // Sub-bass thump — gives every correct a punchy bottom that lands.
+  sub(110, 80, 0.16, 0);
   const pick = CORRECT_PATTERNS[Math.floor(Math.random() * CORRECT_PATTERNS.length)];
   pick();
   playCorrectTail();
@@ -187,26 +267,31 @@ export function playWrong() {
 // Daily-goal level-up fanfare. Used when the kid first crosses 30 XP today.
 export function playLevelUp() {
   if (!isOn()) return;
+  // Sub thump — anchors the moment with bottom-end weight
+  sub(82, 140, 0.16, 0);
   // Triadic ascent
   note(523.25, 70, "sine", 0.16, 0);
   note(659.25, 70, "sine", 0.16, 70);
   note(783.99, 70, "sine", 0.16, 140);
   // Held high C with a fifth on top — held a touch longer for impact
-  note(1046.50, 280, "sine", 0.18, 210);
-  note(1567.98, 280, "sine", 0.10, 210);
+  note(1046.50, 320, "sine", 0.18, 210);
+  note(1567.98, 320, "sine", 0.10, 210);
   // A subtle high-frequency sparkle layered over the tail
-  note(2093.00, 120, "sine", 0.06, 350);
-  note(2637.00, 120, "sine", 0.05, 420);
+  note(2093.00, 140, "sine", 0.07, 350);
+  note(2637.00, 140, "sine", 0.05, 420);
+  // A wide noise wash gives modern "lift"
+  noise(220, 0.04, 200, 5200);
 }
 
-// 3-in-a-row — short rising arpeggio with held peak + sparkle tail.
+// 3-in-a-row — short rising arpeggio with held peak, sub thump + sparkle.
 export function playStreak3() {
   if (!isOn()) return;
+  sub(98, 100, 0.15, 0);                 // sub-bass thump
   note(523.25, 60,  "sine", 0.16,   0);  // C5
   note(659.25, 60,  "sine", 0.16,  60);  // E5
   note(783.99, 100, "sine", 0.18, 120);  // G5
-  note(1046.50, 200, "sine", 0.20, 220); // C6 (held peak)
-  note(2093.00, 110, "sine", 0.08, 290); // C7 sparkle
+  note(1046.50, 220, "sine", 0.20, 220); // C6 (held peak)
+  note(2093.00, 130, "sine", 0.09, 290); // C7 sparkle
   noise(60, 0.04, 220, 4500);            // soft shimmer wash
 }
 
@@ -225,6 +310,8 @@ export function playStreak5() {
 // Perfect round (every question correct) — full fanfare.
 export function playPerfect() {
   if (!isOn()) return;
+  // Sub-bass — a real "boom" entry
+  sub(73, 180, 0.18, 0);
   // Opening triad
   note(523.25, 90, "sine", 0.16, 0);
   note(659.25, 90, "sine", 0.16, 0);
@@ -234,9 +321,12 @@ export function playPerfect() {
   note(1318.51, 70, "sine", 0.16, 200);
   note(1567.98, 70, "sine", 0.16, 270);
   // Final ringing high C with subtle shimmer
-  note(2093.00, 360, "sine", 0.18, 350);
-  note(2637.00, 360, "sine", 0.10, 350);
-  noise(180, 0.05, 360, 5600);
+  note(2093.00, 400, "sine", 0.18, 350);
+  note(2637.00, 400, "sine", 0.10, 350);
+  // White-noise sweep tail
+  noise(220, 0.06, 350, 6200);
+  // Second sub a beat later for a heart-thump release
+  sub(98, 200, 0.12, 380);
 }
 
 // Subtle tap — for option button presses. Very short, low-level.
@@ -469,23 +559,27 @@ export function frenchSpeechMatches(candidates, question) {
 // to its moment so the kid learns the audio language of the app.
 
 // Welcome stinger — plays the moment the kid commits their name on the
-// welcome screen. Ascending arpeggio + held high chord + sparkle: the
-// "AimHigh" signature.
+// welcome screen. Modernised with a sub-bass entrance, ascending
+// arpeggio, held high chord + sparkle, and a wide noise lift.
 export function playWelcomeStinger() {
   if (!isOn()) return;
+  // Anchor sub at the start
+  sub(82, 220, 0.18, 0);
   // Rising arpeggio
-  note(523.25,  60, "sine",     0.14,   0);  // C5
-  note(659.25,  60, "sine",     0.14,  60);  // E5
-  note(783.99,  70, "sine",     0.16, 120);  // G5
-  note(1046.50, 90, "sine",     0.18, 200);  // C6
+  note(523.25,  70, "sine",     0.14,   0);  // C5
+  note(659.25,  70, "sine",     0.14,  60);  // E5
+  note(783.99,  80, "sine",     0.16, 120);  // G5
+  note(1046.50, 100, "sine",    0.18, 200);  // C6
   // Held high chord — root + fifth
-  note(1318.51, 360, "sine",    0.16, 300);  // E6
-  note(1567.98, 360, "sine",    0.10, 300);  // G6
+  note(1318.51, 420, "sine",    0.16, 300);  // E6
+  note(1567.98, 420, "sine",    0.10, 300);  // G6
   // Sparkle layer
-  note(2093.00, 140, "sine",    0.07, 360);  // C7
-  note(2637.00, 140, "sine",    0.05, 440);  // E7
-  // Brief lift wash
-  noise(60, 0.04, 320, 1800);
+  note(2093.00, 160, "sine",    0.07, 360);  // C7
+  note(2637.00, 160, "sine",    0.05, 440);  // E7
+  // Lift wash
+  noise(80, 0.04, 320, 2200);
+  // Soft second sub for warmth
+  sub(110, 280, 0.10, 360);
 }
 
 // WARM-UP entrance — light, friendly two-note "ready" chirp.
@@ -504,18 +598,20 @@ export function playModeStartSprint() {
   note(1760.00, 80,  "triangle", 0.06, 30);  // A6 shimmer
 }
 
-// FULL MOCK entrance — three-note dramatic build for the 30-min commitment.
+// FULL MOCK entrance — dramatic build for the 30-min commitment.
 export function playModeStartMock() {
   if (!isOn()) return;
+  // Sub-bass at the bottom for cinematic weight
+  sub(73, 280, 0.20, 0);
   // Low foundation
-  note(196.00, 160, "triangle", 0.16,   0);  // G3
+  note(196.00, 180, "triangle", 0.16,   0);  // G3
   // Mid climb
-  note(261.63, 120, "triangle", 0.14, 130);  // C4
+  note(261.63, 140, "triangle", 0.14, 130);  // C4
   // Held peak with octave shimmer
-  note(783.99, 100, "sine",     0.14, 250);  // G5
-  note(1046.50, 360, "sine",    0.18, 350);  // C6
-  note(2093.00, 360, "sine",    0.08, 350);  // C7 shimmer
-  noise(120, 0.04, 350, 4200);
+  note(783.99, 110, "sine",     0.14, 250);  // G5
+  note(1046.50, 400, "sine",    0.18, 350);  // C6
+  note(2093.00, 400, "sine",    0.08, 350);  // C7 shimmer
+  noise(140, 0.05, 350, 4200);
 }
 
 // COACH entrance — calm two-note bell, like opening a notebook.
