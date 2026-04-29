@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Option 3 — Inferno Mode — GradeBlaze</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <style>
+    :root {
+      --bg: #0A0A0F;
+      --card: #14141A;
+      --card-hi: #1F1F2A;
+      --border: #2A2A35;
+      --text: #FAFAFA;
+      --dim: #C4C4D1;
+      --muted: #7A7A8C;
+      --primary: #FF3D00;
+      --accent: #FFB300;
+      --magenta: #FF006E;
+      --mint: #00F5D4;
+      --display: "Anton", "Impact", sans-serif;
+      --body: "IBM Plex Sans", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      background:
+        radial-gradient(900px 500px at 90% 0%, rgba(255,61,0,0.18) 0%, transparent 55%),
+        radial-gradient(800px 600px at 0% 100%, rgba(255,0,110,0.10) 0%, transparent 55%),
+        var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      min-height: 100vh;
+      padding: 0 0 4rem;
+    }
+    .pageback {
+      position: fixed; top: 1rem; left: 1rem; z-index: 10;
+      color: var(--mint); text-decoration: none; font-size: 0.82rem;
+      background: rgba(0,0,0,0.55); padding: 0.4rem 0.7rem; border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+    .pageback:hover { color: var(--text); border-color: var(--mint); }
+    .wrap { max-width: 480px; margin: 0 auto; padding: 1.5rem 1rem; }
+
+    /* Header */
+    .header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-bottom: 1.2rem; border-bottom: 1px solid var(--border);
+    }
+    .logo { display: flex; align-items: center; gap: 0.55rem; }
+    .logo-mark {
+      width: 36px; height: 36px;
+    }
+    .logo-text {
+      font-family: var(--display); font-size: 1.55rem;
+      letter-spacing: 0.08em; color: var(--text);
+      text-shadow: 0 0 12px rgba(255,61,0,0.4);
+    }
+    .logo-text .blaze { color: var(--primary); }
+    .chip {
+      width: 36px; height: 36px; border-radius: 4px;
+      background: linear-gradient(135deg, var(--primary), var(--magenta));
+      color: var(--text); display: grid; place-items: center;
+      font-family: var(--display); font-size: 1rem;
+      box-shadow: 0 0 14px rgba(255,61,0,0.4);
+      transform: rotate(-4deg);
+    }
+
+    /* Greeting */
+    .greet {
+      margin: 1.2rem 0 0.6rem;
+      font-family: var(--display); font-size: 1.6rem;
+      letter-spacing: 0.04em; color: var(--text);
+    }
+    .greet .glow { color: var(--mint); text-shadow: 0 0 10px rgba(0,245,212,0.6); }
+    .today-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin: 0.8rem 0 0.4rem;
+    }
+    .today-label {
+      font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .today-day {
+      font-family: var(--display); font-size: 1rem; color: var(--magenta);
+      letter-spacing: 0.1em;
+    }
+    .today-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem; }
+    .today-chip {
+      padding: 5px 12px; font-size: 0.78rem; font-weight: 600;
+      background: rgba(255,61,0,0.12);
+      border: 1px solid rgba(255,61,0,0.45);
+      color: var(--primary);
+      border-radius: 4px;
+    }
+
+    /* Hero card */
+    .hero {
+      background: linear-gradient(160deg, var(--card) 0%, var(--card-hi) 100%);
+      border: 1px solid var(--border); border-radius: 0.75rem;
+      padding: 1.1rem; margin-bottom: 1rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--magenta), var(--mint));
+    }
+    .hero-streak { display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap; }
+    .flame-icon {
+      font-size: 2.4rem; line-height: 1;
+      filter: drop-shadow(0 0 8px rgba(255,61,0,0.7));
+    }
+    .streak-num {
+      font-family: var(--display); font-size: 2.6rem;
+      letter-spacing: 0.04em; color: var(--primary);
+      text-shadow: 0 0 12px rgba(255,61,0,0.55);
+    }
+    .streak-label {
+      font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); display: block; margin-top: 2px;
+    }
+    .freezes {
+      margin-left: auto; text-align: right;
+      font-size: 0.74rem; color: var(--muted); line-height: 1.4;
+    }
+    .freezes strong { color: var(--mint); font-weight: 700; }
+    .xp-block { margin-top: 1rem; }
+    .xp-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 0.4rem;
+    }
+    .xp-label {
+      font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .xp-value { font-family: var(--display); font-size: 1.05rem; color: var(--text); letter-spacing: 0.04em; }
+    .xp-bar {
+      height: 10px; border-radius: 2px; overflow: hidden;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .xp-fill {
+      height: 100%; width: 60%;
+      background: linear-gradient(90deg, var(--primary), var(--magenta));
+      box-shadow: 0 0 12px rgba(255,0,110,0.5);
+    }
+    .hero-bottom {
+      display: flex; justify-content: space-between; gap: 1rem;
+      margin-top: 1rem; padding-top: 0.9rem; border-top: 1px dashed var(--border);
+    }
+    .hero-tier-label, .hero-cd-label {
+      font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .tier-value {
+      font-family: var(--display); font-size: 1.5rem; letter-spacing: 0.05em;
+      color: var(--accent); display: block; line-height: 1;
+      text-shadow: 0 0 10px rgba(255,179,0,0.45);
+    }
+    .cd-value {
+      font-family: var(--display); font-size: 1.3rem; letter-spacing: 0.04em;
+      color: var(--mint); display: block; line-height: 1; margin-top: 2px;
+      text-shadow: 0 0 10px rgba(0,245,212,0.45);
+    }
+
+    /* Drill weakest */
+    .weakest {
+      display: block; margin-bottom: 1rem; padding: 1rem 1.1rem;
+      background: linear-gradient(135deg, rgba(255,0,110,0.18) 0%, rgba(255,61,0,0.05) 100%);
+      border: 1px solid rgba(255,0,110,0.5); border-radius: 0.6rem;
+      color: var(--text); text-decoration: none;
+      box-shadow: 0 0 18px rgba(255,0,110,0.15);
+    }
+    .weakest-head { display: flex; justify-content: space-between; align-items: center; }
+    .weakest-eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--magenta); font-weight: 700;
+    }
+    .weakest-arrow {
+      font-family: var(--display); color: var(--magenta); font-size: 1.3rem;
+    }
+    .weakest-subject {
+      font-size: 0.7rem; letter-spacing: 0.1em; color: var(--muted);
+      text-transform: uppercase; display: block; margin-top: 0.45rem;
+    }
+    .weakest-topic {
+      font-family: var(--display); font-size: 1.7rem;
+      letter-spacing: 0.04em; color: var(--text); display: block;
+    }
+    .weakest-meta { margin-top: 0.4rem; font-size: 0.78rem; color: var(--dim); }
+
+    /* Tiles */
+    .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-bottom: 1rem; }
+    .tile {
+      padding: 1.1rem 1rem; border-radius: 0.6rem;
+      background: linear-gradient(160deg, var(--card) 0%, var(--card-hi) 100%);
+      border: 1px solid var(--border);
+      text-decoration: none; color: var(--text);
+      transition: transform 100ms ease, box-shadow 200ms ease;
+    }
+    .tile:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 22px rgba(255,61,0,0.25);
+      border-color: var(--primary);
+    }
+    .tile-tag {
+      font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted); display: block;
+    }
+    .tile-title {
+      font-family: var(--display); font-size: 1.6rem; letter-spacing: 0.04em;
+      display: block; margin: 0.3rem 0;
+    }
+    .tile-meta { font-size: 0.74rem; color: var(--dim); display: block; }
+    .tile-warmup .tile-title { color: var(--accent); }
+    .tile-sprint .tile-title { color: var(--magenta); }
+
+    /* Buttons */
+    .btn-row { display: flex; gap: 0.6rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .btn {
+      padding: 0.75rem 1.2rem; border-radius: 0.4rem; font-weight: 700;
+      letter-spacing: 0.08em; cursor: pointer; border: none;
+      font-family: var(--display); font-size: 0.95rem; text-transform: uppercase;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--magenta));
+      color: var(--text);
+      box-shadow: 0 0 18px rgba(255,0,110,0.45);
+    }
+    .btn-ghost {
+      background: transparent; color: var(--mint);
+      border: 1px solid var(--mint);
+    }
+    .btn-ghost:hover { box-shadow: 0 0 16px rgba(0,245,212,0.35); }
+
+    /* Type specimen */
+    .specimen { padding-top: 1rem; border-top: 1px solid var(--border); }
+    .spec-label {
+      font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted); margin: 0 0 0.6rem;
+    }
+    h1.spec {
+      font-family: var(--display); font-size: 2.8rem; letter-spacing: 0.04em;
+      margin: 0 0 0.3rem; color: var(--text);
+      text-shadow: 0 0 14px rgba(255,61,0,0.5);
+    }
+    h2.spec {
+      font-family: var(--display); font-size: 1.7rem; letter-spacing: 0.04em;
+      margin: 0 0 0.4rem; color: var(--magenta);
+    }
+    p.spec-body { color: var(--dim); line-height: 1.6; margin: 0 0 0.6rem; }
+    blockquote.spec-quote {
+      font-style: italic; color: var(--text);
+      border-left: 3px solid var(--mint);
+      padding-left: 0.8rem; margin: 0.6rem 0;
+    }
+
+    /* Palette */
+    .palette {
+      margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid var(--border);
+    }
+    .palette-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
+    }
+    .palette-cell {
+      aspect-ratio: 1; border-radius: 4px; position: relative;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .palette-cell::after {
+      content: attr(data-hex);
+      position: absolute; bottom: 4px; left: 4px;
+      font-family: ui-monospace, monospace; font-size: 0.6rem;
+      color: rgba(0,0,0,0.7); background: rgba(255,255,255,0.85);
+      padding: 1px 4px; border-radius: 3px;
+    }
+    .palette-cell.dark::after { color: rgba(255,255,255,0.85); background: rgba(0,0,0,0.5); }
+
+    /* Pick */
+    .pick {
+      margin-top: 2rem; padding: 1.2rem; border-radius: 0.6rem;
+      background: rgba(0,245,212,0.08);
+      border: 1px solid rgba(0,245,212,0.4);
+      text-align: center;
+    }
+    .pick code {
+      background: rgba(0,245,212,0.15); padding: 1px 8px; border-radius: 4px;
+      font-size: 0.92em; color: var(--mint); font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <a class="pageback" href="index.html">← All options</a>
+  <div class="wrap">
+
+    <div class="header">
+      <div class="logo">
+        <svg class="logo-mark" viewBox="0 0 36 36" fill="none">
+          <rect x="2" y="2" width="32" height="32" rx="4" fill="#0A0A0F" stroke="#FF3D00" stroke-width="1.5"/>
+          <path d="M9 26 L13 10 L19 10 L17 18 L23 18 L13 30 L15 22 L9 22 Z" fill="#FF3D00"/>
+          <path d="M22 8 L26 22 L24 22 L26 28 L20 28 L22 22 L20 22 Z" fill="#FFB300" opacity="0.85"/>
+        </svg>
+        <span class="logo-text">GRADE<span class="blaze">BLAZE</span></span>
+      </div>
+      <div class="chip">A</div>
+    </div>
+
+    <p class="greet">Hi, <span class="glow">Adam</span>.</p>
+
+    <div class="today-head">
+      <span class="today-label">Today's lessons — drill what you just had</span>
+      <span class="today-day">TUE</span>
+    </div>
+    <div class="today-chips">
+      <span class="today-chip">English</span>
+      <span class="today-chip">Maths</span>
+      <span class="today-chip">Science</span>
+      <span class="today-chip">Computer Science</span>
+    </div>
+
+    <section class="hero">
+      <div class="hero-streak">
+        <span class="flame-icon">🔥</span>
+        <div>
+          <span class="streak-num">5</span>
+          <span class="streak-label">Day streak</span>
+        </div>
+        <div class="freezes">
+          <strong>2</strong> freezes saved<br>1 missed day allowed
+        </div>
+      </div>
+      <div class="xp-block">
+        <div class="xp-head">
+          <span class="xp-label">Today's goal</span>
+          <span class="xp-value">18 / 30 XP</span>
+        </div>
+        <div class="xp-bar"><div class="xp-fill"></div></div>
+      </div>
+      <div class="hero-bottom">
+        <div>
+          <span class="hero-tier-label">This week</span>
+          <span class="tier-value">GOLD</span>
+        </div>
+        <div style="text-align:right">
+          <span class="hero-cd-label">Exam</span>
+          <span class="cd-value">19 DAYS</span>
+        </div>
+      </div>
+    </section>
+
+    <a href="#" class="weakest">
+      <div class="weakest-head">
+        <span class="weakest-eyebrow">Drill your weakest</span>
+        <span class="weakest-arrow">→</span>
+      </div>
+      <span class="weakest-subject">Maths</span>
+      <span class="weakest-topic">ALGEBRA</span>
+      <div class="weakest-meta">4 misses in last 7 days · 5-question drill</div>
+    </a>
+
+    <div class="tiles">
+      <a href="#" class="tile tile-warmup">
+        <span class="tile-tag">Every day</span>
+        <span class="tile-title">WARM-UP</span>
+        <span class="tile-meta">10 questions · ~5 min</span>
+      </a>
+      <a href="#" class="tile tile-sprint">
+        <span class="tile-tag">Closer to exam</span>
+        <span class="tile-title">SPRINT</span>
+        <span class="tile-meta">One subject · ~15 min</span>
+      </a>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary">Start training</button>
+      <button class="btn btn-ghost">View Coach</button>
+    </div>
+
+    <div class="specimen">
+      <p class="spec-label">Typography</p>
+      <h1 class="spec">FULL MOCK</h1>
+      <h2 class="spec">ALL 7 SUBJECTS · 30 MIN TIMER</h2>
+      <p class="spec-body">Race-day simulation. Thirty questions across every subject in one timed sitting — closest the app gets to a real setting paper.</p>
+      <blockquote class="spec-quote">"Speedrun your mock paper."</blockquote>
+    </div>
+
+    <div class="palette">
+      <p class="spec-label">Palette</p>
+      <div class="palette-grid">
+        <div class="palette-cell dark" style="background:#0A0A0F" data-hex="#0A0A0F"></div>
+        <div class="palette-cell"      style="background:#FF3D00" data-hex="#FF3D00"></div>
+        <div class="palette-cell"      style="background:#FFB300" data-hex="#FFB300"></div>
+        <div class="palette-cell"      style="background:#FF006E" data-hex="#FF006E"></div>
+        <div class="palette-cell"      style="background:#00F5D4" data-hex="#00F5D4"></div>
+      </div>
+    </div>
+
+    <div class="pick">
+      <p style="margin:0 0 0.4rem; font-size:0.95rem; font-weight:600;">Like this direction?</p>
+      <p style="margin:0; color:var(--dim); font-size:0.85rem;">Reply with <code>brand option 3</code></p>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>GradeBlaze — brand direction previews</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Bebas+Neue&display=swap">
+  <style>
+    :root {
+      --bg: #0e0f13;
+      --card: #1a1c24;
+      --card-hi: #232633;
+      --border: #2e3242;
+      --text: #f5f5f7;
+      --dim: #c7c8d1;
+      --muted: #8b8d9a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 2rem 1rem 4rem;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; }
+    .header-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0;
+    }
+    h1 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 3rem;
+      letter-spacing: 0.04em;
+      margin: 0.4rem 0 0.6rem;
+    }
+    .lede {
+      color: var(--dim);
+      max-width: 60ch;
+      margin: 0 0 2.5rem;
+      line-height: 1.55;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.1rem;
+    }
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    a.opt {
+      display: block;
+      background: linear-gradient(160deg, var(--card) 0%, var(--card-hi) 100%);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.4rem 1.3rem;
+      color: var(--text);
+      text-decoration: none;
+      transition: transform 120ms ease, border-color 150ms ease;
+    }
+    a.opt:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.25); }
+    .opt-num {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+    }
+    .opt-name {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.04em;
+      margin: 0.2rem 0 0.4rem;
+    }
+    .opt-tag {
+      font-size: 0.85rem;
+      color: var(--dim);
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+    .swatches {
+      display: flex;
+      gap: 6px;
+      margin: 0 0 0.8rem;
+    }
+    .swatch {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .opt-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .opt-cta::after { content: "→"; }
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    code {
+      background: rgba(255,255,255,0.07);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="header-eyebrow">Brand exploration</p>
+    <h1>GRADEBLAZE — pick a direction</h1>
+    <p class="lede">Four working previews. Each re-skins a representative slice of the app — header, hero card, streak, mode tiles, buttons, typography, palette — so you can compare them as living screens rather than verbal descriptions. Tap any option to open it.</p>
+
+    <div class="grid">
+      <a class="opt" href="01-ember.html">
+        <span class="opt-num">OPTION 1</span>
+        <h2 class="opt-name">EMBER ATHLETICS</h2>
+        <p class="opt-tag">Closest evolution of the current training-mode look. Same energy, warmer palette.</p>
+        <div class="swatches">
+          <span class="swatch" style="background:#0B1220"></span>
+          <span class="swatch" style="background:#FF6B35"></span>
+          <span class="swatch" style="background:#FFB627"></span>
+          <span class="swatch" style="background:#0EA5E9"></span>
+          <span class="swatch" style="background:#F8FAFC"></span>
+        </div>
+        <span class="opt-cta">Open preview</span>
+      </a>
+
+      <a class="opt" href="02-spark.html">
+        <span class="opt-num">OPTION 2</span>
+        <h2 class="opt-name">SPARK SCHOOL</h2>
+        <p class="opt-tag">Light mode, school-friendly, parent-trust energy. Approachable and warm.</p>
+        <div class="swatches">
+          <span class="swatch" style="background:#FFFAF5"></span>
+          <span class="swatch" style="background:#1F2937"></span>
+          <span class="swatch" style="background:#F97316"></span>
+          <span class="swatch" style="background:#FBBF24"></span>
+          <span class="swatch" style="background:#0F766E"></span>
+        </div>
+        <span class="opt-cta">Open preview</span>
+      </a>
+
+      <a class="opt" href="03-inferno.html">
+        <span class="opt-num">OPTION 3</span>
+        <h2 class="opt-name">INFERNO MODE</h2>
+        <p class="opt-tag">Maximum gen-Z gaming energy. Dark mode forward, bold, memorable.</p>
+        <div class="swatches">
+          <span class="swatch" style="background:#0A0A0F"></span>
+          <span class="swatch" style="background:#FF3D00"></span>
+          <span class="swatch" style="background:#FFB300"></span>
+          <span class="swatch" style="background:#FF006E"></span>
+          <span class="swatch" style="background:#00F5D4"></span>
+        </div>
+        <span class="opt-cta">Open preview</span>
+      </a>
+
+      <a class="opt" href="04-quiet.html">
+        <span class="opt-num">OPTION 4</span>
+        <h2 class="opt-name">QUIET FIRE</h2>
+        <p class="opt-tag">Premium minimalism. Single restrained accent. Notion / Linear vibe.</p>
+        <div class="swatches">
+          <span class="swatch" style="background:#FAFAFA"></span>
+          <span class="swatch" style="background:#0F0F11"></span>
+          <span class="swatch" style="background:#E85D04"></span>
+          <span class="swatch" style="background:#737373"></span>
+          <span class="swatch" style="background:#171717"></span>
+        </div>
+        <span class="opt-cta">Open preview</span>
+      </a>
+    </div>
+
+    <footer>
+      <p>To pick a direction reply with <code>brand option 1</code> / <code>2</code> / <code>3</code> / <code>4</code>. The brand folder will be removed once a direction is chosen and the rest of the app re-skinned to match.</p>
+    </footer>
+  </div>
+</body>
+</html>
