@@ -25,7 +25,7 @@ import {
   topicLadder,
   subjectLadder
 } from "./engagement.js";
-import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playModeStartSprint, playModeStartWarmup, makeListenButton, frenchSpellMatches } from "./sounds.js";
+import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playModeStartSprint, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches } from "./sounds.js";
 import { getVisual } from "./visuals.js";
 import { isParentRole } from "./profile.js";
 
@@ -341,6 +341,7 @@ function paintQuestion() {
   if (!session) return;
   const q = session.items[session.index];
   if (q.type === "spell") { paintSpellQuestion(q); return; }
+  if (q.type === "speak") { paintSpeakQuestion(q); return; }
   const total = session.items.length;
   const i = session.index;
   const pct = Math.round((i / total) * 100);
@@ -458,6 +459,140 @@ function attachListen(card, q) {
   const subj = card.querySelector(".mock-session-subject");
   if (subj && subj.nextSibling) card.insertBefore(btn, subj.nextSibling);
   else card.appendChild(btn);
+}
+
+// Speaking question (KS3 MFL speaking practice). Falls back to typing
+// when SpeechRecognition isn't available so the kid still gets a path
+// through the question on Firefox / older Safari.
+function paintSpeakQuestion(q) {
+  const total = session.items.length;
+  const i = session.index;
+  const pct = Math.round((i / total) * 100);
+  const supported = speechRecognitionAvailable();
+  root.innerHTML =
+    "<section class=\"mock-session\">" +
+      "<div class=\"mock-session-progress\">" +
+        "<div class=\"mock-session-progress-bar\">" +
+          "<div class=\"mock-session-progress-fill\" style=\"width:" + pct + "%\"></div>" +
+        "</div>" +
+        "<span class=\"mock-session-progress-text\">" + (i + 1) + "/" + total + "</span>" +
+      "</div>" +
+      "<div class=\"mock-session-card\" id=\"sessionCard\">" +
+        "<span class=\"mock-session-subject\">" + escapeHtml(subjectLabel(q)) + "</span>" +
+        "<p class=\"mock-session-prompt\">" + escapeHtml(q.prompt) + "</p>" +
+        (supported
+          ? "<div class=\"mock-speak-stage\">" +
+              "<button type=\"button\" class=\"mock-mic-btn\" id=\"micBtn\" aria-label=\"Tap to speak in French\">" +
+                "<span class=\"mock-mic-icon\" aria-hidden=\"true\">&#127908;</span>" +
+                "<span class=\"mock-mic-label\">Tap to speak</span>" +
+              "</button>" +
+              "<p class=\"mock-speak-status\" id=\"speakStatus\" aria-live=\"polite\"></p>" +
+            "</div>"
+          : "<div class=\"mock-speak-fallback\">" +
+              "<p class=\"mock-coach-empty\">Speaking exercises need Chrome or Edge. Type the phrase instead:</p>" +
+              "<form id=\"spellForm\" class=\"mock-spell-form\" novalidate>" +
+                "<input id=\"spellInput\" class=\"mock-spell-input\" type=\"text\" autocomplete=\"off\" autocapitalize=\"off\" autocorrect=\"off\" spellcheck=\"false\" placeholder=\"Type in French\" required autofocus />" +
+                "<button type=\"submit\" class=\"mock-button\">Check</button>" +
+              "</form>" +
+            "</div>") +
+      "</div>" +
+    "</section>";
+
+  attachListen(document.getElementById("sessionCard"), q);
+  if (supported) {
+    wireMic(q);
+  } else {
+    document.getElementById("spellForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const inp = document.getElementById("spellInput");
+      const correct = frenchSpellMatches(inp.value, q);
+      inp.disabled = true;
+      onSpellAnswered(q, correct);
+    });
+  }
+}
+
+function wireMic(q) {
+  const btn = document.getElementById("micBtn");
+  const status = document.getElementById("speakStatus");
+  if (!btn || !status) return;
+  let busy = false;
+  btn.addEventListener("click", function () {
+    if (busy) return;
+    busy = true;
+    btn.classList.add("recording");
+    btn.querySelector(".mock-mic-label").textContent = "Listening…";
+    status.textContent = "Speak the phrase, then pause.";
+    recordFrench({
+      onResult: function (alts) {
+        const result = frenchSpeechMatches(alts, q);
+        btn.classList.remove("recording");
+        btn.disabled = true;
+        btn.querySelector(".mock-mic-label").textContent = "Done";
+        status.textContent = result.heard ? "We heard: “" + result.heard + "”" : "";
+        onSpeakAnswered(q, result.matched, result.heard);
+      },
+      onError: function (err) {
+        btn.classList.remove("recording");
+        busy = false;
+        btn.querySelector(".mock-mic-label").textContent = "Try again";
+        if (err && err.message === "not-allowed") {
+          status.textContent = "Microphone permission needed. Allow it in browser settings, then retry.";
+        } else if (err && err.message === "no-speech") {
+          status.textContent = "Didn't catch that — tap mic and try again.";
+        } else {
+          status.textContent = "Couldn't capture audio. Try again.";
+        }
+      }
+    });
+  });
+}
+
+function onSpeakAnswered(q, correct, heard) {
+  session.results.push({ id: q.id, subject: q.subject, topic: q.topic, correct: correct });
+  saveResumeState();
+  if (correct) {
+    session.streak = (session.streak || 0) + 1;
+    playCorrect();
+    if (session.streak === 3) playStreak3();
+    else if (session.streak === 5) playStreak5();
+    else if (session.streak >= 7 && session.streak % 2 === 1) playStreak3();
+    showSpeakFeedback(q, true, heard);
+    setTimeout(advance, CORRECT_AUTOADVANCE_MS);
+  } else {
+    session.streak = 0;
+    playWrong();
+    showSpeakFeedback(q, false, heard);
+  }
+}
+
+function showSpeakFeedback(q, correct, heard) {
+  const card = document.getElementById("sessionCard");
+  if (!card) { advance(); return; }
+  const fb = document.createElement("div");
+  fb.className = "mock-session-feedback " + (correct ? "correct" : "wrong");
+  if (correct) {
+    fb.innerHTML = "<span>Nice &mdash; <strong>" + escapeHtml(q.answer) + "</strong></span>";
+  } else {
+    fb.innerHTML =
+      "<span>Not quite. Target: <strong>" + escapeHtml(q.answer) + "</strong>" +
+      (heard ? "<br><span class=\"mock-speak-heard\">we heard: " + escapeHtml(heard) + "</span>" : "") +
+      "</span>";
+    if (q.explainer) {
+      const ex = document.createElement("div");
+      ex.className = "mock-session-feedback-explainer";
+      ex.textContent = q.explainer;
+      fb.appendChild(ex);
+    }
+    const cont = document.createElement("button");
+    cont.type = "button";
+    cont.className = "mock-button";
+    cont.textContent = "Continue";
+    cont.style.marginTop = "0.5rem";
+    cont.addEventListener("click", advance);
+    fb.appendChild(cont);
+  }
+  card.appendChild(fb);
 }
 
 function onAnswer(chosenIdx, btnEl) {

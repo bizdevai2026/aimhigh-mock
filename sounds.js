@@ -302,6 +302,85 @@ export function frenchSpellMatches(input, question) {
   return targets.some(function (a) { return normaliseFrenchAnswer(a) === t; });
 }
 
+// SpeechRecognition (the input side of Web Speech API) is unevenly
+// supported: Chrome / Chrome Android / Edge yes, Firefox no, Safari iOS
+// only on recent versions and only patchily. We feature-detect at every
+// call site and fall back to typing when unavailable.
+export function speechRecognitionAvailable() {
+  return typeof window !== "undefined" &&
+    (typeof window.SpeechRecognition !== "undefined" ||
+     typeof window.webkitSpeechRecognition !== "undefined");
+}
+
+// One-shot French speech recognition. Caller passes callbacks for each
+// stage. Returns a handle with abort() for early cancellation.
+//
+// callbacks: { onStart, onResult(alternatives[]), onError(err), onEnd }
+//
+// onResult fires with up to 3 transcript candidates ordered by
+// confidence; comparison uses frenchSpellMatchesAny so any candidate
+// that normalises to the target is accepted (helps with French homophones).
+export function recordFrench(callbacks) {
+  callbacks = callbacks || {};
+  if (!speechRecognitionAvailable()) {
+    if (callbacks.onError) callbacks.onError(new Error("not-supported"));
+    return null;
+  }
+  const Ctor = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const rec = new Ctor();
+  rec.lang = "fr-FR";
+  rec.interimResults = false;
+  rec.maxAlternatives = 3;
+  rec.continuous = false;
+
+  let aborted = false;
+  let gotResult = false;
+
+  rec.addEventListener("start", function () {
+    if (callbacks.onStart) callbacks.onStart();
+  });
+  rec.addEventListener("result", function (e) {
+    gotResult = true;
+    const list = [];
+    const res = e.results[0];
+    if (res) {
+      for (let i = 0; i < res.length; i++) list.push(res[i].transcript);
+    }
+    if (callbacks.onResult) callbacks.onResult(list);
+  });
+  rec.addEventListener("error", function (e) {
+    if (aborted) return;
+    if (callbacks.onError) callbacks.onError(new Error(e.error || "unknown"));
+  });
+  rec.addEventListener("end", function () {
+    if (callbacks.onEnd) callbacks.onEnd();
+    if (!gotResult && !aborted) {
+      if (callbacks.onError) callbacks.onError(new Error("no-speech"));
+    }
+  });
+
+  try { rec.start(); }
+  catch (e) { if (callbacks.onError) callbacks.onError(e); }
+
+  return {
+    abort: function () { aborted = true; try { rec.abort(); } catch (e) {} }
+  };
+}
+
+// Check any of the recogniser's candidate transcripts against the
+// question's answer + alternates, using lenient normalisation. Returns
+// { matched, heard } so the runner can show "we heard: …" feedback.
+export function frenchSpeechMatches(candidates, question) {
+  const targets = [question.answer].concat(question.alternates || []).map(normaliseFrenchAnswer);
+  for (let i = 0; i < (candidates || []).length; i++) {
+    const heard = candidates[i];
+    const norm = normaliseFrenchAnswer(heard);
+    if (!norm) continue;
+    if (targets.indexOf(norm) !== -1) return { matched: true, heard: heard };
+  }
+  return { matched: false, heard: (candidates && candidates[0]) || "" };
+}
+
 // ---------- Signature stingers ---------------------------------------------
 //
 // These are reserved for moments that should feel like *the app talking

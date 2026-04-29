@@ -728,5 +728,110 @@
     "answer": "Je suis de Londres",
     "alternates": [],
     "explainer": "\"Je suis de\" = I am from. Londres = London (most cities have French names)."
+  },
+  {
+    "id": "fr-speak-001",
+    "subject": "french",
+    "topic": "speaking",
+    "type": "speak",
+    "audio": "Je m'appelle Alex",
+    "prompt": "Tap Listen, then say it back: \"My name is Alex\".",
+    "answer": "Je m'appelle Alex",
+    "alternates": [
+      "jai mappelle Alex",
+      "je mappelle Alex"
+    ],
+    "explainer": "\"Je m'appelle\" = \"I call myself\". The 'm'' is a contraction of \"me\"."
+  },
+  {
+    "id": "fr-speak-002",
+    "subject": "french",
+    "topic": "speaking",
+    "type": "speak",
+    "audio": "J'ai douze ans",
+    "prompt": "Say it: \"I am 12 years old\".",
+    "answer": "J'ai douze ans",
+    "alternates": [
+      "jai douze ans"
+    ],
+    "explainer": "Watch the linking sound: \"j'ai-douz'-ans\" — the 's' of douze flows into 'ans'."
+  },
+  {
+    "id": "fr-speak-003",
+    "subject": "french",
+    "topic": "speaking",
+    "type": "speak",
+    "audio": "J'habite à Londres",
+    "prompt": "Say it: \"I live in London\".",
+    "answer": "J'habite à Londres",
+    "alternates": [
+      "jhabite a Londres",
+      "j'habite a Londres"
+    ],
+    "explainer": "The 'h' of habite is silent, so it sounds like \"jabite\". Londres = London."
+  },
+  {
+    "id": "fr-speak-004",
+    "subject": "french",
+    "topic": "speaking",
+    "type": "speak",
+    "audio": "J'ai un frère",
+    "prompt": "Say it: \"I have a brother\".",
+    "answer": "J'ai un frère",
+    "alternates": [
+      "jai un frère",
+      "jai un frere"
+    ],
+    "explainer": "Frère has a soft 'è' — like the 'e' in 'bed'."
+  },
+  {
+    "id": "fr-speak-005",
+    "subject": "french",
+    "topic": "speaking",
+    "type": "speak",
+    "audio": "Mon anniversaire est en mai",
+    "prompt": "Say it: \"My birthday is in May\".",
+    "answer": "Mon anniversaire est en mai",
+    "alternates": [],
+    "explainer": "Anniversaire links smoothly: \"mon-naniversaire\". Mai = May."
+  },
+  {
+    "id": "fr-speak-006",
+    "subject": "french",
+    "topic": "speaking",
+    "type": "speak",
+    "audio": "Je suis fatigué",
+    "prompt": "Say it: \"I am tired\".",
+    "answer": "Je suis fatigué",
+    "alternates": [
+      "je suis fatigue"
+    ],
+    "explainer": "The 'é' at the end is sharp — like the 'ay' in \"day\" but shorter."
+  },
+  {
+    "id": "fr-speak-007",
+    "subject": "french",
+    "topic": "speaking",
+    "type": "speak",
+    "audio": "J'aime les chiens",
+    "prompt": "Say it: \"I like dogs\".",
+    "answer": "J'aime les chiens",
+    "alternates": [
+      "jaime les chiens"
+    ],
+    "explainer": "\"Chiens\" rhymes with the English \"yen\" — soft, nasal."
+  },
+  {
+    "id": "fr-speak-008",
+    "subject": "french",
+    "topic": "speaking",
+    "type": "speak",
+    "audio": "J'ai les yeux bleus",
+    "prompt": "Say it: \"I have blue eyes\".",
+    "answer": "J'ai les yeux bleus",
+    "alternates": [
+      "jai les yeux bleus"
+    ],
+    "explainer": "Yeux = eyes. Bleus is plural to match yeux. Final 's' is silent."
   }
 ]

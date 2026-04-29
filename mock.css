@@ -1324,6 +1324,66 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 }
 .mock-session-feedback.correct strong { color: var(--mock-lime); }
 
+/* Speaking question — Duolingo-style mic UI */
+.mock-speak-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.6rem 0;
+}
+.mock-mic-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: rgba(34, 211, 238, 0.10);
+  border: 2px solid var(--mock-cyan);
+  color: var(--mock-cyan);
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin: 0.6rem 0;
+  transition: transform 100ms ease, background 150ms ease;
+}
+.mock-mic-btn:hover { transform: translateY(-2px); }
+.mock-mic-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+.mock-mic-btn.recording {
+  background: rgba(248, 113, 113, 0.18);
+  border-color: #fca5a5;
+  color: #fca5a5;
+  animation: mockMicPulse 1.4s ease-in-out infinite;
+}
+@keyframes mockMicPulse {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(248, 113, 113, 0.45); }
+  50%      { box-shadow: 0 0 0 18px rgba(248, 113, 113, 0); }
+}
+.mock-mic-icon { font-size: 2.1rem; }
+.mock-mic-label { font-size: 0.78rem; }
+.mock-speak-status {
+  margin: 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--mock-text-dim);
+  min-height: 1.2em;
+}
+.mock-speak-heard {
+  font-style: italic;
+  color: var(--mock-muted);
+  font-size: 0.85rem;
+}
+.mock-speak-fallback {
+  margin-top: 0.6rem;
+}
+
 /* ---------- GREETING + PROFILE CHIP + STUB NAME ---------- */
 
 .mock-greeting {

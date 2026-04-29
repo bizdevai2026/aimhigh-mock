@@ -211,15 +211,15 @@ function begin() {
 // Mixed-subject picker for the paper. Goal: every subject represented,
 // then top up with whatever else is fresh (cooldown-aware).
 //
-// Spell-type questions (text-input French spelling) are filtered out
-// here — the mock paper is a multi-subject MCQ paper, mixing typing in
-// would be jarring. Spell questions still surface in WARM-UP and SPRINT.
+// Spell + speak questions (typing / speaking French) are filtered out
+// here — the mock paper is a multi-subject MCQ paper, mixing them in
+// would be jarring. They still surface in WARM-UP and SPRINT.
 function pickPaperQuestions(p, n) {
   const subjects = listSubjects();
   const bySubject = {};
   subjects.forEach(function (s) { bySubject[s.id] = []; });
   p.forEach(function (q) {
-    if (q && q.type === "spell") return;
+    if (q && (q.type === "spell" || q.type === "speak")) return;
     if (bySubject[q.subject]) bySubject[q.subject].push(q);
   });
   // shuffle each subject's pool
