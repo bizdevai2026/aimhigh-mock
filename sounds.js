@@ -5,16 +5,17 @@
 // arpeggios, gentle noise bursts, and escalating streak celebrations
 // (3-in-a-row, 5-in-a-row, perfect round).
 //
-// Sound is OFF by default. Parents getting a quiet phone in the
-// morning would not appreciate surprise beeps. The mute toggle in
-// the header flips this on; the choice persists at "aimhigh-mock-sound".
+// Sound is ON by default — explicit user request. Parents who'd
+// rather mute can flip it off in the header; the off choice
+// persists at "aimhigh-mock-sound" = "off". First-time visit and
+// any storage failure both fall back to ON.
 
 const SOUND_KEY = "aimhigh-mock-sound";
 
 let _ctx = null;
 
 function isOn() {
-  try { return localStorage.getItem(SOUND_KEY) === "on"; } catch (e) { return false; }
+  try { return localStorage.getItem(SOUND_KEY) !== "off"; } catch (e) { return true; }
 }
 
 export function setSoundOn(on) {
