@@ -250,24 +250,84 @@ function escapeHtml(s) {
 function injectProfileChip() {
   const inner = document.querySelector(".mock-header-inner");
   if (!inner) return;
-  if (inner.querySelector(".mock-profile-chip")) return;
+  if (inner.querySelector(".mock-profile-wrap")) return;
   const name = profileName();
   if (!name) return;
+
+  // Wrapper anchors the absolute-positioned panel under the chip.
+  const wrap = document.createElement("div");
+  wrap.className = "mock-profile-wrap";
+
   const chip = document.createElement("button");
   chip.type = "button";
   chip.className = "mock-profile-chip";
-  chip.title = "Sign out (clears your saved progress on this device)";
   chip.setAttribute("aria-label", "Profile menu");
+  chip.setAttribute("aria-haspopup", "true");
+  chip.setAttribute("aria-expanded", "false");
+  chip.title = "Profile menu";
   chip.textContent = name.charAt(0).toUpperCase();
-  chip.addEventListener("click", function () {
-    const ok = confirm("Sign out " + name + "? This clears your saved progress on this device.");
-    if (ok) {
-      clearProfile();
-      location.replace("welcome.html");
-    }
+
+  // Two-tap sign-out: panel with explicit Sign out / Cancel buttons,
+  // dismissed by an outside click. iOS' native confirm() is risky on a
+  // single tap (and confusing for kids), so we own the affordance.
+  const panel = document.createElement("div");
+  panel.className = "mock-profile-panel";
+  panel.setAttribute("role", "menu");
+  panel.style.display = "none";
+
+  const signedAs = document.createElement("p");
+  signedAs.className = "mock-profile-panel-name";
+  signedAs.textContent = "Signed in as ";
+  const nameStrong = document.createElement("strong");
+  nameStrong.textContent = name;
+  signedAs.appendChild(nameStrong);
+
+  const signOutBtn = document.createElement("button");
+  signOutBtn.type = "button";
+  signOutBtn.className = "mock-profile-signout";
+  signOutBtn.textContent = "Sign out";
+
+  const cancelBtn = document.createElement("button");
+  cancelBtn.type = "button";
+  cancelBtn.className = "mock-profile-cancel";
+  cancelBtn.textContent = "Cancel";
+
+  const warn = document.createElement("p");
+  warn.className = "mock-profile-warn";
+  warn.textContent = "This clears your saved progress on this device.";
+
+  panel.appendChild(signedAs);
+  panel.appendChild(signOutBtn);
+  panel.appendChild(cancelBtn);
+  panel.appendChild(warn);
+
+  function open() {
+    panel.style.display = "";
+    chip.setAttribute("aria-expanded", "true");
+  }
+  function close() {
+    panel.style.display = "none";
+    chip.setAttribute("aria-expanded", "false");
+  }
+
+  chip.addEventListener("click", function (e) {
+    e.stopPropagation();
+    if (panel.style.display === "none") open(); else close();
   });
-  // Insert at the start of the header so it sits next to the brand.
-  inner.appendChild(chip);
+  panel.addEventListener("click", function (e) { e.stopPropagation(); });
+  document.addEventListener("click", function () {
+    if (panel.style.display !== "none") close();
+  });
+
+  signOutBtn.addEventListener("click", function () {
+    clearProfile();
+    location.replace("welcome.html");
+  });
+  cancelBtn.addEventListener("click", close);
+
+  wrap.appendChild(chip);
+  wrap.appendChild(panel);
+  inner.appendChild(wrap);
 }
 
 function boot() {
