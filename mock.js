@@ -381,17 +381,22 @@ function maybeShowOnboardingTour() {
   const cards = [
     {
       title: "Welcome, " + name + "!",
-      body: "AimHigh is your training app for May. Three modes, one Coach. Show up daily and your streak grows.",
+      body: "GradeBlaze is your training app for May. Three modes, one Coach. Show up daily and your streak grows.",
       next: "Tell me more"
     },
     {
-      title: "Streaks &amp; freezes",
+      title: "Streaks & freezes",
       body: "Hit your daily 30 XP goal to keep your streak alive. Miss a day and a freeze covers you — you start with two. Each 5-day streak earns one back, max two saved.",
       next: "Got it"
     },
     {
       title: "Four modes",
-      body: "WARM-UP daily. SPRINT one subject. FULL MOCK the whole paper. COACH ranks your weak topics so you know what to drill next.",
+      bullets: [
+        "<strong>WARM-UP</strong> — 10 mixed questions, every day",
+        "<strong>SPRINT</strong> — pick one subject, go deep",
+        "<strong>FULL MOCK</strong> — the whole paper, timed",
+        "<strong>COACH</strong> — ranks your weak topics"
+      ],
       next: "Let's go"
     }
   ];
@@ -406,11 +411,23 @@ function maybeShowOnboardingTour() {
     const dotsHtml = cards.map(function (_, i) {
       return "<span class=\"mock-tour-dot " + (i === step ? "active" : "") + "\"></span>";
     }).join("");
+    // Bullets are hardcoded developer content — render as raw HTML so we
+    // can use <strong> for emphasis. Body strings still escape (the only
+    // dynamic injection is the kid's name in card 1, which is escaped
+    // by the title escapeHtml call below).
+    let contentHtml;
+    if (c.bullets) {
+      contentHtml = "<ul class=\"mock-tour-bullets\">" +
+        c.bullets.map(function (b) { return "<li>" + b + "</li>"; }).join("") +
+        "</ul>";
+    } else {
+      contentHtml = "<p class=\"mock-tour-body\">" + escapeHtml(c.body) + "</p>";
+    }
     overlay.innerHTML =
       "<div class=\"mock-tour-card\" role=\"dialog\" aria-modal=\"true\">" +
         "<div class=\"mock-tour-dots\" aria-hidden=\"true\">" + dotsHtml + "</div>" +
         "<h2 class=\"mock-tour-title\">" + escapeHtml(c.title) + "</h2>" +
-        "<p class=\"mock-tour-body\">" + escapeHtml(c.body) + "</p>" +
+        contentHtml +
         "<button type=\"button\" class=\"mock-button mock-tour-next\">" + escapeHtml(c.next) + "</button>" +
         "<button type=\"button\" class=\"mock-tour-skip\">Skip</button>" +
       "</div>";
