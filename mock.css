@@ -1,53 +1,58 @@
-/* AimHigh Mock Prep — Training Mode
-   Dark navy + electric lime, designed for a Year 7 learner training daily
-   for May setting tests. Aesthetic codes "training app" rather than
-   "kid's language app". Engagement mechanics borrow from Duolingo's
-   proven retention loops (streak / freeze / XP goal / weekly tier)
-   without copying the mascot or kid-coded palette. */
+/* GradeBlaze — Inferno Mode (restrained)
+   Graphite + scarlet flame, designed for a Year 7 learner training daily.
+   Engagement codes from Duolingo's retention loop (streak / freeze /
+   XP goal / weekly tier). Inferno energy is reserved for arrival and
+   celebration moments — the resting UI stays calmer so a 30-minute mock
+   paper doesn't burn the eyes.
+
+   Variable names like --mock-lime / --mock-cyan are intentionally kept
+   from the previous palette so the rebrand is a value swap, not a
+   class rewrite — every selector in the file continues to work. */
 
 :root {
   /* Surface */
-  --mock-bg: #0b1120;
-  --mock-bg-grad: #111827;
-  --mock-card: #0f172a;
-  --mock-card-hi: #1e293b;
-  --mock-border: #1e293b;
-  --mock-border-hi: #334155;
+  --mock-bg: #0a0a0f;
+  --mock-bg-grad: #14141a;
+  --mock-card: #14141a;
+  --mock-card-hi: #1f1f2a;
+  --mock-border: #1f1f2a;
+  --mock-border-hi: #2a2a35;
 
   /* Text */
-  --mock-text: #e2e8f0;
-  --mock-text-strong: #f8fafc;
-  --mock-text-dim: #cbd5e1;
-  --mock-muted: #94a3b8;
+  --mock-text: #c4c4d1;
+  --mock-text-strong: #fafafa;
+  --mock-text-dim: #c4c4d1;
+  --mock-muted: #7a7a8c;
 
-  /* Accents */
-  --mock-lime: #84cc16;
-  --mock-lime-strong: #65a30d;
-  --mock-lime-soft: rgba(132, 204, 22, 0.10);
+  /* Accents — primary slot now scarlet, secondary slot now mint */
+  --mock-lime: #ff3d00;            /* primary energy — name kept for back-compat */
+  --mock-lime-strong: #d94b00;
+  --mock-lime-soft: rgba(255, 61, 0, 0.10);
   --mock-coral: #f97316;
-  --mock-coral-soft: rgba(249, 115, 22, 0.12);
-  --mock-fire: #fbbf24;
-  --mock-cyan: #22d3ee;
+  --mock-coral-soft: rgba(249, 115, 22, 0.14);
+  --mock-fire: #ffb300;            /* warm amber — used by tiles + tier gold */
+  --mock-cyan: #00f5d4;            /* mint — cool counterpoint, parent banner */
+  --mock-magenta: #ff006e;         /* celebration only (perfect rounds, level-up) */
 
   /* Tier colours */
   --tier-bronze: #c2750a;
   --tier-silver: #cbd5e1;
-  --tier-gold: #fbbf24;
-  --tier-diamond: #22d3ee;
+  --tier-gold: #ffb300;
+  --tier-diamond: #00f5d4;
 
-  /* Per-mode strip colours */
-  --tile-warmup:   #84cc16;
-  --tile-sprint:   #22d3ee;
-  --tile-distance: #f97316;
-  --tile-coach:    #fbbf24;
+  /* Per-mode strip colours — kept distinct so subject tiles still read */
+  --tile-warmup:   #ff3d00;
+  --tile-sprint:   #00f5d4;
+  --tile-distance: #ff006e;
+  --tile-coach:    #ffb300;
 
   /* Geometry */
   --mock-radius: 14px;
   --mock-radius-lg: 20px;
 
   /* Type */
-  --mock-font-display: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif;
-  --mock-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mock-font-display: 'Anton', 'Impact', 'Arial Black', sans-serif;
+  --mock-font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -56,8 +61,8 @@ html, body { margin: 0; padding: 0; }
 body.mock-page {
   font-family: var(--mock-font-body);
   background:
-    radial-gradient(900px 480px at 50% -200px, rgba(132, 204, 22, 0.10), transparent 70%),
-    radial-gradient(700px 420px at 100% 100%, rgba(34, 211, 238, 0.07), transparent 70%),
+    radial-gradient(900px 480px at 50% -200px, rgba(255, 61, 0, 0.12), transparent 70%),
+    radial-gradient(700px 420px at 100% 100%, rgba(255, 0, 110, 0.06), transparent 70%),
     linear-gradient(180deg, var(--mock-bg) 0%, var(--mock-bg-grad) 100%);
   background-attachment: fixed;
   color: var(--mock-text);
@@ -74,7 +79,7 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 
 /* HEADER */
 .mock-header {
-  background: rgba(11, 17, 32, 0.85);
+  background: rgba(10, 10, 15, 0.85);
   border-bottom: 1px solid var(--mock-border);
   position: sticky;
   top: 0;
@@ -103,7 +108,7 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   width: 36px;
   height: 36px;
   border-radius: 9px;
-  background: linear-gradient(135deg, var(--mock-lime), var(--mock-cyan));
+  background: linear-gradient(135deg, var(--mock-lime), var(--mock-fire));
   color: var(--mock-bg);
   font-family: var(--mock-font-display);
   font-size: 1.05rem;
@@ -274,7 +279,7 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   width: 0%;
   transition: width 700ms cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 999px;
-  box-shadow: 0 0 18px rgba(132, 204, 22, 0.45);
+  box-shadow: 0 0 18px rgba(255, 61, 0, 0.45);
 }
 
 .mock-hero-bottom {
@@ -878,13 +883,13 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   width: 60px;
   height: 60px;
   border-radius: 14px;
-  background: linear-gradient(135deg, var(--mock-lime), var(--mock-cyan));
+  background: linear-gradient(135deg, var(--mock-lime), var(--mock-fire));
   color: var(--mock-bg);
   font-family: var(--mock-font-display);
   font-size: 1.6rem;
   letter-spacing: 0.04em;
   margin-bottom: 1.1rem;
-  box-shadow: 0 0 30px rgba(132, 204, 22, 0.4);
+  box-shadow: 0 0 30px rgba(255, 61, 0, 0.45);
 }
 .mock-welcome-title {
   font-family: var(--mock-font-display);
@@ -934,7 +939,7 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 .mock-welcome-input:focus {
   border-color: var(--mock-lime);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(132, 204, 22, 0.18);
+  box-shadow: 0 0 0 3px rgba(255, 61, 0, 0.18);
 }
 .mock-welcome-submit {
   margin-top: 0.4rem;
@@ -965,7 +970,7 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 .mock-welcome-pin:focus {
   border-color: var(--mock-lime);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(132, 204, 22, 0.18);
+  box-shadow: 0 0 0 3px rgba(255, 61, 0, 0.18);
 }
 
 /* Inline error line under the form */
@@ -1038,8 +1043,8 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 .mock-parent-banner {
   margin: 0 0 0.9rem;
   padding: 0.65rem 0.9rem;
-  background: rgba(34, 211, 238, 0.10);
-  border: 1px solid rgba(34, 211, 238, 0.35);
+  background: rgba(0, 245, 212, 0.10);
+  border: 1px solid rgba(0, 245, 212, 0.35);
   border-radius: 0.5rem;
   color: var(--mock-cyan);
   font-size: 0.82rem;
@@ -1057,14 +1062,14 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   font-weight: 700;
 }
 .mock-coach-role-badge.is-parent {
-  background: rgba(34, 211, 238, 0.15);
+  background: rgba(0, 245, 212, 0.15);
   color: var(--mock-cyan);
-  border: 1px solid rgba(34, 211, 238, 0.4);
+  border: 1px solid rgba(0, 245, 212, 0.4);
 }
 .mock-coach-role-badge.is-child {
-  background: rgba(132, 204, 22, 0.15);
+  background: rgba(255, 61, 0, 0.15);
   color: var(--mock-lime);
-  border: 1px solid rgba(132, 204, 22, 0.4);
+  border: 1px solid rgba(255, 61, 0, 0.4);
 }
 
 /* Onboarding tour — child only, first sign-in */
@@ -1113,7 +1118,7 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 }
 .mock-tour-dot.active {
   background: var(--mock-lime);
-  box-shadow: 0 0 10px rgba(132, 204, 22, 0.55);
+  box-shadow: 0 0 10px rgba(255, 61, 0, 0.55);
 }
 .mock-tour-title {
   margin: 0 0 0.7rem;
@@ -1257,7 +1262,7 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   transition: background 120ms ease;
 }
 .mock-coach-row-anchor:hover {
-  background: rgba(132, 204, 22, 0.08);
+  background: rgba(255, 61, 0, 0.08);
 }
 .mock-coach-row-anchor::after {
   content: "→";
@@ -1272,8 +1277,8 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   gap: 0.45rem;
   margin: 0.5rem 0 0.6rem;
   padding: 0.4rem 0.8rem;
-  background: rgba(34, 211, 238, 0.10);
-  border: 1px solid rgba(34, 211, 238, 0.45);
+  background: rgba(0, 245, 212, 0.10);
+  border: 1px solid rgba(0, 245, 212, 0.45);
   border-radius: 999px;
   color: var(--mock-cyan);
   font-size: 0.85rem;
@@ -1282,7 +1287,7 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   cursor: pointer;
   transition: background 120ms ease, transform 100ms ease;
 }
-.mock-listen-btn:hover  { background: rgba(34, 211, 238, 0.18); transform: translateY(-1px); }
+.mock-listen-btn:hover  { background: rgba(0, 245, 212, 0.18); transform: translateY(-1px); }
 .mock-listen-btn:active { transform: translateY(0); }
 .mock-listen-icon { font-size: 1.05rem; }
 
@@ -1305,7 +1310,7 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 .mock-spell-input:focus {
   border-color: var(--mock-lime);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(132, 204, 22, 0.18);
+  box-shadow: 0 0 0 3px rgba(255, 61, 0, 0.18);
 }
 .mock-spell-input:disabled {
   opacity: 0.7;
@@ -1316,8 +1321,8 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 .mock-session-feedback.correct {
   margin-top: 0.7rem;
   padding: 0.7rem 0.9rem;
-  background: rgba(132, 204, 22, 0.10);
-  border: 1px solid rgba(132, 204, 22, 0.4);
+  background: rgba(255, 61, 0, 0.10);
+  border: 1px solid rgba(255, 61, 0, 0.4);
   border-radius: 0.5rem;
   color: var(--mock-text-strong);
   font-size: 0.92rem;
@@ -1341,7 +1346,7 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   width: 130px;
   height: 130px;
   border-radius: 50%;
-  background: rgba(34, 211, 238, 0.10);
+  background: rgba(0, 245, 212, 0.10);
   border: 2px solid var(--mock-cyan);
   color: var(--mock-cyan);
   cursor: pointer;
@@ -1409,10 +1414,10 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 }
 .mock-cal-cell:hover { transform: scale(1.08); }
 .mock-cal-cell.cal-0 { background: rgba(255, 255, 255, 0.045); }
-.mock-cal-cell.cal-1 { background: rgba(132, 204, 22, 0.20); }
-.mock-cal-cell.cal-2 { background: rgba(132, 204, 22, 0.45); }
-.mock-cal-cell.cal-3 { background: rgba(132, 204, 22, 0.70); }
-.mock-cal-cell.cal-4 { background: rgba(132, 204, 22, 0.95); }
+.mock-cal-cell.cal-1 { background: rgba(255, 61, 0, 0.20); }
+.mock-cal-cell.cal-2 { background: rgba(255, 61, 0, 0.45); }
+.mock-cal-cell.cal-3 { background: rgba(255, 61, 0, 0.70); }
+.mock-cal-cell.cal-4 { background: rgba(255, 61, 0, 0.95); }
 .mock-cal-cell.is-today {
   outline: 2px solid var(--mock-text-strong);
   outline-offset: -1px;
@@ -1437,11 +1442,79 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   display: inline-block;
 }
 .mock-cal-legend-cell.cal-0 { background: rgba(255, 255, 255, 0.045); }
-.mock-cal-legend-cell.cal-1 { background: rgba(132, 204, 22, 0.20); }
-.mock-cal-legend-cell.cal-2 { background: rgba(132, 204, 22, 0.45); }
-.mock-cal-legend-cell.cal-3 { background: rgba(132, 204, 22, 0.70); }
-.mock-cal-legend-cell.cal-4 { background: rgba(132, 204, 22, 0.95); }
+.mock-cal-legend-cell.cal-1 { background: rgba(255, 61, 0, 0.20); }
+.mock-cal-legend-cell.cal-2 { background: rgba(255, 61, 0, 0.45); }
+.mock-cal-legend-cell.cal-3 { background: rgba(255, 61, 0, 0.70); }
+.mock-cal-legend-cell.cal-4 { background: rgba(255, 61, 0, 0.95); }
 .mock-cal-legend-text { padding: 0 0.25rem; }
+
+/* ---- GradeBlaze brand: logo + wordmark + welcome treatment ---------------
+   Restrained Inferno: glow + pulse on arrival surfaces only. Resting UI
+   stays calmer. Brand mark uses the inline SVG flame logo from
+   assets/logo.svg for a single source of truth. */
+
+.gb-logo-mark {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+}
+.gb-logo-mark.gb-mark-md   { width: 56px;  height: 56px;  }
+.gb-logo-mark.gb-mark-lg   { width: 96px;  height: 96px;  }
+.gb-logo-mark.gb-mark-xl   { width: 140px; height: 140px; }
+
+/* Subtle pulse — alive but not distracting. ~3.6s cycle, gentle filter
+   shift only. Disabled if user prefers reduced motion. */
+@keyframes gbPulse {
+  0%, 100% { transform: scale(1);    filter: drop-shadow(0 0 8px rgba(255, 61, 0, 0.32)); }
+  50%      { transform: scale(1.03); filter: drop-shadow(0 0 18px rgba(255, 61, 0, 0.55)); }
+}
+.gb-logo-mark.gb-alive { animation: gbPulse 3.6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .gb-logo-mark.gb-alive { animation: none; }
+}
+
+/* Two-tone wordmark: Grade in white, Blaze in scarlet — matches the brand
+   plate. Uses the display font (Anton) for the tall, blocky energy. */
+.gb-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: var(--mock-font-display);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+.gb-wordmark .gb-grade { color: var(--mock-text-strong); }
+.gb-wordmark .gb-blaze { color: var(--mock-lime); text-shadow: 0 0 18px rgba(255, 61, 0, 0.35); }
+.gb-wordmark.gb-wordmark-sm { font-size: 1.4rem; }
+.gb-wordmark.gb-wordmark-md { font-size: 2rem;   }
+.gb-wordmark.gb-wordmark-lg { font-size: 2.8rem; }
+.gb-wordmark.gb-wordmark-xl { font-size: 3.6rem; }
+
+/* Header lockup: small flame + small wordmark. */
+.gb-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Welcome screen lockup: large flame + large wordmark + tagline. */
+.gb-welcome-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+}
+.gb-tagline {
+  font-family: var(--mock-font-display);
+  font-size: 0.92rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--mock-fire);
+  margin: 0;
+}
 
 /* ---------- GREETING + PROFILE CHIP + STUB NAME ---------- */
 
@@ -1570,7 +1643,7 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 .ladder-extending {
   color: var(--mock-cyan);
   border-color: var(--mock-cyan);
-  background: rgba(34, 211, 238, 0.10);
+  background: rgba(0, 245, 212, 0.10);
 }
 .ladder-accomplished {
   color: var(--mock-fire);

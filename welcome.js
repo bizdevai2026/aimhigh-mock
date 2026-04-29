@@ -20,9 +20,9 @@ import {
   signedInRole,
   clearLegacyProfile,
   migratedChildName
-} from "./profile.js?v=20260429";
+} from "./profile.js?v=20260501";
 
-import { playWelcomeStinger } from "./sounds.js?v=20260429";
+import { playWelcomeStinger } from "./sounds.js?v=20260501";
 
 const root = document.getElementById("welcomeRoot");
 
