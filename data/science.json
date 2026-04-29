@@ -512,5 +512,74 @@
     ],
     "answer": 1,
     "explainer": "Continuous: any value in a range (height, weight). Discontinuous: only specific options (blood group, eye colour)."
+  },
+  {
+    "id": "sci-universe-001",
+    "subject": "science",
+    "topic": "universe",
+    "prompt": "How many planets orbit our Sun?",
+    "options": ["Six", "Seven", "Eight", "Nine"],
+    "answer": 2,
+    "explainer": "Eight: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune. Pluto was reclassified as a dwarf planet in 2006."
+  },
+  {
+    "id": "sci-universe-002",
+    "subject": "science",
+    "topic": "universe",
+    "prompt": "Which planet is closest to the Sun?",
+    "options": ["Venus", "Mercury", "Earth", "Mars"],
+    "answer": 1,
+    "explainer": "Mercury — about 58 million km from the Sun. So close that surface temperatures swing wildly between day and night."
+  },
+  {
+    "id": "sci-universe-003",
+    "subject": "science",
+    "topic": "universe",
+    "prompt": "Day and night happen because:",
+    "options": [
+      "The Sun moves around the Earth",
+      "The Earth spins on its axis",
+      "Clouds block the Sun",
+      "The Moon blocks the Sun"
+    ],
+    "answer": 1,
+    "explainer": "Earth makes one full spin every 24 hours. The side facing the Sun has day; the side facing away has night."
+  },
+  {
+    "id": "sci-universe-004",
+    "subject": "science",
+    "topic": "universe",
+    "prompt": "What causes the seasons on Earth?",
+    "options": [
+      "The Earth's distance from the Sun changing",
+      "The Earth's axis being tilted as it orbits the Sun",
+      "Clouds in summer",
+      "The Moon's pull"
+    ],
+    "answer": 1,
+    "explainer": "Earth's axis is tilted ~23.5°. As we orbit the Sun, different hemispheres point towards it — giving longer, warmer days in summer."
+  },
+  {
+    "id": "sci-universe-005",
+    "subject": "science",
+    "topic": "universe",
+    "prompt": "Roughly how long does it take Earth to orbit the Sun once?",
+    "options": ["A day", "A month", "A year", "Ten years"],
+    "answer": 2,
+    "explainer": "365.25 days — about a year. The extra 0.25 is why we add a leap day every 4 years."
+  },
+  {
+    "id": "sci-universe-006",
+    "subject": "science",
+    "topic": "universe",
+    "prompt": "Phases of the Moon (new, crescent, full…) happen because:",
+    "options": [
+      "The Moon changes shape",
+      "We see different amounts of the Moon's lit side as it orbits Earth",
+      "Earth's shadow falls on the Moon every night",
+      "Clouds cover parts of the Moon"
+    ],
+    "answer": 1,
+    "explainer": "The Sun always lights half the Moon. As the Moon orbits Earth, we see different proportions of that lit half — full, half, crescent, new."
   }
 ]
