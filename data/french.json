@@ -288,5 +288,128 @@
     ],
     "answer": 1,
     "explainer": "In the negative, \"des\" or \"une\" change to \"de\" before the noun. So \"Je ne porte pas DE lunettes\"."
+  },
+  {
+    "id": "fr-family-004",
+    "subject": "french",
+    "topic": "family",
+    "prompt": "What does \"ma mère\" mean?",
+    "options": ["My mother", "My father", "My aunt", "My sister"],
+    "answer": 0,
+    "explainer": "Ma mère = my mother. Mon père = my father."
+  },
+  {
+    "id": "fr-family-005",
+    "subject": "french",
+    "topic": "family",
+    "prompt": "\"Dans ma famille, il y a quatre personnes.\" What does this say?",
+    "options": [
+      "In my family there are four people",
+      "I have four families",
+      "I am four years old",
+      "My family is in four places"
+    ],
+    "answer": 0,
+    "explainer": "\"Il y a\" = there is / there are. So: \"In my family, there are four people.\""
+  },
+  {
+    "id": "fr-family-006",
+    "subject": "french",
+    "topic": "family",
+    "prompt": "What does \"mon cousin\" mean?",
+    "options": ["My uncle", "My cousin (male)", "My brother", "My friend"],
+    "answer": 1,
+    "explainer": "Mon cousin = my (male) cousin. Female cousin = ma cousine."
+  },
+  {
+    "id": "fr-family-007",
+    "subject": "french",
+    "topic": "family",
+    "prompt": "What does \"j'ai un chien\" mean?",
+    "options": ["I have a cat", "I have a dog", "I want a dog", "I see a dog"],
+    "answer": 1,
+    "explainer": "Un chien = a dog. Un chat = a cat. Useful for the pets topic."
+  },
+  {
+    "id": "fr-home-004",
+    "subject": "french",
+    "topic": "home-and-where-from",
+    "prompt": "What does \"j'habite à Paris\" mean?",
+    "options": ["I am from Paris", "I live in Paris", "I love Paris", "I visit Paris"],
+    "answer": 1,
+    "explainer": "Habiter = to live (in a place). \"J'habite à...\" + city. \"Je suis de...\" = I'm from..."
+  },
+  {
+    "id": "fr-home-005",
+    "subject": "french",
+    "topic": "home-and-where-from",
+    "prompt": "What does \"à la campagne\" mean?",
+    "options": ["In the city", "In the countryside", "On the coast", "In the mountains"],
+    "answer": 1,
+    "explainer": "La campagne = the countryside. Other useful: la ville (the city), la montagne (the mountain), la côte (the coast)."
+  },
+  {
+    "id": "fr-home-006",
+    "subject": "french",
+    "topic": "home-and-where-from",
+    "prompt": "Which is a French-speaking country in West Africa?",
+    "options": ["Brazil", "Sénégal", "Norway", "Greece"],
+    "answer": 1,
+    "explainer": "Sénégal is one of many French-speaking African countries (also Côte d'Ivoire, Mali, Cameroun)."
+  },
+  {
+    "id": "fr-home-007",
+    "subject": "french",
+    "topic": "home-and-where-from",
+    "prompt": "\"Ma maison est petite\" means:",
+    "options": [
+      "My house is big",
+      "My house is small",
+      "My house is new",
+      "My house is old"
+    ],
+    "answer": 1,
+    "explainer": "Petite = small (feminine, agreeing with maison). Big = grande. New = nouvelle. Old = vieille."
+  },
+  {
+    "id": "fr-personality-001",
+    "subject": "french",
+    "topic": "personality",
+    "prompt": "What does \"sympa\" mean?",
+    "options": ["Mean", "Nice / friendly", "Tall", "Tired"],
+    "answer": 1,
+    "explainer": "Sympa (short for sympathique) = nice or friendly. Same form for masculine and feminine."
+  },
+  {
+    "id": "fr-personality-002",
+    "subject": "french",
+    "topic": "personality",
+    "prompt": "What does \"méchant\" mean?",
+    "options": ["Funny", "Mean / nasty", "Old", "Quiet"],
+    "answer": 1,
+    "explainer": "Méchant(e) = mean, nasty, naughty. Opposite of sympa or gentil."
+  },
+  {
+    "id": "fr-personality-003",
+    "subject": "french",
+    "topic": "personality",
+    "prompt": "Which sentence means \"I like my brother because he is funny\"?",
+    "options": [
+      "Je n'aime pas mon frère parce qu'il est marrant",
+      "J'aime mon frère parce qu'il est marrant",
+      "Mon frère aime parce qu'il est marrant",
+      "J'ai mon frère marrant"
+    ],
+    "answer": 1,
+    "explainer": "J'aime = I like. Parce que = because. Marrant = funny. Useful pattern: \"opinion + parce que + reason\"."
+  },
+  {
+    "id": "fr-personality-004",
+    "subject": "french",
+    "topic": "personality",
+    "prompt": "What does \"drôle\" mean?",
+    "options": ["Quiet", "Funny", "Strict", "Lazy"],
+    "answer": 1,
+    "explainer": "Drôle = funny. Same form for masculine and feminine. Marrant(e) is another common word for funny."
   }
 ]
