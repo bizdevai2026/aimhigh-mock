@@ -28,10 +28,116 @@ function paint() {
   paintToday();
   paintWeak();
   paintHistory();
+  paintDataTools();
   // Audio is gesture-locked on mobile until first tap — playing here will
   // be silent on a cold-load Coach view and fire on subsequent taps. That
   // is the right behaviour: no surprise audio on a parent-only page.
   playCoachEnter();
+}
+
+// --- Data tools (parent-only) ----------------------------------------------
+//
+// Export downloads every aimhigh-mock-* key (except the transient session
+// and resume keys) as a single JSON file. Import replaces local state
+// with the contents of an export file. Useful for moving between devices
+// and as a manual backup.
+
+function paintDataTools() {
+  if (!isParentRole()) return;
+  const main = document.querySelector(".mock-main");
+  if (!main) return;
+  if (document.getElementById("coachData")) return;
+  const block = document.createElement("section");
+  block.id = "coachData";
+  block.className = "mock-coach-block";
+  block.innerHTML =
+    "<h2>Data tools</h2>" +
+    "<p class=\"mock-coach-empty\" style=\"margin-bottom: 0.6rem\">Back up or restore the trainee's progress and profile. Useful when moving devices.</p>" +
+    "<div class=\"mock-data-actions\">" +
+      "<button type=\"button\" class=\"mock-button\" id=\"dataExportBtn\">Export progress</button>" +
+      "<label class=\"mock-button mock-button-ghost\" for=\"dataImportInput\">Import progress</label>" +
+      "<input type=\"file\" id=\"dataImportInput\" accept=\"application/json\" style=\"display:none\" />" +
+    "</div>" +
+    "<p id=\"dataMsg\" class=\"mock-data-msg\" aria-live=\"polite\"></p>";
+  main.appendChild(block);
+  document.getElementById("dataExportBtn").addEventListener("click", exportProgress);
+  document.getElementById("dataImportInput").addEventListener("change", function (e) {
+    const file = e.target.files && e.target.files[0];
+    if (file) importProgress(file);
+    e.target.value = "";
+  });
+}
+
+function showDataMsg(text, kind) {
+  const el = document.getElementById("dataMsg");
+  if (!el) return;
+  el.textContent = text;
+  el.className = "mock-data-msg" + (kind ? " " + kind : "");
+}
+
+function exportProgress() {
+  const bundle = collectBundle();
+  const filename = "aimhigh-progress-" + todayIso() + ".json";
+  const blob = new Blob([JSON.stringify(bundle, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  showDataMsg("Saved as " + filename, "ok");
+}
+
+function collectBundle() {
+  const out = {
+    exportedAt: new Date().toISOString(),
+    appVersion: "20260429",
+    keys: {}
+  };
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (!k || k.indexOf("aimhigh-mock-") !== 0) continue;
+    if (k === "aimhigh-mock-session") continue;          // device-local
+    if (k.indexOf("aimhigh-mock-resume-") === 0) continue; // transient
+    out.keys[k] = localStorage.getItem(k);
+  }
+  return out;
+}
+
+function importProgress(file) {
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    let data;
+    try { data = JSON.parse(e.target.result); }
+    catch (err) { showDataMsg("Couldn't read that file — not valid JSON.", "err"); return; }
+    if (!data || !data.keys || typeof data.keys !== "object") {
+      showDataMsg("This doesn't look like an AimHigh export.", "err");
+      return;
+    }
+    const keyCount = Object.keys(data.keys).length;
+    const ok = confirm(
+      "Replace current progress with the imported data?\n\n" +
+      keyCount + " keys will be restored. The current trainee profile and history on this device will be overwritten.\n\n" +
+      "This cannot be undone unless you exported first."
+    );
+    if (!ok) { showDataMsg("Import cancelled.", "err"); return; }
+    // Wipe existing aimhigh-mock-* keys, then write imported ones
+    const toDelete = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k && k.indexOf("aimhigh-mock-") === 0) toDelete.push(k);
+    }
+    toDelete.forEach(function (k) { localStorage.removeItem(k); });
+    Object.keys(data.keys).forEach(function (k) {
+      try { localStorage.setItem(k, data.keys[k]); } catch (err) {}
+    });
+    showDataMsg("Imported. Reloading…", "ok");
+    setTimeout(function () { location.replace("welcome.html"); }, 800);
+  };
+  reader.onerror = function () { showDataMsg("Couldn't read the file.", "err"); };
+  reader.readAsText(file);
 }
 
 // Small badge on the Coach hero so the viewer always knows whose lens

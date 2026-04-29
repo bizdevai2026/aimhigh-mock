@@ -1161,6 +1161,27 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   flex-wrap: wrap;
 }
 
+/* Coach data tools — export/import buttons + status line */
+.mock-data-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.mock-data-actions label.mock-button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+.mock-data-msg {
+  margin: 0.6rem 0 0;
+  font-size: 0.82rem;
+  color: var(--mock-text-dim);
+  min-height: 1em;
+}
+.mock-data-msg.ok  { color: var(--mock-lime); }
+.mock-data-msg.err { color: #fca5a5; }
+
 /* ---------- GREETING + PROFILE CHIP + STUB NAME ---------- */
 
 .mock-greeting {
