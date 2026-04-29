@@ -1142,6 +1142,25 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 }
 .mock-tour-skip:hover { color: var(--mock-text-dim); }
 
+/* Resume in-flight session prompt — shown if a refresh interrupted a run */
+.mock-resume-card {
+  text-align: center;
+}
+.mock-resume-meta {
+  margin: 0.4rem 0 1rem;
+  color: var(--mock-text-dim);
+}
+.mock-resume-meta strong {
+  color: var(--mock-text-strong);
+  font-weight: 700;
+}
+.mock-resume-actions {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 /* ---------- GREETING + PROFILE CHIP + STUB NAME ---------- */
 
 .mock-greeting {

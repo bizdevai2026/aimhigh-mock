@@ -19,6 +19,10 @@ const ROUND_SIZE = 30;
 const ROUND_MINUTES = 30;
 const LETTERS = ["A", "B", "C", "D", "E", "F"];
 
+const RESUME_KEY = "aimhigh-mock-resume-paper";
+// Timer is the gating expiry — no need for a separate TTL on the saved state.
+// If endsAt has passed when we restore, we just finalise as timed-out.
+
 const root = document.getElementById("paperRoot");
 
 let pool = null;
@@ -41,7 +45,106 @@ async function start() {
     paintError("No questions available yet.");
     return;
   }
+  // Mid-session resume — refreshing during a 30-min timed paper shouldn't
+  // bin everything. Timer is preserved; if it has already expired, we
+  // finalise immediately as a time-out.
+  const saved = loadResumeState();
+  if (saved) {
+    const items = reconstituteItems(pool, saved.items);
+    if (items) {
+      if (Date.now() >= saved.endsAt) {
+        // Timer expired while away — score what they had and stop.
+        session = {
+          items: items,
+          index: saved.results ? saved.results.length : 0,
+          results: saved.results || [],
+          startedAt: saved.startedAt || Date.now()
+        };
+        endsAt = saved.endsAt;
+        clearResumeState();
+        finalise(true);
+        return;
+      }
+      paintResumePrompt(items, saved);
+      return;
+    }
+    clearResumeState();
+  }
   paintIntro();
+}
+
+function paintResumePrompt(items, saved) {
+  const answered = saved.results ? saved.results.length : 0;
+  const total = items.length;
+  const remainingMs = Math.max(0, saved.endsAt - Date.now());
+  const remainingMin = Math.ceil(remainingMs / 60000);
+  root.innerHTML =
+    "<section class=\"mock-stub-card mock-resume-card\">" +
+      "<h2>Resume your full mock?</h2>" +
+      "<p class=\"mock-resume-meta\">You'd answered <strong>" + answered + " of " + total + "</strong>. About <strong>" + remainingMin + " minute" + (remainingMin === 1 ? "" : "s") + "</strong> remain on the timer.</p>" +
+      "<div class=\"mock-resume-actions\">" +
+        "<button type=\"button\" class=\"mock-button\" id=\"resumeBtn\">Resume</button>" +
+        "<button type=\"button\" class=\"mock-button mock-button-ghost\" id=\"freshBtn\">Start fresh</button>" +
+      "</div>" +
+    "</section>";
+  document.getElementById("resumeBtn").addEventListener("click", function () {
+    session = {
+      items: items,
+      index: saved.index,
+      results: saved.results || [],
+      startedAt: saved.startedAt || Date.now()
+    };
+    endsAt = saved.endsAt;
+    startTimer();
+    paintQuestion();
+  });
+  document.getElementById("freshBtn").addEventListener("click", function () {
+    clearResumeState();
+    paintIntro();
+  });
+}
+
+// --- Resume helpers --------------------------------------------------------
+
+function saveResumeState() {
+  if (!session || !endsAt) return;
+  try {
+    const payload = {
+      items: session.items.map(function (q) { return q.id; }),
+      index: session.results.length,
+      results: session.results,
+      startedAt: session.startedAt,
+      endsAt: endsAt
+    };
+    localStorage.setItem(RESUME_KEY, JSON.stringify(payload));
+  } catch (e) {}
+}
+
+function loadResumeState() {
+  try {
+    const raw = localStorage.getItem(RESUME_KEY);
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+    if (!data || !data.endsAt) return null;
+    if (!Array.isArray(data.items) || data.items.length === 0) return null;
+    return data;
+  } catch (e) { return null; }
+}
+
+function clearResumeState() {
+  try { localStorage.removeItem(RESUME_KEY); } catch (e) {}
+}
+
+function reconstituteItems(p, ids) {
+  const byId = {};
+  p.forEach(function (q) { byId[q.id] = q; });
+  const out = [];
+  for (let i = 0; i < ids.length; i++) {
+    const q = byId[ids[i]];
+    if (!q) return null;
+    out.push(q);
+  }
+  return out;
 }
 
 // ---------- Intro ----------------------------------------------------------
@@ -99,6 +202,7 @@ function begin() {
     startedAt: Date.now()
   };
   endsAt = Date.now() + ROUND_MINUTES * 60 * 1000;
+  saveResumeState();
   playModeStartMock();
   startTimer();
   paintQuestion();
@@ -220,6 +324,7 @@ function onAnswer(chosenIdx) {
     topic: q.topic,
     correct: correct
   });
+  saveResumeState();
   // No reveal, no second tries — just advance.
   session.index += 1;
   if (session.index >= session.items.length) {
@@ -233,6 +338,7 @@ function onAnswer(chosenIdx) {
 // ---------- Finalise + result ---------------------------------------------
 
 function finalise(timedOut) {
+  clearResumeState();
   // Pad results with skipped (incorrect) entries if timed out partway through.
   if (session.index < session.items.length) {
     for (let i = session.index; i < session.items.length; i++) {

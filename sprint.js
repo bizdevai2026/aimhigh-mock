@@ -34,6 +34,9 @@ const DRILL_SIZE = 5;
 const CORRECT_AUTOADVANCE_MS = 700;
 const LETTERS = ["A", "B", "C", "D", "E", "F"];
 
+const RESUME_KEY = "aimhigh-mock-resume-sprint";
+const RESUME_TTL_MS = 4 * 60 * 60 * 1000; // 4 hours
+
 const root = document.getElementById("sprintRoot");
 
 let pool = null;
@@ -57,9 +60,119 @@ async function start() {
   if (!pool || pool.length === 0) { paintError("No questions available yet."); return; }
 
   if (!params.s) { paintPicker(); return; }
+
+  // Try resuming a matching in-flight session (same subject + same mode).
+  if (params.run || params.t) {
+    const saved = loadResumeState();
+    if (saved && resumeMatches(saved, params)) {
+      const items = reconstituteItems(pool, saved.items);
+      if (items) { paintResumePrompt(items, saved); return; }
+    }
+    // Saved state doesn't match this URL — bin it.
+    if (saved) clearResumeState();
+  }
+
   if (params.t) { runTopicDrill(params.s, params.t); return; }
   if (params.run) { runSprint(params.s); return; }
   paintSubjectHub(params.s);
+}
+
+function resumeMatches(saved, params) {
+  if (saved.subjectId !== params.s) return false;
+  if (params.t) return saved.mode === "drill" && saved.topic === params.t;
+  if (params.run) return saved.mode === "sprint" && !saved.topic;
+  return false;
+}
+
+function paintResumePrompt(items, saved) {
+  const answered = saved.results ? saved.results.length : 0;
+  const total = items.length;
+  const heading = saved.mode === "drill"
+    ? "Resume your topic drill?"
+    : "Resume your sprint?";
+  document.body.style.setProperty("--tile-color", subjectTone(saved.subjectId));
+  root.innerHTML =
+    "<section class=\"mock-stub-card mock-resume-card\">" +
+      "<h2>" + heading + "</h2>" +
+      "<p class=\"mock-resume-meta\">" + escapeHtml(subjectName(saved.subjectId)) +
+        (saved.topic ? " &middot; " + escapeHtml(prettyTopic(saved.topic)) : "") +
+        " &mdash; you'd answered <strong>" + answered + " of " + total + "</strong>." +
+      "</p>" +
+      "<div class=\"mock-resume-actions\">" +
+        "<button type=\"button\" class=\"mock-button\" id=\"resumeBtn\">Resume</button>" +
+        "<button type=\"button\" class=\"mock-button mock-button-ghost\" id=\"freshBtn\">Start fresh</button>" +
+      "</div>" +
+    "</section>";
+  document.getElementById("resumeBtn").addEventListener("click", function () {
+    session = {
+      mode: saved.mode,
+      subjectId: saved.subjectId,
+      topic: saved.topic,
+      items: items,
+      index: saved.index,
+      results: saved.results || [],
+      streak: saved.streak || 0,
+      startedAt: saved.startedAt || Date.now(),
+      titleEyebrow: saved.titleEyebrow || "",
+      backHref: saved.backHref || ("subject.html?s=" + encodeURIComponent(saved.subjectId))
+    };
+    paintQuestion();
+  });
+  document.getElementById("freshBtn").addEventListener("click", function () {
+    clearResumeState();
+    if (saved.mode === "drill") runTopicDrill(saved.subjectId, saved.topic);
+    else runSprint(saved.subjectId);
+  });
+}
+
+// --- Resume helpers --------------------------------------------------------
+
+function saveResumeState() {
+  if (!session) return;
+  try {
+    const payload = {
+      mode: session.mode,
+      subjectId: session.subjectId,
+      topic: session.topic,
+      items: session.items.map(function (q) { return q.id; }),
+      index: session.results.length,
+      results: session.results,
+      streak: session.streak || 0,
+      startedAt: session.startedAt,
+      titleEyebrow: session.titleEyebrow,
+      backHref: session.backHref,
+      savedAt: Date.now()
+    };
+    localStorage.setItem(RESUME_KEY, JSON.stringify(payload));
+  } catch (e) {}
+}
+
+function loadResumeState() {
+  try {
+    const raw = localStorage.getItem(RESUME_KEY);
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+    if (!data || !data.savedAt) return null;
+    if (Date.now() - data.savedAt > RESUME_TTL_MS) return null;
+    if (!Array.isArray(data.items) || data.items.length === 0) return null;
+    return data;
+  } catch (e) { return null; }
+}
+
+function clearResumeState() {
+  try { localStorage.removeItem(RESUME_KEY); } catch (e) {}
+}
+
+function reconstituteItems(p, ids) {
+  const byId = {};
+  p.forEach(function (q) { byId[q.id] = q; });
+  const out = [];
+  for (let i = 0; i < ids.length; i++) {
+    const q = byId[ids[i]];
+    if (!q) return null;
+    out.push(q);
+  }
+  return out;
 }
 
 // ---------- URL params -----------------------------------------------------
@@ -271,6 +384,7 @@ function onAnswer(chosenIdx, btnEl) {
     if (correctBtn) correctBtn.classList.add("is-correct");
   }
   session.results.push({ id: q.id, subject: q.subject, topic: q.topic, correct: correct });
+  saveResumeState();
   if (correct) {
     session.streak = (session.streak || 0) + 1;
     playCorrect();
@@ -314,6 +428,7 @@ function advance() {
 }
 
 function finalise() {
+  clearResumeState();
   const correctCount = session.results.filter(function (r) { return r.correct; }).length;
   const total = session.items.length;
   const durationSec = Math.round((Date.now() - session.startedAt) / 1000);
