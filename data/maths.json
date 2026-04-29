@@ -318,6 +318,7 @@
     "id": "math-functions-001",
     "subject": "maths",
     "topic": "function-machines",
+    "visual": "function-machine",
     "prompt": "A function machine does \"+5\" then \"×2\". What does it output for input 3?",
     "options": ["8", "11", "16", "13"],
     "answer": 2,

@@ -1148,3 +1148,23 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   font-size: 0.82rem;
   color: var(--mock-muted);
 }
+
+/* ---------- VISUAL DIAGRAMS (in question card) ---------- */
+
+.mock-session-visual {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--mock-border);
+  border-radius: 12px;
+  padding: 0.7rem 0.85rem;
+  margin: 0;
+  color: var(--mock-text-dim);
+}
+.mock-visual-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+}
+@media (max-width: 380px) {
+  .mock-visual-svg { max-height: 170px; }
+}

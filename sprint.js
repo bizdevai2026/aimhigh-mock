@@ -26,6 +26,7 @@ import {
   subjectLadder
 } from "./engagement.js";
 import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect } from "./sounds.js";
+import { getVisual } from "./visuals.js";
 
 const SPRINT_SIZE = 15;
 const DRILL_SIZE = 5;
@@ -229,6 +230,7 @@ function paintQuestion() {
       "</div>" +
       "<div class=\"mock-session-card\" id=\"sessionCard\">" +
         "<span class=\"mock-session-subject\">" + escapeHtml(subjectLabel(q)) + "</span>" +
+        renderVisual(q) +
         "<p class=\"mock-session-prompt\">" + escapeHtml(q.prompt) + "</p>" +
         "<div class=\"mock-session-options\" id=\"sessionOptions\"></div>" +
       "</div>" +
@@ -374,6 +376,13 @@ function subjectLabel(q) {
   const sub = subjectName(q.subject || "").toUpperCase();
   if (q.topic) return sub + " · " + prettyTopic(q.topic).toUpperCase();
   return sub;
+}
+
+function renderVisual(q) {
+  if (!q || !q.visual) return "";
+  const svg = getVisual(q.visual);
+  if (!svg) return "";
+  return "<div class=\"mock-session-visual\">" + svg + "</div>";
 }
 
 function prettyTopic(t) {
