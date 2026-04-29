@@ -247,5 +247,227 @@
     "options": ["She is bored", "She is nervous", "She is angry", "She is asleep"],
     "answer": 1,
     "explainer": "Gripping tightly and avoiding eye contact are clues — they suggest anxiety or nerves."
+  },
+  {
+    "id": "eng-myths-001",
+    "subject": "english",
+    "topic": "myths-and-legends",
+    "prompt": "In Greek myth, Medusa is famous for:",
+    "options": [
+      "Building the Trojan horse",
+      "Having snakes for hair and a stare that turns people to stone",
+      "Sailing to find a golden fleece",
+      "Lifting the world on her shoulders"
+    ],
+    "answer": 1,
+    "explainer": "Medusa was a Gorgon — once beautiful, then cursed. Anyone who looked at her was turned to stone."
+  },
+  {
+    "id": "eng-myths-002",
+    "subject": "english",
+    "topic": "myths-and-legends",
+    "prompt": "Who killed Medusa, using a polished shield to avoid her gaze?",
+    "options": ["Hercules", "Perseus", "Theseus", "Odysseus"],
+    "answer": 1,
+    "explainer": "Perseus used the reflection in his shield so he wouldn't look at Medusa directly. He cut off her head and used it as a weapon."
+  },
+  {
+    "id": "eng-myths-003",
+    "subject": "english",
+    "topic": "myths-and-legends",
+    "prompt": "In Greek myth, the Minotaur lived inside a:",
+    "options": ["Cave", "Labyrinth", "Castle", "Volcano"],
+    "answer": 1,
+    "explainer": "King Minos kept the bull-headed Minotaur in a maze called the Labyrinth, designed by the inventor Daedalus."
+  },
+  {
+    "id": "eng-myths-004",
+    "subject": "english",
+    "topic": "myths-and-legends",
+    "prompt": "Theseus escaped the Labyrinth after killing the Minotaur thanks to:",
+    "options": [
+      "A magic sword",
+      "A ball of thread given by Ariadne",
+      "A flying horse",
+      "An invisibility cloak"
+    ],
+    "answer": 1,
+    "explainer": "Ariadne, daughter of King Minos, gave Theseus a thread to unwind on the way in so he could trace his way back out."
+  },
+  {
+    "id": "eng-myths-005",
+    "subject": "english",
+    "topic": "myths-and-legends",
+    "prompt": "What usually makes a story a \"myth\" rather than a \"legend\"?",
+    "options": [
+      "Myths are very short, legends are long",
+      "Myths involve gods or supernatural beings; legends are usually about real (or possibly real) historical figures",
+      "Myths are written down, legends are spoken",
+      "There is no difference"
+    ],
+    "answer": 1,
+    "explainer": "Myth = gods, monsters, creation stories (Medusa). Legend = embellished tales about possibly real people (King Arthur, Robin Hood)."
+  },
+  {
+    "id": "eng-myths-006",
+    "subject": "english",
+    "topic": "myths-and-legends",
+    "prompt": "An archetypal \"hero\" character in myth tends to:",
+    "options": [
+      "Refuse all challenges",
+      "Go on a journey, face monsters, and grow through what they learn",
+      "Stay at home with no troubles",
+      "Trick everyone into giving them gold"
+    ],
+    "answer": 1,
+    "explainer": "The hero's journey — call to adventure, trials, transformation, return — is a pattern stretching from ancient myths to modern films."
+  },
+  {
+    "id": "eng-dickens-001",
+    "subject": "english",
+    "topic": "dickens",
+    "prompt": "Charles Dickens wrote during which era?",
+    "options": ["Roman", "Tudor", "Victorian", "Modern (1990s onward)"],
+    "answer": 2,
+    "explainer": "Dickens (1812–1870) wrote during the reign of Queen Victoria. His novels often expose the harshness of Victorian London."
+  },
+  {
+    "id": "eng-dickens-002",
+    "subject": "english",
+    "topic": "dickens",
+    "prompt": "\"Please, sir, I want some more.\" — this famous line is from:",
+    "options": ["Great Expectations", "Oliver Twist", "A Christmas Carol", "Hard Times"],
+    "answer": 1,
+    "explainer": "Oliver, an orphan in a workhouse, asks for more gruel. The line became a symbol of Victorian poverty and child cruelty."
+  },
+  {
+    "id": "eng-dickens-003",
+    "subject": "english",
+    "topic": "dickens",
+    "prompt": "Which Dickens novel features a young orphan called Pip?",
+    "options": ["Oliver Twist", "Great Expectations", "Bleak House", "David Copperfield"],
+    "answer": 1,
+    "explainer": "Great Expectations follows Pip from boyhood in the marshes through his mysterious rise to gentleman in London."
+  },
+  {
+    "id": "eng-dickens-004",
+    "subject": "english",
+    "topic": "dickens",
+    "prompt": "Miss Havisham, in Great Expectations, is famous for:",
+    "options": [
+      "Sailing pirate ships",
+      "Wearing her wedding dress for years after being jilted at the altar",
+      "Inventing a steam engine",
+      "Running a circus"
+    ],
+    "answer": 1,
+    "explainer": "Miss Havisham stops the clocks and never takes off her wedding dress — Dickens' image of obsession and frozen time."
+  },
+  {
+    "id": "eng-dickens-005",
+    "subject": "english",
+    "topic": "dickens",
+    "prompt": "A common Dickens theme is:",
+    "options": [
+      "The lives of the poor in Victorian Britain",
+      "Spaceships and aliens",
+      "Football tactics",
+      "Computer programming"
+    ],
+    "answer": 0,
+    "explainer": "Dickens grew up in poverty himself and used his novels to draw attention to child labour, slums, and the workhouse system."
+  },
+  {
+    "id": "eng-dickens-006",
+    "subject": "english",
+    "topic": "dickens",
+    "prompt": "When we talk about a \"Dickensian\" character, we usually mean one who is:",
+    "options": [
+      "Very modern and casual",
+      "Vividly drawn, often with an exaggerated or memorable trait",
+      "Always silent",
+      "Always good and never flawed"
+    ],
+    "answer": 1,
+    "explainer": "Dickens' characters (Fagin, Scrooge, Mr Bumble) are unforgettable because of one or two big, exaggerated traits — a trick writers still copy."
+  },
+  {
+    "id": "eng-writing-001",
+    "subject": "english",
+    "topic": "writing-skills",
+    "prompt": "A \"topic sentence\" usually appears:",
+    "options": [
+      "At the very end of an essay",
+      "At the start of a paragraph, signposting its main idea",
+      "Only in poems",
+      "Only in dialogue"
+    ],
+    "answer": 1,
+    "explainer": "The topic sentence tells the reader what the paragraph will be about. The rest of the paragraph develops and supports it."
+  },
+  {
+    "id": "eng-writing-002",
+    "subject": "english",
+    "topic": "writing-skills",
+    "prompt": "Which sentence opening builds tension in a story?",
+    "options": [
+      "Then nothing happened.",
+      "It was a normal, boring day.",
+      "She froze. Footsteps — slow, deliberate — moved across the floor above.",
+      "I had jam on toast."
+    ],
+    "answer": 2,
+    "explainer": "Short sentences, sensory detail and delayed information all crank up tension. Showing the reaction (\"She froze\") before the cause draws the reader in."
+  },
+  {
+    "id": "eng-writing-003",
+    "subject": "english",
+    "topic": "writing-skills",
+    "prompt": "In a paragraph using PEEL, what does the second E stand for?",
+    "options": ["End", "Explain", "Edit", "Example only"],
+    "answer": 1,
+    "explainer": "PEEL = Point, Evidence, Explain, Link. The second E (\"Explain\") is where you analyse why the evidence supports your point."
+  },
+  {
+    "id": "eng-writing-004",
+    "subject": "english",
+    "topic": "writing-skills",
+    "prompt": "Which is most likely to make descriptive writing vivid?",
+    "options": [
+      "Using \"nice\" and \"good\" a lot",
+      "Specific nouns and strong verbs (e.g. \"oak\" not \"tree\", \"dashed\" not \"went\")",
+      "Writing only short sentences",
+      "Adding lots of CAPITAL LETTERS"
+    ],
+    "answer": 1,
+    "explainer": "Precise, sensory words pull the reader inside the scene. Generic words (\"nice\", \"thing\", \"got\") flatten writing."
+  },
+  {
+    "id": "eng-writing-005",
+    "subject": "english",
+    "topic": "writing-skills",
+    "prompt": "\"Editing\" your writing mostly means:",
+    "options": [
+      "Throwing it away",
+      "Reading it back and improving word choice, clarity and accuracy",
+      "Making it longer",
+      "Reading it aloud only"
+    ],
+    "answer": 1,
+    "explainer": "First draft = get it down. Edit = make it sharper. Proof-read = catch typos. All three are different jobs."
+  },
+  {
+    "id": "eng-writing-006",
+    "subject": "english",
+    "topic": "writing-skills",
+    "prompt": "A strong story opening usually:",
+    "options": [
+      "Explains every character's life history first",
+      "Hooks the reader straight away — with action, an image, dialogue, or a question",
+      "Is at least one page long",
+      "Starts with \"Once upon a time\""
+    ],
+    "answer": 1,
+    "explainer": "Pull the reader in fast. You can fill in backstory once they're already curious."
   }
 ]
