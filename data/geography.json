@@ -343,5 +343,237 @@
     "options": ["The source (start)", "The middle course", "The mouth (where it meets the sea)", "All parts equally"],
     "answer": 1,
     "explainer": "The middle course usually has the most volume of water and a moderate gradient — fastest. Source has little water; mouth has wide, slow water."
+  },
+  {
+    "id": "geo-rivers-002",
+    "subject": "geography",
+    "topic": "rivers",
+    "prompt": "What is the \"source\" of a river?",
+    "options": [
+      "Where it meets the sea",
+      "The place it starts (often a spring or mountain)",
+      "The widest part",
+      "Any side stream"
+    ],
+    "answer": 1,
+    "explainer": "The source is where a river begins — often high ground where rain or melted ice trickles together to form a stream."
+  },
+  {
+    "id": "geo-rivers-003",
+    "subject": "geography",
+    "topic": "rivers",
+    "prompt": "Where a smaller river joins a bigger one is called a:",
+    "options": ["Mouth", "Tributary", "Confluence", "Meander"],
+    "answer": 2,
+    "explainer": "Confluence = the meeting point. The smaller river feeding in is the tributary. The mouth is where the river enters the sea or a lake."
+  },
+  {
+    "id": "geo-rivers-004",
+    "subject": "geography",
+    "topic": "rivers",
+    "prompt": "A wide bend in a river's lower course is called a:",
+    "options": ["Tributary", "Meander", "Waterfall", "Estuary"],
+    "answer": 1,
+    "explainer": "Meanders form as the river erodes the outer bank and deposits sediment on the inner bank — making the bend wider over time."
+  },
+  {
+    "id": "geo-rivers-005",
+    "subject": "geography",
+    "topic": "rivers",
+    "prompt": "Erosion in a river means:",
+    "options": [
+      "Adding new water",
+      "The river wearing away its banks and bed",
+      "Plants growing in the water",
+      "The river drying up"
+    ],
+    "answer": 1,
+    "explainer": "Rivers erode by scraping rocks along (abrasion), dissolving rock chemically, knocking pebbles together (attrition) and the force of the water itself."
+  },
+  {
+    "id": "geo-flooding-001",
+    "subject": "geography",
+    "topic": "flooding",
+    "prompt": "A river floods when:",
+    "options": [
+      "It runs out of water",
+      "The water rises higher than the banks can hold",
+      "Plants grow on the banks",
+      "It changes direction"
+    ],
+    "answer": 1,
+    "explainer": "Flooding = the river overflows. Heavy rain, melting snow, or blocked channels can all push water above the banks onto the floodplain."
+  },
+  {
+    "id": "geo-flooding-002",
+    "subject": "geography",
+    "topic": "flooding",
+    "prompt": "Which is most likely to INCREASE flood risk in a town?",
+    "options": [
+      "Planting more trees upstream",
+      "Concreting over fields and gardens",
+      "Cleaning rubbish out of the river",
+      "Adding flood walls"
+    ],
+    "answer": 1,
+    "explainer": "Concrete (impermeable surfaces) stops rain soaking in, so water rushes into rivers fast. Trees, soakaways and natural ground slow it down."
+  },
+  {
+    "id": "geo-flooding-003",
+    "subject": "geography",
+    "topic": "flooding",
+    "prompt": "Which is a \"hard engineering\" flood defence?",
+    "options": [
+      "Planting woodland upstream",
+      "Restoring natural wetlands",
+      "Building concrete flood walls and dams",
+      "Letting fields flood deliberately"
+    ],
+    "answer": 2,
+    "explainer": "Hard engineering = man-made structures (walls, dams, concrete channels). Soft engineering uses natural features (wetlands, woods)."
+  },
+  {
+    "id": "geo-flooding-004",
+    "subject": "geography",
+    "topic": "flooding",
+    "prompt": "A floodplain is:",
+    "options": [
+      "Flat land beside a river that floods naturally",
+      "A type of bridge",
+      "A river that has dried up",
+      "A coastal cliff"
+    ],
+    "answer": 0,
+    "explainer": "Floodplains are the wide, flat areas next to a river — fertile because each flood drops new silt. Building on them increases flood damage."
+  },
+  {
+    "id": "geo-coasts-001",
+    "subject": "geography",
+    "topic": "coasts",
+    "prompt": "Coastal cliffs are mostly shaped by:",
+    "options": [
+      "Wind only",
+      "Wave erosion at the base",
+      "Earthquakes",
+      "Tourism"
+    ],
+    "answer": 1,
+    "explainer": "Waves crash into the bottom of cliffs, undercutting them. Eventually the rock above collapses — slowly retreating the cliff inland."
+  },
+  {
+    "id": "geo-coasts-002",
+    "subject": "geography",
+    "topic": "coasts",
+    "prompt": "A natural arch on the coast is created when:",
+    "options": [
+      "Two beaches join up",
+      "Waves erode through a headland leaving an opening",
+      "A river meets the sea",
+      "Sand piles up against rocks"
+    ],
+    "answer": 1,
+    "explainer": "Sequence: crack → cave → arch → stack (when the arch collapses) → stump. A classic UK example is Durdle Door in Dorset."
+  },
+  {
+    "id": "geo-coasts-003",
+    "subject": "geography",
+    "topic": "coasts",
+    "prompt": "Which is a \"hard engineering\" coastal defence?",
+    "options": [
+      "Sand dunes",
+      "Sea walls and rock groynes",
+      "Beach nourishment with new sand",
+      "Salt marshes"
+    ],
+    "answer": 1,
+    "explainer": "Hard = walls, groynes, rock armour. Soft = adding sand, planting marram grass on dunes, restoring marshes."
+  },
+  {
+    "id": "geo-coasts-004",
+    "subject": "geography",
+    "topic": "coasts",
+    "prompt": "Longshore drift moves sand and pebbles:",
+    "options": [
+      "Up and down the cliff",
+      "Along the beach in the direction of the prevailing waves",
+      "Out to sea only",
+      "Against the wind"
+    ],
+    "answer": 1,
+    "explainer": "Waves wash material onto the beach at an angle, then it slides back down at 90° — over time, sediment moves along the coast."
+  },
+  {
+    "id": "geo-kenya-001",
+    "subject": "geography",
+    "topic": "kenya",
+    "prompt": "Kenya is located on which continent?",
+    "options": ["Asia", "Africa", "Europe", "South America"],
+    "answer": 1,
+    "explainer": "Kenya sits in East Africa, on the equator. Its capital is Nairobi; the Indian Ocean forms its south-east coast."
+  },
+  {
+    "id": "geo-kenya-002",
+    "subject": "geography",
+    "topic": "kenya",
+    "prompt": "What is the capital of Kenya?",
+    "options": ["Mombasa", "Kisumu", "Nairobi", "Nakuru"],
+    "answer": 2,
+    "explainer": "Nairobi — Kenya's largest city and economic hub. Mombasa is the main port; Kisumu sits on Lake Victoria."
+  },
+  {
+    "id": "geo-kenya-003",
+    "subject": "geography",
+    "topic": "kenya",
+    "prompt": "Compared with the UK, Kenya has:",
+    "options": [
+      "Identical climate",
+      "A much warmer climate and a wet/dry season pattern",
+      "Permanent snow everywhere",
+      "Only desert"
+    ],
+    "answer": 1,
+    "explainer": "Kenya straddles the equator — warm year-round, with two rainy seasons rather than the UK's four temperate seasons."
+  },
+  {
+    "id": "geo-kenya-004",
+    "subject": "geography",
+    "topic": "kenya",
+    "prompt": "What is a key economic activity for many rural Kenyans?",
+    "options": [
+      "Coal mining",
+      "Subsistence farming and cattle herding",
+      "Aerospace engineering",
+      "Banking"
+    ],
+    "answer": 1,
+    "explainer": "Most rural Kenyans grow food for their family (subsistence farming) or herd cattle, sheep and goats. Cash crops like tea, coffee and flowers are also important exports."
+  },
+  {
+    "id": "geo-kenya-005",
+    "subject": "geography",
+    "topic": "kenya",
+    "prompt": "Which is a major environmental challenge for Kenya?",
+    "options": [
+      "Volcanoes erupting daily",
+      "Drought, deforestation and water shortages",
+      "Constant snowfall",
+      "Tsunami risk in Nairobi"
+    ],
+    "answer": 1,
+    "explainer": "Long droughts, shrinking forests and population pressure on water are major issues. Climate change is making rainfall less predictable."
+  },
+  {
+    "id": "geo-kenya-006",
+    "subject": "geography",
+    "topic": "kenya",
+    "prompt": "Comparing urban and rural life in Kenya, urban areas usually have:",
+    "options": [
+      "Fewer jobs and services",
+      "Better access to schools, hospitals and electricity",
+      "No housing of any kind",
+      "More wildlife than rural areas"
+    ],
+    "answer": 1,
+    "explainer": "Cities like Nairobi offer more services and jobs — but also informal settlements (e.g. Kibera) where conditions can be tough. Rural life often means fewer services and more reliance on the land."
   }
 ]
