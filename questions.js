@@ -1,15 +1,17 @@
 // AimHigh Mock Prep — question pool loader and warm-up picker.
 //
-// Questions live in data/<subject>.json files. Each subject's file is a
-// JSON array of MCQ objects:
-//   { id, subject, topic, prompt, options[4], answer, explainer? }
+// Questions live in data/<subject>.json files. Each subject's file is
+// a JSON array of MCQ / spell / speak objects:
+//   { id, subject, topic, prompt, options[4], answer, explainer?,
+//     audio?, type? ("mcq"|"spell"|"speak"), alternates? }
 //
 // loadAllQuestions() fetches every subject in parallel, stamps the
 // subject id in case it's missing, and caches the merged pool.
 //
-// pickWarmupQuestions(pool, n) returns n questions, prioritising
-// items the learner has not seen in the last 7 days, then balancing
-// across subjects so a warm-up doesn't end up as 10 maths questions.
+// pickWarmupQuestions(pool, n) returns n questions ordered by
+// spaced-repetition due-date (fresh → due → not-yet-due) with a
+// 60% weak-topic bias and a per-subject cap so a warm-up isn't ten
+// maths questions.
 
 import { readSeen, weakTopics } from "./engagement.js";
 
@@ -23,8 +25,28 @@ const SUBJECTS = [
   { id: "computing", name: "Computer Science" }
 ];
 
-const SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000;
+const DAY_MS = 24 * 60 * 60 * 1000;
+const LEGACY_COOLDOWN_MS = 7 * DAY_MS;
 const PER_SUBJECT_CAP = 2;
+
+// Classify a question against the seen log. The picker uses this to
+// build three buckets: fresh (never seen), due (interval elapsed),
+// notDue (still in cooldown / not due yet). Falls back to the legacy
+// 7-day cooldown when an entry pre-dates the SR upgrade — so this
+// stays safe across a revert.
+function scheduleBucket(seen, now, q) {
+  const e = seen[q.id];
+  if (!e) return "fresh";
+  let due;
+  if (typeof e.dueAt === "number") {
+    due = now >= e.dueAt;
+  } else if (typeof e.lastSeenAt === "number") {
+    due = (now - e.lastSeenAt) >= LEGACY_COOLDOWN_MS;
+  } else {
+    due = true;
+  }
+  return due ? "due" : "notDue";
+}
 
 let _cache = null;
 
@@ -63,15 +85,15 @@ export function pickWarmupQuestions(pool, n) {
   const seen = readSeen();
   const now = Date.now();
 
-  // Group the pool by cooldown state.
+  // Group the pool by SR schedule state.
   const fresh = [];
-  const stale = [];
-  const recent = [];
+  const due = [];
+  const notDue = [];
   pool.forEach(function (q) {
-    const s = seen[q.id];
-    if (!s) { fresh.push(q); return; }
-    if ((now - s.lastSeenAt) > SEVEN_DAYS_MS) { stale.push(q); return; }
-    recent.push(q);
+    const bucket = scheduleBucket(seen, now, q);
+    if (bucket === "fresh") fresh.push(q);
+    else if (bucket === "due") due.push(q);
+    else notDue.push(q);
   });
 
   // Identify "weak" subject::topic keys from the last 7 days. Anything
@@ -87,13 +109,13 @@ export function pickWarmupQuestions(pool, n) {
   function isWeak(q) { return !!weakKeys[q.subject + "::" + q.topic]; }
 
   // Aim: ~60% weak / ~40% other when weak topics exist. If no weak
-  // topics yet, fall back to plain anti-repeat ordering.
+  // topics yet, fall back to plain SR-ordered picking.
   const weakTarget = Object.keys(weakKeys).length > 0 ? Math.ceil(n * 0.6) : 0;
 
   const orderedFresh = shuffle(fresh);
-  const orderedStale = shuffle(stale);
-  const orderedRecent = shuffle(recent);
-  const baseOrder = orderedFresh.concat(orderedStale).concat(orderedRecent);
+  const orderedDue = shuffle(due);
+  const orderedNotDue = shuffle(notDue);
+  const baseOrder = orderedFresh.concat(orderedDue).concat(orderedNotDue);
 
   // First pass: pick weak items up to weakTarget, respecting per-subject cap.
   const picked = [];
@@ -136,20 +158,20 @@ export function pickSubjectQuestions(pool, subjectId, n) {
   const seen = readSeen();
   const now = Date.now();
   const fresh = [];
-  const stale = [];
-  const recent = [];
+  const due = [];
+  const notDue = [];
   sub.forEach(function (q) {
-    const s = seen[q.id];
-    if (!s) { fresh.push(q); return; }
-    if ((now - s.lastSeenAt) > SEVEN_DAYS_MS) { stale.push(q); return; }
-    recent.push(q);
+    const bucket = scheduleBucket(seen, now, q);
+    if (bucket === "fresh") fresh.push(q);
+    else if (bucket === "due") due.push(q);
+    else notDue.push(q);
   });
-  const ordered = shuffle(fresh).concat(shuffle(stale)).concat(shuffle(recent));
+  const ordered = shuffle(fresh).concat(shuffle(due)).concat(shuffle(notDue));
   return ordered.slice(0, n);
 }
 
 // Topic drill — smaller focused session on a single topic within a subject.
-// Falls back to in-cooldown questions if the unseen pool is too small,
+// Falls back to not-yet-due questions if the fresh + due pool is small,
 // so a kid drilling the same topic twice in a day still gets questions.
 export function pickTopicQuestions(pool, subjectId, topic, n) {
   const filtered = pool.filter(function (q) {
@@ -159,15 +181,15 @@ export function pickTopicQuestions(pool, subjectId, topic, n) {
   const seen = readSeen();
   const now = Date.now();
   const fresh = [];
-  const stale = [];
-  const recent = [];
+  const due = [];
+  const notDue = [];
   filtered.forEach(function (q) {
-    const s = seen[q.id];
-    if (!s) { fresh.push(q); return; }
-    if ((now - s.lastSeenAt) > SEVEN_DAYS_MS) { stale.push(q); return; }
-    recent.push(q);
+    const bucket = scheduleBucket(seen, now, q);
+    if (bucket === "fresh") fresh.push(q);
+    else if (bucket === "due") due.push(q);
+    else notDue.push(q);
   });
-  const ordered = shuffle(fresh).concat(shuffle(stale)).concat(shuffle(recent));
+  const ordered = shuffle(fresh).concat(shuffle(due)).concat(shuffle(notDue));
   return ordered.slice(0, n);
 }
 
