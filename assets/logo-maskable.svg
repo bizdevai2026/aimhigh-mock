@@ -1,0 +1,40 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GradeBlaze">
+  <!-- Maskable variant: full-bleed background, content scaled to 80% inside
+       the safe zone so Android adaptive launchers (circle / squircle / etc.)
+       don't crop the flame or bolt. Source content matches assets/logo.svg
+       wrapped in a 0.8 scale + 20px translate. -->
+  <defs>
+    <linearGradient id="gbmFlameOuter" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%"   stop-color="#FF6B00"/>
+      <stop offset="100%" stop-color="#D94B00"/>
+    </linearGradient>
+    <linearGradient id="gbmFlameMid" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%"   stop-color="#FF9933"/>
+      <stop offset="100%" stop-color="#FF7A1A"/>
+    </linearGradient>
+    <linearGradient id="gbmFlameInner" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%"   stop-color="#FFE066"/>
+      <stop offset="100%" stop-color="#FFB300"/>
+    </linearGradient>
+    <radialGradient id="gbmGlow" cx="50%" cy="55%" r="55%">
+      <stop offset="0%"   stop-color="#FF6B00" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#FF3D00" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Full-bleed background (no rounded corners — adaptive launcher applies its own mask) -->
+  <rect width="200" height="200" fill="#161B2A"/>
+
+  <g transform="translate(20 20) scale(0.8)">
+    <circle cx="100" cy="115" r="80" fill="url(#gbmGlow)"/>
+    <ellipse cx="100" cy="170" rx="36" ry="5" fill="#2A1408" opacity="0.75"/>
+    <path d="M100 28 C90 48, 78 60, 72 75 L62 60 L70 80 C62 95, 58 115, 64 135 C70 155, 86 168, 100 168 C114 168, 130 155, 136 135 C142 115, 138 95, 130 80 L138 60 L128 75 C122 60, 110 48, 100 28 Z"
+          fill="url(#gbmFlameOuter)"/>
+    <path d="M100 48 C90 65, 82 82, 82 105 C82 128, 92 150, 100 152 C108 150, 118 128, 118 105 C118 82, 110 65, 100 48 Z"
+          fill="url(#gbmFlameMid)"/>
+    <path d="M100 72 C94 85, 90 98, 90 115 C90 132, 95 144, 100 144 C105 144, 110 132, 110 115 C110 98, 106 85, 100 72 Z"
+          fill="url(#gbmFlameInner)"/>
+    <path d="M115 55 L72 115 L92 115 L80 165 L130 100 L108 100 L120 55 Z"
+          fill="#FFFFFF" fill-opacity="0.96"/>
+  </g>
+</svg>

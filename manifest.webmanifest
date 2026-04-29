@@ -1,0 +1,27 @@
+{
+  "name": "GradeBlaze",
+  "short_name": "GradeBlaze",
+  "description": "Daily KS3 revision training. Streaks, XP, weak-topic drills.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "lang": "en-GB",
+  "categories": ["education"],
+  "icons": [
+    {
+      "src": "assets/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/logo-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
