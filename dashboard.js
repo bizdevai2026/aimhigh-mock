@@ -12,17 +12,51 @@ import {
   readResults,
   weakTopics,
   todayIso,
-  isoOffset
+  isoOffset,
+  subjectLadder
 } from "./engagement.js";
 
-import { subjectName } from "./questions.js";
+import { subjectName, listSubjects } from "./questions.js";
 
 paint();
 
 function paint() {
+  paintLadderBySubject();
   paintToday();
   paintWeak();
   paintHistory();
+}
+
+// --- LADDER BY SUBJECT ------------------------------------------------------
+
+function paintLadderBySubject() {
+  const block = document.getElementById("coachLadder");
+  if (!block) return;
+  const subjects = listSubjects();
+  let rowsHtml = "";
+  let anyData = false;
+  subjects.forEach(function (s) {
+    const ladder = subjectLadder(s.id);
+    if (ladder.attempts > 0) anyData = true;
+    rowsHtml +=
+      "<li class=\"mock-coach-row\">" +
+        "<div class=\"mock-coach-row-left\">" +
+          "<span class=\"mock-coach-row-subject\">" + escapeHtml(s.name) + "</span>" +
+          "<span class=\"mock-coach-row-topic\">" +
+            (ladder.attempts > 0
+              ? (ladder.attempts + " attempt" + (ladder.attempts === 1 ? "" : "s") + " &middot; " + Math.round(ladder.accuracy * 100) + "% accuracy")
+              : "Not started yet") +
+          "</span>" +
+        "</div>" +
+        "<span class=\"mock-ladder ladder-" + ladder.colour + "\">" + escapeHtml(ladder.tier) + "</span>" +
+      "</li>";
+  });
+  block.innerHTML =
+    "<h2>Development by subject</h2>" +
+    (anyData
+      ? "<ul class=\"mock-coach-list\">" + rowsHtml + "</ul>"
+      : "<p class=\"mock-coach-empty\">No attempts yet. Once " + (subjectName("any") || "your child") + " runs a session, the ladder fills in here.</p>" +
+        "<ul class=\"mock-coach-list\" style=\"margin-top:0.7rem\">" + rowsHtml + "</ul>");
 }
 
 // --- TODAY -----------------------------------------------------------------

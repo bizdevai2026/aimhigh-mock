@@ -1,54 +1,70 @@
-// AimHigh Mock Prep — Sprint runner (single-subject mock).
+// AimHigh Mock Prep — Subject hub + Sprint runner + Topic drill.
 //
-// subject.html loads this. If the URL has ?s=<subject_id>, this runs
-// a 15-question session drawn entirely from that subject (anti-repeat
-// aware via questions.pickSubjectQuestions). Otherwise it renders a
-// subject picker — 7 tiles, click one to start.
+// subject.html mounts this and routes by URL params:
+//   (none)            -> subject picker (7 tiles)
+//   ?s=<id>           -> subject hub: ladder, stats, topic list, sprint button
+//   ?s=<id>&run=1     -> sprint runner (15 mixed-topic questions)
+//   ?s=<id>&t=<topic> -> topic drill (5 questions on one topic)
+//
+// All three runner shapes share rendering, just differ in question pool
+// and round size.
 
-import "./mock.js"; // shared header behaviour (sound toggle)
-import { loadAllQuestions, pickSubjectQuestions, listSubjects, subjectName } from "./questions.js";
-import { noteSessionResult, readStreak } from "./engagement.js";
+import "./mock.js"; // shared header (sound toggle, profile chip)
+import {
+  loadAllQuestions,
+  pickSubjectQuestions,
+  pickTopicQuestions,
+  listSubjects,
+  subjectName,
+  topicsForSubject,
+  topicCounts
+} from "./questions.js";
+import {
+  noteSessionResult,
+  readStreak,
+  topicLadder,
+  subjectLadder
+} from "./engagement.js";
 import { playCorrect, playWrong, playLevelUp } from "./sounds.js";
 
-const ROUND_SIZE = 15;
+const SPRINT_SIZE = 15;
+const DRILL_SIZE = 5;
 const CORRECT_AUTOADVANCE_MS = 700;
 const LETTERS = ["A", "B", "C", "D", "E", "F"];
 
 const root = document.getElementById("sprintRoot");
 
-let session = null;
 let pool = null;
+let session = null;
 
 start();
 
 async function start() {
   if (!root) return;
   paintLoading();
-  try {
-    pool = await loadAllQuestions();
-  } catch (e) {
-    paintError("Couldn't load questions. Check your connection and refresh.");
-    return;
-  }
-  if (!pool || pool.length === 0) {
-    paintError("No questions available yet.");
-    return;
-  }
+  try { pool = await loadAllQuestions(); }
+  catch (e) { paintError("Couldn't load questions. Refresh the page."); return; }
+  if (!pool || pool.length === 0) { paintError("No questions available yet."); return; }
 
-  const subjectId = readSubjectParam();
-  if (subjectId) {
-    runSubject(subjectId);
-  } else {
-    paintPicker();
-  }
+  const params = readParams();
+  if (!params.s) { paintPicker(); return; }
+  if (params.t) { runTopicDrill(params.s, params.t); return; }
+  if (params.run) { runSprint(params.s); return; }
+  paintSubjectHub(params.s);
 }
 
-function readSubjectParam() {
-  const m = location.search.match(/[?&]s=([a-z-]+)/i);
-  return m ? m[1] : null;
-}
+// ---------- URL params -----------------------------------------------------
 
-// ---------- Picker ---------------------------------------------------------
+function readParams() {
+  const q = location.search;
+  const s = match(q, /[?&]s=([a-z\-]+)/i);
+  const t = match(q, /[?&]t=([a-z0-9\-]+)/i);
+  const run = match(q, /[?&]run=([01])/i) === "1";
+  return { s: s, t: t, run: run };
+}
+function match(s, re) { const m = s.match(re); return m ? m[1] : null; }
+
+// ---------- Picker (7 subject tiles) ---------------------------------------
 
 function paintPicker() {
   const subjects = listSubjects();
@@ -57,24 +73,21 @@ function paintPicker() {
   subjects.forEach(function (s) {
     const count = counts[s.id] || 0;
     const tone = subjectTone(s.id);
+    const ladder = subjectLadder(s.id);
     tilesHtml +=
       "<a class=\"mock-tile\" style=\"--tile-color:" + tone + "\" href=\"subject.html?s=" + encodeURIComponent(s.id) + "\">" +
-        "<span class=\"mock-tile-tag\">Sprint</span>" +
+        "<span class=\"mock-tile-tag\">Deep dive</span>" +
         "<span class=\"mock-tile-title\">" + escapeHtml(s.name.toUpperCase()) + "</span>" +
         "<span class=\"mock-tile-meta\">" + count + " question" + (count === 1 ? "" : "s") + " in pool</span>" +
-        "<span class=\"mock-tile-quote\">15 questions &middot; ~15 min</span>" +
+        ladderPill(ladder) +
         "<span class=\"mock-tile-arrow\" aria-hidden=\"true\">&rarr;</span>" +
       "</a>";
   });
   root.innerHTML =
     "<section class=\"mock-stub-hero\">" +
-      "<span class=\"mock-stub-tag\">Closer to exam</span>" +
-      "<h1 class=\"mock-stub-title\">SPRINT</h1>" +
-      "<p class=\"mock-stub-quote\">\"One subject, full focus.\"</p>" +
-    "</section>" +
-    "<section class=\"mock-mission\">" +
-      "<h2 class=\"mock-mission-title\">Pick a subject</h2>" +
-      "<p class=\"mock-mission-sub\">15 questions from one subject &mdash; mixed topics, exam shape.</p>" +
+      "<span class=\"mock-stub-tag\">Subjects</span>" +
+      "<h1 class=\"mock-stub-title\">PICK A SUBJECT</h1>" +
+      "<p class=\"mock-stub-quote\">Drill one subject deep, or sprint a mixed paper.</p>" +
     "</section>" +
     "<nav class=\"mock-tiles\" aria-label=\"Subjects\">" + tilesHtml + "</nav>";
 }
@@ -85,31 +98,109 @@ function countBySubject(p) {
   return out;
 }
 
-// ---------- Sprint -----------------------------------------------------------
+// ---------- Subject hub ----------------------------------------------------
 
-function runSubject(subjectId) {
-  const items = pickSubjectQuestions(pool, subjectId, ROUND_SIZE);
-  if (items.length === 0) {
-    paintError("No questions yet for " + subjectName(subjectId) + ". Pick another subject.");
-    return;
-  }
-  // Apply per-mode tile colour to the body for the sprint runner
+function paintSubjectHub(subjectId) {
+  const tone = subjectTone(subjectId);
+  document.body.style.setProperty("--tile-color", tone);
+
+  const subjLadder = subjectLadder(subjectId);
+  const subjQuestionCount = pool.filter(function (q) { return q.subject === subjectId; }).length;
+  const topics = topicsForSubject(pool, subjectId);
+  const tcounts = topicCounts(pool, subjectId);
+
+  let topicsHtml = "";
+  topics.forEach(function (t) {
+    const ladder = topicLadder(subjectId, t);
+    const cnt = tcounts[t] || 0;
+    topicsHtml +=
+      "<a class=\"mock-topic-tile\" href=\"subject.html?s=" + encodeURIComponent(subjectId) + "&t=" + encodeURIComponent(t) + "\">" +
+        "<div class=\"mock-topic-tile-main\">" +
+          "<span class=\"mock-topic-tile-name\">" + escapeHtml(prettyTopic(t)) + "</span>" +
+          "<span class=\"mock-topic-tile-meta\">" + cnt + " question" + (cnt === 1 ? "" : "s") + " &middot; drill " + DRILL_SIZE + "</span>" +
+        "</div>" +
+        ladderPill(ladder) +
+        "<span class=\"mock-topic-tile-arrow\" aria-hidden=\"true\">&rarr;</span>" +
+      "</a>";
+  });
+
+  root.innerHTML =
+    "<section class=\"mock-stub-hero\" style=\"border-left-color:" + tone + "\">" +
+      "<span class=\"mock-stub-tag\">Subject</span>" +
+      "<h1 class=\"mock-stub-title\">" + escapeHtml(subjectName(subjectId).toUpperCase()) + "</h1>" +
+      "<div class=\"mock-subject-stats\">" +
+        ladderPillLarge(subjLadder) +
+        "<span class=\"mock-subject-stat\">" + subjQuestionCount + " questions in pool</span>" +
+        "<span class=\"mock-subject-stat\">" + subjLadder.attempts + " attempt" + (subjLadder.attempts === 1 ? "" : "s") + " logged</span>" +
+        (subjLadder.attempts > 0 ? "<span class=\"mock-subject-stat\">" + Math.round(subjLadder.accuracy * 100) + "% accuracy</span>" : "") +
+      "</div>" +
+      "<a class=\"mock-button mock-subject-sprint\" href=\"subject.html?s=" + encodeURIComponent(subjectId) + "&run=1\">Sprint this subject &middot; " + SPRINT_SIZE + " questions</a>" +
+    "</section>" +
+    "<section class=\"mock-mission\">" +
+      "<h2 class=\"mock-mission-title\">Topics</h2>" +
+      "<p class=\"mock-mission-sub\">Pick one to drill " + DRILL_SIZE + " focused questions.</p>" +
+    "</section>" +
+    "<nav class=\"mock-topic-tiles\" aria-label=\"Topics\">" + topicsHtml + "</nav>" +
+    "<p class=\"mock-back-row\"><a class=\"mock-button mock-button-ghost\" href=\"subject.html\">&larr; All subjects</a></p>";
+}
+
+function ladderPill(ladder) {
+  return "<span class=\"mock-ladder ladder-" + ladder.colour + "\">" + escapeHtml(ladder.tier) + "</span>";
+}
+function ladderPillLarge(ladder) {
+  return "<span class=\"mock-ladder mock-ladder-large ladder-" + ladder.colour + "\">" + escapeHtml(ladder.tier) + "</span>";
+}
+
+// ---------- Sprint runner --------------------------------------------------
+
+function runSprint(subjectId) {
+  const items = pickSubjectQuestions(pool, subjectId, SPRINT_SIZE);
+  if (items.length === 0) { paintError("No questions yet for " + subjectName(subjectId) + "."); return; }
   document.body.style.setProperty("--tile-color", subjectTone(subjectId));
-  session = {
+  beginSession({
+    mode: "sprint",
     subjectId: subjectId,
+    topic: null,
     items: items,
+    titleEyebrow: "Sprint &middot; " + subjectName(subjectId),
+    backHref: "subject.html?s=" + encodeURIComponent(subjectId)
+  });
+}
+
+function runTopicDrill(subjectId, topic) {
+  const items = pickTopicQuestions(pool, subjectId, topic, DRILL_SIZE);
+  if (items.length === 0) { paintError("No questions yet for " + prettyTopic(topic) + "."); return; }
+  document.body.style.setProperty("--tile-color", subjectTone(subjectId));
+  beginSession({
+    mode: "drill",
+    subjectId: subjectId,
+    topic: topic,
+    items: items,
+    titleEyebrow: "Drill &middot; " + prettyTopic(topic),
+    backHref: "subject.html?s=" + encodeURIComponent(subjectId)
+  });
+}
+
+function beginSession(opts) {
+  session = {
+    mode: opts.mode,
+    subjectId: opts.subjectId,
+    topic: opts.topic,
+    items: opts.items,
     index: 0,
     results: [],
-    startedAt: Date.now()
+    startedAt: Date.now(),
+    titleEyebrow: opts.titleEyebrow,
+    backHref: opts.backHref
   };
   paintQuestion();
 }
 
+// ---------- Painters ------------------------------------------------------
+
 function paintLoading() {
   root.innerHTML =
-    "<section class=\"mock-stub-card\">" +
-      "<p class=\"mock-coach-empty\">Loading&hellip;</p>" +
-    "</section>";
+    "<section class=\"mock-stub-card\"><p class=\"mock-coach-empty\">Loading&hellip;</p></section>";
 }
 
 function paintError(msg) {
@@ -166,19 +257,9 @@ function onAnswer(chosenIdx, btnEl) {
     const correctBtn = root.querySelector('.mock-session-option[data-idx="' + q.answer + '"]');
     if (correctBtn) correctBtn.classList.add("is-correct");
   }
-  session.results.push({
-    id: q.id,
-    subject: q.subject,
-    topic: q.topic,
-    correct: correct
-  });
-  if (correct) {
-    playCorrect();
-    setTimeout(advance, CORRECT_AUTOADVANCE_MS);
-  } else {
-    playWrong();
-    showWrongFeedback(q);
-  }
+  session.results.push({ id: q.id, subject: q.subject, topic: q.topic, correct: correct });
+  if (correct) { playCorrect(); setTimeout(advance, CORRECT_AUTOADVANCE_MS); }
+  else { playWrong(); showWrongFeedback(q); }
 }
 
 function showWrongFeedback(q) {
@@ -194,7 +275,6 @@ function showWrongFeedback(q) {
     fb.appendChild(ex);
   }
   card.appendChild(fb);
-
   const cont = document.createElement("button");
   cont.type = "button";
   cont.className = "mock-button";
@@ -206,11 +286,8 @@ function showWrongFeedback(q) {
 
 function advance() {
   session.index += 1;
-  if (session.index >= session.items.length) {
-    finalise();
-  } else {
-    paintQuestion();
-  }
+  if (session.index >= session.items.length) { finalise(); }
+  else { paintQuestion(); }
 }
 
 function finalise() {
@@ -218,7 +295,7 @@ function finalise() {
   const total = session.items.length;
   const durationSec = Math.round((Date.now() - session.startedAt) / 1000);
   const after = noteSessionResult({
-    mode: "sprint",
+    mode: session.mode,
     subject: session.subjectId,
     items: session.results,
     score: correctCount,
@@ -231,8 +308,8 @@ function finalise() {
 function paintResult(score, total, after) {
   const xpGained = after.xpGained;
   const goalHitNow = after.xp.before < after.xp.goal && after.xp.after >= after.xp.goal;
-  const streak = readStreak();
   if (goalHitNow) playLevelUp();
+  const streak = readStreak();
   let streakLine;
   if (goalHitNow) {
     streakLine = "<span>&#128293; <strong>" + streak.current + "-day streak</strong> &mdash; locked in for today</span>";
@@ -242,26 +319,53 @@ function paintResult(score, total, after) {
     const remaining = after.xp.goal - after.xp.after;
     streakLine = "<span>" + remaining + " XP to go &mdash; one more session keeps the streak</span>";
   }
+
+  // Show updated ladder for the subject (and topic if drill mode)
+  let ladderLine = "";
+  if (session.topic) {
+    const tl = topicLadder(session.subjectId, session.topic);
+    ladderLine = "<div class=\"mock-result-ladder-row\">" +
+      "<span>" + escapeHtml(prettyTopic(session.topic)) + " &mdash; now</span>" +
+      ladderPillLarge(tl) +
+      "</div>";
+  } else if (session.subjectId) {
+    const sl = subjectLadder(session.subjectId);
+    ladderLine = "<div class=\"mock-result-ladder-row\">" +
+      "<span>" + escapeHtml(subjectName(session.subjectId)) + " &mdash; now</span>" +
+      ladderPillLarge(sl) +
+      "</div>";
+  }
+
+  const eyebrowText = session.mode === "drill"
+    ? "Topic drill complete"
+    : ("Sprint complete &middot; " + escapeHtml(subjectName(session.subjectId)));
+
   root.innerHTML =
     "<section class=\"mock-result\">" +
-      "<span class=\"mock-result-eyebrow\">Sprint complete &middot; " + escapeHtml(subjectName(session.subjectId)) + "</span>" +
+      "<span class=\"mock-result-eyebrow\">" + eyebrowText + "</span>" +
       "<span class=\"mock-result-score\">" + score + "</span>" +
       "<span class=\"mock-result-score-meta\">out of " + total + "</span>" +
       "<span class=\"mock-result-xp\">+" + xpGained + " XP</span>" +
       "<div class=\"mock-result-streak\">" + streakLine + "</div>" +
+      ladderLine +
       "<div class=\"mock-result-actions\">" +
-        "<a class=\"mock-button\" href=\"subject.html\">Pick another</a>" +
+        "<a class=\"mock-button\" href=\"" + session.backHref + "\">Back to subject</a>" +
         "<a class=\"mock-button mock-button-ghost\" href=\"index.html\">Done</a>" +
       "</div>" +
     "</section>";
 }
 
-// ---------- helpers ---------------------------------------------------------
+// ---------- helpers --------------------------------------------------------
 
 function subjectLabel(q) {
   const sub = subjectName(q.subject || "").toUpperCase();
-  if (q.topic) return sub + " · " + String(q.topic).replace(/-/g, " ").toUpperCase();
+  if (q.topic) return sub + " · " + prettyTopic(q.topic).toUpperCase();
   return sub;
+}
+
+function prettyTopic(t) {
+  if (!t) return "";
+  return String(t).replace(/-/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); });
 }
 
 function subjectTone(subject) {

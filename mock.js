@@ -19,6 +19,7 @@ import {
 
 import { readSoundOn, toggleSound } from "./sounds.js";
 import { profileName, requireProfileOrRedirect, clearProfile } from "./profile.js";
+import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js";
 
 function $(id) { return document.getElementById(id); }
 
@@ -171,6 +172,54 @@ function paintProfileLine() {
   }
 }
 
+const SUBJECT_NAMES = {
+  science: "Science",
+  maths: "Maths",
+  english: "English",
+  french: "French",
+  history: "History",
+  geography: "Geography",
+  computing: "Computer Science"
+};
+
+function paintTodayStrip() {
+  const target = document.getElementById("todayStrip");
+  if (!target) return;
+  const subjects = todaysSubjects();
+  if (!isSchoolDay()) {
+    target.innerHTML =
+      "<div class=\"mock-today-head\">" +
+        "<span class=\"mock-today-label\">Today &mdash; rest day</span>" +
+        "<span class=\"mock-today-day\">" + dayName().toUpperCase() + "</span>" +
+      "</div>" +
+      "<p class=\"mock-today-empty\">No school today. Use it to keep the streak alive with a warm-up.</p>";
+    return;
+  }
+  let chipsHtml = "";
+  subjects.forEach(function (sid) {
+    const name = SUBJECT_NAMES[sid] || sid;
+    chipsHtml +=
+      "<a class=\"mock-today-chip\" href=\"subject.html?s=" + encodeURIComponent(sid) + "\">" +
+        escapeHtml(name) +
+      "</a>";
+  });
+  target.innerHTML =
+    "<div class=\"mock-today-head\">" +
+      "<span class=\"mock-today-label\">Today's lessons &mdash; drill what you just had</span>" +
+      "<span class=\"mock-today-day\">" + dayName().toUpperCase() + "</span>" +
+    "</div>" +
+    "<div class=\"mock-today-chips\">" + chipsHtml + "</div>";
+}
+
+function escapeHtml(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function injectProfileChip() {
   const inner = document.querySelector(".mock-header-inner");
   if (!inner) return;
@@ -206,6 +255,7 @@ function boot() {
   injectSoundToggle();
   injectProfileChip();
   paintProfileLine();
+  paintTodayStrip();
 }
 
 if (document.readyState === "loading") {

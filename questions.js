@@ -148,6 +148,53 @@ export function pickSubjectQuestions(pool, subjectId, n) {
   return ordered.slice(0, n);
 }
 
+// Topic drill — smaller focused session on a single topic within a subject.
+// Falls back to in-cooldown questions if the unseen pool is too small,
+// so a kid drilling the same topic twice in a day still gets questions.
+export function pickTopicQuestions(pool, subjectId, topic, n) {
+  const filtered = pool.filter(function (q) {
+    return q.subject === subjectId && q.topic === topic;
+  });
+  if (filtered.length === 0) return [];
+  const seen = readSeen();
+  const now = Date.now();
+  const fresh = [];
+  const stale = [];
+  const recent = [];
+  filtered.forEach(function (q) {
+    const s = seen[q.id];
+    if (!s) { fresh.push(q); return; }
+    if ((now - s.lastSeenAt) > SEVEN_DAYS_MS) { stale.push(q); return; }
+    recent.push(q);
+  });
+  const ordered = shuffle(fresh).concat(shuffle(stale)).concat(shuffle(recent));
+  return ordered.slice(0, n);
+}
+
+// Returns the unique topic ids present in the pool for a given subject.
+export function topicsForSubject(pool, subjectId) {
+  const seen = {};
+  const out = [];
+  pool.forEach(function (q) {
+    if (q.subject !== subjectId) return;
+    if (!q.topic) return;
+    if (seen[q.topic]) return;
+    seen[q.topic] = true;
+    out.push(q.topic);
+  });
+  return out;
+}
+
+// Returns the question count per topic for a given subject.
+export function topicCounts(pool, subjectId) {
+  const counts = {};
+  pool.forEach(function (q) {
+    if (q.subject !== subjectId || !q.topic) return;
+    counts[q.topic] = (counts[q.topic] || 0) + 1;
+  });
+  return counts;
+}
+
 function shuffle(arr) {
   const a = arr.slice();
   for (let i = a.length - 1; i > 0; i--) {
