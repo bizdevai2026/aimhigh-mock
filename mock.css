@@ -1367,12 +1367,17 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   margin-left: 0.4rem;
 }
 
-/* Listen button — French TTS via Web Speech API */
+/* Listen controls — pill row with normal + slow playback buttons */
+.mock-listen-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0 0.6rem;
+}
 .mock-listen-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  margin: 0.5rem 0 0.6rem;
   padding: 0.4rem 0.8rem;
   background: rgba(0, 245, 212, 0.10);
   border: 1px solid rgba(0, 245, 212, 0.45);
@@ -1387,6 +1392,27 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 .mock-listen-btn:hover  { background: rgba(0, 245, 212, 0.18); transform: translateY(-1px); }
 .mock-listen-btn:active { transform: translateY(0); }
 .mock-listen-icon { font-size: 1.05rem; }
+.mock-listen-btn-slow {
+  background: rgba(255, 179, 0, 0.10);
+  border-color: rgba(255, 179, 0, 0.45);
+  color: var(--mock-fire);
+}
+.mock-listen-btn-slow:hover { background: rgba(255, 179, 0, 0.20); }
+
+/* Skip-this-question link — used on spell + speak so the kid isn't
+   stuck on a stubborn STT result or an unfamiliar phrase. Recorded as
+   "wrong" so spaced-repetition resurfaces the question soon. */
+.mock-skip-question {
+  background: transparent;
+  border: 0;
+  color: var(--mock-muted);
+  font-size: 0.82rem;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  margin-top: 0.2rem;
+  text-decoration: underline;
+}
+.mock-skip-question:hover { color: var(--mock-text-dim); }
 
 /* Spelling/typing question input (French listen-and-type) */
 .mock-spell-form {

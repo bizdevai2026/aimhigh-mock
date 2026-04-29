@@ -395,6 +395,7 @@ function paintSpellQuestion(q) {
         "<form id=\"spellForm\" class=\"mock-spell-form\" novalidate>" +
           "<input id=\"spellInput\" class=\"mock-spell-input\" type=\"text\" autocomplete=\"off\" autocapitalize=\"off\" autocorrect=\"off\" spellcheck=\"false\" placeholder=\"Type in French\" required autofocus />" +
           "<button type=\"submit\" class=\"mock-button\">Check</button>" +
+          "<button type=\"button\" id=\"skipSpellBtn\" class=\"mock-skip-question\">Skip this one</button>" +
         "</form>" +
       "</div>" +
     "</section>";
@@ -405,6 +406,11 @@ function paintSpellQuestion(q) {
     const correct = frenchSpellMatches(inp.value, q);
     inp.disabled = true;
     onSpellAnswered(q, correct);
+  });
+  document.getElementById("skipSpellBtn").addEventListener("click", function () {
+    const inp = document.getElementById("spellInput");
+    inp.disabled = true;
+    onSpellAnswered(q, false);
   });
 }
 
@@ -489,12 +495,14 @@ function paintSpeakQuestion(q) {
                 "<span class=\"mock-mic-label\">Tap to speak</span>" +
               "</button>" +
               "<p class=\"mock-speak-status\" id=\"speakStatus\" aria-live=\"polite\"></p>" +
+              "<button type=\"button\" id=\"skipSpeakBtn\" class=\"mock-skip-question\">Skip this one</button>" +
             "</div>"
           : "<div class=\"mock-speak-fallback\">" +
               "<p class=\"mock-coach-empty\">Speaking exercises need Chrome or Edge. Type the phrase instead:</p>" +
               "<form id=\"spellForm\" class=\"mock-spell-form\" novalidate>" +
                 "<input id=\"spellInput\" class=\"mock-spell-input\" type=\"text\" autocomplete=\"off\" autocapitalize=\"off\" autocorrect=\"off\" spellcheck=\"false\" placeholder=\"Type in French\" required autofocus />" +
                 "<button type=\"submit\" class=\"mock-button\">Check</button>" +
+                "<button type=\"button\" id=\"skipSpellBtn\" class=\"mock-skip-question\">Skip this one</button>" +
               "</form>" +
             "</div>") +
       "</div>" +
@@ -503,6 +511,9 @@ function paintSpeakQuestion(q) {
   attachListen(document.getElementById("sessionCard"), q);
   if (supported) {
     wireMic(q);
+    document.getElementById("skipSpeakBtn").addEventListener("click", function () {
+      onSpeakAnswered(q, false, "");
+    });
   } else {
     document.getElementById("spellForm").addEventListener("submit", function (e) {
       e.preventDefault();
@@ -510,6 +521,11 @@ function paintSpeakQuestion(q) {
       const correct = frenchSpellMatches(inp.value, q);
       inp.disabled = true;
       onSpellAnswered(q, correct);
+    });
+    document.getElementById("skipSpellBtn").addEventListener("click", function () {
+      const inp = document.getElementById("spellInput");
+      inp.disabled = true;
+      onSpellAnswered(q, false);
     });
   }
 }

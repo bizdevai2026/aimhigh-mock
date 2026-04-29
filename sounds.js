@@ -282,32 +282,52 @@ if (speechAvailable() && "onvoiceschanged" in window.speechSynthesis) {
   });
 }
 
-export function speakFrench(text) {
+// Optional second arg `rate`: 0.85 default (slightly slower than spoken
+// French — gives a clearer first listen). 0.6–0.7 for the "Slow" button
+// used on the question cards. Anything below 0.5 distorts the voice.
+export function speakFrench(text, rate) {
   if (!speechAvailable() || !text) return;
   try { window.speechSynthesis.cancel(); } catch (e) {}
   const utt = new window.SpeechSynthesisUtterance(String(text));
   utt.lang = "fr-FR";
-  utt.rate = 0.92;
+  utt.rate = (typeof rate === "number" && rate > 0) ? rate : 0.85;
   if (!_frenchVoice) _frenchVoice = pickFrenchVoice();
   if (_frenchVoice) utt.voice = _frenchVoice;
   window.speechSynthesis.speak(utt);
 }
 
-// Builds a "🔊 Listen" button that speaks the given French text on tap.
-// Append it to the question card. Returns null if speech is unavailable
-// or no audio is provided.
+// Builds a Listen control: two pill buttons side-by-side — normal speed
+// + slow speed — so the kid can hear difficult phrases at half pace.
+// Returns a flex container; appending it to the question card works the
+// same as the previous single-button version.
 export function makeListenButton(audioText) {
   if (!audioText || !speechAvailable()) return null;
-  const btn = document.createElement("button");
-  btn.type = "button";
-  btn.className = "mock-listen-btn";
-  btn.setAttribute("aria-label", "Listen — French pronunciation");
-  btn.innerHTML = "<span class=\"mock-listen-icon\" aria-hidden=\"true\">&#128266;</span><span>Listen</span>";
-  btn.addEventListener("click", function (e) {
+  const wrap = document.createElement("div");
+  wrap.className = "mock-listen-controls";
+
+  const fast = document.createElement("button");
+  fast.type = "button";
+  fast.className = "mock-listen-btn";
+  fast.setAttribute("aria-label", "Listen — French pronunciation");
+  fast.innerHTML = "<span class=\"mock-listen-icon\" aria-hidden=\"true\">&#128266;</span><span>Listen</span>";
+  fast.addEventListener("click", function (e) {
     e.preventDefault();
     speakFrench(audioText);
   });
-  return btn;
+
+  const slow = document.createElement("button");
+  slow.type = "button";
+  slow.className = "mock-listen-btn mock-listen-btn-slow";
+  slow.setAttribute("aria-label", "Listen slowly");
+  slow.innerHTML = "<span class=\"mock-listen-icon\" aria-hidden=\"true\">&#128012;</span><span>Slow</span>";
+  slow.addEventListener("click", function (e) {
+    e.preventDefault();
+    speakFrench(audioText, 0.65);
+  });
+
+  wrap.appendChild(fast);
+  wrap.appendChild(slow);
+  return wrap;
 }
 
 // Lenient French answer comparison — case-insensitive, accent-tolerant,
@@ -399,15 +419,47 @@ export function recordFrench(callbacks) {
 // Check any of the recogniser's candidate transcripts against the
 // question's answer + alternates, using lenient normalisation. Returns
 // { matched, heard } so the runner can show "we heard: …" feedback.
+// Lenient speech-recognition match. Browser STT is brittle — kids slur,
+// recogniser misses small words, French has a lot of liaison. We accept:
+//   1. exact normalised match (best signal)
+//   2. target appears as a substring of the heard text (kid said extra)
+//   3. heard appears as a substring of target ≥60% of target length
+//      (kid said the core, recogniser dropped a particle)
+//   4. ≥70% of target tokens present in the heard tokens (any order)
+//
+// This trades strictness for encouragement — the goal of a Year 7 KS3
+// MFL practice tool is to build confidence, not pass-fail assessment.
 export function frenchSpeechMatches(candidates, question) {
-  const targets = [question.answer].concat(question.alternates || []).map(normaliseFrenchAnswer);
+  const targets = [question.answer].concat(question.alternates || [])
+    .map(normaliseFrenchAnswer)
+    .filter(function (t) { return t && t.length > 0; });
+  const bestHeard = (candidates && candidates[0]) || "";
   for (let i = 0; i < (candidates || []).length; i++) {
     const heard = candidates[i];
     const norm = normaliseFrenchAnswer(heard);
     if (!norm) continue;
-    if (targets.indexOf(norm) !== -1) return { matched: true, heard: heard };
+    for (let j = 0; j < targets.length; j++) {
+      const t = targets[j];
+      // (1) exact
+      if (norm === t) return { matched: true, heard: heard };
+      // (2) target inside heard
+      if (norm.indexOf(t) !== -1) return { matched: true, heard: heard };
+      // (3) heard inside target, but only if heard is substantial
+      if (t.indexOf(norm) !== -1 && norm.length >= Math.max(3, Math.floor(t.length * 0.6))) {
+        return { matched: true, heard: heard };
+      }
+      // (4) token overlap ≥70%
+      const tTokens = t.split(/\s+/).filter(Boolean);
+      const hTokens = norm.split(/\s+/).filter(Boolean);
+      if (tTokens.length === 0) continue;
+      let present = 0;
+      for (let k = 0; k < tTokens.length; k++) {
+        if (hTokens.indexOf(tTokens[k]) !== -1) present += 1;
+      }
+      if (present / tTokens.length >= 0.7) return { matched: true, heard: heard };
+    }
   }
-  return { matched: false, heard: (candidates && candidates[0]) || "" };
+  return { matched: false, heard: bestHeard };
 }
 
 // ---------- Signature stingers ---------------------------------------------
