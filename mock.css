@@ -391,6 +391,16 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 @media (min-width: 600px) {
   .mock-tiles { grid-template-columns: 1fr 1fr; }
 }
+/* Laptop / wide-screen layout — max-width and 4-up tile row.
+   Mobile-first design assumes a phone-sized column; on wider screens
+   the existing column was feeling cramped. This breakpoint widens the
+   main column and lays the four mode tiles out in a single row so
+   nothing is cut off the bottom of the fold on first paint. */
+@media (min-width: 1024px) {
+  .mock-header-inner { max-width: 1080px; }
+  .mock-main         { max-width: 1080px; padding: 1.5rem 1.4rem 3rem; }
+  .mock-tiles        { grid-template-columns: repeat(4, 1fr); }
+}
 .mock-tile {
   position: relative;
   display: flex;
