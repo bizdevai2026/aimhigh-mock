@@ -10,6 +10,9 @@ import { loadAllQuestions, pickWarmupQuestions, subjectName } from "./questions.
 import { noteSessionResult, readStreak, readXpToday } from "./engagement.js";
 import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playTap, playModeStartWarmup } from "./sounds.js";
 import { getVisual } from "./visuals.js";
+import { isParentRole } from "./profile.js";
+
+if (isParentRole()) { location.replace("dashboard.html"); }
 
 const ROUND_SIZE = 10;
 const CORRECT_AUTOADVANCE_MS = 850;

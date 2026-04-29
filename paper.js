@@ -11,6 +11,9 @@ import { loadAllQuestions, listSubjects, subjectName } from "./questions.js";
 import { noteSessionResult, readStreak } from "./engagement.js";
 import { playLevelUp, playModeStartMock } from "./sounds.js";
 import { getVisual } from "./visuals.js";
+import { isParentRole } from "./profile.js";
+
+if (isParentRole()) { location.replace("dashboard.html"); }
 
 const ROUND_SIZE = 30;
 const ROUND_MINUTES = 30;

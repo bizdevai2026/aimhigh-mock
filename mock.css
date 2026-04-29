@@ -1034,6 +1034,39 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 .mock-role-btn.role-parent .mock-role-name { color: var(--mock-cyan); }
 .mock-role-btn.role-child .mock-role-name { color: var(--mock-lime); }
 
+/* Parent home banner — shown when parent role is signed in */
+.mock-parent-banner {
+  margin: 0 0 0.9rem;
+  padding: 0.65rem 0.9rem;
+  background: rgba(34, 211, 238, 0.10);
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  border-radius: 0.5rem;
+  color: var(--mock-cyan);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+/* Coach role badge — sits above the dashGreeting line */
+.mock-coach-role-badge {
+  display: inline-block;
+  margin: 0 0 0.45rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: 0.3rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+}
+.mock-coach-role-badge.is-parent {
+  background: rgba(34, 211, 238, 0.15);
+  color: var(--mock-cyan);
+  border: 1px solid rgba(34, 211, 238, 0.4);
+}
+.mock-coach-role-badge.is-child {
+  background: rgba(132, 204, 22, 0.15);
+  color: var(--mock-lime);
+  border: 1px solid rgba(132, 204, 22, 0.4);
+}
+
 /* ---------- GREETING + PROFILE CHIP + STUB NAME ---------- */
 
 .mock-greeting {

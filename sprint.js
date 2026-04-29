@@ -27,6 +27,7 @@ import {
 } from "./engagement.js";
 import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playModeStartSprint, playModeStartWarmup } from "./sounds.js";
 import { getVisual } from "./visuals.js";
+import { isParentRole } from "./profile.js";
 
 const SPRINT_SIZE = 15;
 const DRILL_SIZE = 5;
@@ -42,12 +43,19 @@ start();
 
 async function start() {
   if (!root) return;
+  // Parent can browse the subject picker / hub but cannot run sprints
+  // or topic drills. mock.js boot also redirects on those URLs; this is
+  // defence in depth.
+  const params = readParams();
+  if (isParentRole() && (params.run || params.t)) {
+    location.replace("dashboard.html");
+    return;
+  }
   paintLoading();
   try { pool = await loadAllQuestions(); }
   catch (e) { paintError("Couldn't load questions. Refresh the page."); return; }
   if (!pool || pool.length === 0) { paintError("No questions available yet."); return; }
 
-  const params = readParams();
   if (!params.s) { paintPicker(); return; }
   if (params.t) { runTopicDrill(params.s, params.t); return; }
   if (params.run) { runSprint(params.s); return; }

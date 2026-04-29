@@ -18,7 +18,7 @@ import {
 } from "./engagement.js";
 
 import { readSoundOn, toggleSound } from "./sounds.js";
-import { profileName, requireProfileOrRedirect, clearProfile } from "./profile.js";
+import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole } from "./profile.js";
 import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js";
 
 function $(id) { return document.getElementById(id); }
@@ -330,10 +330,46 @@ function injectProfileChip() {
   inner.appendChild(wrap);
 }
 
+// Block parent role from training pages (defence in depth: each runner
+// also self-gates). Returns false if a redirect was triggered.
+function gateParentFromTraining() {
+  if (!isParentRole()) return true;
+  const path = location.pathname;
+  const q = location.search;
+  let blocked = false;
+  if (/daily\.html$/.test(path))   blocked = true;
+  if (/paper\.html$/.test(path))   blocked = true;
+  if (/subject\.html$/.test(path) && (/[?&]run=1/.test(q) || /[?&]t=/.test(q))) {
+    blocked = true;
+  }
+  if (blocked) {
+    location.replace("dashboard.html");
+    return false;
+  }
+  return true;
+}
+
+// Parent home page: hide training tiles, show a small banner. Coach
+// remains visible. Read-only by design — engagement state is the kid's.
+function applyParentHomeView() {
+  if (!isParentRole()) return;
+  document.body.classList.add("role-parent");
+  const trainingTiles = document.querySelectorAll(".mock-tile-warmup, .mock-tile-sprint, .mock-tile-distance");
+  trainingTiles.forEach(function (t) { t.style.display = "none"; });
+  const main = document.querySelector(".mock-main");
+  if (main && !document.querySelector(".mock-parent-banner")) {
+    const banner = document.createElement("div");
+    banner.className = "mock-parent-banner";
+    banner.textContent = "Parent view — read only. Your visit doesn't affect their streak or XP.";
+    main.insertBefore(banner, main.firstChild);
+  }
+}
+
 function boot() {
-  // Profile gate — anyone without a profile gets sent to welcome.html.
+  // Auth gate — anyone without a session gets sent to welcome.html.
   // Welcome page itself never loads mock.js so there's no loop.
   if (!requireProfileOrRedirect()) return;
+  if (!gateParentFromTraining()) return;
 
   // Hero card lives on the landing page only. Header streak chip on
   // multiple pages — paintHero is safe (id checks short-circuit).
@@ -343,6 +379,7 @@ function boot() {
   injectProfileChip();
   paintProfileLine();
   paintTodayStrip();
+  applyParentHomeView();
 }
 
 if (document.readyState === "loading") {

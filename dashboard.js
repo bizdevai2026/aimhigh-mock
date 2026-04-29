@@ -18,10 +18,12 @@ import {
 
 import { subjectName, listSubjects } from "./questions.js";
 import { playCoachEnter } from "./sounds.js";
+import { isParentRole } from "./profile.js";
 
 paint();
 
 function paint() {
+  paintRoleBadge();
   paintLadderBySubject();
   paintToday();
   paintWeak();
@@ -30,6 +32,22 @@ function paint() {
   // be silent on a cold-load Coach view and fire on subsequent taps. That
   // is the right behaviour: no surprise audio on a parent-only page.
   playCoachEnter();
+}
+
+// Small badge on the Coach hero so the viewer always knows whose lens
+// they're looking through.
+function paintRoleBadge() {
+  const greet = document.getElementById("dashGreeting");
+  if (!greet) return;
+  const role = isParentRole() ? "PARENT VIEW" : "TRAINEE VIEW";
+  // Insert badge before the existing greeting line; preserve any name text.
+  if (!document.getElementById("dashRoleBadge")) {
+    const badge = document.createElement("span");
+    badge.id = "dashRoleBadge";
+    badge.className = "mock-coach-role-badge " + (isParentRole() ? "is-parent" : "is-child");
+    badge.textContent = role;
+    greet.parentNode.insertBefore(badge, greet);
+  }
 }
 
 // --- LADDER BY SUBJECT ------------------------------------------------------
