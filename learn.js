@@ -28,20 +28,27 @@ start();
 async function start() {
   if (!root) return;
   paintLoading();
+
+  // Always need learning.json — it's small and used by every view.
   try {
     const r = await fetch("data/learning.json", { cache: "no-cache" });
     learning = r.ok ? await r.json() : [];
-  } catch (e) {
-    learning = [];
-  }
+  } catch (e) { learning = []; }
   if (!Array.isArray(learning)) learning = [];
 
-  try { pool = await loadAllQuestions(); }
-  catch (e) { pool = []; }
-
   const params = readParams();
+
+  // Topic detail and hub views don't need the question pool — paint
+  // immediately. loadAllQuestions() fetches 7 JSON files which on a
+  // cold cache makes the page feel sluggish; only the subject view
+  // (which lists ALL topics including non-learn ones) needs it.
   if (params.s && params.t) { paintTopic(params.s, params.t); return; }
-  if (params.s)             { paintSubject(params.s); return; }
+  if (params.s) {
+    try { pool = await loadAllQuestions(); }
+    catch (e) { pool = []; }
+    paintSubject(params.s);
+    return;
+  }
   paintHub();
 }
 
@@ -76,12 +83,11 @@ function paintHub() {
   subjects.forEach(function (s) {
     const tone = subjectTone(s.id);
     const learnCount = learning.filter(function (e) { return e.subject === s.id; }).length;
-    const totalTopics = pool ? topicsForSubject(pool, s.id).length : 0;
     tilesHtml +=
       "<a class=\"mock-tile mock-learn-subject-tile\" style=\"--tile-color:" + tone + "\" href=\"learn.html?s=" + encodeURIComponent(s.id) + "\">" +
         "<span class=\"mock-tile-tag\">Read &amp; watch</span>" +
         "<span class=\"mock-tile-title\">" + escapeHtml(s.name.toUpperCase()) + "</span>" +
-        "<span class=\"mock-tile-meta\">" + learnCount + " topic" + (learnCount === 1 ? "" : "s") + " ready &middot; " + totalTopics + " total</span>" +
+        "<span class=\"mock-tile-meta\">" + learnCount + " topic" + (learnCount === 1 ? "" : "s") + " ready</span>" +
         "<span class=\"mock-tile-arrow\" aria-hidden=\"true\">&rarr;</span>" +
       "</a>";
   });
