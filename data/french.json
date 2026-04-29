@@ -833,5 +833,299 @@
       "jai les yeux bleus"
     ],
     "explainer": "Yeux = eyes. Bleus is plural to match yeux. Final 's' is silent."
+  },
+  {
+    "id": "fr-speak-009",
+    "subject": "french",
+    "topic": "age-and-names",
+    "type": "speak",
+    "audio": "Je m'appelle Léo",
+    "prompt": "Say it: \"My name is Léo\".",
+    "answer": "Je m'appelle Léo",
+    "alternates": [
+      "je mappelle Léo",
+      "je mappelle Leo"
+    ],
+    "explainer": "Final consonants of \"Léo\" sound; the 's' on \"appelles\" is silent."
+  },
+  {
+    "id": "fr-speak-010",
+    "subject": "french",
+    "topic": "age-and-names",
+    "type": "speak",
+    "audio": "Comment tu t'appelles",
+    "prompt": "Say it: \"What's your name?\" (informal).",
+    "answer": "Comment tu t'appelles",
+    "alternates": [
+      "comment tu tappelles"
+    ],
+    "explainer": "Said quickly: \"komawn-tu-tapell\". The \"t'\" is a contraction of \"te\"."
+  },
+  {
+    "id": "fr-speak-011",
+    "subject": "french",
+    "topic": "age-and-names",
+    "type": "speak",
+    "audio": "Enchanté",
+    "prompt": "Say it: \"Pleased to meet you\" (boy speaking).",
+    "answer": "Enchanté",
+    "alternates": [
+      "enchante"
+    ],
+    "explainer": "\"an-shan-tay\". Girls say \"enchantée\" — same sound, different spelling."
+  },
+  {
+    "id": "fr-speak-012",
+    "subject": "french",
+    "topic": "birthday-and-months",
+    "type": "speak",
+    "audio": "Mon anniversaire est le quinze juin",
+    "prompt": "Say it: \"My birthday is on the 15th of June\".",
+    "answer": "Mon anniversaire est le quinze juin",
+    "alternates": [],
+    "explainer": "\"quinze\" rhymes with \"sanz\" — not \"kweenz\". Anniversaire links smoothly: \"mon-naniversaire\"."
+  },
+  {
+    "id": "fr-speak-013",
+    "subject": "french",
+    "topic": "birthday-and-months",
+    "type": "speak",
+    "audio": "Quel âge as-tu",
+    "prompt": "Say it: \"How old are you?\"",
+    "answer": "Quel âge as-tu",
+    "alternates": [
+      "quel age as-tu",
+      "quel age astu"
+    ],
+    "explainer": "\"kel-ahzh-a-too\". The \"-tu\" links to \"as\" so it sounds like one word."
+  },
+  {
+    "id": "fr-speak-014",
+    "subject": "french",
+    "topic": "birthday-and-months",
+    "type": "speak",
+    "audio": "Nous sommes en novembre",
+    "prompt": "Say it: \"It is November\" (literally 'we are in November').",
+    "answer": "Nous sommes en novembre",
+    "alternates": [],
+    "explainer": "Two nasal vowels: \"en\" and \"-vembre\". Final 'e' of novembre is barely sounded."
+  },
+  {
+    "id": "fr-speak-015",
+    "subject": "french",
+    "topic": "hair-and-eyes",
+    "type": "speak",
+    "audio": "J'ai les cheveux courts",
+    "prompt": "Say it: \"I have short hair\".",
+    "answer": "J'ai les cheveux courts",
+    "alternates": [
+      "jai les cheveux courts"
+    ],
+    "explainer": "Cheveux is always plural. The 's' of \"courts\" stays silent."
+  },
+  {
+    "id": "fr-speak-016",
+    "subject": "french",
+    "topic": "hair-and-eyes",
+    "type": "speak",
+    "audio": "J'ai les yeux verts",
+    "prompt": "Say it: \"I have green eyes\".",
+    "answer": "J'ai les yeux verts",
+    "alternates": [
+      "jai les yeux verts"
+    ],
+    "explainer": "\"yeux\" rhymes with the French \"feux\". Final 's' on verts is silent."
+  },
+  {
+    "id": "fr-speak-017",
+    "subject": "french",
+    "topic": "hair-and-eyes",
+    "type": "speak",
+    "audio": "Je porte des lunettes",
+    "prompt": "Say it: \"I wear glasses\".",
+    "answer": "Je porte des lunettes",
+    "alternates": [],
+    "explainer": "Porter = to wear (also for clothes). Lunettes is always plural in French."
+  },
+  {
+    "id": "fr-speak-018",
+    "subject": "french",
+    "topic": "home-and-where-from",
+    "type": "speak",
+    "audio": "J'habite dans une maison",
+    "prompt": "Say it: \"I live in a house\".",
+    "answer": "J'habite dans une maison",
+    "alternates": [
+      "jhabite dans une maison"
+    ],
+    "explainer": "Silent 'h' on habite — sounds like \"j'abite\". Maison links smoothly with \"une\"."
+  },
+  {
+    "id": "fr-speak-019",
+    "subject": "french",
+    "topic": "home-and-where-from",
+    "type": "speak",
+    "audio": "Je suis anglais",
+    "prompt": "Say it: \"I'm English\" (boy speaking).",
+    "answer": "Je suis anglais",
+    "alternates": [],
+    "explainer": "Final 's' silent. \"ang-lay\" with a nasal vowel. Girl: \"anglaise\"."
+  },
+  {
+    "id": "fr-speak-020",
+    "subject": "french",
+    "topic": "home-and-where-from",
+    "type": "speak",
+    "audio": "J'habite dans le centre",
+    "prompt": "Say it: \"I live in the centre\".",
+    "answer": "J'habite dans le centre",
+    "alternates": [
+      "jhabite dans le centre"
+    ],
+    "explainer": "\"san-tre\" — the 'c' is soft before 'e'."
+  },
+  {
+    "id": "fr-speak-021",
+    "subject": "french",
+    "topic": "family",
+    "type": "speak",
+    "audio": "Dans ma famille il y a quatre personnes",
+    "prompt": "Say it: \"In my family there are four people\".",
+    "answer": "Dans ma famille il y a quatre personnes",
+    "alternates": [],
+    "explainer": "\"il y a\" runs together: \"ee-lee-ya\". Quatre rhymes with \"katra\" — final 'e' barely there."
+  },
+  {
+    "id": "fr-speak-022",
+    "subject": "french",
+    "topic": "family",
+    "type": "speak",
+    "audio": "Je m'entends bien avec ma sœur",
+    "prompt": "Say it: \"I get on well with my sister\".",
+    "answer": "Je m'entends bien avec ma sœur",
+    "alternates": [
+      "je mentends bien avec ma sœur",
+      "je mentends bien avec ma soeur",
+      "je m'entends bien avec ma soeur"
+    ],
+    "explainer": "\"je m'entends\" sounds like \"juh-mon-ton\". Sœur is one syllable: \"sur\"."
+  },
+  {
+    "id": "fr-speak-023",
+    "subject": "french",
+    "topic": "family",
+    "type": "speak",
+    "audio": "J'ai un chat",
+    "prompt": "Say it: \"I have a cat\".",
+    "answer": "J'ai un chat",
+    "alternates": [
+      "jai un chat"
+    ],
+    "explainer": "Final 't' on chat is silent: \"sha\". Un is nasal — like \"uh~\"."
+  },
+  {
+    "id": "fr-speak-024",
+    "subject": "french",
+    "topic": "personality",
+    "type": "speak",
+    "audio": "Mon frère est sympa",
+    "prompt": "Say it: \"My brother is nice\".",
+    "answer": "Mon frère est sympa",
+    "alternates": [],
+    "explainer": "\"sym-pa\" — short for sympathique. Same form for boys and girls."
+  },
+  {
+    "id": "fr-speak-025",
+    "subject": "french",
+    "topic": "personality",
+    "type": "speak",
+    "audio": "Ma sœur est marrante",
+    "prompt": "Say it: \"My sister is funny\".",
+    "answer": "Ma sœur est marrante",
+    "alternates": [
+      "ma soeur est marrante"
+    ],
+    "explainer": "Feminine of marrant — the final 'te' is sounded. Boy: \"marrant\" (silent ending)."
+  },
+  {
+    "id": "fr-speak-026",
+    "subject": "french",
+    "topic": "personality",
+    "type": "speak",
+    "audio": "Mon père est strict",
+    "prompt": "Say it: \"My father is strict\".",
+    "answer": "Mon père est strict",
+    "alternates": [],
+    "explainer": "Both consonants of \"strict\" sound: \"streekt\". Père has a soft 'è'."
+  },
+  {
+    "id": "fr-speak-027",
+    "subject": "french",
+    "topic": "adjectives",
+    "type": "speak",
+    "audio": "Il est très grand",
+    "prompt": "Say it: \"He is very tall\".",
+    "answer": "Il est très grand",
+    "alternates": [],
+    "explainer": "Final 'd' on grand is silent. Très is sharp: \"treh\"."
+  },
+  {
+    "id": "fr-speak-028",
+    "subject": "french",
+    "topic": "adjectives",
+    "type": "speak",
+    "audio": "Elle est petite",
+    "prompt": "Say it: \"She is small\".",
+    "answer": "Elle est petite",
+    "alternates": [],
+    "explainer": "Feminine: \"petite\" — final 'te' sounds. Boy form: \"petit\" — silent ending."
+  },
+  {
+    "id": "fr-speak-029",
+    "subject": "french",
+    "topic": "adjectives",
+    "type": "speak",
+    "audio": "Je suis intelligent",
+    "prompt": "Say it: \"I am smart\" (boy speaking).",
+    "answer": "Je suis intelligent",
+    "alternates": [],
+    "explainer": "Final 't' silent: \"in-tel-i-zhon\". Girl form: intelligente — final 'te' sounds."
+  },
+  {
+    "id": "fr-speak-030",
+    "subject": "french",
+    "topic": "verbs",
+    "type": "speak",
+    "audio": "J'ai un frère et une sœur",
+    "prompt": "Say it: \"I have a brother and a sister\".",
+    "answer": "J'ai un frère et une sœur",
+    "alternates": [
+      "jai un frère et une soeur",
+      "j'ai un frère et une soeur",
+      "jai un frere et une soeur"
+    ],
+    "explainer": "\"et\" = and — pronounced \"ay\". Final 'e' of frère barely there."
+  },
+  {
+    "id": "fr-speak-031",
+    "subject": "french",
+    "topic": "verbs",
+    "type": "speak",
+    "audio": "Je suis de Leicester",
+    "prompt": "Say it: \"I am from Leicester\".",
+    "answer": "Je suis de Leicester",
+    "alternates": [],
+    "explainer": "Use \"je suis de\" + city to say where you're from. \"Leicester\" stays in English form."
+  },
+  {
+    "id": "fr-speak-032",
+    "subject": "french",
+    "topic": "verbs",
+    "type": "speak",
+    "audio": "Il est de Lille",
+    "prompt": "Say it: \"He is from Lille\".",
+    "answer": "Il est de Lille",
+    "alternates": [],
+    "explainer": "Lille = a city in northern France. Double 'l' makes a soft glide; pronounce \"leel\"."
   }
 ]
