@@ -306,6 +306,11 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 .mock-hero-tier-value.tier-silver   { color: var(--tier-silver); }
 .mock-hero-tier-value.tier-gold     { color: var(--tier-gold); }
 .mock-hero-tier-value.tier-diamond  { color: var(--tier-diamond); }
+.mock-hero-tier-value.tier-empty {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+}
 
 .mock-hero-countdown-value {
   font-family: var(--mock-font-display);

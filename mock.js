@@ -36,15 +36,33 @@ function paintHero() {
 
   paintHeader(streak);
 
+  // First-time state = no streak ever started AND no activity this week.
+  // Empty-state copy avoids "0 day streak / BRONZE / 1 missed day allowed",
+  // which reads as a demoralising scoreboard before any session has run.
+  const firstTime =
+    (streak.current || 0) === 0 &&
+    streak.lastDateIso == null &&
+    (week.daysHit || 0) === 0;
+
   // Hero streak block
   const heroStreakNum = $("heroStreakNum");
   if (heroStreakNum) heroStreakNum.textContent = String(streak.current);
 
+  const heroStreakLabel = $("heroStreakLabel");
+  if (heroStreakLabel) {
+    heroStreakLabel.textContent = firstTime ? "Day 1 starts here" : "Day streak";
+  }
+
   const heroFreezes = $("heroFreezes");
   if (heroFreezes) {
-    heroFreezes.innerHTML =
-      "<span><strong>" + streak.freezes + "</strong> freezes saved</span>" +
-      "<span>1 missed day allowed</span>";
+    if (firstTime) {
+      heroFreezes.innerHTML =
+        "<span>First warm-up kicks off your streak.</span>";
+    } else {
+      heroFreezes.innerHTML =
+        "<span><strong>" + streak.freezes + "</strong> freezes saved</span>" +
+        "<span>1 missed day allowed</span>";
+    }
   }
 
   // XP progress
@@ -63,9 +81,14 @@ function paintHero() {
   // Tier
   const heroTier = $("heroTier");
   if (heroTier) {
-    const tierName = String(week.tier || "BRONZE").toUpperCase();
-    heroTier.textContent = tierName;
-    heroTier.className = "mock-hero-tier-value tier-" + tierName.toLowerCase();
+    if (firstTime) {
+      heroTier.textContent = "Get started";
+      heroTier.className = "mock-hero-tier-value tier-empty";
+    } else {
+      const tierName = String(week.tier || "BRONZE").toUpperCase();
+      heroTier.textContent = tierName;
+      heroTier.className = "mock-hero-tier-value tier-" + tierName.toLowerCase();
+    }
   }
 
   paintCountdown(examDate);
