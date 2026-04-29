@@ -164,6 +164,197 @@ const VISUALS = {
     '</svg>'
   ].join(""),
 
+  // Feudal pyramid — stacked tiers showing the medieval social order.
+  // Used by KS3 history "Medieval Realms" feudal system questions.
+  "feudal-pyramid": [
+    '<svg viewBox="0 0 280 220" role="img" aria-label="Feudal pyramid: King at top, then Barons, Knights, Peasants" class="mock-visual-svg">',
+      '<g font-family="Inter, sans-serif" font-size="11" fill="currentColor" font-weight="700" letter-spacing="0.06em">',
+        // Tier 1 — King (smallest, top)
+        '<polygon points="120,20 160,20 168,52 112,52" fill="rgba(251,191,36,0.18)" stroke="#fbbf24" stroke-width="1.6"/>',
+        '<text x="140" y="40" text-anchor="middle">KING</text>',
+        // Tier 2 — Barons
+        '<polygon points="112,56 168,56 180,92 100,92" fill="rgba(132,204,22,0.16)" stroke="#84cc16" stroke-width="1.6"/>',
+        '<text x="140" y="78" text-anchor="middle">BARONS</text>',
+        // Tier 3 — Knights
+        '<polygon points="100,96 180,96 196,138 84,138" fill="rgba(34,211,238,0.16)" stroke="#22d3ee" stroke-width="1.6"/>',
+        '<text x="140" y="121" text-anchor="middle">KNIGHTS</text>',
+        // Tier 4 — Peasants (largest, bottom)
+        '<polygon points="84,142 196,142 220,200 60,200" fill="rgba(249,115,22,0.16)" stroke="#f97316" stroke-width="1.6"/>',
+        '<text x="140" y="178" text-anchor="middle">PEASANTS</text>',
+      '</g>',
+      '<g font-family="Inter, sans-serif" font-size="9" fill="currentColor" opacity="0.7">',
+        '<text x="240" y="40">grants land</text>',
+        '<text x="240" y="80">+ loyalty</text>',
+        '<text x="240" y="125">military</text>',
+        '<text x="240" y="178">labour</text>',
+        '<line x1="226" y1="36" x2="236" y2="36" stroke="currentColor" opacity="0.5"/>',
+      '</g>',
+    '</svg>'
+  ].join(""),
+
+  // River meander — bend showing fast outer (erosion) and slow inner
+  // (deposition) sides. KS3 geography rivers strand.
+  "river-meander": [
+    '<svg viewBox="0 0 320 160" role="img" aria-label="River meander showing erosion on the outer bank and deposition on the inner bank" class="mock-visual-svg">',
+      // River channel as a curved band
+      '<path d="M 20,40 Q 90,40 110,80 Q 130,120 200,120 Q 270,120 300,80" fill="none" stroke="#22d3ee" stroke-width="20" stroke-linecap="round" opacity="0.7"/>',
+      '<path d="M 20,40 Q 90,40 110,80 Q 130,120 200,120 Q 270,120 300,80" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round"/>',
+      // Erosion arrow on outer bank (pointing into the bank)
+      '<g stroke="#fca5a5" fill="#fca5a5" stroke-width="1.5">',
+        '<line x1="115" y1="25" x2="115" y2="58"/>',
+        '<polyline points="110,52 115,58 120,52" fill="none"/>',
+      '</g>',
+      // Deposition arrow on inner bank
+      '<g stroke="#84cc16" fill="#84cc16" stroke-width="1.5">',
+        '<line x1="195" y1="142" x2="195" y2="105"/>',
+        '<polyline points="190,111 195,105 200,111" fill="none"/>',
+      '</g>',
+      '<g font-family="Inter, sans-serif" font-size="10" fill="currentColor">',
+        '<text x="115" y="18" text-anchor="middle" fill="#fca5a5" font-weight="700">EROSION</text>',
+        '<text x="115" y="30" text-anchor="middle" font-size="8.5" opacity="0.75">(outer bank, fast flow)</text>',
+        '<text x="195" y="156" text-anchor="middle" fill="#84cc16" font-weight="700">DEPOSITION</text>',
+        '<text x="20" y="35" font-size="9" opacity="0.7">river flow</text>',
+      '</g>',
+    '</svg>'
+  ].join(""),
+
+  // Coastal erosion sequence — cliff → arch → stack → stump.
+  "coast-stack": [
+    '<svg viewBox="0 0 360 150" role="img" aria-label="Coastal erosion sequence: cliff, arch, stack, stump" class="mock-visual-svg">',
+      '<line x1="10" y1="115" x2="350" y2="115" stroke="#22d3ee" stroke-width="2" opacity="0.6"/>',
+      '<g fill="rgba(203,213,225,0.18)" stroke="#cbd5e1" stroke-width="1.6">',
+        // 1. Cliff with vertical crack
+        '<path d="M 18,115 L 18,40 L 70,40 L 70,115 Z"/>',
+        '<line x1="48" y1="40" x2="48" y2="100" stroke="#fca5a5" stroke-width="1" stroke-dasharray="2 2"/>',
+        // 2. Arch — cliff with sea hole
+        '<path d="M 100,115 L 100,40 L 165,40 L 165,115 L 150,115 L 150,90 Q 142,75 132,90 L 132,115 Z"/>',
+        // 3. Stack — separated tower
+        '<rect x="200" y="60" width="32" height="55" />',
+        '<path d="M 240,115 L 240,45 L 270,45 L 270,115 Z"/>',
+        // 4. Stump — low remaining rock
+        '<rect x="305" y="98" width="30" height="17"/>',
+      '</g>',
+      '<g font-family="Inter, sans-serif" font-size="10" fill="currentColor" text-anchor="middle" font-weight="700">',
+        '<text x="44" y="135">CLIFF</text>',
+        '<text x="132" y="135">ARCH</text>',
+        '<text x="232" y="135">STACK</text>',
+        '<text x="320" y="135">STUMP</text>',
+      '</g>',
+    '</svg>'
+  ].join(""),
+
+  // Contour rings — concentric ellipses around a hill summit, showing
+  // how a 3D hill is represented on a 2D map. KS3 geography map skills.
+  "contour-hill": [
+    '<svg viewBox="0 0 240 160" role="img" aria-label="Concentric contour rings showing a hill summit" class="mock-visual-svg">',
+      '<g fill="none" stroke="#84cc16" stroke-width="1.5" opacity="0.85">',
+        '<ellipse cx="120" cy="80" rx="105" ry="55"/>',
+        '<ellipse cx="120" cy="80" rx="80"  ry="42"/>',
+        '<ellipse cx="120" cy="80" rx="55"  ry="28"/>',
+        '<ellipse cx="120" cy="80" rx="30"  ry="15"/>',
+        '<ellipse cx="120" cy="80" rx="10"  ry="5"/>',
+      '</g>',
+      '<g font-family="Inter, sans-serif" font-size="9" fill="currentColor" opacity="0.85">',
+        '<text x="120" y="84" text-anchor="middle" font-weight="700">100 m</text>',
+        '<text x="120" y="63" text-anchor="middle">90</text>',
+        '<text x="120" y="48" text-anchor="middle">80</text>',
+        '<text x="120" y="33" text-anchor="middle">70</text>',
+        '<text x="120" y="18" text-anchor="middle">60</text>',
+        '<text x="120" y="152" text-anchor="middle" font-style="italic">summit at the centre</text>',
+      '</g>',
+    '</svg>'
+  ].join(""),
+
+  // Solar system — sun + eight planets, ordered, simplified scale.
+  "solar-system": [
+    '<svg viewBox="0 0 360 90" role="img" aria-label="Solar system: Sun and eight planets in order" class="mock-visual-svg">',
+      // Orbit guideline
+      '<line x1="20" y1="45" x2="350" y2="45" stroke="rgba(255,255,255,0.12)" stroke-dasharray="2 4"/>',
+      // Sun (left)
+      '<circle cx="36" cy="45" r="18" fill="#fbbf24"/>',
+      // Planets, roughly relative size, NOT to spatial scale
+      '<g>',
+        '<circle cx="80"  cy="45" r="3"  fill="#cbd5e1"/>',  // Mercury
+        '<circle cx="105" cy="45" r="5"  fill="#fbbf24" opacity="0.8"/>', // Venus
+        '<circle cx="135" cy="45" r="5.5" fill="#22d3ee"/>', // Earth
+        '<circle cx="165" cy="45" r="4"  fill="#f97316"/>',  // Mars
+        '<circle cx="210" cy="45" r="11" fill="#d97706"/>',  // Jupiter
+        '<circle cx="255" cy="45" r="9"  fill="#fbbf24" opacity="0.6"/>', // Saturn
+        '<circle cx="295" cy="45" r="7"  fill="#22d3ee" opacity="0.7"/>', // Uranus
+        '<circle cx="330" cy="45" r="7"  fill="#3b82f6"/>',  // Neptune
+        // Saturn ring
+        '<ellipse cx="255" cy="45" rx="14" ry="3" fill="none" stroke="#fbbf24" stroke-width="1" opacity="0.7"/>',
+      '</g>',
+      '<g font-family="Inter, sans-serif" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.85">',
+        '<text x="36"  y="80" font-weight="700">Sun</text>',
+        '<text x="80"  y="80">Me</text>',
+        '<text x="105" y="80">V</text>',
+        '<text x="135" y="80">E</text>',
+        '<text x="165" y="80">Ma</text>',
+        '<text x="210" y="80">J</text>',
+        '<text x="255" y="80">S</text>',
+        '<text x="295" y="80">U</text>',
+        '<text x="330" y="80">N</text>',
+      '</g>',
+    '</svg>'
+  ].join(""),
+
+  // Triangle types — equilateral, isosceles, scalene, right-angled.
+  "triangle-types": [
+    '<svg viewBox="0 0 360 130" role="img" aria-label="Four triangle types: equilateral, isosceles, scalene, right-angled" class="mock-visual-svg">',
+      '<g fill="rgba(132,204,22,0.10)" stroke="#84cc16" stroke-width="1.8" stroke-linejoin="round">',
+        '<polygon points="40,90 80,30 120,90"/>',
+        '<polygon points="170,90 200,30 230,90"/>',
+        '<polygon points="245,90 285,40 325,90"/>',  // scalene approx
+        '<polygon points="245,90 285,90 245,40"/>',  // right-angled — overlaid
+      '</g>',
+      // Equal-side ticks for equilateral
+      '<g stroke="#84cc16" stroke-width="1.5" fill="none">',
+        '<line x1="58" y1="62" x2="62" y2="58"/>',
+        '<line x1="98" y1="58" x2="102" y2="62"/>',
+        '<line x1="78" y1="92" x2="82" y2="88"/>',
+      '</g>',
+      // Equal-side ticks for isosceles (only the two slanted equal sides)
+      '<g stroke="#84cc16" stroke-width="1.5" fill="none">',
+        '<line x1="183" y1="62" x2="187" y2="58"/>',
+        '<line x1="213" y1="58" x2="217" y2="62"/>',
+      '</g>',
+      // Right angle marker
+      '<g stroke="#22d3ee" stroke-width="1.5" fill="none">',
+        '<polyline points="252,84 252,90 258,90"/>',
+      '</g>',
+      '<g font-family="Inter, sans-serif" font-size="9" fill="currentColor" text-anchor="middle" font-weight="700">',
+        '<text x="80"  y="112">EQUILATERAL</text>',
+        '<text x="200" y="112">ISOSCELES</text>',
+        '<text x="285" y="112">RIGHT-ANGLED</text>',
+        // Scalene label is shifted up slightly because it overlaps right-angled box
+        '<text x="285" y="124" font-size="8" opacity="0.7">(also scalene)</text>',
+      '</g>',
+    '</svg>'
+  ].join(""),
+
+  // Polygon family — pentagon, hexagon, octagon labelled with side count.
+  "polygon-family": [
+    '<svg viewBox="0 0 360 130" role="img" aria-label="Pentagon, hexagon and octagon side by side" class="mock-visual-svg">',
+      '<g fill="rgba(34,211,238,0.10)" stroke="#22d3ee" stroke-width="1.8" stroke-linejoin="round">',
+        // Pentagon — regular
+        '<polygon points="60,30 95,55 82,95 38,95 25,55"/>',
+        // Hexagon — regular
+        '<polygon points="180,30 215,50 215,90 180,110 145,90 145,50"/>',
+        // Octagon — regular
+        '<polygon points="298,30 322,40 332,64 322,88 298,98 274,88 264,64 274,40"/>',
+      '</g>',
+      '<g font-family="Inter, sans-serif" font-size="9" fill="currentColor" text-anchor="middle" font-weight="700">',
+        '<text x="60" y="118">PENTAGON</text>',
+        '<text x="60" y="128" font-size="8" opacity="0.7">5 sides</text>',
+        '<text x="180" y="124">HEXAGON</text>',
+        '<text x="180" y="134" font-size="8" opacity="0.7">6 sides</text>',
+        '<text x="298" y="116">OCTAGON</text>',
+        '<text x="298" y="126" font-size="8" opacity="0.7">8 sides</text>',
+      '</g>',
+    '</svg>'
+  ].join(""),
+
   // Skeleton stick figure with bone labels.
   "skeleton": [
     '<svg viewBox="0 0 200 220" role="img" aria-label="Simplified human skeleton with key bones" class="mock-visual-svg">',

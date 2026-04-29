@@ -76,6 +76,7 @@
     "id": "geo-mapskills-008",
     "subject": "geography",
     "topic": "map-skills",
+    "visual": "contour-hill",
     "prompt": "Contour lines forming concentric rings on a map usually mark:",
     "options": [
       "A lake",
@@ -371,6 +372,7 @@
     "id": "geo-rivers-004",
     "subject": "geography",
     "topic": "rivers",
+    "visual": "river-meander",
     "prompt": "A wide bend in a river's lower course is called a:",
     "options": ["Tributary", "Meander", "Waterfall", "Estuary"],
     "answer": 1,
@@ -464,6 +466,7 @@
     "id": "geo-coasts-002",
     "subject": "geography",
     "topic": "coasts",
+    "visual": "coast-stack",
     "prompt": "A natural arch on the coast is created when:",
     "options": [
       "Two beaches join up",

@@ -104,6 +104,7 @@
     "id": "hist-medieval-001",
     "subject": "history",
     "topic": "medieval-england",
+    "visual": "feudal-pyramid",
     "prompt": "In the feudal system, who was at the top?",
     "options": ["Knights", "Peasants", "The King", "Bishops only"],
     "answer": 2,
