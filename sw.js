@@ -16,7 +16,7 @@
 // change, bump CACHE_NAME below to match. The activate handler will
 // delete every cache that doesn't equal the current name.
 
-const CACHE_NAME = "aimhigh-mock-v20260501";
+const CACHE_NAME = "aimhigh-mock-v20260502";
 
 const SHELL = [
   "./",
@@ -27,14 +27,14 @@ const SHELL = [
   "./paper.html",
   "./dashboard.html",
   "./learn.html",
-  "./mock.css?v=20260501",
-  "./mock.js?v=20260501",
-  "./welcome.js?v=20260501",
-  "./warmup.js?v=20260501",
-  "./sprint.js?v=20260501",
-  "./paper.js?v=20260501",
-  "./dashboard.js?v=20260501",
-  "./learn.js?v=20260501",
+  "./mock.css?v=20260502",
+  "./mock.js?v=20260502",
+  "./welcome.js?v=20260502",
+  "./warmup.js?v=20260502",
+  "./sprint.js?v=20260502",
+  "./paper.js?v=20260502",
+  "./dashboard.js?v=20260502",
+  "./learn.js?v=20260502",
   "./profile.js",
   "./engagement.js",
   "./questions.js",

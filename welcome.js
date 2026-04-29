@@ -21,9 +21,9 @@ import {
   clearLegacyProfile,
   migratedChildName,
   startDemoSession
-} from "./profile.js?v=20260501";
+} from "./profile.js?v=20260502";
 
-import { playWelcomeStinger } from "./sounds.js?v=20260501";
+import { playWelcomeStinger } from "./sounds.js?v=20260502";
 
 const root = document.getElementById("welcomeRoot");
 
