@@ -453,3 +453,11 @@ if (document.readyState === "loading") {
 } else {
   boot();
 }
+
+// Register the service worker on protected pages. Failure is silent —
+// the app works fine without it; SW is purely for offline + speed.
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("./sw.js").catch(function () {});
+  });
+}

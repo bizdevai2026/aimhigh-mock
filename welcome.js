@@ -321,3 +321,12 @@ function escapeHtml(s) {
 function escapeAttr(s) { return escapeHtml(s); }
 
 init();
+
+// Register the service worker for offline + fast subsequent loads.
+// Welcome page is the entry for fresh visitors, so it's a good place
+// to install the SW. Other pages register via mock.js.
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("./sw.js").catch(function () {});
+  });
+}
