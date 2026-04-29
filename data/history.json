@@ -32,6 +32,75 @@
     "explainer": "Completed in 1086, the Domesday Book recorded who owned what land and how much it was worth — so William could tax it."
   },
   {
+    "id": "hist-norman-004",
+    "subject": "history",
+    "topic": "norman-conquest",
+    "prompt": "Which Anglo-Saxon king was defeated and killed at the Battle of Hastings?",
+    "options": ["Edward the Confessor", "Harold Godwinson", "Harald Hardrada", "Alfred the Great"],
+    "answer": 1,
+    "explainer": "Harold Godwinson was crowned in early 1066 and died at Hastings in October that year — possibly shot in the eye, as the Bayeux Tapestry suggests."
+  },
+  {
+    "id": "hist-norman-005",
+    "subject": "history",
+    "topic": "norman-conquest",
+    "prompt": "Just before Hastings, Harold marched north to defeat which Viking king at Stamford Bridge?",
+    "options": ["Cnut", "Sweyn Forkbeard", "Harald Hardrada", "Olaf Tryggvason"],
+    "answer": 2,
+    "explainer": "Harold beat Harald Hardrada at Stamford Bridge in September 1066, then had to race south to face William — exhausting his army before Hastings."
+  },
+  {
+    "id": "hist-norman-006",
+    "subject": "history",
+    "topic": "norman-conquest",
+    "prompt": "After winning, William used which type of fortification to control England?",
+    "options": [
+      "Stone keeps from day one",
+      "Motte and bailey castles",
+      "Roman-style walls",
+      "Wooden longhouses"
+    ],
+    "answer": 1,
+    "explainer": "Motte (mound) and bailey (enclosed yard) castles were quick to build with timber and earth. Stone keeps came later as Norman power was secured."
+  },
+  {
+    "id": "hist-norman-007",
+    "subject": "history",
+    "topic": "norman-conquest",
+    "prompt": "What does the Bayeux Tapestry mainly depict?",
+    "options": [
+      "The Crusades",
+      "The Norman Conquest and Battle of Hastings",
+      "The signing of Magna Carta",
+      "The Black Death"
+    ],
+    "answer": 1,
+    "explainer": "A 70-metre embroidered cloth telling the Norman version of the events leading to William's victory in 1066."
+  },
+  {
+    "id": "hist-norman-008",
+    "subject": "history",
+    "topic": "norman-conquest",
+    "prompt": "The \"Harrying of the North\" (1069–70) was William's response to:",
+    "options": [
+      "A famine",
+      "Northern rebellions against Norman rule",
+      "Viking invasions",
+      "A French alliance"
+    ],
+    "answer": 1,
+    "explainer": "William's troops burned villages, crops and livestock across northern England to crush rebellion — thousands died of starvation that winter."
+  },
+  {
+    "id": "hist-norman-009",
+    "subject": "history",
+    "topic": "norman-conquest",
+    "prompt": "Which language did the Normans bring to England, heavily influencing modern English?",
+    "options": ["Latin", "Norman French", "Old Norse", "Gaelic"],
+    "answer": 1,
+    "explainer": "Norman French became the language of the court and law for centuries. That's why English has so many French-origin words (e.g. \"beef\", \"justice\")."
+  },
+  {
     "id": "hist-medieval-001",
     "subject": "history",
     "topic": "medieval-england",
@@ -53,6 +122,103 @@
     ],
     "answer": 1,
     "explainer": "Barons forced King John to sign Magna Carta, which set limits on what the king could do — early step toward the rule of law."
+  },
+  {
+    "id": "hist-medieval-003",
+    "subject": "history",
+    "topic": "medieval-england",
+    "prompt": "Below the king in the feudal system, who held land directly from him?",
+    "options": ["Serfs", "Barons", "Merchants", "Monks"],
+    "answer": 1,
+    "explainer": "Barons (also called tenants-in-chief) held large estates from the king and supplied him with knights and taxes."
+  },
+  {
+    "id": "hist-medieval-004",
+    "subject": "history",
+    "topic": "medieval-england",
+    "prompt": "What was a serf in medieval England?",
+    "options": [
+      "A wandering knight",
+      "A peasant tied to a lord's land",
+      "A type of priest",
+      "A foreign ambassador"
+    ],
+    "answer": 1,
+    "explainer": "Serfs were unfree peasants who could not leave the manor without their lord's permission. They worked the land in return for protection."
+  },
+  {
+    "id": "hist-medieval-005",
+    "subject": "history",
+    "topic": "medieval-england",
+    "prompt": "What was a manor in medieval England?",
+    "options": [
+      "A small chapel",
+      "A lord's estate worked by peasants",
+      "A merchant's shop",
+      "A king's army"
+    ],
+    "answer": 1,
+    "explainer": "The manor was the basic economic unit — a lord's house, fields, woods and village, run by peasants who owed labour and rent."
+  },
+  {
+    "id": "hist-medieval-006",
+    "subject": "history",
+    "topic": "medieval-england",
+    "prompt": "Knights were expected to follow a code of behaviour known as:",
+    "options": ["Chivalry", "Sovereignty", "Heraldry", "Loyalty"],
+    "answer": 0,
+    "explainer": "Chivalry covered honour, courage, fair play in battle, and protection of the weak — the medieval ideal of how a knight should behave."
+  },
+  {
+    "id": "hist-medieval-007",
+    "subject": "history",
+    "topic": "medieval-england",
+    "prompt": "What were the Crusades?",
+    "options": [
+      "Wars between Saxons and Vikings",
+      "Christian military expeditions to retake the Holy Land",
+      "Trade missions to China",
+      "Civil wars between English barons"
+    ],
+    "answer": 1,
+    "explainer": "From the late 11th century, Christian armies from Europe fought to take Jerusalem and the Holy Land from Muslim rule."
+  },
+  {
+    "id": "hist-medieval-008",
+    "subject": "history",
+    "topic": "medieval-england",
+    "prompt": "Alongside the king, which institution held huge power in medieval England?",
+    "options": ["The British Army", "The Catholic Church", "Parliament", "Trade unions"],
+    "answer": 1,
+    "explainer": "The Catholic Church owned land, ran schools, controlled marriage and burial, and could even excommunicate kings."
+  },
+  {
+    "id": "hist-medieval-009",
+    "subject": "history",
+    "topic": "medieval-england",
+    "prompt": "Thomas Becket, murdered in 1170, was:",
+    "options": [
+      "A French king",
+      "Archbishop of Canterbury",
+      "A peasant rebel",
+      "A Norman knight"
+    ],
+    "answer": 1,
+    "explainer": "Becket was killed in Canterbury Cathedral after clashing with King Henry II over the Church's independence. He was later made a saint."
+  },
+  {
+    "id": "hist-medieval-010",
+    "subject": "history",
+    "topic": "medieval-england",
+    "prompt": "The Peasants' Revolt of 1381 was triggered partly by:",
+    "options": [
+      "A Viking raid",
+      "A new poll tax",
+      "Discovery of America",
+      "Plague returning"
+    ],
+    "answer": 1,
+    "explainer": "An unpopular poll tax (the same amount for everyone) plus post-plague resentment led peasants — under Wat Tyler — to march on London."
   },
   {
     "id": "hist-blackdeath-001",
@@ -80,6 +246,29 @@
     "options": ["Fall sharply", "Stay the same", "Rise (because workers were scarce)", "Disappear entirely"],
     "answer": 2,
     "explainer": "So many people had died that workers could demand more pay. This shifted power away from landowners."
+  },
+  {
+    "id": "hist-blackdeath-004",
+    "subject": "history",
+    "topic": "black-death",
+    "prompt": "Roughly what fraction of England's population is thought to have died in the Black Death?",
+    "options": ["About a tenth", "About a third", "About two-thirds", "Almost all"],
+    "answer": 1,
+    "explainer": "Estimates vary, but around 30–40% of the population died between 1348 and 1350 — a catastrophic loss."
+  },
+  {
+    "id": "hist-blackdeath-005",
+    "subject": "history",
+    "topic": "black-death",
+    "prompt": "A famous symptom of the bubonic plague was:",
+    "options": [
+      "A bright red rash on the legs only",
+      "Painful black swellings called buboes",
+      "Loss of hair",
+      "Permanent blindness"
+    ],
+    "answer": 1,
+    "explainer": "Buboes — swollen, blackened lymph nodes in the neck, armpits or groin — gave the Black Death its name."
   },
   {
     "id": "hist-tudors-001",
@@ -126,5 +315,23 @@
     ],
     "answer": 1,
     "explainer": "1588 Armada victory plus Shakespeare and exploration made her reign a high point of English culture and power."
+  },
+  {
+    "id": "hist-tudors-005",
+    "subject": "history",
+    "topic": "tudors",
+    "prompt": "Which Tudor queen was nicknamed \"Bloody Mary\"?",
+    "options": ["Elizabeth I", "Mary I", "Mary, Queen of Scots", "Catherine of Aragon"],
+    "answer": 1,
+    "explainer": "Mary I had hundreds of Protestants burned at the stake while trying to restore Catholicism — earning the nickname \"Bloody Mary\"."
+  },
+  {
+    "id": "hist-tudors-006",
+    "subject": "history",
+    "topic": "tudors",
+    "prompt": "Henry VII won which battle in 1485 to start the Tudor dynasty?",
+    "options": ["Battle of Hastings", "Battle of Agincourt", "Battle of Bosworth", "Battle of Naseby"],
+    "answer": 2,
+    "explainer": "At Bosworth, Henry Tudor defeated Richard III — ending the Wars of the Roses and the Plantagenet dynasty."
   }
 ]

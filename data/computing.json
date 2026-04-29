@@ -23,6 +23,169 @@
     "explainer": "Strong passwords mix upper, lower, numbers, symbols, and are at least 8 characters. \"password123\" and \"12345678\" are on every hacker's first list."
   },
   {
+    "id": "comp-esafety-003",
+    "subject": "computing",
+    "topic": "e-safety",
+    "prompt": "Your \"digital footprint\" is:",
+    "options": [
+      "The size of your laptop",
+      "The trail of data you leave behind online",
+      "An icon on your desktop",
+      "A type of virus"
+    ],
+    "answer": 1,
+    "explainer": "Every post, like, search and login adds to your digital footprint. Some of it is permanent — universities and employers can see it later."
+  },
+  {
+    "id": "comp-esafety-004",
+    "subject": "computing",
+    "topic": "e-safety",
+    "prompt": "Why is it risky to post embarrassing photos of yourself online?",
+    "options": [
+      "They use up too much storage",
+      "They can be screenshotted and stay accessible long after you delete them",
+      "Only your parents will see them",
+      "They make your phone slow"
+    ],
+    "answer": 1,
+    "explainer": "Once content is online, others can copy or screenshot it. \"Delete\" doesn't undo what's already been saved by someone else."
+  },
+  {
+    "id": "comp-esafety-005",
+    "subject": "computing",
+    "topic": "e-safety",
+    "prompt": "Copyright protects:",
+    "options": [
+      "The cost of an item",
+      "The creator's right to control how their work is used",
+      "Only printed books",
+      "The colour of a logo only"
+    ],
+    "answer": 1,
+    "explainer": "Copyright is automatic for original work (writing, music, video, code). Using it without permission can be illegal."
+  },
+  {
+    "id": "comp-esafety-006",
+    "subject": "computing",
+    "topic": "e-safety",
+    "prompt": "Using a song from YouTube in your own video without permission may breach:",
+    "options": ["Copyright", "Privacy law", "Health and safety", "The Computer Misuse Act"],
+    "answer": 0,
+    "explainer": "Music is copyright-protected. To use it legally you usually need a licence, royalty-free music, or the creator's clear permission."
+  },
+  {
+    "id": "comp-esafety-007",
+    "subject": "computing",
+    "topic": "e-safety",
+    "prompt": "On social networking sites, your profile should usually be set to:",
+    "options": [
+      "Public — so everyone can see",
+      "Private — so only people you accept can see",
+      "Hidden from your friends",
+      "Switched off entirely"
+    ],
+    "answer": 1,
+    "explainer": "Private profiles limit who can see your posts and contact you — recommended for under-18s and a sensible default for everyone."
+  },
+  {
+    "id": "comp-esafety-008",
+    "subject": "computing",
+    "topic": "e-safety",
+    "prompt": "If someone is sending hurtful messages to you online (cyberbullying), the best first step is:",
+    "options": [
+      "Reply with something nasty back",
+      "Save evidence, don't reply, and tell a trusted adult",
+      "Delete your account immediately",
+      "Ignore it forever and tell no one"
+    ],
+    "answer": 1,
+    "explainer": "Screenshot or save the messages so action can be taken. Don't engage. Telling an adult (or using report tools) is always the right move."
+  },
+  {
+    "id": "comp-itsystem-001",
+    "subject": "computing",
+    "topic": "it-system",
+    "prompt": "Your school username identifies you as:",
+    "options": [
+      "A piece of hardware",
+      "A unique user of the IT system",
+      "An app",
+      "A web page"
+    ],
+    "answer": 1,
+    "explainer": "Usernames let the system know who is logging in, so it can show your files and check your permissions."
+  },
+  {
+    "id": "comp-itsystem-002",
+    "subject": "computing",
+    "topic": "it-system",
+    "prompt": "What is a folder used for on a computer?",
+    "options": [
+      "Running programs faster",
+      "Organising and grouping files",
+      "Connecting to the internet",
+      "Charging the battery"
+    ],
+    "answer": 1,
+    "explainer": "Folders (also called directories) let you keep related files together — e.g. one folder per subject."
+  },
+  {
+    "id": "comp-itsystem-003",
+    "subject": "computing",
+    "topic": "it-system",
+    "prompt": "Microsoft Teams is mainly used for:",
+    "options": [
+      "Editing photos",
+      "Communication and collaboration with classes",
+      "Playing 3D games",
+      "Designing logos"
+    ],
+    "answer": 1,
+    "explainer": "Teams handles messages, video calls, file sharing and assignments — the school's hub for class work and announcements."
+  },
+  {
+    "id": "comp-itsystem-004",
+    "subject": "computing",
+    "topic": "it-system",
+    "prompt": "Class Notebook (in OneNote) is most like:",
+    "options": [
+      "A spreadsheet program",
+      "A digital ring binder for class work",
+      "A web browser",
+      "A photo editor"
+    ],
+    "answer": 1,
+    "explainer": "Class Notebook gives each student their own section plus a shared content library and collaboration space — like a digital exercise book."
+  },
+  {
+    "id": "comp-itsystem-005",
+    "subject": "computing",
+    "topic": "it-system",
+    "prompt": "Outlook is mainly used for:",
+    "options": [
+      "Coding games",
+      "Email and calendar",
+      "Editing videos",
+      "Drawing diagrams"
+    ],
+    "answer": 1,
+    "explainer": "Outlook is a mail and calendar app — for sending emails to teachers and tracking lessons, deadlines and events."
+  },
+  {
+    "id": "comp-itsystem-006",
+    "subject": "computing",
+    "topic": "it-system",
+    "prompt": "Why save a file as \"Maths_homework_v2\" rather than \"doc1\"?",
+    "options": [
+      "It uses less storage",
+      "It is easier to find and identify later",
+      "It runs faster",
+      "It hides the file"
+    ],
+    "answer": 1,
+    "explainer": "Clear, descriptive filenames make sorting and searching far easier — a key file management habit."
+  },
+  {
     "id": "comp-algorithms-001",
     "subject": "computing",
     "topic": "algorithms",
@@ -44,6 +207,48 @@
     "options": ["Rectangle", "Diamond", "Oval", "Circle"],
     "answer": 1,
     "explainer": "Diamond = decision (yes/no). Rectangle = process. Oval = start/end."
+  },
+  {
+    "id": "comp-ct-001",
+    "subject": "computing",
+    "topic": "computational-thinking",
+    "prompt": "\"Decomposition\" in computational thinking means:",
+    "options": [
+      "Deleting old files",
+      "Breaking a big problem into smaller parts",
+      "Choosing the fastest computer",
+      "Backing up data"
+    ],
+    "answer": 1,
+    "explainer": "Big problems are easier to solve when split into smaller, more manageable sub-problems."
+  },
+  {
+    "id": "comp-ct-002",
+    "subject": "computing",
+    "topic": "computational-thinking",
+    "prompt": "\"Abstraction\" in computational thinking means:",
+    "options": [
+      "Adding lots of detail",
+      "Focusing on the important details and ignoring the rest",
+      "Drawing a picture",
+      "Making code longer"
+    ],
+    "answer": 1,
+    "explainer": "Abstraction strips away things that don't matter for the problem — leaving the key information you need to solve it."
+  },
+  {
+    "id": "comp-ct-003",
+    "subject": "computing",
+    "topic": "computational-thinking",
+    "prompt": "\"Pattern recognition\" in computational thinking means:",
+    "options": [
+      "Spotting similarities between problems",
+      "Drawing wallpaper patterns",
+      "Repeating the same code three times",
+      "Sorting files alphabetically"
+    ],
+    "answer": 0,
+    "explainer": "Spotting patterns helps you re-use a known solution from one problem to solve another that looks similar."
   },
   {
     "id": "comp-scratch-001",
@@ -81,6 +286,48 @@
     ],
     "answer": 1,
     "explainer": "Variables store values (like a score) that the program can read or update."
+  },
+  {
+    "id": "comp-scratch-004",
+    "subject": "computing",
+    "topic": "scratch-programming",
+    "prompt": "In Scratch, a \"sprite\" is:",
+    "options": [
+      "The background of the project",
+      "A character or object you can move and animate",
+      "A type of variable",
+      "A sound effect"
+    ],
+    "answer": 1,
+    "explainer": "Sprites are the things that act in your project — cats, balls, players. Each has its own scripts (code blocks)."
+  },
+  {
+    "id": "comp-scratch-005",
+    "subject": "computing",
+    "topic": "scratch-programming",
+    "prompt": "In Scratch, the \"stage\" is:",
+    "options": [
+      "The block palette",
+      "The area where your project runs and you see sprites move",
+      "A pop-up error message",
+      "The list of variables"
+    ],
+    "answer": 1,
+    "explainer": "The stage is the visual canvas — your sprites act on it, and you can change its backdrop."
+  },
+  {
+    "id": "comp-scratch-006",
+    "subject": "computing",
+    "topic": "scratch-programming",
+    "prompt": "In Scratch, a \"broadcast\" message is used to:",
+    "options": [
+      "Save the project",
+      "Trigger other scripts when an event happens",
+      "Print the code on paper",
+      "Slow the project down"
+    ],
+    "answer": 1,
+    "explainer": "Broadcasts let one sprite send a signal that any other sprite can listen for — a clean way to coordinate behaviour."
   },
   {
     "id": "comp-hardware-001",

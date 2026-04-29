@@ -32,6 +32,112 @@
     "explainer": "Four figures (e.g. 2438) identify the bottom-left corner of a 1 km square. Six figures pinpoint within that square."
   },
   {
+    "id": "geo-mapskills-004",
+    "subject": "geography",
+    "topic": "map-skills",
+    "prompt": "Which compass direction is halfway between North and East?",
+    "options": ["NW", "NE", "SE", "SW"],
+    "answer": 1,
+    "explainer": "North-East (NE). The 8-point compass adds NE, SE, SW and NW between the four main directions."
+  },
+  {
+    "id": "geo-mapskills-005",
+    "subject": "geography",
+    "topic": "map-skills",
+    "prompt": "On a 1 : 50,000 map, 1 cm on the map represents how much real distance?",
+    "options": ["50 m", "500 m", "5 km", "50 km"],
+    "answer": 1,
+    "explainer": "1 cm × 50,000 = 50,000 cm = 500 m (half a kilometre). So 2 cm on the map = 1 km."
+  },
+  {
+    "id": "geo-mapskills-006",
+    "subject": "geography",
+    "topic": "map-skills",
+    "prompt": "A six-figure grid reference pinpoints a square that is roughly:",
+    "options": ["1 km × 1 km", "100 m × 100 m", "10 m × 10 m", "1 m × 1 m"],
+    "answer": 1,
+    "explainer": "Adding the 3rd and 6th digits divides each 1 km square into a 10 × 10 grid — so a six-figure reference picks a 100 m square."
+  },
+  {
+    "id": "geo-mapskills-007",
+    "subject": "geography",
+    "topic": "map-skills",
+    "prompt": "What does the \"key\" (or legend) on a map tell you?",
+    "options": [
+      "The exact altitude of every point",
+      "What each symbol on the map means",
+      "Which direction is north only",
+      "Who drew the map"
+    ],
+    "answer": 1,
+    "explainer": "The key explains the symbols — churches, footpaths, woods, etc. — so you can read the map confidently."
+  },
+  {
+    "id": "geo-mapskills-008",
+    "subject": "geography",
+    "topic": "map-skills",
+    "prompt": "Contour lines forming concentric rings on a map usually mark:",
+    "options": [
+      "A lake",
+      "A hill or summit",
+      "A motorway",
+      "A coastal cliff only"
+    ],
+    "answer": 1,
+    "explainer": "Each ring is a line of equal height. Concentric rings stepping up = a hill or peak; the highest contour is at the centre."
+  },
+  {
+    "id": "geo-mapskills-009",
+    "subject": "geography",
+    "topic": "map-skills",
+    "prompt": "Bearings are measured:",
+    "options": [
+      "Anticlockwise from south",
+      "Clockwise from north, in degrees",
+      "From the equator only",
+      "From east, in metres"
+    ],
+    "answer": 1,
+    "explainer": "Bearings always run clockwise from north, written as 3 digits (e.g. 045° = NE, 270° = west)."
+  },
+  {
+    "id": "geo-mapskills-010",
+    "subject": "geography",
+    "topic": "map-skills",
+    "prompt": "To find a real-world distance, you measure on the map and then:",
+    "options": [
+      "Add 100",
+      "Multiply by the scale",
+      "Divide by 10 always",
+      "Just use the number on the map"
+    ],
+    "answer": 1,
+    "explainer": "Map distance × scale = real distance. e.g. 4 cm on a 1 : 25,000 map = 4 × 250 m = 1 km."
+  },
+  {
+    "id": "geo-mapskills-011",
+    "subject": "geography",
+    "topic": "map-skills",
+    "prompt": "When giving a route description, the most useful information is:",
+    "options": [
+      "Just the colour of the path",
+      "Distances and compass directions",
+      "Which side of the road to walk on",
+      "The age of the map"
+    ],
+    "answer": 1,
+    "explainer": "Good routes use distance (\"walk 200 m\") plus direction (\"head north-east\") so the listener can follow it on a map."
+  },
+  {
+    "id": "geo-mapskills-012",
+    "subject": "geography",
+    "topic": "map-skills",
+    "prompt": "Which device traditionally helps you find your bearing in the field?",
+    "options": ["Compass", "Stopwatch", "Microscope", "Calculator"],
+    "answer": 0,
+    "explainer": "A compass needle points to magnetic north — letting you orient a map and walk in a known direction."
+  },
+  {
     "id": "geo-uk-001",
     "subject": "geography",
     "topic": "uk-geography",
@@ -107,6 +213,127 @@
     "options": ["A small village in the countryside", "A city centre", "A large industrial estate", "A motorway service station"],
     "answer": 0,
     "explainer": "Rural means countryside, low population density. Urban = towns and cities."
+  },
+  {
+    "id": "geo-settlement-002",
+    "subject": "geography",
+    "topic": "settlement",
+    "prompt": "Which is the smallest settlement type?",
+    "options": ["City", "Town", "Village", "Hamlet"],
+    "answer": 3,
+    "explainer": "Hamlet → Village → Town → City. A hamlet is just a few houses; a city has tens of thousands of people and a wide range of services."
+  },
+  {
+    "id": "geo-settlement-003",
+    "subject": "geography",
+    "topic": "settlement",
+    "prompt": "A \"linear\" settlement is shaped like:",
+    "options": [
+      "A circle",
+      "A line — usually along a road, river or valley",
+      "A square",
+      "A star"
+    ],
+    "answer": 1,
+    "explainer": "Linear settlements stretch in a line because they grew along a transport route or river crossing."
+  },
+  {
+    "id": "geo-settlement-004",
+    "subject": "geography",
+    "topic": "settlement",
+    "prompt": "A \"nucleated\" settlement is one that:",
+    "options": [
+      "Spreads thinly along a road",
+      "Is clustered around a central point (e.g. a church or crossroads)",
+      "Sits at the top of a mountain only",
+      "Is always underground"
+    ],
+    "answer": 1,
+    "explainer": "Nucleated = clumped together. Common in farming areas where people lived near a market square, church or crossroads."
+  },
+  {
+    "id": "geo-settlement-005",
+    "subject": "geography",
+    "topic": "settlement",
+    "prompt": "Which is a major BENEFIT of large urban settlements?",
+    "options": [
+      "Cleaner air than the countryside",
+      "More jobs and services",
+      "Lower house prices than villages",
+      "No traffic at all"
+    ],
+    "answer": 1,
+    "explainer": "Cities concentrate work, schools, hospitals, shops and entertainment — that's the main reason people move to them."
+  },
+  {
+    "id": "geo-settlement-006",
+    "subject": "geography",
+    "topic": "settlement",
+    "prompt": "Which is a major PROBLEM of large urban settlements?",
+    "options": [
+      "Too few shops",
+      "Traffic congestion and air pollution",
+      "Lack of any schools",
+      "No internet"
+    ],
+    "answer": 1,
+    "explainer": "Lots of people in a small area means crowded roads, polluted air, and pressure on housing — common challenges for big cities."
+  },
+  {
+    "id": "geo-settlement-007",
+    "subject": "geography",
+    "topic": "settlement",
+    "prompt": "The \"site\" of a settlement means:",
+    "options": [
+      "Its position relative to other places",
+      "The actual ground on which it is built",
+      "Its population total",
+      "The way it is governed"
+    ],
+    "answer": 1,
+    "explainer": "Site = the physical land itself (flat? near water? defendable?). Situation = where it sits in relation to other places."
+  },
+  {
+    "id": "geo-settlement-008",
+    "subject": "geography",
+    "topic": "settlement",
+    "prompt": "The \"situation\" of a settlement means:",
+    "options": [
+      "How many shops it has",
+      "Where it is in relation to other places",
+      "Its average rainfall",
+      "The age of its oldest building"
+    ],
+    "answer": 1,
+    "explainer": "Situation describes connections — close to a port? on a major road? near a coalfield? It's about context, not the ground itself."
+  },
+  {
+    "id": "geo-settlement-009",
+    "subject": "geography",
+    "topic": "settlement",
+    "prompt": "Why did many early settlements grow next to rivers?",
+    "options": [
+      "Rivers always block invaders",
+      "Rivers provide drinking water, transport, and often defence",
+      "Rivers are never near useful land",
+      "It was a religious rule"
+    ],
+    "answer": 1,
+    "explainer": "Water for drinking, fish to eat, easy boat transport, and a natural barrier on one side — riverside sites had clear advantages."
+  },
+  {
+    "id": "geo-settlement-010",
+    "subject": "geography",
+    "topic": "settlement",
+    "prompt": "Which is an example of a \"service\" provided by a town?",
+    "options": [
+      "A wheat field",
+      "A doctor's surgery",
+      "A river",
+      "A forest"
+    ],
+    "answer": 1,
+    "explainer": "Services = things people need that are provided by other people — doctors, schools, shops, libraries. The bigger the town, the more services."
   },
   {
     "id": "geo-rivers-001",
