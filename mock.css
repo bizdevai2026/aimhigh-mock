@@ -964,6 +964,41 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   color: var(--mock-muted);
 }
 
+/* Welcome intro list — three short value-prop bullets shown on the
+   very first visit, before we ask for any PINs or names. */
+.mock-intro-list {
+  list-style: none;
+  margin: 1rem 0 0.6rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  text-align: left;
+}
+.mock-intro-list li {
+  padding: 0.7rem 0.85rem;
+  background: var(--mock-card);
+  border: 1px solid var(--mock-border-hi);
+  border-left: 3px solid var(--mock-fire);
+  border-radius: 0.45rem;
+}
+.mock-intro-list li strong {
+  display: block;
+  font-family: var(--mock-font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: var(--mock-fire);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.mock-intro-list li span {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--mock-text-dim);
+  line-height: 1.45;
+}
+
 /* PIN input — wide-spaced digits to feel like a phone unlock */
 .mock-welcome-pin {
   font-family: var(--mock-font-body);

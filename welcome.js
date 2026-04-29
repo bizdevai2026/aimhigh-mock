@@ -21,9 +21,9 @@ import {
   clearLegacyProfile,
   migratedChildName,
   startDemoSession
-} from "./profile.js?v=20260502";
+} from "./profile.js?v=20260503";
 
-import { playWelcomeStinger } from "./sounds.js?v=20260502";
+import { playWelcomeStinger } from "./sounds.js?v=20260503";
 
 const root = document.getElementById("welcomeRoot");
 
@@ -50,7 +50,7 @@ function init() {
   if (!isFullySetUp()) {
     // Pre-fill child name from any legacy single-profile install
     state.childName = migratedChildName();
-    go("setup-parent-pin");
+    go("intro");
   } else {
     go("role-pick");
   }
@@ -61,6 +61,7 @@ function init() {
 function paint() {
   if (!root) return;
   switch (state.step) {
+    case "intro":                    return paintIntro();
     case "setup-parent-pin":         return paintSetupParentPin();
     case "setup-parent-pin-confirm": return paintSetupParentPinConfirm();
     case "setup-child-name":         return paintSetupChildName();
@@ -71,6 +72,29 @@ function paint() {
     case "forgot-parent-auth":       return paintForgotParentAuth();
     case "forgot-child-newpin":      return paintForgotChildNewPin();
   }
+}
+
+// --- Intro: what is this and what's about to happen -----------------------
+
+function paintIntro() {
+  root.innerHTML =
+    "<p class=\"mock-welcome-tagline\">Daily revision training built for the May setting tests &mdash; and the long game beyond.</p>" +
+    "<ul class=\"mock-intro-list\">" +
+      "<li><strong>What it is</strong>" +
+        "<span>Short daily sessions: warm-ups, subject sprints, timed full mocks. Streaks &amp; XP keep momentum.</span></li>" +
+      "<li><strong>Learn before you test</strong>" +
+        "<span>Topic explainers in plain English with examples, visuals and tips &mdash; so it's not just quizzing.</span></li>" +
+      "<li><strong>Coach view for you</strong>" +
+        "<span>Sign in as Parent any time to see streaks, weak topics and weekly progress.</span></li>" +
+    "</ul>" +
+    "<p class=\"mock-welcome-fineprint\">Setup takes 30 seconds: pick a parent PIN, add the trainee's name, they pick their own PIN.</p>" +
+    "<button type=\"button\" id=\"introStartBtn\" class=\"mock-button mock-welcome-submit\">Let's set it up</button>" +
+    "<button type=\"button\" id=\"introDemoBtn\" class=\"mock-welcome-link mock-welcome-link-muted\">Just looking? Try a demo &mdash; no setup</button>";
+  byId("introStartBtn").addEventListener("click", function () { go("setup-parent-pin"); });
+  byId("introDemoBtn").addEventListener("click", function () {
+    startDemoSession();
+    location.replace("index.html");
+  });
 }
 
 // --- Setup: parent first ---------------------------------------------------
