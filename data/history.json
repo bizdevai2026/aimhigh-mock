@@ -333,5 +333,171 @@
     "options": ["Battle of Hastings", "Battle of Agincourt", "Battle of Bosworth", "Battle of Naseby"],
     "answer": 2,
     "explainer": "At Bosworth, Henry Tudor defeated Richard III — ending the Wars of the Roses and the Plantagenet dynasty."
+  },
+  {
+    "id": "hist-tudors-007",
+    "subject": "history",
+    "topic": "tudors",
+    "prompt": "The Wars of the Roses (1455–87) were fought between which two royal houses?",
+    "options": [
+      "York and Lancaster",
+      "Tudor and Stuart",
+      "Normandy and Anjou",
+      "Plantagenet and Hanover"
+    ],
+    "answer": 0,
+    "explainer": "The white rose of York fought the red rose of Lancaster. Henry Tudor (a Lancastrian) ended the wars and married Elizabeth of York to unite them."
+  },
+  {
+    "id": "hist-tudors-008",
+    "subject": "history",
+    "topic": "tudors",
+    "prompt": "Edward VI, Henry VIII's only son, is best known for:",
+    "options": [
+      "Conquering France",
+      "Pushing England further into Protestantism",
+      "Defeating the Spanish Armada",
+      "Founding the Royal Navy"
+    ],
+    "answer": 1,
+    "explainer": "Edward was crowned aged 9 and ruled briefly. Under him, England moved further from Catholicism — but he died at 15."
+  },
+  {
+    "id": "hist-stuarts-001",
+    "subject": "history",
+    "topic": "gunpowder-plot",
+    "prompt": "In what year did the Gunpowder Plot try to blow up Parliament?",
+    "options": ["1588", "1605", "1642", "1666"],
+    "answer": 1,
+    "explainer": "5 November 1605. We still mark the date with bonfires and fireworks every year."
+  },
+  {
+    "id": "hist-stuarts-002",
+    "subject": "history",
+    "topic": "gunpowder-plot",
+    "prompt": "Which king were the gunpowder plotters trying to kill?",
+    "options": ["Henry VIII", "Charles I", "James I", "Charles II"],
+    "answer": 2,
+    "explainer": "James I — the first Stuart king of England. The Catholic plotters hoped a new monarch would treat them better."
+  },
+  {
+    "id": "hist-stuarts-003",
+    "subject": "history",
+    "topic": "gunpowder-plot",
+    "prompt": "Which plotter was caught guarding the barrels of gunpowder?",
+    "options": ["Robert Catesby", "Thomas Wintour", "Guy Fawkes", "Francis Tresham"],
+    "answer": 2,
+    "explainer": "Guy (Guido) Fawkes was discovered in the cellars beneath Parliament with 36 barrels of gunpowder. Catesby was the ringleader."
+  },
+  {
+    "id": "hist-stuarts-004",
+    "subject": "history",
+    "topic": "gunpowder-plot",
+    "prompt": "The main reason for the Gunpowder Plot was:",
+    "options": [
+      "A tax dispute",
+      "Anger at the treatment of Catholics in England",
+      "Revenge for the Spanish Armada",
+      "A failed harvest"
+    ],
+    "answer": 1,
+    "explainer": "Catholics had hoped James I would relax anti-Catholic laws. When he didn't, plotters wanted to kill him and his Protestant Parliament."
+  },
+  {
+    "id": "hist-stuarts-005",
+    "subject": "history",
+    "topic": "english-civil-war",
+    "prompt": "In which years did the English Civil War take place?",
+    "options": ["1605–1612", "1642–1651", "1688–1690", "1715–1720"],
+    "answer": 1,
+    "explainer": "Parliament and the King fought on and off from 1642 to 1651. Charles I was executed in 1649."
+  },
+  {
+    "id": "hist-stuarts-006",
+    "subject": "history",
+    "topic": "english-civil-war",
+    "prompt": "The two sides in the English Civil War were:",
+    "options": [
+      "Cavaliers (Royalists) vs Roundheads (Parliamentarians)",
+      "Lancastrians vs Yorkists",
+      "Catholics vs Protestants only",
+      "English vs Scottish"
+    ],
+    "answer": 0,
+    "explainer": "Cavaliers backed King Charles I; Roundheads (named after their short hair) backed Parliament. Religion and money were both factors."
+  },
+  {
+    "id": "hist-stuarts-007",
+    "subject": "history",
+    "topic": "english-civil-war",
+    "prompt": "A key cause of the English Civil War was:",
+    "options": [
+      "A Viking invasion",
+      "The king clashing with Parliament over money and power",
+      "The Black Death returning",
+      "A volcano eruption"
+    ],
+    "answer": 1,
+    "explainer": "Charles I tried to rule without Parliament, raised taxes himself, and clashed over religion. Parliament refused to be sidelined."
+  },
+  {
+    "id": "hist-stuarts-008",
+    "subject": "history",
+    "topic": "english-civil-war",
+    "prompt": "Which decisive 1645 battle did Parliament's New Model Army win?",
+    "options": ["Naseby", "Bosworth", "Agincourt", "Waterloo"],
+    "answer": 0,
+    "explainer": "At Naseby, the disciplined New Model Army (with Cromwell in command of cavalry) crushed the Royalist forces."
+  },
+  {
+    "id": "hist-stuarts-009",
+    "subject": "history",
+    "topic": "english-civil-war",
+    "prompt": "Charles I was put on trial and executed in:",
+    "options": ["1605", "1642", "1649", "1660"],
+    "answer": 2,
+    "explainer": "January 1649 — Charles I was beheaded outside the Banqueting House in Whitehall after being found guilty of treason against his own people."
+  },
+  {
+    "id": "hist-stuarts-010",
+    "subject": "history",
+    "topic": "cromwell",
+    "prompt": "After the king's execution, Oliver Cromwell ruled England as:",
+    "options": [
+      "King Oliver I",
+      "Lord Protector",
+      "Prime Minister",
+      "Archbishop"
+    ],
+    "answer": 1,
+    "explainer": "From 1653 Cromwell ruled as \"Lord Protector\" of the Commonwealth — England's only experiment with not having a monarch."
+  },
+  {
+    "id": "hist-stuarts-011",
+    "subject": "history",
+    "topic": "cromwell",
+    "prompt": "Life under Cromwell's rule was famously:",
+    "options": [
+      "Very relaxed — pubs open all day",
+      "Strict and Puritan — many entertainments were banned",
+      "Identical to Tudor times",
+      "Free of any religious rules"
+    ],
+    "answer": 1,
+    "explainer": "Theatres were shut, Christmas celebrations banned, and Sunday strictly observed. Many ordinary people resented the harsh Puritan laws."
+  },
+  {
+    "id": "hist-stuarts-012",
+    "subject": "history",
+    "topic": "cromwell",
+    "prompt": "What happened to the monarchy after Cromwell died in 1658?",
+    "options": [
+      "It was abolished forever",
+      "Charles II was invited back — the \"Restoration\" of 1660",
+      "Cromwell's son became king",
+      "Parliament took the throne"
+    ],
+    "answer": 1,
+    "explainer": "Cromwell's son Richard was a weak ruler. In 1660, Parliament invited Charles I's son Charles II back from exile — the Restoration."
   }
 ]
