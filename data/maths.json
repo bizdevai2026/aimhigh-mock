@@ -382,5 +382,77 @@
     ],
     "answer": 1,
     "explainer": "Convert to a common denominator of 12: 6/12, 8/12, 9/12. So in order: 1/2 < 2/3 < 3/4."
+  },
+  {
+    "id": "math-shape-001",
+    "subject": "maths",
+    "topic": "shape",
+    "prompt": "A triangle with all three sides equal is called:",
+    "options": ["Scalene", "Isosceles", "Equilateral", "Right-angled"],
+    "answer": 2,
+    "explainer": "Equilateral = all three sides (and angles) equal — each angle is 60°."
+  },
+  {
+    "id": "math-shape-002",
+    "subject": "maths",
+    "topic": "shape",
+    "prompt": "A triangle with exactly two equal sides is:",
+    "options": ["Equilateral", "Isosceles", "Scalene", "Right-angled"],
+    "answer": 1,
+    "explainer": "Isosceles = two equal sides and two equal base angles. Scalene = all sides different."
+  },
+  {
+    "id": "math-shape-003",
+    "subject": "maths",
+    "topic": "shape",
+    "prompt": "A four-sided shape with both pairs of opposite sides parallel is called a:",
+    "options": ["Trapezium", "Parallelogram", "Kite", "Rhombus"],
+    "answer": 1,
+    "explainer": "Parallelogram = two pairs of parallel sides. A rhombus is a special parallelogram with all four sides equal."
+  },
+  {
+    "id": "math-shape-004",
+    "subject": "maths",
+    "topic": "shape",
+    "prompt": "A polygon with 5 sides is called a:",
+    "options": ["Quadrilateral", "Pentagon", "Hexagon", "Heptagon"],
+    "answer": 1,
+    "explainer": "Pent- = five (Greek). 5 sides = pentagon."
+  },
+  {
+    "id": "math-shape-005",
+    "subject": "maths",
+    "topic": "shape",
+    "prompt": "A polygon with 8 sides is called a:",
+    "options": ["Hexagon", "Heptagon", "Octagon", "Decagon"],
+    "answer": 2,
+    "explainer": "Oct- = eight (think octopus). 8 sides = octagon. 6 sides = hexagon, 7 = heptagon, 10 = decagon."
+  },
+  {
+    "id": "math-probability-002",
+    "subject": "maths",
+    "topic": "probability",
+    "prompt": "What is the probability of getting heads on a fair coin?",
+    "options": ["0", "1/4", "1/2", "1"],
+    "answer": 2,
+    "explainer": "Two equally likely outcomes (heads, tails). One of them is heads, so 1/2."
+  },
+  {
+    "id": "math-probability-003",
+    "subject": "maths",
+    "topic": "probability",
+    "prompt": "What is the probability of an impossible event?",
+    "options": ["0", "0.5", "1", "Any negative number"],
+    "answer": 0,
+    "explainer": "Probability runs from 0 (impossible) to 1 (certain). 0.5 = even chance."
+  },
+  {
+    "id": "math-probability-004",
+    "subject": "maths",
+    "topic": "probability",
+    "prompt": "What is the probability of an event that is certain to happen?",
+    "options": ["0", "0.5", "1", "100"],
+    "answer": 2,
+    "explainer": "Certain = 1 (or 100% if you prefer percentages). Probabilities are always between 0 and 1."
   }
 ]
