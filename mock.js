@@ -294,7 +294,7 @@ function injectProfileChip() {
 
   const warn = document.createElement("p");
   warn.className = "mock-profile-warn";
-  warn.textContent = "This clears your saved progress on this device.";
+  warn.textContent = "Signs you out. Your saved progress stays — sign back in with your PIN.";
 
   panel.appendChild(signedAs);
   panel.appendChild(signOutBtn);
