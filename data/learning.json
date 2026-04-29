@@ -9,7 +9,11 @@
     "sections": [
       {
         "heading": "What is a cell?",
-        "body": "Every living thing is made of cells. You are made of trillions. A cell is the smallest unit that can do all the jobs of being alive — taking in food, getting rid of waste, growing, and copying itself.\n\nThere are two big families: animal cells and plant cells. They share a lot but plant cells have extra parts because plants make their own food."
+        "body": "Every living thing is made of cells. You are made of trillions. A cell is the smallest unit that can do all the jobs of being alive — taking in food, getting rid of waste, growing, and copying itself.\n\nThere are two big families: animal cells and plant cells. They share a lot but plant cells have extra parts because plants make their own food.",
+        "quickfact": {
+          "value": "0.02 mm",
+          "label": "typical animal cell width — ~50 fit across a dot"
+        }
       },
       {
         "heading": "The main parts (organelles)",
@@ -21,7 +25,23 @@
           "Cell wall — only in plant cells. Stiff outer layer for shape and support.",
           "Chloroplasts — only in plant cells. Green dots that catch sunlight to make food (photosynthesis).",
           "Vacuole — only in plant cells (large one). A bag of water that keeps the plant rigid."
-        ]
+        ],
+        "callout": {
+          "tone": "tip",
+          "title": "Memory hook",
+          "body": "Animal cells = NCM (Nucleus, Cytoplasm, Membrane). Plant cells add WCV (Wall, Chloroplasts, Vacuole)."
+        }
+      },
+      {
+        "heading": "Plant vs animal — the differences",
+        "example": {
+          "title": "What only plants have (and why)",
+          "steps": [
+            "Cell wall — gives the plant its rigid shape (animals have a skeleton instead).",
+            "Chloroplasts — catch sunlight to make food (animals eat food, no need).",
+            "Big vacuole — stores water and keeps the plant firm (animals are mostly soft tissue)."
+          ]
+        }
       },
       {
         "heading": "How small are they?",
@@ -52,11 +72,31 @@
           "Solid — particles packed tight in a regular pattern. They vibrate but can't move past each other. Fixed shape, fixed volume.",
           "Liquid — particles still touching but can slide past each other. Takes the shape of its container, fixed volume.",
           "Gas — particles spread far apart, moving fast in all directions. Fills any container, expands to fit."
-        ]
+        ],
+        "callout": {
+          "tone": "note",
+          "title": "Water is weird",
+          "body": "Most substances are denser as solids than as liquids. Water is the opposite — ice is LESS dense than liquid water, which is why ice floats. This matters for life: in winter, ice floats on top of lakes and insulates the water below, keeping fish alive."
+        }
       },
       {
         "heading": "Heating and cooling",
-        "body": "Add heat → particles get more energy → they move more. Solid melts to liquid. Liquid evaporates (or boils) to gas. Cooling reverses each step: gas condenses to liquid, liquid freezes to solid.\n\nThe particles themselves don't change. Only their arrangement and how much they move."
+        "body": "Add heat → particles get more energy → they move more. Solid melts to liquid. Liquid evaporates (or boils) to gas. Cooling reverses each step: gas condenses to liquid, liquid freezes to solid.\n\nThe particles themselves don't change. Only their arrangement and how much they move.",
+        "example": {
+          "title": "What happens when ice melts",
+          "intro": "Step through what's happening to the water particles:",
+          "steps": [
+            "Ice particles are locked in a regular pattern, vibrating in place.",
+            "Heat is added → particles vibrate harder.",
+            "At 0°C, particles have enough energy to break free of their fixed positions — the ice melts.",
+            "Particles can now slide past each other → liquid water."
+          ],
+          "outro": "Add more heat and you'll reach 100°C — particles break free of each other entirely → steam (gas)."
+        },
+        "quickfact": {
+          "value": "100°C",
+          "label": "boiling point of water at sea level"
+        }
       }
     ],
     "tips": [
@@ -236,11 +276,35 @@
     "sections": [
       {
         "heading": "The story",
-        "body": "When King Edward the Confessor died in early 1066, three different men thought they should be the next King of England. Harold Godwinson (an English earl) was crowned almost immediately. But Harald Hardrada (a Viking) and William of Normandy (a Frenchman) both invaded.\n\nHarold beat Hardrada at Stamford Bridge in September 1066 — then had to march south because William had landed on the south coast. Harold's exhausted army met William at the Battle of Hastings on 14 October 1066. Harold was killed (the Bayeux Tapestry shows an arrow striking his eye). William won. He was crowned King of England on Christmas Day 1066."
+        "body": "When King Edward the Confessor died in early 1066, three different men thought they should be the next King of England. Harold Godwinson (an English earl) was crowned almost immediately. But Harald Hardrada (a Viking) and William of Normandy (a Frenchman) both invaded.\n\nHarold beat Hardrada at Stamford Bridge in September 1066 — then had to march south because William had landed on the south coast. Harold's exhausted army met William at the Battle of Hastings on 14 October 1066. Harold was killed (the Bayeux Tapestry shows an arrow striking his eye). William won. He was crowned King of England on Christmas Day 1066.",
+        "quickfact": {
+          "value": "1066",
+          "label": "the year of the Battle of Hastings"
+        },
+        "callout": {
+          "tone": "tip",
+          "title": "Date to nail",
+          "body": "14 October 1066 — Battle of Hastings. Memorise this one date and a lot falls into place."
+        }
       },
       {
         "heading": "What changed afterwards",
-        "body": "William didn't just win one battle — he changed England. He replaced almost every English noble with a Norman one. He built castles (mostly motte-and-bailey, made of earth and timber) all over the country to hold down the population.\n\nHe ordered the Domesday Book in 1086 — a massive survey recording who owned what, so he could tax it properly. He brought Norman French as the language of the court — that's why English now has both Saxon words like 'cow' and French-origin words like 'beef'."
+        "body": "William didn't just win one battle — he changed England. He replaced almost every English noble with a Norman one. He built castles (mostly motte-and-bailey, made of earth and timber) all over the country to hold down the population.\n\nHe ordered the Domesday Book in 1086 — a massive survey recording who owned what, so he could tax it properly. He brought Norman French as the language of the court — that's why English now has both Saxon words like 'cow' and French-origin words like 'beef'.",
+        "example": {
+          "title": "Why William's victory stuck",
+          "intro": "It wasn't just winning one battle — three things kept the Normans in power:",
+          "steps": [
+            "Replace the rulers — almost every English noble was swapped for a Norman one within 5 years.",
+            "Build castles — over 500 motte-and-bailey castles thrown up across England by 1086, controlling local areas.",
+            "Count everything — the Domesday Book (1086) recorded who owned what, so William could tax it all."
+          ],
+          "outro": "By the time William died in 1087, England's ruling class, language and landscape were Norman."
+        },
+        "callout": {
+          "tone": "warn",
+          "title": "Common confusion",
+          "body": "Two men called Harold/Harald in 1066. Harold Godwinson is the English king who lost at Hastings. Harald Hardrada is the Viking king who lost earlier at Stamford Bridge. Both lost. William won."
+        }
       },
       {
         "heading": "The feudal system",

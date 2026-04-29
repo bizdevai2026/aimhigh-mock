@@ -1234,11 +1234,6 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 }
 
 /* Bottom CTA: drill-this-topic + back */
-.mock-learn-cta-row,
-.mock-learn-article + .mock-learn-cta,
-section.mock-learn-cta {
-  /* the bottom cta uses a different wrapper class */
-}
 section.mock-learn-cta {
   display: flex;
   gap: 0.6rem;
@@ -1248,6 +1243,114 @@ section.mock-learn-cta {
   border: none;
   padding: 0;
 }
+
+/* CGP-style visual content blocks — callout, worked example, quickfact,
+   inline section visual. Each is its own component with distinct visual
+   tone so a topic page reads as varied panels rather than a wall of text. */
+
+/* Callout — amber tip box, blue note box, red warning box */
+.mock-learn-callout {
+  margin: 0.7rem 0;
+  padding: 0.85rem 1rem;
+  border-radius: 0.5rem;
+  border-left: 3px solid var(--mock-fire);
+  background: rgba(255, 179, 0, 0.10);
+}
+.mock-learn-callout.mock-learn-callout-warn {
+  border-left-color: #fca5a5;
+  background: rgba(248, 113, 113, 0.10);
+}
+.mock-learn-callout.mock-learn-callout-note {
+  border-left-color: var(--mock-cyan);
+  background: rgba(0, 245, 212, 0.08);
+}
+.mock-learn-callout-title {
+  font-family: var(--mock-font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  color: var(--mock-fire);
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+}
+.mock-learn-callout.mock-learn-callout-warn .mock-learn-callout-title { color: #fca5a5; }
+.mock-learn-callout.mock-learn-callout-note .mock-learn-callout-title { color: var(--mock-cyan); }
+.mock-learn-callout-body {
+  margin: 0;
+  color: var(--mock-text-strong);
+  line-height: 1.55;
+  font-size: 0.94rem;
+}
+.mock-learn-callout-body + .mock-learn-callout-body { margin-top: 0.4rem; }
+
+/* Worked example — numbered steps in a cyan box */
+.mock-learn-example {
+  margin: 0.7rem 0;
+  padding: 0.85rem 1rem;
+  background: rgba(0, 245, 212, 0.06);
+  border: 1px solid rgba(0, 245, 212, 0.30);
+  border-radius: 0.55rem;
+}
+.mock-learn-example-title {
+  font-family: var(--mock-font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mock-cyan);
+  margin: 0 0 0.55rem;
+}
+.mock-learn-example-steps {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin: 0;
+  color: var(--mock-text-dim);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+.mock-learn-example-steps li::marker { color: var(--mock-cyan); font-weight: 700; }
+.mock-learn-example-outro {
+  margin-top: 0.6rem !important;
+  font-style: italic;
+}
+
+/* Quickfact — single big-number highlight, scarlet/magenta gradient */
+.mock-learn-quickfact {
+  margin: 0.7rem 0;
+  padding: 1.2rem 1rem;
+  background: linear-gradient(135deg, rgba(255, 61, 0, 0.14) 0%, rgba(255, 0, 110, 0.08) 100%);
+  border: 1px solid rgba(255, 61, 0, 0.40);
+  border-radius: 0.7rem;
+  text-align: center;
+}
+.mock-learn-quickfact-value {
+  display: block;
+  font-family: var(--mock-font-display);
+  font-size: 2.8rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--mock-text-strong);
+  text-shadow: 0 0 18px rgba(255, 61, 0, 0.35);
+}
+.mock-learn-quickfact-label {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.88rem;
+  color: var(--mock-text-dim);
+}
+
+/* Inline section visual — smaller padding than top-level visual */
+.mock-learn-section-visual {
+  margin: 0.7rem 0;
+  padding: 0.85rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--mock-border);
+  border-radius: 0.55rem;
+  display: grid;
+  place-items: center;
+}
+.mock-learn-section-visual svg { max-width: 100%; height: auto; }
 
 /* Coach role badge — sits above the dashGreeting line */
 .mock-coach-role-badge {

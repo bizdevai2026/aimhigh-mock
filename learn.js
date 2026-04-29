@@ -165,15 +165,7 @@ function paintTopic(subjectId, topic) {
 
   let sectionsHtml = "";
   (entry.sections || []).forEach(function (s) {
-    sectionsHtml += "<section class=\"mock-learn-section\">";
-    if (s.heading) sectionsHtml += "<h2 class=\"mock-learn-heading\">" + escapeHtml(s.heading) + "</h2>";
-    if (s.body) sectionsHtml += "<p class=\"mock-learn-body\">" + paragraphHtml(s.body) + "</p>";
-    if (Array.isArray(s.list)) {
-      sectionsHtml += "<ul class=\"mock-learn-list\">" + s.list.map(function (x) {
-        return "<li>" + escapeHtml(x) + "</li>";
-      }).join("") + "</ul>";
-    }
-    sectionsHtml += "</section>";
+    sectionsHtml += renderSection(s);
   });
 
   const tipsHtml = (entry.tips && entry.tips.length > 0)
@@ -207,6 +199,62 @@ function paintTopic(subjectId, topic) {
       "<a class=\"mock-button\" href=\"" + drillHref + "\">Test what stuck &mdash; 5 questions &rarr;</a>" +
       "<a class=\"mock-button mock-button-ghost\" href=\"" + backHref + "\">&larr; Back to topics</a>" +
     "</section>";
+}
+
+// Section renderer — composes the visual elements that make a learning
+// page feel CGP-grade rather than a wall of text. A section can mix:
+//   heading, body, list             — basic prose
+//   callout: { title?, body, tone? } — highlighted aside (Top Tip / Watch Out)
+//   example: { title?, intro?, steps[] } — boxed worked example
+//   quickfact: { value, label }      — big-number stat highlight
+//   visual: <key>                    — inline diagram from visuals.js
+// Any combination is valid; missing fields are skipped.
+function renderSection(s) {
+  let html = "<section class=\"mock-learn-section\">";
+  if (s.heading) html += "<h2 class=\"mock-learn-heading\">" + escapeHtml(s.heading) + "</h2>";
+  if (s.body) html += "<p class=\"mock-learn-body\">" + paragraphHtml(s.body) + "</p>";
+  if (Array.isArray(s.list)) {
+    html += "<ul class=\"mock-learn-list\">" + s.list.map(function (x) {
+      return "<li>" + escapeHtml(x) + "</li>";
+    }).join("") + "</ul>";
+  }
+  if (s.visual && getVisual(s.visual)) {
+    html += "<div class=\"mock-learn-section-visual\">" + getVisual(s.visual) + "</div>";
+  }
+  if (s.callout) html += renderCallout(s.callout);
+  if (s.example) html += renderExample(s.example);
+  if (s.quickfact) html += renderQuickfact(s.quickfact);
+  html += "</section>";
+  return html;
+}
+
+function renderCallout(c) {
+  const tone = c.tone || "tip"; // "tip" | "warn" | "note"
+  const icon = tone === "warn" ? "⚠️" : tone === "note" ? "📘" : "💡";
+  const title = c.title || (tone === "warn" ? "Watch out" : tone === "note" ? "Note" : "Top tip");
+  return "<aside class=\"mock-learn-callout mock-learn-callout-" + tone + "\">" +
+    "<p class=\"mock-learn-callout-title\"><span aria-hidden=\"true\">" + icon + "</span> " + escapeHtml(title) + "</p>" +
+    "<p class=\"mock-learn-callout-body\">" + paragraphHtml(c.body || "") + "</p>" +
+    "</aside>";
+}
+
+function renderExample(e) {
+  const stepsHtml = (e.steps || []).map(function (st) {
+    return "<li>" + escapeHtml(st) + "</li>";
+  }).join("");
+  return "<div class=\"mock-learn-example\">" +
+    "<p class=\"mock-learn-example-title\">" + escapeHtml(e.title || "Worked example") + "</p>" +
+    (e.intro ? "<p class=\"mock-learn-body\">" + escapeHtml(e.intro) + "</p>" : "") +
+    (stepsHtml ? "<ol class=\"mock-learn-example-steps\">" + stepsHtml + "</ol>" : "") +
+    (e.outro ? "<p class=\"mock-learn-body mock-learn-example-outro\">" + escapeHtml(e.outro) + "</p>" : "") +
+    "</div>";
+}
+
+function renderQuickfact(q) {
+  return "<div class=\"mock-learn-quickfact\">" +
+    "<span class=\"mock-learn-quickfact-value\">" + escapeHtml(q.value || "") + "</span>" +
+    "<span class=\"mock-learn-quickfact-label\">" + escapeHtml(q.label || "") + "</span>" +
+    "</div>";
 }
 
 function paintNoContent(subjectId, topic) {
