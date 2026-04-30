@@ -20,7 +20,7 @@ import {
   readString as storageReadString,
   writeString as storageWriteString,
   remove as storageRemove
-} from "./platform/storage.js?v=20260516";
+} from "./platform/storage.js?v=20260517";
 
 const PREFIX = "aimhigh-mock-";
 

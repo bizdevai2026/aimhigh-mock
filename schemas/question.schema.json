@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "gradeblaze/question",
+  "title": "Question",
+  "description": "One question item in a subject pool. Three types are valid: mc (default — 4 options + answer index), spell (typed French), speak (spoken French with mic).",
+  "type": "object",
+  "required": ["id", "subject", "topic", "prompt"],
+  "properties": {
+    "id":          { "type": "string", "pattern": "^[a-z0-9\\-]+$", "minLength": 1 },
+    "subject":     { "type": "string", "enum": ["science", "maths", "english", "french", "history", "geography", "computing"] },
+    "topic":       { "type": "string", "pattern": "^[a-z0-9\\-]+$", "minLength": 1 },
+    "year_level":  { "type": "integer", "minimum": 7, "maximum": 13, "description": "KS3 year level. Optional for now; defaults to 7 when missing." },
+    "difficulty":  { "type": "integer", "minimum": 1, "maximum": 3, "description": "1 = easy, 2 = core, 3 = stretch within a year level. Optional." },
+    "status":      { "type": "string", "enum": ["draft", "live", "retired"], "description": "Defaults to live when missing." },
+    "type":        { "type": "string", "enum": ["mc", "mcq", "spell", "speak"] },
+    "prompt":      { "type": "string", "minLength": 3 },
+    "options":     { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 4, "maxItems": 4 },
+    "answer":      {},
+    "explainer":   { "type": "string" },
+    "explanation": { "type": "string", "description": "Synonym for explainer; preferred new name." },
+    "audio":       { "type": "string", "description": "French TTS source text for the Listen button." },
+    "alternates":  { "type": "array", "items": { "type": "string" }, "description": "Accepted alternative answers for spell/speak." },
+    "visual":      { "type": "string", "pattern": "^[a-z0-9\\-]+$", "description": "Key into visuals.js for an inline diagram." },
+    "tags":        { "type": "array", "items": { "type": "string" } }
+  },
+  "allOf": [
+    {
+      "if":   { "anyOf": [{ "not": { "required": ["type"] } }, { "properties": { "type": { "enum": ["mc", "mcq"] } } }] },
+      "then": {
+        "required": ["options", "answer"],
+        "properties": {
+          "answer": { "type": "integer", "minimum": 0, "maximum": 3 }
+        }
+      }
+    },
+    {
+      "if":   { "properties": { "type": { "enum": ["spell", "speak"] } }, "required": ["type"] },
+      "then": {
+        "required": ["answer"],
+        "properties": {
+          "answer": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  ]
+}

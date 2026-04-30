@@ -39,10 +39,11 @@ if (typeof window !== "undefined") {
   });
 }
 
-import "./mock.js?v=20260516"; // shared header behaviour
-import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260516";
-import { topicLadder, weakTopics } from "./engagement.js?v=20260516";
-import { getVisual } from "./visuals.js?v=20260516";
+import "./mock.js?v=20260517"; // shared header behaviour
+import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260517";
+import { topicLadder, weakTopics } from "./engagement.js?v=20260517";
+import { getVisual } from "./visuals.js?v=20260517";
+import { validateLearning, reportProblems } from "./diagnostics/schema-validator.js?v=20260517";
 
 let learning = null; // array of learning entries from data/learning.json
 let pool = null;     // question pool from data/<subject>.json — used to enumerate topics
@@ -78,6 +79,10 @@ async function start() {
     paintFatalError("learning.json shape", new Error("Expected an array, got " + typeof learning));
     return;
   }
+  // Runtime schema validation — non-blocking. Bad entries are logged for
+  // the diagnostics panel; rendering proceeds with what we have so the
+  // user isn't punished for a single broken topic.
+  reportProblems("schema", "learning", validateLearning(learning));
 
   const params = readParams();
 

@@ -13,8 +13,9 @@
 // 60% weak-topic bias and a per-subject cap so a warm-up isn't ten
 // maths questions.
 
-import { readSeen, weakTopics } from "./engagement.js?v=20260516";
-import * as logger from "./platform/logger.js?v=20260516";
+import { readSeen, weakTopics } from "./engagement.js?v=20260517";
+import * as logger from "./platform/logger.js?v=20260517";
+import { validateQuestions, reportProblems } from "./diagnostics/schema-validator.js?v=20260517";
 
 const SUBJECTS = [
   { id: "science",   name: "Science"          },
@@ -95,6 +96,10 @@ export async function loadAllQuestions() {
   });
   _cache = merged;
   logger.info("content", "loadAllQuestions ok in " + (Date.now() - t0) + "ms — " + merged.length + " questions", perSubject);
+  // Runtime schema validation. Doesn't block — the runner still sees
+  // the merged pool. Bad items are logged so the diagnostics panel
+  // surfaces them; future Coach UI can add a banner if needed.
+  reportProblems("schema", "questions", validateQuestions(merged));
   return merged;
 }
 
