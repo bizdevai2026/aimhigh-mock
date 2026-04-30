@@ -13,9 +13,9 @@
 // 60% weak-topic bias and a per-subject cap so a warm-up isn't ten
 // maths questions.
 
-import { readSeen, weakTopics } from "./engagement.js?v=20260517";
-import * as logger from "./platform/logger.js?v=20260517";
-import { validateQuestions, reportProblems } from "./diagnostics/schema-validator.js?v=20260517";
+import { readSeen, weakTopics } from "./engagement.js?v=20260518";
+import * as logger from "./platform/logger.js?v=20260518";
+import { validateQuestions, reportProblems } from "./diagnostics/schema-validator.js?v=20260518";
 
 const SUBJECTS = [
   { id: "science",   name: "Science"          },

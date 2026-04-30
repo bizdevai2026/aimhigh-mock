@@ -17,18 +17,18 @@ import {
   todayIso,
   weakTopics,
   isPaused
-} from "./engagement.js?v=20260517";
+} from "./engagement.js?v=20260518";
 
-import { readSoundOn, toggleSound } from "./sounds.js?v=20260517";
-import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260517";
-import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260517";
-import { readString as storageReadString, writeString as storageWriteString } from "./platform/storage.js?v=20260517";
-import * as logger from "./platform/logger.js?v=20260517";
+import { readSoundOn, toggleSound } from "./sounds.js?v=20260518";
+import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260518";
+import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260518";
+import { readString as storageReadString, writeString as storageWriteString } from "./platform/storage.js?v=20260518";
+import * as logger from "./platform/logger.js?v=20260518";
 
 // Dev / parent diagnostics panel. ?diag=1 in the URL loads it; otherwise
 // the import is never resolved (zero cost on normal page loads).
 if (/[?&]diag=1\b/.test(location.search)) {
-  import("./diagnostics/panel.js?v=20260517").catch(function (e) {
+  import("./diagnostics/panel.js?v=20260518").catch(function (e) {
     logger.error("diag", "panel failed to load", e);
   });
 }
@@ -194,6 +194,33 @@ function injectSoundToggle() {
   paintBtn();
   btn.addEventListener("click", function () {
     toggleSound();
+    paintBtn();
+  });
+  inner.appendChild(btn);
+}
+
+function injectThemeToggle() {
+  const inner = document.querySelector(".mock-header-inner");
+  if (!inner) return;
+  if (inner.querySelector(".mock-theme-toggle")) return;
+  // boot/theme.js exposes window.GBTheme. If it didn't load (e.g. blocked
+  // by a content filter), gracefully skip — every other page concern
+  // continues to work.
+  if (!window.GBTheme) return;
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "mock-theme-toggle";
+  btn.setAttribute("aria-label", "Toggle light or dark theme");
+  btn.title = "Toggle light / dark";
+  function paintBtn() {
+    const t = window.GBTheme.current();
+    // Icon shows what a tap WOULD switch TO (sun = "switch to light").
+    btn.textContent = t === "dark" ? "☀" : "☾";
+    btn.setAttribute("aria-pressed", t === "dark" ? "true" : "false");
+  }
+  paintBtn();
+  btn.addEventListener("click", function () {
+    window.GBTheme.toggle();
     paintBtn();
   });
   inner.appendChild(btn);
@@ -554,6 +581,7 @@ function boot() {
   paintHero();
   wireExamDateSetter();
   injectSoundToggle();
+  injectThemeToggle();
   injectProfileChip();
   paintProfileLine();
   paintTodayStrip();

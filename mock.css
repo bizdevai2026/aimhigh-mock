@@ -1,50 +1,66 @@
-/* GradeBlaze — Inferno Mode (restrained)
+/* GradeBlaze — Inferno Mode
    Graphite + scarlet flame, designed for a Year 7 learner training daily.
    Engagement codes from Duolingo's retention loop (streak / freeze /
    XP goal / weekly tier). Inferno energy is reserved for arrival and
    celebration moments — the resting UI stays calmer so a 30-minute mock
    paper doesn't burn the eyes.
 
-   Variable names like --mock-lime / --mock-cyan are intentionally kept
-   from the previous palette so the rebrand is a value swap, not a
-   class rewrite — every selector in the file continues to work. */
+   THEME SYSTEM
+   ============
+   Two themes — light (default) and dark. The data-theme attribute on
+   <html> selects which token block applies. Set by boot/theme.js
+   before CSS evaluates so there's no FOUC.
+
+   Default is light: testers reported the dark mode caused reading
+   fatigue on long LEARN sessions. Dark remains available via the
+   toggle and via prefers-color-scheme.
+
+   Variable names like --mock-lime / --mock-cyan are kept from the
+   previous palette so the rebrand is a value swap, not a class
+   rewrite — every selector in the file continues to work. */
 
 :root {
-  /* Surface */
-  --mock-bg: #0a0a0f;
-  --mock-bg-grad: #14141a;
-  --mock-card: #14141a;
-  --mock-card-hi: #1f1f2a;
-  --mock-border: #1f1f2a;
-  --mock-border-hi: #2a2a35;
+  /* === LIGHT (default) === */
+  /* Surface — warm off-white reading paper */
+  --mock-bg: #faf9f6;
+  --mock-bg-grad: #f4f1ea;
+  --mock-card: #ffffff;
+  --mock-card-hi: #fdfaf2;
+  --mock-border: #e7e2d6;
+  --mock-border-hi: #d4cdbb;
+  --mock-header-bg: rgba(250, 249, 246, 0.85);
 
-  /* Text */
-  --mock-text: #c4c4d1;
-  --mock-text-strong: #fafafa;
-  --mock-text-dim: #9ca3af;        /* genuinely dimmer than --mock-text */
-  --mock-muted: #7a7a8c;
+  /* Text — warm dark grey, easier on eyes than pure black */
+  --mock-text: #3d3a32;
+  --mock-text-strong: #1a1814;
+  --mock-text-dim: #6b6358;
+  --mock-muted: #8e8678;
 
-  /* Accents — primary slot now scarlet, secondary slot now mint */
-  --mock-lime: #ff3d00;            /* primary energy — name kept for back-compat */
+  /* Background atmospheric glow — tuned down for light mode */
+  --mock-bg-glow-1: rgba(255, 61, 0, 0.06);
+  --mock-bg-glow-2: rgba(255, 0, 110, 0.03);
+
+  /* Accents — same scarlet/amber/cyan/magenta in both themes (the brand) */
+  --mock-lime: #ff3d00;
   --mock-lime-strong: #d94b00;
   --mock-lime-soft: rgba(255, 61, 0, 0.10);
   --mock-coral: #f97316;
   --mock-coral-soft: rgba(249, 115, 22, 0.14);
-  --mock-fire: #ffb300;            /* warm amber — used by tiles + tier gold */
-  --mock-cyan: #00f5d4;            /* mint — cool counterpoint, parent banner */
-  --mock-magenta: #ff006e;         /* celebration only (perfect rounds, level-up) */
+  --mock-fire: #ffb300;
+  --mock-cyan: #00b8a0;            /* deeper cyan for legibility on light */
+  --mock-magenta: #ff006e;
 
   /* Tier colours */
   --tier-bronze: #c2750a;
-  --tier-silver: #cbd5e1;
-  --tier-gold: #ffb300;
-  --tier-diamond: #00f5d4;
+  --tier-silver: #6b7280;          /* slightly darker for light bg contrast */
+  --tier-gold: #d97706;
+  --tier-diamond: #0d9488;
 
   /* Per-mode strip colours — kept distinct so subject tiles still read */
   --tile-warmup:   #ff3d00;
-  --tile-sprint:   #00f5d4;
+  --tile-sprint:   #00b8a0;
   --tile-distance: #ff006e;
-  --tile-coach:    #ffb300;
+  --tile-coach:    #d97706;
 
   /* Geometry */
   --mock-radius: 14px;
@@ -55,14 +71,41 @@
   --mock-font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+[data-theme="dark"] {
+  /* === DARK overrides === */
+  --mock-bg: #0a0a0f;
+  --mock-bg-grad: #14141a;
+  --mock-card: #14141a;
+  --mock-card-hi: #1f1f2a;
+  --mock-border: #1f1f2a;
+  --mock-border-hi: #2a2a35;
+  --mock-header-bg: rgba(10, 10, 15, 0.85);
+
+  --mock-text: #c4c4d1;
+  --mock-text-strong: #fafafa;
+  --mock-text-dim: #9ca3af;
+  --mock-muted: #7a7a8c;
+
+  --mock-bg-glow-1: rgba(255, 61, 0, 0.12);
+  --mock-bg-glow-2: rgba(255, 0, 110, 0.06);
+
+  /* Cyan can stay bright in dark; tier colours readable on dark */
+  --mock-cyan: #00f5d4;
+  --tier-silver: #cbd5e1;
+  --tier-gold: #ffb300;
+  --tier-diamond: #00f5d4;
+  --tile-sprint: #00f5d4;
+  --tile-coach: #ffb300;
+}
+
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 
 body.mock-page {
   font-family: var(--mock-font-body);
   background:
-    radial-gradient(900px 480px at 50% -200px, rgba(255, 61, 0, 0.12), transparent 70%),
-    radial-gradient(700px 420px at 100% 100%, rgba(255, 0, 110, 0.06), transparent 70%),
+    radial-gradient(900px 480px at 50% -200px, var(--mock-bg-glow-1), transparent 70%),
+    radial-gradient(700px 420px at 100% 100%, var(--mock-bg-glow-2), transparent 70%),
     linear-gradient(180deg, var(--mock-bg) 0%, var(--mock-bg-grad) 100%);
   background-attachment: fixed;
   color: var(--mock-text);
@@ -79,7 +122,7 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 
 /* HEADER */
 .mock-header {
-  background: rgba(10, 10, 15, 0.85);
+  background: var(--mock-header-bg);
   border-bottom: 1px solid var(--mock-border);
   position: sticky;
   top: 0;
@@ -184,6 +227,31 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 /* When the streak chip is also present (landing page), the streak chip
    keeps the auto margin and the sound toggle sits to its right. */
 .mock-header-streak + .mock-sound-toggle { margin-left: 0.4rem; }
+
+/* Theme toggle — mirrors sound toggle so the right edge of the header
+   stays a consistent two-button cluster. Sun/moon glyph indicates
+   what a tap will switch TO. */
+.mock-theme-toggle {
+  margin-left: 0.4rem;
+  background: transparent;
+  border: 1px solid var(--mock-border);
+  color: var(--mock-text-dim);
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 1.05rem;
+  line-height: 1;
+  display: inline-grid;
+  place-items: center;
+  transition: border-color 100ms ease, background 100ms ease, color 100ms ease;
+}
+.mock-theme-toggle:hover, .mock-theme-toggle:focus {
+  border-color: var(--mock-lime);
+  background: var(--mock-lime-soft);
+  color: var(--mock-text-strong);
+  outline: none;
+}
 .mock-back:hover, .mock-back:focus {
   color: var(--mock-lime);
   background: var(--mock-lime-soft);
@@ -312,7 +380,7 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 .mock-hero-tier-value.tier-gold     { color: var(--tier-gold); }
 .mock-hero-tier-value.tier-diamond  { color: var(--tier-diamond); }
 .mock-hero-tier-value.tier-empty {
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--mock-text-dim);
   font-size: 1.1rem;
   letter-spacing: 0.04em;
 }
