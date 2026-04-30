@@ -17,11 +17,11 @@ import {
   todayIso,
   weakTopics,
   isPaused
-} from "./engagement.js?v=20260507";
+} from "./engagement.js?v=20260509";
 
-import { readSoundOn, toggleSound } from "./sounds.js?v=20260507";
-import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260507";
-import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260507";
+import { readSoundOn, toggleSound } from "./sounds.js?v=20260509";
+import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260509";
+import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260509";
 
 function $(id) { return document.getElementById(id); }
 
@@ -551,10 +551,8 @@ if (document.readyState === "loading") {
   boot();
 }
 
-// Register the service worker on protected pages. Failure is silent —
-// the app works fine without it; SW is purely for offline + speed.
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function () {
-    navigator.serviceWorker.register("./sw.js", { updateViaCache: "none" }).catch(function () {});
-  });
-}
+// Service worker decommissioned (see sw.js). We deliberately do NOT
+// register a new one — that's what was causing "stuck on stale cache"
+// loads during development. We DO let any previously-installed SW load
+// once so it can self-unregister via its activate handler. New visitors
+// never see one.
