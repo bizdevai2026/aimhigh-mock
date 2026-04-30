@@ -5,22 +5,26 @@
 // with tap-to-answer + instant feedback, and finalises the session
 // via engagement.noteSessionResult so streak/XP/tier update correctly.
 
-import "./mock.js?v=20260525"; // shared header behaviour (sound toggle, streak chip)
-import { loadAllQuestions, pickWarmupQuestions, subjectName } from "./questions.js?v=20260525";
-import { noteSessionResult, readStreak, readXpToday } from "./engagement.js?v=20260525";
-import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playTap, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticCorrect, hapticWrong, hapticStreak, hapticPerfect } from "./sounds.js?v=20260525";
-import { getVisual } from "./visuals.js?v=20260525";
-import { isParentRole } from "./profile.js?v=20260525";
-import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260525";
-import { escapeHtml } from "./shared/dom.js?v=20260525";
-import { subjectColor } from "./shared/subjects.js?v=20260525";
-import { onAnswerCorrect, onAnswerWrong } from "./practice/feedback.js?v=20260525";
+import "./mock.js?v=20260526"; // shared header behaviour (sound toggle, streak chip)
+import { loadAllQuestions, pickWarmupQuestions } from "./questions.js?v=20260526";
+import { noteSessionResult, readStreak, readXpToday } from "./engagement.js?v=20260526";
+// Sound + haptic imports are narrowed to what this file directly needs.
+// Per-answer feedback (correct/wrong/streak chimes) moved to
+// practice/feedback.js. Per-question card MC rendering moved to
+// practice/render.js — those modules import their own audio names.
+import { playLevelUp, playPerfect, playTap, playModeStartWarmup, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticStreak, hapticPerfect } from "./sounds.js?v=20260526";
+import { isParentRole } from "./profile.js?v=20260526";
+import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260526";
+import { escapeHtml } from "./shared/dom.js?v=20260526";
+import { subjectColor } from "./shared/subjects.js?v=20260526";
+import { onAnswerCorrect, onAnswerWrong } from "./practice/feedback.js?v=20260526";
+import { renderQuestionCard, subjectLabel } from "./practice/render.js?v=20260526";
 
 if (isParentRole()) { location.replace("dashboard.html"); }
 
 const ROUND_SIZE = 10;
 const CORRECT_AUTOADVANCE_MS = 850;
-const LETTERS = ["A", "B", "C", "D", "E", "F"];
+// LETTERS removed — option button rendering moved to practice/render.js
 
 const RESUME_KEY = "aimhigh-mock-resume-warmup";
 const RESUME_TTL_MS = 4 * 60 * 60 * 1000; // 4 hours
@@ -173,46 +177,10 @@ function paintQuestion() {
   const q = session.items[session.index];
   if (q.type === "spell") { paintSpellQuestion(q); return; }
   if (q.type === "speak") { paintSpeakQuestion(q); return; }
-  const total = session.items.length;
-  const i = session.index;
-  const pct = Math.round((i / total) * 100);
-
-  root.innerHTML =
-    "<section class=\"mock-session\">" +
-      "<div class=\"mock-session-progress\">" +
-        "<div class=\"mock-session-progress-bar\">" +
-          "<div class=\"mock-session-progress-fill\" style=\"width:" + pct + "%\"></div>" +
-        "</div>" +
-        "<span class=\"mock-session-progress-text\">" + (i + 1) + "/" + total + "</span>" +
-      "</div>" +
-      "<div class=\"mock-session-card\" id=\"sessionCard\">" +
-        "<span class=\"mock-session-subject\">" + escapeHtml(subjectLabel(q)) + "</span>" +
-        renderVisual(q) +
-        "<p class=\"mock-session-prompt\">" + escapeHtml(q.prompt) + "</p>" +
-        "<div class=\"mock-session-options\" id=\"sessionOptions\"></div>" +
-      "</div>" +
-    "</section>";
-
-  // Apply a per-subject tile-color so the subject label uses the right hue
-  const card = document.getElementById("sessionCard");
-  if (card) card.style.setProperty("--tile-color", subjectColor(q.subject));
-
-  // Listen button — appears whenever the question carries an `audio`
-  // field (used on French questions for KS3 listening practice).
-  attachListen(card, q);
-
-  const optsEl = document.getElementById("sessionOptions");
-  q.options.forEach(function (opt, idx) {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "mock-session-option";
-    btn.dataset.idx = String(idx);
-    btn.innerHTML =
-      "<span class=\"mock-session-option-letter\">" + LETTERS[idx] + "</span>" +
-      "<span>" + escapeHtml(opt) + "</span>";
-    btn.addEventListener("click", function () { onAnswer(idx, btn); });
-    optsEl.appendChild(btn);
-  });
+  // MC question card — markup + option wiring shared via practice/render.js.
+  // onAnswer (this file) still owns the post-tap policy: reveal correct
+  // answer, play feedback chime, autoadvance after CORRECT_AUTOADVANCE_MS.
+  renderQuestionCard(root, q, { i: session.index, total: session.items.length }, onAnswer);
 }
 
 // Spelling/typing question — listen, type, lenient match. Mirrors the
@@ -582,22 +550,7 @@ function paintResult(score, total, after) {
 }
 
 // ---------- Helpers ---------------------------------------------------------
-
-function subjectLabel(q) {
-  const sub = subjectName(q.subject || "").toUpperCase();
-  if (q.topic) {
-    return sub + " · " + String(q.topic).replace(/-/g, " ").toUpperCase();
-  }
-  return sub;
-}
-
-function renderVisual(q) {
-  if (!q || !q.visual) return "";
-  const svg = getVisual(q.visual);
-  if (!svg) return "";
-  return "<div class=\"mock-session-visual\">" + svg + "</div>";
-}
-
-// escapeHtml + subjectColor are now imported from shared/dom + shared/subjects
-// at the top of this file — local copies removed in the runner-consolidation
-// migration.
+// subjectLabel + renderVisual + LETTERS + the option-button loop now
+// live in practice/render.js (called from paintQuestion above).
+// subjectLabel is also imported below for the spell/speak handlers,
+// which build their own card markup but keep the same eyebrow text.

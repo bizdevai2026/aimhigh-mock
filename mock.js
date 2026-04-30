@@ -17,19 +17,19 @@ import {
   todayIso,
   weakTopics,
   isPaused
-} from "./engagement.js?v=20260525";
+} from "./engagement.js?v=20260526";
 
-import { readSoundOn, toggleSound } from "./sounds.js?v=20260525";
-import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260525";
-import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260525";
-import { readString as storageReadString, writeString as storageWriteString } from "./platform/storage.js?v=20260525";
-import * as logger from "./platform/logger.js?v=20260525";
-import { escapeHtml } from "./shared/dom.js?v=20260525";
+import { readSoundOn, toggleSound } from "./sounds.js?v=20260526";
+import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260526";
+import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260526";
+import { readString as storageReadString, writeString as storageWriteString } from "./platform/storage.js?v=20260526";
+import * as logger from "./platform/logger.js?v=20260526";
+import { escapeHtml } from "./shared/dom.js?v=20260526";
 
 // Dev / parent diagnostics panel. ?diag=1 in the URL loads it; otherwise
 // the import is never resolved (zero cost on normal page loads).
 if (/[?&]diag=1\b/.test(location.search)) {
-  import("./diagnostics/panel.js?v=20260525").catch(function (e) {
+  import("./diagnostics/panel.js?v=20260526").catch(function (e) {
     logger.error("diag", "panel failed to load", e);
   });
 }
