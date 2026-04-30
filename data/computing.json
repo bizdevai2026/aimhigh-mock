@@ -18,7 +18,12 @@
     "subject": "computing",
     "topic": "e-safety",
     "prompt": "Which is the strongest password?",
-    "options": ["password123", "Tiger", "p@5sW0rd!92", "12345678"],
+    "options": [
+      "password123",
+      "Tiger",
+      "p@5sW0rd!92",
+      "12345678"
+    ],
     "answer": 2,
     "explainer": "Strong passwords mix upper, lower, numbers, symbols, and are at least 8 characters. \"password123\" and \"12345678\" are on every hacker's first list."
   },
@@ -69,7 +74,12 @@
     "subject": "computing",
     "topic": "e-safety",
     "prompt": "Using a song from YouTube in your own video without permission may breach:",
-    "options": ["Copyright", "Privacy law", "Health and safety", "The Computer Misuse Act"],
+    "options": [
+      "Copyright",
+      "Privacy law",
+      "Health and safety",
+      "The Computer Misuse Act"
+    ],
     "answer": 0,
     "explainer": "Music is copyright-protected. To use it legally you usually need a licence, royalty-free music, or the creator's clear permission."
   },
@@ -204,7 +214,12 @@
     "subject": "computing",
     "topic": "algorithms",
     "prompt": "Which symbol is used in a flowchart for a decision?",
-    "options": ["Rectangle", "Diamond", "Oval", "Circle"],
+    "options": [
+      "Rectangle",
+      "Diamond",
+      "Oval",
+      "Circle"
+    ],
     "answer": 1,
     "explainer": "Diamond = decision (yes/no). Rectangle = process. Oval = start/end."
   },
@@ -251,6 +266,48 @@
     "explainer": "Spotting patterns helps you re-use a known solution from one problem to solve another that looks similar."
   },
   {
+    "id": "comp-ct-004",
+    "subject": "computing",
+    "topic": "computational-thinking",
+    "prompt": "An algorithm is best described as:",
+    "options": [
+      "A finished computer program",
+      "A step-by-step set of instructions to solve a problem",
+      "A type of programming language",
+      "A bug in code"
+    ],
+    "answer": 1,
+    "explainer": "An algorithm is the recipe — the ordered steps. Code is what you get when the recipe is written in a language a computer can run."
+  },
+  {
+    "id": "comp-ct-005",
+    "subject": "computing",
+    "topic": "computational-thinking",
+    "prompt": "The London Underground tube map is a famous example of:",
+    "options": [
+      "Decomposition",
+      "Abstraction",
+      "Pattern recognition",
+      "Iteration"
+    ],
+    "answer": 1,
+    "explainer": "The map strips away track twists and real-world distances — only what helps you change trains stays. That's abstraction: hide what doesn't matter."
+  },
+  {
+    "id": "comp-ct-006",
+    "subject": "computing",
+    "topic": "computational-thinking",
+    "prompt": "You're coding a game with five enemies that all move identically. The smartest move is to:",
+    "options": [
+      "Write the same movement code five times",
+      "Spot the pattern and write it once, then re-use it for all five",
+      "Use a different programming language for each enemy",
+      "Skip the enemies and ship the game without them"
+    ],
+    "answer": 1,
+    "explainer": "Pattern recognition: same behaviour, written once, called five times. Saves time and avoids bugs from inconsistent copies."
+  },
+  {
     "id": "comp-scratch-001",
     "subject": "computing",
     "topic": "scratch-programming",
@@ -269,7 +326,12 @@
     "subject": "computing",
     "topic": "scratch-programming",
     "prompt": "An \"IF... THEN...\" block in Scratch is an example of:",
-    "options": ["A sequence", "A loop (repetition)", "Selection (a decision)", "An input"],
+    "options": [
+      "A sequence",
+      "A loop (repetition)",
+      "Selection (a decision)",
+      "An input"
+    ],
     "answer": 2,
     "explainer": "Selection = the program chooses what to do based on a condition. Sequence = step-by-step. Repetition = looping."
   },
@@ -334,7 +396,12 @@
     "subject": "computing",
     "topic": "hardware-software",
     "prompt": "Which of these is hardware?",
-    "options": ["The web browser", "The keyboard", "Your saved file", "An app"],
+    "options": [
+      "The web browser",
+      "The keyboard",
+      "Your saved file",
+      "An app"
+    ],
     "answer": 1,
     "explainer": "Hardware = the physical parts you can touch (keyboard, screen, CPU). Software = programs (browser, app, file)."
   },
@@ -343,7 +410,12 @@
     "subject": "computing",
     "topic": "hardware-software",
     "prompt": "Which is an output device?",
-    "options": ["Microphone", "Mouse", "Speaker", "Keyboard"],
+    "options": [
+      "Microphone",
+      "Mouse",
+      "Speaker",
+      "Keyboard"
+    ],
     "answer": 2,
     "explainer": "Output sends information from the computer to you — speaker, screen, printer. Input is the other way (keyboard, mouse, microphone)."
   },
