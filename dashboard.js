@@ -7,7 +7,7 @@
 //
 // All read-only — never mutates state from here.
 
-import "./mock.js?v=20260505"; // shared header behaviour (sound toggle)
+import "./mock.js?v=20260506"; // shared header behaviour (sound toggle)
 import {
   readResults,
   weakTopics,
@@ -17,11 +17,11 @@ import {
   subjectLadder,
   isPaused,
   setPaused
-} from "./engagement.js?v=20260505";
+} from "./engagement.js?v=20260506";
 
-import { subjectName, listSubjects } from "./questions.js?v=20260505";
-import { playCoachEnter } from "./sounds.js?v=20260505";
-import { isParentRole } from "./profile.js?v=20260505";
+import { subjectName, listSubjects } from "./questions.js?v=20260506";
+import { playCoachEnter } from "./sounds.js?v=20260506";
+import { isParentRole } from "./profile.js?v=20260506";
 
 paint();
 
