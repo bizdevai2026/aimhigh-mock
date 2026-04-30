@@ -13,17 +13,41 @@
 //   ?s=<id>           → topic list for that subject
 //   ?s=<id>&t=<topic> → topic detail page (read + drill)
 
+// Visible-error fallback. Installed BEFORE imports run so module-graph
+// failures (e.g. one of the imports rejects) get surfaced to the page
+// instead of leaving the user stuck on "Loading…" forever.
+const root = document.getElementById("learnRoot");
+function paintFatalError(stage, err) {
+  if (!root) return;
+  const msg = (err && (err.message || err.toString())) || "Unknown error";
+  const safe = String(msg).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  root.innerHTML =
+    "<section class=\"mock-stub-card\" style=\"border-color:#fca5a5\">" +
+      "<h2 style=\"color:#fca5a5\">Couldn't start LEARN</h2>" +
+      "<p>Stage: <strong>" + stage + "</strong></p>" +
+      "<pre style=\"font-family:ui-monospace,monospace;font-size:0.85rem;color:#c4c4d1;background:rgba(255,255,255,0.04);padding:0.6rem;border-radius:0.4rem;white-space:pre-wrap;word-break:break-word\">" + safe + "</pre>" +
+      "<p>Try the reset page: <a href=\"reset.html\" style=\"color:#00f5d4\">gradeblaze.co.uk/reset.html</a></p>" +
+      "<a class=\"mock-button mock-button-ghost\" href=\"index.html\">&larr; Home</a>" +
+    "</section>";
+}
+if (typeof window !== "undefined") {
+  window.addEventListener("error", function (e) {
+    paintFatalError("uncaught error", e.error || new Error((e.message || "?") + " @ " + (e.filename || "") + ":" + (e.lineno || "?")));
+  });
+  window.addEventListener("unhandledrejection", function (e) {
+    paintFatalError("unhandled rejection", e.reason || new Error("Promise rejected"));
+  });
+}
+
 import "./mock.js?v=20260505"; // shared header behaviour
 import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260505";
 import { topicLadder, weakTopics } from "./engagement.js?v=20260505";
 import { getVisual } from "./visuals.js?v=20260505";
 
-const root = document.getElementById("learnRoot");
-
 let learning = null; // array of learning entries from data/learning.json
 let pool = null;     // question pool from data/<subject>.json — used to enumerate topics
 
-start();
+try { start(); } catch (e) { paintFatalError("start() threw", e); }
 
 async function start() {
   if (!root) return;
@@ -32,9 +56,19 @@ async function start() {
   // Always need learning.json — it's small and used by every view.
   try {
     const r = await fetch("data/learning.json", { cache: "no-cache" });
-    learning = r.ok ? await r.json() : [];
-  } catch (e) { learning = []; }
-  if (!Array.isArray(learning)) learning = [];
+    if (!r.ok) {
+      paintFatalError("fetch data/learning.json (HTTP " + r.status + ")", new Error("HTTP " + r.status + " " + r.statusText));
+      return;
+    }
+    learning = await r.json();
+  } catch (e) {
+    paintFatalError("fetch data/learning.json", e);
+    return;
+  }
+  if (!Array.isArray(learning)) {
+    paintFatalError("learning.json shape", new Error("Expected an array, got " + typeof learning));
+    return;
+  }
 
   const params = readParams();
 
@@ -42,14 +76,18 @@ async function start() {
   // immediately. loadAllQuestions() fetches 7 JSON files which on a
   // cold cache makes the page feel sluggish; only the subject view
   // (which lists ALL topics including non-learn ones) needs it.
-  if (params.s && params.t) { paintTopic(params.s, params.t); return; }
-  if (params.s) {
-    try { pool = await loadAllQuestions(); }
-    catch (e) { pool = []; }
-    paintSubject(params.s);
-    return;
+  try {
+    if (params.s && params.t) { paintTopic(params.s, params.t); return; }
+    if (params.s) {
+      try { pool = await loadAllQuestions(); }
+      catch (e) { pool = []; }
+      paintSubject(params.s);
+      return;
+    }
+    paintHub();
+  } catch (e) {
+    paintFatalError("paint", e);
   }
-  paintHub();
 }
 
 // ---- Paint: hub (subject picker) ------------------------------------------
