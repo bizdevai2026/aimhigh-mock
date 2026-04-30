@@ -20,9 +20,9 @@
 import {
   readJson as storageReadJson,
   writeJson as storageWriteJson
-} from "../../platform/storage.js?v=20260524";
+} from "../../platform/storage.js?v=20260525";
 
-import { shouldSkipWrites } from "./policy.js?v=20260524";
+import { shouldSkipWrites } from "./policy.js?v=20260525";
 
 const KEY = "aimhigh-mock-seen";
 const DAY_MS = 24 * 60 * 60 * 1000;

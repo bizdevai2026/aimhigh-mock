@@ -5,15 +5,16 @@
 // with tap-to-answer + instant feedback, and finalises the session
 // via engagement.noteSessionResult so streak/XP/tier update correctly.
 
-import "./mock.js?v=20260524"; // shared header behaviour (sound toggle, streak chip)
-import { loadAllQuestions, pickWarmupQuestions, subjectName } from "./questions.js?v=20260524";
-import { noteSessionResult, readStreak, readXpToday } from "./engagement.js?v=20260524";
-import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playTap, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticCorrect, hapticWrong, hapticStreak, hapticPerfect } from "./sounds.js?v=20260524";
-import { getVisual } from "./visuals.js?v=20260524";
-import { isParentRole } from "./profile.js?v=20260524";
-import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260524";
-import { escapeHtml } from "./shared/dom.js?v=20260524";
-import { subjectColor } from "./shared/subjects.js?v=20260524";
+import "./mock.js?v=20260525"; // shared header behaviour (sound toggle, streak chip)
+import { loadAllQuestions, pickWarmupQuestions, subjectName } from "./questions.js?v=20260525";
+import { noteSessionResult, readStreak, readXpToday } from "./engagement.js?v=20260525";
+import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playTap, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticCorrect, hapticWrong, hapticStreak, hapticPerfect } from "./sounds.js?v=20260525";
+import { getVisual } from "./visuals.js?v=20260525";
+import { isParentRole } from "./profile.js?v=20260525";
+import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260525";
+import { escapeHtml } from "./shared/dom.js?v=20260525";
+import { subjectColor } from "./shared/subjects.js?v=20260525";
+import { onAnswerCorrect, onAnswerWrong } from "./practice/feedback.js?v=20260525";
 
 if (isParentRole()) { location.replace("dashboard.html"); }
 
@@ -260,17 +261,12 @@ function onSpellAnswered(q, correct) {
   saveResumeState();
   if (correct) {
     session.streak = (session.streak || 0) + 1;
-    playCorrect();
-    hapticCorrect();
-    if (session.streak === 3) { playStreak3(); hapticStreak(); }
-    else if (session.streak === 5) { playStreak5(); hapticStreak(); }
-    else if (session.streak >= 7 && session.streak % 2 === 1) { playStreak3(); hapticStreak(); }
+    onAnswerCorrect(session.streak);
     showSpellFeedback(q, true);
     setTimeout(advance, CORRECT_AUTOADVANCE_MS);
   } else {
     session.streak = 0;
-    playWrong();
-    hapticWrong();
+    onAnswerWrong();
     showSpellFeedback(q, false);
   }
 }
@@ -418,17 +414,12 @@ function onSpeakAnswered(q, correct, heard) {
   saveResumeState();
   if (correct) {
     session.streak = (session.streak || 0) + 1;
-    playCorrect();
-    hapticCorrect();
-    if (session.streak === 3) { playStreak3(); hapticStreak(); }
-    else if (session.streak === 5) { playStreak5(); hapticStreak(); }
-    else if (session.streak >= 7 && session.streak % 2 === 1) { playStreak3(); hapticStreak(); }
+    onAnswerCorrect(session.streak);
     showSpeakFeedback(q, true, heard);
     setTimeout(advance, CORRECT_AUTOADVANCE_MS);
   } else {
     session.streak = 0;
-    playWrong();
-    hapticWrong();
+    onAnswerWrong();
     showSpeakFeedback(q, false, heard);
   }
 }
@@ -490,16 +481,11 @@ function onAnswer(chosenIdx, btnEl) {
 
   if (correct) {
     session.streak = (session.streak || 0) + 1;
-    playCorrect();
-    hapticCorrect();
-    if (session.streak === 3) { playStreak3(); hapticStreak(); }
-    else if (session.streak === 5) { playStreak5(); hapticStreak(); }
-    else if (session.streak >= 7 && session.streak % 2 === 1) { playStreak3(); hapticStreak(); }
+    onAnswerCorrect(session.streak);
     setTimeout(advance, CORRECT_AUTOADVANCE_MS);
   } else {
     session.streak = 0;
-    playWrong();
-    hapticWrong();
+    onAnswerWrong();
     showWrongFeedback(q);
   }
 }
