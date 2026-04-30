@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reset GradeBlaze</title>
+  <meta name="theme-color" content="#0a0a0f" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <style>
+    /* Self-contained — no external CSS so this page works even when the
+       service worker is in a stuck state and refusing to serve mock.css. */
+    body {
+      margin: 0;
+      padding: 2rem 1.25rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0a0a0f;
+      color: #fafafa;
+      line-height: 1.5;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    .wrap { max-width: 520px; margin: 0 auto; }
+    h1 {
+      margin: 0 0 0.4rem;
+      font-size: 1.8rem;
+      color: #ff3d00;
+      letter-spacing: 0.02em;
+    }
+    p { color: #c4c4d1; margin: 0 0 1rem; }
+    .btn {
+      background: linear-gradient(135deg, #ff3d00, #ffb300);
+      color: #0a0a0f;
+      border: 0;
+      padding: 0.9rem 1.6rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      box-shadow: 0 0 18px rgba(255,61,0,0.35);
+    }
+    .btn:hover { filter: brightness(1.1); }
+    .btn[disabled] { opacity: 0.6; cursor: not-allowed; box-shadow: none; }
+    pre#log {
+      margin: 1.2rem 0;
+      padding: 0.9rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid #2a2a35;
+      border-radius: 0.4rem;
+      font-family: ui-monospace, monospace;
+      font-size: 0.85rem;
+      white-space: pre-wrap;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .log-ok  { color: #84cc16; }
+    .log-err { color: #fca5a5; }
+    .log-info { color: #c4c4d1; }
+    a.home {
+      display: inline-block;
+      margin-top: 0.4rem;
+      color: #00f5d4;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a.home:hover { text-decoration: underline; }
+    code {
+      background: rgba(255,255,255,0.07);
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-family: ui-monospace, monospace;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Reset GradeBlaze</h1>
+    <p>If pages stop loading or feel stuck, tap the button below. It unregisters any service worker and clears all GradeBlaze caches, then takes you home for a fresh start.</p>
+    <p>Your <strong>profile, PIN and saved progress are not touched</strong> — those live in localStorage, which this page leaves alone.</p>
+
+    <button id="resetBtn" class="btn">Reset now</button>
+
+    <pre id="log" aria-live="polite"></pre>
+    <a href="./" id="home" class="home" style="display:none">Done &mdash; reload GradeBlaze &rarr;</a>
+  </div>
+
+  <script>
+    // Inline, dependency-free. Runs even when the SW is misbehaving.
+    var logEl = document.getElementById("log");
+    var btn = document.getElementById("resetBtn");
+    var home = document.getElementById("home");
+
+    function add(msg, cls) {
+      var line = document.createElement("div");
+      line.className = "log-" + (cls || "info");
+      line.textContent = msg;
+      logEl.appendChild(line);
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+
+    async function doReset() {
+      btn.disabled = true;
+      add("Starting reset…", "info");
+
+      // 1. Unregister all service workers for this origin.
+      try {
+        if ("serviceWorker" in navigator) {
+          var regs = await navigator.serviceWorker.getRegistrations();
+          if (regs.length === 0) {
+            add("No service workers registered.", "info");
+          } else {
+            for (var i = 0; i < regs.length; i++) {
+              try {
+                await regs[i].unregister();
+                add("Unregistered SW: " + regs[i].scope, "ok");
+              } catch (e) {
+                add("Failed to unregister " + regs[i].scope + ": " + e.message, "err");
+              }
+            }
+          }
+        } else {
+          add("Service workers not supported in this browser.", "info");
+        }
+      } catch (e) {
+        add("SW step error: " + e.message, "err");
+      }
+
+      // 2. Delete every cache (Cache Storage API).
+      try {
+        if ("caches" in window) {
+          var keys = await caches.keys();
+          if (keys.length === 0) {
+            add("No caches to delete.", "info");
+          } else {
+            for (var j = 0; j < keys.length; j++) {
+              await caches.delete(keys[j]);
+              add("Deleted cache: " + keys[j], "ok");
+            }
+          }
+        }
+      } catch (e) {
+        add("Cache step error: " + e.message, "err");
+      }
+
+      // 3. Done.
+      add("", "info");
+      add("Reset complete.", "ok");
+      add("Tap the link below to reload — the next visit will fetch fresh code.", "info");
+      home.style.display = "";
+      btn.textContent = "Reset again";
+      btn.disabled = false;
+    }
+
+    btn.addEventListener("click", doReset);
+  </script>
+</body>
+</html>
