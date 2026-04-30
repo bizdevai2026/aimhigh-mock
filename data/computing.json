@@ -11,7 +11,8 @@
       "Give a slightly wrong address"
     ],
     "answer": 1,
-    "explainer": "Never share personal info (address, phone, school) with strangers online. Tell a trusted adult — that's always the right move."
+    "explainer": "Never share personal info (address, phone, school) with strangers online. Tell a trusted adult — that's always the right move.",
+    "year_level": 7
   },
   {
     "id": "comp-esafety-002",
@@ -25,7 +26,8 @@
       "12345678"
     ],
     "answer": 2,
-    "explainer": "Strong passwords mix upper, lower, numbers, symbols, and are at least 8 characters. \"password123\" and \"12345678\" are on every hacker's first list."
+    "explainer": "Strong passwords mix upper, lower, numbers, symbols, and are at least 8 characters. \"password123\" and \"12345678\" are on every hacker's first list.",
+    "year_level": 7
   },
   {
     "id": "comp-esafety-003",
@@ -39,7 +41,8 @@
       "A type of virus"
     ],
     "answer": 1,
-    "explainer": "Every post, like, search and login adds to your digital footprint. Some of it is permanent — universities and employers can see it later."
+    "explainer": "Every post, like, search and login adds to your digital footprint. Some of it is permanent — universities and employers can see it later.",
+    "year_level": 7
   },
   {
     "id": "comp-esafety-004",
@@ -53,7 +56,8 @@
       "They make your phone slow"
     ],
     "answer": 1,
-    "explainer": "Once content is online, others can copy or screenshot it. \"Delete\" doesn't undo what's already been saved by someone else."
+    "explainer": "Once content is online, others can copy or screenshot it. \"Delete\" doesn't undo what's already been saved by someone else.",
+    "year_level": 7
   },
   {
     "id": "comp-esafety-005",
@@ -67,7 +71,8 @@
       "The colour of a logo only"
     ],
     "answer": 1,
-    "explainer": "Copyright is automatic for original work (writing, music, video, code). Using it without permission can be illegal."
+    "explainer": "Copyright is automatic for original work (writing, music, video, code). Using it without permission can be illegal.",
+    "year_level": 7
   },
   {
     "id": "comp-esafety-006",
@@ -81,7 +86,8 @@
       "The Computer Misuse Act"
     ],
     "answer": 0,
-    "explainer": "Music is copyright-protected. To use it legally you usually need a licence, royalty-free music, or the creator's clear permission."
+    "explainer": "Music is copyright-protected. To use it legally you usually need a licence, royalty-free music, or the creator's clear permission.",
+    "year_level": 7
   },
   {
     "id": "comp-esafety-007",
@@ -95,7 +101,8 @@
       "Switched off entirely"
     ],
     "answer": 1,
-    "explainer": "Private profiles limit who can see your posts and contact you — recommended for under-18s and a sensible default for everyone."
+    "explainer": "Private profiles limit who can see your posts and contact you — recommended for under-18s and a sensible default for everyone.",
+    "year_level": 7
   },
   {
     "id": "comp-esafety-008",
@@ -109,7 +116,8 @@
       "Ignore it forever and tell no one"
     ],
     "answer": 1,
-    "explainer": "Screenshot or save the messages so action can be taken. Don't engage. Telling an adult (or using report tools) is always the right move."
+    "explainer": "Screenshot or save the messages so action can be taken. Don't engage. Telling an adult (or using report tools) is always the right move.",
+    "year_level": 7
   },
   {
     "id": "comp-itsystem-001",
@@ -123,7 +131,8 @@
       "A web page"
     ],
     "answer": 1,
-    "explainer": "Usernames let the system know who is logging in, so it can show your files and check your permissions."
+    "explainer": "Usernames let the system know who is logging in, so it can show your files and check your permissions.",
+    "year_level": 7
   },
   {
     "id": "comp-itsystem-002",
@@ -137,7 +146,8 @@
       "Charging the battery"
     ],
     "answer": 1,
-    "explainer": "Folders (also called directories) let you keep related files together — e.g. one folder per subject."
+    "explainer": "Folders (also called directories) let you keep related files together — e.g. one folder per subject.",
+    "year_level": 7
   },
   {
     "id": "comp-itsystem-003",
@@ -151,7 +161,8 @@
       "Designing logos"
     ],
     "answer": 1,
-    "explainer": "Teams handles messages, video calls, file sharing and assignments — the school's hub for class work and announcements."
+    "explainer": "Teams handles messages, video calls, file sharing and assignments — the school's hub for class work and announcements.",
+    "year_level": 7
   },
   {
     "id": "comp-itsystem-004",
@@ -165,7 +176,8 @@
       "A photo editor"
     ],
     "answer": 1,
-    "explainer": "Class Notebook gives each student their own section plus a shared content library and collaboration space — like a digital exercise book."
+    "explainer": "Class Notebook gives each student their own section plus a shared content library and collaboration space — like a digital exercise book.",
+    "year_level": 7
   },
   {
     "id": "comp-itsystem-005",
@@ -179,7 +191,8 @@
       "Drawing diagrams"
     ],
     "answer": 1,
-    "explainer": "Outlook is a mail and calendar app — for sending emails to teachers and tracking lessons, deadlines and events."
+    "explainer": "Outlook is a mail and calendar app — for sending emails to teachers and tracking lessons, deadlines and events.",
+    "year_level": 7
   },
   {
     "id": "comp-itsystem-006",
@@ -193,7 +206,8 @@
       "It hides the file"
     ],
     "answer": 1,
-    "explainer": "Clear, descriptive filenames make sorting and searching far easier — a key file management habit."
+    "explainer": "Clear, descriptive filenames make sorting and searching far easier — a key file management habit.",
+    "year_level": 7
   },
   {
     "id": "comp-algorithms-001",
@@ -207,7 +221,8 @@
       "A type of file"
     ],
     "answer": 1,
-    "explainer": "An algorithm is the recipe — the precise sequence of steps. A program is one way of writing it down for a computer."
+    "explainer": "An algorithm is the recipe — the precise sequence of steps. A program is one way of writing it down for a computer.",
+    "year_level": 7
   },
   {
     "id": "comp-algorithms-002",
@@ -221,7 +236,8 @@
       "Circle"
     ],
     "answer": 1,
-    "explainer": "Diamond = decision (yes/no). Rectangle = process. Oval = start/end."
+    "explainer": "Diamond = decision (yes/no). Rectangle = process. Oval = start/end.",
+    "year_level": 7
   },
   {
     "id": "comp-ct-001",
@@ -235,7 +251,8 @@
       "Backing up data"
     ],
     "answer": 1,
-    "explainer": "Big problems are easier to solve when split into smaller, more manageable sub-problems."
+    "explainer": "Big problems are easier to solve when split into smaller, more manageable sub-problems.",
+    "year_level": 7
   },
   {
     "id": "comp-ct-002",
@@ -249,7 +266,8 @@
       "Making code longer"
     ],
     "answer": 1,
-    "explainer": "Abstraction strips away things that don't matter for the problem — leaving the key information you need to solve it."
+    "explainer": "Abstraction strips away things that don't matter for the problem — leaving the key information you need to solve it.",
+    "year_level": 7
   },
   {
     "id": "comp-ct-003",
@@ -263,7 +281,8 @@
       "Sorting files alphabetically"
     ],
     "answer": 0,
-    "explainer": "Spotting patterns helps you re-use a known solution from one problem to solve another that looks similar."
+    "explainer": "Spotting patterns helps you re-use a known solution from one problem to solve another that looks similar.",
+    "year_level": 7
   },
   {
     "id": "comp-ct-004",
@@ -277,7 +296,8 @@
       "A bug in code"
     ],
     "answer": 1,
-    "explainer": "An algorithm is the recipe — the ordered steps. Code is what you get when the recipe is written in a language a computer can run."
+    "explainer": "An algorithm is the recipe — the ordered steps. Code is what you get when the recipe is written in a language a computer can run.",
+    "year_level": 7
   },
   {
     "id": "comp-ct-005",
@@ -291,7 +311,8 @@
       "Iteration"
     ],
     "answer": 1,
-    "explainer": "The map strips away track twists and real-world distances — only what helps you change trains stays. That's abstraction: hide what doesn't matter."
+    "explainer": "The map strips away track twists and real-world distances — only what helps you change trains stays. That's abstraction: hide what doesn't matter.",
+    "year_level": 7
   },
   {
     "id": "comp-ct-006",
@@ -305,7 +326,8 @@
       "Skip the enemies and ship the game without them"
     ],
     "answer": 1,
-    "explainer": "Pattern recognition: same behaviour, written once, called five times. Saves time and avoids bugs from inconsistent copies."
+    "explainer": "Pattern recognition: same behaviour, written once, called five times. Saves time and avoids bugs from inconsistent copies.",
+    "year_level": 7
   },
   {
     "id": "comp-scratch-001",
@@ -319,7 +341,8 @@
       "Make the screen bigger"
     ],
     "answer": 1,
-    "explainer": "Loops repeat instructions. \"Repeat 10\" runs the same block ten times — much shorter than typing the same code ten times."
+    "explainer": "Loops repeat instructions. \"Repeat 10\" runs the same block ten times — much shorter than typing the same code ten times.",
+    "year_level": 7
   },
   {
     "id": "comp-scratch-002",
@@ -333,7 +356,8 @@
       "An input"
     ],
     "answer": 2,
-    "explainer": "Selection = the program chooses what to do based on a condition. Sequence = step-by-step. Repetition = looping."
+    "explainer": "Selection = the program chooses what to do based on a condition. Sequence = step-by-step. Repetition = looping.",
+    "year_level": 7
   },
   {
     "id": "comp-scratch-003",
@@ -347,7 +371,8 @@
       "A kind of loop"
     ],
     "answer": 1,
-    "explainer": "Variables store values (like a score) that the program can read or update."
+    "explainer": "Variables store values (like a score) that the program can read or update.",
+    "year_level": 7
   },
   {
     "id": "comp-scratch-004",
@@ -361,7 +386,8 @@
       "A sound effect"
     ],
     "answer": 1,
-    "explainer": "Sprites are the things that act in your project — cats, balls, players. Each has its own scripts (code blocks)."
+    "explainer": "Sprites are the things that act in your project — cats, balls, players. Each has its own scripts (code blocks).",
+    "year_level": 7
   },
   {
     "id": "comp-scratch-005",
@@ -375,7 +401,8 @@
       "The list of variables"
     ],
     "answer": 1,
-    "explainer": "The stage is the visual canvas — your sprites act on it, and you can change its backdrop."
+    "explainer": "The stage is the visual canvas — your sprites act on it, and you can change its backdrop.",
+    "year_level": 7
   },
   {
     "id": "comp-scratch-006",
@@ -389,7 +416,8 @@
       "Slow the project down"
     ],
     "answer": 1,
-    "explainer": "Broadcasts let one sprite send a signal that any other sprite can listen for — a clean way to coordinate behaviour."
+    "explainer": "Broadcasts let one sprite send a signal that any other sprite can listen for — a clean way to coordinate behaviour.",
+    "year_level": 7
   },
   {
     "id": "comp-hardware-001",
@@ -403,7 +431,8 @@
       "An app"
     ],
     "answer": 1,
-    "explainer": "Hardware = the physical parts you can touch (keyboard, screen, CPU). Software = programs (browser, app, file)."
+    "explainer": "Hardware = the physical parts you can touch (keyboard, screen, CPU). Software = programs (browser, app, file).",
+    "year_level": 7
   },
   {
     "id": "comp-hardware-002",
@@ -417,7 +446,8 @@
       "Keyboard"
     ],
     "answer": 2,
-    "explainer": "Output sends information from the computer to you — speaker, screen, printer. Input is the other way (keyboard, mouse, microphone)."
+    "explainer": "Output sends information from the computer to you — speaker, screen, printer. Input is the other way (keyboard, mouse, microphone).",
+    "year_level": 7
   },
   {
     "id": "comp-networks-001",
@@ -431,7 +461,8 @@
       "Limited Access Network"
     ],
     "answer": 1,
-    "explainer": "LAN = Local Area Network — covers a small area like a school or home. WAN = Wide Area Network covers larger areas (the internet is a WAN)."
+    "explainer": "LAN = Local Area Network — covers a small area like a school or home. WAN = Wide Area Network covers larger areas (the internet is a WAN).",
+    "year_level": 7
   },
   {
     "id": "comp-networks-002",
@@ -445,7 +476,8 @@
       "A type of cable"
     ],
     "answer": 1,
-    "explainer": "The internet is a global network of networks. The World Wide Web is one service that runs on top of it (websites and links)."
+    "explainer": "The internet is a global network of networks. The World Wide Web is one service that runs on top of it (websites and links).",
+    "year_level": 7
   },
   {
     "id": "comp-networks-003",
@@ -459,7 +491,8 @@
       "A wireless protocol"
     ],
     "answer": 1,
-    "explainer": "URL = Uniform Resource Locator. It's the web address you type, like https://example.com."
+    "explainer": "URL = Uniform Resource Locator. It's the web address you type, like https://example.com.",
+    "year_level": 7
   },
   {
     "id": "comp-smallbasic-001",
@@ -473,7 +506,8 @@
       "A web browser"
     ],
     "answer": 1,
-    "explainer": "You type code as text in Small Basic — a step up from drag-and-drop blocks like Scratch."
+    "explainer": "You type code as text in Small Basic — a step up from drag-and-drop blocks like Scratch.",
+    "year_level": 7
   },
   {
     "id": "comp-smallbasic-002",
@@ -487,7 +521,8 @@
       "say Hello"
     ],
     "answer": 1,
-    "explainer": "TextWindow.WriteLine prints the text and moves to the next line. TextWindow.Write keeps the cursor on the same line."
+    "explainer": "TextWindow.WriteLine prints the text and moves to the next line. TextWindow.Write keeps the cursor on the same line.",
+    "year_level": 7
   },
   {
     "id": "comp-smallbasic-003",
@@ -501,7 +536,8 @@
       "store(score, 7)"
     ],
     "answer": 2,
-    "explainer": "A single \"=\" assigns. Two equals \"==\" is for comparison in many languages — Small Basic uses just \"=\" for both, but reading order matters."
+    "explainer": "A single \"=\" assigns. Two equals \"==\" is for comparison in many languages — Small Basic uses just \"=\" for both, but reading order matters.",
+    "year_level": 7
   },
   {
     "id": "comp-smallbasic-004",
@@ -515,7 +551,8 @@
       "While 5"
     ],
     "answer": 1,
-    "explainer": "For/EndFor is Small Basic's count-controlled loop. The variable i counts up each repeat."
+    "explainer": "For/EndFor is Small Basic's count-controlled loop. The variable i counts up each repeat.",
+    "year_level": 7
   },
   {
     "id": "comp-smallbasic-005",
@@ -529,7 +566,8 @@
       "<!-- like this -->"
     ],
     "answer": 2,
-    "explainer": "A single quote \"'\" starts a comment in Small Basic. Comments help future you (and others) understand the code."
+    "explainer": "A single quote \"'\" starts a comment in Small Basic. Comments help future you (and others) understand the code.",
+    "year_level": 7
   },
   {
     "id": "comp-smallbasic-006",
@@ -543,7 +581,8 @@
       "It uses less battery"
     ],
     "answer": 1,
-    "explainer": "Text-based coding teaches you syntax and structure used by real-world languages — a foundation for Python, JavaScript and beyond."
+    "explainer": "Text-based coding teaches you syntax and structure used by real-world languages — a foundation for Python, JavaScript and beyond.",
+    "year_level": 7
   },
   {
     "id": "comp-algorithms-003",
@@ -557,7 +596,8 @@
       "An error message"
     ],
     "answer": 1,
-    "explainer": "An algorithm is the recipe — the ordered steps. It can be written in plain English, as a flowchart, or as pseudocode, before being turned into code."
+    "explainer": "An algorithm is the recipe — the ordered steps. It can be written in plain English, as a flowchart, or as pseudocode, before being turned into code.",
+    "year_level": 7
   },
   {
     "id": "comp-algorithms-004",
@@ -571,7 +611,8 @@
       "Encrypted code"
     ],
     "answer": 1,
-    "explainer": "Pseudocode is a halfway language: structured like code (loops, conditions) but readable in plain English. It helps you plan before writing real code."
+    "explainer": "Pseudocode is a halfway language: structured like code (loops, conditions) but readable in plain English. It helps you plan before writing real code.",
+    "year_level": 7
   },
   {
     "id": "comp-algorithms-005",
@@ -585,7 +626,8 @@
       "A finished step"
     ],
     "answer": 2,
-    "explainer": "Diamonds are decisions: a question with two outgoing arrows, one for YES and one for NO. Rectangles are processes; ovals are start/end."
+    "explainer": "Diamonds are decisions: a question with two outgoing arrows, one for YES and one for NO. Rectangles are processes; ovals are start/end.",
+    "year_level": 7
   },
   {
     "id": "comp-hardware-003",
@@ -599,7 +641,8 @@
       "An operating system"
     ],
     "answer": 2,
-    "explainer": "Hardware = the physical bits you can touch. Software = the programs that run on it. A keyboard is hardware; Word and Chrome are software."
+    "explainer": "Hardware = the physical bits you can touch. Software = the programs that run on it. A keyboard is hardware; Word and Chrome are software.",
+    "year_level": 7
   },
   {
     "id": "comp-hardware-004",
@@ -613,7 +656,8 @@
       "The mouse"
     ],
     "answer": 1,
-    "explainer": "CPU = Central Processing Unit. It runs the actual instructions of every program — the brain of the machine."
+    "explainer": "CPU = Central Processing Unit. It runs the actual instructions of every program — the brain of the machine.",
+    "year_level": 7
   },
   {
     "id": "comp-hardware-005",
@@ -627,7 +671,8 @@
       "Read All Memory"
     ],
     "answer": 1,
-    "explainer": "RAM = Random Access Memory. It is the computer's short-term working memory — fast, but loses everything when you switch off."
+    "explainer": "RAM = Random Access Memory. It is the computer's short-term working memory — fast, but loses everything when you switch off.",
+    "year_level": 7
   },
   {
     "id": "comp-networks-004",
@@ -641,7 +686,8 @@
       "Linked Audio Network"
     ],
     "answer": 0,
-    "explainer": "LAN = Local Area Network. A small network covering one building (a school, a home). WAN = Wide Area Network (e.g. the internet)."
+    "explainer": "LAN = Local Area Network. A small network covering one building (a school, a home). WAN = Wide Area Network (e.g. the internet).",
+    "year_level": 7
   },
   {
     "id": "comp-networks-005",
@@ -655,6 +701,7 @@
       "Make passwords stronger"
     ],
     "answer": 1,
-    "explainer": "Every device connected to a network has an IP address — the network's way of saying 'this device, here'."
+    "explainer": "Every device connected to a network has an IP address — the network's way of saying 'this device, here'.",
+    "year_level": 7
   }
 ]

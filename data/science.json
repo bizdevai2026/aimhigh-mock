@@ -11,7 +11,8 @@
       "Nucleus"
     ],
     "answer": 1,
-    "explainer": "The cell membrane is the gatekeeper of every cell. Plant cells have one too, with a tougher cell wall outside it."
+    "explainer": "The cell membrane is the gatekeeper of every cell. Plant cells have one too, with a tougher cell wall outside it.",
+    "year_level": 7
   },
   {
     "id": "sci-cells-002",
@@ -26,7 +27,8 @@
       "Ribosomes"
     ],
     "answer": 2,
-    "explainer": "Chloroplasts hold chlorophyll for photosynthesis. Animals don't make their own food, so animal cells don't have chloroplasts."
+    "explainer": "Chloroplasts hold chlorophyll for photosynthesis. Animals don't make their own food, so animal cells don't have chloroplasts.",
+    "year_level": 7
   },
   {
     "id": "sci-cells-003",
@@ -40,7 +42,8 @@
       "Cell membrane"
     ],
     "answer": 2,
-    "explainer": "Mitochondria release energy from glucose. Cells that work hard, like muscle cells, have lots of mitochondria."
+    "explainer": "Mitochondria release energy from glucose. Cells that work hard, like muscle cells, have lots of mitochondria.",
+    "year_level": 7
   },
   {
     "id": "sci-cells-004",
@@ -54,7 +57,8 @@
       "Salt"
     ],
     "answer": 1,
-    "explainer": "The nucleus stores DNA, which is the set of instructions that tells the cell how to work."
+    "explainer": "The nucleus stores DNA, which is the set of instructions that tells the cell how to work.",
+    "year_level": 7
   },
   {
     "id": "sci-cells-005",
@@ -68,7 +72,8 @@
       "Any lens — it doesn't matter"
     ],
     "answer": 0,
-    "explainer": "Start at the lowest magnification to find the sample, then turn the higher lenses in once it's in view."
+    "explainer": "Start at the lowest magnification to find the sample, then turn the higher lenses in once it's in view.",
+    "year_level": 7
   },
   {
     "id": "sci-cells-006",
@@ -82,7 +87,8 @@
       "Protein only"
     ],
     "answer": 1,
-    "explainer": "Cellulose makes the wall stiff so the plant can hold its shape upright."
+    "explainer": "Cellulose makes the wall stiff so the plant can hold its shape upright.",
+    "year_level": 7
   },
   {
     "id": "sci-particles-001",
@@ -96,7 +102,8 @@
       "Become heavier"
     ],
     "answer": 1,
-    "explainer": "Particles vibrate more, then slide past each other as a liquid. The same particles are still there — they've just got more energy."
+    "explainer": "Particles vibrate more, then slide past each other as a liquid. The same particles are still there — they've just got more energy.",
+    "year_level": 7
   },
   {
     "id": "sci-particles-002",
@@ -111,7 +118,8 @@
       "None of these"
     ],
     "answer": 0,
-    "explainer": "Solids hold their shape because particles are locked in place. They vibrate but don't slide past each other."
+    "explainer": "Solids hold their shape because particles are locked in place. They vibrate but don't slide past each other.",
+    "year_level": 7
   },
   {
     "id": "sci-particles-003",
@@ -125,7 +133,8 @@
       "Particles dissolve"
     ],
     "answer": 1,
-    "explainer": "Gas particles move fast and have lots of empty space around them, so they spread until they hit the walls."
+    "explainer": "Gas particles move fast and have lots of empty space around them, so they spread until they hit the walls.",
+    "year_level": 7
   },
   {
     "id": "sci-particles-004",
@@ -139,7 +148,8 @@
       "200 °C"
     ],
     "answer": 2,
-    "explainer": "At normal pressure, pure water boils at 100 °C. While it's boiling, the temperature stays steady — the energy is going into changing state."
+    "explainer": "At normal pressure, pure water boils at 100 °C. While it's boiling, the temperature stays steady — the energy is going into changing state.",
+    "year_level": 7
   },
   {
     "id": "sci-particles-005",
@@ -153,7 +163,8 @@
       "Combine into solids"
     ],
     "answer": 1,
-    "explainer": "Particles move from high concentration to low concentration. It's why a smell from the kitchen reaches the whole house."
+    "explainer": "Particles move from high concentration to low concentration. It's why a smell from the kitchen reaches the whole house.",
+    "year_level": 7
   },
   {
     "id": "sci-forces-001",
@@ -167,7 +178,8 @@
       "Static electricity"
     ],
     "answer": 2,
-    "explainer": "Friction needs two surfaces touching. Gravity, magnetism and static can act without contact."
+    "explainer": "Friction needs two surfaces touching. Gravity, magnetism and static can act without contact.",
+    "year_level": 7
   },
   {
     "id": "sci-forces-002",
@@ -181,7 +193,8 @@
       "Weight"
     ],
     "answer": 1,
-    "explainer": "At terminal velocity, air resistance equals weight, so the skydiver stops speeding up."
+    "explainer": "At terminal velocity, air resistance equals weight, so the skydiver stops speeding up.",
+    "year_level": 7
   },
   {
     "id": "sci-forces-003",
@@ -195,7 +208,8 @@
       "Metre (m)"
     ],
     "answer": 2,
-    "explainer": "Forces are measured in newtons. Weight on Earth is roughly 10 N for every 1 kg of mass."
+    "explainer": "Forces are measured in newtons. Weight on Earth is roughly 10 N for every 1 kg of mass.",
+    "year_level": 7
   },
   {
     "id": "sci-forces-004",
@@ -209,7 +223,8 @@
       "Only when something is at rest"
     ],
     "answer": 1,
-    "explainer": "Friction opposes motion (or attempted motion). It's why a sliding object slows down and stops."
+    "explainer": "Friction opposes motion (or attempted motion). It's why a sliding object slows down and stops.",
+    "year_level": 7
   },
   {
     "id": "sci-energy-001",
@@ -223,7 +238,8 @@
       "Amps (A)"
     ],
     "answer": 0,
-    "explainer": "All forms of energy use the same unit — the joule."
+    "explainer": "All forms of energy use the same unit — the joule.",
+    "year_level": 7
   },
   {
     "id": "sci-energy-002",
@@ -237,7 +253,8 @@
       "Chemical store"
     ],
     "answer": 2,
-    "explainer": "Stretching or squashing stores elastic energy, ready to do work when released."
+    "explainer": "Stretching or squashing stores elastic energy, ready to do work when released.",
+    "year_level": 7
   },
   {
     "id": "sci-energy-003",
@@ -251,7 +268,8 @@
       "Kinetic to nuclear"
     ],
     "answer": 1,
-    "explainer": "Electrical energy in the heating element becomes thermal energy in the water."
+    "explainer": "Electrical energy in the heating element becomes thermal energy in the water.",
+    "year_level": 7
   },
   {
     "id": "sci-energy-004",
@@ -265,7 +283,8 @@
       "Nuclear"
     ],
     "answer": 1,
-    "explainer": "Anything raised up has gravitational potential energy. As it rolls down, this transfers to kinetic energy."
+    "explainer": "Anything raised up has gravitational potential energy. As it rolls down, this transfers to kinetic energy.",
+    "year_level": 7
   },
   {
     "id": "sci-sound-001",
@@ -279,7 +298,8 @@
       "The temperature"
     ],
     "answer": 1,
-    "explainer": "Higher frequency means higher pitch. Volume is set by amplitude, not pitch."
+    "explainer": "Higher frequency means higher pitch. Volume is set by amplitude, not pitch.",
+    "year_level": 7
   },
   {
     "id": "sci-sound-002",
@@ -294,7 +314,8 @@
       "The colour of the source"
     ],
     "answer": 1,
-    "explainer": "Bigger amplitude means louder sound. Frequency controls pitch, amplitude controls volume."
+    "explainer": "Bigger amplitude means louder sound. Frequency controls pitch, amplitude controls volume.",
+    "year_level": 7
   },
   {
     "id": "sci-sound-003",
@@ -308,7 +329,8 @@
       "A vacuum"
     ],
     "answer": 3,
-    "explainer": "Sound needs particles to pass on the vibration. A vacuum has no particles, so no sound."
+    "explainer": "Sound needs particles to pass on the vibration. A vacuum has no particles, so no sound.",
+    "year_level": 7
   },
   {
     "id": "sci-sound-004",
@@ -322,7 +344,8 @@
       "Made of light"
     ],
     "answer": 1,
-    "explainer": "In a sound wave, particles vibrate back and forth in the same direction the wave travels — that's longitudinal."
+    "explainer": "In a sound wave, particles vibrate back and forth in the same direction the wave travels — that's longitudinal.",
+    "year_level": 7
   },
   {
     "id": "sci-acids-001",
@@ -337,7 +360,8 @@
       "Greater than 14"
     ],
     "answer": 1,
-    "explainer": "Below 7 is acidic, exactly 7 is neutral, above 7 is alkaline. The full range is usually 0 to 14."
+    "explainer": "Below 7 is acidic, exactly 7 is neutral, above 7 is alkaline. The full range is usually 0 to 14.",
+    "year_level": 7
   },
   {
     "id": "sci-acids-002",
@@ -351,7 +375,8 @@
       "A new acid"
     ],
     "answer": 1,
-    "explainer": "This is neutralisation. The salt's name depends on the acid — for example, hydrochloric acid makes a chloride."
+    "explainer": "This is neutralisation. The salt's name depends on the acid — for example, hydrochloric acid makes a chloride.",
+    "year_level": 7
   },
   {
     "id": "sci-acids-003",
@@ -365,7 +390,8 @@
       "Chlorine water"
     ],
     "answer": 1,
-    "explainer": "Litmus paper is the simplest acid/alkali test. Universal indicator gives a fuller colour scale for pH."
+    "explainer": "Litmus paper is the simplest acid/alkali test. Universal indicator gives a fuller colour scale for pH.",
+    "year_level": 7
   },
   {
     "id": "sci-acids-004",
@@ -379,7 +405,8 @@
       "Cola"
     ],
     "answer": 2,
-    "explainer": "Baking-soda solution (sodium hydrogen carbonate) is mildly alkaline. The others are acidic."
+    "explainer": "Baking-soda solution (sodium hydrogen carbonate) is mildly alkaline. The others are acidic.",
+    "year_level": 7
   },
   {
     "id": "sci-reproduction-001",
@@ -393,7 +420,8 @@
       "Embryo"
     ],
     "answer": 1,
-    "explainer": "Eggs are released from an ovary. Sperm come from the testes."
+    "explainer": "Eggs are released from an ovary. Sperm come from the testes.",
+    "year_level": 7
   },
   {
     "id": "sci-reproduction-002",
@@ -407,7 +435,8 @@
       "Petal"
     ],
     "answer": 1,
-    "explainer": "Anthers (on the stamens) produce pollen. The stigma is the sticky top of the female part — it catches pollen."
+    "explainer": "Anthers (on the stamens) produce pollen. The stigma is the sticky top of the female part — it catches pollen.",
+    "year_level": 7
   },
   {
     "id": "sci-reproduction-003",
@@ -421,7 +450,8 @@
       "Root"
     ],
     "answer": 1,
-    "explainer": "The fertilised ovule grows into a seed. The ovary around it often becomes the fruit."
+    "explainer": "The fertilised ovule grows into a seed. The ovary around it often becomes the fruit.",
+    "year_level": 7
   },
   {
     "id": "sci-variation-001",
@@ -435,7 +465,8 @@
       "Predators"
     ],
     "answer": 1,
-    "explainer": "Variation can be inherited (such as eye colour) or environmental (such as height being affected by diet)."
+    "explainer": "Variation can be inherited (such as eye colour) or environmental (such as height being affected by diet).",
+    "year_level": 7
   },
   {
     "id": "sci-variation-002",
@@ -449,7 +480,8 @@
       "Number of fingers"
     ],
     "answer": 2,
-    "explainer": "Diet and exercise change weight a lot. Eye colour, blood group and finger count are mainly inherited."
+    "explainer": "Diet and exercise change weight a lot. Eye colour, blood group and finger count are mainly inherited.",
+    "year_level": 7
   },
   {
     "id": "sci-forces-005",
@@ -464,7 +496,8 @@
       "Going backwards"
     ],
     "answer": 2,
-    "explainer": "Distance isn't changing — the object is at rest. A sloped line means it's moving; a steeper slope means faster."
+    "explainer": "Distance isn't changing — the object is at rest. A sloped line means it's moving; a steeper slope means faster.",
+    "year_level": 7
   },
   {
     "id": "sci-forces-006",
@@ -478,7 +511,8 @@
       "Bigger the object"
     ],
     "answer": 1,
-    "explainer": "Steep slope = lots of distance covered in a short time = fast. Gentle slope = slow."
+    "explainer": "Steep slope = lots of distance covered in a short time = fast. Gentle slope = slow.",
+    "year_level": 7
   },
   {
     "id": "sci-forces-007",
@@ -492,7 +526,8 @@
       "Distance + time"
     ],
     "answer": 1,
-    "explainer": "Speed = distance ÷ time. A car covering 60 miles in 1 hour has a speed of 60 mph."
+    "explainer": "Speed = distance ÷ time. A car covering 60 miles in 1 hour has a speed of 60 mph.",
+    "year_level": 7
   },
   {
     "id": "sci-mixtures-001",
@@ -506,7 +541,8 @@
       "Orange juice"
     ],
     "answer": 2,
-    "explainer": "A pure substance has only one type of particle. Distilled water = just H₂O. The others are mixtures."
+    "explainer": "A pure substance has only one type of particle. Distilled water = just H₂O. The others are mixtures.",
+    "year_level": 7
   },
   {
     "id": "sci-mixtures-002",
@@ -520,7 +556,8 @@
       "Stirring"
     ],
     "answer": 1,
-    "explainer": "Heat the water until it evaporates — salt is left behind. Filtering doesn't work because salt has dissolved."
+    "explainer": "Heat the water until it evaporates — salt is left behind. Filtering doesn't work because salt has dissolved.",
+    "year_level": 7
   },
   {
     "id": "sci-mixtures-003",
@@ -534,7 +571,8 @@
       "Two solids of different colour"
     ],
     "answer": 1,
-    "explainer": "Distillation boils the liquid off, then condenses the vapour. Useful for getting pure water from salt water."
+    "explainer": "Distillation boils the liquid off, then condenses the vapour. Useful for getting pure water from salt water.",
+    "year_level": 7
   },
   {
     "id": "sci-mixtures-004",
@@ -548,7 +586,8 @@
       "Stick metals together"
     ],
     "answer": 0,
-    "explainer": "Different dyes travel up the paper at different speeds, so they spread into separate spots."
+    "explainer": "Different dyes travel up the paper at different speeds, so they spread into separate spots.",
+    "year_level": 7
   },
   {
     "id": "sci-skeleton-001",
@@ -562,7 +601,8 @@
       "Cooling the body only"
     ],
     "answer": 0,
-    "explainer": "Bones support the body's shape, protect organs (skull, ribs) and act as anchors for muscles to pull on."
+    "explainer": "Bones support the body's shape, protect organs (skull, ribs) and act as anchors for muscles to pull on.",
+    "year_level": 7
   },
   {
     "id": "sci-skeleton-002",
@@ -576,7 +616,8 @@
       "Sliding"
     ],
     "answer": 1,
-    "explainer": "Hinge joints bend one way only (like a door). The shoulder is ball-and-socket — it can rotate."
+    "explainer": "Hinge joints bend one way only (like a door). The shoulder is ball-and-socket — it can rotate.",
+    "year_level": 7
   },
   {
     "id": "sci-skeleton-003",
@@ -590,7 +631,8 @@
       "They never move"
     ],
     "answer": 1,
-    "explainer": "Muscles can only pull, not push. So they work in pairs — one contracts to bend the arm, the other contracts to straighten it."
+    "explainer": "Muscles can only pull, not push. So they work in pairs — one contracts to bend the arm, the other contracts to straighten it.",
+    "year_level": 7
   },
   {
     "id": "sci-energy-005",
@@ -604,7 +646,8 @@
       "Only comes from the Sun"
     ],
     "answer": 2,
-    "explainer": "Energy never vanishes — it just moves between stores. A bouncing ball loses height because energy transfers to heat and sound, not because it disappears."
+    "explainer": "Energy never vanishes — it just moves between stores. A bouncing ball loses height because energy transfers to heat and sound, not because it disappears.",
+    "year_level": 7
   },
   {
     "id": "sci-energy-006",
@@ -618,7 +661,8 @@
       "Natural gas"
     ],
     "answer": 2,
-    "explainer": "Renewables won't run out on human timescales — wind, solar, hydro, tidal, geothermal. Fossil fuels are non-renewable."
+    "explainer": "Renewables won't run out on human timescales — wind, solar, hydro, tidal, geothermal. Fossil fuels are non-renewable.",
+    "year_level": 7
   },
   {
     "id": "sci-energy-007",
@@ -632,7 +676,8 @@
       "Gravity gets stronger"
     ],
     "answer": 1,
-    "explainer": "Total energy is the same, but some moves to thermal and sound stores at each bounce — less is left for kinetic and gravitational potential."
+    "explainer": "Total energy is the same, but some moves to thermal and sound stores at each bounce — less is left for kinetic and gravitational potential.",
+    "year_level": 7
   },
   {
     "id": "sci-reactions-001",
@@ -646,7 +691,8 @@
       "A new acid"
     ],
     "answer": 0,
-    "explainer": "Acid + metal → salt + hydrogen. You can test for hydrogen with a lit splint — it makes a squeaky pop."
+    "explainer": "Acid + metal → salt + hydrogen. You can test for hydrogen with a lit splint — it makes a squeaky pop.",
+    "year_level": 7
   },
   {
     "id": "sci-reactions-002",
@@ -660,7 +706,8 @@
       "Magnesium chloride"
     ],
     "answer": 0,
-    "explainer": "Metal + oxygen → metal oxide. The bright white flame of burning magnesium gives off a white powder of magnesium oxide."
+    "explainer": "Metal + oxygen → metal oxide. The bright white flame of burning magnesium gives off a white powder of magnesium oxide.",
+    "year_level": 7
   },
   {
     "id": "sci-reactions-003",
@@ -674,7 +721,8 @@
       "Becomes less reactive"
     ],
     "answer": 1,
-    "explainer": "More reactive metals \"push out\" less reactive ones. Iron + copper sulfate → iron sulfate + copper."
+    "explainer": "More reactive metals \"push out\" less reactive ones. Iron + copper sulfate → iron sulfate + copper.",
+    "year_level": 7
   },
   {
     "id": "sci-sound-005",
@@ -688,7 +736,8 @@
       "Sound disappearing"
     ],
     "answer": 2,
-    "explainer": "When sound hits a hard surface, it reflects. We hear the reflection a moment later as an echo."
+    "explainer": "When sound hits a hard surface, it reflects. We hear the reflection a moment later as an echo.",
+    "year_level": 7
   },
   {
     "id": "sci-sound-006",
@@ -702,7 +751,8 @@
       "Brain"
     ],
     "answer": 1,
-    "explainer": "Sound waves travel down the ear canal and make the eardrum vibrate. Tiny bones then carry the vibration to the cochlea."
+    "explainer": "Sound waves travel down the ear canal and make the eardrum vibrate. Tiny bones then carry the vibration to the cochlea.",
+    "year_level": 7
   },
   {
     "id": "sci-variation-003",
@@ -716,7 +766,8 @@
       "It's always inherited"
     ],
     "answer": 1,
-    "explainer": "Continuous: any value in a range (height, weight). Discontinuous: only specific options (blood group, eye colour)."
+    "explainer": "Continuous: any value in a range (height, weight). Discontinuous: only specific options (blood group, eye colour).",
+    "year_level": 7
   },
   {
     "id": "sci-universe-001",
@@ -731,7 +782,8 @@
       "Nine"
     ],
     "answer": 2,
-    "explainer": "Eight: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune. Pluto was reclassified as a dwarf planet in 2006."
+    "explainer": "Eight: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune. Pluto was reclassified as a dwarf planet in 2006.",
+    "year_level": 7
   },
   {
     "id": "sci-universe-002",
@@ -746,7 +798,8 @@
       "Mars"
     ],
     "answer": 1,
-    "explainer": "Mercury — about 58 million km from the Sun. So close that surface temperatures swing wildly between day and night."
+    "explainer": "Mercury — about 58 million km from the Sun. So close that surface temperatures swing wildly between day and night.",
+    "year_level": 7
   },
   {
     "id": "sci-universe-003",
@@ -760,7 +813,8 @@
       "The Moon blocks the Sun"
     ],
     "answer": 1,
-    "explainer": "Earth makes one full spin every 24 hours. The side facing the Sun has day; the side facing away has night."
+    "explainer": "Earth makes one full spin every 24 hours. The side facing the Sun has day; the side facing away has night.",
+    "year_level": 7
   },
   {
     "id": "sci-universe-004",
@@ -774,7 +828,8 @@
       "The Moon's pull"
     ],
     "answer": 1,
-    "explainer": "Earth's axis is tilted ~23.5°. As we orbit the Sun, different hemispheres point towards it — giving longer, warmer days in summer."
+    "explainer": "Earth's axis is tilted ~23.5°. As we orbit the Sun, different hemispheres point towards it — giving longer, warmer days in summer.",
+    "year_level": 7
   },
   {
     "id": "sci-universe-005",
@@ -788,7 +843,8 @@
       "Ten years"
     ],
     "answer": 2,
-    "explainer": "365.25 days — about a year. The extra 0.25 is why we add a leap day every 4 years."
+    "explainer": "365.25 days — about a year. The extra 0.25 is why we add a leap day every 4 years.",
+    "year_level": 7
   },
   {
     "id": "sci-universe-006",
@@ -802,7 +858,8 @@
       "Clouds cover parts of the Moon"
     ],
     "answer": 1,
-    "explainer": "The Sun always lights half the Moon. As the Moon orbits Earth, we see different proportions of that lit half — full, half, crescent, new."
+    "explainer": "The Sun always lights half the Moon. As the Moon orbits Earth, we see different proportions of that lit half — full, half, crescent, new.",
+    "year_level": 7
   },
   {
     "id": "sci-distance-003",
@@ -816,7 +873,8 @@
       "Moving backwards"
     ],
     "answer": 2,
-    "explainer": "Distance is not changing while time moves on, so the object is stationary."
+    "explainer": "Distance is not changing while time moves on, so the object is stationary.",
+    "year_level": 7
   },
   {
     "id": "sci-distance-004",
@@ -830,7 +888,8 @@
       "Reversing"
     ],
     "answer": 0,
-    "explainer": "Steep = covering lots of distance in a short time = fast. Gentle slope = slow."
+    "explainer": "Steep = covering lots of distance in a short time = fast. Gentle slope = slow.",
+    "year_level": 7
   },
   {
     "id": "sci-distance-005",
@@ -844,7 +903,8 @@
       "distance + time"
     ],
     "answer": 1,
-    "explainer": "Speed equals distance divided by time. Units: m/s if distance is in metres, time in seconds."
+    "explainer": "Speed equals distance divided by time. Units: m/s if distance is in metres, time in seconds.",
+    "year_level": 7
   },
   {
     "id": "sci-reproduction-004",
@@ -858,7 +918,8 @@
       "Platelet"
     ],
     "answer": 1,
-    "explainer": "The female sex cell is the egg, also called an ovum. The male sex cell is the sperm."
+    "explainer": "The female sex cell is the egg, also called an ovum. The male sex cell is the sperm.",
+    "year_level": 7
   },
   {
     "id": "sci-reproduction-005",
@@ -872,7 +933,8 @@
       "Cells divide for growth"
     ],
     "answer": 0,
-    "explainer": "Fertilisation is the moment a sperm cell fuses with an egg cell. The fertilised egg then develops into an embryo."
+    "explainer": "Fertilisation is the moment a sperm cell fuses with an egg cell. The fertilised egg then develops into an embryo.",
+    "year_level": 7
   },
   {
     "id": "sci-variation-004",
@@ -886,7 +948,8 @@
       "Your tan from summer"
     ],
     "answer": 0,
-    "explainer": "Inherited variation comes from your parents' DNA: eye colour, hair colour, blood group. Environmental variation comes from your life: scars, tan, fitness."
+    "explainer": "Inherited variation comes from your parents' DNA: eye colour, hair colour, blood group. Environmental variation comes from your life: scars, tan, fitness.",
+    "year_level": 7
   },
   {
     "id": "sci-variation-005",
@@ -900,7 +963,8 @@
       "Different parents"
     ],
     "answer": 1,
-    "explainer": "Identical twins develop from one fertilised egg that splits, so they share the same DNA. Any differences between them are environmental."
+    "explainer": "Identical twins develop from one fertilised egg that splits, so they share the same DNA. Any differences between them are environmental.",
+    "year_level": 7
   },
   {
     "id": "sci-skeleton-004",
@@ -914,7 +978,8 @@
       "Sliding"
     ],
     "answer": 2,
-    "explainer": "Ball-and-socket joints (shoulder, hip) let the limb rotate. Hinge joints (knee, elbow) move in only one plane."
+    "explainer": "Ball-and-socket joints (shoulder, hip) let the limb rotate. Hinge joints (knee, elbow) move in only one plane.",
+    "year_level": 7
   },
   {
     "id": "sci-skeleton-005",
@@ -928,7 +993,8 @@
       "They share blood supply"
     ],
     "answer": 1,
-    "explainer": "Muscles only pull, they never push. So they work in 'antagonistic pairs': biceps pulls the arm up, triceps pulls it back down."
+    "explainer": "Muscles only pull, they never push. So they work in 'antagonistic pairs': biceps pulls the arm up, triceps pulls it back down.",
+    "year_level": 7
   },
   {
     "id": "sci-chemreact-004",
@@ -942,7 +1008,8 @@
       "Salt only"
     ],
     "answer": 0,
-    "explainer": "Rust is iron oxide. It forms when iron reacts with oxygen in the air, especially with water around to speed it up."
+    "explainer": "Rust is iron oxide. It forms when iron reacts with oxygen in the air, especially with water around to speed it up.",
+    "year_level": 7
   },
   {
     "id": "sci-chemreact-005",
@@ -956,7 +1023,8 @@
       "Solvents"
     ],
     "answer": 1,
-    "explainer": "Reactants are what you start with. Products are what you end up with. Catalysts speed it up without being used up."
+    "explainer": "Reactants are what you start with. Products are what you end up with. Catalysts speed it up without being used up.",
+    "year_level": 7
   },
   {
     "id": "sci-mixtures-005",
@@ -970,7 +1038,8 @@
       "Magnetism"
     ],
     "answer": 1,
-    "explainer": "Sand is insoluble — it does not dissolve. Filter paper lets water through but traps the sand grains."
+    "explainer": "Sand is insoluble — it does not dissolve. Filter paper lets water through but traps the sand grains.",
+    "year_level": 7
   },
   {
     "id": "sci-acids-005",
@@ -984,7 +1053,8 @@
       "A strong alkali"
     ],
     "answer": 2,
-    "explainer": "pH 7 = neutral. Pure water is pH 7. Below 7 is acidic; above 7 is alkaline."
+    "explainer": "pH 7 = neutral. Pure water is pH 7. Below 7 is acidic; above 7 is alkaline.",
+    "year_level": 7
   },
   {
     "id": "sci-forces-008",
@@ -998,6 +1068,7 @@
       "Metre (m)"
     ],
     "answer": 1,
-    "explainer": "Force is measured in newtons (N). Joules measure energy. Watts measure power."
+    "explainer": "Force is measured in newtons (N). Joules measure energy. Watts measure power.",
+    "year_level": 7
   }
 ]

@@ -11,7 +11,8 @@
       "1215"
     ],
     "answer": 1,
-    "explainer": "1066 — the Battle of Hastings. Often used as the date that marks the end of Anglo-Saxon England."
+    "explainer": "1066 — the Battle of Hastings. Often used as the date that marks the end of Anglo-Saxon England.",
+    "year_level": 7
   },
   {
     "id": "hist-norman-002",
@@ -25,7 +26,8 @@
       "Battle of Agincourt"
     ],
     "answer": 1,
-    "explainer": "Battle of Hastings, 14 October 1066. Harold Godwinson was killed; William became known as William the Conqueror."
+    "explainer": "Battle of Hastings, 14 October 1066. Harold Godwinson was killed; William became known as William the Conqueror.",
+    "year_level": 7
   },
   {
     "id": "hist-norman-003",
@@ -39,7 +41,8 @@
       "A military training manual"
     ],
     "answer": 1,
-    "explainer": "Completed in 1086, the Domesday Book recorded who owned what land and how much it was worth — so William could tax it."
+    "explainer": "Completed in 1086, the Domesday Book recorded who owned what land and how much it was worth — so William could tax it.",
+    "year_level": 7
   },
   {
     "id": "hist-norman-004",
@@ -53,7 +56,8 @@
       "Alfred the Great"
     ],
     "answer": 1,
-    "explainer": "Harold Godwinson was crowned in early 1066 and died at Hastings in October that year — possibly shot in the eye, as the Bayeux Tapestry suggests."
+    "explainer": "Harold Godwinson was crowned in early 1066 and died at Hastings in October that year — possibly shot in the eye, as the Bayeux Tapestry suggests.",
+    "year_level": 7
   },
   {
     "id": "hist-norman-005",
@@ -67,7 +71,8 @@
       "Olaf Tryggvason"
     ],
     "answer": 2,
-    "explainer": "Harold beat Harald Hardrada at Stamford Bridge in September 1066, then had to race south to face William — exhausting his army before Hastings."
+    "explainer": "Harold beat Harald Hardrada at Stamford Bridge in September 1066, then had to race south to face William — exhausting his army before Hastings.",
+    "year_level": 7
   },
   {
     "id": "hist-norman-006",
@@ -81,7 +86,8 @@
       "Wooden longhouses"
     ],
     "answer": 1,
-    "explainer": "Motte (mound) and bailey (enclosed yard) castles were quick to build with timber and earth. Stone keeps came later as Norman power was secured."
+    "explainer": "Motte (mound) and bailey (enclosed yard) castles were quick to build with timber and earth. Stone keeps came later as Norman power was secured.",
+    "year_level": 7
   },
   {
     "id": "hist-norman-007",
@@ -95,7 +101,8 @@
       "The Black Death"
     ],
     "answer": 1,
-    "explainer": "A 70-metre embroidered cloth telling the Norman version of the events leading to William's victory in 1066."
+    "explainer": "A 70-metre embroidered cloth telling the Norman version of the events leading to William's victory in 1066.",
+    "year_level": 7
   },
   {
     "id": "hist-norman-008",
@@ -109,7 +116,8 @@
       "A French alliance"
     ],
     "answer": 1,
-    "explainer": "William's troops burned villages, crops and livestock across northern England to crush rebellion — thousands died of starvation that winter."
+    "explainer": "William's troops burned villages, crops and livestock across northern England to crush rebellion — thousands died of starvation that winter.",
+    "year_level": 7
   },
   {
     "id": "hist-norman-009",
@@ -123,7 +131,8 @@
       "Gaelic"
     ],
     "answer": 1,
-    "explainer": "Norman French became the language of the court and law for centuries. That's why English has so many French-origin words (e.g. \"beef\", \"justice\")."
+    "explainer": "Norman French became the language of the court and law for centuries. That's why English has so many French-origin words (e.g. \"beef\", \"justice\").",
+    "year_level": 7
   },
   {
     "id": "hist-medieval-001",
@@ -138,7 +147,8 @@
       "Bishops only"
     ],
     "answer": 2,
-    "explainer": "King → Barons → Knights → Peasants. The King granted land in return for loyalty and military service."
+    "explainer": "King → Barons → Knights → Peasants. The King granted land in return for loyalty and military service.",
+    "year_level": 7
   },
   {
     "id": "hist-medieval-002",
@@ -152,7 +162,8 @@
       "A new set of taxes"
     ],
     "answer": 1,
-    "explainer": "Barons forced King John to sign Magna Carta, which set limits on what the king could do — early step toward the rule of law."
+    "explainer": "Barons forced King John to sign Magna Carta, which set limits on what the king could do — early step toward the rule of law.",
+    "year_level": 7
   },
   {
     "id": "hist-medieval-003",
@@ -166,7 +177,8 @@
       "Monks"
     ],
     "answer": 1,
-    "explainer": "Barons (also called tenants-in-chief) held large estates from the king and supplied him with knights and taxes."
+    "explainer": "Barons (also called tenants-in-chief) held large estates from the king and supplied him with knights and taxes.",
+    "year_level": 7
   },
   {
     "id": "hist-medieval-004",
@@ -180,7 +192,8 @@
       "A foreign ambassador"
     ],
     "answer": 1,
-    "explainer": "Serfs were unfree peasants who could not leave the manor without their lord's permission. They worked the land in return for protection."
+    "explainer": "Serfs were unfree peasants who could not leave the manor without their lord's permission. They worked the land in return for protection.",
+    "year_level": 7
   },
   {
     "id": "hist-medieval-005",
@@ -194,7 +207,8 @@
       "A king's army"
     ],
     "answer": 1,
-    "explainer": "The manor was the basic economic unit — a lord's house, fields, woods and village, run by peasants who owed labour and rent."
+    "explainer": "The manor was the basic economic unit — a lord's house, fields, woods and village, run by peasants who owed labour and rent.",
+    "year_level": 7
   },
   {
     "id": "hist-medieval-006",
@@ -208,7 +222,8 @@
       "Loyalty"
     ],
     "answer": 0,
-    "explainer": "Chivalry covered honour, courage, fair play in battle, and protection of the weak — the medieval ideal of how a knight should behave."
+    "explainer": "Chivalry covered honour, courage, fair play in battle, and protection of the weak — the medieval ideal of how a knight should behave.",
+    "year_level": 7
   },
   {
     "id": "hist-medieval-007",
@@ -222,7 +237,8 @@
       "Civil wars between English barons"
     ],
     "answer": 1,
-    "explainer": "From the late 11th century, Christian armies from Europe fought to take Jerusalem and the Holy Land from Muslim rule."
+    "explainer": "From the late 11th century, Christian armies from Europe fought to take Jerusalem and the Holy Land from Muslim rule.",
+    "year_level": 7
   },
   {
     "id": "hist-medieval-008",
@@ -236,7 +252,8 @@
       "Trade unions"
     ],
     "answer": 1,
-    "explainer": "The Catholic Church owned land, ran schools, controlled marriage and burial, and could even excommunicate kings."
+    "explainer": "The Catholic Church owned land, ran schools, controlled marriage and burial, and could even excommunicate kings.",
+    "year_level": 7
   },
   {
     "id": "hist-medieval-009",
@@ -250,7 +267,8 @@
       "A Norman knight"
     ],
     "answer": 1,
-    "explainer": "Becket was killed in Canterbury Cathedral after clashing with King Henry II over the Church's independence. He was later made a saint."
+    "explainer": "Becket was killed in Canterbury Cathedral after clashing with King Henry II over the Church's independence. He was later made a saint.",
+    "year_level": 7
   },
   {
     "id": "hist-medieval-010",
@@ -264,7 +282,8 @@
       "Plague returning"
     ],
     "answer": 1,
-    "explainer": "An unpopular poll tax (the same amount for everyone) plus post-plague resentment led peasants — under Wat Tyler — to march on London."
+    "explainer": "An unpopular poll tax (the same amount for everyone) plus post-plague resentment led peasants — under Wat Tyler — to march on London.",
+    "year_level": 7
   },
   {
     "id": "hist-blackdeath-001",
@@ -278,7 +297,8 @@
       "1485"
     ],
     "answer": 2,
-    "explainer": "Arrived in 1348. It killed perhaps a third of the English population within a few years."
+    "explainer": "Arrived in 1348. It killed perhaps a third of the English population within a few years.",
+    "year_level": 7
   },
   {
     "id": "hist-blackdeath-002",
@@ -292,7 +312,8 @@
       "A plant disease"
     ],
     "answer": 1,
-    "explainer": "Bubonic plague, mainly spread by fleas living on black rats that travelled with traders."
+    "explainer": "Bubonic plague, mainly spread by fleas living on black rats that travelled with traders.",
+    "year_level": 7
   },
   {
     "id": "hist-blackdeath-003",
@@ -306,7 +327,8 @@
       "Disappear entirely"
     ],
     "answer": 2,
-    "explainer": "So many people had died that workers could demand more pay. This shifted power away from landowners."
+    "explainer": "So many people had died that workers could demand more pay. This shifted power away from landowners.",
+    "year_level": 7
   },
   {
     "id": "hist-blackdeath-004",
@@ -320,7 +342,8 @@
       "Almost all"
     ],
     "answer": 1,
-    "explainer": "Estimates vary, but around 30–40% of the population died between 1348 and 1350 — a catastrophic loss."
+    "explainer": "Estimates vary, but around 30–40% of the population died between 1348 and 1350 — a catastrophic loss.",
+    "year_level": 7
   },
   {
     "id": "hist-blackdeath-005",
@@ -334,7 +357,8 @@
       "Permanent blindness"
     ],
     "answer": 1,
-    "explainer": "Buboes — swollen, blackened lymph nodes in the neck, armpits or groin — gave the Black Death its name."
+    "explainer": "Buboes — swollen, blackened lymph nodes in the neck, armpits or groin — gave the Black Death its name.",
+    "year_level": 7
   },
   {
     "id": "hist-tudors-001",
@@ -348,7 +372,8 @@
       "Mary I"
     ],
     "answer": 0,
-    "explainer": "Henry VII (Henry Tudor) won the Battle of Bosworth in 1485 and started the Tudor line."
+    "explainer": "Henry VII (Henry Tudor) won the Battle of Bosworth in 1485 and started the Tudor line.",
+    "year_level": 7
   },
   {
     "id": "hist-tudors-002",
@@ -362,7 +387,8 @@
       "Eight"
     ],
     "answer": 2,
-    "explainer": "Six wives. Mnemonic for their fates: divorced, beheaded, died; divorced, beheaded, survived."
+    "explainer": "Six wives. Mnemonic for their fates: divorced, beheaded, died; divorced, beheaded, survived.",
+    "year_level": 7
   },
   {
     "id": "hist-tudors-003",
@@ -376,7 +402,8 @@
       "The Pope owed him money"
     ],
     "answer": 0,
-    "explainer": "The Pope refused to annul Henry's marriage to Catherine of Aragon, so Henry made himself head of the new Church of England."
+    "explainer": "The Pope refused to annul Henry's marriage to Catherine of Aragon, so Henry made himself head of the new Church of England.",
+    "year_level": 7
   },
   {
     "id": "hist-tudors-004",
@@ -390,7 +417,8 @@
       "Inventing the printing press"
     ],
     "answer": 1,
-    "explainer": "1588 Armada victory plus Shakespeare and exploration made her reign a high point of English culture and power."
+    "explainer": "1588 Armada victory plus Shakespeare and exploration made her reign a high point of English culture and power.",
+    "year_level": 7
   },
   {
     "id": "hist-tudors-005",
@@ -404,7 +432,8 @@
       "Catherine of Aragon"
     ],
     "answer": 1,
-    "explainer": "Mary I had hundreds of Protestants burned at the stake while trying to restore Catholicism — earning the nickname \"Bloody Mary\"."
+    "explainer": "Mary I had hundreds of Protestants burned at the stake while trying to restore Catholicism — earning the nickname \"Bloody Mary\".",
+    "year_level": 7
   },
   {
     "id": "hist-tudors-006",
@@ -418,7 +447,8 @@
       "Battle of Naseby"
     ],
     "answer": 2,
-    "explainer": "At Bosworth, Henry Tudor defeated Richard III — ending the Wars of the Roses and the Plantagenet dynasty."
+    "explainer": "At Bosworth, Henry Tudor defeated Richard III — ending the Wars of the Roses and the Plantagenet dynasty.",
+    "year_level": 7
   },
   {
     "id": "hist-tudors-007",
@@ -432,7 +462,8 @@
       "Plantagenet and Hanover"
     ],
     "answer": 0,
-    "explainer": "The white rose of York fought the red rose of Lancaster. Henry Tudor (a Lancastrian) ended the wars and married Elizabeth of York to unite them."
+    "explainer": "The white rose of York fought the red rose of Lancaster. Henry Tudor (a Lancastrian) ended the wars and married Elizabeth of York to unite them.",
+    "year_level": 7
   },
   {
     "id": "hist-tudors-008",
@@ -446,7 +477,8 @@
       "Founding the Royal Navy"
     ],
     "answer": 1,
-    "explainer": "Edward was crowned aged 9 and ruled briefly. Under him, England moved further from Catholicism — but he died at 15."
+    "explainer": "Edward was crowned aged 9 and ruled briefly. Under him, England moved further from Catholicism — but he died at 15.",
+    "year_level": 7
   },
   {
     "id": "hist-stuarts-001",
@@ -460,7 +492,8 @@
       "1666"
     ],
     "answer": 1,
-    "explainer": "5 November 1605. We still mark the date with bonfires and fireworks every year."
+    "explainer": "5 November 1605. We still mark the date with bonfires and fireworks every year.",
+    "year_level": 7
   },
   {
     "id": "hist-stuarts-002",
@@ -474,7 +507,8 @@
       "Charles II"
     ],
     "answer": 2,
-    "explainer": "James I — the first Stuart king of England. The Catholic plotters hoped a new monarch would treat them better."
+    "explainer": "James I — the first Stuart king of England. The Catholic plotters hoped a new monarch would treat them better.",
+    "year_level": 7
   },
   {
     "id": "hist-stuarts-003",
@@ -488,7 +522,8 @@
       "Francis Tresham"
     ],
     "answer": 2,
-    "explainer": "Guy (Guido) Fawkes was discovered in the cellars beneath Parliament with 36 barrels of gunpowder. Catesby was the ringleader."
+    "explainer": "Guy (Guido) Fawkes was discovered in the cellars beneath Parliament with 36 barrels of gunpowder. Catesby was the ringleader.",
+    "year_level": 7
   },
   {
     "id": "hist-stuarts-004",
@@ -502,7 +537,8 @@
       "A failed harvest"
     ],
     "answer": 1,
-    "explainer": "Catholics had hoped James I would relax anti-Catholic laws. When he didn't, plotters wanted to kill him and his Protestant Parliament."
+    "explainer": "Catholics had hoped James I would relax anti-Catholic laws. When he didn't, plotters wanted to kill him and his Protestant Parliament.",
+    "year_level": 7
   },
   {
     "id": "hist-stuarts-005",
@@ -516,7 +552,8 @@
       "1715–1720"
     ],
     "answer": 1,
-    "explainer": "Parliament and the King fought on and off from 1642 to 1651. Charles I was executed in 1649."
+    "explainer": "Parliament and the King fought on and off from 1642 to 1651. Charles I was executed in 1649.",
+    "year_level": 7
   },
   {
     "id": "hist-stuarts-006",
@@ -530,7 +567,8 @@
       "English vs Scottish"
     ],
     "answer": 0,
-    "explainer": "Cavaliers backed King Charles I; Roundheads (named after their short hair) backed Parliament. Religion and money were both factors."
+    "explainer": "Cavaliers backed King Charles I; Roundheads (named after their short hair) backed Parliament. Religion and money were both factors.",
+    "year_level": 7
   },
   {
     "id": "hist-stuarts-007",
@@ -544,7 +582,8 @@
       "A volcano eruption"
     ],
     "answer": 1,
-    "explainer": "Charles I tried to rule without Parliament, raised taxes himself, and clashed over religion. Parliament refused to be sidelined."
+    "explainer": "Charles I tried to rule without Parliament, raised taxes himself, and clashed over religion. Parliament refused to be sidelined.",
+    "year_level": 7
   },
   {
     "id": "hist-stuarts-008",
@@ -558,7 +597,8 @@
       "Waterloo"
     ],
     "answer": 0,
-    "explainer": "At Naseby, the disciplined New Model Army (with Cromwell in command of cavalry) crushed the Royalist forces."
+    "explainer": "At Naseby, the disciplined New Model Army (with Cromwell in command of cavalry) crushed the Royalist forces.",
+    "year_level": 7
   },
   {
     "id": "hist-stuarts-009",
@@ -572,7 +612,8 @@
       "1660"
     ],
     "answer": 2,
-    "explainer": "January 1649 — Charles I was beheaded outside the Banqueting House in Whitehall after being found guilty of treason against his own people."
+    "explainer": "January 1649 — Charles I was beheaded outside the Banqueting House in Whitehall after being found guilty of treason against his own people.",
+    "year_level": 7
   },
   {
     "id": "hist-stuarts-010",
@@ -586,7 +627,8 @@
       "Archbishop"
     ],
     "answer": 1,
-    "explainer": "From 1653 Cromwell ruled as \"Lord Protector\" of the Commonwealth — England's only experiment with not having a monarch."
+    "explainer": "From 1653 Cromwell ruled as \"Lord Protector\" of the Commonwealth — England's only experiment with not having a monarch.",
+    "year_level": 7
   },
   {
     "id": "hist-stuarts-011",
@@ -600,7 +642,8 @@
       "Free of any religious rules"
     ],
     "answer": 1,
-    "explainer": "Theatres were shut, Christmas celebrations banned, and Sunday strictly observed. Many ordinary people resented the harsh Puritan laws."
+    "explainer": "Theatres were shut, Christmas celebrations banned, and Sunday strictly observed. Many ordinary people resented the harsh Puritan laws.",
+    "year_level": 7
   },
   {
     "id": "hist-stuarts-012",
@@ -614,7 +657,8 @@
       "Parliament took the throne"
     ],
     "answer": 1,
-    "explainer": "Cromwell's son Richard was a weak ruler. In 1660, Parliament invited Charles I's son Charles II back from exile — the Restoration."
+    "explainer": "Cromwell's son Richard was a weak ruler. In 1660, Parliament invited Charles I's son Charles II back from exile — the Restoration.",
+    "year_level": 7
   },
   {
     "id": "hist-cromwell-004",
@@ -628,7 +672,8 @@
       "Archbishop"
     ],
     "answer": 2,
-    "explainer": "After the king was executed (1649) and the monarchy abolished, Cromwell took the title 'Lord Protector' — effectively a dictator, ruling 1653–1658."
+    "explainer": "After the king was executed (1649) and the monarchy abolished, Cromwell took the title 'Lord Protector' — effectively a dictator, ruling 1653–1658.",
+    "year_level": 7
   },
   {
     "id": "hist-cromwell-005",
@@ -642,7 +687,8 @@
       "England became a colony"
     ],
     "answer": 1,
-    "explainer": "Cromwell died in 1658. His son could not hold power. By 1660, Parliament invited Charles II to take the throne — the 'Restoration'."
+    "explainer": "Cromwell died in 1658. His son could not hold power. By 1660, Parliament invited Charles II to take the throne — the 'Restoration'.",
+    "year_level": 7
   },
   {
     "id": "hist-gunpowder-005",
@@ -656,6 +702,7 @@
       "Francis Tresham"
     ],
     "answer": 1,
-    "explainer": "Guy Fawkes was caught in the cellars beneath Parliament on the night of 4 November 1605. His name lives on in Bonfire Night."
+    "explainer": "Guy Fawkes was caught in the cellars beneath Parliament on the night of 4 November 1605. His name lives on in Bonfire Night.",
+    "year_level": 7
   }
 ]

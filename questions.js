@@ -13,9 +13,9 @@
 // 60% weak-topic bias and a per-subject cap so a warm-up isn't ten
 // maths questions.
 
-import { readSeen, weakTopics } from "./engagement.js?v=20260521";
-import * as logger from "./platform/logger.js?v=20260521";
-import { validateQuestions, reportProblems } from "./diagnostics/schema-validator.js?v=20260521";
+import { readSeen, weakTopics } from "./engagement.js?v=20260522";
+import * as logger from "./platform/logger.js?v=20260522";
+import { validateQuestions, reportProblems } from "./diagnostics/schema-validator.js?v=20260522";
 
 const SUBJECTS = [
   { id: "science",   name: "Science"          },
@@ -59,48 +59,65 @@ export function subjectName(id) {
   return s ? s.name : id;
 }
 
-export async function loadAllQuestions() {
-  if (_cache) {
-    logger.debug("content", "loadAllQuestions cache hit", { count: _cache.length });
-    return _cache;
-  }
-  logger.info("content", "loadAllQuestions: fetching " + SUBJECTS.length + " subject pools");
-  const t0 = Date.now();
-  const fetches = SUBJECTS.map(function (s) {
-    return fetch("data/" + s.id + ".json", { cache: "no-cache" })
-      .then(function (r) {
-        if (!r.ok) {
-          logger.error("content", "fetch " + s.id + ".json HTTP " + r.status);
+// Loads (and caches) the merged question pool. Optional opts:
+//   yearLevel — number; filter to questions with `year_level` <= the
+//               requested level (so "Year 7 only" excludes Y8/Y9
+//               content but a Y9 learner sees everything they're ready
+//               for). Omit to disable the filter (returns the full pool).
+//
+// The filter is applied each call against the same underlying cache,
+// so switching year-level mid-page is cheap.
+export async function loadAllQuestions(opts) {
+  if (!_cache) {
+    logger.info("content", "loadAllQuestions: fetching " + SUBJECTS.length + " subject pools");
+    const t0 = Date.now();
+    const fetches = SUBJECTS.map(function (s) {
+      return fetch("data/" + s.id + ".json", { cache: "no-cache" })
+        .then(function (r) {
+          if (!r.ok) {
+            logger.error("content", "fetch " + s.id + ".json HTTP " + r.status);
+            return [];
+          }
+          return r.json();
+        })
+        .catch(function (e) {
+          logger.error("content", "fetch " + s.id + ".json failed", e);
           return [];
-        }
-        return r.json();
-      })
-      .catch(function (e) {
-        logger.error("content", "fetch " + s.id + ".json failed", e);
-        return [];
-      });
-  });
-  const results = await Promise.all(fetches);
-  const merged = [];
-  const perSubject = {};
-  results.forEach(function (subjQs, i) {
-    const subjId = SUBJECTS[i].id;
-    perSubject[subjId] = Array.isArray(subjQs) ? subjQs.length : 0;
-    if (!Array.isArray(subjQs)) return;
-    subjQs.forEach(function (q) {
-      // Stamp subject if missing; trust the file otherwise
-      const stamped = Object.assign({}, q);
-      if (!stamped.subject) stamped.subject = subjId;
-      merged.push(stamped);
+        });
     });
+    const results = await Promise.all(fetches);
+    const merged = [];
+    const perSubject = {};
+    results.forEach(function (subjQs, i) {
+      const subjId = SUBJECTS[i].id;
+      perSubject[subjId] = Array.isArray(subjQs) ? subjQs.length : 0;
+      if (!Array.isArray(subjQs)) return;
+      subjQs.forEach(function (q) {
+        const stamped = Object.assign({}, q);
+        if (!stamped.subject) stamped.subject = subjId;
+        // Default to Year 7 for legacy items that never got the field.
+        if (stamped.year_level == null) stamped.year_level = 7;
+        merged.push(stamped);
+      });
+    });
+    _cache = merged;
+    logger.info("content", "loadAllQuestions ok in " + (Date.now() - t0) + "ms — " + merged.length + " questions", perSubject);
+    // Runtime schema validation. Doesn't block — the runner still sees
+    // the merged pool. Bad items are logged so the diagnostics panel
+    // surfaces them; future Coach UI can add a banner if needed.
+    reportProblems("schema", "questions", validateQuestions(merged));
+  } else {
+    logger.debug("content", "loadAllQuestions cache hit", { count: _cache.length });
+  }
+
+  // Optional year-level filter applied against the cached pool. yearLevel=7
+  // returns only Y7 content; yearLevel=9 returns Y7 + Y8 + Y9 (everything
+  // a Y9 learner is ready for). Omit to disable the filter entirely.
+  const yl = opts && typeof opts.yearLevel === "number" ? opts.yearLevel : null;
+  if (yl == null) return _cache;
+  return _cache.filter(function (q) {
+    return (q.year_level == null) || (q.year_level <= yl);
   });
-  _cache = merged;
-  logger.info("content", "loadAllQuestions ok in " + (Date.now() - t0) + "ms — " + merged.length + " questions", perSubject);
-  // Runtime schema validation. Doesn't block — the runner still sees
-  // the merged pool. Bad items are logged so the diagnostics panel
-  // surfaces them; future Coach UI can add a banner if needed.
-  reportProblems("schema", "questions", validateQuestions(merged));
-  return merged;
 }
 
 export function pickWarmupQuestions(pool, n) {

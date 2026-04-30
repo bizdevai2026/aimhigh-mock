@@ -9,7 +9,7 @@
 // All three runner shapes share rendering, just differ in question pool
 // and round size.
 
-import "./mock.js?v=20260521"; // shared header (sound toggle, profile chip)
+import "./mock.js?v=20260522"; // shared header (sound toggle, profile chip)
 import {
   loadAllQuestions,
   pickSubjectQuestions,
@@ -18,17 +18,17 @@ import {
   subjectName,
   topicsForSubject,
   topicCounts
-} from "./questions.js?v=20260521";
+} from "./questions.js?v=20260522";
 import {
   noteSessionResult,
   readStreak,
   topicLadder,
   subjectLadder
-} from "./engagement.js?v=20260521";
-import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playModeStartSprint, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticCorrect, hapticWrong, hapticStreak, hapticPerfect } from "./sounds.js?v=20260521";
-import { getVisual } from "./visuals.js?v=20260521";
-import { isParentRole } from "./profile.js?v=20260521";
-import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260521";
+} from "./engagement.js?v=20260522";
+import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playModeStartSprint, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticCorrect, hapticWrong, hapticStreak, hapticPerfect } from "./sounds.js?v=20260522";
+import { getVisual } from "./visuals.js?v=20260522";
+import { isParentRole } from "./profile.js?v=20260522";
+import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260522";
 
 const SPRINT_SIZE = 15;
 const DRILL_SIZE = 5;

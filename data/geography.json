@@ -11,7 +11,8 @@
       "Roads"
     ],
     "answer": 1,
-    "explainer": "Closely spaced contours = the land rises sharply over a short distance — a steep slope. Wide spacing = gentle gradient."
+    "explainer": "Closely spaced contours = the land rises sharply over a short distance — a steep slope. Wide spacing = gentle gradient.",
+    "year_level": 7
   },
   {
     "id": "geo-mapskills-002",
@@ -25,7 +26,8 @@
       "25 km in real life"
     ],
     "answer": 2,
-    "explainer": "1 cm on map = 25,000 cm in real life = 250 m. So 4 cm on the map = 1 km."
+    "explainer": "1 cm on map = 25,000 cm in real life = 250 m. So 4 cm on the map = 1 km.",
+    "year_level": 7
   },
   {
     "id": "geo-mapskills-003",
@@ -39,7 +41,8 @@
       "A whole country"
     ],
     "answer": 1,
-    "explainer": "Four figures (e.g. 2438) identify the bottom-left corner of a 1 km square. Six figures pinpoint within that square."
+    "explainer": "Four figures (e.g. 2438) identify the bottom-left corner of a 1 km square. Six figures pinpoint within that square.",
+    "year_level": 7
   },
   {
     "id": "geo-mapskills-004",
@@ -53,7 +56,8 @@
       "SW"
     ],
     "answer": 1,
-    "explainer": "North-East (NE). The 8-point compass adds NE, SE, SW and NW between the four main directions."
+    "explainer": "North-East (NE). The 8-point compass adds NE, SE, SW and NW between the four main directions.",
+    "year_level": 7
   },
   {
     "id": "geo-mapskills-005",
@@ -67,7 +71,8 @@
       "50 km"
     ],
     "answer": 1,
-    "explainer": "1 cm × 50,000 = 50,000 cm = 500 m (half a kilometre). So 2 cm on the map = 1 km."
+    "explainer": "1 cm × 50,000 = 50,000 cm = 500 m (half a kilometre). So 2 cm on the map = 1 km.",
+    "year_level": 7
   },
   {
     "id": "geo-mapskills-006",
@@ -81,7 +86,8 @@
       "1 m × 1 m"
     ],
     "answer": 1,
-    "explainer": "Adding the 3rd and 6th digits divides each 1 km square into a 10 × 10 grid — so a six-figure reference picks a 100 m square."
+    "explainer": "Adding the 3rd and 6th digits divides each 1 km square into a 10 × 10 grid — so a six-figure reference picks a 100 m square.",
+    "year_level": 7
   },
   {
     "id": "geo-mapskills-007",
@@ -95,7 +101,8 @@
       "Who drew the map"
     ],
     "answer": 1,
-    "explainer": "The key explains the symbols — churches, footpaths, woods, etc. — so you can read the map confidently."
+    "explainer": "The key explains the symbols — churches, footpaths, woods, etc. — so you can read the map confidently.",
+    "year_level": 7
   },
   {
     "id": "geo-mapskills-008",
@@ -110,7 +117,8 @@
       "A coastal cliff only"
     ],
     "answer": 1,
-    "explainer": "Each ring is a line of equal height. Concentric rings stepping up = a hill or peak; the highest contour is at the centre."
+    "explainer": "Each ring is a line of equal height. Concentric rings stepping up = a hill or peak; the highest contour is at the centre.",
+    "year_level": 7
   },
   {
     "id": "geo-mapskills-009",
@@ -124,7 +132,8 @@
       "From east, in metres"
     ],
     "answer": 1,
-    "explainer": "Bearings always run clockwise from north, written as 3 digits (e.g. 045° = NE, 270° = west)."
+    "explainer": "Bearings always run clockwise from north, written as 3 digits (e.g. 045° = NE, 270° = west).",
+    "year_level": 7
   },
   {
     "id": "geo-mapskills-010",
@@ -138,7 +147,8 @@
       "Just use the number on the map"
     ],
     "answer": 1,
-    "explainer": "Map distance × scale = real distance. e.g. 4 cm on a 1 : 25,000 map = 4 × 250 m = 1 km."
+    "explainer": "Map distance × scale = real distance. e.g. 4 cm on a 1 : 25,000 map = 4 × 250 m = 1 km.",
+    "year_level": 7
   },
   {
     "id": "geo-mapskills-011",
@@ -152,7 +162,8 @@
       "The age of the map"
     ],
     "answer": 1,
-    "explainer": "Good routes use distance (\"walk 200 m\") plus direction (\"head north-east\") so the listener can follow it on a map."
+    "explainer": "Good routes use distance (\"walk 200 m\") plus direction (\"head north-east\") so the listener can follow it on a map.",
+    "year_level": 7
   },
   {
     "id": "geo-mapskills-012",
@@ -166,7 +177,8 @@
       "Calculator"
     ],
     "answer": 0,
-    "explainer": "A compass needle points to magnetic north — letting you orient a map and walk in a known direction."
+    "explainer": "A compass needle points to magnetic north — letting you orient a map and walk in a known direction.",
+    "year_level": 7
   },
   {
     "id": "geo-uk-001",
@@ -180,7 +192,8 @@
       "Belfast"
     ],
     "answer": 0,
-    "explainer": "Cardiff. Edinburgh is Scotland's capital; Belfast is Northern Ireland's; London is England's."
+    "explainer": "Cardiff. Edinburgh is Scotland's capital; Belfast is Northern Ireland's; London is England's.",
+    "year_level": 7
   },
   {
     "id": "geo-uk-002",
@@ -194,7 +207,8 @@
       "The Tyne"
     ],
     "answer": 1,
-    "explainer": "The River Severn (~354 km). The Thames is the longest entirely in England, but the Severn is overall longer in the UK."
+    "explainer": "The River Severn (~354 km). The Thames is the longest entirely in England, but the Severn is overall longer in the UK.",
+    "year_level": 7
   },
   {
     "id": "geo-continents-001",
@@ -208,7 +222,8 @@
       "Eight"
     ],
     "answer": 2,
-    "explainer": "Seven: Africa, Antarctica, Asia, Australia/Oceania, Europe, North America, South America."
+    "explainer": "Seven: Africa, Antarctica, Asia, Australia/Oceania, Europe, North America, South America.",
+    "year_level": 7
   },
   {
     "id": "geo-continents-002",
@@ -222,7 +237,8 @@
       "Pacific"
     ],
     "answer": 3,
-    "explainer": "The Pacific is the largest, covering about a third of Earth's surface."
+    "explainer": "The Pacific is the largest, covering about a third of Earth's surface.",
+    "year_level": 7
   },
   {
     "id": "geo-continents-003",
@@ -236,7 +252,8 @@
       "South America"
     ],
     "answer": 1,
-    "explainer": "Africa. The Sinai Peninsula technically extends into Asia, but Egypt is mostly in north-east Africa."
+    "explainer": "Africa. The Sinai Peninsula technically extends into Asia, but Egypt is mostly in north-east Africa.",
+    "year_level": 7
   },
   {
     "id": "geo-weather-001",
@@ -250,7 +267,8 @@
       "Climate only affects mountains"
     ],
     "answer": 1,
-    "explainer": "Weather is what's happening right now (today's rain). Climate is the average pattern over many years (how much rain a place usually gets)."
+    "explainer": "Weather is what's happening right now (today's rain). Climate is the average pattern over many years (how much rain a place usually gets).",
+    "year_level": 7
   },
   {
     "id": "geo-weather-002",
@@ -264,7 +282,8 @@
       "Thermometer"
     ],
     "answer": 2,
-    "explainer": "Rain gauge collects falling rain. Anemometer = wind speed. Barometer = air pressure. Thermometer = temperature."
+    "explainer": "Rain gauge collects falling rain. Anemometer = wind speed. Barometer = air pressure. Thermometer = temperature.",
+    "year_level": 7
   },
   {
     "id": "geo-settlement-001",
@@ -278,7 +297,8 @@
       "A motorway service station"
     ],
     "answer": 0,
-    "explainer": "Rural means countryside, low population density. Urban = towns and cities."
+    "explainer": "Rural means countryside, low population density. Urban = towns and cities.",
+    "year_level": 7
   },
   {
     "id": "geo-settlement-002",
@@ -292,7 +312,8 @@
       "Hamlet"
     ],
     "answer": 3,
-    "explainer": "Hamlet → Village → Town → City. A hamlet is just a few houses; a city has tens of thousands of people and a wide range of services."
+    "explainer": "Hamlet → Village → Town → City. A hamlet is just a few houses; a city has tens of thousands of people and a wide range of services.",
+    "year_level": 7
   },
   {
     "id": "geo-settlement-003",
@@ -306,7 +327,8 @@
       "A star"
     ],
     "answer": 1,
-    "explainer": "Linear settlements stretch in a line because they grew along a transport route or river crossing."
+    "explainer": "Linear settlements stretch in a line because they grew along a transport route or river crossing.",
+    "year_level": 7
   },
   {
     "id": "geo-settlement-004",
@@ -320,7 +342,8 @@
       "Is always underground"
     ],
     "answer": 1,
-    "explainer": "Nucleated = clumped together. Common in farming areas where people lived near a market square, church or crossroads."
+    "explainer": "Nucleated = clumped together. Common in farming areas where people lived near a market square, church or crossroads.",
+    "year_level": 7
   },
   {
     "id": "geo-settlement-005",
@@ -334,7 +357,8 @@
       "No traffic at all"
     ],
     "answer": 1,
-    "explainer": "Cities concentrate work, schools, hospitals, shops and entertainment — that's the main reason people move to them."
+    "explainer": "Cities concentrate work, schools, hospitals, shops and entertainment — that's the main reason people move to them.",
+    "year_level": 7
   },
   {
     "id": "geo-settlement-006",
@@ -348,7 +372,8 @@
       "No internet"
     ],
     "answer": 1,
-    "explainer": "Lots of people in a small area means crowded roads, polluted air, and pressure on housing — common challenges for big cities."
+    "explainer": "Lots of people in a small area means crowded roads, polluted air, and pressure on housing — common challenges for big cities.",
+    "year_level": 7
   },
   {
     "id": "geo-settlement-007",
@@ -362,7 +387,8 @@
       "The way it is governed"
     ],
     "answer": 1,
-    "explainer": "Site = the physical land itself (flat? near water? defendable?). Situation = where it sits in relation to other places."
+    "explainer": "Site = the physical land itself (flat? near water? defendable?). Situation = where it sits in relation to other places.",
+    "year_level": 7
   },
   {
     "id": "geo-settlement-008",
@@ -376,7 +402,8 @@
       "The age of its oldest building"
     ],
     "answer": 1,
-    "explainer": "Situation describes connections — close to a port? on a major road? near a coalfield? It's about context, not the ground itself."
+    "explainer": "Situation describes connections — close to a port? on a major road? near a coalfield? It's about context, not the ground itself.",
+    "year_level": 7
   },
   {
     "id": "geo-settlement-009",
@@ -390,7 +417,8 @@
       "It was a religious rule"
     ],
     "answer": 1,
-    "explainer": "Water for drinking, fish to eat, easy boat transport, and a natural barrier on one side — riverside sites had clear advantages."
+    "explainer": "Water for drinking, fish to eat, easy boat transport, and a natural barrier on one side — riverside sites had clear advantages.",
+    "year_level": 7
   },
   {
     "id": "geo-settlement-010",
@@ -404,7 +432,8 @@
       "A forest"
     ],
     "answer": 1,
-    "explainer": "Services = things people need that are provided by other people — doctors, schools, shops, libraries. The bigger the town, the more services."
+    "explainer": "Services = things people need that are provided by other people — doctors, schools, shops, libraries. The bigger the town, the more services.",
+    "year_level": 7
   },
   {
     "id": "geo-rivers-001",
@@ -418,7 +447,8 @@
       "All parts equally"
     ],
     "answer": 1,
-    "explainer": "The middle course usually has the most volume of water and a moderate gradient — fastest. Source has little water; mouth has wide, slow water."
+    "explainer": "The middle course usually has the most volume of water and a moderate gradient — fastest. Source has little water; mouth has wide, slow water.",
+    "year_level": 7
   },
   {
     "id": "geo-rivers-002",
@@ -432,7 +462,8 @@
       "Any side stream"
     ],
     "answer": 1,
-    "explainer": "The source is where a river begins — often high ground where rain or melted ice trickles together to form a stream."
+    "explainer": "The source is where a river begins — often high ground where rain or melted ice trickles together to form a stream.",
+    "year_level": 7
   },
   {
     "id": "geo-rivers-003",
@@ -446,7 +477,8 @@
       "Meander"
     ],
     "answer": 2,
-    "explainer": "Confluence = the meeting point. The smaller river feeding in is the tributary. The mouth is where the river enters the sea or a lake."
+    "explainer": "Confluence = the meeting point. The smaller river feeding in is the tributary. The mouth is where the river enters the sea or a lake.",
+    "year_level": 7
   },
   {
     "id": "geo-rivers-004",
@@ -461,7 +493,8 @@
       "Estuary"
     ],
     "answer": 1,
-    "explainer": "Meanders form as the river erodes the outer bank and deposits sediment on the inner bank — making the bend wider over time."
+    "explainer": "Meanders form as the river erodes the outer bank and deposits sediment on the inner bank — making the bend wider over time.",
+    "year_level": 7
   },
   {
     "id": "geo-rivers-005",
@@ -475,7 +508,8 @@
       "The river drying up"
     ],
     "answer": 1,
-    "explainer": "Rivers erode by scraping rocks along (abrasion), dissolving rock chemically, knocking pebbles together (attrition) and the force of the water itself."
+    "explainer": "Rivers erode by scraping rocks along (abrasion), dissolving rock chemically, knocking pebbles together (attrition) and the force of the water itself.",
+    "year_level": 7
   },
   {
     "id": "geo-flooding-001",
@@ -489,7 +523,8 @@
       "It changes direction"
     ],
     "answer": 1,
-    "explainer": "Flooding = the river overflows. Heavy rain, melting snow, or blocked channels can all push water above the banks onto the floodplain."
+    "explainer": "Flooding = the river overflows. Heavy rain, melting snow, or blocked channels can all push water above the banks onto the floodplain.",
+    "year_level": 7
   },
   {
     "id": "geo-flooding-002",
@@ -503,7 +538,8 @@
       "Adding flood walls"
     ],
     "answer": 1,
-    "explainer": "Concrete (impermeable surfaces) stops rain soaking in, so water rushes into rivers fast. Trees, soakaways and natural ground slow it down."
+    "explainer": "Concrete (impermeable surfaces) stops rain soaking in, so water rushes into rivers fast. Trees, soakaways and natural ground slow it down.",
+    "year_level": 7
   },
   {
     "id": "geo-flooding-003",
@@ -517,7 +553,8 @@
       "Letting fields flood deliberately"
     ],
     "answer": 2,
-    "explainer": "Hard engineering = man-made structures (walls, dams, concrete channels). Soft engineering uses natural features (wetlands, woods)."
+    "explainer": "Hard engineering = man-made structures (walls, dams, concrete channels). Soft engineering uses natural features (wetlands, woods).",
+    "year_level": 7
   },
   {
     "id": "geo-flooding-004",
@@ -531,7 +568,8 @@
       "A coastal cliff"
     ],
     "answer": 0,
-    "explainer": "Floodplains are the wide, flat areas next to a river — fertile because each flood drops new silt. Building on them increases flood damage."
+    "explainer": "Floodplains are the wide, flat areas next to a river — fertile because each flood drops new silt. Building on them increases flood damage.",
+    "year_level": 7
   },
   {
     "id": "geo-coasts-001",
@@ -545,7 +583,8 @@
       "Tourism"
     ],
     "answer": 1,
-    "explainer": "Waves crash into the bottom of cliffs, undercutting them. Eventually the rock above collapses — slowly retreating the cliff inland."
+    "explainer": "Waves crash into the bottom of cliffs, undercutting them. Eventually the rock above collapses — slowly retreating the cliff inland.",
+    "year_level": 7
   },
   {
     "id": "geo-coasts-002",
@@ -560,7 +599,8 @@
       "Sand piles up against rocks"
     ],
     "answer": 1,
-    "explainer": "Sequence: crack → cave → arch → stack (when the arch collapses) → stump. A classic UK example is Durdle Door in Dorset."
+    "explainer": "Sequence: crack → cave → arch → stack (when the arch collapses) → stump. A classic UK example is Durdle Door in Dorset.",
+    "year_level": 7
   },
   {
     "id": "geo-coasts-003",
@@ -574,7 +614,8 @@
       "Salt marshes"
     ],
     "answer": 1,
-    "explainer": "Hard = walls, groynes, rock armour. Soft = adding sand, planting marram grass on dunes, restoring marshes."
+    "explainer": "Hard = walls, groynes, rock armour. Soft = adding sand, planting marram grass on dunes, restoring marshes.",
+    "year_level": 7
   },
   {
     "id": "geo-coasts-004",
@@ -588,7 +629,8 @@
       "Against the wind"
     ],
     "answer": 1,
-    "explainer": "Waves wash material onto the beach at an angle, then it slides back down at 90° — over time, sediment moves along the coast."
+    "explainer": "Waves wash material onto the beach at an angle, then it slides back down at 90° — over time, sediment moves along the coast.",
+    "year_level": 7
   },
   {
     "id": "geo-kenya-001",
@@ -602,7 +644,8 @@
       "South America"
     ],
     "answer": 1,
-    "explainer": "Kenya sits in East Africa, on the equator. Its capital is Nairobi; the Indian Ocean forms its south-east coast."
+    "explainer": "Kenya sits in East Africa, on the equator. Its capital is Nairobi; the Indian Ocean forms its south-east coast.",
+    "year_level": 7
   },
   {
     "id": "geo-kenya-002",
@@ -616,7 +659,8 @@
       "Nakuru"
     ],
     "answer": 2,
-    "explainer": "Nairobi — Kenya's largest city and economic hub. Mombasa is the main port; Kisumu sits on Lake Victoria."
+    "explainer": "Nairobi — Kenya's largest city and economic hub. Mombasa is the main port; Kisumu sits on Lake Victoria.",
+    "year_level": 7
   },
   {
     "id": "geo-kenya-003",
@@ -630,7 +674,8 @@
       "Only desert"
     ],
     "answer": 1,
-    "explainer": "Kenya straddles the equator — warm year-round, with two rainy seasons rather than the UK's four temperate seasons."
+    "explainer": "Kenya straddles the equator — warm year-round, with two rainy seasons rather than the UK's four temperate seasons.",
+    "year_level": 7
   },
   {
     "id": "geo-kenya-004",
@@ -644,7 +689,8 @@
       "Banking"
     ],
     "answer": 1,
-    "explainer": "Most rural Kenyans grow food for their family (subsistence farming) or herd cattle, sheep and goats. Cash crops like tea, coffee and flowers are also important exports."
+    "explainer": "Most rural Kenyans grow food for their family (subsistence farming) or herd cattle, sheep and goats. Cash crops like tea, coffee and flowers are also important exports.",
+    "year_level": 7
   },
   {
     "id": "geo-kenya-005",
@@ -658,7 +704,8 @@
       "Tsunami risk in Nairobi"
     ],
     "answer": 1,
-    "explainer": "Long droughts, shrinking forests and population pressure on water are major issues. Climate change is making rainfall less predictable."
+    "explainer": "Long droughts, shrinking forests and population pressure on water are major issues. Climate change is making rainfall less predictable.",
+    "year_level": 7
   },
   {
     "id": "geo-kenya-006",
@@ -672,7 +719,8 @@
       "More wildlife than rural areas"
     ],
     "answer": 1,
-    "explainer": "Cities like Nairobi offer more services and jobs — but also informal settlements (e.g. Kibera) where conditions can be tough. Rural life often means fewer services and more reliance on the land."
+    "explainer": "Cities like Nairobi offer more services and jobs — but also informal settlements (e.g. Kibera) where conditions can be tough. Rural life often means fewer services and more reliance on the land.",
+    "year_level": 7
   },
   {
     "id": "geo-uk-003",
@@ -686,7 +734,8 @@
       "Inverness"
     ],
     "answer": 1,
-    "explainer": "Edinburgh is Scotland's capital. Glasgow is the largest city by population."
+    "explainer": "Edinburgh is Scotland's capital. Glasgow is the largest city by population.",
+    "year_level": 7
   },
   {
     "id": "geo-uk-004",
@@ -700,7 +749,8 @@
       "The Cotswolds"
     ],
     "answer": 1,
-    "explainer": "The Pennines — known as 'the backbone of England' — run from Derbyshire up to the Scottish border."
+    "explainer": "The Pennines — known as 'the backbone of England' — run from Derbyshire up to the Scottish border.",
+    "year_level": 7
   },
   {
     "id": "geo-uk-005",
@@ -714,7 +764,8 @@
       "English Channel"
     ],
     "answer": 1,
-    "explainer": "The North Sea separates the UK from mainland Europe (Norway, Denmark, Netherlands, Germany)."
+    "explainer": "The North Sea separates the UK from mainland Europe (Norway, Denmark, Netherlands, Germany).",
+    "year_level": 7
   },
   {
     "id": "geo-weather-003",
@@ -728,7 +779,8 @@
       "Climate = rain; weather = sun"
     ],
     "answer": 1,
-    "explainer": "Weather is what is happening now or this week. Climate is the long-term pattern, the average over decades."
+    "explainer": "Weather is what is happening now or this week. Climate is the long-term pattern, the average over decades.",
+    "year_level": 7
   },
   {
     "id": "geo-weather-004",
@@ -742,7 +794,8 @@
       "Wind speed only"
     ],
     "answer": 1,
-    "explainer": "Precipitation = any water falling from clouds: rain, snow, sleet, hail, drizzle."
+    "explainer": "Precipitation = any water falling from clouds: rain, snow, sleet, hail, drizzle.",
+    "year_level": 7
   },
   {
     "id": "geo-weather-005",
@@ -756,7 +809,8 @@
       "Britain is south of the equator"
     ],
     "answer": 1,
-    "explainer": "The Gulf Stream is a warm ocean current crossing the Atlantic. It keeps Britain milder than other places at the same latitude."
+    "explainer": "The Gulf Stream is a warm ocean current crossing the Atlantic. It keeps Britain milder than other places at the same latitude.",
+    "year_level": 7
   },
   {
     "id": "geo-continents-004",
@@ -770,7 +824,8 @@
       "Arctic"
     ],
     "answer": 1,
-    "explainer": "The Pacific Ocean is the largest by far — bigger than all the world's land combined."
+    "explainer": "The Pacific Ocean is the largest by far — bigger than all the world's land combined.",
+    "year_level": 7
   },
   {
     "id": "geo-continents-005",
@@ -784,7 +839,8 @@
       "South America"
     ],
     "answer": 2,
-    "explainer": "Australia/Oceania is the smallest continent by land area."
+    "explainer": "Australia/Oceania is the smallest continent by land area.",
+    "year_level": 7
   },
   {
     "id": "geo-flooding-005",
@@ -798,7 +854,8 @@
       "Cleaning out drains regularly"
     ],
     "answer": 2,
-    "explainer": "Building on a floodplain replaces water-absorbing land with hard surfaces, sending water straight into rivers — and puts homes in the flood zone."
+    "explainer": "Building on a floodplain replaces water-absorbing land with hard surfaces, sending water straight into rivers — and puts homes in the flood zone.",
+    "year_level": 7
   },
   {
     "id": "geo-coasts-005",
@@ -812,6 +869,7 @@
       "Wind erodes the coast"
     ],
     "answer": 2,
-    "explainer": "Hydraulic action: waves trap air in cliff cracks; the air compresses, then expands when the wave retreats — splitting rocks apart over time."
+    "explainer": "Hydraulic action: waves trap air in cliff cracks; the air compresses, then expands when the wave retreats — splitting rocks apart over time.",
+    "year_level": 7
   }
 ]

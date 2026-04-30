@@ -12,7 +12,8 @@
     ],
     "answer": 1,
     "explainer": "\"Je m'appelle\" literally means \"I call myself\". Use it to introduce yourself.",
-    "audio": "Je m'appelle Julien"
+    "audio": "Je m'appelle Julien",
+    "year_level": 7
   },
   {
     "id": "fr-age-002",
@@ -27,7 +28,8 @@
     ],
     "answer": 1,
     "explainer": "In French you HAVE your age — \"j'ai\" (\"I have\") not \"je suis\" (\"I am\").",
-    "audio": "J'ai douze ans"
+    "audio": "J'ai douze ans",
+    "year_level": 7
   },
   {
     "id": "fr-age-003",
@@ -42,7 +44,8 @@
     ],
     "answer": 2,
     "explainer": "Douze = 12. Useful sequence: dix, onze, douze, treize, quatorze, quinze.",
-    "audio": "douze"
+    "audio": "douze",
+    "year_level": 7
   },
   {
     "id": "fr-age-004",
@@ -57,7 +60,8 @@
     ],
     "answer": 1,
     "explainer": "Frère = brother. Sister is sœur. Petit frère = little brother.",
-    "audio": "frère"
+    "audio": "frère",
+    "year_level": 7
   },
   {
     "id": "fr-age-005",
@@ -72,7 +76,8 @@
     ],
     "answer": 0,
     "explainer": "Ma sœur = my sister. \"Ma\" is feminine \"my\"; brother would use \"mon\".",
-    "audio": "ma sœur"
+    "audio": "ma sœur",
+    "year_level": 7
   },
   {
     "id": "fr-numbers-001",
@@ -87,7 +92,8 @@
     ],
     "answer": 2,
     "explainer": "Mai = May. Easy to remember — almost the same word.",
-    "audio": "mai"
+    "audio": "mai",
+    "year_level": 7
   },
   {
     "id": "fr-numbers-002",
@@ -102,7 +108,8 @@
     ],
     "answer": 0,
     "explainer": "Septembre. Most months are similar to English: janvier, février, mars, avril, mai…",
-    "audio": "septembre"
+    "audio": "septembre",
+    "year_level": 7
   },
   {
     "id": "fr-numbers-003",
@@ -117,7 +124,8 @@
     ],
     "answer": 0,
     "explainer": "Trente = 30. Don't confuse with treize (13).",
-    "audio": "trente"
+    "audio": "trente",
+    "year_level": 7
   },
   {
     "id": "fr-numbers-004",
@@ -132,7 +140,8 @@
     ],
     "answer": 2,
     "explainer": "Vingt = 20, deux = 2, so vingt-deux = 22.",
-    "audio": "vingt-deux"
+    "audio": "vingt-deux",
+    "year_level": 7
   },
   {
     "id": "fr-numbers-005",
@@ -147,7 +156,8 @@
     ],
     "answer": 1,
     "explainer": "\"Je suis de\" = \"I am from\". Use it for the place you come from.",
-    "audio": "Je suis de Paris"
+    "audio": "Je suis de Paris",
+    "year_level": 7
   },
   {
     "id": "fr-numbers-006",
@@ -162,7 +172,8 @@
     ],
     "answer": 1,
     "explainer": "Soixante (60) + dix (10) = 70. French builds 70 as \"sixty-ten\".",
-    "audio": "soixante-dix"
+    "audio": "soixante-dix",
+    "year_level": 7
   },
   {
     "id": "fr-hair-001",
@@ -177,7 +188,8 @@
     ],
     "answer": 1,
     "explainer": "Cheveux = hair (always plural). Blonds = blonde.",
-    "audio": "J'ai les cheveux blonds"
+    "audio": "J'ai les cheveux blonds",
+    "year_level": 7
   },
   {
     "id": "fr-hair-002",
@@ -192,7 +204,8 @@
     ],
     "answer": 0,
     "explainer": "Yeux = eyes. Verts = green (plural to match les yeux).",
-    "audio": "J'ai les yeux verts"
+    "audio": "J'ai les yeux verts",
+    "year_level": 7
   },
   {
     "id": "fr-hair-003",
@@ -207,7 +220,8 @@
     ],
     "answer": 1,
     "explainer": "Courts = short (cheveux courts). Long is \"longs\".",
-    "audio": "courts"
+    "audio": "courts",
+    "year_level": 7
   },
   {
     "id": "fr-hair-004",
@@ -222,7 +236,8 @@
     ],
     "answer": 1,
     "explainer": "Une barbe = a beard. Une moustache = a moustache.",
-    "audio": "une barbe"
+    "audio": "une barbe",
+    "year_level": 7
   },
   {
     "id": "fr-hair-005",
@@ -237,7 +252,8 @@
     ],
     "answer": 0,
     "explainer": "Porter = to wear. Lunettes = glasses (always plural in French).",
-    "audio": "Je porte des lunettes"
+    "audio": "Je porte des lunettes",
+    "year_level": 7
   },
   {
     "id": "fr-hair-006",
@@ -252,7 +268,8 @@
     ],
     "answer": 1,
     "explainer": "Marron = brown. Strange feature: \"marron\" doesn't change for plural — always \"yeux marron\".",
-    "audio": "J'ai les yeux marron"
+    "audio": "J'ai les yeux marron",
+    "year_level": 7
   },
   {
     "id": "fr-home-001",
@@ -267,7 +284,8 @@
     ],
     "answer": 2,
     "explainer": "Vivre = to live. \"Je vis\" = \"I live\". Grande = big (feminine, to match maison).",
-    "audio": "Je vis dans une grande maison"
+    "audio": "Je vis dans une grande maison",
+    "year_level": 7
   },
   {
     "id": "fr-home-002",
@@ -282,7 +300,8 @@
     ],
     "answer": 1,
     "explainer": "Un appartement = a flat. Une maison = a house.",
-    "audio": "un appartement"
+    "audio": "un appartement",
+    "year_level": 7
   },
   {
     "id": "fr-home-003",
@@ -297,7 +316,8 @@
     ],
     "answer": 2,
     "explainer": "La côte = the coast. Dans le centre = in the centre. Dans la banlieue = on the outskirts.",
-    "audio": "sur la côte"
+    "audio": "sur la côte",
+    "year_level": 7
   },
   {
     "id": "fr-family-001",
@@ -312,7 +332,8 @@
     ],
     "answer": 0,
     "explainer": "Grand-mère = grandmother. Grand-père = grandfather.",
-    "audio": "ma grand-mère"
+    "audio": "ma grand-mère",
+    "year_level": 7
   },
   {
     "id": "fr-family-002",
@@ -327,7 +348,8 @@
     ],
     "answer": 0,
     "explainer": "Je m'entends bien avec… = I get on well with… \"Je m'entends mal avec…\" = I don't get on well with…",
-    "audio": "Je m'entends bien avec mon frère"
+    "audio": "Je m'entends bien avec mon frère",
+    "year_level": 7
   },
   {
     "id": "fr-family-003",
@@ -342,7 +364,8 @@
     ],
     "answer": 1,
     "explainer": "Mon oncle = my uncle. Ma tante = my aunty.",
-    "audio": "mon oncle"
+    "audio": "mon oncle",
+    "year_level": 7
   },
   {
     "id": "fr-adj-001",
@@ -357,7 +380,8 @@
     ],
     "answer": 1,
     "explainer": "Sœur is feminine singular, so the adjective takes -e: \"grande\". For a brother (masculine) it would be \"grand\".",
-    "audio": "Ma sœur est grande"
+    "audio": "Ma sœur est grande",
+    "year_level": 7
   },
   {
     "id": "fr-adj-002",
@@ -372,7 +396,8 @@
     ],
     "answer": 0,
     "explainer": "Père is masculine singular, so the adjective stays in its base form: \"marrant\".",
-    "audio": "Mon père est marrant"
+    "audio": "Mon père est marrant",
+    "year_level": 7
   },
   {
     "id": "fr-adj-003",
@@ -387,7 +412,8 @@
     ],
     "answer": 0,
     "explainer": "Timide = shy. Useful: \"timide\" doesn't change for masculine vs feminine — same form.",
-    "audio": "timide"
+    "audio": "timide",
+    "year_level": 7
   },
   {
     "id": "fr-adj-004",
@@ -402,7 +428,8 @@
     ],
     "answer": 0,
     "explainer": "These are intensifiers. \"Mon frère est très grand\" = \"My brother is very tall\".",
-    "audio": "très, assez, un peu"
+    "audio": "très, assez, un peu",
+    "year_level": 7
   },
   {
     "id": "fr-verbs-001",
@@ -416,7 +443,8 @@
       "faire (to do/make)"
     ],
     "answer": 1,
-    "explainer": "In French you HAVE your age. \"J'ai treize ans\" literally means \"I have thirteen years\"."
+    "explainer": "In French you HAVE your age. \"J'ai treize ans\" literally means \"I have thirteen years\".",
+    "year_level": 7
   },
   {
     "id": "fr-verbs-002",
@@ -431,7 +459,8 @@
     ],
     "answer": 2,
     "explainer": "Elle = she. Il = he. Je = I. Tu = you (informal).",
-    "audio": "Elle est de Biarritz"
+    "audio": "Elle est de Biarritz",
+    "year_level": 7
   },
   {
     "id": "fr-negation-001",
@@ -446,7 +475,8 @@
     ],
     "answer": 1,
     "explainer": "In the negative, \"des\" or \"une\" change to \"de\" before the noun. So \"Je ne porte pas DE lunettes\".",
-    "audio": "Je ne porte pas de lunettes"
+    "audio": "Je ne porte pas de lunettes",
+    "year_level": 7
   },
   {
     "id": "fr-family-004",
@@ -461,7 +491,8 @@
     ],
     "answer": 0,
     "explainer": "Ma mère = my mother. Mon père = my father.",
-    "audio": "ma mère"
+    "audio": "ma mère",
+    "year_level": 7
   },
   {
     "id": "fr-family-005",
@@ -476,7 +507,8 @@
     ],
     "answer": 0,
     "explainer": "\"Il y a\" = there is / there are. So: \"In my family, there are four people.\"",
-    "audio": "Dans ma famille, il y a quatre personnes"
+    "audio": "Dans ma famille, il y a quatre personnes",
+    "year_level": 7
   },
   {
     "id": "fr-family-006",
@@ -491,7 +523,8 @@
     ],
     "answer": 1,
     "explainer": "Mon cousin = my (male) cousin. Female cousin = ma cousine.",
-    "audio": "mon cousin"
+    "audio": "mon cousin",
+    "year_level": 7
   },
   {
     "id": "fr-family-007",
@@ -506,7 +539,8 @@
     ],
     "answer": 1,
     "explainer": "Un chien = a dog. Un chat = a cat. Useful for the pets topic.",
-    "audio": "J'ai un chien"
+    "audio": "J'ai un chien",
+    "year_level": 7
   },
   {
     "id": "fr-home-004",
@@ -521,7 +555,8 @@
     ],
     "answer": 1,
     "explainer": "Habiter = to live (in a place). \"J'habite à…\" + city. \"Je suis de…\" = I'm from…",
-    "audio": "J'habite à Paris"
+    "audio": "J'habite à Paris",
+    "year_level": 7
   },
   {
     "id": "fr-home-005",
@@ -536,7 +571,8 @@
     ],
     "answer": 1,
     "explainer": "La campagne = the countryside. Other useful: la ville (the city), la montagne (the mountain), la côte (the coast).",
-    "audio": "à la campagne"
+    "audio": "à la campagne",
+    "year_level": 7
   },
   {
     "id": "fr-home-006",
@@ -551,7 +587,8 @@
     ],
     "answer": 1,
     "explainer": "Sénégal is one of many French-speaking African countries (also Côte d'Ivoire, Mali, Cameroun).",
-    "audio": "Sénégal"
+    "audio": "Sénégal",
+    "year_level": 7
   },
   {
     "id": "fr-home-007",
@@ -566,7 +603,8 @@
     ],
     "answer": 1,
     "explainer": "Petite = small (feminine, agreeing with maison). Big = grande. New = nouvelle. Old = vieille.",
-    "audio": "Ma maison est petite"
+    "audio": "Ma maison est petite",
+    "year_level": 7
   },
   {
     "id": "fr-personality-001",
@@ -581,7 +619,8 @@
     ],
     "answer": 1,
     "explainer": "Sympa (short for sympathique) = nice or friendly. Same form for masculine and feminine.",
-    "audio": "sympa"
+    "audio": "sympa",
+    "year_level": 7
   },
   {
     "id": "fr-personality-002",
@@ -596,7 +635,8 @@
     ],
     "answer": 1,
     "explainer": "Méchant(e) = mean, nasty, naughty. Opposite of sympa or gentil.",
-    "audio": "méchant"
+    "audio": "méchant",
+    "year_level": 7
   },
   {
     "id": "fr-personality-003",
@@ -611,7 +651,8 @@
     ],
     "answer": 1,
     "explainer": "J'aime = I like. Parce que = because. Marrant = funny. Useful pattern: \"opinion + parce que + reason\".",
-    "audio": "J'aime mon frère parce qu'il est marrant"
+    "audio": "J'aime mon frère parce qu'il est marrant",
+    "year_level": 7
   },
   {
     "id": "fr-personality-004",
@@ -626,7 +667,8 @@
     ],
     "answer": 1,
     "explainer": "Drôle = funny. Same form for masculine and feminine. Marrant(e) is another common word for funny.",
-    "audio": "drôle"
+    "audio": "drôle",
+    "year_level": 7
   },
   {
     "id": "fr-spell-001",
@@ -639,7 +681,8 @@
     "alternates": [
       "jai douze ans"
     ],
-    "explainer": "In French you HAVE your age — \"j'ai\" + number + \"ans\" — not \"je suis\"."
+    "explainer": "In French you HAVE your age — \"j'ai\" + number + \"ans\" — not \"je suis\".",
+    "year_level": 7
   },
   {
     "id": "fr-spell-002",
@@ -652,7 +695,8 @@
     "alternates": [
       "je mappelle Alex"
     ],
-    "explainer": "\"Je m'appelle\" literally means \"I call myself\". Note the apostrophe."
+    "explainer": "\"Je m'appelle\" literally means \"I call myself\". Note the apostrophe.",
+    "year_level": 7
   },
   {
     "id": "fr-spell-003",
@@ -665,7 +709,8 @@
     "alternates": [
       "ma soeur"
     ],
-    "explainer": "Sœur = sister. The \"oe\" ligature is fine; many keyboards type it as two letters."
+    "explainer": "Sœur = sister. The \"oe\" ligature is fine; many keyboards type it as two letters.",
+    "year_level": 7
   },
   {
     "id": "fr-spell-004",
@@ -679,7 +724,8 @@
       "jhabite a Paris",
       "j'habite a Paris"
     ],
-    "explainer": "Habiter = to live (in a place). The \"h\" is silent in French."
+    "explainer": "Habiter = to live (in a place). The \"h\" is silent in French.",
+    "year_level": 7
   },
   {
     "id": "fr-spell-005",
@@ -690,7 +736,8 @@
     "prompt": "Listen, then type what you hear.",
     "answer": "Il y a quatre personnes",
     "alternates": [],
-    "explainer": "\"Il y a\" = there is / there are. Useful for describing your family size."
+    "explainer": "\"Il y a\" = there is / there are. Useful for describing your family size.",
+    "year_level": 7
   },
   {
     "id": "fr-spell-006",
@@ -703,7 +750,8 @@
     "alternates": [
       "jaime les chiens"
     ],
-    "explainer": "J'aime = I like / I love. \"Les chiens\" = dogs (plural)."
+    "explainer": "J'aime = I like / I love. \"Les chiens\" = dogs (plural).",
+    "year_level": 7
   },
   {
     "id": "fr-spell-007",
@@ -716,7 +764,8 @@
     "alternates": [
       "jai les cheveux blonds"
     ],
-    "explainer": "Cheveux = hair (always plural in French). Blonds matches the plural noun."
+    "explainer": "Cheveux = hair (always plural in French). Blonds matches the plural noun.",
+    "year_level": 7
   },
   {
     "id": "fr-spell-008",
@@ -727,7 +776,8 @@
     "prompt": "Listen, then type what you hear.",
     "answer": "Je suis de Londres",
     "alternates": [],
-    "explainer": "\"Je suis de\" = I am from. Londres = London (most cities have French names)."
+    "explainer": "\"Je suis de\" = I am from. Londres = London (most cities have French names).",
+    "year_level": 7
   },
   {
     "id": "fr-speak-001",
@@ -741,7 +791,8 @@
       "jai mappelle Alex",
       "je mappelle Alex"
     ],
-    "explainer": "\"Je m'appelle\" = \"I call myself\". The 'm'' is a contraction of \"me\"."
+    "explainer": "\"Je m'appelle\" = \"I call myself\". The 'm'' is a contraction of \"me\".",
+    "year_level": 7
   },
   {
     "id": "fr-speak-002",
@@ -754,7 +805,8 @@
     "alternates": [
       "jai douze ans"
     ],
-    "explainer": "Watch the linking sound: \"j'ai-douz'-ans\" — the 's' of douze flows into 'ans'."
+    "explainer": "Watch the linking sound: \"j'ai-douz'-ans\" — the 's' of douze flows into 'ans'.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-003",
@@ -768,7 +820,8 @@
       "jhabite a Londres",
       "j'habite a Londres"
     ],
-    "explainer": "The 'h' of habite is silent, so it sounds like \"jabite\". Londres = London."
+    "explainer": "The 'h' of habite is silent, so it sounds like \"jabite\". Londres = London.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-004",
@@ -782,7 +835,8 @@
       "jai un frère",
       "jai un frere"
     ],
-    "explainer": "Frère has a soft 'è' — like the 'e' in 'bed'."
+    "explainer": "Frère has a soft 'è' — like the 'e' in 'bed'.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-005",
@@ -793,7 +847,8 @@
     "prompt": "Say it: \"My birthday is in May\".",
     "answer": "Mon anniversaire est en mai",
     "alternates": [],
-    "explainer": "Anniversaire links smoothly: \"mon-naniversaire\". Mai = May."
+    "explainer": "Anniversaire links smoothly: \"mon-naniversaire\". Mai = May.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-006",
@@ -806,7 +861,8 @@
     "alternates": [
       "je suis fatigue"
     ],
-    "explainer": "The 'é' at the end is sharp — like the 'ay' in \"day\" but shorter."
+    "explainer": "The 'é' at the end is sharp — like the 'ay' in \"day\" but shorter.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-007",
@@ -819,7 +875,8 @@
     "alternates": [
       "jaime les chiens"
     ],
-    "explainer": "\"Chiens\" rhymes with the English \"yen\" — soft, nasal."
+    "explainer": "\"Chiens\" rhymes with the English \"yen\" — soft, nasal.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-008",
@@ -832,7 +889,8 @@
     "alternates": [
       "jai les yeux bleus"
     ],
-    "explainer": "Yeux = eyes. Bleus is plural to match yeux. Final 's' is silent."
+    "explainer": "Yeux = eyes. Bleus is plural to match yeux. Final 's' is silent.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-009",
@@ -846,7 +904,8 @@
       "je mappelle Léo",
       "je mappelle Leo"
     ],
-    "explainer": "Final consonants of \"Léo\" sound; the 's' on \"appelles\" is silent."
+    "explainer": "Final consonants of \"Léo\" sound; the 's' on \"appelles\" is silent.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-010",
@@ -859,7 +918,8 @@
     "alternates": [
       "comment tu tappelles"
     ],
-    "explainer": "Said quickly: \"komawn-tu-tapell\". The \"t'\" is a contraction of \"te\"."
+    "explainer": "Said quickly: \"komawn-tu-tapell\". The \"t'\" is a contraction of \"te\".",
+    "year_level": 7
   },
   {
     "id": "fr-speak-011",
@@ -872,7 +932,8 @@
     "alternates": [
       "enchante"
     ],
-    "explainer": "\"an-shan-tay\". Girls say \"enchantée\" — same sound, different spelling."
+    "explainer": "\"an-shan-tay\". Girls say \"enchantée\" — same sound, different spelling.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-012",
@@ -883,7 +944,8 @@
     "prompt": "Say it: \"My birthday is on the 15th of June\".",
     "answer": "Mon anniversaire est le quinze juin",
     "alternates": [],
-    "explainer": "\"quinze\" rhymes with \"sanz\" — not \"kweenz\". Anniversaire links smoothly: \"mon-naniversaire\"."
+    "explainer": "\"quinze\" rhymes with \"sanz\" — not \"kweenz\". Anniversaire links smoothly: \"mon-naniversaire\".",
+    "year_level": 7
   },
   {
     "id": "fr-speak-013",
@@ -897,7 +959,8 @@
       "quel age as-tu",
       "quel age astu"
     ],
-    "explainer": "\"kel-ahzh-a-too\". The \"-tu\" links to \"as\" so it sounds like one word."
+    "explainer": "\"kel-ahzh-a-too\". The \"-tu\" links to \"as\" so it sounds like one word.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-014",
@@ -908,7 +971,8 @@
     "prompt": "Say it: \"It is November\" (literally 'we are in November').",
     "answer": "Nous sommes en novembre",
     "alternates": [],
-    "explainer": "Two nasal vowels: \"en\" and \"-vembre\". Final 'e' of novembre is barely sounded."
+    "explainer": "Two nasal vowels: \"en\" and \"-vembre\". Final 'e' of novembre is barely sounded.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-015",
@@ -921,7 +985,8 @@
     "alternates": [
       "jai les cheveux courts"
     ],
-    "explainer": "Cheveux is always plural. The 's' of \"courts\" stays silent."
+    "explainer": "Cheveux is always plural. The 's' of \"courts\" stays silent.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-016",
@@ -934,7 +999,8 @@
     "alternates": [
       "jai les yeux verts"
     ],
-    "explainer": "\"yeux\" rhymes with the French \"feux\". Final 's' on verts is silent."
+    "explainer": "\"yeux\" rhymes with the French \"feux\". Final 's' on verts is silent.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-017",
@@ -945,7 +1011,8 @@
     "prompt": "Say it: \"I wear glasses\".",
     "answer": "Je porte des lunettes",
     "alternates": [],
-    "explainer": "Porter = to wear (also for clothes). Lunettes is always plural in French."
+    "explainer": "Porter = to wear (also for clothes). Lunettes is always plural in French.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-018",
@@ -958,7 +1025,8 @@
     "alternates": [
       "jhabite dans une maison"
     ],
-    "explainer": "Silent 'h' on habite — sounds like \"j'abite\". Maison links smoothly with \"une\"."
+    "explainer": "Silent 'h' on habite — sounds like \"j'abite\". Maison links smoothly with \"une\".",
+    "year_level": 7
   },
   {
     "id": "fr-speak-019",
@@ -969,7 +1037,8 @@
     "prompt": "Say it: \"I'm English\" (boy speaking).",
     "answer": "Je suis anglais",
     "alternates": [],
-    "explainer": "Final 's' silent. \"ang-lay\" with a nasal vowel. Girl: \"anglaise\"."
+    "explainer": "Final 's' silent. \"ang-lay\" with a nasal vowel. Girl: \"anglaise\".",
+    "year_level": 7
   },
   {
     "id": "fr-speak-020",
@@ -982,7 +1051,8 @@
     "alternates": [
       "jhabite dans le centre"
     ],
-    "explainer": "\"san-tre\" — the 'c' is soft before 'e'."
+    "explainer": "\"san-tre\" — the 'c' is soft before 'e'.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-021",
@@ -993,7 +1063,8 @@
     "prompt": "Say it: \"In my family there are four people\".",
     "answer": "Dans ma famille il y a quatre personnes",
     "alternates": [],
-    "explainer": "\"il y a\" runs together: \"ee-lee-ya\". Quatre rhymes with \"katra\" — final 'e' barely there."
+    "explainer": "\"il y a\" runs together: \"ee-lee-ya\". Quatre rhymes with \"katra\" — final 'e' barely there.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-022",
@@ -1008,7 +1079,8 @@
       "je mentends bien avec ma soeur",
       "je m'entends bien avec ma soeur"
     ],
-    "explainer": "\"je m'entends\" sounds like \"juh-mon-ton\". Sœur is one syllable: \"sur\"."
+    "explainer": "\"je m'entends\" sounds like \"juh-mon-ton\". Sœur is one syllable: \"sur\".",
+    "year_level": 7
   },
   {
     "id": "fr-speak-023",
@@ -1021,7 +1093,8 @@
     "alternates": [
       "jai un chat"
     ],
-    "explainer": "Final 't' on chat is silent: \"sha\". Un is nasal — like \"uh~\"."
+    "explainer": "Final 't' on chat is silent: \"sha\". Un is nasal — like \"uh~\".",
+    "year_level": 7
   },
   {
     "id": "fr-speak-024",
@@ -1032,7 +1105,8 @@
     "prompt": "Say it: \"My brother is nice\".",
     "answer": "Mon frère est sympa",
     "alternates": [],
-    "explainer": "\"sym-pa\" — short for sympathique. Same form for boys and girls."
+    "explainer": "\"sym-pa\" — short for sympathique. Same form for boys and girls.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-025",
@@ -1045,7 +1119,8 @@
     "alternates": [
       "ma soeur est marrante"
     ],
-    "explainer": "Feminine of marrant — the final 'te' is sounded. Boy: \"marrant\" (silent ending)."
+    "explainer": "Feminine of marrant — the final 'te' is sounded. Boy: \"marrant\" (silent ending).",
+    "year_level": 7
   },
   {
     "id": "fr-speak-026",
@@ -1056,7 +1131,8 @@
     "prompt": "Say it: \"My father is strict\".",
     "answer": "Mon père est strict",
     "alternates": [],
-    "explainer": "Both consonants of \"strict\" sound: \"streekt\". Père has a soft 'è'."
+    "explainer": "Both consonants of \"strict\" sound: \"streekt\". Père has a soft 'è'.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-027",
@@ -1067,7 +1143,8 @@
     "prompt": "Say it: \"He is very tall\".",
     "answer": "Il est très grand",
     "alternates": [],
-    "explainer": "Final 'd' on grand is silent. Très is sharp: \"treh\"."
+    "explainer": "Final 'd' on grand is silent. Très is sharp: \"treh\".",
+    "year_level": 7
   },
   {
     "id": "fr-speak-028",
@@ -1078,7 +1155,8 @@
     "prompt": "Say it: \"She is small\".",
     "answer": "Elle est petite",
     "alternates": [],
-    "explainer": "Feminine: \"petite\" — final 'te' sounds. Boy form: \"petit\" — silent ending."
+    "explainer": "Feminine: \"petite\" — final 'te' sounds. Boy form: \"petit\" — silent ending.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-029",
@@ -1089,7 +1167,8 @@
     "prompt": "Say it: \"I am smart\" (boy speaking).",
     "answer": "Je suis intelligent",
     "alternates": [],
-    "explainer": "Final 't' silent: \"in-tel-i-zhon\". Girl form: intelligente — final 'te' sounds."
+    "explainer": "Final 't' silent: \"in-tel-i-zhon\". Girl form: intelligente — final 'te' sounds.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-030",
@@ -1104,7 +1183,8 @@
       "j'ai un frère et une soeur",
       "jai un frere et une soeur"
     ],
-    "explainer": "\"et\" = and — pronounced \"ay\". Final 'e' of frère barely there."
+    "explainer": "\"et\" = and — pronounced \"ay\". Final 'e' of frère barely there.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-031",
@@ -1115,7 +1195,8 @@
     "prompt": "Say it: \"I am from Leicester\".",
     "answer": "Je suis de Leicester",
     "alternates": [],
-    "explainer": "Use \"je suis de\" + city to say where you're from. \"Leicester\" stays in English form."
+    "explainer": "Use \"je suis de\" + city to say where you're from. \"Leicester\" stays in English form.",
+    "year_level": 7
   },
   {
     "id": "fr-speak-032",
@@ -1126,7 +1207,8 @@
     "prompt": "Say it: \"He is from Lille\".",
     "answer": "Il est de Lille",
     "alternates": [],
-    "explainer": "Lille = a city in northern France. Double 'l' makes a soft glide; pronounce \"leel\"."
+    "explainer": "Lille = a city in northern France. Double 'l' makes a soft glide; pronounce \"leel\".",
+    "year_level": 7
   },
   {
     "id": "fr-negation-002",
@@ -1140,7 +1222,8 @@
       "Je suis un frère"
     ],
     "answer": 2,
-    "explainer": "Negation in French: ne … pas. After 'pas' in the negative, 'un/une/des' usually become 'de'. So 'pas un frère' becomes 'pas de frère'."
+    "explainer": "Negation in French: ne … pas. After 'pas' in the negative, 'un/une/des' usually become 'de'. So 'pas un frère' becomes 'pas de frère'.",
+    "year_level": 7
   },
   {
     "id": "fr-negation-003",
@@ -1154,7 +1237,8 @@
       "Je suis poisson"
     ],
     "answer": 1,
-    "explainer": "Ne … jamais = never. 'Jamais' replaces 'pas' to mean 'never' instead of just 'not'."
+    "explainer": "Ne … jamais = never. 'Jamais' replaces 'pas' to mean 'never' instead of just 'not'.",
+    "year_level": 7
   },
   {
     "id": "fr-negation-004",
@@ -1168,7 +1252,8 @@
       "Elle pas heureuse"
     ],
     "answer": 2,
-    "explainer": "Wrap the verb in ne … pas: elle EST heureuse becomes elle N'EST PAS heureuse. 'Ne' becomes 'n'' before a vowel."
+    "explainer": "Wrap the verb in ne … pas: elle EST heureuse becomes elle N'EST PAS heureuse. 'Ne' becomes 'n'' before a vowel.",
+    "year_level": 7
   },
   {
     "id": "fr-negation-005",
@@ -1182,7 +1267,8 @@
       "Often"
     ],
     "answer": 1,
-    "explainer": "Rien = nothing. Used with 'ne': 'Je ne mange rien' = 'I am eating nothing.'"
+    "explainer": "Rien = nothing. Used with 'ne': 'Je ne mange rien' = 'I am eating nothing.'",
+    "year_level": 7
   },
   {
     "id": "fr-verbs-006",
@@ -1196,6 +1282,7 @@
       "I go"
     ],
     "answer": 2,
-    "explainer": "J'aime = I like / I love. 'Aimer' is one of the first verbs you learn — often paired with school subjects, hobbies, food."
+    "explainer": "J'aime = I like / I love. 'Aimer' is one of the first verbs you learn — often paired with school subjects, hobbies, food.",
+    "year_level": 7
   }
 ]

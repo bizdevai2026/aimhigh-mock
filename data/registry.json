@@ -1,0 +1,712 @@
+{
+  "version": 1,
+  "generatedAt": "2026-04-30",
+  "year_levels": [
+    7
+  ],
+  "subjects": [
+    {
+      "id": "science",
+      "name": "Science",
+      "tone": "#84cc16"
+    },
+    {
+      "id": "maths",
+      "name": "Maths",
+      "tone": "#22d3ee"
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "tone": "#f97316"
+    },
+    {
+      "id": "french",
+      "name": "French",
+      "tone": "#fbbf24"
+    },
+    {
+      "id": "history",
+      "name": "History",
+      "tone": "#c2750a"
+    },
+    {
+      "id": "geography",
+      "name": "Geography",
+      "tone": "#22d3ee"
+    },
+    {
+      "id": "computing",
+      "name": "Computer Science",
+      "tone": "#84cc16"
+    }
+  ],
+  "topics": [
+    {
+      "id": "acids-alkalis",
+      "subject": "science",
+      "name": "Acids Alkalis",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "cells",
+      "subject": "science",
+      "name": "Cells — the building blocks",
+      "subtitle": "What every living thing is made of",
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "chemical-reactions",
+      "subject": "science",
+      "name": "Chemical Reactions",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "distance-time",
+      "subject": "science",
+      "name": "Distance Time",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "energy",
+      "subject": "science",
+      "name": "Energy",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "forces-motion",
+      "subject": "science",
+      "name": "Forces Motion",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "mixtures",
+      "subject": "science",
+      "name": "Mixtures",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "particles-states",
+      "subject": "science",
+      "name": "Particles & states of matter",
+      "subtitle": "Why solids, liquids and gases behave differently",
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "reproduction",
+      "subject": "science",
+      "name": "Reproduction",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "skeleton-and-movement",
+      "subject": "science",
+      "name": "Skeleton And Movement",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "sound-waves",
+      "subject": "science",
+      "name": "Sound Waves",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "universe",
+      "subject": "science",
+      "name": "The Universe — Sun, Earth, Moon",
+      "subtitle": "How our corner of space works",
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "variation",
+      "subject": "science",
+      "name": "Variation",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "algebra",
+      "subject": "maths",
+      "name": "Algebra",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "area",
+      "subject": "maths",
+      "name": "Area",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "decimals",
+      "subject": "maths",
+      "name": "Decimals",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "fractions",
+      "subject": "maths",
+      "name": "Fractions",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "function-machines",
+      "subject": "maths",
+      "name": "Function Machines",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "geometry",
+      "subject": "maths",
+      "name": "Geometry",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "negatives",
+      "subject": "maths",
+      "name": "Negatives",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "number",
+      "subject": "maths",
+      "name": "Number",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "percentages",
+      "subject": "maths",
+      "name": "Percentages",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "powers",
+      "subject": "maths",
+      "name": "Square & cube numbers",
+      "subtitle": "Multiplying a number by itself",
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "probability",
+      "subject": "maths",
+      "name": "Probability",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "ratio",
+      "subject": "maths",
+      "name": "Ratio",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "sequences",
+      "subject": "maths",
+      "name": "Sequences",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "shape",
+      "subject": "maths",
+      "name": "Triangles, polygons & shape names",
+      "subtitle": "Naming shapes by their sides and angles",
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "statistics",
+      "subject": "maths",
+      "name": "Statistics",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "comprehension",
+      "subject": "english",
+      "name": "Comprehension",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "dickens",
+      "subject": "english",
+      "name": "Dickens",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "figurative-language",
+      "subject": "english",
+      "name": "Similes, metaphors & co.",
+      "subtitle": "How writers paint with words",
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "myths-and-legends",
+      "subject": "english",
+      "name": "Myths And Legends",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "punctuation",
+      "subject": "english",
+      "name": "Punctuation",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "sentence-types",
+      "subject": "english",
+      "name": "Sentence Types",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "spelling",
+      "subject": "english",
+      "name": "Spelling",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "tenses",
+      "subject": "english",
+      "name": "Tenses",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "vocabulary",
+      "subject": "english",
+      "name": "Vocabulary",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "word-classes",
+      "subject": "english",
+      "name": "Word classes — the parts of speech",
+      "subtitle": "What each word in a sentence is doing",
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "writing-skills",
+      "subject": "english",
+      "name": "Writing Skills",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "adjectives",
+      "subject": "french",
+      "name": "Adjectives",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "age-and-names",
+      "subject": "french",
+      "name": "Saying your name & age",
+      "subtitle": "Year 7 French — the very first phrases",
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "birthday-and-months",
+      "subject": "french",
+      "name": "Birthday And Months",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "family",
+      "subject": "french",
+      "name": "Family",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "hair-and-eyes",
+      "subject": "french",
+      "name": "Hair And Eyes",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "home-and-where-from",
+      "subject": "french",
+      "name": "Home And Where From",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "negation",
+      "subject": "french",
+      "name": "Negation",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "personality",
+      "subject": "french",
+      "name": "Personality",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "speaking",
+      "subject": "french",
+      "name": "Speaking",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "spelling",
+      "subject": "french",
+      "name": "Spelling",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "verbs",
+      "subject": "french",
+      "name": "Verbs",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "black-death",
+      "subject": "history",
+      "name": "Black Death",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "cromwell",
+      "subject": "history",
+      "name": "Cromwell",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "english-civil-war",
+      "subject": "history",
+      "name": "English Civil War",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "gunpowder-plot",
+      "subject": "history",
+      "name": "Gunpowder Plot",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "medieval-england",
+      "subject": "history",
+      "name": "Medieval England",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "norman-conquest",
+      "subject": "history",
+      "name": "The Norman Conquest",
+      "subtitle": "1066 — the year everything changed",
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "tudors",
+      "subject": "history",
+      "name": "Tudors",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "coasts",
+      "subject": "geography",
+      "name": "Coasts",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "continents-and-oceans",
+      "subject": "geography",
+      "name": "Continents And Oceans",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "flooding",
+      "subject": "geography",
+      "name": "Flooding",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "kenya",
+      "subject": "geography",
+      "name": "Kenya",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "map-skills",
+      "subject": "geography",
+      "name": "Reading a map — symbols, scale, contours",
+      "subtitle": "Turning a flat map into a 3D understanding",
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "rivers",
+      "subject": "geography",
+      "name": "Rivers",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "settlement",
+      "subject": "geography",
+      "name": "Settlement",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "uk-geography",
+      "subject": "geography",
+      "name": "Uk Geography",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "weather-and-climate",
+      "subject": "geography",
+      "name": "Weather And Climate",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "algorithms",
+      "subject": "computing",
+      "name": "Algorithms",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "computational-thinking",
+      "subject": "computing",
+      "name": "Computational thinking",
+      "subtitle": "How programmers break problems apart",
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "e-safety",
+      "subject": "computing",
+      "name": "E-safety basics",
+      "subtitle": "Staying safe online — the things that actually matter",
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "hardware-software",
+      "subject": "computing",
+      "name": "Hardware Software",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "it-system",
+      "subject": "computing",
+      "name": "It System",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "networks",
+      "subject": "computing",
+      "name": "Networks",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "scratch-programming",
+      "subject": "computing",
+      "name": "Scratch Programming",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    },
+    {
+      "id": "small-basic",
+      "subject": "computing",
+      "name": "Small Basic",
+      "subtitle": null,
+      "year_levels_available": [
+        7
+      ]
+    }
+  ]
+}

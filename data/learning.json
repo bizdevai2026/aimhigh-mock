@@ -52,7 +52,8 @@
       "Easy memory: animal cells = NCM (Nucleus, Cytoplasm, Membrane). Plant cells add WCV (Wall, Chloroplasts, Vacuole).",
       "Plants are green because chloroplasts contain chlorophyll, which reflects green light.",
       "Mitochondria are sometimes called the cell's 'power plants' — they release energy from glucose."
-    ]
+    ],
+    "year_level": 7
   },
   {
     "subject": "science",
@@ -103,7 +104,8 @@
       "Water is an unusual exception: ice (solid) is LESS dense than water (liquid). That's why ice floats.",
       "Gases are mostly empty space — that's why they squish so easily under pressure.",
       "When you smell something, gas particles from that thing have travelled through the air to your nose."
-    ]
+    ],
+    "year_level": 7
   },
   {
     "subject": "science",
@@ -163,7 +165,8 @@
       "Mnemonic for planet order: \"My Very Educated Mother Just Served Us Noodles\".",
       "Pluto isn't on the list — it was reclassified as a 'dwarf planet' in 2006.",
       "Seasons are about TILT, not distance. Earth is actually closest to the Sun in January."
-    ]
+    ],
+    "year_level": 7
   },
   {
     "subject": "maths",
@@ -227,7 +230,8 @@
       "A 'regular' polygon means all sides equal AND all angles equal. A regular triangle = equilateral. A regular quadrilateral = a square.",
       "Quick check: angles in a triangle ALWAYS = 180°. Angles in a quadrilateral always = 360°.",
       "Sum of interior angles in any polygon = (n − 2) × 180°, where n = number of sides."
-    ]
+    ],
+    "year_level": 7
   },
   {
     "subject": "maths",
@@ -282,7 +286,8 @@
       "Memorise the squares from 1² to 12² — they come up in tons of questions.",
       "First few cube numbers: 1, 8, 27, 64, 125, 216, 343, 512, 729, 1000.",
       "If you square a negative number, you get a POSITIVE answer (negative × negative = positive)."
-    ]
+    ],
+    "year_level": 7
   },
   {
     "subject": "english",
@@ -348,7 +353,8 @@
       "Adverbs often end in -ly — but not always (well, fast, often, very).",
       "If you can swap a word with another known one of the same class without breaking the sentence, you've identified it.",
       "Pronouns are noun replacements. Spot them by asking: who or what could this be referring to?"
-    ]
+    ],
+    "year_level": 7
   },
   {
     "subject": "english",
@@ -405,7 +411,8 @@
       "Simile = LIKE / AS. Metaphor = IS / WAS. That's the cleanest split.",
       "Personification almost always uses a verb a human would do (whispered, danced, laughed).",
       "When you spot any of these, ask: 'What effect does it have? What picture does it put in my head?' That's the analysis bit examiners want."
-    ]
+    ],
+    "year_level": 7
   },
   {
     "subject": "history",
@@ -456,7 +463,8 @@
       "Date to know cold: 14 October 1066, Battle of Hastings.",
       "Don't confuse Harold (English, 1066) with Harald (Viking, also 1066). Both lost. William won.",
       "The Bayeux Tapestry is a 70-metre embroidery telling the Norman version of events. It's the closest thing to a contemporary news report from 1066."
-    ]
+    ],
+    "year_level": 7
   },
   {
     "subject": "geography",
@@ -511,7 +519,8 @@
       "Bearings are measured CLOCKWISE from north, in degrees, written as 3 digits. So east = 090°, south = 180°, west = 270°.",
       "Closely spaced contours on a route mean a hard climb — useful when planning a walk.",
       "Standard 8-point compass: N, NE, E, SE, S, SW, W, NW. Each is 45° apart."
-    ]
+    ],
+    "year_level": 7
   },
   {
     "subject": "computing",
@@ -565,7 +574,8 @@
       "Set social profiles to PRIVATE by default — only people you've accepted can see your posts.",
       "If you're being bullied online: save evidence (screenshots), don't reply, tell a trusted adult, and use the platform's REPORT button. Replying often makes it worse.",
       "If something online makes you uncomfortable, you don't have to figure out why — just close it and tell someone. Trust the feeling."
-    ]
+    ],
+    "year_level": 7
   },
   {
     "subject": "computing",
@@ -614,7 +624,8 @@
       "Order to remember: DPAA — Decompose, Patterns, Abstract, Algorithm.",
       "An algorithm is the recipe. Code is the recipe written in a language a computer understands.",
       "Whenever you find yourself doing the same thing twice in code, that's a sign you can spot a pattern and simplify."
-    ]
+    ],
+    "year_level": 7
   },
   {
     "subject": "french",
@@ -672,6 +683,7 @@
       "Use the LISTEN button on French questions to hear native pronunciation. Use SLOW for tricky bits.",
       "\"Je suis\" = I AM. \"J'ai\" = I HAVE. Don't mix them up — age uses j'ai, not je suis.",
       "Treize (13) and trente (30) sound similar but not the same. Treize ends with a soft 'z' sound; trente ends like 'tont'."
-    ]
+    ],
+    "year_level": 7
   }
 ]
