@@ -16,7 +16,7 @@
 // change, bump CACHE_NAME below to match. The activate handler will
 // delete every cache that doesn't equal the current name.
 
-const CACHE_NAME = "aimhigh-mock-v20260503";
+const CACHE_NAME = "aimhigh-mock-v20260504";
 
 const SHELL = [
   "./",
@@ -27,20 +27,20 @@ const SHELL = [
   "./paper.html",
   "./dashboard.html",
   "./learn.html",
-  "./mock.css?v=20260503",
-  "./mock.js?v=20260503",
-  "./welcome.js?v=20260503",
-  "./warmup.js?v=20260503",
-  "./sprint.js?v=20260503",
-  "./paper.js?v=20260503",
-  "./dashboard.js?v=20260503",
-  "./learn.js?v=20260503",
-  "./profile.js",
-  "./engagement.js",
-  "./questions.js",
-  "./sounds.js",
-  "./visuals.js",
-  "./timetable.js",
+  "./mock.css?v=20260504",
+  "./mock.js?v=20260504",
+  "./welcome.js?v=20260504",
+  "./warmup.js?v=20260504",
+  "./sprint.js?v=20260504",
+  "./paper.js?v=20260504",
+  "./dashboard.js?v=20260504",
+  "./learn.js?v=20260504",
+  "./profile.js?v=20260504",
+  "./engagement.js?v=20260504",
+  "./questions.js?v=20260504",
+  "./sounds.js?v=20260504",
+  "./visuals.js?v=20260504",
+  "./timetable.js?v=20260504",
   "./assets/logo.svg",
   "./assets/logo-maskable.svg",
   "./assets/favicon.svg",

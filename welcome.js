@@ -21,9 +21,9 @@ import {
   clearLegacyProfile,
   migratedChildName,
   startDemoSession
-} from "./profile.js?v=20260503";
+} from "./profile.js?v=20260504";
 
-import { playWelcomeStinger } from "./sounds.js?v=20260503";
+import { playWelcomeStinger } from "./sounds.js?v=20260504";
 
 const root = document.getElementById("welcomeRoot");
 
@@ -361,6 +361,6 @@ init();
 // to install the SW. Other pages register via mock.js.
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {
-    navigator.serviceWorker.register("./sw.js").catch(function () {});
+    navigator.serviceWorker.register("./sw.js", { updateViaCache: "none" }).catch(function () {});
   });
 }
