@@ -12,7 +12,7 @@
 //   accuracy 70–84%                     → Extending
 //   accuracy ≥ 85% AND attempts ≥ 5     → Accomplished
 
-import { readResults } from "./results.js?v=20260523";
+import { readResults } from "./results.js?v=20260524";
 
 const TIER_DEFAULT = { tier: "Developing", colour: "developing", attempts: 0, correct: 0, accuracy: 0 };
 

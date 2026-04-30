@@ -6,13 +6,14 @@
 //
 // Two states: idle (intro + START button) and running (timer + session).
 
-import "./mock.js?v=20260523"; // shared header behaviour (sound toggle)
-import { loadAllQuestions, listSubjects, subjectName } from "./questions.js?v=20260523";
-import { noteSessionResult, readStreak } from "./engagement.js?v=20260523";
-import { playLevelUp, playModeStartMock, makeListenButton, hapticStreak } from "./sounds.js?v=20260523";
-import { getVisual } from "./visuals.js?v=20260523";
-import { isParentRole } from "./profile.js?v=20260523";
-import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260523";
+import "./mock.js?v=20260524"; // shared header behaviour (sound toggle)
+import { loadAllQuestions, listSubjects, subjectName } from "./questions.js?v=20260524";
+import { noteSessionResult, readStreak } from "./engagement.js?v=20260524";
+import { playLevelUp, playModeStartMock, makeListenButton, hapticStreak } from "./sounds.js?v=20260524";
+import { getVisual } from "./visuals.js?v=20260524";
+import { isParentRole } from "./profile.js?v=20260524";
+import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260524";
+import { escapeHtml } from "./shared/dom.js?v=20260524";
 
 if (isParentRole()) { location.replace("dashboard.html"); }
 
@@ -452,11 +453,4 @@ function renderVisual(q) {
   return "<div class=\"mock-session-visual\">" + svg + "</div>";
 }
 
-function escapeHtml(s) {
-  return String(s == null ? "" : s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
+// escapeHtml now imported from shared/dom.js

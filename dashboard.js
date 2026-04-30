@@ -7,7 +7,7 @@
 //
 // All read-only — never mutates state from here.
 
-import "./mock.js?v=20260523"; // shared header behaviour (sound toggle)
+import "./mock.js?v=20260524"; // shared header behaviour (sound toggle)
 import {
   readResults,
   weakTopics,
@@ -17,17 +17,19 @@ import {
   subjectLadder,
   isPaused,
   setPaused
-} from "./engagement.js?v=20260523";
+} from "./engagement.js?v=20260524";
 
-import { subjectName, listSubjects } from "./questions.js?v=20260523";
-import { playCoachEnter } from "./sounds.js?v=20260523";
-import { isParentRole } from "./profile.js?v=20260523";
+import { subjectName, listSubjects } from "./questions.js?v=20260524";
+import { playCoachEnter } from "./sounds.js?v=20260524";
+import { isParentRole } from "./profile.js?v=20260524";
 import {
   remove as storageRemove,
   writeString as storageWriteString,
   keys as storageKeys,
   snapshot as storageSnapshot
-} from "./platform/storage.js?v=20260523";
+} from "./platform/storage.js?v=20260524";
+import { escapeHtml } from "./shared/dom.js?v=20260524";
+import { prettyTopic } from "./shared/subjects.js?v=20260524";
 
 // Wrap paint() in try/finally so a single broken painter doesn't strand
 // the page. The error catcher will surface the throw; finally guarantees
@@ -527,10 +529,10 @@ function paintHistory() {
 
 // --- helpers ----------------------------------------------------------------
 
-function prettyTopic(t) {
-  if (!t) return "(no topic)";
-  return String(t).replace(/-/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-}
+// prettyTopic + escapeHtml now imported from shared/* — the dashboard's
+// previous prettyTopic returned "(no topic)" for empty input vs the
+// shared one's "". The difference only manifests on malformed data,
+// which the schema validator now flags upstream.
 
 function formatDayLabel(iso) {
   const today = todayIso();
@@ -541,11 +543,3 @@ function formatDayLabel(iso) {
   return d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
 }
 
-function escapeHtml(s) {
-  return String(s == null ? "" : s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}

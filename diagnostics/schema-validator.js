@@ -19,7 +19,7 @@
 // whether the situation warrants a user-visible banner (see
 // shouldShowBanner below).
 
-import * as logger from "../platform/logger.js?v=20260523";
+import * as logger from "../platform/logger.js?v=20260524";
 
 const VALID_SUBJECTS = ["science", "maths", "english", "french", "history", "geography", "computing"];
 const VALID_QTYPES   = ["mc", "mcq", "spell", "speak"];

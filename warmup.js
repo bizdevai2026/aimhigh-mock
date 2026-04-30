@@ -5,13 +5,15 @@
 // with tap-to-answer + instant feedback, and finalises the session
 // via engagement.noteSessionResult so streak/XP/tier update correctly.
 
-import "./mock.js?v=20260523"; // shared header behaviour (sound toggle, streak chip)
-import { loadAllQuestions, pickWarmupQuestions, subjectName } from "./questions.js?v=20260523";
-import { noteSessionResult, readStreak, readXpToday } from "./engagement.js?v=20260523";
-import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playTap, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticCorrect, hapticWrong, hapticStreak, hapticPerfect } from "./sounds.js?v=20260523";
-import { getVisual } from "./visuals.js?v=20260523";
-import { isParentRole } from "./profile.js?v=20260523";
-import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260523";
+import "./mock.js?v=20260524"; // shared header behaviour (sound toggle, streak chip)
+import { loadAllQuestions, pickWarmupQuestions, subjectName } from "./questions.js?v=20260524";
+import { noteSessionResult, readStreak, readXpToday } from "./engagement.js?v=20260524";
+import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playTap, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticCorrect, hapticWrong, hapticStreak, hapticPerfect } from "./sounds.js?v=20260524";
+import { getVisual } from "./visuals.js?v=20260524";
+import { isParentRole } from "./profile.js?v=20260524";
+import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260524";
+import { escapeHtml } from "./shared/dom.js?v=20260524";
+import { subjectColor } from "./shared/subjects.js?v=20260524";
 
 if (isParentRole()) { location.replace("dashboard.html"); }
 
@@ -610,25 +612,6 @@ function renderVisual(q) {
   return "<div class=\"mock-session-visual\">" + svg + "</div>";
 }
 
-function subjectColor(subject) {
-  // Loose subject-to-colour mapping reusing the tile palette in mock.css.
-  switch (subject) {
-    case "science":   return "#84cc16"; // lime
-    case "maths":     return "#22d3ee"; // cyan
-    case "english":   return "#f97316"; // coral
-    case "french":    return "#fbbf24"; // fire
-    case "history":   return "#c2750a"; // bronze
-    case "geography": return "#22d3ee"; // cyan
-    case "computing": return "#84cc16"; // lime
-    default:          return "#84cc16";
-  }
-}
-
-function escapeHtml(s) {
-  return String(s == null ? "" : s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
+// escapeHtml + subjectColor are now imported from shared/dom + shared/subjects
+// at the top of this file — local copies removed in the runner-consolidation
+// migration.

@@ -9,7 +9,7 @@
 // All three runner shapes share rendering, just differ in question pool
 // and round size.
 
-import "./mock.js?v=20260523"; // shared header (sound toggle, profile chip)
+import "./mock.js?v=20260524"; // shared header (sound toggle, profile chip)
 import {
   loadAllQuestions,
   pickSubjectQuestions,
@@ -18,17 +18,19 @@ import {
   subjectName,
   topicsForSubject,
   topicCounts
-} from "./questions.js?v=20260523";
+} from "./questions.js?v=20260524";
 import {
   noteSessionResult,
   readStreak,
   topicLadder,
   subjectLadder
-} from "./engagement.js?v=20260523";
-import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playModeStartSprint, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticCorrect, hapticWrong, hapticStreak, hapticPerfect } from "./sounds.js?v=20260523";
-import { getVisual } from "./visuals.js?v=20260523";
-import { isParentRole } from "./profile.js?v=20260523";
-import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260523";
+} from "./engagement.js?v=20260524";
+import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playModeStartSprint, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticCorrect, hapticWrong, hapticStreak, hapticPerfect } from "./sounds.js?v=20260524";
+import { getVisual } from "./visuals.js?v=20260524";
+import { isParentRole } from "./profile.js?v=20260524";
+import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260524";
+import { escapeHtml, match } from "./shared/dom.js?v=20260524";
+import { subjectTone, prettyTopic } from "./shared/subjects.js?v=20260524";
 
 const SPRINT_SIZE = 15;
 const DRILL_SIZE = 5;
@@ -183,7 +185,7 @@ function readParams() {
   const run = match(q, /[?&]run=([01])/i) === "1";
   return { s: s, t: t, run: run };
 }
-function match(s, re) { const m = s.match(re); return m ? m[1] : null; }
+// match() now imported from shared/dom.js
 
 // ---------- Picker (7 subject tiles) ---------------------------------------
 
@@ -753,29 +755,5 @@ function renderVisual(q) {
   return "<div class=\"mock-session-visual\">" + svg + "</div>";
 }
 
-function prettyTopic(t) {
-  if (!t) return "";
-  return String(t).replace(/-/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-}
-
-function subjectTone(subject) {
-  switch (subject) {
-    case "science":   return "#84cc16";
-    case "maths":     return "#22d3ee";
-    case "english":   return "#f97316";
-    case "french":    return "#fbbf24";
-    case "history":   return "#c2750a";
-    case "geography": return "#22d3ee";
-    case "computing": return "#84cc16";
-    default:          return "#84cc16";
-  }
-}
-
-function escapeHtml(s) {
-  return String(s == null ? "" : s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
+// escapeHtml + prettyTopic + subjectTone now imported from shared/* —
+// local copies removed in the runner-consolidation migration.

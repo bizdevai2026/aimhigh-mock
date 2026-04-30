@@ -17,18 +17,19 @@ import {
   todayIso,
   weakTopics,
   isPaused
-} from "./engagement.js?v=20260523";
+} from "./engagement.js?v=20260524";
 
-import { readSoundOn, toggleSound } from "./sounds.js?v=20260523";
-import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260523";
-import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260523";
-import { readString as storageReadString, writeString as storageWriteString } from "./platform/storage.js?v=20260523";
-import * as logger from "./platform/logger.js?v=20260523";
+import { readSoundOn, toggleSound } from "./sounds.js?v=20260524";
+import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260524";
+import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260524";
+import { readString as storageReadString, writeString as storageWriteString } from "./platform/storage.js?v=20260524";
+import * as logger from "./platform/logger.js?v=20260524";
+import { escapeHtml } from "./shared/dom.js?v=20260524";
 
 // Dev / parent diagnostics panel. ?diag=1 in the URL loads it; otherwise
 // the import is never resolved (zero cost on normal page loads).
 if (/[?&]diag=1\b/.test(location.search)) {
-  import("./diagnostics/panel.js?v=20260523").catch(function (e) {
+  import("./diagnostics/panel.js?v=20260524").catch(function (e) {
     logger.error("diag", "panel failed to load", e);
   });
 }
@@ -292,14 +293,7 @@ function paintTodayStrip() {
     "<div class=\"mock-today-chips\">" + chipsHtml + "</div>";
 }
 
-function escapeHtml(s) {
-  return String(s == null ? "" : s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
+// escapeHtml now imported from shared/dom.js
 
 function injectProfileChip() {
   const inner = document.querySelector(".mock-header-inner");

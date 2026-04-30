@@ -39,11 +39,13 @@ if (typeof window !== "undefined") {
   });
 }
 
-import "./mock.js?v=20260523"; // shared header behaviour
-import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260523";
-import { topicLadder, weakTopics } from "./engagement.js?v=20260523";
-import { getVisual } from "./visuals.js?v=20260523";
-import { validateLearning, reportProblems } from "./diagnostics/schema-validator.js?v=20260523";
+import "./mock.js?v=20260524"; // shared header behaviour
+import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260524";
+import { topicLadder, weakTopics } from "./engagement.js?v=20260524";
+import { getVisual } from "./visuals.js?v=20260524";
+import { validateLearning, reportProblems } from "./diagnostics/schema-validator.js?v=20260524";
+import { escapeHtml, match } from "./shared/dom.js?v=20260524";
+import { subjectTone, prettyTopic } from "./shared/subjects.js?v=20260524";
 
 let learning = null; // array of learning entries from data/learning.json
 let pool = null;     // question pool from data/<subject>.json — used to enumerate topics
@@ -342,28 +344,11 @@ function readParams() {
   const t = match(q, /[?&]t=([a-z0-9\-]+)/i);
   return { s: s, t: t };
 }
-function match(s, re) { const m = s.match(re); return m ? m[1] : null; }
+// match(), subjectTone(), prettyTopic(), escapeHtml() now imported from
+// shared/dom + shared/subjects (see top of file).
 
 function ladderPill(ladder) {
   return "<span class=\"mock-ladder ladder-" + ladder.colour + "\">" + escapeHtml(ladder.tier) + "</span>";
-}
-
-function subjectTone(subject) {
-  switch (subject) {
-    case "science":   return "#84cc16";
-    case "maths":     return "#22d3ee";
-    case "english":   return "#f97316";
-    case "french":    return "#fbbf24";
-    case "history":   return "#c2750a";
-    case "geography": return "#22d3ee";
-    case "computing": return "#84cc16";
-    default:          return "#84cc16";
-  }
-}
-
-function prettyTopic(t) {
-  if (!t) return "";
-  return String(t).replace(/-/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); });
 }
 
 // Body text may include double-newlines (paragraph breaks) — render those
@@ -375,13 +360,4 @@ function paragraphHtml(s) {
     .map(function (p) { return escapeHtml(p.trim()); })
     .filter(Boolean)
     .join("</p><p class=\"mock-learn-body\">");
-}
-
-function escapeHtml(s) {
-  return String(s == null ? "" : s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
 }

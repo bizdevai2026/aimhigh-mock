@@ -21,14 +21,15 @@ import {
   clearLegacyProfile,
   migratedChildName,
   startDemoSession
-} from "./profile.js?v=20260523";
+} from "./profile.js?v=20260524";
 
-import { playWelcomeStinger } from "./sounds.js?v=20260523";
-import * as logger from "./platform/logger.js?v=20260523";
+import { playWelcomeStinger } from "./sounds.js?v=20260524";
+import * as logger from "./platform/logger.js?v=20260524";
+import { escapeHtml, escapeAttr, byId } from "./shared/dom.js?v=20260524";
 
 // Dev diagnostics panel — only when ?diag=1 in the URL.
 if (/[?&]diag=1\b/.test(location.search)) {
-  import("./diagnostics/panel.js?v=20260523").catch(function (e) {
+  import("./diagnostics/panel.js?v=20260524").catch(function (e) {
     logger.error("diag", "panel failed to load", e);
   });
 }
@@ -382,18 +383,7 @@ function sanitisePin(raw) {
   return v;
 }
 
-function byId(id) { return document.getElementById(id); }
-
-function escapeHtml(s) {
-  return String(s == null ? "" : s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
-
-function escapeAttr(s) { return escapeHtml(s); }
+// byId, escapeHtml, escapeAttr now imported from shared/dom.js
 
 init();
 
