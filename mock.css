@@ -228,6 +228,42 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
    keeps the auto margin and the sound toggle sits to its right. */
 .mock-header-streak + .mock-sound-toggle { margin-left: 0.4rem; }
 
+/* Welcome step indicator — a thin row of dots above each setup form
+   so the kid (and grown-up) can see how many screens are left. */
+.mock-welcome-step {
+  margin: 0 0 0.6rem;
+  font-size: 0.75rem;
+  color: var(--mock-text-dim);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.mock-welcome-step-dots {
+  display: inline-flex;
+  gap: 0.3rem;
+  margin-right: 0.55rem;
+  vertical-align: middle;
+}
+.mock-welcome-step-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--mock-border);
+  transition: background-color 120ms ease;
+}
+.mock-welcome-step-dot.mock-welcome-step-active {
+  background: var(--mock-lime);
+  box-shadow: 0 0 0 3px var(--mock-lime-soft);
+}
+.mock-welcome-step-dot.mock-welcome-step-done {
+  background: var(--mock-fire);
+}
+.mock-welcome-step-sub {
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--mock-muted);
+}
+
 /* Theme toggle — mirrors sound toggle so the right edge of the header
    stays a consistent two-button cluster. Sun/moon glyph indicates
    what a tap will switch TO. */

@@ -21,14 +21,14 @@ import {
   clearLegacyProfile,
   migratedChildName,
   startDemoSession
-} from "./profile.js?v=20260518";
+} from "./profile.js?v=20260519";
 
-import { playWelcomeStinger } from "./sounds.js?v=20260518";
-import * as logger from "./platform/logger.js?v=20260518";
+import { playWelcomeStinger } from "./sounds.js?v=20260519";
+import * as logger from "./platform/logger.js?v=20260519";
 
 // Dev diagnostics panel — only when ?diag=1 in the URL.
 if (/[?&]diag=1\b/.test(location.search)) {
-  import("./diagnostics/panel.js?v=20260518").catch(function (e) {
+  import("./diagnostics/panel.js?v=20260519").catch(function (e) {
     logger.error("diag", "panel failed to load", e);
   });
 }
@@ -122,14 +122,29 @@ function paintIntro() {
 
 // --- Setup: parent first ---------------------------------------------------
 
+// Setup is three logical steps. Parent-PIN-confirm is presented as a
+// "(confirm)" sub-step of step 1 rather than its own number, so the
+// stepper doesn't drift to "4 of 4" before the kid is on screen.
+function stepperHtml(currentStep, totalSteps, sublabel) {
+  let dots = "";
+  for (let i = 1; i <= totalSteps; i++) {
+    const active = i === currentStep ? " mock-welcome-step-active" : "";
+    const done = i < currentStep ? " mock-welcome-step-done" : "";
+    dots += "<span class=\"mock-welcome-step-dot" + active + done + "\"></span>";
+  }
+  const sublabelHtml = sublabel ? " <span class=\"mock-welcome-step-sub\">&middot; " + sublabel + "</span>" : "";
+  return "<p class=\"mock-welcome-step\"><span class=\"mock-welcome-step-dots\">" + dots + "</span> Step " + currentStep + " of " + totalSteps + sublabelHtml + "</p>";
+}
+
 function paintSetupParentPin() {
   root.innerHTML =
-    "<p class=\"mock-welcome-tagline\">First-time setup &mdash; this device.</p>" +
+    stepperHtml(1, 3) +
+    "<p class=\"mock-welcome-tagline\">A grown-up sets up first.</p>" +
     "<form id=\"f\" class=\"mock-welcome-form\" novalidate>" +
       "<label class=\"mock-welcome-label\" for=\"pin\">Parent &mdash; choose a 4-digit PIN</label>" +
       "<input id=\"pin\" class=\"mock-welcome-pin\" inputmode=\"numeric\" autocomplete=\"new-password\" maxlength=\"4\" pattern=\"[0-9]{4}\" placeholder=\"&bull; &bull; &bull; &bull;\" required autofocus />" +
       "<button type=\"submit\" class=\"mock-button mock-welcome-submit\">Continue</button>" +
-      "<p class=\"mock-welcome-fineprint\">Stored on this device only, as a secure hash. You'll need it to recover the child PIN later.</p>" +
+      "<p class=\"mock-welcome-fineprint\">Stored on this device only, as a secure hash. You'll need it to recover your child's PIN later.</p>" +
     "</form>";
   wireForm(function (data) {
     const pin = sanitisePin(data.pin);
@@ -141,7 +156,8 @@ function paintSetupParentPin() {
 
 function paintSetupParentPinConfirm() {
   root.innerHTML =
-    "<p class=\"mock-welcome-tagline\">Type the parent PIN once more to confirm.</p>" +
+    stepperHtml(1, 3, "confirm") +
+    "<p class=\"mock-welcome-tagline\">Type the parent PIN once more.</p>" +
     "<form id=\"f\" class=\"mock-welcome-form\" novalidate>" +
       "<label class=\"mock-welcome-label\" for=\"pin\">Confirm parent PIN</label>" +
       "<input id=\"pin\" class=\"mock-welcome-pin\" inputmode=\"numeric\" autocomplete=\"new-password\" maxlength=\"4\" pattern=\"[0-9]{4}\" placeholder=\"&bull; &bull; &bull; &bull;\" required autofocus />" +
@@ -165,6 +181,7 @@ function paintSetupParentPinConfirm() {
 function paintSetupChildName() {
   const prefill = state.childName || "";
   root.innerHTML =
+    stepperHtml(2, 3) +
     "<p class=\"mock-welcome-tagline\">Your turn. What's your first name?</p>" +
     "<form id=\"f\" class=\"mock-welcome-form\" novalidate>" +
       "<label class=\"mock-welcome-label\" for=\"name\">First name</label>" +
@@ -182,11 +199,12 @@ function paintSetupChildName() {
 function paintSetupChildPin() {
   const name = state.childName;
   root.innerHTML =
+    stepperHtml(3, 3) +
     "<p class=\"mock-welcome-tagline\">Pick a 4-digit PIN, " + escapeHtml(name) + ".</p>" +
     "<form id=\"f\" class=\"mock-welcome-form\" novalidate>" +
       "<label class=\"mock-welcome-label\" for=\"pin\">Your PIN</label>" +
       "<input id=\"pin\" class=\"mock-welcome-pin\" inputmode=\"numeric\" autocomplete=\"new-password\" maxlength=\"4\" pattern=\"[0-9]{4}\" placeholder=\"&bull; &bull; &bull; &bull;\" required autofocus />" +
-      "<button type=\"submit\" class=\"mock-button mock-welcome-submit\">Start training</button>" +
+      "<button type=\"submit\" class=\"mock-button mock-welcome-submit\">Let's go</button>" +
       "<p class=\"mock-welcome-fineprint\">If you forget, your parent can reset it.</p>" +
     "</form>";
   wireForm(async function (data) {

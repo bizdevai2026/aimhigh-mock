@@ -17,18 +17,18 @@ import {
   todayIso,
   weakTopics,
   isPaused
-} from "./engagement.js?v=20260518";
+} from "./engagement.js?v=20260519";
 
-import { readSoundOn, toggleSound } from "./sounds.js?v=20260518";
-import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260518";
-import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260518";
-import { readString as storageReadString, writeString as storageWriteString } from "./platform/storage.js?v=20260518";
-import * as logger from "./platform/logger.js?v=20260518";
+import { readSoundOn, toggleSound } from "./sounds.js?v=20260519";
+import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260519";
+import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260519";
+import { readString as storageReadString, writeString as storageWriteString } from "./platform/storage.js?v=20260519";
+import * as logger from "./platform/logger.js?v=20260519";
 
 // Dev / parent diagnostics panel. ?diag=1 in the URL loads it; otherwise
 // the import is never resolved (zero cost on normal page loads).
 if (/[?&]diag=1\b/.test(location.search)) {
-  import("./diagnostics/panel.js?v=20260518").catch(function (e) {
+  import("./diagnostics/panel.js?v=20260519").catch(function (e) {
     logger.error("diag", "panel failed to load", e);
   });
 }
@@ -230,11 +230,26 @@ function paintProfileLine() {
   const name = profileName();
   const greetEl = document.getElementById("heroGreeting");
   if (greetEl && name) {
-    greetEl.textContent = "Hi, " + name + ".";
+    // First-time greeting points the kid straight at the WARM-UP tile —
+    // the home page is otherwise a metrics-heavy scoreboard of zeros
+    // before any session has run, which the UX review flagged as
+    // demoralising. Returning users get the simple "Hi, name."
+    const streak = readStreak();
+    const week = readWeek();
+    const firstTime =
+      (streak.current || 0) === 0 &&
+      streak.lastDateIso == null &&
+      (week.daysHit || 0) === 0;
+    if (firstTime) {
+      greetEl.innerHTML = "Welcome, <strong>" + escapeHtml(name) +
+        "</strong>. A quick 5-minute warm-up kicks off your streak — when you're ready.";
+    } else {
+      greetEl.textContent = "Hi, " + name + ".";
+    }
   }
   const dashEl = document.getElementById("dashGreeting");
   if (dashEl && name) {
-    dashEl.textContent = name + "'s training";
+    dashEl.textContent = name + "'s progress";
   }
 }
 
