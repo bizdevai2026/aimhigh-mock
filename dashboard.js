@@ -7,7 +7,7 @@
 //
 // All read-only — never mutates state from here.
 
-import "./mock.js?v=20260519"; // shared header behaviour (sound toggle)
+import "./mock.js?v=20260520"; // shared header behaviour (sound toggle)
 import {
   readResults,
   weakTopics,
@@ -17,17 +17,17 @@ import {
   subjectLadder,
   isPaused,
   setPaused
-} from "./engagement.js?v=20260519";
+} from "./engagement.js?v=20260520";
 
-import { subjectName, listSubjects } from "./questions.js?v=20260519";
-import { playCoachEnter } from "./sounds.js?v=20260519";
-import { isParentRole } from "./profile.js?v=20260519";
+import { subjectName, listSubjects } from "./questions.js?v=20260520";
+import { playCoachEnter } from "./sounds.js?v=20260520";
+import { isParentRole } from "./profile.js?v=20260520";
 import {
   remove as storageRemove,
   writeString as storageWriteString,
   keys as storageKeys,
   snapshot as storageSnapshot
-} from "./platform/storage.js?v=20260519";
+} from "./platform/storage.js?v=20260520";
 
 // Wrap paint() in try/finally so a single broken painter doesn't strand
 // the page. The error catcher will surface the throw; finally guarantees

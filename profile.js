@@ -29,7 +29,7 @@ import {
   readJson as storageReadJson,
   writeJson as storageWriteJson,
   remove as storageRemove
-} from "./platform/storage.js?v=20260519";
+} from "./platform/storage.js?v=20260520";
 
 const PREFIX = "aimhigh-mock-";
 const KEY_CHILD       = PREFIX + "profile-child";
