@@ -101,7 +101,7 @@
       "sept"
     ],
     "answer": 0,
-    "explainer": "Septembre. Most months are similar to English: janvier, février, mars, avril, mai...",
+    "explainer": "Septembre. Most months are similar to English: janvier, février, mars, avril, mai…",
     "audio": "septembre"
   },
   {
@@ -326,7 +326,7 @@
       "J'ai bien mon frère"
     ],
     "answer": 0,
-    "explainer": "Je m'entends bien avec... = I get on well with... \"Je m'entends mal avec...\" = I don't get on well with...",
+    "explainer": "Je m'entends bien avec… = I get on well with… \"Je m'entends mal avec…\" = I don't get on well with…",
     "audio": "Je m'entends bien avec mon frère"
   },
   {
@@ -520,7 +520,7 @@
       "I visit Paris"
     ],
     "answer": 1,
-    "explainer": "Habiter = to live (in a place). \"J'habite à...\" + city. \"Je suis de...\" = I'm from...",
+    "explainer": "Habiter = to live (in a place). \"J'habite à…\" + city. \"Je suis de…\" = I'm from…",
     "audio": "J'habite à Paris"
   },
   {
@@ -1140,7 +1140,7 @@
       "Je suis un frère"
     ],
     "answer": 2,
-    "explainer": "Negation in French: ne ... pas. After 'pas' in the negative, 'un/une/des' usually become 'de'. So 'pas un frère' becomes 'pas de frère'."
+    "explainer": "Negation in French: ne … pas. After 'pas' in the negative, 'un/une/des' usually become 'de'. So 'pas un frère' becomes 'pas de frère'."
   },
   {
     "id": "fr-negation-003",
@@ -1154,7 +1154,7 @@
       "Je suis poisson"
     ],
     "answer": 1,
-    "explainer": "Ne ... jamais = never. 'Jamais' replaces 'pas' to mean 'never' instead of just 'not'."
+    "explainer": "Ne … jamais = never. 'Jamais' replaces 'pas' to mean 'never' instead of just 'not'."
   },
   {
     "id": "fr-negation-004",
@@ -1168,7 +1168,7 @@
       "Elle pas heureuse"
     ],
     "answer": 2,
-    "explainer": "Wrap the verb in ne ... pas: elle EST heureuse becomes elle N'EST PAS heureuse. 'Ne' becomes 'n'' before a vowel."
+    "explainer": "Wrap the verb in ne … pas: elle EST heureuse becomes elle N'EST PAS heureuse. 'Ne' becomes 'n'' before a vowel."
   },
   {
     "id": "fr-negation-005",

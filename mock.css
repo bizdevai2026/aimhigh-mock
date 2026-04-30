@@ -21,7 +21,7 @@
   /* Text */
   --mock-text: #c4c4d1;
   --mock-text-strong: #fafafa;
-  --mock-text-dim: #c4c4d1;
+  --mock-text-dim: #9ca3af;        /* genuinely dimmer than --mock-text */
   --mock-muted: #7a7a8c;
 
   /* Accents — primary slot now scarlet, secondary slot now mint */

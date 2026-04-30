@@ -601,7 +601,7 @@
       "Disappears when something stops",
       "Is created by friction",
       "Cannot be created or destroyed, only transferred",
-      "Only comes from the sun"
+      "Only comes from the Sun"
     ],
     "answer": 2,
     "explainer": "Energy never vanishes — it just moves between stores. A bouncing ball loses height because energy transfers to heat and sound, not because it disappears."

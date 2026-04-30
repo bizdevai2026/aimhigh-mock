@@ -325,7 +325,7 @@
     "id": "comp-scratch-002",
     "subject": "computing",
     "topic": "scratch-programming",
-    "prompt": "An \"IF... THEN...\" block in Scratch is an example of:",
+    "prompt": "An \"IF… THEN…\" block in Scratch is an example of:",
     "options": [
       "A sequence",
       "A loop (repetition)",
@@ -510,7 +510,7 @@
     "prompt": "Which Small Basic statement repeats a block 5 times?",
     "options": [
       "Loop 5 times",
-      "For i = 1 To 5 ... EndFor",
+      "For i = 1 To 5 … EndFor",
       "Repeat(5)",
       "While 5"
     ],

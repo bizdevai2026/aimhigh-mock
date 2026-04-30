@@ -21,9 +21,9 @@ import {
   clearLegacyProfile,
   migratedChildName,
   startDemoSession
-} from "./profile.js?v=20260512";
+} from "./profile.js?v=20260513";
 
-import { playWelcomeStinger } from "./sounds.js?v=20260512";
+import { playWelcomeStinger } from "./sounds.js?v=20260513";
 
 const root = document.getElementById("welcomeRoot");
 
@@ -93,16 +93,16 @@ function paint() {
 
 function paintIntro() {
   root.innerHTML =
-    "<p class=\"mock-welcome-tagline\">Daily revision training built for the May setting tests &mdash; and the long game beyond.</p>" +
+    "<p class=\"mock-welcome-tagline\">Short daily practice for your May tests &mdash; and the skills that stick after.</p>" +
     "<ul class=\"mock-intro-list\">" +
-      "<li><strong>What it is</strong>" +
-        "<span>Short daily sessions: warm-ups, subject sprints, timed full mocks. Streaks &amp; XP keep momentum.</span></li>" +
+      "<li><strong>How it works</strong>" +
+        "<span>5-minute warm-ups, subject deep-dives, full timed mocks. A streak grows the more days you show up.</span></li>" +
       "<li><strong>Learn before you test</strong>" +
-        "<span>Topic explainers in plain English with examples, visuals and tips &mdash; so it's not just quizzing.</span></li>" +
-      "<li><strong>Coach view for you</strong>" +
-        "<span>Sign in as Parent any time to see streaks, weak topics and weekly progress.</span></li>" +
+        "<span>Plain-English topic explainers with examples, diagrams and tips &mdash; so it's not just quizzing.</span></li>" +
+      "<li><strong>Parent view</strong>" +
+        "<span>A grown-up can sign in any time to see progress and weak topics &mdash; without changing the score.</span></li>" +
     "</ul>" +
-    "<p class=\"mock-welcome-fineprint\">Setup takes 30 seconds: pick a parent PIN, add the trainee's name, they pick their own PIN.</p>" +
+    "<p class=\"mock-welcome-fineprint\">Setup takes 30 seconds. A grown-up picks a PIN, you pick your name and your own PIN.</p>" +
     "<button type=\"button\" id=\"introStartBtn\" class=\"mock-button mock-welcome-submit\">Let's set it up</button>" +
     "<button type=\"button\" id=\"introDemoBtn\" class=\"mock-welcome-link mock-welcome-link-muted\">Just looking? Try a demo &mdash; no setup</button>";
   byId("introStartBtn").addEventListener("click", function () { go("setup-parent-pin"); });
@@ -157,7 +157,7 @@ function paintSetupParentPinConfirm() {
 function paintSetupChildName() {
   const prefill = state.childName || "";
   root.innerHTML =
-    "<p class=\"mock-welcome-tagline\">Now tell us about the trainee.</p>" +
+    "<p class=\"mock-welcome-tagline\">Your turn. What's your first name?</p>" +
     "<form id=\"f\" class=\"mock-welcome-form\" novalidate>" +
       "<label class=\"mock-welcome-label\" for=\"name\">First name</label>" +
       "<input id=\"name\" class=\"mock-welcome-input\" type=\"text\" maxlength=\"30\" autocomplete=\"given-name\" placeholder=\"e.g. Alex\" required autofocus value=\"" + escapeAttr(prefill) + "\" />" +
@@ -203,16 +203,16 @@ function paintSetupChildPin() {
 
 function paintRolePick() {
   const c = readChildProfile();
-  const childName = (c && c.name) ? c.name : "Child";
+  const childName = (c && c.name) ? c.name : "Me";
   root.innerHTML =
     "<p class=\"mock-welcome-tagline\">Who's signing in?</p>" +
     "<div class=\"mock-role-grid\">" +
       "<button type=\"button\" class=\"mock-role-btn role-child\" id=\"roleChild\">" +
-        "<span class=\"mock-role-label\">Trainee</span>" +
+        "<span class=\"mock-role-label\">Me</span>" +
         "<span class=\"mock-role-name\">" + escapeHtml(childName) + "</span>" +
       "</button>" +
       "<button type=\"button\" class=\"mock-role-btn role-parent\" id=\"roleParent\">" +
-        "<span class=\"mock-role-label\">Coach view</span>" +
+        "<span class=\"mock-role-label\">Parent view</span>" +
         "<span class=\"mock-role-name\">Parent</span>" +
       "</button>" +
     "</div>" +
@@ -233,9 +233,9 @@ function enterDemo() {
 
 function paintLogin(role) {
   const c = readChildProfile();
-  const childName = (c && c.name) ? c.name : "Trainee";
+  const childName = (c && c.name) ? c.name : "You";
   const heading = role === "child" ? escapeHtml(childName) : "Parent";
-  const subline = role === "child" ? "Enter your PIN to train." : "Enter the parent PIN to view the Coach.";
+  const subline = role === "child" ? "Enter your PIN." : "Enter the parent PIN to view progress.";
   root.innerHTML =
     "<p class=\"mock-welcome-tagline\">" + escapeHtml(subline) + "</p>" +
     "<form id=\"f\" class=\"mock-welcome-form\" novalidate>" +
@@ -292,7 +292,7 @@ function paintForgotParentAuth() {
 
 function paintForgotChildNewPin() {
   const c = readChildProfile();
-  const childName = (c && c.name) ? c.name : "Trainee";
+  const childName = (c && c.name) ? c.name : "You";
   root.innerHTML =
     "<p class=\"mock-welcome-tagline\">Authorised. Choose a new PIN for " + escapeHtml(childName) + ".</p>" +
     "<form id=\"f\" class=\"mock-welcome-form\" novalidate>" +

@@ -7,7 +7,7 @@
 //
 // All read-only — never mutates state from here.
 
-import "./mock.js?v=20260512"; // shared header behaviour (sound toggle)
+import "./mock.js?v=20260513"; // shared header behaviour (sound toggle)
 import {
   readResults,
   weakTopics,
@@ -17,11 +17,11 @@ import {
   subjectLadder,
   isPaused,
   setPaused
-} from "./engagement.js?v=20260512";
+} from "./engagement.js?v=20260513";
 
-import { subjectName, listSubjects } from "./questions.js?v=20260512";
-import { playCoachEnter } from "./sounds.js?v=20260512";
-import { isParentRole } from "./profile.js?v=20260512";
+import { subjectName, listSubjects } from "./questions.js?v=20260513";
+import { playCoachEnter } from "./sounds.js?v=20260513";
+import { isParentRole } from "./profile.js?v=20260513";
 
 // Wrap paint() in try/finally so a single broken painter doesn't strand
 // the page. The error catcher will surface the throw; finally guarantees
@@ -169,7 +169,7 @@ function paintDataTools() {
   block.className = "mock-coach-block";
   block.innerHTML =
     "<h2>Parent controls</h2>" +
-    "<p class=\"mock-coach-empty\" style=\"margin-bottom: 0.6rem\">Back up, restore, pause for holiday, or reset training data. The trainee's name and PIN are always preserved unless you remove them via import.</p>" +
+    "<p class=\"mock-coach-empty\" style=\"margin-bottom: 0.6rem\">Back up, restore, pause for holiday, or reset training data. Your child's name and PIN are always preserved unless you remove them via import.</p>" +
     "<div class=\"mock-data-actions\">" +
       "<button type=\"button\" class=\"mock-button\" id=\"dataExportBtn\">Export progress</button>" +
       "<label class=\"mock-button mock-button-ghost\" for=\"dataImportInput\">Import progress</label>" +
@@ -199,13 +199,13 @@ function togglePause() {
   const ok = paused
     ? confirm(
         "Resume training?\n\n" +
-        "The streak will pick up from where it was. Your trainee's next " +
+        "The streak will pick up from where it was. Your child's next " +
         "session that hits the daily goal will continue the streak."
       )
     : confirm(
         "Pause training?\n\n" +
         "Used for holidays — the streak is preserved while paused. Your " +
-        "trainee can still play during the pause but nothing counts " +
+        "child can still play during the pause but nothing counts " +
         "(no XP, no streak progress, no weak-topic logging).\n\n" +
         "Resume from this same panel when they're back."
       );
@@ -221,7 +221,7 @@ function resetTrainingData() {
   const ok = confirm(
     "Reset training data?\n\n" +
     "Wipes streak, XP, weekly tier, results log, weak topics, and the " +
-    "anti-repeat seen log. Trainee's name + PIN are preserved.\n\n" +
+    "anti-repeat seen log. Your child's name and PIN are preserved.\n\n" +
     "This cannot be undone unless you exported first."
   );
   if (!ok) return;
@@ -255,7 +255,7 @@ function showDataMsg(text, kind) {
 
 function exportProgress() {
   const bundle = collectBundle();
-  const filename = "aimhigh-progress-" + todayIso() + ".json";
+  const filename = "gradeblaze-progress-" + todayIso() + ".json";
   const blob = new Blob([JSON.stringify(bundle, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -291,13 +291,13 @@ function importProgress(file) {
     try { data = JSON.parse(e.target.result); }
     catch (err) { showDataMsg("Couldn't read that file — not valid JSON.", "err"); return; }
     if (!data || !data.keys || typeof data.keys !== "object") {
-      showDataMsg("This doesn't look like an AimHigh export.", "err");
+      showDataMsg("This doesn't look like a GradeBlaze export.", "err");
       return;
     }
     const keyCount = Object.keys(data.keys).length;
     const ok = confirm(
       "Replace current progress with the imported data?\n\n" +
-      keyCount + " keys will be restored. The current trainee profile and history on this device will be overwritten.\n\n" +
+      keyCount + " keys will be restored. The current profile and history on this device will be overwritten.\n\n" +
       "This cannot be undone unless you exported first."
     );
     if (!ok) { showDataMsg("Import cancelled.", "err"); return; }
@@ -323,7 +323,9 @@ function importProgress(file) {
 function paintRoleBadge() {
   const greet = document.getElementById("dashGreeting");
   if (!greet) return;
-  const role = isParentRole() ? "PARENT VIEW" : "TRAINEE VIEW";
+  // The kid sees their own name as the role badge; parent sees "PARENT VIEW".
+  // Keeps the parent registrar tone out of the kid-facing surface.
+  const role = isParentRole() ? "PARENT VIEW" : "MY VIEW";
   // Insert badge before the existing greeting line; preserve any name text.
   if (!document.getElementById("dashRoleBadge")) {
     const badge = document.createElement("span");
@@ -402,11 +404,26 @@ function paintToday() {
   block.innerHTML =
     "<h2>Today's session</h2>" +
     "<p class=\"mock-coach-empty\" style=\"color: var(--mock-text-dim)\">" +
-      latest.mode.toUpperCase() + " &mdash; " + correct + " / " + total +
+      modeDisplayName(latest.mode) + " &mdash; " + correct + " / " + total +
       " (" + pct + "%)" +
       (minutes != null ? " &middot; " + minutes + " min" : "") +
     "</p>" +
     (subjectsHtml ? "<ul class=\"mock-coach-list\">" + subjectsHtml + "</ul>" : "");
+}
+
+// Map internal mode keys to the display names a parent recognises.
+// "distance" is the legacy internal name for the timed full mock — must
+// never surface as "DISTANCE" in the Coach UI.
+function modeDisplayName(mode) {
+  switch (String(mode || "").toLowerCase()) {
+    case "warmup":   return "WARM-UP";
+    case "sprint":   return "SPRINT";
+    case "drill":    return "TOPIC DRILL";
+    case "distance": return "FULL MOCK";
+    case "paper":    return "FULL MOCK";
+    case "mock":     return "FULL MOCK";
+    default:         return String(mode || "").toUpperCase();
+  }
 }
 
 function breakdownBySubject(items) {

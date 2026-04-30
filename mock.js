@@ -17,11 +17,11 @@ import {
   todayIso,
   weakTopics,
   isPaused
-} from "./engagement.js?v=20260512";
+} from "./engagement.js?v=20260513";
 
-import { readSoundOn, toggleSound } from "./sounds.js?v=20260512";
-import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260512";
-import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260512";
+import { readSoundOn, toggleSound } from "./sounds.js?v=20260513";
+import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260513";
+import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260513";
 
 function $(id) { return document.getElementById(id); }
 
@@ -418,25 +418,25 @@ function maybeShowOnboardingTour() {
   if (!document.querySelector(".mock-hero")) return; // home page only
   try { if (localStorage.getItem(TOUR_KEY) === "true") return; } catch (e) { return; }
 
-  const name = profileName() || "Trainee";
+  const name = profileName() || "there";
   const cards = [
     {
-      title: "Welcome, " + name + "!",
-      body: "GradeBlaze is your training app for May. Three modes, one Coach. Show up daily and your streak grows.",
-      next: "Tell me more"
+      title: "Hi " + name + "!",
+      body: "GradeBlaze is your daily practice app. Show up, hit your goal, build a streak. That's the whole game.",
+      next: "OK, what's a streak?"
     },
     {
-      title: "Streaks & freezes",
-      body: "Hit your daily 30 XP goal to keep your streak alive. Miss a day and a freeze covers you — you start with two. Each 5-day streak earns one back, max two saved.",
+      title: "Streak = days in a row",
+      body: "Hit 30 XP today and your streak starts. Miss a day? You've got cover — just don't miss two.",
       next: "Got it"
     },
     {
-      title: "Four modes",
+      title: "Pick how to practise",
       bullets: [
-        "<strong>WARM-UP</strong> — 10 mixed questions, every day",
-        "<strong>SPRINT</strong> — pick one subject, go deep",
-        "<strong>FULL MOCK</strong> — the whole paper, timed",
-        "<strong>COACH</strong> — ranks your weak topics"
+        "<strong>WARM-UP</strong> &mdash; 10 quick questions, every day",
+        "<strong>SPRINT</strong> &mdash; pick one subject, go deep",
+        "<strong>FULL MOCK</strong> &mdash; the whole paper, timed",
+        "<strong>COACH</strong> &mdash; the parent view of your progress"
       ],
       next: "Let's go"
     }
