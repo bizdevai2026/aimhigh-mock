@@ -13,10 +13,10 @@
 //   ?s=<id>           → topic list for that subject
 //   ?s=<id>&t=<topic> → topic detail page (read + drill)
 
-import "./mock.js?v=20260504"; // shared header behaviour
-import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260504";
-import { topicLadder, weakTopics } from "./engagement.js?v=20260504";
-import { getVisual } from "./visuals.js?v=20260504";
+import "./mock.js?v=20260505"; // shared header behaviour
+import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260505";
+import { topicLadder, weakTopics } from "./engagement.js?v=20260505";
+import { getVisual } from "./visuals.js?v=20260505";
 
 const root = document.getElementById("learnRoot");
 
