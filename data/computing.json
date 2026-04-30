@@ -544,5 +544,117 @@
     ],
     "answer": 1,
     "explainer": "Text-based coding teaches you syntax and structure used by real-world languages — a foundation for Python, JavaScript and beyond."
+  },
+  {
+    "id": "comp-algorithms-003",
+    "subject": "computing",
+    "topic": "algorithms",
+    "prompt": "Which is the best definition of an algorithm?",
+    "options": [
+      "A finished computer program",
+      "A step-by-step set of instructions to solve a problem",
+      "A type of computer chip",
+      "An error message"
+    ],
+    "answer": 1,
+    "explainer": "An algorithm is the recipe — the ordered steps. It can be written in plain English, as a flowchart, or as pseudocode, before being turned into code."
+  },
+  {
+    "id": "comp-algorithms-004",
+    "subject": "computing",
+    "topic": "algorithms",
+    "prompt": "Pseudocode is:",
+    "options": [
+      "Real working code in any language",
+      "Code-like instructions in plain English used to plan an algorithm",
+      "Code with deliberate bugs",
+      "Encrypted code"
+    ],
+    "answer": 1,
+    "explainer": "Pseudocode is a halfway language: structured like code (loops, conditions) but readable in plain English. It helps you plan before writing real code."
+  },
+  {
+    "id": "comp-algorithms-005",
+    "subject": "computing",
+    "topic": "algorithms",
+    "prompt": "A flowchart uses a DIAMOND shape to show:",
+    "options": [
+      "The start of the program",
+      "An input/output",
+      "A decision (yes/no question)",
+      "A finished step"
+    ],
+    "answer": 2,
+    "explainer": "Diamonds are decisions: a question with two outgoing arrows, one for YES and one for NO. Rectangles are processes; ovals are start/end."
+  },
+  {
+    "id": "comp-hardware-003",
+    "subject": "computing",
+    "topic": "hardware-software",
+    "prompt": "Which is HARDWARE, not software?",
+    "options": [
+      "Microsoft Word",
+      "Google Chrome",
+      "A keyboard",
+      "An operating system"
+    ],
+    "answer": 2,
+    "explainer": "Hardware = the physical bits you can touch. Software = the programs that run on it. A keyboard is hardware; Word and Chrome are software."
+  },
+  {
+    "id": "comp-hardware-004",
+    "subject": "computing",
+    "topic": "hardware-software",
+    "prompt": "Which of these is the CPU?",
+    "options": [
+      "The screen",
+      "The brain of the computer that runs instructions",
+      "The hard drive",
+      "The mouse"
+    ],
+    "answer": 1,
+    "explainer": "CPU = Central Processing Unit. It runs the actual instructions of every program — the brain of the machine."
+  },
+  {
+    "id": "comp-hardware-005",
+    "subject": "computing",
+    "topic": "hardware-software",
+    "prompt": "What does RAM stand for?",
+    "options": [
+      "Read-And-Modify",
+      "Random Access Memory",
+      "Real Active Memory",
+      "Read All Memory"
+    ],
+    "answer": 1,
+    "explainer": "RAM = Random Access Memory. It is the computer's short-term working memory — fast, but loses everything when you switch off."
+  },
+  {
+    "id": "comp-networks-004",
+    "subject": "computing",
+    "topic": "networks",
+    "prompt": "What does LAN stand for?",
+    "options": [
+      "Local Area Network",
+      "Long Area Network",
+      "Light Access Net",
+      "Linked Audio Network"
+    ],
+    "answer": 0,
+    "explainer": "LAN = Local Area Network. A small network covering one building (a school, a home). WAN = Wide Area Network (e.g. the internet)."
+  },
+  {
+    "id": "comp-networks-005",
+    "subject": "computing",
+    "topic": "networks",
+    "prompt": "An IP address is used to:",
+    "options": [
+      "Choose your username",
+      "Identify a device on a network",
+      "Encrypt your password",
+      "Make passwords stronger"
+    ],
+    "answer": 1,
+    "explainer": "Every device connected to a network has an IP address — the network's way of saying 'this device, here'."
   }
 ]

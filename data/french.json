@@ -1127,5 +1127,75 @@
     "answer": "Il est de Lille",
     "alternates": [],
     "explainer": "Lille = a city in northern France. Double 'l' makes a soft glide; pronounce \"leel\"."
+  },
+  {
+    "id": "fr-negation-002",
+    "subject": "french",
+    "topic": "negation",
+    "prompt": "Translate: 'I do NOT have a brother.'",
+    "options": [
+      "Je ai un frère",
+      "Je n'ai pas un frère",
+      "Je n'ai pas de frère",
+      "Je suis un frère"
+    ],
+    "answer": 2,
+    "explainer": "Negation in French: ne ... pas. After 'pas' in the negative, 'un/une/des' usually become 'de'. So 'pas un frère' becomes 'pas de frère'."
+  },
+  {
+    "id": "fr-negation-003",
+    "subject": "french",
+    "topic": "negation",
+    "prompt": "Which phrase means 'I never eat fish'?",
+    "options": [
+      "Je mange du poisson",
+      "Je ne mange jamais de poisson",
+      "Je n'aime pas le poisson",
+      "Je suis poisson"
+    ],
+    "answer": 1,
+    "explainer": "Ne ... jamais = never. 'Jamais' replaces 'pas' to mean 'never' instead of just 'not'."
+  },
+  {
+    "id": "fr-negation-004",
+    "subject": "french",
+    "topic": "negation",
+    "prompt": "Translate: 'She is NOT happy.'",
+    "options": [
+      "Elle est heureuse",
+      "Elle ne suis pas heureuse",
+      "Elle n'est pas heureuse",
+      "Elle pas heureuse"
+    ],
+    "answer": 2,
+    "explainer": "Wrap the verb in ne ... pas: elle EST heureuse becomes elle N'EST PAS heureuse. 'Ne' becomes 'n'' before a vowel."
+  },
+  {
+    "id": "fr-negation-005",
+    "subject": "french",
+    "topic": "negation",
+    "prompt": "What does 'rien' mean?",
+    "options": [
+      "Always",
+      "Nothing",
+      "Someone",
+      "Often"
+    ],
+    "answer": 1,
+    "explainer": "Rien = nothing. Used with 'ne': 'Je ne mange rien' = 'I am eating nothing.'"
+  },
+  {
+    "id": "fr-verbs-006",
+    "subject": "french",
+    "topic": "verbs",
+    "prompt": "What does 'j'aime' mean?",
+    "options": [
+      "I have",
+      "I am",
+      "I like / I love",
+      "I go"
+    ],
+    "answer": 2,
+    "explainer": "J'aime = I like / I love. 'Aimer' is one of the first verbs you learn — often paired with school subjects, hobbies, food."
   }
 ]

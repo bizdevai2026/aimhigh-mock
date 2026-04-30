@@ -745,5 +745,341 @@
     ],
     "answer": 2,
     "explainer": "Certain = 1 (or 100% if you prefer percentages). Probabilities are always between 0 and 1."
+  },
+  {
+    "id": "math-area-002",
+    "subject": "maths",
+    "topic": "area",
+    "prompt": "What is the area of a 7 cm by 4 cm rectangle?",
+    "options": [
+      "11 cm²",
+      "22 cm²",
+      "28 cm²",
+      "49 cm²"
+    ],
+    "answer": 2,
+    "explainer": "Area of a rectangle = length × width. 7 × 4 = 28 cm²."
+  },
+  {
+    "id": "math-area-003",
+    "subject": "maths",
+    "topic": "area",
+    "prompt": "Find the area of a triangle with base 10 cm and height 6 cm.",
+    "options": [
+      "16 cm²",
+      "30 cm²",
+      "60 cm²",
+      "120 cm²"
+    ],
+    "answer": 1,
+    "explainer": "Area of a triangle = ½ × base × height. ½ × 10 × 6 = 30 cm²."
+  },
+  {
+    "id": "math-area-004",
+    "subject": "maths",
+    "topic": "area",
+    "prompt": "Which formula gives the area of a circle?",
+    "options": [
+      "2πr",
+      "πr²",
+      "πd",
+      "r²"
+    ],
+    "answer": 1,
+    "explainer": "πr² (pi r squared). 2πr is the circumference. d = 2r is the diameter."
+  },
+  {
+    "id": "math-area-005",
+    "subject": "maths",
+    "topic": "area",
+    "prompt": "A square has area 49 cm². What is the length of one side?",
+    "options": [
+      "6 cm",
+      "7 cm",
+      "12 cm",
+      "24.5 cm"
+    ],
+    "answer": 1,
+    "explainer": "Area = side × side, so side = √49 = 7 cm."
+  },
+  {
+    "id": "math-decimals-003",
+    "subject": "maths",
+    "topic": "decimals",
+    "prompt": "What is 0.6 + 0.45?",
+    "options": [
+      "0.51",
+      "1.05",
+      "1.5",
+      "11.05"
+    ],
+    "answer": 1,
+    "explainer": "Line up the decimal points: 0.60 + 0.45 = 1.05."
+  },
+  {
+    "id": "math-decimals-004",
+    "subject": "maths",
+    "topic": "decimals",
+    "prompt": "What is 2.7 × 10?",
+    "options": [
+      "0.27",
+      "2.70",
+      "27",
+      "270"
+    ],
+    "answer": 2,
+    "explainer": "Multiplying by 10 shifts every digit one place LEFT (or the decimal point one place RIGHT). 2.7 → 27."
+  },
+  {
+    "id": "math-decimals-005",
+    "subject": "maths",
+    "topic": "decimals",
+    "prompt": "Round 3.476 to one decimal place.",
+    "options": [
+      "3.4",
+      "3.47",
+      "3.48",
+      "3.5"
+    ],
+    "answer": 3,
+    "explainer": "Look at the second decimal (7). 7 is 5 or more, so round up: 3.5."
+  },
+  {
+    "id": "math-ratio-003",
+    "subject": "maths",
+    "topic": "ratio",
+    "prompt": "Simplify the ratio 12 : 18 to its lowest form.",
+    "options": [
+      "1 : 2",
+      "2 : 3",
+      "3 : 4",
+      "6 : 9"
+    ],
+    "answer": 1,
+    "explainer": "Divide both sides by their HCF (6): 12 ÷ 6 = 2, 18 ÷ 6 = 3. So 2 : 3."
+  },
+  {
+    "id": "math-ratio-004",
+    "subject": "maths",
+    "topic": "ratio",
+    "prompt": "In a class, the ratio of boys to girls is 3 : 5. There are 24 children. How many are girls?",
+    "options": [
+      "9",
+      "12",
+      "15",
+      "16"
+    ],
+    "answer": 2,
+    "explainer": "Total parts = 8. Each part = 24 ÷ 8 = 3. Girls = 5 × 3 = 15."
+  },
+  {
+    "id": "math-ratio-005",
+    "subject": "maths",
+    "topic": "ratio",
+    "prompt": "Which ratio is equivalent to 4 : 6?",
+    "options": [
+      "2 : 3",
+      "3 : 4",
+      "4 : 8",
+      "8 : 10"
+    ],
+    "answer": 0,
+    "explainer": "Divide both sides by 2 (their HCF): 4 ÷ 2 = 2, 6 ÷ 2 = 3. So 2 : 3."
+  },
+  {
+    "id": "math-sequences-003",
+    "subject": "maths",
+    "topic": "sequences",
+    "prompt": "What is the next term in the sequence 2, 5, 8, 11, ...?",
+    "options": [
+      "12",
+      "13",
+      "14",
+      "15"
+    ],
+    "answer": 2,
+    "explainer": "Each term goes up by 3. 11 + 3 = 14."
+  },
+  {
+    "id": "math-sequences-004",
+    "subject": "maths",
+    "topic": "sequences",
+    "prompt": "What is the 10th term of the sequence 1, 3, 5, 7, ...?",
+    "options": [
+      "17",
+      "19",
+      "20",
+      "21"
+    ],
+    "answer": 1,
+    "explainer": "Odd numbers: nth term = 2n − 1. 2 × 10 − 1 = 19."
+  },
+  {
+    "id": "math-sequences-005",
+    "subject": "maths",
+    "topic": "sequences",
+    "prompt": "Which is the next term in 1, 4, 9, 16, 25, ...?",
+    "options": [
+      "30",
+      "32",
+      "36",
+      "49"
+    ],
+    "answer": 2,
+    "explainer": "These are the square numbers: 1², 2², 3², 4², 5². The next is 6² = 36."
+  },
+  {
+    "id": "math-fnmachine-003",
+    "subject": "maths",
+    "topic": "function-machines",
+    "prompt": "A function machine does: × 3, then + 2. Input 5. What is the output?",
+    "options": [
+      "10",
+      "15",
+      "17",
+      "21"
+    ],
+    "answer": 2,
+    "explainer": "Apply in order: 5 × 3 = 15. Then 15 + 2 = 17."
+  },
+  {
+    "id": "math-fnmachine-004",
+    "subject": "maths",
+    "topic": "function-machines",
+    "prompt": "A function machine does: − 4, then × 2. Input 9. Output?",
+    "options": [
+      "5",
+      "10",
+      "14",
+      "18"
+    ],
+    "answer": 1,
+    "explainer": "Apply in order: 9 − 4 = 5. Then 5 × 2 = 10."
+  },
+  {
+    "id": "math-fnmachine-005",
+    "subject": "maths",
+    "topic": "function-machines",
+    "prompt": "A function machine outputs 20 when the operation is × 4. What was the input?",
+    "options": [
+      "4",
+      "5",
+      "16",
+      "80"
+    ],
+    "answer": 1,
+    "explainer": "Reverse the operation. Output 20 ÷ 4 = 5."
+  },
+  {
+    "id": "math-percent-004",
+    "subject": "maths",
+    "topic": "percentages",
+    "prompt": "What is 25% of 80?",
+    "options": [
+      "10",
+      "20",
+      "25",
+      "40"
+    ],
+    "answer": 1,
+    "explainer": "25% = 1/4. 80 ÷ 4 = 20."
+  },
+  {
+    "id": "math-percent-005",
+    "subject": "maths",
+    "topic": "percentages",
+    "prompt": "10% of 350 is:",
+    "options": [
+      "3.5",
+      "35",
+      "350",
+      "3500"
+    ],
+    "answer": 1,
+    "explainer": "10% = ÷ 10. 350 ÷ 10 = 35."
+  },
+  {
+    "id": "math-algebra-005",
+    "subject": "maths",
+    "topic": "algebra",
+    "prompt": "Simplify 4a + 3a − 2a.",
+    "options": [
+      "3a",
+      "5a",
+      "9a",
+      "24a"
+    ],
+    "answer": 1,
+    "explainer": "Add and subtract the coefficients of 'a': 4 + 3 − 2 = 5. So 5a."
+  },
+  {
+    "id": "math-algebra-006",
+    "subject": "maths",
+    "topic": "algebra",
+    "prompt": "If x = 4, what is 3x + 2?",
+    "options": [
+      "6",
+      "12",
+      "14",
+      "20"
+    ],
+    "answer": 2,
+    "explainer": "Substitute: 3 × 4 + 2 = 12 + 2 = 14."
+  },
+  {
+    "id": "math-negatives-004",
+    "subject": "maths",
+    "topic": "negatives",
+    "prompt": "What is −3 + 7?",
+    "options": [
+      "−10",
+      "−4",
+      "4",
+      "10"
+    ],
+    "answer": 2,
+    "explainer": "Start at −3, count up 7: that lands on 4."
+  },
+  {
+    "id": "math-negatives-005",
+    "subject": "maths",
+    "topic": "negatives",
+    "prompt": "What is 5 − 8?",
+    "options": [
+      "−13",
+      "−3",
+      "3",
+      "13"
+    ],
+    "answer": 1,
+    "explainer": "5 − 8 = −3. You go below zero by 3."
+  },
+  {
+    "id": "math-stats-005",
+    "subject": "maths",
+    "topic": "statistics",
+    "prompt": "What is the median of 3, 5, 7, 9, 11?",
+    "options": [
+      "3",
+      "7",
+      "9",
+      "35"
+    ],
+    "answer": 1,
+    "explainer": "Median is the middle value when ordered. With five values, the middle is the third: 7."
+  },
+  {
+    "id": "math-probability-005",
+    "subject": "maths",
+    "topic": "probability",
+    "prompt": "On a six-sided dice, what is the probability of rolling an even number?",
+    "options": [
+      "1/6",
+      "1/3",
+      "1/2",
+      "2/3"
+    ],
+    "answer": 2,
+    "explainer": "Even numbers on a dice: 2, 4, 6 — three out of six. 3/6 = 1/2."
   }
 ]

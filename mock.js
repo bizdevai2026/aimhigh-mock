@@ -17,11 +17,11 @@ import {
   todayIso,
   weakTopics,
   isPaused
-} from "./engagement.js?v=20260509";
+} from "./engagement.js?v=20260510";
 
-import { readSoundOn, toggleSound } from "./sounds.js?v=20260509";
-import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260509";
-import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260509";
+import { readSoundOn, toggleSound } from "./sounds.js?v=20260510";
+import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260510";
+import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260510";
 
 function $(id) { return document.getElementById(id); }
 

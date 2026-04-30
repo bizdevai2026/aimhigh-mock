@@ -4,7 +4,12 @@
     "subject": "science",
     "topic": "cells",
     "prompt": "Which structure controls what enters and leaves an animal cell?",
-    "options": ["Cell wall", "Cell membrane", "Cytoplasm", "Nucleus"],
+    "options": [
+      "Cell wall",
+      "Cell membrane",
+      "Cytoplasm",
+      "Nucleus"
+    ],
     "answer": 1,
     "explainer": "The cell membrane is the gatekeeper of every cell. Plant cells have one too, with a tougher cell wall outside it."
   },
@@ -14,7 +19,12 @@
     "topic": "cells",
     "visual": "cell-comparison",
     "prompt": "Which feature is in plant cells but not in animal cells?",
-    "options": ["Nucleus", "Mitochondria", "Chloroplasts", "Ribosomes"],
+    "options": [
+      "Nucleus",
+      "Mitochondria",
+      "Chloroplasts",
+      "Ribosomes"
+    ],
     "answer": 2,
     "explainer": "Chloroplasts hold chlorophyll for photosynthesis. Animals don't make their own food, so animal cells don't have chloroplasts."
   },
@@ -23,7 +33,12 @@
     "subject": "science",
     "topic": "cells",
     "prompt": "Where in a cell does most respiration happen?",
-    "options": ["Cytoplasm", "Nucleus", "Mitochondria", "Cell membrane"],
+    "options": [
+      "Cytoplasm",
+      "Nucleus",
+      "Mitochondria",
+      "Cell membrane"
+    ],
     "answer": 2,
     "explainer": "Mitochondria release energy from glucose. Cells that work hard, like muscle cells, have lots of mitochondria."
   },
@@ -32,7 +47,12 @@
     "subject": "science",
     "topic": "cells",
     "prompt": "What does the nucleus contain?",
-    "options": ["Sugar", "Genetic material (DNA)", "Air", "Salt"],
+    "options": [
+      "Sugar",
+      "Genetic material (DNA)",
+      "Air",
+      "Salt"
+    ],
     "answer": 1,
     "explainer": "The nucleus stores DNA, which is the set of instructions that tells the cell how to work."
   },
@@ -41,7 +61,12 @@
     "subject": "science",
     "topic": "cells",
     "prompt": "Which microscope lens should you choose first when finding a sample?",
-    "options": ["The lowest magnification", "The highest magnification", "The eyepiece only", "Any lens — it doesn't matter"],
+    "options": [
+      "The lowest magnification",
+      "The highest magnification",
+      "The eyepiece only",
+      "Any lens — it doesn't matter"
+    ],
     "answer": 0,
     "explainer": "Start at the lowest magnification to find the sample, then turn the higher lenses in once it's in view."
   },
@@ -50,7 +75,12 @@
     "subject": "science",
     "topic": "cells",
     "prompt": "A plant cell wall is made mainly of:",
-    "options": ["Fat", "Cellulose", "Plastic", "Protein only"],
+    "options": [
+      "Fat",
+      "Cellulose",
+      "Plastic",
+      "Protein only"
+    ],
     "answer": 1,
     "explainer": "Cellulose makes the wall stiff so the plant can hold its shape upright."
   },
@@ -59,7 +89,12 @@
     "subject": "science",
     "topic": "particles-states",
     "prompt": "As a solid heats up and melts, the particles:",
-    "options": ["Disappear", "Gain energy and move further apart", "Get smaller", "Become heavier"],
+    "options": [
+      "Disappear",
+      "Gain energy and move further apart",
+      "Get smaller",
+      "Become heavier"
+    ],
     "answer": 1,
     "explainer": "Particles vibrate more, then slide past each other as a liquid. The same particles are still there — they've just got more energy."
   },
@@ -69,7 +104,12 @@
     "topic": "particles-states",
     "visual": "particle-states",
     "prompt": "Which state has particles arranged in a fixed pattern?",
-    "options": ["Solid", "Liquid", "Gas", "None of these"],
+    "options": [
+      "Solid",
+      "Liquid",
+      "Gas",
+      "None of these"
+    ],
     "answer": 0,
     "explainer": "Solids hold their shape because particles are locked in place. They vibrate but don't slide past each other."
   },
@@ -78,7 +118,12 @@
     "subject": "science",
     "topic": "particles-states",
     "prompt": "Why does a gas spread out to fill its container?",
-    "options": ["Particles attract each other", "Particles move quickly in all directions", "Particles are too heavy to stop", "Particles dissolve"],
+    "options": [
+      "Particles attract each other",
+      "Particles move quickly in all directions",
+      "Particles are too heavy to stop",
+      "Particles dissolve"
+    ],
     "answer": 1,
     "explainer": "Gas particles move fast and have lots of empty space around them, so they spread until they hit the walls."
   },
@@ -87,7 +132,12 @@
     "subject": "science",
     "topic": "particles-states",
     "prompt": "Pure water boils at:",
-    "options": ["50 °C", "80 °C", "100 °C", "200 °C"],
+    "options": [
+      "50 °C",
+      "80 °C",
+      "100 °C",
+      "200 °C"
+    ],
     "answer": 2,
     "explainer": "At normal pressure, pure water boils at 100 °C. While it's boiling, the temperature stays steady — the energy is going into changing state."
   },
@@ -96,7 +146,12 @@
     "subject": "science",
     "topic": "particles-states",
     "prompt": "Diffusion means particles:",
-    "options": ["Stop moving", "Spread from where they're crowded to where they're not", "Get bigger", "Combine into solids"],
+    "options": [
+      "Stop moving",
+      "Spread from where they're crowded to where they're not",
+      "Get bigger",
+      "Combine into solids"
+    ],
     "answer": 1,
     "explainer": "Particles move from high concentration to low concentration. It's why a smell from the kitchen reaches the whole house."
   },
@@ -105,7 +160,12 @@
     "subject": "science",
     "topic": "forces-motion",
     "prompt": "Which of these is a contact force?",
-    "options": ["Gravity", "Magnetism", "Friction", "Static electricity"],
+    "options": [
+      "Gravity",
+      "Magnetism",
+      "Friction",
+      "Static electricity"
+    ],
     "answer": 2,
     "explainer": "Friction needs two surfaces touching. Gravity, magnetism and static can act without contact."
   },
@@ -114,7 +174,12 @@
     "subject": "science",
     "topic": "forces-motion",
     "prompt": "A skydiver falls faster and faster, then reaches a steady speed. This steady speed is called:",
-    "options": ["Acceleration", "Terminal velocity", "Mass", "Weight"],
+    "options": [
+      "Acceleration",
+      "Terminal velocity",
+      "Mass",
+      "Weight"
+    ],
     "answer": 1,
     "explainer": "At terminal velocity, air resistance equals weight, so the skydiver stops speeding up."
   },
@@ -123,7 +188,12 @@
     "subject": "science",
     "topic": "forces-motion",
     "prompt": "The unit of force is the:",
-    "options": ["Watt (W)", "Joule (J)", "Newton (N)", "Metre (m)"],
+    "options": [
+      "Watt (W)",
+      "Joule (J)",
+      "Newton (N)",
+      "Metre (m)"
+    ],
     "answer": 2,
     "explainer": "Forces are measured in newtons. Weight on Earth is roughly 10 N for every 1 kg of mass."
   },
@@ -132,7 +202,12 @@
     "subject": "science",
     "topic": "forces-motion",
     "prompt": "Friction always acts:",
-    "options": ["In the same direction as motion", "Opposite to motion", "Upwards", "Only when something is at rest"],
+    "options": [
+      "In the same direction as motion",
+      "Opposite to motion",
+      "Upwards",
+      "Only when something is at rest"
+    ],
     "answer": 1,
     "explainer": "Friction opposes motion (or attempted motion). It's why a sliding object slows down and stops."
   },
@@ -141,7 +216,12 @@
     "subject": "science",
     "topic": "energy",
     "prompt": "Energy is measured in:",
-    "options": ["Joules (J)", "Newtons (N)", "Pascals (Pa)", "Amps (A)"],
+    "options": [
+      "Joules (J)",
+      "Newtons (N)",
+      "Pascals (Pa)",
+      "Amps (A)"
+    ],
     "answer": 0,
     "explainer": "All forms of energy use the same unit — the joule."
   },
@@ -150,7 +230,12 @@
     "subject": "science",
     "topic": "energy",
     "prompt": "A stretched rubber band stores energy in its:",
-    "options": ["Thermal store", "Kinetic store", "Elastic store", "Chemical store"],
+    "options": [
+      "Thermal store",
+      "Kinetic store",
+      "Elastic store",
+      "Chemical store"
+    ],
     "answer": 2,
     "explainer": "Stretching or squashing stores elastic energy, ready to do work when released."
   },
@@ -159,7 +244,12 @@
     "subject": "science",
     "topic": "energy",
     "prompt": "When a kettle heats water, the main transfer is:",
-    "options": ["Electrical to light", "Electrical to thermal", "Chemical to elastic", "Kinetic to nuclear"],
+    "options": [
+      "Electrical to light",
+      "Electrical to thermal",
+      "Chemical to elastic",
+      "Kinetic to nuclear"
+    ],
     "answer": 1,
     "explainer": "Electrical energy in the heating element becomes thermal energy in the water."
   },
@@ -168,7 +258,12 @@
     "subject": "science",
     "topic": "energy",
     "prompt": "A toy car at the top of a slope mostly stores energy in which way?",
-    "options": ["Kinetic", "Gravitational potential", "Sound", "Nuclear"],
+    "options": [
+      "Kinetic",
+      "Gravitational potential",
+      "Sound",
+      "Nuclear"
+    ],
     "answer": 1,
     "explainer": "Anything raised up has gravitational potential energy. As it rolls down, this transfers to kinetic energy."
   },
@@ -177,7 +272,12 @@
     "subject": "science",
     "topic": "sound-waves",
     "prompt": "The pitch of a sound depends on:",
-    "options": ["The volume", "The frequency of the wave", "The colour of the speaker", "The temperature"],
+    "options": [
+      "The volume",
+      "The frequency of the wave",
+      "The colour of the speaker",
+      "The temperature"
+    ],
     "answer": 1,
     "explainer": "Higher frequency means higher pitch. Volume is set by amplitude, not pitch."
   },
@@ -187,7 +287,12 @@
     "topic": "sound-waves",
     "visual": "sound-wave",
     "prompt": "The loudness of a sound depends on:",
-    "options": ["The frequency", "The amplitude of the wave", "The wavelength only", "The colour of the source"],
+    "options": [
+      "The frequency",
+      "The amplitude of the wave",
+      "The wavelength only",
+      "The colour of the source"
+    ],
     "answer": 1,
     "explainer": "Bigger amplitude means louder sound. Frequency controls pitch, amplitude controls volume."
   },
@@ -196,7 +301,12 @@
     "subject": "science",
     "topic": "sound-waves",
     "prompt": "Sound cannot travel through:",
-    "options": ["Solids", "Liquids", "Gases", "A vacuum"],
+    "options": [
+      "Solids",
+      "Liquids",
+      "Gases",
+      "A vacuum"
+    ],
     "answer": 3,
     "explainer": "Sound needs particles to pass on the vibration. A vacuum has no particles, so no sound."
   },
@@ -205,7 +315,12 @@
     "subject": "science",
     "topic": "sound-waves",
     "prompt": "Sound waves are:",
-    "options": ["Transverse", "Longitudinal", "Stationary only", "Made of light"],
+    "options": [
+      "Transverse",
+      "Longitudinal",
+      "Stationary only",
+      "Made of light"
+    ],
     "answer": 1,
     "explainer": "In a sound wave, particles vibrate back and forth in the same direction the wave travels — that's longitudinal."
   },
@@ -215,7 +330,12 @@
     "topic": "acids-alkalis",
     "visual": "ph-scale",
     "prompt": "An acid has a pH:",
-    "options": ["Equal to 7", "Less than 7", "Greater than 7", "Greater than 14"],
+    "options": [
+      "Equal to 7",
+      "Less than 7",
+      "Greater than 7",
+      "Greater than 14"
+    ],
     "answer": 1,
     "explainer": "Below 7 is acidic, exactly 7 is neutral, above 7 is alkaline. The full range is usually 0 to 14."
   },
@@ -224,7 +344,12 @@
     "subject": "science",
     "topic": "acids-alkalis",
     "prompt": "When an acid reacts with an alkali, the products are:",
-    "options": ["Hydrogen and oxygen", "A salt and water", "Carbon dioxide only", "A new acid"],
+    "options": [
+      "Hydrogen and oxygen",
+      "A salt and water",
+      "Carbon dioxide only",
+      "A new acid"
+    ],
     "answer": 1,
     "explainer": "This is neutralisation. The salt's name depends on the acid — for example, hydrochloric acid makes a chloride."
   },
@@ -233,7 +358,12 @@
     "subject": "science",
     "topic": "acids-alkalis",
     "prompt": "Which indicator turns red in acid and blue in alkali?",
-    "options": ["Iodine", "Litmus", "Universal indicator", "Chlorine water"],
+    "options": [
+      "Iodine",
+      "Litmus",
+      "Universal indicator",
+      "Chlorine water"
+    ],
     "answer": 1,
     "explainer": "Litmus paper is the simplest acid/alkali test. Universal indicator gives a fuller colour scale for pH."
   },
@@ -242,7 +372,12 @@
     "subject": "science",
     "topic": "acids-alkalis",
     "prompt": "Which household item is alkaline?",
-    "options": ["Vinegar", "Lemon juice", "Baking-soda solution", "Cola"],
+    "options": [
+      "Vinegar",
+      "Lemon juice",
+      "Baking-soda solution",
+      "Cola"
+    ],
     "answer": 2,
     "explainer": "Baking-soda solution (sodium hydrogen carbonate) is mildly alkaline. The others are acidic."
   },
@@ -251,7 +386,12 @@
     "subject": "science",
     "topic": "reproduction",
     "prompt": "The female reproductive cell in humans is called the:",
-    "options": ["Sperm", "Egg (ovum)", "Pollen", "Embryo"],
+    "options": [
+      "Sperm",
+      "Egg (ovum)",
+      "Pollen",
+      "Embryo"
+    ],
     "answer": 1,
     "explainer": "Eggs are released from an ovary. Sperm come from the testes."
   },
@@ -260,7 +400,12 @@
     "subject": "science",
     "topic": "reproduction",
     "prompt": "In a flower, pollen is made by the:",
-    "options": ["Stigma", "Anther", "Ovary", "Petal"],
+    "options": [
+      "Stigma",
+      "Anther",
+      "Ovary",
+      "Petal"
+    ],
     "answer": 1,
     "explainer": "Anthers (on the stamens) produce pollen. The stigma is the sticky top of the female part — it catches pollen."
   },
@@ -269,7 +414,12 @@
     "subject": "science",
     "topic": "reproduction",
     "prompt": "After fertilisation in a flower, the ovule becomes a:",
-    "options": ["Petal", "Seed", "Leaf", "Root"],
+    "options": [
+      "Petal",
+      "Seed",
+      "Leaf",
+      "Root"
+    ],
     "answer": 1,
     "explainer": "The fertilised ovule grows into a seed. The ovary around it often becomes the fruit."
   },
@@ -278,7 +428,12 @@
     "subject": "science",
     "topic": "variation",
     "prompt": "Differences between members of the same species are called:",
-    "options": ["Habitats", "Variation", "Adaptations", "Predators"],
+    "options": [
+      "Habitats",
+      "Variation",
+      "Adaptations",
+      "Predators"
+    ],
     "answer": 1,
     "explainer": "Variation can be inherited (such as eye colour) or environmental (such as height being affected by diet)."
   },
@@ -287,7 +442,12 @@
     "subject": "science",
     "topic": "variation",
     "prompt": "Which trait is mostly affected by environment, not just genes?",
-    "options": ["Eye colour", "Blood group", "Body weight", "Number of fingers"],
+    "options": [
+      "Eye colour",
+      "Blood group",
+      "Body weight",
+      "Number of fingers"
+    ],
     "answer": 2,
     "explainer": "Diet and exercise change weight a lot. Eye colour, blood group and finger count are mainly inherited."
   },
@@ -297,7 +457,12 @@
     "topic": "distance-time",
     "visual": "distance-time",
     "prompt": "On a distance-time graph, a horizontal line means the object is:",
-    "options": ["Speeding up", "Slowing down", "Not moving", "Going backwards"],
+    "options": [
+      "Speeding up",
+      "Slowing down",
+      "Not moving",
+      "Going backwards"
+    ],
     "answer": 2,
     "explainer": "Distance isn't changing — the object is at rest. A sloped line means it's moving; a steeper slope means faster."
   },
@@ -306,7 +471,12 @@
     "subject": "science",
     "topic": "distance-time",
     "prompt": "On a distance-time graph, the steeper the line, the:",
-    "options": ["Slower the object", "Faster the object", "Heavier the object", "Bigger the object"],
+    "options": [
+      "Slower the object",
+      "Faster the object",
+      "Heavier the object",
+      "Bigger the object"
+    ],
     "answer": 1,
     "explainer": "Steep slope = lots of distance covered in a short time = fast. Gentle slope = slow."
   },
@@ -315,7 +485,12 @@
     "subject": "science",
     "topic": "forces-motion",
     "prompt": "Speed equals:",
-    "options": ["Distance × time", "Distance ÷ time", "Time ÷ distance", "Distance + time"],
+    "options": [
+      "Distance × time",
+      "Distance ÷ time",
+      "Time ÷ distance",
+      "Distance + time"
+    ],
     "answer": 1,
     "explainer": "Speed = distance ÷ time. A car covering 60 miles in 1 hour has a speed of 60 mph."
   },
@@ -324,7 +499,12 @@
     "subject": "science",
     "topic": "mixtures",
     "prompt": "Which of these is a pure substance?",
-    "options": ["Air", "Sea water", "Distilled water", "Orange juice"],
+    "options": [
+      "Air",
+      "Sea water",
+      "Distilled water",
+      "Orange juice"
+    ],
     "answer": 2,
     "explainer": "A pure substance has only one type of particle. Distilled water = just H₂O. The others are mixtures."
   },
@@ -333,7 +513,12 @@
     "subject": "science",
     "topic": "mixtures",
     "prompt": "How would you separate salt from salty water?",
-    "options": ["Filtering", "Evaporation", "Magnet", "Stirring"],
+    "options": [
+      "Filtering",
+      "Evaporation",
+      "Magnet",
+      "Stirring"
+    ],
     "answer": 1,
     "explainer": "Heat the water until it evaporates — salt is left behind. Filtering doesn't work because salt has dissolved."
   },
@@ -384,7 +569,12 @@
     "subject": "science",
     "topic": "skeleton-and-movement",
     "prompt": "Your knee is an example of which type of joint?",
-    "options": ["Ball-and-socket", "Hinge", "Pivot", "Sliding"],
+    "options": [
+      "Ball-and-socket",
+      "Hinge",
+      "Pivot",
+      "Sliding"
+    ],
     "answer": 1,
     "explainer": "Hinge joints bend one way only (like a door). The shoulder is ball-and-socket — it can rotate."
   },
@@ -421,7 +611,12 @@
     "subject": "science",
     "topic": "energy",
     "prompt": "Which is a renewable energy resource?",
-    "options": ["Coal", "Oil", "Wind", "Natural gas"],
+    "options": [
+      "Coal",
+      "Oil",
+      "Wind",
+      "Natural gas"
+    ],
     "answer": 2,
     "explainer": "Renewables won't run out on human timescales — wind, solar, hydro, tidal, geothermal. Fossil fuels are non-renewable."
   },
@@ -458,7 +653,12 @@
     "subject": "science",
     "topic": "chemical-reactions",
     "prompt": "When magnesium burns in oxygen, what is produced?",
-    "options": ["Magnesium oxide", "Water", "Carbon dioxide", "Magnesium chloride"],
+    "options": [
+      "Magnesium oxide",
+      "Water",
+      "Carbon dioxide",
+      "Magnesium chloride"
+    ],
     "answer": 0,
     "explainer": "Metal + oxygen → metal oxide. The bright white flame of burning magnesium gives off a white powder of magnesium oxide."
   },
@@ -495,7 +695,12 @@
     "subject": "science",
     "topic": "sound-waves",
     "prompt": "Which part of the ear vibrates first when sound enters?",
-    "options": ["Cochlea", "Eardrum", "Outer ear bones", "Brain"],
+    "options": [
+      "Cochlea",
+      "Eardrum",
+      "Outer ear bones",
+      "Brain"
+    ],
     "answer": 1,
     "explainer": "Sound waves travel down the ear canal and make the eardrum vibrate. Tiny bones then carry the vibration to the cochlea."
   },
@@ -519,7 +724,12 @@
     "topic": "universe",
     "visual": "solar-system",
     "prompt": "How many planets orbit our Sun?",
-    "options": ["Six", "Seven", "Eight", "Nine"],
+    "options": [
+      "Six",
+      "Seven",
+      "Eight",
+      "Nine"
+    ],
     "answer": 2,
     "explainer": "Eight: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune. Pluto was reclassified as a dwarf planet in 2006."
   },
@@ -529,7 +739,12 @@
     "topic": "universe",
     "visual": "solar-system",
     "prompt": "Which planet is closest to the Sun?",
-    "options": ["Venus", "Mercury", "Earth", "Mars"],
+    "options": [
+      "Venus",
+      "Mercury",
+      "Earth",
+      "Mars"
+    ],
     "answer": 1,
     "explainer": "Mercury — about 58 million km from the Sun. So close that surface temperatures swing wildly between day and night."
   },
@@ -566,7 +781,12 @@
     "subject": "science",
     "topic": "universe",
     "prompt": "Roughly how long does it take Earth to orbit the Sun once?",
-    "options": ["A day", "A month", "A year", "Ten years"],
+    "options": [
+      "A day",
+      "A month",
+      "A year",
+      "Ten years"
+    ],
     "answer": 2,
     "explainer": "365.25 days — about a year. The extra 0.25 is why we add a leap day every 4 years."
   },
@@ -583,5 +803,201 @@
     ],
     "answer": 1,
     "explainer": "The Sun always lights half the Moon. As the Moon orbits Earth, we see different proportions of that lit half — full, half, crescent, new."
+  },
+  {
+    "id": "sci-distance-003",
+    "subject": "science",
+    "topic": "distance-time",
+    "prompt": "On a distance-time graph, a horizontal flat line means:",
+    "options": [
+      "Moving slowly",
+      "Speeding up",
+      "Stopped (not moving)",
+      "Moving backwards"
+    ],
+    "answer": 2,
+    "explainer": "Distance is not changing while time moves on, so the object is stationary."
+  },
+  {
+    "id": "sci-distance-004",
+    "subject": "science",
+    "topic": "distance-time",
+    "prompt": "On a distance-time graph, a STEEP line means:",
+    "options": [
+      "Moving fast",
+      "Moving slowly",
+      "Stopped",
+      "Reversing"
+    ],
+    "answer": 0,
+    "explainer": "Steep = covering lots of distance in a short time = fast. Gentle slope = slow."
+  },
+  {
+    "id": "sci-distance-005",
+    "subject": "science",
+    "topic": "distance-time",
+    "prompt": "Speed = ?",
+    "options": [
+      "distance × time",
+      "distance ÷ time",
+      "time ÷ distance",
+      "distance + time"
+    ],
+    "answer": 1,
+    "explainer": "Speed equals distance divided by time. Units: m/s if distance is in metres, time in seconds."
+  },
+  {
+    "id": "sci-reproduction-004",
+    "subject": "science",
+    "topic": "reproduction",
+    "prompt": "In humans, which cell is the female sex cell?",
+    "options": [
+      "Sperm",
+      "Egg (ovum)",
+      "Plasma",
+      "Platelet"
+    ],
+    "answer": 1,
+    "explainer": "The female sex cell is the egg, also called an ovum. The male sex cell is the sperm."
+  },
+  {
+    "id": "sci-reproduction-005",
+    "subject": "science",
+    "topic": "reproduction",
+    "prompt": "Fertilisation is when:",
+    "options": [
+      "A sperm meets an egg and joins with it",
+      "A baby is born",
+      "Hormones change at puberty",
+      "Cells divide for growth"
+    ],
+    "answer": 0,
+    "explainer": "Fertilisation is the moment a sperm cell fuses with an egg cell. The fertilised egg then develops into an embryo."
+  },
+  {
+    "id": "sci-variation-004",
+    "subject": "science",
+    "topic": "variation",
+    "prompt": "Which of these is INHERITED variation (you got it from your parents)?",
+    "options": [
+      "Eye colour",
+      "A scar from a fall",
+      "How tall you have grown from training",
+      "Your tan from summer"
+    ],
+    "answer": 0,
+    "explainer": "Inherited variation comes from your parents' DNA: eye colour, hair colour, blood group. Environmental variation comes from your life: scars, tan, fitness."
+  },
+  {
+    "id": "sci-variation-005",
+    "subject": "science",
+    "topic": "variation",
+    "prompt": "Identical twins have:",
+    "options": [
+      "Different DNA but the same name",
+      "The same DNA",
+      "Different blood groups",
+      "Different parents"
+    ],
+    "answer": 1,
+    "explainer": "Identical twins develop from one fertilised egg that splits, so they share the same DNA. Any differences between them are environmental."
+  },
+  {
+    "id": "sci-skeleton-004",
+    "subject": "science",
+    "topic": "skeleton-and-movement",
+    "prompt": "Which type of joint allows movement in many directions, like the shoulder?",
+    "options": [
+      "Hinge",
+      "Pivot",
+      "Ball-and-socket",
+      "Sliding"
+    ],
+    "answer": 2,
+    "explainer": "Ball-and-socket joints (shoulder, hip) let the limb rotate. Hinge joints (knee, elbow) move in only one plane."
+  },
+  {
+    "id": "sci-skeleton-005",
+    "subject": "science",
+    "topic": "skeleton-and-movement",
+    "prompt": "Muscles work in pairs because:",
+    "options": [
+      "They are stronger that way",
+      "Muscles can pull but cannot push, so one pulls the bone one way and its partner pulls it back",
+      "It looks more symmetrical",
+      "They share blood supply"
+    ],
+    "answer": 1,
+    "explainer": "Muscles only pull, they never push. So they work in 'antagonistic pairs': biceps pulls the arm up, triceps pulls it back down."
+  },
+  {
+    "id": "sci-chemreact-004",
+    "subject": "science",
+    "topic": "chemical-reactions",
+    "prompt": "When iron rusts, it is reacting with:",
+    "options": [
+      "Oxygen and water",
+      "Carbon dioxide",
+      "Nitrogen",
+      "Salt only"
+    ],
+    "answer": 0,
+    "explainer": "Rust is iron oxide. It forms when iron reacts with oxygen in the air, especially with water around to speed it up."
+  },
+  {
+    "id": "sci-chemreact-005",
+    "subject": "science",
+    "topic": "chemical-reactions",
+    "prompt": "In a chemical reaction, the starting substances are called:",
+    "options": [
+      "Products",
+      "Reactants",
+      "Catalysts",
+      "Solvents"
+    ],
+    "answer": 1,
+    "explainer": "Reactants are what you start with. Products are what you end up with. Catalysts speed it up without being used up."
+  },
+  {
+    "id": "sci-mixtures-005",
+    "subject": "science",
+    "topic": "mixtures",
+    "prompt": "Which separation method would you use to separate sand from water?",
+    "options": [
+      "Evaporation",
+      "Filtration",
+      "Distillation",
+      "Magnetism"
+    ],
+    "answer": 1,
+    "explainer": "Sand is insoluble — it does not dissolve. Filter paper lets water through but traps the sand grains."
+  },
+  {
+    "id": "sci-acids-005",
+    "subject": "science",
+    "topic": "acids-alkalis",
+    "prompt": "On the pH scale, what does pH 7 represent?",
+    "options": [
+      "A strong acid",
+      "A weak acid",
+      "Neutral (neither acid nor alkali)",
+      "A strong alkali"
+    ],
+    "answer": 2,
+    "explainer": "pH 7 = neutral. Pure water is pH 7. Below 7 is acidic; above 7 is alkaline."
+  },
+  {
+    "id": "sci-forces-008",
+    "subject": "science",
+    "topic": "forces-motion",
+    "prompt": "Which is the unit of force?",
+    "options": [
+      "Joule (J)",
+      "Newton (N)",
+      "Watt (W)",
+      "Metre (m)"
+    ],
+    "answer": 1,
+    "explainer": "Force is measured in newtons (N). Joules measure energy. Watts measure power."
   }
 ]

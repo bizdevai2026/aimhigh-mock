@@ -13,7 +13,7 @@
 // 60% weak-topic bias and a per-subject cap so a warm-up isn't ten
 // maths questions.
 
-import { readSeen, weakTopics } from "./engagement.js?v=20260509";
+import { readSeen, weakTopics } from "./engagement.js?v=20260510";
 
 const SUBJECTS = [
   { id: "science",   name: "Science"          },

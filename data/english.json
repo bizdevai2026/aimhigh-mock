@@ -4,7 +4,12 @@
     "subject": "english",
     "topic": "word-classes",
     "prompt": "Identify the verb: \"She walked quickly to the shop.\"",
-    "options": ["She", "walked", "quickly", "shop"],
+    "options": [
+      "She",
+      "walked",
+      "quickly",
+      "shop"
+    ],
     "answer": 1,
     "explainer": "A verb is a doing or being word. \"Walked\" is the action."
   },
@@ -13,7 +18,12 @@
     "subject": "english",
     "topic": "word-classes",
     "prompt": "Identify the adjective: \"The huge dog barked loudly.\"",
-    "options": ["huge", "dog", "barked", "loudly"],
+    "options": [
+      "huge",
+      "dog",
+      "barked",
+      "loudly"
+    ],
     "answer": 0,
     "explainer": "An adjective describes a noun. \"Huge\" describes \"dog\"."
   },
@@ -22,7 +32,12 @@
     "subject": "english",
     "topic": "word-classes",
     "prompt": "Identify the adverb: \"He spoke softly.\"",
-    "options": ["He", "spoke", "softly", "There is no adverb"],
+    "options": [
+      "He",
+      "spoke",
+      "softly",
+      "There is no adverb"
+    ],
     "answer": 2,
     "explainer": "An adverb usually tells us how, when or where a verb happens. \"Softly\" tells us how he spoke."
   },
@@ -31,7 +46,12 @@
     "subject": "english",
     "topic": "word-classes",
     "prompt": "Which word is a pronoun?",
-    "options": ["table", "she", "quickly", "happy"],
+    "options": [
+      "table",
+      "she",
+      "quickly",
+      "happy"
+    ],
     "answer": 1,
     "explainer": "A pronoun stands in for a noun. \"She\" replaces a person's name."
   },
@@ -40,7 +60,12 @@
     "subject": "english",
     "topic": "word-classes",
     "prompt": "Which word is a preposition?",
-    "options": ["under", "running", "loud", "they"],
+    "options": [
+      "under",
+      "running",
+      "loud",
+      "they"
+    ],
     "answer": 0,
     "explainer": "Prepositions show position or direction (under, over, into, across, beside, between)."
   },
@@ -49,7 +74,12 @@
     "subject": "english",
     "topic": "word-classes",
     "prompt": "Which word is a conjunction?",
-    "options": ["and", "carefully", "small", "him"],
+    "options": [
+      "and",
+      "carefully",
+      "small",
+      "him"
+    ],
     "answer": 0,
     "explainer": "Conjunctions join words, phrases or clauses (and, but, or, because, although)."
   },
@@ -72,7 +102,12 @@
     "subject": "english",
     "topic": "punctuation",
     "prompt": "Which uses the apostrophe correctly?",
-    "options": ["the dogs bone", "the dog's bone", "the dogs' bone", "the dog,s bone"],
+    "options": [
+      "the dogs bone",
+      "the dog's bone",
+      "the dogs' bone",
+      "the dog,s bone"
+    ],
     "answer": 1,
     "explainer": "One dog owns the bone, so the apostrophe goes before the s. Two dogs would be \"the dogs' bone\"."
   },
@@ -109,7 +144,12 @@
     "subject": "english",
     "topic": "figurative-language",
     "prompt": "\"The classroom was a zoo.\" This is an example of:",
-    "options": ["Simile", "Metaphor", "Onomatopoeia", "Alliteration"],
+    "options": [
+      "Simile",
+      "Metaphor",
+      "Onomatopoeia",
+      "Alliteration"
+    ],
     "answer": 1,
     "explainer": "A metaphor says something IS something else. A simile would use \"like\" or \"as\" — \"like a zoo\"."
   },
@@ -118,7 +158,12 @@
     "subject": "english",
     "topic": "figurative-language",
     "prompt": "\"Her smile shone like the sun.\" This is an example of:",
-    "options": ["Metaphor", "Simile", "Personification", "Hyperbole"],
+    "options": [
+      "Metaphor",
+      "Simile",
+      "Personification",
+      "Hyperbole"
+    ],
     "answer": 1,
     "explainer": "Similes compare two things using \"like\" or \"as\"."
   },
@@ -127,7 +172,12 @@
     "subject": "english",
     "topic": "figurative-language",
     "prompt": "\"The wind whispered through the trees.\" This is:",
-    "options": ["Personification", "Simile", "Alliteration", "Onomatopoeia"],
+    "options": [
+      "Personification",
+      "Simile",
+      "Alliteration",
+      "Onomatopoeia"
+    ],
     "answer": 0,
     "explainer": "Personification gives a human action (whispering) to a non-human thing (the wind)."
   },
@@ -136,7 +186,12 @@
     "subject": "english",
     "topic": "figurative-language",
     "prompt": "\"Slithering, slimy snakes\" is an example of:",
-    "options": ["Simile", "Metaphor", "Alliteration", "Personification"],
+    "options": [
+      "Simile",
+      "Metaphor",
+      "Alliteration",
+      "Personification"
+    ],
     "answer": 2,
     "explainer": "Alliteration is the same starting sound repeated across nearby words (here, the \"s\" sound)."
   },
@@ -145,7 +200,12 @@
     "subject": "english",
     "topic": "figurative-language",
     "prompt": "\"Bang! Crash! Splat!\" These are:",
-    "options": ["Similes", "Metaphors", "Onomatopoeia", "Adverbs"],
+    "options": [
+      "Similes",
+      "Metaphors",
+      "Onomatopoeia",
+      "Adverbs"
+    ],
     "answer": 2,
     "explainer": "Onomatopoeia is a word that sounds like the noise it describes."
   },
@@ -154,7 +214,12 @@
     "subject": "english",
     "topic": "sentence-types",
     "prompt": "What type of sentence is \"Don't forget your bag.\"?",
-    "options": ["Statement", "Question", "Command", "Exclamation"],
+    "options": [
+      "Statement",
+      "Question",
+      "Command",
+      "Exclamation"
+    ],
     "answer": 2,
     "explainer": "Commands tell someone to do (or not do) something."
   },
@@ -163,7 +228,12 @@
     "subject": "english",
     "topic": "sentence-types",
     "prompt": "What type of sentence is \"The match starts at three o'clock.\"?",
-    "options": ["Statement", "Question", "Command", "Exclamation"],
+    "options": [
+      "Statement",
+      "Question",
+      "Command",
+      "Exclamation"
+    ],
     "answer": 0,
     "explainer": "Statements give information and end with a full stop."
   },
@@ -172,7 +242,12 @@
     "subject": "english",
     "topic": "tenses",
     "prompt": "What is the past tense of \"run\"?",
-    "options": ["runned", "ran", "running", "runs"],
+    "options": [
+      "runned",
+      "ran",
+      "running",
+      "runs"
+    ],
     "answer": 1,
     "explainer": "\"Run\" is irregular — its past tense is \"ran\". The past participle is \"run\" (have run)."
   },
@@ -181,7 +256,12 @@
     "subject": "english",
     "topic": "tenses",
     "prompt": "Which sentence is in the present continuous?",
-    "options": ["She runs every morning.", "She is running now.", "She ran yesterday.", "She will run tomorrow."],
+    "options": [
+      "She runs every morning.",
+      "She is running now.",
+      "She ran yesterday.",
+      "She will run tomorrow."
+    ],
     "answer": 1,
     "explainer": "Present continuous = is/are + verb-ing. It describes something happening now."
   },
@@ -190,7 +270,12 @@
     "subject": "english",
     "topic": "spelling",
     "prompt": "What is the plural of \"fox\"?",
-    "options": ["foxs", "foxes", "foxen", "foxies"],
+    "options": [
+      "foxs",
+      "foxes",
+      "foxen",
+      "foxies"
+    ],
     "answer": 1,
     "explainer": "Words ending in -x add -es to make the plural: fox → foxes."
   },
@@ -199,7 +284,12 @@
     "subject": "english",
     "topic": "spelling",
     "prompt": "What is the plural of \"child\"?",
-    "options": ["childs", "childes", "children", "childies"],
+    "options": [
+      "childs",
+      "childes",
+      "children",
+      "childies"
+    ],
     "answer": 2,
     "explainer": "\"Children\" is irregular — you just have to learn it."
   },
@@ -208,7 +298,12 @@
     "subject": "english",
     "topic": "spelling",
     "prompt": "Which is spelt correctly?",
-    "options": ["recieve", "receive", "receeve", "receve"],
+    "options": [
+      "recieve",
+      "receive",
+      "receeve",
+      "receve"
+    ],
     "answer": 1,
     "explainer": "I before E except after C: receive, ceiling, deceive."
   },
@@ -217,7 +312,12 @@
     "subject": "english",
     "topic": "vocabulary",
     "prompt": "Which word is a synonym for \"happy\"?",
-    "options": ["sad", "joyful", "tired", "angry"],
+    "options": [
+      "sad",
+      "joyful",
+      "tired",
+      "angry"
+    ],
     "answer": 1,
     "explainer": "A synonym means the same (or nearly the same). Joyful = happy."
   },
@@ -226,7 +326,12 @@
     "subject": "english",
     "topic": "vocabulary",
     "prompt": "Which word is an antonym for \"tiny\"?",
-    "options": ["small", "miniature", "huge", "narrow"],
+    "options": [
+      "small",
+      "miniature",
+      "huge",
+      "narrow"
+    ],
     "answer": 2,
     "explainer": "An antonym means the opposite. \"Huge\" is the opposite of \"tiny\"."
   },
@@ -235,7 +340,12 @@
     "subject": "english",
     "topic": "vocabulary",
     "prompt": "What does \"reluctant\" mean?",
-    "options": ["very keen", "unwilling", "exhausted", "noisy"],
+    "options": [
+      "very keen",
+      "unwilling",
+      "exhausted",
+      "noisy"
+    ],
     "answer": 1,
     "explainer": "\"Reluctant\" means hesitant or unwilling to do something."
   },
@@ -244,7 +354,12 @@
     "subject": "english",
     "topic": "comprehension",
     "prompt": "\"Mia gripped her bag tightly and stared at the floor.\" What does this suggest?",
-    "options": ["She is bored", "She is nervous", "She is angry", "She is asleep"],
+    "options": [
+      "She is bored",
+      "She is nervous",
+      "She is angry",
+      "She is asleep"
+    ],
     "answer": 1,
     "explainer": "Gripping tightly and avoiding eye contact are clues — they suggest anxiety or nerves."
   },
@@ -267,7 +382,12 @@
     "subject": "english",
     "topic": "myths-and-legends",
     "prompt": "Who killed Medusa, using a polished shield to avoid her gaze?",
-    "options": ["Hercules", "Perseus", "Theseus", "Odysseus"],
+    "options": [
+      "Hercules",
+      "Perseus",
+      "Theseus",
+      "Odysseus"
+    ],
     "answer": 1,
     "explainer": "Perseus used the reflection in his shield so he wouldn't look at Medusa directly. He cut off her head and used it as a weapon."
   },
@@ -276,7 +396,12 @@
     "subject": "english",
     "topic": "myths-and-legends",
     "prompt": "In Greek myth, the Minotaur lived inside a:",
-    "options": ["Cave", "Labyrinth", "Castle", "Volcano"],
+    "options": [
+      "Cave",
+      "Labyrinth",
+      "Castle",
+      "Volcano"
+    ],
     "answer": 1,
     "explainer": "King Minos kept the bull-headed Minotaur in a maze called the Labyrinth, designed by the inventor Daedalus."
   },
@@ -327,7 +452,12 @@
     "subject": "english",
     "topic": "dickens",
     "prompt": "Charles Dickens wrote during which era?",
-    "options": ["Roman", "Tudor", "Victorian", "Modern (1990s onward)"],
+    "options": [
+      "Roman",
+      "Tudor",
+      "Victorian",
+      "Modern (1990s onward)"
+    ],
     "answer": 2,
     "explainer": "Dickens (1812–1870) wrote during the reign of Queen Victoria. His novels often expose the harshness of Victorian London."
   },
@@ -336,7 +466,12 @@
     "subject": "english",
     "topic": "dickens",
     "prompt": "\"Please, sir, I want some more.\" — this famous line is from:",
-    "options": ["Great Expectations", "Oliver Twist", "A Christmas Carol", "Hard Times"],
+    "options": [
+      "Great Expectations",
+      "Oliver Twist",
+      "A Christmas Carol",
+      "Hard Times"
+    ],
     "answer": 1,
     "explainer": "Oliver, an orphan in a workhouse, asks for more gruel. The line became a symbol of Victorian poverty and child cruelty."
   },
@@ -345,7 +480,12 @@
     "subject": "english",
     "topic": "dickens",
     "prompt": "Which Dickens novel features a young orphan called Pip?",
-    "options": ["Oliver Twist", "Great Expectations", "Bleak House", "David Copperfield"],
+    "options": [
+      "Oliver Twist",
+      "Great Expectations",
+      "Bleak House",
+      "David Copperfield"
+    ],
     "answer": 1,
     "explainer": "Great Expectations follows Pip from boyhood in the marshes through his mysterious rise to gentleman in London."
   },
@@ -424,7 +564,12 @@
     "subject": "english",
     "topic": "writing-skills",
     "prompt": "In a paragraph using PEEL, what does the second E stand for?",
-    "options": ["End", "Explain", "Edit", "Example only"],
+    "options": [
+      "End",
+      "Explain",
+      "Edit",
+      "Example only"
+    ],
     "answer": 1,
     "explainer": "PEEL = Point, Evidence, Explain, Link. The second E (\"Explain\") is where you analyse why the evidence supports your point."
   },
@@ -469,5 +614,215 @@
     ],
     "answer": 1,
     "explainer": "Pull the reader in fast. You can fill in backstory once they're already curious."
+  },
+  {
+    "id": "eng-comprehension-002",
+    "subject": "english",
+    "topic": "comprehension",
+    "prompt": "When a question asks you to 'infer', it means:",
+    "options": [
+      "Quote a line word-for-word",
+      "Work out something the writer hasn't said directly",
+      "Count the syllables",
+      "Spot a metaphor"
+    ],
+    "answer": 1,
+    "explainer": "Infer = read between the lines. Use clues in the text to work out something the writer didn't state outright."
+  },
+  {
+    "id": "eng-comprehension-003",
+    "subject": "english",
+    "topic": "comprehension",
+    "prompt": "Which is a good way to find evidence in a text?",
+    "options": [
+      "Guess based on the title",
+      "Re-read the relevant section and quote a phrase",
+      "Skim the first line only",
+      "Count paragraphs"
+    ],
+    "answer": 1,
+    "explainer": "Always re-read the relevant section, then quote a short phrase or sentence to back up your point."
+  },
+  {
+    "id": "eng-comprehension-004",
+    "subject": "english",
+    "topic": "comprehension",
+    "prompt": "PEE stands for:",
+    "options": [
+      "Pause, Explain, End",
+      "Point, Evidence, Explanation",
+      "Plan, Edit, Email",
+      "Plot, Event, Error"
+    ],
+    "answer": 1,
+    "explainer": "PEE = Point (your idea), Evidence (a quote), Explanation (why it supports your point). Used in English answers everywhere."
+  },
+  {
+    "id": "eng-comprehension-005",
+    "subject": "english",
+    "topic": "comprehension",
+    "prompt": "If a story is told in the FIRST person, the narrator says:",
+    "options": [
+      "He / She / They",
+      "I / We",
+      "You",
+      "It"
+    ],
+    "answer": 1,
+    "explainer": "First-person uses 'I' and 'we' — the narrator is one of the characters. Third-person uses 'he/she/they'."
+  },
+  {
+    "id": "eng-tenses-003",
+    "subject": "english",
+    "topic": "tenses",
+    "prompt": "Which sentence is in the past tense?",
+    "options": [
+      "I am running.",
+      "I run every day.",
+      "I ran to the shop.",
+      "I will run tomorrow."
+    ],
+    "answer": 2,
+    "explainer": "Past tense describes something that has already happened. 'Ran' is the past form of 'run'."
+  },
+  {
+    "id": "eng-tenses-004",
+    "subject": "english",
+    "topic": "tenses",
+    "prompt": "Change to the future tense: 'She walks home.'",
+    "options": [
+      "She walked home.",
+      "She is walking home.",
+      "She will walk home.",
+      "She walks home now."
+    ],
+    "answer": 2,
+    "explainer": "Future tense uses 'will' or 'going to'. 'She will walk home' is the simple future form."
+  },
+  {
+    "id": "eng-tenses-005",
+    "subject": "english",
+    "topic": "tenses",
+    "prompt": "Which sentence uses the present continuous tense?",
+    "options": [
+      "I eat lunch.",
+      "I am eating lunch.",
+      "I ate lunch.",
+      "I will eat lunch."
+    ],
+    "answer": 1,
+    "explainer": "Present continuous = 'am/is/are' + verb-ING. It describes what is happening right now."
+  },
+  {
+    "id": "eng-senttype-003",
+    "subject": "english",
+    "topic": "sentence-types",
+    "prompt": "Which is an exclamation?",
+    "options": [
+      "Where are you going?",
+      "What a brilliant idea!",
+      "Please close the door.",
+      "The dog barked loudly."
+    ],
+    "answer": 1,
+    "explainer": "Exclamations end with a ! and express strong feeling — surprise, excitement, anger."
+  },
+  {
+    "id": "eng-senttype-004",
+    "subject": "english",
+    "topic": "sentence-types",
+    "prompt": "Which is a command (imperative)?",
+    "options": [
+      "The cat is sleeping.",
+      "Where are my keys?",
+      "Shut the door, please.",
+      "I love this song!"
+    ],
+    "answer": 2,
+    "explainer": "An imperative gives an order or instruction. Often starts with the verb: 'Shut...', 'Open...', 'Stop...'."
+  },
+  {
+    "id": "eng-senttype-005",
+    "subject": "english",
+    "topic": "sentence-types",
+    "prompt": "Which is a complex sentence?",
+    "options": [
+      "I went home.",
+      "I went home and ate dinner.",
+      "Although it was raining, I went out.",
+      "Stop!"
+    ],
+    "answer": 2,
+    "explainer": "Complex sentences have a main clause + at least one subordinate clause. 'Although it was raining' is subordinate — it can't stand alone."
+  },
+  {
+    "id": "eng-spelling-004",
+    "subject": "english",
+    "topic": "spelling",
+    "prompt": "Which is spelt correctly?",
+    "options": [
+      "seperate",
+      "separat",
+      "separate",
+      "seperete"
+    ],
+    "answer": 2,
+    "explainer": "'Separate' has 'a-RAT' in the middle. Mnemonic: there is 'A RAT' in sepARATe."
+  },
+  {
+    "id": "eng-spelling-005",
+    "subject": "english",
+    "topic": "spelling",
+    "prompt": "Which is the correct plural of 'leaf'?",
+    "options": [
+      "leafs",
+      "leaves",
+      "leafes",
+      "leavs"
+    ],
+    "answer": 1,
+    "explainer": "Words ending in 'f' or 'fe' often change to 'ves' in the plural: leaf to leaves, knife to knives, life to lives."
+  },
+  {
+    "id": "eng-vocab-004",
+    "subject": "english",
+    "topic": "vocabulary",
+    "prompt": "Which word means 'extremely tired'?",
+    "options": [
+      "bewildered",
+      "exhausted",
+      "anxious",
+      "elated"
+    ],
+    "answer": 1,
+    "explainer": "Exhausted = completely worn out, no energy left. Bewildered = confused. Anxious = worried. Elated = thrilled."
+  },
+  {
+    "id": "eng-vocab-005",
+    "subject": "english",
+    "topic": "vocabulary",
+    "prompt": "What does 'reluctant' mean?",
+    "options": [
+      "Eager and excited",
+      "Unwilling, hesitant",
+      "Strong and confident",
+      "Quiet and calm"
+    ],
+    "answer": 1,
+    "explainer": "Reluctant = doing something with hesitation, not really wanting to. Opposite of eager."
+  },
+  {
+    "id": "eng-punctuation-005",
+    "subject": "english",
+    "topic": "punctuation",
+    "prompt": "Which sentence uses an apostrophe correctly?",
+    "options": [
+      "The cats whiskers are long.",
+      "The cat's whiskers are long.",
+      "The cats' whiskers' are long.",
+      "The cat's whisker's are long."
+    ],
+    "answer": 1,
+    "explainer": "An apostrophe before the 's' shows possession for one cat. 'The cat's whiskers' = the whiskers of the (one) cat."
   }
 ]
