@@ -29,9 +29,9 @@ import {
   readString as storageReadString,
   writeString as storageWriteString,
   remove as storageRemove
-} from "../../platform/storage.js?v=20260519";
+} from "../../platform/storage.js?v=20260523";
 
-import { todayIso, isoOffset } from "../../shared/dates.js?v=20260519";
+import { todayIso, isoOffset } from "../../shared/dates.js?v=20260523";
 
 const PREFIX = "aimhigh-mock-";
 const KEY_PAUSE  = PREFIX + "pause";

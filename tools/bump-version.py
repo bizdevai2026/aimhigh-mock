@@ -30,8 +30,13 @@ import os, re, sys, datetime, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PATTERN = re.compile(rb'\?v=(\d{8})')
 TARGETS = []
+# Recurse so the per-domain folders (boot/, auth/, platform/, media/,
+# domain/, diagnostics/, shared/) are caught as well as the top level.
+# Skip the tools/ folder — it's our own infra, no cache-busted refs.
 for ext in ('*.html', '*.js', '*.css', '*.webmanifest'):
-    TARGETS.extend(ROOT.glob(ext))
+    for p in ROOT.rglob(ext):
+        if 'tools' in p.parts: continue
+        TARGETS.append(p)
 TARGETS.sort()
 
 def existing_max_version():

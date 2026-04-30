@@ -11,12 +11,18 @@
 // Not intended for end users — but harmless if a kid stumbles on it.
 // No state mutation, no destructive actions.
 
-import { snapshot as logSnapshot } from "../platform/logger.js?v=20260515";
-import { snapshot as storageSnapshot } from "../platform/storage.js?v=20260515";
+import { snapshot as logSnapshot } from "../platform/logger.js?v=20260523";
+import { snapshot as storageSnapshot } from "../platform/storage.js?v=20260523";
 
-// Build version is the same string as the cache-bust ?v= used elsewhere.
-// Kept in sync by tools/bump-version.py.
-const BUILD_VERSION = "20260515";
+// Build version is read from this module's own ?v= query string, which
+// tools/bump-version.py keeps current across the whole repo. No second
+// place to forget to update.
+const BUILD_VERSION = (function () {
+  try {
+    const m = String(import.meta.url || "").match(/\?v=(\d{8})/);
+    return m ? m[1] : "unknown";
+  } catch (e) { return "unknown"; }
+})();
 
 function escapeHtml(s) {
   return String(s == null ? "" : s)

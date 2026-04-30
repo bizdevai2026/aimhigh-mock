@@ -5,13 +5,13 @@
 // with tap-to-answer + instant feedback, and finalises the session
 // via engagement.noteSessionResult so streak/XP/tier update correctly.
 
-import "./mock.js?v=20260522"; // shared header behaviour (sound toggle, streak chip)
-import { loadAllQuestions, pickWarmupQuestions, subjectName } from "./questions.js?v=20260522";
-import { noteSessionResult, readStreak, readXpToday } from "./engagement.js?v=20260522";
-import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playTap, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticCorrect, hapticWrong, hapticStreak, hapticPerfect } from "./sounds.js?v=20260522";
-import { getVisual } from "./visuals.js?v=20260522";
-import { isParentRole } from "./profile.js?v=20260522";
-import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260522";
+import "./mock.js?v=20260523"; // shared header behaviour (sound toggle, streak chip)
+import { loadAllQuestions, pickWarmupQuestions, subjectName } from "./questions.js?v=20260523";
+import { noteSessionResult, readStreak, readXpToday } from "./engagement.js?v=20260523";
+import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playTap, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticCorrect, hapticWrong, hapticStreak, hapticPerfect } from "./sounds.js?v=20260523";
+import { getVisual } from "./visuals.js?v=20260523";
+import { isParentRole } from "./profile.js?v=20260523";
+import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260523";
 
 if (isParentRole()) { location.replace("dashboard.html"); }
 
