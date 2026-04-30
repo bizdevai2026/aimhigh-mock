@@ -13,7 +13,8 @@
 // 60% weak-topic bias and a per-subject cap so a warm-up isn't ten
 // maths questions.
 
-import { readSeen, weakTopics } from "./engagement.js?v=20260515";
+import { readSeen, weakTopics } from "./engagement.js?v=20260516";
+import * as logger from "./platform/logger.js?v=20260516";
 
 const SUBJECTS = [
   { id: "science",   name: "Science"          },
@@ -58,24 +59,42 @@ export function subjectName(id) {
 }
 
 export async function loadAllQuestions() {
-  if (_cache) return _cache;
+  if (_cache) {
+    logger.debug("content", "loadAllQuestions cache hit", { count: _cache.length });
+    return _cache;
+  }
+  logger.info("content", "loadAllQuestions: fetching " + SUBJECTS.length + " subject pools");
+  const t0 = Date.now();
   const fetches = SUBJECTS.map(function (s) {
     return fetch("data/" + s.id + ".json", { cache: "no-cache" })
-      .then(function (r) { return r.ok ? r.json() : []; })
-      .catch(function () { return []; });
+      .then(function (r) {
+        if (!r.ok) {
+          logger.error("content", "fetch " + s.id + ".json HTTP " + r.status);
+          return [];
+        }
+        return r.json();
+      })
+      .catch(function (e) {
+        logger.error("content", "fetch " + s.id + ".json failed", e);
+        return [];
+      });
   });
   const results = await Promise.all(fetches);
   const merged = [];
+  const perSubject = {};
   results.forEach(function (subjQs, i) {
+    const subjId = SUBJECTS[i].id;
+    perSubject[subjId] = Array.isArray(subjQs) ? subjQs.length : 0;
     if (!Array.isArray(subjQs)) return;
     subjQs.forEach(function (q) {
       // Stamp subject if missing; trust the file otherwise
       const stamped = Object.assign({}, q);
-      if (!stamped.subject) stamped.subject = SUBJECTS[i].id;
+      if (!stamped.subject) stamped.subject = subjId;
       merged.push(stamped);
     });
   });
   _cache = merged;
+  logger.info("content", "loadAllQuestions ok in " + (Date.now() - t0) + "ms — " + merged.length + " questions", perSubject);
   return merged;
 }
 
