@@ -5,22 +5,28 @@
 // with tap-to-answer + instant feedback, and finalises the session
 // via engagement.noteSessionResult so streak/XP/tier update correctly.
 
-import "./mock.js?v=20260526"; // shared header behaviour (sound toggle, streak chip)
-import { loadAllQuestions, pickWarmupQuestions } from "./questions.js?v=20260526";
-import { noteSessionResult, readStreak, readXpToday } from "./engagement.js?v=20260526";
+import "./mock.js?v=20260527"; // shared header behaviour (sound toggle, streak chip)
+import { loadAllQuestions, pickWarmupQuestions } from "./questions.js?v=20260527";
+import { noteSessionResult, readStreak, readXpToday } from "./engagement.js?v=20260527";
 // Sound + haptic imports are narrowed to what this file directly needs.
 // Per-answer feedback (correct/wrong/streak chimes) moved to
 // practice/feedback.js. Per-question card MC rendering moved to
 // practice/render.js — those modules import their own audio names.
-import { playLevelUp, playPerfect, playTap, playModeStartWarmup, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticStreak, hapticPerfect } from "./sounds.js?v=20260526";
-import { isParentRole } from "./profile.js?v=20260526";
-import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260526";
-import { escapeHtml } from "./shared/dom.js?v=20260526";
-import { subjectColor } from "./shared/subjects.js?v=20260526";
-import { onAnswerCorrect, onAnswerWrong } from "./practice/feedback.js?v=20260526";
-import { renderQuestionCard, subjectLabel } from "./practice/render.js?v=20260526";
+import { playLevelUp, playPerfect, playTap, playModeStartWarmup, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticStreak, hapticPerfect } from "./sounds.js?v=20260527";
+import { isParentRole } from "./profile.js?v=20260527";
+import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260527";
+import { escapeHtml } from "./shared/dom.js?v=20260527";
+import { subjectColor } from "./shared/subjects.js?v=20260527";
+import { onAnswerCorrect, onAnswerWrong } from "./practice/feedback.js?v=20260527";
+import { renderQuestionCard, subjectLabel } from "./practice/render.js?v=20260527";
 
-if (isParentRole()) { location.replace("dashboard.html"); }
+// Parent role: route them straight to the Coach view; they can't run
+// training anyway. Cancel the loading guard before the async redirect
+// so the timeout card doesn't briefly flash on a slow target page.
+if (isParentRole()) {
+  if (typeof window.GBReady === "function") window.GBReady();
+  location.replace("dashboard.html");
+}
 
 const ROUND_SIZE = 10;
 const CORRECT_AUTOADVANCE_MS = 850;

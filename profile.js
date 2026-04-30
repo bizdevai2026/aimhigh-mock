@@ -22,7 +22,7 @@
 // client-side gate. The point is to keep random passers-by, classmates,
 // or anyone who finds the URL out of the kid's progress data.
 
-export { hashPin } from "./auth/pin.js?v=20260526";
+export { hashPin } from "./auth/pin.js?v=20260527";
 
 export {
   readSession,
@@ -34,7 +34,7 @@ export {
   isDemoRole,
   startDemoSession,
   signOut
-} from "./auth/session.js?v=20260526";
+} from "./auth/session.js?v=20260527";
 
 export {
   readChildProfile,
@@ -54,10 +54,10 @@ export {
   wipeProfiles,
   profileName,
   signedInName
-} from "./auth/profile.js?v=20260526";
+} from "./auth/profile.js?v=20260527";
 
-export { requireSignInOrRedirect } from "./auth/gate.js?v=20260526";
+export { requireSignInOrRedirect } from "./auth/gate.js?v=20260527";
 
 // Backward-compat shims — older code calls these names.
-export { requireSignInOrRedirect as requireProfileOrRedirect } from "./auth/gate.js?v=20260526";
-export { signOut as clearProfile } from "./auth/session.js?v=20260526";
+export { requireSignInOrRedirect as requireProfileOrRedirect } from "./auth/gate.js?v=20260527";
+export { signOut as clearProfile } from "./auth/session.js?v=20260527";

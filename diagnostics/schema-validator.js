@@ -19,7 +19,7 @@
 // whether the situation warrants a user-visible banner (see
 // shouldShowBanner below).
 
-import * as logger from "../platform/logger.js?v=20260526";
+import * as logger from "../platform/logger.js?v=20260527";
 
 const VALID_SUBJECTS = ["science", "maths", "english", "french", "history", "geography", "computing"];
 const VALID_QTYPES   = ["mc", "mcq", "spell", "speak"];
@@ -68,19 +68,33 @@ function validateQuestionItem(q, index) {
 
 export function validateQuestions(arr) {
   const problems = [];
+  const validItems = [];
   if (!isArray(arr)) {
-    return { ok: false, problems: [{ index: -1, msg: "payload is not an array" }], total: 0 };
+    return { ok: false, problems: [{ index: -1, msg: "payload is not an array" }], total: 0, validItems: [] };
   }
   const seenIds = new Set();
   arr.forEach(function (q, i) {
     const itemProblems = validateQuestionItem(q, i);
-    itemProblems.forEach(function (p) { problems.push(p); });
+    let isValid = itemProblems.length === 0;
     if (q && isString(q.id)) {
-      if (seenIds.has(q.id)) problems.push({ index: i, id: q.id, msg: "duplicate id" });
+      if (seenIds.has(q.id)) {
+        problems.push({ index: i, id: q.id, msg: "duplicate id" });
+        isValid = false;
+      }
       seenIds.add(q.id);
     }
+    itemProblems.forEach(function (p) { problems.push(p); });
+    if (isValid) validItems.push(q);
   });
-  return { ok: problems.length === 0, problems: problems, total: arr.length };
+  return {
+    ok: problems.length === 0,
+    problems: problems,
+    total: arr.length,
+    // validItems: every item that passed all checks. Caller should filter
+    // its working pool to this list so a malformed item never reaches
+    // the picker / renderer.
+    validItems: validItems
+  };
 }
 
 // ---- Learning entry ------------------------------------------------------
@@ -129,13 +143,16 @@ function validateLearningEntry(e, index) {
 
 export function validateLearning(arr) {
   const problems = [];
+  const validItems = [];
   if (!isArray(arr)) {
-    return { ok: false, problems: [{ msg: "payload is not an array" }], total: 0 };
+    return { ok: false, problems: [{ msg: "payload is not an array" }], total: 0, validItems: [] };
   }
   arr.forEach(function (e, i) {
-    validateLearningEntry(e, i).forEach(function (p) { problems.push(p); });
+    const entryProblems = validateLearningEntry(e, i);
+    entryProblems.forEach(function (p) { problems.push(p); });
+    if (entryProblems.length === 0) validItems.push(e);
   });
-  return { ok: problems.length === 0, problems: problems, total: arr.length };
+  return { ok: problems.length === 0, problems: problems, total: arr.length, validItems: validItems };
 }
 
 // ---- Reporting helper ---------------------------------------------------

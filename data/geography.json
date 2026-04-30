@@ -439,15 +439,15 @@
     "id": "geo-rivers-001",
     "subject": "geography",
     "topic": "rivers",
-    "prompt": "Which part of a river usually has the fastest flow?",
+    "prompt": "Which part of a river usually has the SLOWEST flow?",
     "options": [
       "The source (start)",
       "The middle course",
       "The mouth (where it meets the sea)",
       "All parts equally"
     ],
-    "answer": 1,
-    "explainer": "The middle course usually has the most volume of water and a moderate gradient — fastest. Source has little water; mouth has wide, slow water.",
+    "answer": 0,
+    "explainer": "The source is high up, narrow and shallow with lots of friction from rocks and bends — water moves slowly. Counter-intuitively, the river actually speeds UP downstream (the Bradshaw model): the channel gets smoother, deeper and carries more water, so the lower course is fastest, not slowest.",
     "year_level": 7
   },
   {

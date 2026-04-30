@@ -21,15 +21,15 @@ import {
   clearLegacyProfile,
   migratedChildName,
   startDemoSession
-} from "./profile.js?v=20260526";
+} from "./profile.js?v=20260527";
 
-import { playWelcomeStinger } from "./sounds.js?v=20260526";
-import * as logger from "./platform/logger.js?v=20260526";
-import { escapeHtml, escapeAttr, byId } from "./shared/dom.js?v=20260526";
+import { playWelcomeStinger } from "./sounds.js?v=20260527";
+import * as logger from "./platform/logger.js?v=20260527";
+import { escapeHtml, escapeAttr, byId } from "./shared/dom.js?v=20260527";
 
 // Dev diagnostics panel — only when ?diag=1 in the URL.
 if (/[?&]diag=1\b/.test(location.search)) {
-  import("./diagnostics/panel.js?v=20260526").catch(function (e) {
+  import("./diagnostics/panel.js?v=20260527").catch(function (e) {
     logger.error("diag", "panel failed to load", e);
   });
 }
@@ -387,11 +387,9 @@ function sanitisePin(raw) {
 
 init();
 
-// Register the service worker for offline + fast subsequent loads.
-// Welcome page is the entry for fresh visitors, so it's a good place
-// to install the SW. Other pages register via mock.js.
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function () {
-    navigator.serviceWorker.register("./sw.js", { updateViaCache: "none" }).catch(function () {});
-  });
-}
+// Service worker decommissioned (see sw.js). We deliberately do NOT
+// register a new one — that's what was causing "stuck on stale cache"
+// loads during development. Any previously-installed SW self-unregisters
+// on its next activation; new visitors never install one. New code
+// that fixes this finding (deletes the lingering register call that
+// the QA agent caught on 2026-05-01).

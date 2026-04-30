@@ -285,21 +285,6 @@
     "year_level": 7
   },
   {
-    "id": "comp-ct-004",
-    "subject": "computing",
-    "topic": "computational-thinking",
-    "prompt": "An algorithm is best described as:",
-    "options": [
-      "A finished computer program",
-      "A step-by-step set of instructions to solve a problem",
-      "A type of programming language",
-      "A bug in code"
-    ],
-    "answer": 1,
-    "explainer": "An algorithm is the recipe — the ordered steps. Code is what you get when the recipe is written in a language a computer can run.",
-    "year_level": 7
-  },
-  {
     "id": "comp-ct-005",
     "subject": "computing",
     "topic": "computational-thinking",
@@ -585,21 +570,6 @@
     "year_level": 7
   },
   {
-    "id": "comp-algorithms-003",
-    "subject": "computing",
-    "topic": "algorithms",
-    "prompt": "Which is the best definition of an algorithm?",
-    "options": [
-      "A finished computer program",
-      "A step-by-step set of instructions to solve a problem",
-      "A type of computer chip",
-      "An error message"
-    ],
-    "answer": 1,
-    "explainer": "An algorithm is the recipe — the ordered steps. It can be written in plain English, as a flowchart, or as pseudocode, before being turned into code.",
-    "year_level": 7
-  },
-  {
     "id": "comp-algorithms-004",
     "subject": "computing",
     "topic": "algorithms",
@@ -675,21 +645,6 @@
     "year_level": 7
   },
   {
-    "id": "comp-networks-004",
-    "subject": "computing",
-    "topic": "networks",
-    "prompt": "What does LAN stand for?",
-    "options": [
-      "Local Area Network",
-      "Long Area Network",
-      "Light Access Net",
-      "Linked Audio Network"
-    ],
-    "answer": 0,
-    "explainer": "LAN = Local Area Network. A small network covering one building (a school, a home). WAN = Wide Area Network (e.g. the internet).",
-    "year_level": 7
-  },
-  {
     "id": "comp-networks-005",
     "subject": "computing",
     "topic": "networks",
@@ -703,5 +658,35 @@
     "answer": 1,
     "explainer": "Every device connected to a network has an IP address — the network's way of saying 'this device, here'.",
     "year_level": 7
+  },
+  {
+    "id": "comp-algorithms-006",
+    "subject": "computing",
+    "topic": "algorithms",
+    "year_level": 7,
+    "prompt": "A flowchart uses different shapes for different actions. Which shape is used for a DECISION?",
+    "options": [
+      "Rectangle",
+      "Oval",
+      "Diamond (rhombus)",
+      "Parallelogram"
+    ],
+    "answer": 2,
+    "explainer": "Diamond = decision (a yes/no question). Rectangle = process (a step). Oval = start/end. Parallelogram = input/output."
+  },
+  {
+    "id": "comp-networks-006",
+    "subject": "computing",
+    "topic": "networks",
+    "year_level": 7,
+    "prompt": "Which protocol is used to load web pages in a browser?",
+    "options": [
+      "FTP",
+      "SMTP",
+      "HTTP (or HTTPS)",
+      "SSH"
+    ],
+    "answer": 2,
+    "explainer": "HTTP/HTTPS = HyperText Transfer Protocol. FTP transfers files; SMTP sends email; SSH opens secure terminal connections. The padlock icon in the browser shows HTTPS — the encrypted version."
   }
 ]

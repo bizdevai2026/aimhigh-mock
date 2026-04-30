@@ -855,21 +855,6 @@
     "year_level": 7
   },
   {
-    "id": "eng-vocab-005",
-    "subject": "english",
-    "topic": "vocabulary",
-    "prompt": "What does 'reluctant' mean?",
-    "options": [
-      "Eager and excited",
-      "Unwilling, hesitant",
-      "Strong and confident",
-      "Quiet and calm"
-    ],
-    "answer": 1,
-    "explainer": "Reluctant = doing something with hesitation, not really wanting to. Opposite of eager.",
-    "year_level": 7
-  },
-  {
     "id": "eng-punctuation-005",
     "subject": "english",
     "topic": "punctuation",
@@ -883,5 +868,20 @@
     "answer": 1,
     "explainer": "An apostrophe before the 's' shows possession for one cat. 'The cat's whiskers' = the whiskers of the (one) cat.",
     "year_level": 7
+  },
+  {
+    "id": "eng-vocab-006",
+    "subject": "english",
+    "topic": "vocabulary",
+    "year_level": 7,
+    "prompt": "Which word means 'a strong dislike'?",
+    "options": [
+      "fondness",
+      "loathing",
+      "tolerance",
+      "indifference"
+    ],
+    "answer": 1,
+    "explainer": "Loathing = intense dislike or hatred. Fondness is the opposite. Tolerance is putting up with it. Indifference is not caring either way."
   }
 ]

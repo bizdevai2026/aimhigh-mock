@@ -661,48 +661,48 @@
     "year_level": 7
   },
   {
-    "id": "hist-cromwell-004",
-    "subject": "history",
-    "topic": "cromwell",
-    "prompt": "Oliver Cromwell ruled England as:",
-    "options": [
-      "King",
-      "Prime Minister",
-      "Lord Protector",
-      "Archbishop"
-    ],
-    "answer": 2,
-    "explainer": "After the king was executed (1649) and the monarchy abolished, Cromwell took the title 'Lord Protector' — effectively a dictator, ruling 1653–1658.",
-    "year_level": 7
-  },
-  {
-    "id": "hist-cromwell-005",
-    "subject": "history",
-    "topic": "cromwell",
-    "prompt": "What happened to the monarchy soon after Cromwell's death?",
-    "options": [
-      "It was abolished forever",
-      "Charles II was invited back (the Restoration, 1660)",
-      "France took over",
-      "England became a colony"
-    ],
-    "answer": 1,
-    "explainer": "Cromwell died in 1658. His son could not hold power. By 1660, Parliament invited Charles II to take the throne — the 'Restoration'.",
-    "year_level": 7
-  },
-  {
-    "id": "hist-gunpowder-005",
+    "id": "hist-gunpowder-006",
     "subject": "history",
     "topic": "gunpowder-plot",
-    "prompt": "Who is the most famous plotter, caught guarding the gunpowder?",
+    "year_level": 7,
+    "prompt": "Why did the plotters want to blow up Parliament?",
     "options": [
-      "Robert Catesby",
-      "Guy Fawkes",
-      "Thomas Wintour",
-      "Francis Tresham"
+      "To make King James I become Catholic",
+      "To kill King James I and replace him with a Catholic ruler",
+      "To stop a tax on gunpowder",
+      "To support a Spanish invasion"
     ],
     "answer": 1,
-    "explainer": "Guy Fawkes was caught in the cellars beneath Parliament on the night of 4 November 1605. His name lives on in Bonfire Night.",
-    "year_level": 7
+    "explainer": "James I was Protestant and persecuted Catholics. The plotters hoped that killing him plus most of the Protestant aristocracy in one strike would let them put a Catholic monarch on the throne."
+  },
+  {
+    "id": "hist-cromwell-006",
+    "subject": "history",
+    "topic": "cromwell",
+    "year_level": 7,
+    "prompt": "Cromwell's army was nicknamed:",
+    "options": [
+      "The Roundheads",
+      "The Cavaliers",
+      "The Redcoats",
+      "The Saxons"
+    ],
+    "answer": 0,
+    "explainer": "Roundheads — Parliament's supporters, named for their close-cropped hair. The Cavaliers were the King's supporters; long hair, plumed hats."
+  },
+  {
+    "id": "hist-cromwell-007",
+    "subject": "history",
+    "topic": "cromwell",
+    "year_level": 7,
+    "prompt": "True or false: Cromwell banned celebrating Christmas in England.",
+    "options": [
+      "True — his Puritan government saw it as ungodly",
+      "True — but only for one year (1647)",
+      "False — Cromwell loved Christmas feasting",
+      "False — that was Henry VIII"
+    ],
+    "answer": 0,
+    "explainer": "Cromwell's Puritan government banned Christmas celebrations from 1647 onwards. Soldiers patrolled the streets to confiscate festive food. The ban was lifted at the Restoration in 1660."
   }
 ]

@@ -146,7 +146,7 @@
   {
     "id": "fr-numbers-005",
     "subject": "french",
-    "topic": "birthday-and-months",
+    "topic": "home-and-where-from",
     "prompt": "What does \"je suis de Paris\" mean?",
     "options": [
       "I live in Paris",
@@ -788,7 +788,6 @@
     "prompt": "Tap Listen, then say it back: \"My name is Alex\".",
     "answer": "Je m'appelle Alex",
     "alternates": [
-      "jai mappelle Alex",
       "je mappelle Alex"
     ],
     "explainer": "\"Je m'appelle\" = \"I call myself\". The 'm'' is a contraction of \"me\".",
@@ -904,7 +903,7 @@
       "je mappelle Léo",
       "je mappelle Leo"
     ],
-    "explainer": "Final consonants of \"Léo\" sound; the 's' on \"appelles\" is silent.",
+    "explainer": "Pronunciation: \"zhuh ma-PELL lay-OH\". The 'p' in appelle is doubled in spelling but you only say one 'p'. Léo's accent on the 'é' makes the first vowel a clear 'ay' sound, not 'ee'.",
     "year_level": 7
   },
   {

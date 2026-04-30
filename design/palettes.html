@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>GradeBlaze design exploration · 5 palettes</title>
+  <meta name="theme-color" content="#0a0a0f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Load every face the previews need so all five render side by side -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:wght@500;700;800&family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap">
+  <style>
+    /* Standalone preview page — does not import mock.css. The five
+       options below are mutually independent so picking one is just
+       "copy that block's tokens into mock.css :root". */
+    :root {
+      --shell-bg: #f4f1ea;
+      --shell-text: #2a2620;
+      --shell-muted: #6b6358;
+      --shell-card: #ffffff;
+      --shell-border: #d4cdbb;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--shell-bg);
+      color: var(--shell-text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.5;
+      padding: 2rem 1rem 4rem;
+    }
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .page > header { margin-bottom: 2rem; }
+    .page > header h1 {
+      font-size: 1.6rem;
+      margin: 0 0 0.4rem;
+      letter-spacing: -0.01em;
+    }
+    .page > header p {
+      color: var(--shell-muted);
+      margin: 0;
+      max-width: 60ch;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 1.4rem;
+    }
+
+    /* Each option is a self-contained preview card. The .opt block
+       defines its own --bg / --text / etc CSS variables so the inner
+       elements (hero, tile, button) work off them. */
+    .opt {
+      border-radius: 22px;
+      padding: 1.6rem 1.4rem 1.8rem;
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 40px -20px rgba(0, 0, 0, 0.18);
+    }
+    .opt-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 999px;
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+    }
+    .opt h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      letter-spacing: var(--display-track, 0.01em);
+      margin: 0 0 0.5rem;
+      color: var(--text-strong);
+      line-height: 1.05;
+    }
+    .opt p.body {
+      font-family: var(--font-body);
+      color: var(--text);
+      font-size: 0.95rem;
+      margin: 0 0 0.9rem;
+      line-height: 1.5;
+    }
+    .opt p.body em { color: var(--accent); font-style: normal; font-weight: 600; }
+
+    .swatches {
+      display: flex;
+      gap: 0.4rem;
+      margin: 0.4rem 0 0.9rem;
+    }
+    .swatch {
+      flex: 1;
+      height: 28px;
+      border-radius: 7px;
+      border: 1px solid rgba(0,0,0,0.06);
+      position: relative;
+    }
+    .swatch::after {
+      content: attr(data-name);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      margin-top: 0.25rem;
+      letter-spacing: 0.04em;
+    }
+
+    .typesample {
+      margin: 1.6rem 0 1rem;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+    .typesample .display {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: var(--display-weight, 700);
+      letter-spacing: var(--display-track, 0.01em);
+      color: var(--text-strong);
+      margin: 0 0 0.3rem;
+      line-height: 1.05;
+    }
+
+    /* Mini hero — mirrors the GradeBlaze first-time card so each option
+       shows the exact place a learner first looks. */
+    .mini-hero {
+      margin-top: 1rem;
+      padding: 1.2rem 1.1rem 1.1rem;
+      border-radius: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .mini-hero .flame {
+      display: block;
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+    .mini-hero h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      margin: 0 0 0.4rem;
+      color: var(--text-strong);
+      letter-spacing: var(--display-track, 0.01em);
+      line-height: 1.05;
+    }
+    .mini-hero p {
+      margin: 0 0 0.8rem;
+      color: var(--text);
+      font-size: 0.85rem;
+    }
+    .mini-cta {
+      display: inline-block;
+      padding: 0.55rem 1.2rem;
+      background: var(--cta-bg);
+      color: var(--cta-fg);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.85rem;
+      border-radius: 8px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      box-shadow: var(--cta-glow);
+    }
+
+    /* === FLAME & LIGHTING TREATMENTS ===========================
+       Each option pairs the colour palette with a different flame
+       treatment so a vibe is felt, not just described. */
+
+    /* Treatment A: ember halo — soft radial glow behind the flame */
+    .flame-ember .flame {
+      filter: drop-shadow(0 0 14px var(--accent));
+      animation: emberPulse 2.4s ease-in-out infinite;
+    }
+    @keyframes emberPulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px var(--accent)); }
+      50% { transform: scale(1.06); filter: drop-shadow(0 0 18px var(--accent-bright)); }
+    }
+    .flame-ember .mini-hero::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, var(--accent-soft) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* Treatment B: sparks — small dots radiating outward */
+    .flame-spark .mini-hero {
+      background-image:
+        radial-gradient(circle at 18% 60%, var(--accent) 1px, transparent 2px),
+        radial-gradient(circle at 82% 30%, var(--accent-bright) 1px, transparent 2px),
+        radial-gradient(circle at 48% 18%, var(--accent) 1px, transparent 2px),
+        radial-gradient(circle at 30% 22%, var(--accent-bright) 1px, transparent 2px),
+        radial-gradient(circle at 75% 75%, var(--accent) 1px, transparent 2px),
+        var(--card);
+      background-size: 100% 100%;
+    }
+    .flame-spark .flame {
+      animation: sparkBob 1.8s ease-in-out infinite;
+    }
+    @keyframes sparkBob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
+    /* Treatment C: sunbeam ray — diagonal light streak across the card */
+    .flame-sunbeam .mini-hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -10%;
+      right: -10%;
+      bottom: -50%;
+      background: linear-gradient(115deg,
+        transparent 35%,
+        var(--accent-soft) 50%,
+        transparent 65%);
+      pointer-events: none;
+      animation: sunbeamSweep 6s ease-in-out infinite;
+    }
+    @keyframes sunbeamSweep {
+      0%, 100% { transform: translateX(-15%); opacity: 0.6; }
+      50% { transform: translateX(15%); opacity: 1; }
+    }
+    .flame-sunbeam .flame {
+      filter: drop-shadow(0 2px 6px var(--accent));
+    }
+
+    /* Treatment D: lit candle — base of card glows brighter than top */
+    .flame-candle .mini-hero {
+      background: linear-gradient(180deg, var(--card) 0%, var(--accent-soft) 100%);
+    }
+    .flame-candle .flame {
+      animation: candleFlicker 0.4s ease-in-out infinite alternate;
+      filter: drop-shadow(0 0 8px var(--accent-bright));
+    }
+    @keyframes candleFlicker {
+      0% { transform: scale(1) translateX(0); opacity: 0.95; }
+      100% { transform: scale(1.04) translateX(0.5px); opacity: 1; }
+    }
+
+    /* Treatment E: aurora — ambient colour wash behind everything */
+    .flame-aurora .mini-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 0% 0%, var(--accent-soft) 0%, transparent 60%),
+        radial-gradient(ellipse at 100% 100%, var(--accent2-soft, var(--accent-soft)) 0%, transparent 60%);
+      pointer-events: none;
+      animation: auroraDrift 8s ease-in-out infinite;
+    }
+    @keyframes auroraDrift {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+    .flame-aurora .flame {
+      filter: drop-shadow(0 0 12px var(--accent2, var(--accent)));
+    }
+
+    /* === FIVE PALETTES =================================================
+       Each defines:  --bg, --card, --border, --text, --text-strong,
+                      --text-dim, --accent, --accent-bright, --accent-soft,
+                      --cta-bg, --cta-fg, --cta-glow,
+                      --font-display, --font-body, plus optional
+                      --display-weight, --display-track, --accent2.
+
+       Then attach .flame-* class for the treatment.
+    */
+
+    /* OPTION 1 — INFERNO REFINED  (current direction, polished) */
+    .opt-1 {
+      --bg: #faf9f6;
+      --card: #ffffff;
+      --border: #e7e2d6;
+      --text: #3d3a32;
+      --text-strong: #1a1814;
+      --text-dim: #6b6358;
+      --accent: #ff3d00;
+      --accent-bright: #ffb300;
+      --accent-soft: rgba(255, 61, 0, 0.10);
+      --cta-bg: linear-gradient(135deg, #ff3d00, #ffb300);
+      --cta-fg: #0a0a0f;
+      --cta-glow: 0 0 22px rgba(255, 61, 0, 0.40);
+      --font-display: 'Anton', 'Impact', sans-serif;
+      --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
+      --display-track: 0.02em;
+    }
+
+    /* OPTION 2 — WARM EMBER  (cosier, study-paper feel) */
+    .opt-2 {
+      --bg: #f6efe4;
+      --card: #fffbf3;
+      --border: #e3d6bd;
+      --text: #3a2f24;
+      --text-strong: #1f160e;
+      --text-dim: #74624c;
+      --accent: #c2410c;
+      --accent-bright: #f59e0b;
+      --accent-soft: rgba(194, 65, 12, 0.10);
+      --cta-bg: linear-gradient(135deg, #c2410c, #f59e0b);
+      --cta-fg: #ffffff;
+      --cta-glow: 0 0 18px rgba(194, 65, 12, 0.30);
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Lora', Georgia, serif;
+      --display-weight: 700;
+      --display-track: -0.005em;
+    }
+
+    /* OPTION 3 — ELECTRIC CITRUS  (bright, modern, GenZ) */
+    .opt-3 {
+      --bg: #fafffa;
+      --card: #ffffff;
+      --border: #d6e4d2;
+      --text: #1c2920;
+      --text-strong: #0a1a0e;
+      --text-dim: #5a6b5e;
+      --accent: #ff5500;
+      --accent-bright: #ffe600;
+      --accent-soft: rgba(255, 85, 0, 0.10);
+      --cta-bg: linear-gradient(135deg, #ff5500, #ffe600);
+      --cta-fg: #0a1a0e;
+      --cta-glow: 0 0 24px rgba(255, 85, 0, 0.45);
+      --font-display: 'Bricolage Grotesque', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --display-weight: 800;
+      --display-track: -0.02em;
+    }
+
+    /* OPTION 4 — DEEP COBALT  (premium, focused, late-evening) */
+    .opt-4 {
+      --bg: #0f1729;
+      --card: #1a2440;
+      --border: #2a3658;
+      --text: #c4cce0;
+      --text-strong: #f0f4ff;
+      --text-dim: #8a92a8;
+      --accent: #ff5e3a;
+      --accent-bright: #ffd13a;
+      --accent-soft: rgba(255, 94, 58, 0.16);
+      --accent2: #6da7ff;
+      --accent2-soft: rgba(109, 167, 255, 0.18);
+      --cta-bg: linear-gradient(135deg, #ff5e3a, #ffd13a);
+      --cta-fg: #0f1729;
+      --cta-glow: 0 0 28px rgba(255, 94, 58, 0.50);
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Manrope', sans-serif;
+      --display-weight: 800;
+      --display-track: -0.015em;
+    }
+
+    /* OPTION 5 — JADE & RUST  (calm, distinct, scholarly) */
+    .opt-5 {
+      --bg: #f3f5f1;
+      --card: #ffffff;
+      --border: #d6dcd1;
+      --text: #2c352f;
+      --text-strong: #15201a;
+      --text-dim: #6c7a72;
+      --accent: #b34a1a;
+      --accent-bright: #2e8b6b;
+      --accent-soft: rgba(179, 74, 26, 0.10);
+      --accent2: #2e8b6b;
+      --accent2-soft: rgba(46, 139, 107, 0.12);
+      --cta-bg: linear-gradient(135deg, #b34a1a, #2e8b6b);
+      --cta-fg: #ffffff;
+      --cta-glow: 0 0 18px rgba(179, 74, 26, 0.30);
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --display-weight: 700;
+      --display-track: -0.01em;
+    }
+
+    .footer {
+      max-width: 1200px;
+      margin: 3rem auto 0;
+      padding: 1.6rem;
+      background: #ffffff;
+      border: 1px solid var(--shell-border);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: var(--shell-muted);
+    }
+    .footer h3 { color: var(--shell-text); margin: 0 0 0.6rem; font-size: 1rem; }
+    .footer ol { padding-left: 1.4rem; margin: 0.4rem 0 0; }
+    .footer li { margin-bottom: 0.3rem; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>GradeBlaze design exploration</h1>
+      <p>Five colour + typography directions, each paired with a different flame / lighting treatment. Scroll the page side to side on a phone, or open it on a laptop to see all five at once. Each block is self-contained — picking one means lifting that block's tokens into <code>mock.css :root</code>.</p>
+    </header>
+
+    <div class="grid">
+
+      <!-- OPTION 1 -->
+      <section class="opt opt-1 flame-ember">
+        <span class="opt-tag">Option 1 · Inferno refined</span>
+        <h2>The kid who wants to ace it</h2>
+        <p class="body">Today's palette, polished. Warm off-white paper, scarlet-to-amber gradient on the CTA, <em>refined for sustained reading</em>. Anton + IBM Plex Sans. Flame: <strong>ember halo</strong> — soft pulsing glow behind the icon.</p>
+        <div class="swatches">
+          <div class="swatch" style="background:#faf9f6" data-name="bg"></div>
+          <div class="swatch" style="background:#3d3a32" data-name="text"></div>
+          <div class="swatch" style="background:#ff3d00" data-name="primary"></div>
+          <div class="swatch" style="background:#ffb300" data-name="amber"></div>
+          <div class="swatch" style="background:#1a1814" data-name="strong"></div>
+        </div>
+        <div class="typesample">
+          <p class="display">DAY 1 STARTS HERE</p>
+          The quick brown fox jumps over the lazy dog. Five-minute warm-up, ten questions, mixed subjects.
+        </div>
+        <div class="mini-hero">
+          <span class="flame">🔥</span>
+          <h3>Day 1 starts here</h3>
+          <p>A 5-minute warm-up kicks off your streak.</p>
+          <a class="mini-cta" href="#">Start your warm-up</a>
+        </div>
+      </section>
+
+      <!-- OPTION 2 -->
+      <section class="opt opt-2 flame-candle">
+        <span class="opt-tag">Option 2 · Warm ember</span>
+        <h2>The kid who likes books</h2>
+        <p class="body">A cosier, study-paper feel. Cream background, terracotta accent, <em>Fraunces serif display</em> + Lora body for a literate, end-of-the-school-day vibe. Flame: <strong>lit candle</strong> — flicker animation, base of card warms upward.</p>
+        <div class="swatches">
+          <div class="swatch" style="background:#f6efe4" data-name="bg"></div>
+          <div class="swatch" style="background:#3a2f24" data-name="text"></div>
+          <div class="swatch" style="background:#c2410c" data-name="primary"></div>
+          <div class="swatch" style="background:#f59e0b" data-name="amber"></div>
+          <div class="swatch" style="background:#1f160e" data-name="strong"></div>
+        </div>
+        <div class="typesample">
+          <p class="display">Day 1 starts here</p>
+          The quick brown fox jumps over the lazy dog. Five-minute warm-up, ten questions, mixed subjects.
+        </div>
+        <div class="mini-hero">
+          <span class="flame">🕯️</span>
+          <h3>Day 1 starts here</h3>
+          <p>A 5-minute warm-up kicks off your streak.</p>
+          <a class="mini-cta" href="#">Start your warm-up</a>
+        </div>
+      </section>
+
+      <!-- OPTION 3 -->
+      <section class="opt opt-3 flame-spark">
+        <span class="opt-tag">Option 3 · Electric citrus</span>
+        <h2>The kid who watches BeReal</h2>
+        <p class="body">Bright, modern, GenZ-coded. Off-white + green undertones, an aggressive orange-to-yellow gradient, <em>Bricolage Grotesque</em> display tilted slightly bolder. Flame: <strong>sparks</strong> — animated dots radiating outward, bobbing icon.</p>
+        <div class="swatches">
+          <div class="swatch" style="background:#fafffa" data-name="bg"></div>
+          <div class="swatch" style="background:#1c2920" data-name="text"></div>
+          <div class="swatch" style="background:#ff5500" data-name="primary"></div>
+          <div class="swatch" style="background:#ffe600" data-name="yellow"></div>
+          <div class="swatch" style="background:#0a1a0e" data-name="strong"></div>
+        </div>
+        <div class="typesample">
+          <p class="display">Day 1 starts here</p>
+          The quick brown fox jumps over the lazy dog. Five-minute warm-up, ten questions, mixed subjects.
+        </div>
+        <div class="mini-hero">
+          <span class="flame">⚡</span>
+          <h3>Day 1 starts here</h3>
+          <p>A 5-minute warm-up kicks off your streak.</p>
+          <a class="mini-cta" href="#">Start your warm-up</a>
+        </div>
+      </section>
+
+      <!-- OPTION 4 -->
+      <section class="opt opt-4 flame-aurora">
+        <span class="opt-tag">Option 4 · Deep cobalt</span>
+        <h2>The kid who studies at night</h2>
+        <p class="body">Premium dark theme done right. Deep navy surface (<em>not pure black</em> — eyes thank you), warm coral + gold accents, secondary cobalt blue. Outfit + Manrope. Flame: <strong>aurora</strong> — soft dual-colour wash drifts across the card.</p>
+        <div class="swatches">
+          <div class="swatch" style="background:#0f1729" data-name="bg"></div>
+          <div class="swatch" style="background:#c4cce0" data-name="text"></div>
+          <div class="swatch" style="background:#ff5e3a" data-name="primary"></div>
+          <div class="swatch" style="background:#ffd13a" data-name="gold"></div>
+          <div class="swatch" style="background:#6da7ff" data-name="cobalt"></div>
+        </div>
+        <div class="typesample">
+          <p class="display">Day 1 starts here</p>
+          The quick brown fox jumps over the lazy dog. Five-minute warm-up, ten questions, mixed subjects.
+        </div>
+        <div class="mini-hero">
+          <span class="flame">🔥</span>
+          <h3>Day 1 starts here</h3>
+          <p>A 5-minute warm-up kicks off your streak.</p>
+          <a class="mini-cta" href="#">Start your warm-up</a>
+        </div>
+      </section>
+
+      <!-- OPTION 5 -->
+      <section class="opt opt-5 flame-sunbeam">
+        <span class="opt-tag">Option 5 · Jade &amp; rust</span>
+        <h2>The kid whose parent picks the app</h2>
+        <p class="body">Calm, scholarly, distinctive. Pale jade background, terracotta primary, jade green secondary — a paired palette parents read as "serious revision tool". <em>Space Grotesk</em> + DM Sans. Flame: <strong>sunbeam</strong> — diagonal light sweeps across the card every 6s.</p>
+        <div class="swatches">
+          <div class="swatch" style="background:#f3f5f1" data-name="bg"></div>
+          <div class="swatch" style="background:#2c352f" data-name="text"></div>
+          <div class="swatch" style="background:#b34a1a" data-name="rust"></div>
+          <div class="swatch" style="background:#2e8b6b" data-name="jade"></div>
+          <div class="swatch" style="background:#15201a" data-name="strong"></div>
+        </div>
+        <div class="typesample">
+          <p class="display">Day 1 starts here</p>
+          The quick brown fox jumps over the lazy dog. Five-minute warm-up, ten questions, mixed subjects.
+        </div>
+        <div class="mini-hero">
+          <span class="flame">☀️</span>
+          <h3>Day 1 starts here</h3>
+          <p>A 5-minute warm-up kicks off your streak.</p>
+          <a class="mini-cta" href="#">Start your warm-up</a>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="footer">
+      <h3>How to read these</h3>
+      <ol>
+        <li><strong>Mini-hero</strong> in each card uses the same copy your kid sees on day 1, so the comparison is honest, not abstract.</li>
+        <li><strong>Swatch row</strong> shows the five colour roles each palette uses (background, text, primary, secondary, strong/headline).</li>
+        <li><strong>Type sample</strong> shows the display headline + one body paragraph in the option's chosen pairing.</li>
+        <li><strong>Flame treatment</strong> is animated; reload if you want to see the entrance again. Each treatment is independent of the palette — they can be mixed if you find a colour you like in one option but a flame style from another.</li>
+      </ol>
+      <p style="margin-top:1rem"><strong>To pick:</strong> tell me the option number you want (1–5) and whether you want to keep its flame treatment or swap one in. I'll lift those tokens into <code>mock.css</code> and fonts into <code>index.html</code> across all 7 pages.</p>
+    </div>
+  </div>
+</body>
+</html>

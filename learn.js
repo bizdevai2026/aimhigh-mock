@@ -39,13 +39,13 @@ if (typeof window !== "undefined") {
   });
 }
 
-import "./mock.js?v=20260526"; // shared header behaviour
-import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260526";
-import { topicLadder, weakTopics } from "./engagement.js?v=20260526";
-import { getVisual } from "./visuals.js?v=20260526";
-import { validateLearning, reportProblems } from "./diagnostics/schema-validator.js?v=20260526";
-import { escapeHtml, match } from "./shared/dom.js?v=20260526";
-import { subjectTone, prettyTopic } from "./shared/subjects.js?v=20260526";
+import "./mock.js?v=20260527"; // shared header behaviour
+import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260527";
+import { topicLadder, weakTopics } from "./engagement.js?v=20260527";
+import { getVisual } from "./visuals.js?v=20260527";
+import { validateLearning, reportProblems } from "./diagnostics/schema-validator.js?v=20260527";
+import { escapeHtml, match } from "./shared/dom.js?v=20260527";
+import { subjectTone, prettyTopic } from "./shared/subjects.js?v=20260527";
 
 let learning = null; // array of learning entries from data/learning.json
 let pool = null;     // question pool from data/<subject>.json — used to enumerate topics
@@ -81,10 +81,13 @@ async function start() {
     paintFatalError("learning.json shape", new Error("Expected an array, got " + typeof learning));
     return;
   }
-  // Runtime schema validation — non-blocking. Bad entries are logged for
-  // the diagnostics panel; rendering proceeds with what we have so the
-  // user isn't punished for a single broken topic.
-  reportProblems("schema", "learning", validateLearning(learning));
+  // Runtime schema validation — filter to valid entries only so a single
+  // malformed topic doesn't render a broken card mid-flow.
+  const learningValidation = validateLearning(learning);
+  reportProblems("schema", "learning", learningValidation);
+  if (learningValidation.validItems.length !== learning.length) {
+    learning = learningValidation.validItems;
+  }
 
   const params = readParams();
 

@@ -17,19 +17,19 @@ import {
   todayIso,
   weakTopics,
   isPaused
-} from "./engagement.js?v=20260526";
+} from "./engagement.js?v=20260527";
 
-import { readSoundOn, toggleSound } from "./sounds.js?v=20260526";
-import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260526";
-import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260526";
-import { readString as storageReadString, writeString as storageWriteString } from "./platform/storage.js?v=20260526";
-import * as logger from "./platform/logger.js?v=20260526";
-import { escapeHtml } from "./shared/dom.js?v=20260526";
+import { readSoundOn, toggleSound } from "./sounds.js?v=20260527";
+import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260527";
+import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260527";
+import { readString as storageReadString, writeString as storageWriteString } from "./platform/storage.js?v=20260527";
+import * as logger from "./platform/logger.js?v=20260527";
+import { escapeHtml } from "./shared/dom.js?v=20260527";
 
 // Dev / parent diagnostics panel. ?diag=1 in the URL loads it; otherwise
 // the import is never resolved (zero cost on normal page loads).
 if (/[?&]diag=1\b/.test(location.search)) {
-  import("./diagnostics/panel.js?v=20260526").catch(function (e) {
+  import("./diagnostics/panel.js?v=20260527").catch(function (e) {
     logger.error("diag", "panel failed to load", e);
   });
 }
@@ -50,12 +50,17 @@ function paintHero() {
   paintHeader(streak);
 
   // First-time state = no streak ever started AND no activity this week.
-  // Empty-state copy avoids "0 day streak / BRONZE / 1 missed day allowed",
-  // which reads as a demoralising scoreboard before any session has run.
+  // For first-timers we hide the metric-heavy hero entirely (CSS swap via
+  // body.first-time) and show a single warm CTA card pointing at the
+  // first warm-up. The metrics card returns once they've completed a
+  // session — no scoreboard of zeros on day one.
   const firstTime =
     (streak.current || 0) === 0 &&
     streak.lastDateIso == null &&
     (week.daysHit || 0) === 0;
+  if (document.body) {
+    document.body.classList.toggle("first-time", firstTime);
+  }
 
   // Hero streak block
   const heroStreakNum = $("heroStreakNum");
@@ -460,6 +465,22 @@ function applyDemoBanner() {
 const TOUR_KEY = "aimhigh-mock-tour-seen";
 
 function maybeShowOnboardingTour() {
+  // Disabled. The post-paint modal interrupted the kid right when they
+  // were about to tap a tile (UX agent finding 9, 2026-05-01). The new
+  // first-time hero on index.html does the welcoming job inline:
+  //   "Day 1 starts here. A 5-minute warm-up kicks off your streak."
+  // Tour content about freezes + modes is now distributed: the
+  // mode-tile metas explain what each mode is; freeze info appears
+  // when the kid actually has a streak to lose.
+  //
+  // Mark seen so older devices don't fire the tour on a returning visit
+  // either (the localStorage check above used to gate this).
+  if (storageReadString(TOUR_KEY) !== "true") {
+    storageWriteString(TOUR_KEY, "true");
+  }
+  return;
+  // — original tour code retained below for reference; never executes —
+  // eslint-disable-next-line no-unreachable
   if (!isChildRole()) return;
   if (!document.querySelector(".mock-hero")) return; // home page only
   if (storageReadString(TOUR_KEY) === "true") return;

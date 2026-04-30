@@ -220,7 +220,24 @@ if prefix_violators:
 else:
     ok("storage-prefix", "all storage keys use aimhigh-mock-* prefix (no premature renames)")
 
-# === 7. Boundary check: only platform/storage.js touches localStorage =========
+# === 7. Registry / SUBJECTS drift check =====================================
+# The SUBJECTS array in questions.js is a sync mirror of data/registry.json.
+# If they drift, downstream consumers (sprint, learn, dashboard) will see a
+# different topic list than the registry-driven UI surfaces will.
+
+import re as _re
+qjs = Path("questions.js").read_text(encoding="utf-8")
+m = _re.search(r"const\s+SUBJECTS\s*=\s*\[(.*?)\];", qjs, _re.S)
+qjs_ids = sorted(_re.findall(r'id:\s*"([a-z\-]+)"', m.group(1) if m else ""))
+reg_ids = sorted([s["id"] for s in (REGISTRY or {}).get("subjects", [])])
+if not qjs_ids:
+    fail("registry-mirror", "could not parse SUBJECTS const in questions.js")
+elif qjs_ids != reg_ids:
+    fail("registry-mirror", f"questions.js SUBJECTS {qjs_ids} != registry.json subjects {reg_ids}")
+else:
+    ok("registry-mirror", f"questions.js SUBJECTS matches registry.json ({len(reg_ids)} subjects)")
+
+# === 8. Boundary check: only platform/storage.js touches localStorage =========
 
 storage_re = re.compile(r'localStorage\.(getItem|setItem|removeItem|key|length)')
 # boot/theme.js is the documented exception — a classic <script> in <head>

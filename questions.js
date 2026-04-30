@@ -1,21 +1,32 @@
-// AimHigh Mock Prep — question pool loader and warm-up picker.
+// GradeBlaze — question pool loader and warm-up picker.
 //
 // Questions live in data/<subject>.json files. Each subject's file is
 // a JSON array of MCQ / spell / speak objects:
-//   { id, subject, topic, prompt, options[4], answer, explainer?,
-//     audio?, type? ("mcq"|"spell"|"speak"), alternates? }
+//   { id, subject, topic, year_level, prompt, options[4], answer,
+//     explainer?, audio?, type? ("mc"|"spell"|"speak"), alternates? }
 //
 // loadAllQuestions() fetches every subject in parallel, stamps the
-// subject id in case it's missing, and caches the merged pool.
+// subject id in case it's missing, validates the schema, drops any
+// malformed items, and caches the merged pool.
 //
 // pickWarmupQuestions(pool, n) returns n questions ordered by
 // spaced-repetition due-date (fresh → due → not-yet-due) with a
 // 60% weak-topic bias and a per-subject cap so a warm-up isn't ten
 // maths questions.
+//
+// REGISTRY MIRROR
+// ---------------
+// The SUBJECTS const below is a sync mirror of data/registry.json's
+// subjects[]. The registry is the canonical source of truth for
+// content authors; this array is what listSubjects()/subjectName()
+// return synchronously (some consumers — e.g. learn.js paintHub —
+// need the list before any await). tools/smoke-test.py verifies the
+// two stay in lockstep; if they ever drift the smoke test fails
+// before the build can be deployed.
 
-import { readSeen, weakTopics } from "./engagement.js?v=20260526";
-import * as logger from "./platform/logger.js?v=20260526";
-import { validateQuestions, reportProblems } from "./diagnostics/schema-validator.js?v=20260526";
+import { readSeen, weakTopics } from "./engagement.js?v=20260527";
+import * as logger from "./platform/logger.js?v=20260527";
+import { validateQuestions, reportProblems } from "./diagnostics/schema-validator.js?v=20260527";
 
 const SUBJECTS = [
   { id: "science",   name: "Science"          },
@@ -100,12 +111,17 @@ export async function loadAllQuestions(opts) {
         merged.push(stamped);
       });
     });
-    _cache = merged;
-    logger.info("content", "loadAllQuestions ok in " + (Date.now() - t0) + "ms — " + merged.length + " questions", perSubject);
-    // Runtime schema validation. Doesn't block — the runner still sees
-    // the merged pool. Bad items are logged so the diagnostics panel
-    // surfaces them; future Coach UI can add a banner if needed.
-    reportProblems("schema", "questions", validateQuestions(merged));
+    // Runtime schema validation. Filter the cache to only valid items so
+    // a malformed question (e.g. options.length !== 4) never reaches the
+    // picker or the renderer — the kid would otherwise see an
+    // unanswerable card whose answer index can't match anything.
+    const validation = validateQuestions(merged);
+    reportProblems("schema", "questions", validation);
+    _cache = validation.validItems;
+    if (_cache.length !== merged.length) {
+      logger.error("content", "filtered " + (merged.length - _cache.length) + " invalid items from question pool", { kept: _cache.length, dropped: merged.length - _cache.length });
+    }
+    logger.info("content", "loadAllQuestions ok in " + (Date.now() - t0) + "ms — " + _cache.length + " questions", perSubject);
   } else {
     logger.debug("content", "loadAllQuestions cache hit", { count: _cache.length });
   }

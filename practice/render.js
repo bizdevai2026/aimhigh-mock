@@ -29,11 +29,11 @@
 //     // runner's onAnswer policy goes here
 //   });
 
-import { escapeHtml } from "../shared/dom.js?v=20260526";
-import { subjectColor, prettyTopic } from "../shared/subjects.js?v=20260526";
-import { subjectName } from "../questions.js?v=20260526";
-import { getVisual } from "../visuals.js?v=20260526";
-import { makeListenButton } from "../media/speech.js?v=20260526";
+import { escapeHtml } from "../shared/dom.js?v=20260527";
+import { subjectColor, prettyTopic } from "../shared/subjects.js?v=20260527";
+import { subjectName } from "../questions.js?v=20260527";
+import { getVisual } from "../visuals.js?v=20260527";
+import { makeListenButton } from "../media/speech.js?v=20260527";
 
 const LETTERS = ["A", "B", "C", "D", "E", "F"];
 

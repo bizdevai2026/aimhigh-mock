@@ -11,10 +11,10 @@
 import {
   readJson as storageReadJson,
   writeJson as storageWriteJson
-} from "../../platform/storage.js?v=20260526";
+} from "../../platform/storage.js?v=20260527";
 
-import { todayIso } from "../../shared/dates.js?v=20260526";
-import { shouldSkipWrites } from "./policy.js?v=20260526";
+import { todayIso } from "../../shared/dates.js?v=20260527";
+import { shouldSkipWrites } from "./policy.js?v=20260527";
 
 const KEY = "aimhigh-mock-xp-today";
 const DEFAULT = { dateIso: null, earned: 0, goal: 30 };
