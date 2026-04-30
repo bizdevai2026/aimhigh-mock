@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="mock.css?v=20260510" />
+  <link rel="stylesheet" href="mock.css?v=20260511" />
 </head>
 <body class="mock-page mode-learn">
   <header class="mock-header">
@@ -34,46 +34,12 @@
     </section>
   </main>
 
-  <!-- Inline error catcher — runs BEFORE the module script loads so any
-       module-graph failure (missing export, syntax error, blocked import)
-       paints visibly on the page instead of leaving "Loading…" forever.
-       The handler inside learn.js can't catch import errors because the
-       imports are hoisted above any code in the module body. -->
-  <script>
-    (function () {
-      var root = document.getElementById("learnRoot");
-      function escape(s) {
-        return String(s == null ? "" : s)
-          .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-      }
-      function paintErr(stage, msg) {
-        if (!root) return;
-        root.innerHTML =
-          "<section class=\"mock-stub-card\" style=\"border-color:#fca5a5\">" +
-            "<h2 style=\"color:#fca5a5\">Couldn't start LEARN</h2>" +
-            "<p>Stage: <strong>" + escape(stage) + "</strong></p>" +
-            "<pre style=\"font-family:ui-monospace,monospace;font-size:0.85rem;color:#c4c4d1;background:rgba(255,255,255,0.04);padding:0.6rem;border-radius:0.4rem;white-space:pre-wrap;word-break:break-word;max-height:240px;overflow:auto\">" + escape(msg) + "</pre>" +
-            "<p>If this looks like a cache hangover, try <a href=\"reset.html\" style=\"color:#00f5d4\">/reset.html</a>.</p>" +
-            "<a class=\"mock-button mock-button-ghost\" href=\"index.html\">&larr; Home</a>" +
-          "</section>";
-      }
-      window.addEventListener("error", function (e) {
-        var msg = (e.message || "?") + " @ " + (e.filename || "") + ":" + (e.lineno || "?") + ":" + (e.colno || "?");
-        if (e.error && e.error.stack) msg += "\n\n" + e.error.stack;
-        paintErr("uncaught error", msg);
-      });
-      window.addEventListener("unhandledrejection", function (e) {
-        var r = e.reason;
-        var msg = "Promise rejected";
-        if (r) {
-          msg = r.message || (typeof r === "string" ? r : JSON.stringify(r));
-          if (r.stack) msg += "\n\n" + r.stack;
-        }
-        paintErr("unhandled rejection", msg);
-      });
-    })();
-  </script>
+  <!-- Shared pre-import error catcher + loading guard. See boot/*.js.
+       Plain scripts (no module loader, no ?v=) so a stuck module cache
+       cannot disable the safety net. Must come BEFORE the module. -->
+  <script src="boot/error-catcher.js"></script>
+  <script src="boot/loading-guard.js"></script>
 
-  <script type="module" src="learn.js?v=20260510"></script>
+  <script type="module" src="learn.js?v=20260511"></script>
 </body>
 </html>

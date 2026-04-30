@@ -7,7 +7,7 @@
 //
 // All read-only — never mutates state from here.
 
-import "./mock.js?v=20260510"; // shared header behaviour (sound toggle)
+import "./mock.js?v=20260511"; // shared header behaviour (sound toggle)
 import {
   readResults,
   weakTopics,
@@ -17,13 +17,15 @@ import {
   subjectLadder,
   isPaused,
   setPaused
-} from "./engagement.js?v=20260510";
+} from "./engagement.js?v=20260511";
 
-import { subjectName, listSubjects } from "./questions.js?v=20260510";
-import { playCoachEnter } from "./sounds.js?v=20260510";
-import { isParentRole } from "./profile.js?v=20260510";
+import { subjectName, listSubjects } from "./questions.js?v=20260511";
+import { playCoachEnter } from "./sounds.js?v=20260511";
+import { isParentRole } from "./profile.js?v=20260511";
 
 paint();
+// Synchronous painters — by the time we get here the page is rendered.
+if (typeof window.GBReady === "function") window.GBReady();
 
 function paint() {
   paintRoleBadge();

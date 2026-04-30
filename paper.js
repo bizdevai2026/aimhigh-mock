@@ -6,12 +6,12 @@
 //
 // Two states: idle (intro + START button) and running (timer + session).
 
-import "./mock.js?v=20260510"; // shared header behaviour (sound toggle)
-import { loadAllQuestions, listSubjects, subjectName } from "./questions.js?v=20260510";
-import { noteSessionResult, readStreak } from "./engagement.js?v=20260510";
-import { playLevelUp, playModeStartMock, makeListenButton, hapticStreak } from "./sounds.js?v=20260510";
-import { getVisual } from "./visuals.js?v=20260510";
-import { isParentRole } from "./profile.js?v=20260510";
+import "./mock.js?v=20260511"; // shared header behaviour (sound toggle)
+import { loadAllQuestions, listSubjects, subjectName } from "./questions.js?v=20260511";
+import { noteSessionResult, readStreak } from "./engagement.js?v=20260511";
+import { playLevelUp, playModeStartMock, makeListenButton, hapticStreak } from "./sounds.js?v=20260511";
+import { getVisual } from "./visuals.js?v=20260511";
+import { isParentRole } from "./profile.js?v=20260511";
 
 if (isParentRole()) { location.replace("dashboard.html"); }
 
@@ -30,7 +30,9 @@ let session = null;
 let timerInterval = null;
 let endsAt = null;
 
-start();
+start().finally(function () {
+  if (typeof window.GBReady === "function") window.GBReady();
+});
 
 async function start() {
   if (!root) return;

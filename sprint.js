@@ -9,7 +9,7 @@
 // All three runner shapes share rendering, just differ in question pool
 // and round size.
 
-import "./mock.js?v=20260510"; // shared header (sound toggle, profile chip)
+import "./mock.js?v=20260511"; // shared header (sound toggle, profile chip)
 import {
   loadAllQuestions,
   pickSubjectQuestions,
@@ -18,16 +18,16 @@ import {
   subjectName,
   topicsForSubject,
   topicCounts
-} from "./questions.js?v=20260510";
+} from "./questions.js?v=20260511";
 import {
   noteSessionResult,
   readStreak,
   topicLadder,
   subjectLadder
-} from "./engagement.js?v=20260510";
-import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playModeStartSprint, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticCorrect, hapticWrong, hapticStreak, hapticPerfect } from "./sounds.js?v=20260510";
-import { getVisual } from "./visuals.js?v=20260510";
-import { isParentRole } from "./profile.js?v=20260510";
+} from "./engagement.js?v=20260511";
+import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playModeStartSprint, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticCorrect, hapticWrong, hapticStreak, hapticPerfect } from "./sounds.js?v=20260511";
+import { getVisual } from "./visuals.js?v=20260511";
+import { isParentRole } from "./profile.js?v=20260511";
 
 const SPRINT_SIZE = 15;
 const DRILL_SIZE = 5;
@@ -42,7 +42,9 @@ const root = document.getElementById("sprintRoot");
 let pool = null;
 let session = null;
 
-start();
+start().finally(function () {
+  if (typeof window.GBReady === "function") window.GBReady();
+});
 
 async function start() {
   if (!root) return;

@@ -21,9 +21,9 @@ import {
   clearLegacyProfile,
   migratedChildName,
   startDemoSession
-} from "./profile.js?v=20260510";
+} from "./profile.js?v=20260511";
 
-import { playWelcomeStinger } from "./sounds.js?v=20260510";
+import { playWelcomeStinger } from "./sounds.js?v=20260511";
 
 const root = document.getElementById("welcomeRoot");
 
@@ -61,17 +61,19 @@ function init() {
 function paint() {
   if (!root) return;
   switch (state.step) {
-    case "intro":                    return paintIntro();
-    case "setup-parent-pin":         return paintSetupParentPin();
-    case "setup-parent-pin-confirm": return paintSetupParentPinConfirm();
-    case "setup-child-name":         return paintSetupChildName();
-    case "setup-child-pin":          return paintSetupChildPin();
-    case "role-pick":                return paintRolePick();
-    case "login-child":              return paintLogin("child");
-    case "login-parent":             return paintLogin("parent");
-    case "forgot-parent-auth":       return paintForgotParentAuth();
-    case "forgot-child-newpin":      return paintForgotChildNewPin();
+    case "intro":                    paintIntro(); break;
+    case "setup-parent-pin":         paintSetupParentPin(); break;
+    case "setup-parent-pin-confirm": paintSetupParentPinConfirm(); break;
+    case "setup-child-name":         paintSetupChildName(); break;
+    case "setup-child-pin":          paintSetupChildPin(); break;
+    case "role-pick":                paintRolePick(); break;
+    case "login-child":              paintLogin("child"); break;
+    case "login-parent":             paintLogin("parent"); break;
+    case "forgot-parent-auth":       paintForgotParentAuth(); break;
+    case "forgot-child-newpin":      paintForgotChildNewPin(); break;
   }
+  // Any successful paint cancels the loading guard.
+  if (typeof window.GBReady === "function") window.GBReady();
 }
 
 // --- Intro: what is this and what's about to happen -----------------------

@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="mock.css?v=20260510" />
+  <link rel="stylesheet" href="mock.css?v=20260511" />
 </head>
 <body class="mock-page mock-landing">
   <header class="mock-header">
@@ -126,6 +126,11 @@
     </nav>
   </main>
 
-  <script type="module" src="mock.js?v=20260510"></script>
+  <!-- Pre-import error catcher + loading guard. Plain scripts (no module
+       loader, no ?v=) so a stuck module cache cannot disable the safety
+       net. Must come BEFORE the module script. -->
+  <script src="boot/error-catcher.js"></script>
+  <script src="boot/loading-guard.js"></script>
+  <script type="module" src="mock.js?v=20260511"></script>
 </body>
 </html>

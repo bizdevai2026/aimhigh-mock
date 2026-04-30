@@ -39,15 +39,21 @@ if (typeof window !== "undefined") {
   });
 }
 
-import "./mock.js?v=20260510"; // shared header behaviour
-import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260510";
-import { topicLadder, weakTopics } from "./engagement.js?v=20260510";
-import { getVisual } from "./visuals.js?v=20260510";
+import "./mock.js?v=20260511"; // shared header behaviour
+import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260511";
+import { topicLadder, weakTopics } from "./engagement.js?v=20260511";
+import { getVisual } from "./visuals.js?v=20260511";
 
 let learning = null; // array of learning entries from data/learning.json
 let pool = null;     // question pool from data/<subject>.json — used to enumerate topics
 
-try { start(); } catch (e) { paintFatalError("start() threw", e); }
+// start() resolves after its first real paint (success or error). Either
+// way, cancel the loading guard so the user doesn't see the timeout card.
+start()
+  .catch(function (e) { paintFatalError("start() threw", e); })
+  .finally(function () {
+    if (typeof window.GBReady === "function") window.GBReady();
+  });
 
 async function start() {
   if (!root) return;
