@@ -385,6 +385,112 @@ const VISUALS = {
         '<text x="146" y="178">femur</text>',
       '</g>',
     '</svg>'
+  ].join(""),
+
+  // Square numbers as actual squares — 1², 2², 3², 4² scaled to a common
+  // base unit so the visual ratio matches the maths.
+  "powers-grid": [
+    '<svg viewBox="0 0 360 130" role="img" aria-label="Square numbers shown as actual squares" class="mock-visual-svg">',
+      '<g font-family="Inter, sans-serif" font-size="10" fill="currentColor">',
+        // 1² — single 16x16 square
+        '<rect x="20" y="92" width="16" height="16" fill="rgba(34,211,238,0.18)" stroke="#22d3ee" stroke-width="1.5"/>',
+        '<text x="28" y="124" text-anchor="middle" font-weight="700">1²</text>',
+        '<text x="28" y="20" text-anchor="middle" font-size="9" opacity="0.7">= 1</text>',
+        // 2² — 32x32 (= 4 unit cells)
+        '<rect x="60" y="76" width="32" height="32" fill="rgba(34,211,238,0.18)" stroke="#22d3ee" stroke-width="1.5"/>',
+        '<line x1="76" y1="76" x2="76" y2="108" stroke="#22d3ee" stroke-width="0.5" opacity="0.5"/>',
+        '<line x1="60" y1="92" x2="92" y2="92" stroke="#22d3ee" stroke-width="0.5" opacity="0.5"/>',
+        '<text x="76" y="124" text-anchor="middle" font-weight="700">2²</text>',
+        '<text x="76" y="20" text-anchor="middle" font-size="9" opacity="0.7">= 4</text>',
+        // 3² — 48x48 (= 9 unit cells)
+        '<rect x="116" y="60" width="48" height="48" fill="rgba(132,204,22,0.18)" stroke="#84cc16" stroke-width="1.5"/>',
+        '<line x1="132" y1="60" x2="132" y2="108" stroke="#84cc16" stroke-width="0.5" opacity="0.5"/>',
+        '<line x1="148" y1="60" x2="148" y2="108" stroke="#84cc16" stroke-width="0.5" opacity="0.5"/>',
+        '<line x1="116" y1="76" x2="164" y2="76" stroke="#84cc16" stroke-width="0.5" opacity="0.5"/>',
+        '<line x1="116" y1="92" x2="164" y2="92" stroke="#84cc16" stroke-width="0.5" opacity="0.5"/>',
+        '<text x="140" y="124" text-anchor="middle" font-weight="700">3²</text>',
+        '<text x="140" y="50" text-anchor="middle" font-size="9" opacity="0.7">= 9</text>',
+        // 4² — 64x64 (= 16 unit cells)
+        '<rect x="196" y="44" width="64" height="64" fill="rgba(251,191,36,0.18)" stroke="#fbbf24" stroke-width="1.5"/>',
+        '<line x1="212" y1="44" x2="212" y2="108" stroke="#fbbf24" stroke-width="0.5" opacity="0.5"/>',
+        '<line x1="228" y1="44" x2="228" y2="108" stroke="#fbbf24" stroke-width="0.5" opacity="0.5"/>',
+        '<line x1="244" y1="44" x2="244" y2="108" stroke="#fbbf24" stroke-width="0.5" opacity="0.5"/>',
+        '<line x1="196" y1="60" x2="260" y2="60" stroke="#fbbf24" stroke-width="0.5" opacity="0.5"/>',
+        '<line x1="196" y1="76" x2="260" y2="76" stroke="#fbbf24" stroke-width="0.5" opacity="0.5"/>',
+        '<line x1="196" y1="92" x2="260" y2="92" stroke="#fbbf24" stroke-width="0.5" opacity="0.5"/>',
+        '<text x="228" y="124" text-anchor="middle" font-weight="700">4²</text>',
+        '<text x="228" y="34" text-anchor="middle" font-size="9" opacity="0.7">= 16</text>',
+        // 5² — outline only at 80x80 to keep diagram in frame
+        '<rect x="276" y="28" width="80" height="80" fill="rgba(249,115,22,0.18)" stroke="#f97316" stroke-width="1.5"/>',
+        '<text x="316" y="124" text-anchor="middle" font-weight="700">5²</text>',
+        '<text x="316" y="18" text-anchor="middle" font-size="9" opacity="0.7">= 25</text>',
+      '</g>',
+    '</svg>'
+  ].join(""),
+
+  // Word classes — eight small swatches with a class name + example word.
+  "word-classes-chart": [
+    '<svg viewBox="0 0 360 200" role="img" aria-label="The eight main word classes with examples" class="mock-visual-svg">',
+      '<g font-family="Inter, sans-serif" font-size="10" fill="currentColor">',
+        '<rect x="14" y="14" width="76" height="40" rx="6" fill="rgba(34,211,238,0.18)" stroke="#22d3ee"/>',
+        '<text x="52" y="30" text-anchor="middle" font-weight="700">NOUN</text>',
+        '<text x="52" y="44" text-anchor="middle" font-size="9" opacity="0.7">cat · idea</text>',
+        '<rect x="100" y="14" width="76" height="40" rx="6" fill="rgba(132,204,22,0.18)" stroke="#84cc16"/>',
+        '<text x="138" y="30" text-anchor="middle" font-weight="700">VERB</text>',
+        '<text x="138" y="44" text-anchor="middle" font-size="9" opacity="0.7">run · is</text>',
+        '<rect x="186" y="14" width="76" height="40" rx="6" fill="rgba(251,191,36,0.18)" stroke="#fbbf24"/>',
+        '<text x="224" y="30" text-anchor="middle" font-weight="700">ADJECTIVE</text>',
+        '<text x="224" y="44" text-anchor="middle" font-size="9" opacity="0.7">huge · blue</text>',
+        '<rect x="272" y="14" width="76" height="40" rx="6" fill="rgba(249,115,22,0.18)" stroke="#f97316"/>',
+        '<text x="310" y="30" text-anchor="middle" font-weight="700">ADVERB</text>',
+        '<text x="310" y="44" text-anchor="middle" font-size="9" opacity="0.7">quickly · very</text>',
+        '<rect x="14" y="72" width="76" height="40" rx="6" fill="rgba(168,85,247,0.18)" stroke="#a855f7"/>',
+        '<text x="52" y="88" text-anchor="middle" font-weight="700">PRONOUN</text>',
+        '<text x="52" y="102" text-anchor="middle" font-size="9" opacity="0.7">he · she · it</text>',
+        '<rect x="100" y="72" width="76" height="40" rx="6" fill="rgba(244,114,182,0.18)" stroke="#f472b6"/>',
+        '<text x="138" y="88" text-anchor="middle" font-weight="700">PREPOSITION</text>',
+        '<text x="138" y="102" text-anchor="middle" font-size="9" opacity="0.7">under · into</text>',
+        '<rect x="186" y="72" width="76" height="40" rx="6" fill="rgba(45,212,191,0.18)" stroke="#2dd4bf"/>',
+        '<text x="224" y="88" text-anchor="middle" font-weight="700">CONJUNCTION</text>',
+        '<text x="224" y="102" text-anchor="middle" font-size="9" opacity="0.7">and · because</text>',
+        '<rect x="272" y="72" width="76" height="40" rx="6" fill="rgba(125,211,252,0.18)" stroke="#7dd3fc"/>',
+        '<text x="310" y="88" text-anchor="middle" font-weight="700">DETERMINER</text>',
+        '<text x="310" y="102" text-anchor="middle" font-size="9" opacity="0.7">the · this · my</text>',
+        // Example sentence at the bottom
+        '<text x="180" y="138" text-anchor="middle" font-weight="700" font-size="11">"The huge dog barked loudly under the table."</text>',
+        '<text x="180" y="158" text-anchor="middle" font-size="9" opacity="0.7">DET · ADJ · NOUN · VERB · ADV · PREP · DET · NOUN</text>',
+      '</g>',
+    '</svg>'
+  ].join(""),
+
+  // Figurative-language quick reference — five technique cards with a
+  // worked example for each.
+  "figurative-quick-ref": [
+    '<svg viewBox="0 0 360 220" role="img" aria-label="Quick reference for figurative language techniques" class="mock-visual-svg">',
+      '<g font-family="Inter, sans-serif" font-size="10" fill="currentColor">',
+        '<rect x="14" y="14" width="160" height="46" rx="6" fill="rgba(34,211,238,0.14)" stroke="#22d3ee"/>',
+        '<text x="22" y="30" font-weight="700">SIMILE</text>',
+        '<text x="22" y="44" font-size="9" opacity="0.85">like / as</text>',
+        '<text x="22" y="56" font-size="9" font-style="italic" opacity="0.7">"as quiet as a mouse"</text>',
+        '<rect x="184" y="14" width="160" height="46" rx="6" fill="rgba(132,204,22,0.14)" stroke="#84cc16"/>',
+        '<text x="192" y="30" font-weight="700">METAPHOR</text>',
+        '<text x="192" y="44" font-size="9" opacity="0.85">is / was</text>',
+        '<text x="192" y="56" font-size="9" font-style="italic" opacity="0.7">"the classroom was a zoo"</text>',
+        '<rect x="14" y="72" width="160" height="46" rx="6" fill="rgba(251,191,36,0.14)" stroke="#fbbf24"/>',
+        '<text x="22" y="88" font-weight="700">PERSONIFICATION</text>',
+        '<text x="22" y="102" font-size="9" opacity="0.85">human action for non-human</text>',
+        '<text x="22" y="114" font-size="9" font-style="italic" opacity="0.7">"the wind whispered"</text>',
+        '<rect x="184" y="72" width="160" height="46" rx="6" fill="rgba(249,115,22,0.14)" stroke="#f97316"/>',
+        '<text x="192" y="88" font-weight="700">ALLITERATION</text>',
+        '<text x="192" y="102" font-size="9" opacity="0.85">same starting sound</text>',
+        '<text x="192" y="114" font-size="9" font-style="italic" opacity="0.7">"slithering, slimy snakes"</text>',
+        '<rect x="100" y="130" width="160" height="46" rx="6" fill="rgba(244,114,182,0.14)" stroke="#f472b6"/>',
+        '<text x="108" y="146" font-weight="700">ONOMATOPOEIA</text>',
+        '<text x="108" y="160" font-size="9" opacity="0.85">word sounds like the noise</text>',
+        '<text x="108" y="172" font-size="9" font-style="italic" opacity="0.7">"bang!" · "splat!"</text>',
+        '<text x="180" y="200" text-anchor="middle" font-size="9" opacity="0.6">When you spot one, ask: what effect does it have on the reader?</text>',
+      '</g>',
+    '</svg>'
   ].join("")
 };
 

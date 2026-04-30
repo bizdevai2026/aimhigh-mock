@@ -115,25 +115,54 @@
     "sections": [
       {
         "heading": "The Solar System",
-        "body": "Our Sun is a star. Around it orbit eight planets, lots of moons, asteroids and comets. The order of the planets, closest to the Sun first: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune."
+        "body": "Our Sun is a star. Around it orbit eight planets, lots of moons, asteroids and comets. The order of the planets, closest to the Sun first: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune.",
+        "quickfact": {
+          "value": "150 million km",
+          "label": "average distance from the Earth to the Sun (1 AU)"
+        },
+        "callout": {
+          "tone": "tip",
+          "title": "Memory hook",
+          "body": "\"My Very Educated Mother Just Served Us Noodles\" — Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune."
+        }
       },
       {
         "heading": "Why we have day and night",
-        "body": "Earth spins on its own axis once every 24 hours. The side facing the Sun has day. The side facing away has night. The Sun isn't moving across the sky — WE are moving."
+        "body": "Earth spins on its own axis once every 24 hours. The side facing the Sun has day. The side facing away has night. The Sun isn't moving across the sky — WE are moving.",
+        "callout": {
+          "tone": "note",
+          "title": "Common misconception",
+          "body": "The Sun does NOT 'rise' and 'set'. The horizon rotates away from the Sun (sunset) or towards it (sunrise) as Earth spins."
+        }
       },
       {
         "heading": "Why we have seasons",
-        "body": "Earth's axis is tilted at about 23.5°. As Earth orbits the Sun once a year, different hemispheres point towards the Sun at different times. When it's tilted towards us → longer days, more direct sunlight → summer. Tilted away → winter."
+        "body": "Earth's axis is tilted at about 23.5°. As Earth orbits the Sun once a year, different hemispheres point towards the Sun at different times. When it's tilted towards us → longer days, more direct sunlight → summer. Tilted away → winter.",
+        "example": {
+          "title": "June in the UK vs December in the UK",
+          "steps": [
+            "June: northern hemisphere tilts towards the Sun.",
+            "Sun is high in the sky, daylight is long (~16+ hours).",
+            "Sunlight hits the ground steeply → concentrated heat → summer.",
+            "December: same Earth, opposite point in orbit. North tilts away.",
+            "Sun is low, days are short (~8 hours), light hits at a shallow angle → spread thin → winter."
+          ],
+          "outro": "Note: it's NOT because Earth is closer or further from the Sun — that barely changes."
+        }
       },
       {
         "heading": "Phases of the Moon",
-        "body": "The Sun always lights up half the Moon. As the Moon orbits Earth (about every 28 days), we see different proportions of the lit half. New Moon (lit half facing away) → crescent → half → full Moon (lit half facing us) → and back again."
+        "body": "The Sun always lights up half the Moon. As the Moon orbits Earth (about every 28 days), we see different proportions of the lit half. New Moon (lit half facing away) → crescent → half → full Moon (lit half facing us) → and back again.",
+        "quickfact": {
+          "value": "27.3 days",
+          "label": "time for the Moon to orbit Earth once"
+        }
       }
     ],
     "tips": [
-      "Mnemonic for planet order: \"My Very Educated Mother Just Served Us Noodles\" — Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune.",
+      "Mnemonic for planet order: \"My Very Educated Mother Just Served Us Noodles\".",
       "Pluto isn't on the list — it was reclassified as a 'dwarf planet' in 2006.",
-      "Earth orbits the Sun once a year — that's 365.25 days, which is why we add a leap day every 4 years."
+      "Seasons are about TILT, not distance. Earth is actually closest to the Sun in January."
     ]
   },
   {
@@ -151,11 +180,30 @@
           "Isosceles — exactly 2 sides equal. The two angles opposite those equal sides are also equal.",
           "Scalene — all 3 sides different, all 3 angles different.",
           "Right-angled — one angle is exactly 90° (a right angle)."
-        ]
+        ],
+        "callout": {
+          "tone": "tip",
+          "title": "Quick spot",
+          "body": "Equal sides ↔ equal opposite angles. Always. So if a triangle has two equal sides, the angles opposite them must match."
+        }
       },
       {
         "heading": "The angle rule",
-        "body": "The three angles inside ANY triangle add up to 180°. So if you know two angles, you can always work out the third by subtracting them from 180°."
+        "body": "The three angles inside ANY triangle add up to 180°. So if you know two angles, you can always work out the third by subtracting them from 180°.",
+        "example": {
+          "title": "Find the missing angle",
+          "intro": "A triangle has angles of 70° and 55°. Find the third:",
+          "steps": [
+            "Add the known angles: 70 + 55 = 125°.",
+            "Subtract from 180°: 180 − 125 = 55°.",
+            "The missing angle is 55°."
+          ],
+          "outro": "Notice: two angles are 55° → this is also an isosceles triangle."
+        },
+        "quickfact": {
+          "value": "180°",
+          "label": "angles in any triangle add to this"
+        }
       },
       {
         "heading": "Polygons by side count",
@@ -167,13 +215,18 @@
           "7 sides — heptagon",
           "8 sides — octagon",
           "10 sides — decagon"
-        ]
+        ],
+        "callout": {
+          "tone": "note",
+          "title": "Greek prefix tip",
+          "body": "Penta = 5, hexa = 6, octa = 8 (think octopus, eight legs), deca = 10 (decade = 10 years)."
+        }
       }
     ],
     "tips": [
-      "The Greek prefixes give it away: penta=5, hexa=6, octa=8 (think octopus, eight legs).",
       "A 'regular' polygon means all sides equal AND all angles equal. A regular triangle = equilateral. A regular quadrilateral = a square.",
-      "Quick check: angles in a triangle ALWAYS = 180°. Angles in a quadrilateral always = 360°."
+      "Quick check: angles in a triangle ALWAYS = 180°. Angles in a quadrilateral always = 360°.",
+      "Sum of interior angles in any polygon = (n − 2) × 180°, where n = number of sides."
     ]
   },
   {
@@ -181,25 +234,54 @@
     "topic": "powers",
     "title": "Square & cube numbers",
     "subtitle": "Multiplying a number by itself",
-    "readTimeMin": 3,
+    "readTimeMin": 4,
+    "visual": "powers-grid",
     "sections": [
       {
         "heading": "Square numbers",
-        "body": "A square number is what you get when you multiply a whole number by itself.\n\n1² = 1 × 1 = 1\n2² = 2 × 2 = 4\n3² = 3 × 3 = 9\n4² = 4 × 4 = 16\n5² = 5 × 5 = 25\n\nThe little 2 means \"squared\" — you literally make a square that's that wide and that tall."
+        "body": "A square number is what you get when you multiply a whole number by itself.\n\n1² = 1 × 1 = 1\n2² = 2 × 2 = 4\n3² = 3 × 3 = 9\n4² = 4 × 4 = 16\n5² = 5 × 5 = 25\n\nThe little 2 means \"squared\" — you literally make a square that's that wide and that tall.",
+        "callout": {
+          "tone": "tip",
+          "title": "Why \"squared\"?",
+          "body": "Because 5² is the area of a real 5-by-5 square: 25 little unit squares. The diagram above shows 1², 2², 3², 4² as actual squares."
+        }
       },
       {
         "heading": "Cube numbers",
-        "body": "A cube number is what you get when you multiply a whole number by itself THREE times. The little 3 means \"cubed\".\n\n1³ = 1 × 1 × 1 = 1\n2³ = 2 × 2 × 2 = 8\n3³ = 3 × 3 × 3 = 27\n4³ = 4 × 4 × 4 = 64\n5³ = 5 × 5 × 5 = 125"
+        "body": "A cube number is what you get when you multiply a whole number by itself THREE times. The little 3 means \"cubed\".\n\n1³ = 1 × 1 × 1 = 1\n2³ = 2 × 2 × 2 = 8\n3³ = 3 × 3 × 3 = 27\n4³ = 4 × 4 × 4 = 64\n5³ = 5 × 5 × 5 = 125",
+        "quickfact": {
+          "value": "1000",
+          "label": "10³ — 10 × 10 × 10"
+        }
       },
       {
         "heading": "Square root",
-        "body": "The square root is the reverse of squaring. The square root of 49 is 7, because 7 × 7 = 49. The symbol is √. So √49 = 7."
+        "body": "The square root is the reverse of squaring. The square root of 49 is 7, because 7 × 7 = 49. The symbol is √. So √49 = 7.",
+        "example": {
+          "title": "Work out √144",
+          "steps": [
+            "Ask: what number times itself equals 144?",
+            "Try 10: 10 × 10 = 100 (too small).",
+            "Try 12: 12 × 12 = 144. ✓",
+            "So √144 = 12."
+          ],
+          "outro": "Memorising 1² to 12² makes square roots up to 144 instant."
+        }
+      },
+      {
+        "heading": "The squares to memorise",
+        "list": [
+          "1² = 1   ·   2² = 4   ·   3² = 9",
+          "4² = 16   ·   5² = 25   ·   6² = 36",
+          "7² = 49   ·   8² = 64   ·   9² = 81",
+          "10² = 100   ·   11² = 121   ·   12² = 144"
+        ]
       }
     ],
     "tips": [
       "Memorise the squares from 1² to 12² — they come up in tons of questions.",
-      "The first few cube numbers: 1, 8, 27, 64, 125, 216, 343, 512, 729, 1000.",
-      "If a number is squared, it can NEVER be negative (a positive × positive = positive; a negative × negative = positive)."
+      "First few cube numbers: 1, 8, 27, 64, 125, 216, 343, 512, 729, 1000.",
+      "If you square a negative number, you get a POSITIVE answer (negative × negative = positive)."
     ]
   },
   {
@@ -208,6 +290,7 @@
     "title": "Word classes — the parts of speech",
     "subtitle": "What each word in a sentence is doing",
     "readTimeMin": 4,
+    "visual": "word-classes-chart",
     "sections": [
       {
         "heading": "The main word classes",
@@ -220,17 +303,51 @@
           "Preposition — shows position or direction. (under, above, between, into)",
           "Conjunction — joins words or sentences. (and, but, because, although)",
           "Determiner — comes before a noun, points it out. (the, a, this, my, some)"
-        ]
+        ],
+        "callout": {
+          "tone": "tip",
+          "title": "The cleanest split",
+          "body": "Adjectives describe NOUNS. Adverbs describe VERBS (or other adjectives). Mixing these up is the #1 wrong-class error."
+        }
       },
       {
         "heading": "How to spot them in a sentence",
-        "body": "Take: \"The huge dog barked loudly under the table.\"\n\n• The = determiner\n• huge = adjective (describes 'dog')\n• dog = noun\n• barked = verb\n• loudly = adverb (describes how it barked)\n• under = preposition\n• the = determiner\n• table = noun"
+        "example": {
+          "title": "Break down: \"The huge dog barked loudly under the table.\"",
+          "steps": [
+            "The → determiner (points out which dog)",
+            "huge → adjective (describes 'dog')",
+            "dog → noun (the thing)",
+            "barked → verb (the action)",
+            "loudly → adverb (describes how it barked)",
+            "under → preposition (position)",
+            "the → determiner",
+            "table → noun"
+          ]
+        }
+      },
+      {
+        "heading": "Quick tests you can run",
+        "body": "If you can put 'a' or 'the' in front of a word and it makes sense, it's almost certainly a noun (a cat, the freedom).\n\nIf the word ends in -ly and adds info to a verb, it's an adverb (quickly, slowly, happily).\n\nIf the word can be replaced with 'is/was/runs/jumps' and the sentence still makes sense, that slot wants a verb.",
+        "callout": {
+          "tone": "warn",
+          "title": "Watch out",
+          "body": "Some words swap class depending on use. \"Run\" is a verb in \"I run\" but a noun in \"a long run\". Always check what it's DOING in the sentence."
+        }
+      },
+      {
+        "heading": "Why it matters",
+        "body": "Examiners ask you to identify word classes because they want to see you can analyse HOW a sentence works. Once you can spot a verb, an adjective, a noun cleanly, you can talk about the writer's choices: \"the verb 'crept' makes the cat seem nervous\".",
+        "quickfact": {
+          "value": "8",
+          "label": "main word classes in English"
+        }
       }
     ],
     "tips": [
-      "Adverbs often end in -ly (quickly, slowly, happily) — but not always (well, fast, often).",
-      "If you can put 'a' or 'the' in front of a word and it makes sense, it's a noun.",
-      "Adjectives describe NOUNS. Adverbs describe VERBS. That's the most common confusion."
+      "Adverbs often end in -ly — but not always (well, fast, often, very).",
+      "If you can swap a word with another known one of the same class without breaking the sentence, you've identified it.",
+      "Pronouns are noun replacements. Spot them by asking: who or what could this be referring to?"
     ]
   },
   {
@@ -239,31 +356,55 @@
     "title": "Similes, metaphors & co.",
     "subtitle": "How writers paint with words",
     "readTimeMin": 4,
+    "visual": "figurative-quick-ref",
     "sections": [
       {
         "heading": "Simile",
-        "body": "A simile compares two things using the words 'like' or 'as'.\n\n• \"Her hair shone like the sun.\"\n• \"He was as quiet as a mouse.\"\n\nThe LIKE or AS is the giveaway."
+        "body": "A simile compares two things using the words 'like' or 'as'.\n\n• \"Her hair shone like the sun.\"\n• \"He was as quiet as a mouse.\"\n\nThe LIKE or AS is the giveaway.",
+        "callout": {
+          "tone": "tip",
+          "title": "Why writers use it",
+          "body": "Similes paint a picture quickly. \"He ran fast\" tells. \"He ran like a startled deer\" shows you the panic AND the speed in one phrase."
+        }
       },
       {
         "heading": "Metaphor",
-        "body": "A metaphor says something IS something else. It's a stronger comparison — no 'like' or 'as'.\n\n• \"The classroom was a zoo.\" (it WAS a zoo, not LIKE a zoo)\n• \"He's a rock in a crisis.\""
+        "body": "A metaphor says something IS something else. It's a stronger comparison — no 'like' or 'as'.\n\n• \"The classroom was a zoo.\" (it WAS a zoo, not LIKE a zoo)\n• \"He's a rock in a crisis.\"",
+        "callout": {
+          "tone": "note",
+          "title": "Stronger than simile",
+          "body": "A metaphor commits — it claims the two things are the same. That makes the image more vivid. \"Her eyes were diamonds\" hits harder than \"like diamonds\"."
+        }
       },
       {
         "heading": "Personification",
-        "body": "Giving a non-human thing human qualities or actions.\n\n• \"The wind whispered through the trees.\"\n• \"Time crawled.\"\n\nWind doesn't actually whisper. Time doesn't actually crawl. But the writer makes them feel alive."
+        "body": "Giving a non-human thing human qualities or actions.\n\n• \"The wind whispered through the trees.\"\n• \"Time crawled.\"\n\nWind doesn't actually whisper. Time doesn't actually crawl. But the writer makes them feel alive.",
+        "example": {
+          "title": "Spot the technique",
+          "intro": "\"The angry sea hurled itself against the cliffs.\"",
+          "steps": [
+            "What's being described? The sea.",
+            "What human action? Being angry, hurling — both human emotions/movements.",
+            "Technique: personification — sea isn't actually angry, but the writer wants us to feel its violence."
+          ]
+        }
       },
       {
         "heading": "Alliteration & onomatopoeia",
         "list": [
           "Alliteration — same starting sound repeated. \"Slithering, slimy snakes.\"",
           "Onomatopoeia — a word that sounds like the thing it describes. \"Bang!\" \"Crash!\" \"Splat!\""
-        ]
+        ],
+        "quickfact": {
+          "value": "5",
+          "label": "main techniques to know — simile, metaphor, personification, alliteration, onomatopoeia"
+        }
       }
     ],
     "tips": [
       "Simile = LIKE / AS. Metaphor = IS / WAS. That's the cleanest split.",
       "Personification almost always uses a verb a human would do (whispered, danced, laughed).",
-      "When you spot any of these in a poem or story, ask: 'What effect does it have? What picture does it put in my head?' That's the analysis bit examiners want."
+      "When you spot any of these, ask: 'What effect does it have? What picture does it put in my head?' That's the analysis bit examiners want."
     ]
   },
   {
@@ -327,15 +468,39 @@
     "sections": [
       {
         "heading": "Map symbols",
-        "body": "An OS (Ordnance Survey) map uses tiny pictures called symbols to represent things on the ground — a church, a campsite, a footpath, woodland. The map's KEY (or legend) explains what each symbol means.\n\nAlways check the key first. Symbols are standard: a blue triangle for a campsite, a black cross for a church without a tower, a brown dotted line for a footpath, etc."
+        "body": "An OS (Ordnance Survey) map uses tiny pictures called symbols to represent things on the ground — a church, a campsite, a footpath, woodland. The map's KEY (or legend) explains what each symbol means.\n\nAlways check the key first. Symbols are standard: a blue triangle for a campsite, a black cross for a church without a tower, a brown dotted line for a footpath, etc.",
+        "callout": {
+          "tone": "tip",
+          "title": "First move on any map",
+          "body": "Find the KEY (usually bottom-left). Two minutes spent reading it saves ten minutes of guesswork later."
+        }
       },
       {
         "heading": "Scale",
-        "body": "Scale tells you how distance on the map matches distance in real life. Common UK map scales:\n\n• 1 : 25,000 — 1 cm on the map = 25,000 cm = 250 m in real life. So 4 cm = 1 km.\n• 1 : 50,000 — 1 cm on the map = 500 m in real life. So 2 cm = 1 km.\n\nTo find a real distance: measure on the map, then multiply by the scale."
+        "body": "Scale tells you how distance on the map matches distance in real life. Common UK map scales:\n\n• 1 : 25,000 — 1 cm on the map = 25,000 cm = 250 m in real life. So 4 cm = 1 km.\n• 1 : 50,000 — 1 cm on the map = 500 m in real life. So 2 cm = 1 km.\n\nTo find a real distance: measure on the map, then multiply by the scale.",
+        "example": {
+          "title": "Worked example",
+          "intro": "On a 1 : 25,000 map, a footpath measures 6 cm. How long is it in real life?",
+          "steps": [
+            "Multiply: 6 cm × 25,000 = 150,000 cm.",
+            "Convert to metres: 150,000 ÷ 100 = 1,500 m.",
+            "Convert to km: 1,500 ÷ 1,000 = 1.5 km.",
+            "Answer: the footpath is 1.5 km long."
+          ]
+        }
       },
       {
         "heading": "Grid references",
-        "body": "OS maps have a grid of squares (each 1 km × 1 km). To pinpoint a place:\n\n• Four-figure grid reference (e.g. 2438) — gives you the bottom-left corner of one 1 km square. Read along the bottom (eastings) first, then up the side (northings). Memory rule: \"along the corridor, then up the stairs\".\n• Six-figure grid reference (e.g. 245384) — divides each 1 km square into a 10 × 10 grid, pinpointing a 100 m square."
+        "body": "OS maps have a grid of squares (each 1 km × 1 km). To pinpoint a place:\n\n• Four-figure grid reference (e.g. 2438) — gives you the bottom-left corner of one 1 km square. Read along the bottom (eastings) first, then up the side (northings).\n• Six-figure grid reference (e.g. 245384) — divides each 1 km square into a 10 × 10 grid, pinpointing a 100 m square.",
+        "callout": {
+          "tone": "tip",
+          "title": "Memory rule",
+          "body": "\"Along the corridor, then up the stairs.\" Eastings first (the bottom-of-the-page numbers), then northings (the side-of-the-page numbers)."
+        },
+        "quickfact": {
+          "value": "100 m × 100 m",
+          "label": "the square pinpointed by a 6-figure grid reference"
+        }
       },
       {
         "heading": "Contour lines",
@@ -357,15 +522,39 @@
     "sections": [
       {
         "heading": "Personal information",
-        "body": "Never share your real name (full), home address, school, phone number, or family details with strangers online. This includes in chat rooms, game lobbies, and social media DMs from people you don't know in real life.\n\nIf someone you've never met asks for any of this, the right move is always: don't reply, don't send anything, and tell a trusted adult (parent, teacher)."
+        "body": "Never share your real name (full), home address, school, phone number, or family details with strangers online. This includes in chat rooms, game lobbies, and social media DMs from people you don't know in real life.\n\nIf someone you've never met asks for any of this, the right move is always: don't reply, don't send anything, and tell a trusted adult (parent, teacher).",
+        "callout": {
+          "tone": "warn",
+          "title": "Big red flag",
+          "body": "Anyone who pressures you for personal info, photos, or to keep something secret from your parents — that's a warning sign. Tell a trusted adult straight away."
+        }
       },
       {
         "heading": "Strong passwords",
-        "body": "A strong password:\n\n• Is at least 8 characters long\n• Mixes UPPER and lower case letters\n• Includes numbers and a symbol or two\n• Isn't a real word, your name, or your birthday\n\n\"Tiger123\" is weak. \"p@5sW0rd!92\" is strong. Better still: a memorable phrase like \"3Blue!Cats#JumpHigh\"."
+        "body": "A strong password:\n\n• Is at least 8 characters long\n• Mixes UPPER and lower case letters\n• Includes numbers and a symbol or two\n• Isn't a real word, your name, or your birthday\n\n\"Tiger123\" is weak. \"p@5sW0rd!92\" is strong. Better still: a memorable phrase like \"3Blue!Cats#JumpHigh\".",
+        "example": {
+          "title": "Weak vs strong",
+          "steps": [
+            "❌ password — top of every hacker's first-guess list.",
+            "❌ Aaryan2014 — your name + birth year is easily guessable.",
+            "❌ qwerty — keyboard pattern, instantly tried.",
+            "✓ p@5sW0rd!92 — mixed case, numbers, symbols, no real word.",
+            "✓ 3Blue!Cats#JumpHigh — a long passphrase, easy to remember, hard to crack."
+          ]
+        },
+        "quickfact": {
+          "value": "8+",
+          "label": "minimum characters in a strong password"
+        }
       },
       {
         "heading": "Digital footprint",
-        "body": "Everything you post, like, search and login to online leaves a trail — your 'digital footprint'. Screenshots happen. Even after you 'delete' something, someone may have already saved it.\n\nThe rule of thumb: don't post anything you wouldn't be comfortable showing your grandmother, or a future employer. Embarrassing photos can resurface years later."
+        "body": "Everything you post, like, search and login to online leaves a trail — your 'digital footprint'. Screenshots happen. Even after you 'delete' something, someone may have already saved it.\n\nThe rule of thumb: don't post anything you wouldn't be comfortable showing your grandmother, or a future employer. Embarrassing photos can resurface years later.",
+        "callout": {
+          "tone": "note",
+          "title": "The grandma test",
+          "body": "Before you post or send: would you be okay with your grandma seeing it? If no, don't send."
+        }
       },
       {
         "heading": "Copyright",
@@ -383,11 +572,16 @@
     "topic": "computational-thinking",
     "title": "Computational thinking",
     "subtitle": "How programmers break problems apart",
-    "readTimeMin": 3,
+    "readTimeMin": 4,
     "sections": [
       {
         "heading": "Decomposition",
-        "body": "Big problems are scary. Computational thinking starts by breaking a problem into smaller, manageable pieces.\n\nExample: \"Make a game.\" Decompose into: design the player character; write the movement code; design the enemies; write the score logic; design the menu screen. Now each piece is doable on its own."
+        "body": "Big problems are scary. Computational thinking starts by breaking a problem into smaller, manageable pieces.\n\nExample: \"Make a game.\" Decompose into: design the player character; write the movement code; design the enemies; write the score logic; design the menu screen. Now each piece is doable on its own.",
+        "callout": {
+          "tone": "tip",
+          "title": "Real-world parallel",
+          "body": "Cooking a 3-course meal? You don't try to do it all at once. You decompose: write the menu, write the shopping list, prep starters, cook mains, plate dessert. Same idea."
+        }
       },
       {
         "heading": "Pattern recognition",
@@ -395,11 +589,25 @@
       },
       {
         "heading": "Abstraction",
-        "body": "Strip away the unnecessary detail. Focus only on what matters for the problem.\n\nA London Underground map is a brilliant example of abstraction. The actual track in real life is twisty and not to scale — but the map straightens it all out and just shows you which stations connect. That's abstraction: hide what you don't need."
+        "body": "Strip away the unnecessary detail. Focus only on what matters for the problem.\n\nA London Underground map is a brilliant example of abstraction. The actual track in real life is twisty and not to scale — but the map straightens it all out and just shows you which stations connect. That's abstraction: hide what you don't need.",
+        "example": {
+          "title": "Abstraction in action — building a school timetable",
+          "intro": "What you DO care about (keep):",
+          "steps": [
+            "Day of the week",
+            "Time of each lesson",
+            "Subject + room number"
+          ],
+          "outro": "What you DON'T need (strip out): teacher's hair colour, classroom paint colour, weather forecast."
+        }
       },
       {
         "heading": "Algorithms",
-        "body": "Once you've decomposed, spotted patterns, and abstracted away the noise, write a step-by-step set of instructions to solve the problem. That's an algorithm. A programmer then translates the algorithm into code."
+        "body": "Once you've decomposed, spotted patterns, and abstracted away the noise, write a step-by-step set of instructions to solve the problem. That's an algorithm. A programmer then translates the algorithm into code.",
+        "quickfact": {
+          "value": "DPAA",
+          "label": "Decompose · Pattern · Abstract · Algorithm"
+        }
       }
     ],
     "tips": [
@@ -417,20 +625,43 @@
     "sections": [
       {
         "heading": "Saying your name",
-        "body": "\"Je m'appelle ___\" = \"My name is ___\" (literally \"I call myself\").\n\nIf someone asks you \"Comment tu t'appelles?\" (\"What's your name?\"), reply \"Je m'appelle Alex\" (or whatever your name is).\n\nThe \"m'\" is a contraction of \"me\" — it shrinks because the next word starts with a vowel sound. French does this all the time."
+        "body": "\"Je m'appelle ___\" = \"My name is ___\" (literally \"I call myself\").\n\nIf someone asks you \"Comment tu t'appelles?\" (\"What's your name?\"), reply \"Je m'appelle Alex\" (or whatever your name is).\n\nThe \"m'\" is a contraction of \"me\" — it shrinks because the next word starts with a vowel sound. French does this all the time.",
+        "callout": {
+          "tone": "tip",
+          "title": "Pronunciation",
+          "body": "\"Je m'appelle\" sounds like \"zhuh ma-PELL\". The final 'e' on appelle is silent."
+        }
       },
       {
         "heading": "Saying your age",
-        "body": "Important: in French you HAVE your age. Not \"I AM twelve\" but \"I HAVE twelve years\".\n\n\"J'ai douze ans\" = \"I am 12 years old\" (literally \"I have twelve years\")\n\nIf someone asks \"Quel âge as-tu?\" (\"How old are you?\"), reply \"J'ai ___ ans\"."
+        "body": "Important: in French you HAVE your age. Not \"I AM twelve\" but \"I HAVE twelve years\".\n\n\"J'ai douze ans\" = \"I am 12 years old\" (literally \"I have twelve years\")\n\nIf someone asks \"Quel âge as-tu?\" (\"How old are you?\"), reply \"J'ai ___ ans\".",
+        "callout": {
+          "tone": "warn",
+          "title": "Don't say \"Je suis douze\"",
+          "body": "That literally means \"I am twelve\" — but it doesn't mean 12 years old in French. Always use J'AI for age."
+        },
+        "example": {
+          "title": "Mini dialogue",
+          "steps": [
+            "A: Comment tu t'appelles?  → \"What's your name?\"",
+            "B: Je m'appelle Aaryan.  → \"My name is Aaryan.\"",
+            "A: Quel âge as-tu?  → \"How old are you?\"",
+            "B: J'ai douze ans.  → \"I am 12.\""
+          ]
+        }
       },
       {
         "heading": "Numbers 1–20",
         "list": [
-          "1 un / 2 deux / 3 trois / 4 quatre / 5 cinq",
-          "6 six / 7 sept / 8 huit / 9 neuf / 10 dix",
-          "11 onze / 12 douze / 13 treize / 14 quatorze / 15 quinze",
-          "16 seize / 17 dix-sept / 18 dix-huit / 19 dix-neuf / 20 vingt"
-        ]
+          "1 un · 2 deux · 3 trois · 4 quatre · 5 cinq",
+          "6 six · 7 sept · 8 huit · 9 neuf · 10 dix",
+          "11 onze · 12 douze · 13 treize · 14 quatorze · 15 quinze",
+          "16 seize · 17 dix-sept · 18 dix-huit · 19 dix-neuf · 20 vingt"
+        ],
+        "quickfact": {
+          "value": "17 = 10 + 7",
+          "label": "dix-sept literally reads \"ten-seven\""
+        }
       },
       {
         "heading": "Pleased to meet you",
