@@ -6,12 +6,12 @@
 //
 // Two states: idle (intro + START button) and running (timer + session).
 
-import "./mock.js?v=20260511"; // shared header behaviour (sound toggle)
-import { loadAllQuestions, listSubjects, subjectName } from "./questions.js?v=20260511";
-import { noteSessionResult, readStreak } from "./engagement.js?v=20260511";
-import { playLevelUp, playModeStartMock, makeListenButton, hapticStreak } from "./sounds.js?v=20260511";
-import { getVisual } from "./visuals.js?v=20260511";
-import { isParentRole } from "./profile.js?v=20260511";
+import "./mock.js?v=20260512"; // shared header behaviour (sound toggle)
+import { loadAllQuestions, listSubjects, subjectName } from "./questions.js?v=20260512";
+import { noteSessionResult, readStreak } from "./engagement.js?v=20260512";
+import { playLevelUp, playModeStartMock, makeListenButton, hapticStreak } from "./sounds.js?v=20260512";
+import { getVisual } from "./visuals.js?v=20260512";
+import { isParentRole } from "./profile.js?v=20260512";
 
 if (isParentRole()) { location.replace("dashboard.html"); }
 
@@ -35,7 +35,10 @@ start().finally(function () {
 });
 
 async function start() {
-  if (!root) return;
+  if (!root) {
+    if (window.GBErr) window.GBErr.paint("missing root", "paperRoot element not found in paper.html");
+    return;
+  }
   paintIntroLoading();
   try {
     pool = await loadAllQuestions();

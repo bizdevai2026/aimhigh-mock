@@ -21,9 +21,9 @@ import {
   clearLegacyProfile,
   migratedChildName,
   startDemoSession
-} from "./profile.js?v=20260511";
+} from "./profile.js?v=20260512";
 
-import { playWelcomeStinger } from "./sounds.js?v=20260511";
+import { playWelcomeStinger } from "./sounds.js?v=20260512";
 
 const root = document.getElementById("welcomeRoot");
 
@@ -42,10 +42,20 @@ function go(step) {
 }
 
 function init() {
-  // Already signed in? Send them on.
+  // Already signed in? Send them on. Cancel the loading guard on the
+  // redirect paths — location.replace is async and the timeout card
+  // can flash on the welcome page if the destination loads slowly.
   const role = signedInRole();
-  if (role === "child") { location.replace("index.html"); return; }
-  if (role === "parent") { location.replace("dashboard.html"); return; }
+  if (role === "child") {
+    if (typeof window.GBReady === "function") window.GBReady();
+    location.replace("index.html");
+    return;
+  }
+  if (role === "parent") {
+    if (typeof window.GBReady === "function") window.GBReady();
+    location.replace("dashboard.html");
+    return;
+  }
 
   if (!isFullySetUp()) {
     // Pre-fill child name from any legacy single-profile install
@@ -60,20 +70,23 @@ function init() {
 
 function paint() {
   if (!root) return;
+  let painted = false;
   switch (state.step) {
-    case "intro":                    paintIntro(); break;
-    case "setup-parent-pin":         paintSetupParentPin(); break;
-    case "setup-parent-pin-confirm": paintSetupParentPinConfirm(); break;
-    case "setup-child-name":         paintSetupChildName(); break;
-    case "setup-child-pin":          paintSetupChildPin(); break;
-    case "role-pick":                paintRolePick(); break;
-    case "login-child":              paintLogin("child"); break;
-    case "login-parent":             paintLogin("parent"); break;
-    case "forgot-parent-auth":       paintForgotParentAuth(); break;
-    case "forgot-child-newpin":      paintForgotChildNewPin(); break;
+    case "intro":                    paintIntro(); painted = true; break;
+    case "setup-parent-pin":         paintSetupParentPin(); painted = true; break;
+    case "setup-parent-pin-confirm": paintSetupParentPinConfirm(); painted = true; break;
+    case "setup-child-name":         paintSetupChildName(); painted = true; break;
+    case "setup-child-pin":          paintSetupChildPin(); painted = true; break;
+    case "role-pick":                paintRolePick(); painted = true; break;
+    case "login-child":              paintLogin("child"); painted = true; break;
+    case "login-parent":             paintLogin("parent"); painted = true; break;
+    case "forgot-parent-auth":       paintForgotParentAuth(); painted = true; break;
+    case "forgot-child-newpin":      paintForgotChildNewPin(); painted = true; break;
   }
-  // Any successful paint cancels the loading guard.
-  if (typeof window.GBReady === "function") window.GBReady();
+  // Cancel the loading guard only when a known step actually rendered.
+  // An unknown step falls through and renders nothing — we want the
+  // guard to fire in that case so the user sees a recovery affordance.
+  if (painted && typeof window.GBReady === "function") window.GBReady();
 }
 
 // --- Intro: what is this and what's about to happen -----------------------

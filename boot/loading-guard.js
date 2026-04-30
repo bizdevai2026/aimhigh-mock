@@ -22,13 +22,13 @@
   var ready = false;
 
   function findRoot() {
-    var ids = ["learnRoot", "warmupRoot", "sprintRoot", "paperRoot", "dashboardRoot", "welcomeRoot"];
+    var ids = ["learnRoot", "warmupRoot", "sprintRoot", "paperRoot", "coachRoot", "welcomeRoot", "homeRoot"];
     for (var i = 0; i < ids.length; i++) {
       var el = document.getElementById(ids[i]);
       if (el) return el;
     }
     var main = document.querySelector("main");
-    return main || document.body;
+    return main || document.body || document.documentElement;
   }
 
   function escapeHtml(s) {
@@ -43,6 +43,9 @@
     if (window.GBErr && window.GBErr._painted) return; // error catcher already painted
     var root = findRoot();
     if (!root) return;
+    // Mark as painted so a late-firing error catcher doesn't clobber
+    // this card with its own. Whichever fires first wins.
+    if (window.GBErr) window.GBErr._painted = true;
 
     root.innerHTML =
       "<section style=\"" +

@@ -17,11 +17,11 @@ import {
   todayIso,
   weakTopics,
   isPaused
-} from "./engagement.js?v=20260511";
+} from "./engagement.js?v=20260512";
 
-import { readSoundOn, toggleSound } from "./sounds.js?v=20260511";
-import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260511";
-import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260511";
+import { readSoundOn, toggleSound } from "./sounds.js?v=20260512";
+import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260512";
+import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260512";
 
 function $(id) { return document.getElementById(id); }
 
@@ -527,8 +527,17 @@ function paintWeakestShortcut() {
 function boot() {
   // Auth gate — anyone without a session gets sent to welcome.html.
   // Welcome page itself never loads mock.js so there's no loop.
-  if (!requireProfileOrRedirect()) return;
-  if (!gateParentFromTraining()) return;
+  // Cancel the loading guard on every early-return path: location.replace
+  // is asynchronous, and on a slow redirect target the timeout card can
+  // briefly flash on the old page before navigation completes.
+  if (!requireProfileOrRedirect()) {
+    if (typeof window.GBReady === "function") window.GBReady();
+    return;
+  }
+  if (!gateParentFromTraining()) {
+    if (typeof window.GBReady === "function") window.GBReady();
+    return;
+  }
 
   // Hero card lives on the landing page only. Header streak chip on
   // multiple pages — paintHero is safe (id checks short-circuit).

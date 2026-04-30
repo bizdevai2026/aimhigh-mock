@@ -27,9 +27,11 @@
   // The element we paint into. Pages mount their main content under one
   // of these ids — we look up whichever exists, falling back to <body>
   // appended at the end so the user always sees something.
+  // Per-page root element ids. Must match the actual ids in HTML files.
+  // (QA found "dashboardRoot" was wrong — the real id is "coachRoot".)
   var ROOT_IDS = [
     "learnRoot", "warmupRoot", "sprintRoot", "paperRoot",
-    "dashboardRoot", "welcomeRoot"
+    "coachRoot", "welcomeRoot", "homeRoot"
   ];
 
   function findRoot() {
@@ -122,6 +124,16 @@
   function onError(e) {
     var loc = (e.filename || "") + ":" + (e.lineno || "?") + ":" + (e.colno || "?");
     var msg = (e.message || "?") + " @ " + loc;
+    // Browsers report "Script error." for cross-origin script failures
+    // with empty filename/line/col. The location string is then ":?:?",
+    // which is useless. Substitute a human-readable message.
+    if ((e.message === "Script error." || e.message === "Script error")
+        && !e.filename) {
+      msg = "A script failed to load. This is often caused by a network " +
+            "filter or browser extension blocking GradeBlaze's scripts. " +
+            "Try reloading on a different network, or opening the page " +
+            "in a private/incognito window.";
+    }
     if (e.error && e.error.stack) msg += "\n\n" + e.error.stack;
     paint("uncaught error", msg);
   }

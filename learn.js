@@ -39,10 +39,10 @@ if (typeof window !== "undefined") {
   });
 }
 
-import "./mock.js?v=20260511"; // shared header behaviour
-import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260511";
-import { topicLadder, weakTopics } from "./engagement.js?v=20260511";
-import { getVisual } from "./visuals.js?v=20260511";
+import "./mock.js?v=20260512"; // shared header behaviour
+import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260512";
+import { topicLadder, weakTopics } from "./engagement.js?v=20260512";
+import { getVisual } from "./visuals.js?v=20260512";
 
 let learning = null; // array of learning entries from data/learning.json
 let pool = null;     // question pool from data/<subject>.json — used to enumerate topics
@@ -56,7 +56,10 @@ start()
   });
 
 async function start() {
-  if (!root) return;
+  if (!root) {
+    if (window.GBErr) window.GBErr.paint("missing root", "learnRoot element not found in learn.html");
+    return;
+  }
   paintLoading();
 
   // Always need learning.json — it's small and used by every view.
