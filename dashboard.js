@@ -7,7 +7,7 @@
 //
 // All read-only — never mutates state from here.
 
-import "./mock.js?v=20260513"; // shared header behaviour (sound toggle)
+import "./mock.js?v=20260514"; // shared header behaviour (sound toggle)
 import {
   readResults,
   weakTopics,
@@ -17,11 +17,17 @@ import {
   subjectLadder,
   isPaused,
   setPaused
-} from "./engagement.js?v=20260513";
+} from "./engagement.js?v=20260514";
 
-import { subjectName, listSubjects } from "./questions.js?v=20260513";
-import { playCoachEnter } from "./sounds.js?v=20260513";
-import { isParentRole } from "./profile.js?v=20260513";
+import { subjectName, listSubjects } from "./questions.js?v=20260514";
+import { playCoachEnter } from "./sounds.js?v=20260514";
+import { isParentRole } from "./profile.js?v=20260514";
+import {
+  remove as storageRemove,
+  writeString as storageWriteString,
+  keys as storageKeys,
+  snapshot as storageSnapshot
+} from "./platform/storage.js?v=20260514";
 
 // Wrap paint() in try/finally so a single broken painter doesn't strand
 // the page. The error catcher will surface the throw; finally guarantees
@@ -239,9 +245,7 @@ function resetTrainingData() {
     "aimhigh-mock-resume-paper",
     "aimhigh-mock-pause"
   ];
-  keysToWipe.forEach(function (k) {
-    try { localStorage.removeItem(k); } catch (e) {}
-  });
+  keysToWipe.forEach(function (k) { storageRemove(k); });
   showDataMsg("Training data reset. Profile + PIN preserved.", "ok");
   setTimeout(function () { location.reload(); }, 800);
 }
@@ -274,13 +278,14 @@ function collectBundle() {
     appVersion: "20260429",
     keys: {}
   };
-  for (let i = 0; i < localStorage.length; i++) {
-    const k = localStorage.key(i);
-    if (!k || k.indexOf("aimhigh-mock-") !== 0) continue;
-    if (k === "aimhigh-mock-session") continue;          // device-local
-    if (k.indexOf("aimhigh-mock-resume-") === 0) continue; // transient
-    out.keys[k] = localStorage.getItem(k);
-  }
+  // Pull every aimhigh-mock-* key, then drop the ones we deliberately
+  // never export (device-local session and transient resume buffers).
+  const all = storageSnapshot("aimhigh-mock-");
+  Object.keys(all).forEach(function (k) {
+    if (k === "aimhigh-mock-session") return;             // device-local
+    if (k.indexOf("aimhigh-mock-resume-") === 0) return;  // transient
+    out.keys[k] = all[k];
+  });
   return out;
 }
 
@@ -302,14 +307,9 @@ function importProgress(file) {
     );
     if (!ok) { showDataMsg("Import cancelled.", "err"); return; }
     // Wipe existing aimhigh-mock-* keys, then write imported ones
-    const toDelete = [];
-    for (let i = 0; i < localStorage.length; i++) {
-      const k = localStorage.key(i);
-      if (k && k.indexOf("aimhigh-mock-") === 0) toDelete.push(k);
-    }
-    toDelete.forEach(function (k) { localStorage.removeItem(k); });
+    storageKeys("aimhigh-mock-").forEach(function (k) { storageRemove(k); });
     Object.keys(data.keys).forEach(function (k) {
-      try { localStorage.setItem(k, data.keys[k]); } catch (err) {}
+      storageWriteString(k, data.keys[k]);
     });
     showDataMsg("Imported. Reloading…", "ok");
     setTimeout(function () { location.replace("welcome.html"); }, 800);

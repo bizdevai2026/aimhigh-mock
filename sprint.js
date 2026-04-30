@@ -9,7 +9,7 @@
 // All three runner shapes share rendering, just differ in question pool
 // and round size.
 
-import "./mock.js?v=20260513"; // shared header (sound toggle, profile chip)
+import "./mock.js?v=20260514"; // shared header (sound toggle, profile chip)
 import {
   loadAllQuestions,
   pickSubjectQuestions,
@@ -18,16 +18,17 @@ import {
   subjectName,
   topicsForSubject,
   topicCounts
-} from "./questions.js?v=20260513";
+} from "./questions.js?v=20260514";
 import {
   noteSessionResult,
   readStreak,
   topicLadder,
   subjectLadder
-} from "./engagement.js?v=20260513";
-import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playModeStartSprint, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticCorrect, hapticWrong, hapticStreak, hapticPerfect } from "./sounds.js?v=20260513";
-import { getVisual } from "./visuals.js?v=20260513";
-import { isParentRole } from "./profile.js?v=20260513";
+} from "./engagement.js?v=20260514";
+import { playCorrect, playWrong, playLevelUp, playStreak3, playStreak5, playPerfect, playModeStartSprint, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticCorrect, hapticWrong, hapticStreak, hapticPerfect } from "./sounds.js?v=20260514";
+import { getVisual } from "./visuals.js?v=20260514";
+import { isParentRole } from "./profile.js?v=20260514";
+import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260514";
 
 const SPRINT_SIZE = 15;
 const DRILL_SIZE = 5;
@@ -134,38 +135,31 @@ function paintResumePrompt(items, saved) {
 
 function saveResumeState() {
   if (!session) return;
-  try {
-    const payload = {
-      mode: session.mode,
-      subjectId: session.subjectId,
-      topic: session.topic,
-      items: session.items.map(function (q) { return q.id; }),
-      index: session.results.length,
-      results: session.results,
-      streak: session.streak || 0,
-      startedAt: session.startedAt,
-      titleEyebrow: session.titleEyebrow,
-      backHref: session.backHref,
-      savedAt: Date.now()
-    };
-    localStorage.setItem(RESUME_KEY, JSON.stringify(payload));
-  } catch (e) {}
+  storageWriteJson(RESUME_KEY, {
+    mode: session.mode,
+    subjectId: session.subjectId,
+    topic: session.topic,
+    items: session.items.map(function (q) { return q.id; }),
+    index: session.results.length,
+    results: session.results,
+    streak: session.streak || 0,
+    startedAt: session.startedAt,
+    titleEyebrow: session.titleEyebrow,
+    backHref: session.backHref,
+    savedAt: Date.now()
+  });
 }
 
 function loadResumeState() {
-  try {
-    const raw = localStorage.getItem(RESUME_KEY);
-    if (!raw) return null;
-    const data = JSON.parse(raw);
-    if (!data || !data.savedAt) return null;
-    if (Date.now() - data.savedAt > RESUME_TTL_MS) return null;
-    if (!Array.isArray(data.items) || data.items.length === 0) return null;
-    return data;
-  } catch (e) { return null; }
+  const data = storageReadJson(RESUME_KEY, null);
+  if (!data || !data.savedAt) return null;
+  if (Date.now() - data.savedAt > RESUME_TTL_MS) return null;
+  if (!Array.isArray(data.items) || data.items.length === 0) return null;
+  return data;
 }
 
 function clearResumeState() {
-  try { localStorage.removeItem(RESUME_KEY); } catch (e) {}
+  storageRemove(RESUME_KEY);
 }
 
 function reconstituteItems(p, ids) {

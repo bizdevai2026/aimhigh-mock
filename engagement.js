@@ -1,4 +1,4 @@
-// AimHigh Mock Prep — engagement state.
+// GradeBlaze — engagement state.
 //
 // Readers and writers for the localStorage-backed engagement loop:
 // streak (with freezes), today's XP toward the daily goal, weekly
@@ -7,7 +7,20 @@
 // weakness tracker.
 //
 // All keys live under the "aimhigh-mock-" namespace so they never
-// collide with the AimHigh app on the same origin.
+// collide with the AimHigh app on the same origin (renaming this
+// prefix without a migration would silently lose every user's
+// progress — see docs/reviews/2026-04-30-architecture.md).
+//
+// Storage is now routed exclusively through platform/storage.js — no
+// direct localStorage calls in this module.
+
+import {
+  readJson as storageReadJson,
+  writeJson as storageWriteJson,
+  readString as storageReadString,
+  writeString as storageWriteString,
+  remove as storageRemove
+} from "./platform/storage.js?v=20260514";
 
 const PREFIX = "aimhigh-mock-";
 
@@ -42,12 +55,8 @@ const TIER_ORDER = ["BRONZE", "SILVER", "GOLD", "DIAMOND"];
 // keeping it that way means the gate is robust to future refactors).
 
 function isDemoMode() {
-  try {
-    const raw = localStorage.getItem(PREFIX + "session");
-    if (!raw) return false;
-    const s = JSON.parse(raw);
-    return !!(s && s.role === "demo");
-  } catch (e) { return false; }
+  const s = storageReadJson(PREFIX + "session", null);
+  return !!(s && s.role === "demo");
 }
 
 // Holiday-mode pause (parent-controlled). When active, all engagement
@@ -55,13 +64,12 @@ function isDemoMode() {
 // On resume, lastDateIso is fast-forwarded to yesterday so the streak
 // picks up cleanly on the next training session.
 export function isPaused() {
-  try { return localStorage.getItem(KEYS.pause) === "true"; }
-  catch (e) { return false; }
+  return storageReadString(KEYS.pause) === "true";
 }
 
 export function setPaused(yes) {
   if (yes) {
-    try { localStorage.setItem(KEYS.pause, "true"); } catch (e) {}
+    storageWriteString(KEYS.pause, "true");
     return;
   }
   // Resuming: nudge lastDateIso so the next-day-after-pause counts as
@@ -71,7 +79,7 @@ export function setPaused(yes) {
     s.lastDateIso = isoOffset(todayIso(), -1); // yesterday
     writeJson(KEYS.streak, s);
   }
-  try { localStorage.removeItem(KEYS.pause); } catch (e) {}
+  storageRemove(KEYS.pause);
 }
 
 // Single guard used by every engagement writer. True when either the
@@ -80,38 +88,14 @@ function shouldSkipWrites() {
   return isDemoMode() || isPaused();
 }
 
-// --- Storage primitives -----------------------------------------------------
+// --- Storage primitives ----------------------------------------------------
+// Thin re-exports of platform/storage so the rest of this file reads
+// naturally. These delegate; no direct localStorage access here.
 
-function readJson(key, fallback) {
-  try {
-    const raw = localStorage.getItem(key);
-    if (!raw) return cloneDefault(fallback);
-    const parsed = JSON.parse(raw);
-    if (fallback && typeof fallback === "object" && !Array.isArray(fallback)) {
-      return Object.assign({}, fallback, parsed);
-    }
-    return parsed;
-  } catch (e) {
-    return cloneDefault(fallback);
-  }
-}
-
-function writeJson(key, value) {
-  try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* quota */ }
-}
-
-function readString(key) {
-  try { return localStorage.getItem(key); } catch (e) { return null; }
-}
-
-function writeString(key, value) {
-  try { localStorage.setItem(key, value); } catch (e) { /* quota */ }
-}
-
-function cloneDefault(v) {
-  if (v == null) return v;
-  return JSON.parse(JSON.stringify(v));
-}
+const readJson    = storageReadJson;
+const writeJson   = storageWriteJson;
+const readString  = storageReadString;
+const writeString = storageWriteString;
 
 // --- Date helpers -----------------------------------------------------------
 

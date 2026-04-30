@@ -1,4 +1,4 @@
-// AimHigh Mock Prep — synthesised audio feedback.
+// GradeBlaze — synthesised audio feedback.
 //
 // Uses Web Audio API to generate short tones (no audio files needed).
 // More musical and varied than single beeps: layered chords, soft
@@ -10,16 +10,20 @@
 // persists at "aimhigh-mock-sound" = "off". First-time visit and
 // any storage failure both fall back to ON.
 
+import { readString as storageReadString, writeString as storageWriteString } from "./platform/storage.js?v=20260514";
+
 const SOUND_KEY = "aimhigh-mock-sound";
 
 let _ctx = null;
 
 function isOn() {
-  try { return localStorage.getItem(SOUND_KEY) !== "off"; } catch (e) { return true; }
+  // Default ON: the only "off" state is an explicit "off" string. Anything
+  // else (null/missing/storage-disabled) returns true.
+  return storageReadString(SOUND_KEY) !== "off";
 }
 
 export function setSoundOn(on) {
-  try { localStorage.setItem(SOUND_KEY, on ? "on" : "off"); } catch (e) {}
+  storageWriteString(SOUND_KEY, on ? "on" : "off");
 }
 
 export function toggleSound() {

@@ -1,4 +1,4 @@
-// AimHigh Mock Prep — profiles, PIN auth, and current session.
+// GradeBlaze — profiles, PIN auth, and current session.
 //
 // Single-device, two-role model:
 //   - "child"  — drives the engagement loop (writes streak / XP / results)
@@ -25,6 +25,12 @@
 // default for the new child profile, and the legacy key is removed
 // once setup completes.
 
+import {
+  readJson as storageReadJson,
+  writeJson as storageWriteJson,
+  remove as storageRemove
+} from "./platform/storage.js?v=20260514";
+
 const PREFIX = "aimhigh-mock-";
 const KEY_CHILD       = PREFIX + "profile-child";
 const KEY_PARENT      = PREFIX + "profile-parent";
@@ -42,21 +48,12 @@ export async function hashPin(pin) {
 }
 
 // --- Storage primitives ----------------------------------------------------
+// Thin re-exports of platform/storage so the rest of this file reads
+// naturally. These delegate; no direct localStorage access here.
 
-function readJson(key) {
-  try {
-    const raw = localStorage.getItem(key);
-    return raw ? JSON.parse(raw) : null;
-  } catch (e) { return null; }
-}
-
-function writeJson(key, value) {
-  try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) {}
-}
-
-function removeKey(key) {
-  try { localStorage.removeItem(key); } catch (e) {}
-}
+const readJson  = storageReadJson;
+const writeJson = storageWriteJson;
+const removeKey = storageRemove;
 
 // --- Child profile ---------------------------------------------------------
 

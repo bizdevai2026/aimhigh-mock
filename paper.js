@@ -6,12 +6,13 @@
 //
 // Two states: idle (intro + START button) and running (timer + session).
 
-import "./mock.js?v=20260513"; // shared header behaviour (sound toggle)
-import { loadAllQuestions, listSubjects, subjectName } from "./questions.js?v=20260513";
-import { noteSessionResult, readStreak } from "./engagement.js?v=20260513";
-import { playLevelUp, playModeStartMock, makeListenButton, hapticStreak } from "./sounds.js?v=20260513";
-import { getVisual } from "./visuals.js?v=20260513";
-import { isParentRole } from "./profile.js?v=20260513";
+import "./mock.js?v=20260514"; // shared header behaviour (sound toggle)
+import { loadAllQuestions, listSubjects, subjectName } from "./questions.js?v=20260514";
+import { noteSessionResult, readStreak } from "./engagement.js?v=20260514";
+import { playLevelUp, playModeStartMock, makeListenButton, hapticStreak } from "./sounds.js?v=20260514";
+import { getVisual } from "./visuals.js?v=20260514";
+import { isParentRole } from "./profile.js?v=20260514";
+import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260514";
 
 if (isParentRole()) { location.replace("dashboard.html"); }
 
@@ -113,31 +114,24 @@ function paintResumePrompt(items, saved) {
 
 function saveResumeState() {
   if (!session || !endsAt) return;
-  try {
-    const payload = {
-      items: session.items.map(function (q) { return q.id; }),
-      index: session.results.length,
-      results: session.results,
-      startedAt: session.startedAt,
-      endsAt: endsAt
-    };
-    localStorage.setItem(RESUME_KEY, JSON.stringify(payload));
-  } catch (e) {}
+  storageWriteJson(RESUME_KEY, {
+    items: session.items.map(function (q) { return q.id; }),
+    index: session.results.length,
+    results: session.results,
+    startedAt: session.startedAt,
+    endsAt: endsAt
+  });
 }
 
 function loadResumeState() {
-  try {
-    const raw = localStorage.getItem(RESUME_KEY);
-    if (!raw) return null;
-    const data = JSON.parse(raw);
-    if (!data || !data.endsAt) return null;
-    if (!Array.isArray(data.items) || data.items.length === 0) return null;
-    return data;
-  } catch (e) { return null; }
+  const data = storageReadJson(RESUME_KEY, null);
+  if (!data || !data.endsAt) return null;
+  if (!Array.isArray(data.items) || data.items.length === 0) return null;
+  return data;
 }
 
 function clearResumeState() {
-  try { localStorage.removeItem(RESUME_KEY); } catch (e) {}
+  storageRemove(RESUME_KEY);
 }
 
 function reconstituteItems(p, ids) {

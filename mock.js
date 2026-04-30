@@ -17,11 +17,12 @@ import {
   todayIso,
   weakTopics,
   isPaused
-} from "./engagement.js?v=20260513";
+} from "./engagement.js?v=20260514";
 
-import { readSoundOn, toggleSound } from "./sounds.js?v=20260513";
-import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260513";
-import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260513";
+import { readSoundOn, toggleSound } from "./sounds.js?v=20260514";
+import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260514";
+import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260514";
+import { readString as storageReadString, writeString as storageWriteString } from "./platform/storage.js?v=20260514";
 
 function $(id) { return document.getElementById(id); }
 
@@ -416,7 +417,7 @@ const TOUR_KEY = "aimhigh-mock-tour-seen";
 function maybeShowOnboardingTour() {
   if (!isChildRole()) return;
   if (!document.querySelector(".mock-hero")) return; // home page only
-  try { if (localStorage.getItem(TOUR_KEY) === "true") return; } catch (e) { return; }
+  if (storageReadString(TOUR_KEY) === "true") return;
 
   const name = profileName() || "there";
   const cards = [
@@ -481,7 +482,7 @@ function maybeShowOnboardingTour() {
     paintCard();
   }
   function finish() {
-    try { localStorage.setItem(TOUR_KEY, "true"); } catch (e) {}
+    storageWriteString(TOUR_KEY, "true");
     overlay.remove();
   }
 
