@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Exam-Day Drill &middot; GradeBlaze</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/logo.svg" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0f1729" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="GradeBlaze" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap">
+  <script src="boot/theme.js"></script>
+  <link rel="stylesheet" href="mock.css?v=20260601" />
+</head>
+<body class="mock-page mode-learn">
+  <header class="mock-header no-print">
+    <div class="mock-header-inner">
+      <a class="gb-brand" href="index.html" aria-label="GradeBlaze home">
+        <img class="gb-logo-mark" src="assets/logo.svg" alt="" aria-hidden="true" />
+        <span class="gb-wordmark gb-wordmark-sm">
+          <span class="gb-grade">Grade</span><span class="gb-blaze">Blaze</span>
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <main class="mock-main" id="examDayRoot">
+    <section class="exam-day-card" aria-labelledby="examDayTitle">
+      <div class="exam-day-head">
+        <span class="exam-day-eyebrow">Exam-Day Drill</span>
+        <h1 id="examDayTitle" class="exam-day-title">What top students do in the room</h1>
+        <p class="exam-day-sub">Six moves, every paper. Stick this on your bedroom door.</p>
+      </div>
+
+      <ol class="exam-day-list">
+        <li>
+          <span class="exam-day-num">1</span>
+          <div class="exam-day-rule">
+            <strong>Read the WHOLE paper first.</strong>
+            <span>Spend 1-2 minutes scanning every page before you write. Spot the easy ones, mentally pre-warm the hard ones.</span>
+          </div>
+        </li>
+        <li>
+          <span class="exam-day-num">2</span>
+          <div class="exam-day-rule">
+            <strong>1 minute per mark. No more.</strong>
+            <span>6-mark question = 6 minutes max. If you go over, FLAG IT and come back. Bank the easy marks first.</span>
+          </div>
+        </li>
+        <li>
+          <span class="exam-day-num">3</span>
+          <div class="exam-day-rule">
+            <strong>Easy questions FIRST.</strong>
+            <span>Build confidence + bank marks before tackling the hard stuff. The hard ones get easier when you've already got 30 marks in the bag.</span>
+          </div>
+        </li>
+        <li>
+          <span class="exam-day-num">4</span>
+          <div class="exam-day-rule">
+            <strong>Stuck for 90 seconds? Flag, leave, come back.</strong>
+            <span>Don't burn 5 minutes staring at one question. Circle it, move on, the answer often appears while you're doing something else.</span>
+          </div>
+        </li>
+        <li>
+          <span class="exam-day-num">5</span>
+          <div class="exam-day-rule">
+            <strong>BUG every question.</strong>
+            <span><em>Box</em> the command word (describe / explain / compare). <em>Underline</em> what it asks for. <em>Glance back</em> after writing — did you actually answer THAT?</span>
+          </div>
+        </li>
+        <li>
+          <span class="exam-day-num">6</span>
+          <div class="exam-day-rule">
+            <strong>Last 5 minutes — the check pass.</strong>
+            <span>Re-read every command word. Check units (cm, m², kg). Check you answered all parts (a, b, c). Easy marks live here.</span>
+          </div>
+        </li>
+      </ol>
+
+      <div class="exam-day-foot">
+        <p class="exam-day-mantra">Mark schemes are the template. Examiners reward STRUCTURE more than brilliance.</p>
+        <p class="exam-day-pep">If you blank: write ANYTHING about the topic. The act of writing unfreezes the brain. Examiners only mark what's on the page.</p>
+      </div>
+    </section>
+
+    <div class="exam-day-actions no-print">
+      <button class="mock-button" type="button" id="printBtn">Print this card</button>
+      <a class="mock-button mock-button-ghost" href="learn.html">&larr; Back to LEARN</a>
+    </div>
+  </main>
+
+  <script src="boot/error-catcher.js"></script>
+  <script src="boot/loading-guard.js"></script>
+  <script type="module" src="exam-day.js?v=20260601"></script>
+</body>
+</html>

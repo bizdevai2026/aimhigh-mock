@@ -2462,3 +2462,428 @@ section.mock-learn-cta {
 [data-theme="light"] .mock-visual-backdrop {
   opacity: 0.45;
 }
+
+/* ===========================================================================
+   STUDY SMART — meta-skill onboarding (study-smart.html + tile on LEARN hub)
+   =========================================================================== */
+
+/* The "Start here" tile that lives at the top of the LEARN hub for kids
+   who haven't completed the onboarding yet. Big and inviting so it's not
+   skipped — but not so loud it crowds out the subject tiles below. */
+.study-smart-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.4rem 1.3rem 1.3rem;
+  margin: 0 1.25rem 1.1rem;
+  border-radius: var(--mock-radius-lg);
+  background:
+    linear-gradient(135deg, rgba(255, 209, 58, 0.12) 0%, rgba(255, 94, 58, 0.10) 100%),
+    var(--mock-card);
+  border: 1px solid var(--mock-border-hi);
+  text-decoration: none;
+  color: var(--mock-text);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 32px -16px rgba(255, 94, 58, 0.30);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.study-smart-tile::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, var(--mock-lime-soft) 0%, transparent 70%);
+  pointer-events: none;
+}
+.study-smart-tile:hover, .study-smart-tile:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px -16px rgba(255, 94, 58, 0.45);
+  outline: none;
+}
+.study-smart-tile-eyebrow {
+  font-family: var(--mock-font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-lime);
+  position: relative;
+  z-index: 1;
+}
+.study-smart-tile-title {
+  font-family: var(--mock-font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--mock-text-strong);
+  position: relative;
+  z-index: 1;
+}
+.study-smart-tile-body {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--mock-text);
+  max-width: 32rem;
+  position: relative;
+  z-index: 1;
+}
+.study-smart-tile-cta {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.4rem;
+  font-family: var(--mock-font-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--mock-fire);
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+/* Slim certified strip — replaces the big tile once the kid has finished
+   the onboarding. Keeps the link visible (re-take, exam-day) without
+   eating real estate. */
+.study-smart-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin: 0 1.25rem 1rem;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  background: rgba(94, 234, 212, 0.10);
+  border: 1px solid rgba(94, 234, 212, 0.35);
+  font-size: 0.88rem;
+}
+.study-smart-strip-badge {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--mock-cyan);
+  color: var(--mock-bg);
+  font-weight: 800;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.study-smart-strip-title {
+  font-weight: 700;
+  color: var(--mock-text-strong);
+  letter-spacing: 0.02em;
+}
+.study-smart-strip-link {
+  color: var(--mock-fire);
+  text-decoration: none;
+  font-weight: 600;
+}
+.study-smart-strip-link:hover, .study-smart-strip-link:focus {
+  text-decoration: underline;
+  outline: none;
+}
+.study-smart-strip-sep {
+  color: var(--mock-text-dim);
+  opacity: 0.6;
+}
+
+/* Single-step page — one screen at a time, swipe-friendly. */
+.study-smart-step {
+  margin: 1rem 1.25rem 2rem;
+  padding: 1.4rem 1.4rem 1.6rem;
+  background: linear-gradient(160deg, var(--mock-card) 0%, var(--mock-card-hi) 100%);
+  border: 1px solid var(--mock-border-hi);
+  border-radius: var(--mock-radius-lg);
+  box-shadow: 0 14px 40px -16px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.study-smart-step-icon {
+  align-self: center;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.study-smart-step-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.study-smart-step-head {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.study-smart-step-head .mock-stub-tag {
+  align-self: center;
+  font-family: var(--mock-font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-fire);
+}
+.study-smart-step-title {
+  font-family: var(--mock-font-display);
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--mock-text-strong);
+  margin: 0;
+}
+.study-smart-step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.study-smart-step-body p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--mock-text);
+}
+
+/* Try It block — boxed example/scaffolded steps. */
+.study-smart-tryit {
+  background: rgba(109, 167, 255, 0.08);
+  border: 1px solid rgba(109, 167, 255, 0.30);
+  border-radius: 12px;
+  padding: 0.9rem 1rem 1rem;
+}
+.study-smart-tryit-title {
+  margin: 0 0 0.5rem;
+  font-family: var(--mock-font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mock-cobalt);
+}
+.study-smart-tryit-steps {
+  margin: 0;
+  padding-left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.92rem;
+  color: var(--mock-text);
+  line-height: 1.5;
+}
+.study-smart-tryit-steps li::marker { color: var(--mock-cobalt); font-weight: 700; }
+.study-smart-tryit-outro {
+  margin: 0.7rem 0 0;
+  font-size: 0.88rem;
+  color: var(--mock-text-dim);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Progress bar — shown only on the 7 toolkit steps, not on intro/complete. */
+.study-smart-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.study-smart-progress-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--mock-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.study-smart-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--mock-lime), var(--mock-fire));
+  border-radius: 999px;
+  transition: width 200ms ease;
+}
+.study-smart-progress-text {
+  font-family: var(--mock-font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--mock-text-dim);
+  flex-shrink: 0;
+}
+
+.study-smart-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+  flex-wrap: wrap;
+}
+.study-smart-nav-final {
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: stretch;
+}
+.study-smart-nav-final .mock-button { text-align: center; }
+
+/* Special styling for the certified-complete card. */
+.study-smart-step-complete {
+  border-color: rgba(255, 209, 58, 0.45);
+  box-shadow: 0 14px 40px -16px rgba(255, 209, 58, 0.45);
+}
+.study-smart-step-complete .study-smart-step-title {
+  color: var(--mock-fire);
+}
+
+/* ===========================================================================
+   EXAM-DAY DRILL — printable one-pager (exam-day.html)
+   =========================================================================== */
+
+.exam-day-card {
+  margin: 1rem 1.25rem 1rem;
+  padding: 1.6rem 1.5rem 1.6rem;
+  background: linear-gradient(160deg, var(--mock-card) 0%, var(--mock-card-hi) 100%);
+  border: 1px solid var(--mock-border-hi);
+  border-radius: var(--mock-radius-lg);
+  box-shadow: 0 14px 40px -16px rgba(0, 0, 0, 0.45);
+}
+.exam-day-head {
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+.exam-day-eyebrow {
+  display: inline-block;
+  font-family: var(--mock-font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mock-fire);
+  margin-bottom: 0.4rem;
+}
+.exam-day-title {
+  font-family: var(--mock-font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--mock-text-strong);
+  margin: 0 0 0.4rem;
+  line-height: 1.1;
+}
+.exam-day-sub {
+  font-size: 0.95rem;
+  color: var(--mock-text-dim);
+  margin: 0;
+}
+.exam-day-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.exam-day-list li {
+  display: flex;
+  gap: 0.9rem;
+  padding: 0.95rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--mock-border);
+}
+.exam-day-num {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: var(--mock-lime);
+  color: var(--mock-bg);
+  font-family: var(--mock-font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.exam-day-rule {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.exam-day-rule strong {
+  font-family: var(--mock-font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--mock-text-strong);
+  letter-spacing: -0.005em;
+}
+.exam-day-rule span {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--mock-text);
+}
+.exam-day-rule em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--mock-fire);
+}
+.exam-day-foot {
+  margin-top: 1.4rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--mock-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.exam-day-mantra {
+  font-family: var(--mock-font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--mock-cobalt);
+  text-align: center;
+  margin: 0;
+}
+.exam-day-pep {
+  font-size: 0.9rem;
+  color: var(--mock-text-dim);
+  font-style: italic;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+}
+.exam-day-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0.4rem 1.25rem 2rem;
+}
+
+/* Print stylesheet — strips chrome and reformats for A4. */
+@media print {
+  body { background: white !important; color: black !important; }
+  .no-print { display: none !important; }
+  .exam-day-card {
+    box-shadow: none;
+    border: 2px solid #000;
+    background: white !important;
+    color: black !important;
+    margin: 0;
+    page-break-inside: avoid;
+  }
+  .exam-day-eyebrow, .exam-day-mantra { color: #000 !important; }
+  .exam-day-title { color: #000 !important; }
+  .exam-day-sub, .exam-day-rule span, .exam-day-pep { color: #222 !important; }
+  .exam-day-rule strong { color: #000 !important; }
+  .exam-day-rule em { color: #000 !important; }
+  .exam-day-list li {
+    background: white !important;
+    border: 1px solid #888 !important;
+    page-break-inside: avoid;
+  }
+  .exam-day-num {
+    background: #000 !important;
+    color: white !important;
+  }
+  .exam-day-foot { border-top-color: #888 !important; }
+}

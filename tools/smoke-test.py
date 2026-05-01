@@ -41,7 +41,8 @@ def ok(check, msg):
 # === 1. HTML pages have boot scripts before the module script =================
 
 HTML_PAGES = ['index.html', 'welcome.html', 'daily.html', 'subject.html',
-              'paper.html', 'dashboard.html', 'learn.html']
+              'paper.html', 'dashboard.html', 'learn.html',
+              'study-smart.html', 'exam-day.html']
 
 for p in HTML_PAGES:
     if not Path(p).exists():

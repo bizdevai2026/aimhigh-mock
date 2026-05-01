@@ -39,13 +39,20 @@ if (typeof window !== "undefined") {
   });
 }
 
-import "./mock.js?v=20260531"; // shared header behaviour
-import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260531";
-import { topicLadder, weakTopics } from "./engagement.js?v=20260531";
-import { getVisual } from "./visuals.js?v=20260531";
-import { validateLearning, reportProblems } from "./diagnostics/schema-validator.js?v=20260531";
-import { escapeHtml, match } from "./shared/dom.js?v=20260531";
-import { subjectTone, prettyTopic } from "./shared/subjects.js?v=20260531";
+import "./mock.js?v=20260601"; // shared header behaviour
+import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260601";
+import { topicLadder, weakTopics } from "./engagement.js?v=20260601";
+import { getVisual } from "./visuals.js?v=20260601";
+import { validateLearning, reportProblems } from "./diagnostics/schema-validator.js?v=20260601";
+import { escapeHtml, match } from "./shared/dom.js?v=20260601";
+import { subjectTone, prettyTopic } from "./shared/subjects.js?v=20260601";
+import { readString } from "./platform/storage.js?v=20260601";
+
+// Study Smart completion key — same string is set by study-smart.js when
+// the kid reaches the final card. Used here only to swap "Start here" for
+// "Re-take" copy on the LEARN hub tile, so we read directly from storage
+// and avoid importing the whole onboarding module on the LEARN page.
+const STUDY_SMART_KEY = "aimhigh-mock-study-smart-complete";
 
 let learning = null; // array of learning entries from data/learning.json
 let pool = null;     // question pool from data/<subject>.json — used to enumerate topics
@@ -119,6 +126,35 @@ function paintLoading() {
 function paintHub() {
   const subjects = listSubjects();
   const weak = weakTopics(7).slice(0, 3); // up to 3 most-missed topics
+  const studySmartDone = (function () {
+    try { return !!readString(STUDY_SMART_KEY); }
+    catch (e) { return false; }
+  })();
+
+  // Study Smart tile — the meta-skill onboarding (HOW to study, not WHAT).
+  // First-time visitors see a big "Start here" CTA; returning kids who've
+  // already finished it see a slim certified strip with re-take + exam-day
+  // links. Source: design/learn-module-audit.md §6.1.
+  let studySmartHtml = "";
+  if (!studySmartDone) {
+    studySmartHtml =
+      "<a class=\"study-smart-tile study-smart-tile-start\" href=\"study-smart.html\">" +
+        "<span class=\"study-smart-tile-eyebrow\">Start here &middot; 8 mins</span>" +
+        "<span class=\"study-smart-tile-title\">Study Smart</span>" +
+        "<span class=\"study-smart-tile-body\">The 7 cheat codes top students use to ace exams. Learn HOW to study, not just what.</span>" +
+        "<span class=\"study-smart-tile-cta\">Open the toolkit &rarr;</span>" +
+      "</a>";
+  } else {
+    studySmartHtml =
+      "<div class=\"study-smart-strip\">" +
+        "<span class=\"study-smart-strip-badge\" aria-hidden=\"true\">&#10003;</span>" +
+        "<span class=\"study-smart-strip-title\">Study Smart certified</span>" +
+        "<a class=\"study-smart-strip-link\" href=\"study-smart.html\">Re-take</a>" +
+        "<span class=\"study-smart-strip-sep\" aria-hidden=\"true\">&middot;</span>" +
+        "<a class=\"study-smart-strip-link\" href=\"exam-day.html\">Exam-Day Drill</a>" +
+      "</div>";
+  }
+
   let weakHtml = "";
   if (weak.length > 0) {
     weakHtml =
@@ -160,6 +196,7 @@ function paintHub() {
       "<h1 class=\"mock-stub-title\">READ, WATCH, GET THE BASICS</h1>" +
       "<p class=\"mock-stub-quote\">Pick a subject. Examples, visuals and tips in plain English — then test what stuck.</p>" +
     "</section>" +
+    studySmartHtml +
     weakHtml +
     "<nav class=\"mock-tiles\" aria-label=\"Learning subjects\">" + tilesHtml + "</nav>";
 }

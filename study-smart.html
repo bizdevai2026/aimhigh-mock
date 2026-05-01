@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Full Mock &middot; GradeBlaze</title>
+  <title>Study Smart &middot; GradeBlaze</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" href="assets/logo.svg" />
   <link rel="manifest" href="manifest.webmanifest" />
@@ -14,11 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap">
-  <!-- Theme bootstrap. Runs before mock.css evaluates so the correct theme is on <html> at first paint (no FOUC). -->
   <script src="boot/theme.js"></script>
   <link rel="stylesheet" href="mock.css?v=20260601" />
 </head>
-<body class="mock-page mode-distance">
+<body class="mock-page mode-learn">
   <header class="mock-header">
     <div class="mock-header-inner">
       <a class="gb-brand" href="index.html" aria-label="GradeBlaze home">
@@ -30,7 +29,7 @@
     </div>
   </header>
 
-  <main class="mock-main" id="paperRoot">
+  <main class="mock-main" id="studySmartRoot">
     <section class="mock-stub-card">
       <p class="mock-coach-empty">Loading&hellip;</p>
     </section>
@@ -38,6 +37,6 @@
 
   <script src="boot/error-catcher.js"></script>
   <script src="boot/loading-guard.js"></script>
-  <script type="module" src="paper.js?v=20260601"></script>
+  <script type="module" src="study-smart.js?v=20260601"></script>
 </body>
 </html>
