@@ -8,7 +8,18 @@
     "decode": "Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition",
     "when": "Use whenever you're asked 'is X alive?' — run through the 7 letters and check.",
     "example": "'Is a virus alive?' Run MRS GREN. Viruses fail Respiration and Nutrition (they need a host cell), so the answer is no.",
-    "priority": true
+    "priority": true,
+    "context": "Examiners love asking 'is X alive?' or 'list 3 things every living thing does'. Without a system, you forget half the list and lose marks. MRS GREN is the system — 7 letters that cover everything that counts as 'alive', so you never miss any.",
+    "worked_example": {
+      "scenario": "The exam asks: 'Is fire alive? Use the 7 life processes to explain.'",
+      "steps": [
+        "Run MRS GREN: Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition.",
+        "Movement? Yes (flickering). Respiration? Sort of (uses oxygen). Growth? Yes (gets bigger).",
+        "Reproduction? No — fire can't make a baby fire. Sensitivity? No — it doesn't sense things. Excretion? No.",
+        "Fire fails several of the 7 — most importantly Reproduction and Sensitivity."
+      ],
+      "outcome": "Answer: not alive. You named the framework, applied it letter-by-letter, and identified the failing ones. Full marks."
+    }
   },
   {
     "id": "sci-oil-rig",
@@ -19,7 +30,18 @@
     "decode": "Oxidation Is Loss (of electrons), Reduction Is Gain (of electrons)",
     "when": "Any redox reaction — work out which atom lost or gained electrons.",
     "example": "Magnesium loses 2 electrons to form Mg²⁺ → that's oxidation. The oxygen gains them → that's reduction.",
-    "priority": true
+    "priority": true,
+    "context": "When chemicals react, electrons jump between atoms. The words 'oxidation' and 'reduction' are confusing — especially because 'reduction' sounds like LOSING something, but it actually means GAINING. OIL RIG fixes that confusion in 6 letters.",
+    "worked_example": {
+      "scenario": "Magnesium burns in oxygen: 2Mg + O₂ → 2MgO. What was oxidised, what was reduced?",
+      "steps": [
+        "Magnesium: started as Mg (neutral), ended as Mg²⁺ — it LOST 2 electrons.",
+        "OIL: Lost = Oxidation. So magnesium was OXIDISED.",
+        "Oxygen: started as O₂ (neutral), ended as O²⁻ — it GAINED electrons.",
+        "RIG: Gain = Reduction. So oxygen was REDUCED."
+      ],
+      "outcome": "Magnesium oxidised, oxygen reduced. Two letters of OIL RIG, four marks in the bag."
+    }
   },
   {
     "id": "sci-roygbiv",
@@ -40,7 +62,18 @@
     "decode": "Potassium, Sodium, Calcium, Magnesium, Aluminium, Carbon, Zinc, then Iron, (Hydrogen), Copper, Silver, Gold",
     "when": "Displacement reactions — the more reactive metal kicks the less reactive one out.",
     "example": "Iron + copper sulfate → iron sulfate + copper. Iron's higher up so it displaces copper.",
-    "priority": true
+    "priority": true,
+    "context": "When two metals meet, the more reactive one always 'wins' — it kicks the less reactive one out of its compound. This shows up in every Year 7-9 chemistry test as 'displacement reactions'. Locking the order means you can predict what happens before the reaction even starts.",
+    "worked_example": {
+      "scenario": "What happens when you put iron nails into copper sulfate solution?",
+      "steps": [
+        "From the mnemonic, find iron and copper. Iron is HIGHER than copper.",
+        "Higher = more reactive = wins. Iron displaces copper.",
+        "Equation: iron + copper sulfate → iron sulfate + copper.",
+        "Visible result: brown copper coats the nail; the blue solution fades to pale green."
+      ],
+      "outcome": "You predicted the reaction without doing it, named the products, and described what you'd see. Three sentences, top-band answer."
+    }
   },
   {
     "id": "sci-energy-stores",
@@ -122,7 +155,6 @@
     "when": "Always name the precise change — 'melting' beats 'turning into water'.",
     "example": "Steam on a cold mirror: condensation (gas→liquid). Wet washing drying: evaporation (liquid→gas)."
   },
-
   {
     "id": "math-bidmas",
     "subject": "maths",
@@ -132,7 +164,18 @@
     "decode": "Brackets, Indices, Division, Multiplication, Addition, Subtraction",
     "when": "Any expression with mixed operations. Wrong order = wrong answer.",
     "example": "3 + 4 × 2 = 11 (not 14). Multiply first because M comes before A.",
-    "priority": true
+    "priority": true,
+    "context": "Maths has rules about which calculation comes first when there's a mix. Get the order wrong, you get the wrong answer — even if every individual calculation was right. BIDMAS is the order mathematicians and exam markers all use. It's not optional.",
+    "worked_example": {
+      "scenario": "Calculate: 3 + 4 × 2",
+      "steps": [
+        "Brackets? None.",
+        "Indices (powers/roots)? None.",
+        "Division/Multiplication? YES. 4 × 2 = 8. Do this FIRST.",
+        "Now Addition: 3 + 8 = 11."
+      ],
+      "outcome": "Answer: 11 (NOT 14). The kid who added first got 14 and lost the mark. You followed BIDMAS and didn't."
+    }
   },
   {
     "id": "math-foil",
@@ -163,7 +206,18 @@
     "decode": "Keep the first fraction, Flip the second, Change ÷ to ×",
     "when": "Any fraction division question.",
     "example": "2/3 ÷ 4/5 → Keep 2/3, Flip 4/5 → 5/4, Change ÷ → × → 2/3 × 5/4 = 10/12 = 5/6.",
-    "priority": true
+    "priority": true,
+    "context": "Dividing fractions feels weird because you can't just divide them directly. KFC turns the divide problem into a multiply problem — which you already know how to do. 30 seconds of memorising the trick saves you from getting fraction division wrong forever.",
+    "worked_example": {
+      "scenario": "Calculate: 2/3 ÷ 4/5",
+      "steps": [
+        "K — Keep the first fraction the same: 2/3.",
+        "F — Flip the second fraction: 4/5 → 5/4.",
+        "C — Change ÷ to ×: now you have 2/3 × 5/4.",
+        "Multiply across: (2 × 5) / (3 × 4) = 10/12. Simplify: 5/6."
+      ],
+      "outcome": "Answer: 5/6. The divide became a multiply, and you nailed it without panicking."
+    }
   },
   {
     "id": "math-9-finger",
@@ -194,7 +248,17 @@
     "decode": "1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225",
     "when": "Comes up in factorising, surds, Pythagoras, area. Highest-leverage memory work in KS3 maths.",
     "example": "Area of a square is 144 cm² → side = √144 = 12 cm (instantly).",
-    "priority": true
+    "priority": true,
+    "context": "Squares come up everywhere — area, Pythagoras, surds, factorising. If you have to work them out from scratch every time, you waste minutes per question. Memorising 1²-15² makes them instant. That's 30 seconds saved per question, dozens per paper.",
+    "worked_example": {
+      "scenario": "A square garden has area 144 m². How long is each side?",
+      "steps": [
+        "Side × side = area, so side = √144.",
+        "From memory: 12 × 12 = 144 (you don't have to calculate).",
+        "Therefore side = 12 m."
+      ],
+      "outcome": "Answer: 12 m. Took 2 seconds because the squares are loaded in your head. Without memorising, you'd guess-and-check for a minute."
+    }
   },
   {
     "id": "math-cubes-club",
@@ -266,7 +330,6 @@
     "when": "Any calculation with negative numbers.",
     "example": "−3 × −4 = 12 (same signs). −3 × 4 = −12 (different). 5 − (−2) = 5 + 2 = 7."
   },
-
   {
     "id": "eng-peel",
     "subject": "english",
@@ -276,7 +339,18 @@
     "decode": "Point · Evidence · Explain · Link (back to the question)",
     "when": "Every body paragraph in an essay or analysis.",
     "example": "P: The author creates tension. E: 'her hands shook'. E: the verb shows physical fear without saying she's scared. L: this builds the suspense the question asks about.",
-    "priority": true
+    "priority": true,
+    "context": "English answers without structure read like jumbled thoughts and lose marks. PEEL is a four-step skeleton that turns a vague answer into a structured one. Examiners literally tick along the structure — no PEEL, no ticks.",
+    "worked_example": {
+      "scenario": "Question: How does the writer create tension in this paragraph?",
+      "steps": [
+        "P — Point: 'The writer creates tension by using short, fragmented sentences.'",
+        "E — Evidence: 'For example: He waited. Listened. Nothing.'",
+        "E — Explain: 'The shortness builds suspense because each pause forces the reader to wait, just like the character is waiting.'",
+        "L — Link: 'This connects to the question about tension by mimicking the character's own held breath.'"
+      ],
+      "outcome": "Four marks. Each PEEL step did one job. The examiner ticked along as you went."
+    }
   },
   {
     "id": "eng-petal",
@@ -307,7 +381,19 @@
     "decode": "Direct address · Alliteration · Facts · Opinion · Repetition · Emotive language · Statistics · Triples (rule of three)",
     "when": "Any persuasive writing task. Aim for at least 5 of the 8.",
     "example": "Persuasive speech: 'You [DA] won't believe these statistics [S]: 9 in 10 students [F] feel stressed, anxious, overwhelmed [T].'",
-    "priority": true
+    "priority": true,
+    "context": "Persuasive writing is just rhetoric — and rhetoric has a toolkit. DAFOREST is 8 named tools. Use 5+ of them in your answer and you tick what examiners are looking for. Without DAFOREST, you write 'a good speech'. With it, you write 'a top-band persuasive speech'.",
+    "worked_example": {
+      "scenario": "Write a 5-sentence persuasive opener for a speech about recycling.",
+      "steps": [
+        "Direct address: 'You — yes, you sitting there — make a difference today.'",
+        "Statistics: 'Nine out of ten plastic bottles end up in landfill.'",
+        "Triples: 'Recycle. Reduce. Rethink.'",
+        "Emotive language: 'Heartbroken seabirds, choked beaches, suffocated rivers.'",
+        "Rhetorical question: 'Do you really want our oceans to die on our watch?'"
+      ],
+      "outcome": "Five DAFOREST devices in five sentences. Same content as a basic speech, but every sentence ticks a marked box. Top band."
+    }
   },
   {
     "id": "eng-smile",
@@ -338,7 +424,19 @@
     "decode": "Sight · Sound · Smell · Touch · Taste",
     "when": "Aim to use at least 3 senses per descriptive paragraph — instantly lifts your writing above peers.",
     "example": "'The kitchen smelled of cinnamon [smell]. Steam hissed from the pan [sound]. The countertop was cold under her hand [touch].'",
-    "priority": true
+    "priority": true,
+    "context": "Boring descriptive writing tells the reader ONE thing: what a place looks like. Top-band writing layers in sound, smell, touch, taste — making the reader feel they're there. Aim for 3+ senses per descriptive paragraph and you instantly outscore most of the class.",
+    "worked_example": {
+      "scenario": "Describe a kitchen at breakfast time, using at least 4 senses.",
+      "steps": [
+        "Sight: 'Sunlight hit the buttered toast on the counter.'",
+        "Sound: 'The kettle hissed and clicked off.'",
+        "Smell: 'Coffee, sharp and dark, filled the air.'",
+        "Touch: 'The mug was hot enough to make her fingers ache.'",
+        "Taste: 'The first sip tasted faintly of yesterday's biscuit.'"
+      ],
+      "outcome": "Five senses in five sentences. The reader is fully in the kitchen with you. Marker = impressed = top of the band."
+    }
   },
   {
     "id": "eng-sonnet",
@@ -410,7 +508,6 @@
     "when": "Vary deliberately. A short one. After a long flowing sentence, makes impact.",
     "example": "Simple: 'She left.' Compound: 'She left, but he stayed.' Complex: 'She left because he stayed.' Mix all in a paragraph."
   },
-
   {
     "id": "hist-nope",
     "subject": "history",
@@ -420,7 +517,18 @@
     "decode": "Nature · Origin · Purpose · Effectiveness (for your specific question)",
     "when": "Any source analysis question.",
     "example": "Source: a king's letter (Nature). Written 1530 by Henry VIII (Origin). Purpose: justify the divorce. Effective for the question? Useful but biased.",
-    "priority": true
+    "priority": true,
+    "context": "History exam sources aren't neutral — every one was made by someone with a reason. NOPE is the framework for spotting the bias. Without it, you describe the source. With it, you analyse it. Description gets some marks; analysis gets top-band marks.",
+    "worked_example": {
+      "scenario": "Source: a 1530 letter from Henry VIII to the Pope. Question: 'How useful is this for understanding the English Reformation?'",
+      "steps": [
+        "Nature: A private letter from a king to the Pope (personal but powerful).",
+        "Origin: Written 1530 by Henry himself — right when he was trying to divorce Catherine.",
+        "Purpose: To pressure the Pope into granting the divorce.",
+        "Effectiveness: Useful — shows Henry's frustration directly. BUT biased — he had every reason to overstate his case."
+      ],
+      "outcome": "You showed analysis, balance, AND awareness of bias in 4 sentences. Far more marks than a kid who just wrote 'this is a letter from Henry'."
+    }
   },
   {
     "id": "hist-5ws",
@@ -441,7 +549,17 @@
     "decode": "Political · Economic · Religious · Social · Intellectual · Artistic",
     "when": "'Why did X happen?' essays — find at least three different categories.",
     "example": "Causes of English Civil War: Political (king vs Parliament), Economic (taxes), Religious (Catholic queen). Three categories beats three of the same.",
-    "priority": true
+    "priority": true,
+    "context": "When examiners ask 'why did X happen?', the worst answer is three reasons that are all the same kind. PERSIA forces you to find DIFFERENT kinds of cause — political AND religious AND economic — which examiners reward as 'multi-causal analysis'. That's the difference between band 3 and band 5.",
+    "worked_example": {
+      "scenario": "Why did the English Civil War (1642) happen?",
+      "steps": [
+        "Political: King Charles I claimed Divine Right; Parliament wanted limits on his power.",
+        "Religious: Charles's Catholic-leaning queen (Henrietta Maria) scared the Protestant majority.",
+        "Economic: Charles raised taxes (Ship Money) without Parliament's permission, infuriating merchants."
+      ],
+      "outcome": "Three causes from THREE different categories of PERSIA. Examiner ticks 'multi-causal analysis'. Top-band."
+    }
   },
   {
     "id": "hist-1066",
@@ -452,7 +570,17 @@
     "decode": "William of Normandy beats Harold Godwinson at Hastings. Crowned King of England on Christmas Day.",
     "when": "Year 7 cornerstone date. The single most-tested year in KS3.",
     "example": "14 October 1066 — Harold killed (arrow through eye, per the Bayeux Tapestry). Norman conquest begins.",
-    "priority": true
+    "priority": true,
+    "context": "The single most-tested year in KS3 history. Forget the date and you can't anchor anything else — every question about the Norman Conquest, feudalism, motte-and-bailey castles, or the Domesday Book traces back to this year. Lock 1066 and a quarter of Year 7 history is unlockable.",
+    "worked_example": {
+      "scenario": "Question: 'What changed in England as a result of 1066?'",
+      "steps": [
+        "Date: 14 October 1066 — Battle of Hastings. Harold killed (arrow through the eye, per the Bayeux Tapestry).",
+        "Crowned: William I, Christmas Day 1066.",
+        "Aftermath: Normans replaced English nobles within 5 years; built 500+ castles; Domesday Book (1086) recorded everything for tax."
+      ],
+      "outcome": "Specific date, named battle, named king, dated follow-on. An anchored answer = full marks. A floppy 'lots of changes happened' answer = nothing."
+    }
   },
   {
     "id": "hist-1215",
@@ -554,7 +682,6 @@
     "when": "EVERY history paragraph. Generic evidence loses marks; specific evidence gains them.",
     "example": "Bad: 'lots of people died'. Good: 'approximately 1/3 of England's population died from the Black Death between 1348 and 1350'."
   },
-
   {
     "id": "geo-compass",
     "subject": "geography",
@@ -574,7 +701,18 @@
     "decode": "Read EASTINGS first (along), NORTHINGS second (up). Always.",
     "when": "Any OS map grid reference question.",
     "example": "Grid ref 23 45 → along to 23, then up to 45. Reversing this is the most common error in map-skills papers.",
-    "priority": true
+    "priority": true,
+    "context": "Grid references on OS maps split into TWO numbers, and the order matters. Most kids panic and reverse them — giving the wrong square. The mnemonic locks the order: ALONG (the corridor) first, UP (the stairs) second. Same as reading axes on a graph: x then y.",
+    "worked_example": {
+      "scenario": "What's at grid reference 3245?",
+      "steps": [
+        "Split it: 32 = eastings (along), 45 = northings (up).",
+        "ALONG the corridor: find easting line 32 (count from the LEFT edge of the map).",
+        "UP the stairs: find northing line 45 (count from the BOTTOM).",
+        "Where the two lines cross — that's your square."
+      ],
+      "outcome": "You found the right square. The kid who reversed it landed in the wrong place and lost the mark. The mnemonic stopped you doing that."
+    }
   },
   {
     "id": "geo-hase",
@@ -585,7 +723,18 @@
     "decode": "Hydraulic action · Abrasion · Solution · (Erosion / attrition)",
     "when": "Asked 'how does a river erode?'",
     "example": "Hydraulic action: water force smashes air into cracks. Abrasion: rocks scrape the bed. Attrition: rocks knock each other smoother.",
-    "priority": true
+    "priority": true,
+    "context": "Rivers don't just 'erode' — they erode in 4 specific ways, and examiners want all four NAMED with the technical word. Without HASE, you'd write 'rivers wear away rock'. With HASE you can name each mechanism for full marks.",
+    "worked_example": {
+      "scenario": "Question: 'Describe how a river erodes its bed and banks.'",
+      "steps": [
+        "H — Hydraulic action: water force smashes air into cracks in the bank, bursting them open.",
+        "A — Abrasion: rocks carried by the river scrape and grind the bed and banks.",
+        "S — Solution: slightly acidic river water dissolves soluble rocks like limestone.",
+        "Attrition: rocks knock against each other, smoothing them down (some teach this as the E)."
+      ],
+      "outcome": "Four named mechanisms = four marks. Without the mnemonic you'd guess 2 and lose half the marks."
+    }
   },
   {
     "id": "geo-dtss",
@@ -616,7 +765,17 @@
     "decode": "Constructive (apart, new crust) · Destructive (together, subduction) · Conservative (sliding past, earthquakes only)",
     "when": "Any tectonics question. Match the boundary to the volcano/earthquake pattern.",
     "example": "San Andreas Fault: conservative (earthquakes, no volcano). Mid-Atlantic Ridge: constructive (new crust forming).",
-    "priority": true
+    "priority": true,
+    "context": "Tectonics questions ALWAYS test plate-boundary types. The trap: kids confuse 'destructive' with the volcanic Ring of Fire, and 'constructive' with city-building. Locking the 3 types and their consequences (volcanoes? earthquakes? both?) means you can predict what happens at any boundary on any map.",
+    "worked_example": {
+      "scenario": "Question: 'Why does the San Andreas Fault have earthquakes but no volcanoes?'",
+      "steps": [
+        "Identify: San Andreas is plates SLIDING past each other = Conservative boundary.",
+        "Conservative = friction stress released as earthquakes.",
+        "Conservative = no plate going down (no subduction) = no magma rising = NO volcanoes."
+      ],
+      "outcome": "You predicted both behaviours from the boundary type alone. Earthquakes ✓, no volcanoes ✓. Full marks for the explanation."
+    }
   },
   {
     "id": "geo-climate-graph",
@@ -678,7 +837,6 @@
     "when": "Any coastal landforms question.",
     "example": "Old Harry Rocks (Dorset): textbook stack-and-stump example. Will eventually erode into stumps."
   },
-
   {
     "id": "comp-powers-2",
     "subject": "computing",
@@ -688,7 +846,18 @@
     "decode": "1 · 2 · 4 · 8 · 16 · 32 · 64 · 128 · 256 · 512 · 1024",
     "when": "Every binary conversion. Memorise cold.",
     "example": "8 bits → max value = 255 (256 different values). Place values: 128 64 32 16 8 4 2 1.",
-    "priority": true
+    "priority": true,
+    "context": "Computers count in binary — just 1s and 0s. Each digit is worth a power of 2. Memorise the first 11 powers (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024) and binary conversion goes from 'work it out slowly' to instant pattern matching. This appears on every CS paper.",
+    "worked_example": {
+      "scenario": "Convert binary 10110101 to decimal.",
+      "steps": [
+        "Write place values above each digit: 128, 64, 32, 16, 8, 4, 2, 1.",
+        "Match each binary digit: 1(128) 0(64) 1(32) 1(16) 0(8) 1(4) 0(2) 1(1).",
+        "Add up only the place values where there's a 1: 128 + 32 + 16 + 4 + 1.",
+        "Total: 181."
+      ],
+      "outcome": "Answer: 181. With place values memorised, this took 30 seconds. Without them, you'd be working slowly for 5 minutes."
+    }
   },
   {
     "id": "comp-cia",
@@ -709,7 +878,18 @@
     "decode": "Fetch (instruction from RAM) · Decode (work out what it means) · Execute (do it)",
     "when": "Any CPU operation question.",
     "example": "CPU fetches the next instruction (address from Program Counter), decodes it, executes it. Repeat billions of times per second.",
-    "priority": true
+    "priority": true,
+    "context": "Every CPU on Earth — your phone, your laptop, your console — runs the Fetch-Decode-Execute cycle billions of times per second. CS questions on 'what does the CPU actually do?' literally just want these three words in order. Memorise it once, get the marks forever.",
+    "worked_example": {
+      "scenario": "Question: 'Describe what happens when a CPU runs the instruction ADD 5, 3.'",
+      "steps": [
+        "Fetch: CPU fetches the next instruction from RAM, using the Program Counter to find its address.",
+        "Decode: CPU works out it's an ADD operation with values 5 and 3.",
+        "Execute: CPU performs 5 + 3 = 8 in the arithmetic-logic unit (ALU).",
+        "Repeat: Program Counter increments; cycle starts again for the next instruction."
+      ],
+      "outcome": "Three named stages plus the loop = top-band answer. This is a guaranteed question on every CS paper."
+    }
   },
   {
     "id": "comp-smart",
@@ -720,7 +900,18 @@
     "decode": "Safe (don't share personal info) · Meet (don't meet strangers) · Accept (don't accept random files/friends) · Reliable (check info) · Tell (a trusted adult)",
     "when": "Any e-safety question. Childnet's classic.",
     "example": "Strangers asking for your address? Fails Safe + Tell — share with parent immediately, don't reply.",
-    "priority": true
+    "priority": true,
+    "context": "E-safety appears on every Year 7 computing paper, and it's a 5-mark gimme — examiners want all 5 SMART rules named. The mnemonic was made by Childnet specifically for kids your age, so use the SMART words verbatim. That's exactly what the markscheme expects.",
+    "worked_example": {
+      "scenario": "Question: 'A stranger online asks for your home address. What should you do, and why?'",
+      "steps": [
+        "Stay safe: don't share personal info like your address (S).",
+        "Don't trust the request — Reliable info means checking who's asking (R).",
+        "Don't Accept any follow-up files or messages from them (A).",
+        "Tell a trusted adult straight away (T)."
+      ],
+      "outcome": "You named the SMART letters as you applied each one. 4 marks minimum, possibly all 5 if you'd added Meet (don't agree to meet up)."
+    }
   },
   {
     "id": "comp-osi",
@@ -822,7 +1013,6 @@
     "when": "Any binary-addition question.",
     "example": "1011 + 0110: column 1 (1+0=1), column 2 (1+1=10, carry), column 3 (0+1+1=10, carry), column 4 (1+0+1=10) → 10001."
   },
-
   {
     "id": "fr-vandertramp",
     "subject": "french",
@@ -832,7 +1022,17 @@
     "decode": "Monter, Rester, Sortir, Venir, Aller, Naître, Descendre, Entrer, Retourner, Tomber, Rentrer, Arriver, Mourir, Partir (+ Devenir, Revenir for the longer version)",
     "when": "Past tense (passé composé). With these verbs, past participle agrees with subject.",
     "example": "Elle est allée (she went, fem) — note the extra -e. Ils sont arrivés (they arrived, masc plural) — extra -s.",
-    "priority": true
+    "priority": true,
+    "context": "Most French past-tense verbs use 'avoir' (to have) as the helper. But a small list of 17 verbs use 'être' (to be) — and with être, the past participle has to AGREE with the subject (add -e for she, -s for they, -es for they-feminine). Get this wrong and the whole sentence is fluffed. MRS VANDERTRAMP is the list.",
+    "worked_example": {
+      "scenario": "Translate: 'She went to school.'",
+      "steps": [
+        "'Aller' (to go) is in MRS VANDERTRAMP — uses être (not avoir).",
+        "Subject: she = feminine, singular. Past participle 'allé' needs an extra -e for feminine: 'allée'.",
+        "Construct: 'Elle est allée à l'école.'"
+      ],
+      "outcome": "Correct être verb, correct agreement, perfect sentence. If you'd used 'avoir' or skipped the -e, you'd lose marks. The mnemonic stopped both errors."
+    }
   },
   {
     "id": "fr-house-trick",
@@ -863,7 +1063,19 @@
     "decode": "C, R, F, L — pronounce these at the end of words. Most other final consonants are silent.",
     "when": "French pronunciation. Instantly improves your accent above 90% of classmates.",
     "example": "Sport — pronounce the t (it's part of 'rt'). Petit — silent t. Sac — pronounce the c.",
-    "priority": true
+    "priority": true,
+    "context": "French has a weird rule: most final consonants are SILENT (so 'petit' sounds like 'puh-TEE', not 'puh-TEET'). But four consonants — C, R, F, L — you DO pronounce. Get this right and your French accent jumps above 90% of the class instantly.",
+    "worked_example": {
+      "scenario": "Read these out loud correctly: petit, sport, sac, chef, neuf, mal.",
+      "steps": [
+        "petit — t is NOT in CaReFuL → silent. Say 'puh-TEE'.",
+        "sport — t silent again, but r IS in CaReFuL → say it. 'sporh'.",
+        "sac — c IS in CaReFuL → pronounce it. 'sahk'.",
+        "chef and neuf — f IS in CaReFuL → say it. 'shef' and 'nuhf'.",
+        "mal — l IS in CaReFuL → pronounce it. 'mahl'."
+      ],
+      "outcome": "Six words, six correct accents. Speakers who know CaReFuL sound French; speakers who don't, sound English. Same vocab, very different mark."
+    }
   },
   {
     "id": "fr-question-words",
@@ -884,7 +1096,17 @@
     "decode": "je -e · tu -es · il/elle/on -e · nous -ons · vous -ez · ils/elles -ent",
     "when": "Any regular -ER verb in present tense. Memorise these 6 endings — they unlock most conversation.",
     "example": "Parler (to speak): je parle, tu parles, il parle, nous parlons, vous parlez, ils parlent.",
-    "priority": true
+    "priority": true,
+    "context": "About 80% of French verbs end in -er, and they ALL share the same 6 endings in the present tense. Memorise the pattern once and you can conjugate THOUSANDS of verbs without looking them up. This is the single highest-leverage piece of memory work in KS3 French.",
+    "worked_example": {
+      "scenario": "Conjugate the verb 'parler' (to speak) in the present tense.",
+      "steps": [
+        "Take off the -er: par-",
+        "Add the 6 endings in order: je parle, tu parles, il/elle/on parle, nous parlons, vous parlez, ils/elles parlent.",
+        "Same pattern works for jouer, manger, regarder, écouter, donner, aimer, chanter — hundreds of verbs."
+      ],
+      "outcome": "Six endings memorised = thousands of verbs conjugated. The biggest single unlock in early French."
+    }
   },
   {
     "id": "fr-ir-endings",
@@ -935,7 +1157,17 @@
     "decode": "In French you HAVE 12 years. NOT 'I am 12'. J'ai 12 ans (literally: 'I have 12 years').",
     "when": "Any age question. Year 7 classic trap.",
     "example": "How old are you? Quel âge as-tu? I'm 11 → J'ai onze ans. (NOT 'je suis onze').",
-    "priority": true
+    "priority": true,
+    "context": "In English you ARE 12. In French you HAVE 12 years. Year 7s mistranslate this constantly — saying 'je suis 12' (which makes no sense — 'I am 12 things'?). The mnemonic locks 'avoir' (have) for age, every single time.",
+    "worked_example": {
+      "scenario": "Translate: 'How old are you?' — 'I am 11.'",
+      "steps": [
+        "Question literally = 'what age have you?' → 'Quel âge as-tu?'",
+        "Answer literally = 'I have 11 years' → 'J'ai 11 ans.'",
+        "Don't say 'Je suis 11.' That's the English-thinking trap most of your class will fall into."
+      ],
+      "outcome": "Question and answer both correct. Two marks safe. The kid next to you said 'je suis 11' and lost both."
+    }
   },
   {
     "id": "fr-numbers-70-90",

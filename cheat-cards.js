@@ -13,11 +13,11 @@
 // Data lives at data/cheat-cards.json — ~94 cards across 7 subjects.
 // Source content: design/learn-module-audit.md §5 (the mnemonic bank).
 
-import "./mock.js?v=20260603";
-import { listSubjects, subjectName } from "./questions.js?v=20260603";
-import { subjectTone } from "./shared/subjects.js?v=20260603";
-import { escapeHtml, match } from "./shared/dom.js?v=20260603";
-import { readJson, writeJson } from "./platform/storage.js?v=20260603";
+import "./mock.js?v=20260604";
+import { listSubjects, subjectName } from "./questions.js?v=20260604";
+import { subjectTone } from "./shared/subjects.js?v=20260604";
+import { escapeHtml, match } from "./shared/dom.js?v=20260604";
+import { readJson, writeJson } from "./platform/storage.js?v=20260604";
 
 const MEMORISED_KEY = "aimhigh-mock-cheat-cards-memorised";
 
@@ -208,6 +208,30 @@ function renderCard(c, tone) {
   const priorityChip = c.priority
     ? "<span class=\"cheat-card-priority\">★ Top 3</span>"
     : "";
+  // Optional rich back-of-card content. Priority cards have context +
+  // worked_example; non-priority cards fall back to the simple example
+  // string. Either way, keep the front identical so the swipe deck reads
+  // consistently regardless of how filled-out the back is.
+  const contextHtml = c.context
+    ? "<p class=\"cheat-card-back-label\">WHY IT MATTERS</p>" +
+      "<p class=\"cheat-card-context\">" + escapeHtml(c.context) + "</p>"
+    : "";
+  let exampleHtml = "";
+  if (c.worked_example && typeof c.worked_example === "object") {
+    const we = c.worked_example;
+    const stepsHtml = (Array.isArray(we.steps) ? we.steps : []).map(function (st) {
+      return "<li>" + escapeHtml(st) + "</li>";
+    }).join("");
+    exampleHtml =
+      "<p class=\"cheat-card-back-label\">WORKED EXAMPLE</p>" +
+      (we.scenario ? "<p class=\"cheat-card-scenario\">" + escapeHtml(we.scenario) + "</p>" : "") +
+      (stepsHtml ? "<ol class=\"cheat-card-steps\">" + stepsHtml + "</ol>" : "") +
+      (we.outcome ? "<p class=\"cheat-card-outcome\">" + escapeHtml(we.outcome) + "</p>" : "");
+  } else if (c.example) {
+    exampleHtml =
+      "<p class=\"cheat-card-back-label\">EXAMPLE</p>" +
+      "<p class=\"cheat-card-example\">" + escapeHtml(c.example) + "</p>";
+  }
   return (
     "<article class=\"cheat-card" + stateClass + "\" data-card-id=\"" + escapeHtml(c.id) + "\" style=\"--tile-color:" + tone + "\">" +
       "<div class=\"cheat-card-inner\">" +
@@ -222,10 +246,10 @@ function renderCard(c, tone) {
         "<div class=\"cheat-card-face cheat-card-back\">" +
           "<p class=\"cheat-card-back-label\">DECODE</p>" +
           "<p class=\"cheat-card-decode\">" + escapeHtml(c.decode || "") + "</p>" +
+          contextHtml +
           (c.when ? "<p class=\"cheat-card-back-label\">WHEN TO USE</p>" +
                     "<p class=\"cheat-card-when\">" + escapeHtml(c.when) + "</p>" : "") +
-          (c.example ? "<p class=\"cheat-card-back-label\">EXAMPLE</p>" +
-                       "<p class=\"cheat-card-example\">" + escapeHtml(c.example) + "</p>" : "") +
+          exampleHtml +
           "<div class=\"cheat-card-actions\">" +
             "<button type=\"button\" class=\"cheat-card-mem-btn\" data-action=\"toggle-memorised\">" +
               (memorised ? "&#10003; Memorised &middot; tap to undo" : "I've got this &rarr; memorise") +

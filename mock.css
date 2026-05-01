@@ -3369,9 +3369,15 @@ section.mock-learn-cta {
 .cheat-card-inner {
   position: relative;
   width: 100%;
-  min-height: 220px;
+  min-height: 280px;
   transform-style: preserve-3d;
   transition: transform 480ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* When a card is flipped and has rich content, let the back grow so the
+   worked example doesn't get clipped — the front's min-height kept the
+   deck visually consistent before the flip. */
+.cheat-card.is-flipped .cheat-card-inner {
+  min-height: auto;
 }
 .cheat-card.is-flipped .cheat-card-inner {
   transform: rotateY(180deg);
@@ -3460,13 +3466,52 @@ section.mock-learn-cta {
 .cheat-card-back-label + .cheat-card-back-label { margin-top: 0.7rem; }
 .cheat-card-decode,
 .cheat-card-when,
-.cheat-card-example {
+.cheat-card-example,
+.cheat-card-context,
+.cheat-card-scenario,
+.cheat-card-outcome {
   font-size: 0.88rem;
   line-height: 1.5;
   color: var(--mock-text);
   margin: 0 0 0.7rem;
 }
 .cheat-card-decode { color: var(--mock-text-strong); font-weight: 600; }
+.cheat-card-context {
+  font-style: italic;
+  color: var(--mock-text-dim);
+  border-left: 2px solid var(--tile-color, var(--mock-cobalt));
+  padding-left: 0.6rem;
+  margin-left: 0;
+}
+.cheat-card-scenario {
+  font-weight: 600;
+  color: var(--mock-text-strong);
+  font-style: italic;
+}
+.cheat-card-steps {
+  margin: 0 0 0.7rem;
+  padding-left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.cheat-card-steps li {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--mock-text);
+}
+.cheat-card-steps li::marker {
+  color: var(--tile-color, var(--mock-fire));
+  font-weight: 700;
+}
+.cheat-card-outcome {
+  padding: 0.5rem 0.7rem;
+  background: rgba(255, 209, 58, 0.08);
+  border-left: 2px solid var(--mock-fire);
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--mock-text-strong);
+}
 .cheat-card-actions {
   margin-top: auto;
   padding-top: 0.6rem;

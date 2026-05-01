@@ -201,6 +201,7 @@ except Exception as e:
 cheat_problems = []
 cheat_ids = set()
 cheat_by_subject = {}
+cheat_rich = 0
 for c in CHEAT_CARDS:
     if not isinstance(c, dict):
         cheat_problems.append("non-object card entry")
@@ -216,11 +217,26 @@ for c in CHEAT_CARDS:
     if KNOWN_SUBJECTS and s not in KNOWN_SUBJECTS:
         cheat_problems.append(f"{cid} subject '{s}' not in registry")
     cheat_by_subject[s] = cheat_by_subject.get(s, 0) + 1
+    # Optional rich-content fields. Validate shape only if present.
+    if 'context' in c and not isinstance(c['context'], str):
+        cheat_problems.append(f"{cid} context must be a string")
+    if 'worked_example' in c:
+        we = c['worked_example']
+        if not isinstance(we, dict):
+            cheat_problems.append(f"{cid} worked_example must be an object")
+        else:
+            if 'scenario' in we and not isinstance(we['scenario'], str):
+                cheat_problems.append(f"{cid} worked_example.scenario must be a string")
+            if 'steps' in we and (not isinstance(we['steps'], list) or not all(isinstance(s_, str) for s_ in we['steps'])):
+                cheat_problems.append(f"{cid} worked_example.steps must be array of strings")
+            if 'outcome' in we and not isinstance(we['outcome'], str):
+                cheat_problems.append(f"{cid} worked_example.outcome must be a string")
+        cheat_rich += 1
 
 if cheat_problems:
     for p in cheat_problems: fail("cheat-cards-schema", p)
 else:
-    ok("cheat-cards", f"{len(CHEAT_CARDS)} cards across {len(cheat_by_subject)} subjects, ids unique, schema valid")
+    ok("cheat-cards", f"{len(CHEAT_CARDS)} cards across {len(cheat_by_subject)} subjects ({cheat_rich} with rich worked examples), ids unique, schema valid")
 
 # === 5. Cache-bust version consistency =======================================
 

@@ -39,14 +39,14 @@ if (typeof window !== "undefined") {
   });
 }
 
-import "./mock.js?v=20260603"; // shared header behaviour
-import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260603";
-import { topicLadder, weakTopics } from "./engagement.js?v=20260603";
-import { getVisual } from "./visuals.js?v=20260603";
-import { validateLearning, reportProblems } from "./diagnostics/schema-validator.js?v=20260603";
-import { escapeHtml, match } from "./shared/dom.js?v=20260603";
-import { subjectTone, prettyTopic } from "./shared/subjects.js?v=20260603";
-import { readString, writeString } from "./platform/storage.js?v=20260603";
+import "./mock.js?v=20260604"; // shared header behaviour
+import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260604";
+import { topicLadder, weakTopics } from "./engagement.js?v=20260604";
+import { getVisual } from "./visuals.js?v=20260604";
+import { validateLearning, reportProblems } from "./diagnostics/schema-validator.js?v=20260604";
+import { escapeHtml, match } from "./shared/dom.js?v=20260604";
+import { subjectTone, prettyTopic } from "./shared/subjects.js?v=20260604";
+import { readString, writeString } from "./platform/storage.js?v=20260604";
 
 // Study Smart completion key — same string is set by study-smart.js when
 // the kid reaches the final card. Used here only to swap "Start here" for
