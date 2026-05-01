@@ -42,11 +42,11 @@
 // worked examples. Front prompt comes from card.prompt or is derived
 // from the mnemonic at runtime.
 
-import "./mock.js?v=20260605";
-import { listSubjects, subjectName } from "./questions.js?v=20260605";
-import { subjectTone } from "./shared/subjects.js?v=20260605";
-import { escapeHtml, match } from "./shared/dom.js?v=20260605";
-import { readJson, writeJson } from "./platform/storage.js?v=20260605";
+import "./mock.js?v=20260606";
+import { listSubjects, subjectName } from "./questions.js?v=20260606";
+import { subjectTone } from "./shared/subjects.js?v=20260606";
+import { escapeHtml, match } from "./shared/dom.js?v=20260606";
+import { readJson, writeJson } from "./platform/storage.js?v=20260606";
 
 const STATE_KEY_V1 = "aimhigh-mock-cheat-cards-memorised";        // legacy
 const STATE_KEY_V2 = "aimhigh-mock-cheat-cards-state-v2";
@@ -392,7 +392,12 @@ function bindFocusEvents(subjectId, session, i, card) {
   if (!stage) return;
   const focusCard = stage.querySelector(".cheat-focus-card");
 
-  stage.addEventListener("click", function (e) {
+  // Listener lives on `root`, not `stage`. The bottom sheet (.cheat-sheet
+  // + .cheat-sheet-scrim) is rendered as a SIBLING of .cheat-stage, not
+  // a descendant — so clicks on its close button or scrim don't bubble
+  // up through the stage. Binding to root catches both stage clicks
+  // (reveal/skip/rate/open) and sheet clicks (close).
+  root.addEventListener("click", function (e) {
     const target = e.target;
     if (!target || !target.closest) return;
     const actionEl = target.closest("[data-action]");

@@ -19,14 +19,14 @@
 import {
   readJson as storageReadJson,
   writeJson as storageWriteJson
-} from "../../platform/storage.js?v=20260605";
+} from "../../platform/storage.js?v=20260606";
 
-import { todayIso } from "../../shared/dates.js?v=20260605";
-import { shouldSkipWrites } from "./policy.js?v=20260605";
-import { addXpToday } from "./xp.js?v=20260605";
-import { bumpStreakIfFirstHitToday, readStreak } from "./streak.js?v=20260605";
-import { bumpWeekIfFirstHitToday, readWeek } from "./week.js?v=20260605";
-import { markSeen } from "./scheduler.js?v=20260605";
+import { todayIso } from "../../shared/dates.js?v=20260606";
+import { shouldSkipWrites } from "./policy.js?v=20260606";
+import { addXpToday } from "./xp.js?v=20260606";
+import { bumpStreakIfFirstHitToday, readStreak } from "./streak.js?v=20260606";
+import { bumpWeekIfFirstHitToday, readWeek } from "./week.js?v=20260606";
+import { markSeen } from "./scheduler.js?v=20260606";
 
 const KEY_RESULTS = "aimhigh-mock-results";
 const KEY_MISSES  = "aimhigh-mock-misses";
