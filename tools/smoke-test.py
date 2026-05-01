@@ -42,7 +42,8 @@ def ok(check, msg):
 
 HTML_PAGES = ['index.html', 'welcome.html', 'daily.html', 'subject.html',
               'paper.html', 'dashboard.html', 'learn.html',
-              'study-smart.html', 'exam-day.html', 'cheat-cards.html']
+              'study-smart.html', 'exam-day.html', 'cheat-cards.html',
+              'landing.html']
 
 for p in HTML_PAGES:
     if not Path(p).exists():

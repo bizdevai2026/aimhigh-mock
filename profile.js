@@ -28,7 +28,7 @@
 // client-side gate. The point is to keep random passers-by, classmates,
 // or anyone who finds the URL out of the kid's progress data.
 
-export { hashPin } from "./auth/pin.js?v=20260610";
+export { hashPin } from "./auth/pin.js?v=20260611";
 
 export {
   readSession,
@@ -40,11 +40,11 @@ export {
   isDemoRole,
   startDemoSession,
   signOut
-} from "./auth/session.js?v=20260610";
+} from "./auth/session.js?v=20260611";
 
 // Legacy alias for callers that still use the old name. Will be removed
 // once dashboard/paper/sprint/warmup/mock have all been updated.
-export { isCoachRole as isParentRole } from "./auth/session.js?v=20260610";
+export { isCoachRole as isParentRole } from "./auth/session.js?v=20260611";
 
 export {
   readChildProfile,
@@ -64,18 +64,18 @@ export {
   wipeProfiles,
   profileName,
   signedInName
-} from "./auth/profile.js?v=20260610";
+} from "./auth/profile.js?v=20260611";
 
 // Legacy aliases for callers that still use the old "parent" names.
-export { readCoachProfile as readParentProfile } from "./auth/profile.js?v=20260610";
-export { writeCoachProfile as writeParentProfile } from "./auth/profile.js?v=20260610";
-export { clearCoachProfile as clearParentProfile } from "./auth/profile.js?v=20260610";
-export { setupCoachProfile as setupParentProfile } from "./auth/profile.js?v=20260610";
-export { tryLoginCoach as tryLoginParent } from "./auth/profile.js?v=20260610";
-export { resetChildPinViaCoach as resetChildPinViaParent } from "./auth/profile.js?v=20260610";
+export { readCoachProfile as readParentProfile } from "./auth/profile.js?v=20260611";
+export { writeCoachProfile as writeParentProfile } from "./auth/profile.js?v=20260611";
+export { clearCoachProfile as clearParentProfile } from "./auth/profile.js?v=20260611";
+export { setupCoachProfile as setupParentProfile } from "./auth/profile.js?v=20260611";
+export { tryLoginCoach as tryLoginParent } from "./auth/profile.js?v=20260611";
+export { resetChildPinViaCoach as resetChildPinViaParent } from "./auth/profile.js?v=20260611";
 
-export { requireSignInOrRedirect } from "./auth/gate.js?v=20260610";
+export { requireSignInOrRedirect } from "./auth/gate.js?v=20260611";
 
 // Backward-compat shims — older code calls these names.
-export { requireSignInOrRedirect as requireProfileOrRedirect } from "./auth/gate.js?v=20260610";
-export { signOut as clearProfile } from "./auth/session.js?v=20260610";
+export { requireSignInOrRedirect as requireProfileOrRedirect } from "./auth/gate.js?v=20260611";
+export { signOut as clearProfile } from "./auth/session.js?v=20260611";

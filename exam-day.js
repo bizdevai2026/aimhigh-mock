@@ -4,7 +4,7 @@
 // dynamic bit on the page; everything else is rendered in the HTML so
 // the card works even if JS fails to load.
 
-import "./mock.js?v=20260610";
+import "./mock.js?v=20260611";
 
 const printBtn = document.getElementById("printBtn");
 if (printBtn) {
