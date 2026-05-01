@@ -18,10 +18,10 @@ import {
   readJson as storageReadJson,
   writeJson as storageWriteJson,
   remove as storageRemove
-} from "../platform/storage.js?v=20260530";
+} from "../platform/storage.js?v=20260531";
 
-import { hashPin } from "./pin.js?v=20260530";
-import { writeSession, clearSession } from "./session.js?v=20260530";
+import { hashPin } from "./pin.js?v=20260531";
+import { writeSession, clearSession } from "./session.js?v=20260531";
 
 const PREFIX = "aimhigh-mock-";
 const KEY_CHILD   = PREFIX + "profile-child";
