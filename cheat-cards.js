@@ -42,15 +42,17 @@
 // worked examples. Front prompt comes from card.prompt or is derived
 // from the mnemonic at runtime.
 
-import "./mock.js?v=20260606";
-import { listSubjects, subjectName } from "./questions.js?v=20260606";
-import { subjectTone } from "./shared/subjects.js?v=20260606";
-import { escapeHtml, match } from "./shared/dom.js?v=20260606";
-import { readJson, writeJson } from "./platform/storage.js?v=20260606";
+import "./mock.js?v=20260607";
+import { listSubjects, subjectName } from "./questions.js?v=20260607";
+import { subjectTone } from "./shared/subjects.js?v=20260607";
+import { escapeHtml, match } from "./shared/dom.js?v=20260607";
+import { readJson, writeJson } from "./platform/storage.js?v=20260607";
 
 const STATE_KEY_V1 = "aimhigh-mock-cheat-cards-memorised";        // legacy
 const STATE_KEY_V2 = "aimhigh-mock-cheat-cards-state-v2";
+const PULL_KEY     = "aimhigh-mock-cheat-todays-pull"; // { date, cardIds[], completedAt? }
 const SESSION_SIZE = 5;
+const PULL_SIZE    = 3;
 const STREAK_TO_MEMORISE = 3;
 
 const root = document.getElementById("cheatCardsRoot");
@@ -105,7 +107,9 @@ async function start() {
   }
 
   const params = readParams();
-  if (params.s) {
+  if (params.pull === "today") {
+    paintTodaysPullSession(params.i || 0);
+  } else if (params.s) {
     paintSession(params.s, params.i || 0);
   } else {
     paintHub();
@@ -120,7 +124,12 @@ function readParams() {
   const q = location.search;
   const s = match(q, /[?&]s=([a-z\-]+)/i);
   const i = match(q, /[?&]i=(\d+)/i);
-  return { s: s, i: i == null ? 0 : parseInt(i, 10) };
+  const pull = match(q, /[?&]pull=([a-z]+)/i);
+  return {
+    s: s,
+    i: i == null ? 0 : parseInt(i, 10),
+    pull: pull
+  };
 }
 
 // ---- State (per-card) ----------------------------------------------------
@@ -174,6 +183,147 @@ function recordRating(cardId, rating) {
   return { state: nextState, streak: nextStreak };
 }
 
+// ---- Today's Pull --------------------------------------------------------
+// 3 cards a day, picked across all subjects, deterministic per local day.
+// Cached in localStorage so refreshing or re-opening doesn't reroll. The
+// daily ritual the audit + Year-7 critique both flagged as missing — gives
+// the kid a 90-second floor with a clear "today is done" completion event.
+
+function todayKey() {
+  const d = new Date();
+  // YYYY-MM-DD in local time. Date-stamping via local clock means the
+  // pull rolls over at the kid's midnight, not UTC midnight (which would
+  // re-pick mid-evening for UK users).
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return y + "-" + m + "-" + day;
+}
+
+// Read today's cached pull; if it's a different day or doesn't exist,
+// build a fresh one and cache it. Returns { date, cardIds, completedAt? }.
+function getOrBuildTodaysPull() {
+  const cached = readJson(PULL_KEY, null);
+  const today = todayKey();
+  if (cached && cached.date === today && Array.isArray(cached.cardIds) && cached.cardIds.length > 0) {
+    return cached;
+  }
+  const cardIds = pickPull();
+  const fresh = { date: today, cardIds: cardIds };
+  try { writeJson(PULL_KEY, fresh); } catch (e) { /* storage off */ }
+  return fresh;
+}
+
+// Selection rule (specialist recommendation, lightly):
+//   1× memorised "due for refresh" (lastSeenAt > 7d ago) if any
+//   2× new + practising, priority cards bubbled, max one per subject
+// Total = PULL_SIZE (3). Avoids subject-stacking so the daily feels
+// varied. Falls back gracefully if there aren't enough candidates of a
+// type — fills from the next pool.
+function pickPull() {
+  const stateMap = readState();
+  const out = [];
+  const usedSubjects = {};
+  function add(card) {
+    if (!card) return false;
+    if (out.indexOf(card.id) >= 0) return false;
+    out.push(card.id);
+    usedSubjects[card.subject] = true;
+    return true;
+  }
+  // Bucket the cards.
+  const SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000;
+  const now = Date.now();
+  const due = [], freshPriority = [], freshOther = [], practising = [];
+  cards.forEach(function (c) {
+    const st = stateMap[c.id];
+    if (st && st.state === "memorised") {
+      const ls = st.lastSeenAt ? Date.parse(st.lastSeenAt) : 0;
+      if (now - ls > SEVEN_DAYS_MS) due.push(c);
+      return;
+    }
+    if (st && st.state === "practising") {
+      practising.push(c);
+      return;
+    }
+    // new
+    if (c.priority) freshPriority.push(c);
+    else freshOther.push(c);
+  });
+  // Deterministic-ish shuffle within each bucket using the day as seed
+  // — same pool, same day = same order, so the cached pull matches.
+  const seed = hashString(todayKey());
+  shuffleSeeded(due, seed);
+  shuffleSeeded(freshPriority, seed + 1);
+  shuffleSeeded(practising, seed + 2);
+  shuffleSeeded(freshOther, seed + 3);
+
+  // Prefer one due card if available.
+  if (due.length > 0) {
+    add(due[0]);
+  }
+  // Then fill with priority new + practising, no subject repeat where possible.
+  function takeAvoidingSubjectRepeat(pool) {
+    for (let i = 0; i < pool.length; i++) {
+      if (out.length >= PULL_SIZE) return;
+      const c = pool[i];
+      if (out.indexOf(c.id) >= 0) continue;
+      if (usedSubjects[c.subject]) continue;
+      add(c);
+    }
+  }
+  takeAvoidingSubjectRepeat(freshPriority);
+  if (out.length < PULL_SIZE) takeAvoidingSubjectRepeat(practising);
+  if (out.length < PULL_SIZE) takeAvoidingSubjectRepeat(freshOther);
+  // Final relaxation — if still under 3, allow subject repeats.
+  function takeAnyhow(pool) {
+    for (let i = 0; i < pool.length; i++) {
+      if (out.length >= PULL_SIZE) return;
+      add(pool[i]);
+    }
+  }
+  if (out.length < PULL_SIZE) takeAnyhow(due);
+  if (out.length < PULL_SIZE) takeAnyhow(freshPriority);
+  if (out.length < PULL_SIZE) takeAnyhow(practising);
+  if (out.length < PULL_SIZE) takeAnyhow(freshOther);
+  return out;
+}
+
+function hashString(s) {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+
+function shuffleSeeded(arr, seed) {
+  // Simple deterministic shuffle (Fisher-Yates with mulberry32 seed).
+  let s = seed >>> 0;
+  function rnd() {
+    s = (s + 0x6D2B79F5) | 0;
+    let t = s;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  }
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(rnd() * (i + 1));
+    const tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+  }
+}
+
+function isPullCompletedToday() {
+  const pull = readJson(PULL_KEY, null);
+  if (!pull || pull.date !== todayKey()) return false;
+  return !!pull.completedAt;
+}
+
+function markPullCompleted() {
+  const pull = readJson(PULL_KEY, null);
+  if (!pull) return;
+  pull.completedAt = new Date().toISOString();
+  try { writeJson(PULL_KEY, pull); } catch (e) { /* storage off */ }
+}
+
 // ---- Hub: subject picker (binder-lite) -----------------------------------
 
 function paintHub() {
@@ -212,12 +362,47 @@ function paintHub() {
       "</a>";
   });
 
+  // Today's Pull tile — the daily ritual. Either an inviting CTA or a
+  // "done for today" rest state. Sits above the subject tiles because
+  // a kid arriving at the hub should default to "do today's 3" rather
+  // than choosing a subject (the engagement loop the audit flagged).
+  const todaysPull = getOrBuildTodaysPull();
+  const pullDone = !!todaysPull.completedAt;
+  let pullHtml = "";
+  if (pullDone) {
+    pullHtml =
+      "<div class=\"cheat-pull-tile cheat-pull-done\">" +
+        "<span class=\"cheat-pull-eyebrow\">Today's Pull</span>" +
+        "<span class=\"cheat-pull-title\">&#10003; Done for today</span>" +
+        "<span class=\"cheat-pull-body\">3 cards in the bag. Come back tomorrow for a fresh pull, or pick a subject below to keep going.</span>" +
+      "</div>";
+  } else {
+    // Tease the 3 cards by mnemonic name so the kid knows what they're
+    // walking into. Specialist recommendation: bias the front of the
+    // entry surface toward action, not toward "pick something".
+    const teaseHtml = todaysPull.cardIds.map(function (id) {
+      const c = cards.find(function (x) { return x.id === id; });
+      if (!c) return "";
+      return "<span class=\"cheat-pull-pip\" style=\"--tile-color:" + subjectTone(c.subject) + "\">" +
+               escapeHtml(c.mnemonic) +
+             "</span>";
+    }).join("");
+    pullHtml =
+      "<a class=\"cheat-pull-tile cheat-pull-go\" href=\"cheat-cards.html?pull=today\">" +
+        "<span class=\"cheat-pull-eyebrow\">Today's Pull &middot; 90 seconds</span>" +
+        "<span class=\"cheat-pull-title\">3 cards. Try first, then reveal.</span>" +
+        "<span class=\"cheat-pull-pips\">" + teaseHtml + "</span>" +
+        "<span class=\"cheat-pull-cta\">Start &rarr;</span>" +
+      "</a>";
+  }
+
   root.innerHTML =
     "<section class=\"mock-stub-hero\">" +
       "<span class=\"mock-stub-tag\">Cheat Cards</span>" +
       "<h1 class=\"mock-stub-title\">THE NAMED SHORTCUTS</h1>" +
       "<p class=\"mock-stub-quote\">The mnemonics top students load before the test. One card at a time. Try first &mdash; THEN reveal.</p>" +
     "</section>" +
+    pullHtml +
     "<div class=\"cheat-progress-banner\">" +
       "<span class=\"cheat-progress-banner-num\">" + totalMemorised + " / " + cards.length + "</span>" +
       "<span class=\"cheat-progress-banner-label\">memorised across all subjects</span>" +
@@ -225,6 +410,187 @@ function paintHub() {
     "</div>" +
     "<nav class=\"mock-tiles cheat-subject-tiles\" aria-label=\"Cheat Card subjects\">" + tilesHtml + "</nav>" +
     "<p class=\"mock-back-row\"><a class=\"mock-button mock-button-ghost\" href=\"learn.html\">&larr; Back to LEARN</a></p>";
+}
+
+// ---- Today's Pull session — same focus stage, but 3 cards, no subject lock ---
+
+function paintTodaysPullSession(startIndex) {
+  const todaysPull = getOrBuildTodaysPull();
+  const sessionCards = todaysPull.cardIds
+    .map(function (id) { return cards.find(function (x) { return x.id === id; }); })
+    .filter(Boolean);
+  if (sessionCards.length === 0) {
+    location.href = "cheat-cards.html";
+    return;
+  }
+  const i = Math.max(0, Math.min(startIndex, sessionCards.length));
+  if (i >= sessionCards.length) {
+    markPullCompleted();
+    paintPullComplete(sessionCards);
+    return;
+  }
+  const card = sessionCards[i];
+  // Use the card's subject tone so each card in the pull keeps its
+  // identity — pull cards span subjects so this changes per card.
+  document.body.style.setProperty("--tile-color", subjectTone(card.subject));
+  paintPullCard(sessionCards, i, card);
+}
+
+// Same shell as paintFocusCard but the URLs route through ?pull=today
+// instead of ?s=<subject>, so the session stays inside the pull flow.
+function paintPullCard(session, i, card) {
+  const tone = subjectTone(card.subject);
+  let segHtml = "";
+  for (let s = 0; s < session.length; s++) {
+    const cls = s < i ? "is-done" : (s === i ? "is-current" : "");
+    segHtml += "<span class=\"cheat-progress-seg " + cls + "\"></span>";
+  }
+  const promptText = card.prompt || ("What does " + card.mnemonic + " stand for?");
+  const subjectLabel = subjectName(card.subject).toUpperCase();
+  const priorityChip = card.priority ? "<span class=\"cheat-card-priority\">★ Top 3</span>" : "";
+  const stateBadge = renderStateBadge(card);
+  const decode = card.decode || "";
+  const whenLine = card.when || "";
+  const hasWorked = card.worked_example && typeof card.worked_example === "object";
+
+  root.innerHTML =
+    "<section class=\"cheat-stage cheat-stage-pull\">" +
+      "<a class=\"cheat-stage-exit\" href=\"cheat-cards.html\" aria-label=\"Back to subjects\">&larr;</a>" +
+      "<span class=\"cheat-pull-pill\">Today's Pull</span>" +
+      "<div class=\"cheat-progress\" aria-label=\"Card " + (i + 1) + " of " + session.length + "\">" +
+        segHtml +
+      "</div>" +
+      "<article class=\"cheat-focus-card state-prompt\" data-card-id=\"" + escapeHtml(card.id) + "\" style=\"--tile-color:" + tone + "\">" +
+        "<header class=\"cheat-focus-meta\">" +
+          "<span class=\"cheat-focus-subject\">" + escapeHtml(subjectLabel) + "</span>" +
+          priorityChip +
+          stateBadge +
+        "</header>" +
+        "<div class=\"cheat-focus-prompt-state\">" +
+          "<h2 class=\"cheat-focus-mnemonic\">" + escapeHtml(card.mnemonic) + "</h2>" +
+          (card.tagline ? "<p class=\"cheat-focus-tagline\">" + escapeHtml(card.tagline) + "</p>" : "") +
+          "<div class=\"cheat-focus-prompt-box\">" +
+            "<p class=\"cheat-focus-prompt-eyebrow\">Try first</p>" +
+            "<p class=\"cheat-focus-prompt-question\">" + escapeHtml(promptText) + "</p>" +
+            "<p class=\"cheat-focus-prompt-hint\">Think it through, then tap Reveal.</p>" +
+          "</div>" +
+        "</div>" +
+        "<div class=\"cheat-focus-reveal-state\">" +
+          "<p class=\"cheat-focus-decode-eyebrow\">Decode</p>" +
+          "<p class=\"cheat-focus-decode\">" + escapeHtml(decode) + "</p>" +
+          (whenLine ? "<p class=\"cheat-focus-when\">" + escapeHtml(whenLine) + "</p>" : "") +
+          (hasWorked
+            ? "<button type=\"button\" class=\"cheat-focus-walkthrough\" data-action=\"open-walkthrough\">" +
+                "<span aria-hidden=\"true\">▶</span> See it in action" +
+              "</button>"
+            : "") +
+        "</div>" +
+      "</article>" +
+      "<div class=\"cheat-stage-footer\">" +
+        "<div class=\"cheat-stage-footer-prompt\">" +
+          "<button type=\"button\" class=\"mock-button cheat-stage-reveal-btn\" data-action=\"reveal\">Reveal answer &rarr;</button>" +
+          "<button type=\"button\" class=\"cheat-stage-skip-btn\" data-action=\"skip-pull\">Skip</button>" +
+        "</div>" +
+        "<div class=\"cheat-stage-footer-reveal\">" +
+          "<button type=\"button\" class=\"cheat-rate-btn cheat-rate-again\" data-action=\"rate-again-pull\">" +
+            "<span class=\"cheat-rate-icon\">↻</span>" +
+            "<span class=\"cheat-rate-label\">Try again</span>" +
+          "</button>" +
+          "<button type=\"button\" class=\"cheat-rate-btn cheat-rate-got\" data-action=\"rate-got-pull\">" +
+            "<span class=\"cheat-rate-icon\">✓</span>" +
+            "<span class=\"cheat-rate-label\">Got it</span>" +
+          "</button>" +
+        "</div>" +
+      "</div>" +
+    "</section>" +
+    renderWalkthroughSheet(card);
+
+  bindPullEvents(session, i, card);
+}
+
+function bindPullEvents(session, i, card) {
+  const stage = root.querySelector(".cheat-stage");
+  if (!stage) return;
+  const focusCard = stage.querySelector(".cheat-focus-card");
+
+  // Listener on root — same reasoning as bindFocusEvents (the bottom
+  // sheet is a sibling of the stage, not a descendant).
+  root.addEventListener("click", function (e) {
+    const target = e.target;
+    if (!target || !target.closest) return;
+    const actionEl = target.closest("[data-action]");
+    if (!actionEl) return;
+    const action = actionEl.getAttribute("data-action");
+
+    if (action === "reveal") {
+      focusCard.classList.remove("state-prompt");
+      focusCard.classList.add("state-revealed");
+      stage.classList.add("is-revealed");
+      return;
+    }
+    if (action === "skip-pull") {
+      advancePull(i);
+      return;
+    }
+    if (action === "rate-got-pull") {
+      const result = recordRating(card.id, "got");
+      stage.classList.add("is-rated", "is-rated-got");
+      if (result.state === "memorised" && result.streak === STREAK_TO_MEMORISE) {
+        flashMemorised(focusCard);
+      }
+      setTimeout(function () { advancePull(i); }, 380);
+      return;
+    }
+    if (action === "rate-again-pull") {
+      recordRating(card.id, "again");
+      stage.classList.add("is-rated", "is-rated-again");
+      setTimeout(function () { advancePull(i); }, 280);
+      return;
+    }
+    if (action === "open-walkthrough") {
+      const sheet = root.querySelector(".cheat-sheet");
+      const scrim = root.querySelector(".cheat-sheet-scrim");
+      if (sheet) { sheet.hidden = false; sheet.setAttribute("aria-hidden", "false"); requestAnimationFrame(function () { sheet.classList.add("is-open"); }); }
+      if (scrim) { scrim.hidden = false; }
+      return;
+    }
+    if (action === "close-walkthrough") {
+      const sheet = root.querySelector(".cheat-sheet");
+      const scrim = root.querySelector(".cheat-sheet-scrim");
+      if (sheet) {
+        sheet.classList.remove("is-open");
+        setTimeout(function () { sheet.hidden = true; sheet.setAttribute("aria-hidden", "true"); }, 280);
+      }
+      if (scrim) { scrim.hidden = true; }
+      return;
+    }
+  });
+}
+
+function advancePull(i) {
+  location.href = "cheat-cards.html?pull=today&i=" + (i + 1);
+}
+
+function paintPullComplete(session) {
+  const stateMap = readState();
+  let memNow = 0;
+  session.forEach(function (c) {
+    if ((stateMap[c.id] && stateMap[c.id].state) === "memorised") memNow++;
+  });
+  root.innerHTML =
+    "<section class=\"cheat-complete\">" +
+      "<div class=\"cheat-complete-burst\" aria-hidden=\"true\">★</div>" +
+      "<h1 class=\"cheat-complete-title\">Today's Pull done</h1>" +
+      "<p class=\"cheat-complete-sub\">3 cards reviewed &middot; come back tomorrow for a fresh pull</p>" +
+      "<div class=\"cheat-complete-stat\">" +
+        "<span class=\"cheat-complete-stat-num\">" + memNow + " / " + session.length + "</span>" +
+        "<span class=\"cheat-complete-stat-label\">memorised in this pull</span>" +
+      "</div>" +
+      "<div class=\"cheat-complete-actions\">" +
+        "<a class=\"mock-button\" href=\"cheat-cards.html\">Pick a subject &rarr;</a>" +
+        "<a class=\"mock-button mock-button-ghost\" href=\"index.html\">&larr; Home</a>" +
+      "</div>" +
+    "</section>";
 }
 
 // ---- Session: pick which cards to show -----------------------------------
