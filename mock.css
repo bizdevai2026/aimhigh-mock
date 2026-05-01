@@ -2434,7 +2434,31 @@ section.mock-learn-cta {
   width: 100%;
   height: auto;
   max-height: 220px;
+  position: relative;
+  z-index: 1;
 }
 @media (max-width: 380px) {
   .mock-visual-svg { max-height: 170px; }
+}
+
+/* AI-hybrid: PNG backdrop layered under the SVG. The <img> uses
+   onerror="this.remove()" so if the asset isn't generated yet the
+   layout collapses cleanly to SVG-only. */
+.mock-visual-stack {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.mock-visual-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.55;
+  pointer-events: none;
+}
+[data-theme="light"] .mock-visual-backdrop {
+  opacity: 0.45;
 }

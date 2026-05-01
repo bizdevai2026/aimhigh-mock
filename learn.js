@@ -39,13 +39,13 @@ if (typeof window !== "undefined") {
   });
 }
 
-import "./mock.js?v=20260529"; // shared header behaviour
-import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260529";
-import { topicLadder, weakTopics } from "./engagement.js?v=20260529";
-import { getVisual } from "./visuals.js?v=20260529";
-import { validateLearning, reportProblems } from "./diagnostics/schema-validator.js?v=20260529";
-import { escapeHtml, match } from "./shared/dom.js?v=20260529";
-import { subjectTone, prettyTopic } from "./shared/subjects.js?v=20260529";
+import "./mock.js?v=20260530"; // shared header behaviour
+import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260530";
+import { topicLadder, weakTopics } from "./engagement.js?v=20260530";
+import { getVisual } from "./visuals.js?v=20260530";
+import { validateLearning, reportProblems } from "./diagnostics/schema-validator.js?v=20260530";
+import { escapeHtml, match } from "./shared/dom.js?v=20260530";
+import { subjectTone, prettyTopic } from "./shared/subjects.js?v=20260530";
 
 let learning = null; // array of learning entries from data/learning.json
 let pool = null;     // question pool from data/<subject>.json — used to enumerate topics

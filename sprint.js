@@ -9,7 +9,7 @@
 // All three runner shapes share rendering, just differ in question pool
 // and round size.
 
-import "./mock.js?v=20260529"; // shared header (sound toggle, profile chip)
+import "./mock.js?v=20260530"; // shared header (sound toggle, profile chip)
 import {
   loadAllQuestions,
   pickSubjectQuestions,
@@ -18,24 +18,24 @@ import {
   subjectName,
   topicsForSubject,
   topicCounts
-} from "./questions.js?v=20260529";
+} from "./questions.js?v=20260530";
 import {
   noteSessionResult,
   readStreak,
   topicLadder,
   subjectLadder
-} from "./engagement.js?v=20260529";
+} from "./engagement.js?v=20260530";
 // Sound + haptic imports narrowed to what this file directly needs.
 // Per-answer feedback (correct/wrong/streak chimes) moved to
 // practice/feedback.js. Per-question MC card rendering moved to
 // practice/render.js — those modules import their own audio names.
-import { playLevelUp, playPerfect, playModeStartSprint, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticStreak, hapticPerfect } from "./sounds.js?v=20260529";
-import { isParentRole } from "./profile.js?v=20260529";
-import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260529";
-import { escapeHtml, match } from "./shared/dom.js?v=20260529";
-import { subjectTone, prettyTopic } from "./shared/subjects.js?v=20260529";
-import { onAnswerCorrect, onAnswerWrong } from "./practice/feedback.js?v=20260529";
-import { renderQuestionCard, subjectLabel } from "./practice/render.js?v=20260529";
+import { playLevelUp, playPerfect, playModeStartSprint, playModeStartWarmup, makeListenButton, frenchSpellMatches, speechRecognitionAvailable, recordFrench, frenchSpeechMatches, hapticStreak, hapticPerfect } from "./sounds.js?v=20260530";
+import { isParentRole } from "./profile.js?v=20260530";
+import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260530";
+import { escapeHtml, match } from "./shared/dom.js?v=20260530";
+import { subjectTone, prettyTopic } from "./shared/subjects.js?v=20260530";
+import { onAnswerCorrect, onAnswerWrong } from "./practice/feedback.js?v=20260530";
+import { renderQuestionCard, subjectLabel } from "./practice/render.js?v=20260530";
 
 const SPRINT_SIZE = 15;
 const DRILL_SIZE = 5;
