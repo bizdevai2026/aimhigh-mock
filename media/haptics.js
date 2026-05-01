@@ -16,5 +16,7 @@ function buzz(pattern) {
 
 export function hapticCorrect() { buzz(20); }
 export function hapticWrong()   { buzz(80); }
-export function hapticStreak()  { buzz([30, 60, 30, 60, 60]); }
+// hapticStrike — short sharp pulse, gap, sustained thump. Pairs with the
+// lightning bolt visual so the kid feels the strike, not just sees it.
+export function hapticStrike()  { buzz([60, 30, 180]); }
 export function hapticPerfect() { buzz([60, 80, 60, 80, 120, 80, 220]); }

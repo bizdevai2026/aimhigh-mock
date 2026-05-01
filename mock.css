@@ -898,16 +898,61 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
 .mock-session-option:disabled { cursor: default; }
 
 @keyframes pulseCorrect {
-  0%   { transform: scale(1);     box-shadow: 0 0 0 0   rgba(255, 61, 0, 0.55); }
-  25%  { transform: scale(1.06);  box-shadow: 0 0 0 14px rgba(255, 61, 0, 0); }
+  0%   { transform: scale(1);     box-shadow: 0 0 0 0   rgba(255, 94, 58, 0.55); }
+  25%  { transform: scale(1.06);  box-shadow: 0 0 0 14px rgba(255, 94, 58, 0); }
   55%  { transform: scale(1.015); }
-  100% { transform: scale(1);     box-shadow: 0 0 0 0   rgba(255, 61, 0, 0); }
+  100% { transform: scale(1);     box-shadow: 0 0 0 0   rgba(255, 94, 58, 0); }
 }
 @keyframes shakeWrong {
   0%, 100% { transform: translateX(0); }
   25%      { transform: translateX(-5px); }
   50%      { transform: translateX(5px); }
   75%      { transform: translateX(-3px); }
+}
+
+/* Lightning strike — fires on streak peaks (3, 5, every odd from 7+).
+   The SVG bolt is dropped into the session card by practice/strike.js
+   and removed after the flash. The card is a positioning context, so
+   the overlay anchors to it. The bolt's blue core + warm halo reads
+   as cobalt-electric on the new dark theme; on light mode the warm
+   halo dominates so it still reads as "lightning". */
+.mock-strike-bolt {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  animation: boltFlash 480ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.mock-strike-bolt svg {
+  width: 38%;
+  max-width: 160px;
+  height: auto;
+  overflow: visible;
+}
+.mock-strike-bolt-path {
+  fill: var(--mock-fire);
+  stroke: var(--mock-cobalt, var(--mock-fire));
+  stroke-width: 2;
+  stroke-linejoin: round;
+  filter:
+    drop-shadow(0 0 6px var(--mock-cobalt, var(--mock-fire)))
+    drop-shadow(0 0 18px var(--mock-fire));
+}
+@keyframes boltFlash {
+  0%   { opacity: 0; transform: scale(0.7); }
+  15%  { opacity: 1; transform: scale(1.1); }
+  35%  { opacity: 1; transform: scale(1);   }
+  70%  { opacity: 0.7; }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Hide the visual bolt entirely — the haptic + chime + the existing
+     pulseCorrect ripple still confirm the moment without animation. */
+  .mock-strike-bolt { display: none; }
 }
 
 .mock-session-feedback {

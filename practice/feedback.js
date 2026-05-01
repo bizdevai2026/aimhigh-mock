@@ -1,17 +1,26 @@
 // GradeBlaze — practice answer-feedback helpers.
 //
-// The audio + haptic feedback that fires on every correct/wrong answer
-// in warmup and sprint modes. Single source of truth for "which chime
-// plays at which streak count" — bug fixes and tuning happen here, not
-// duplicated across the runners.
+// The audio + haptic + visual feedback that fires on every correct/wrong
+// answer in warmup and sprint modes. Single source of truth for "which
+// chime plays at which streak count" — bug fixes and tuning happen here,
+// not duplicated across the runners.
 //
 // Paper mode (the timed full mock) deliberately uses a different,
 // silent flow — see paper.js. It does NOT call into this module.
 //
+// Escalation policy:
+//   Every correct  → pulseCorrect ripple on the chosen answer (CSS,
+//                    fired by the runner adding .is-correct) + correct
+//                    chime + light haptic. The "spark".
+//   Streak peak    → adds the lightning bolt overlay on the session card
+//                    + streak chime + sharper haptic. The "strike".
+//                    Streak peaks are 3, 5, then every odd from 7 — so
+//                    every right answer feels rewarding, but big runs
+//                    feel earned (avoid the wow-becomes-wallpaper trap).
+//
 // Public API:
-//   onAnswerCorrect(streakCount) — play correct + haptic + streak chime
-//                                  (fires on streak counts 3, 5, 7, 9...
-//                                  i.e. 3 then every odd from 5).
+//   onAnswerCorrect(streakCount) — play correct + haptic + (on peaks)
+//                                  the strike + streak chime.
 //   onAnswerWrong()              — play wrong tone + haptic.
 //
 // `streakCount` is the running count of in-a-row correct answers IN
@@ -23,28 +32,32 @@ import {
   playWrong,
   playStreak3,
   playStreak5
-} from "../media/sounds.js?v=20260528";
+} from "../media/sounds.js?v=20260529";
 
 import {
   hapticCorrect,
   hapticWrong,
-  hapticStreak
-} from "../media/haptics.js?v=20260528";
+  hapticStrike
+} from "../media/haptics.js?v=20260529";
+
+import { triggerBolt } from "./strike.js?v=20260529";
+
+function isStreakPeak(n) {
+  if (n === 3) return true;
+  if (n === 5) return true;
+  return n >= 7 && (n % 2 === 1);
+}
 
 export function onAnswerCorrect(streakCount) {
   playCorrect();
   hapticCorrect();
-  // Streak chimes — escalating only at 3 and 5, then a softer reprise
-  // every two correct beyond that so a long run doesn't fatigue the ear.
-  if (streakCount === 3) {
-    playStreak3();
-    hapticStreak();
-  } else if (streakCount === 5) {
-    playStreak5();
-    hapticStreak();
-  } else if (streakCount >= 7 && streakCount % 2 === 1) {
-    playStreak3();
-    hapticStreak();
+  if (!isStreakPeak(streakCount)) return;
+
+  // Streak peak: chime + sharp haptic + lightning bolt over the card.
+  if (streakCount === 5) playStreak5(); else playStreak3();
+  hapticStrike();
+  if (typeof document !== "undefined") {
+    triggerBolt(document.getElementById("sessionCard"));
   }
 }
 
