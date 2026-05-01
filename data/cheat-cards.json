@@ -53,7 +53,17 @@
     "tagline": "Visible spectrum order",
     "decode": "Red, Orange, Yellow, Green, Blue, Indigo, Violet",
     "when": "Any question about prisms, refraction, the rainbow, or visible light wavelengths.",
-    "example": "Asked to list visible light from longest to shortest wavelength → Red (longest) → Violet (shortest)."
+    "example": "Asked to list visible light from longest to shortest wavelength → Red (longest) → Violet (shortest).",
+    "context": "When white light hits a prism, it splits into a fixed order of colours. Get the order wrong and you've got the physics wrong. ROY G BIV locks the seven colours from longest wavelength (red) to shortest (violet) so you never have to think about it twice.",
+    "worked_example": {
+      "scenario": "Question: 'Light passes through a prism. List the colours of the visible spectrum from longest wavelength to shortest.'",
+      "steps": [
+        "Recall the mnemonic: ROY G BIV.",
+        "Decode in order: Red, Orange, Yellow, Green, Blue, Indigo, Violet.",
+        "Red has the LONGEST wavelength; violet has the SHORTEST. The order goes long → short."
+      ],
+      "outcome": "All 7 colours, correct order, full marks. Without the mnemonic, kids forget indigo every single time."
+    }
   },
   {
     "id": "sci-reactivity",
@@ -86,7 +96,17 @@
     "tagline": "Not 'types' — STORES",
     "decode": "Kinetic, Gravitational, Elastic, Chemical, Nuclear, Thermal, Magnetic, Electrostatic",
     "when": "Any question about energy. Examiners now want STORES, not 'types'.",
-    "example": "A stretched bow has elastic store. Released, that becomes kinetic. The arrow at height has gravitational store too."
+    "example": "A stretched bow has elastic store. Released, that becomes kinetic. The arrow at height has gravitational store too.",
+    "context": "The new science spec doesn't accept 'types of energy' anymore — examiners want you to name STORES (where the energy is held). Memorise the 8 names verbatim and you bank marks on every energy question; use the wrong word and you lose them.",
+    "worked_example": {
+      "scenario": "Question: 'A stretched bow is released, sending an arrow into the air. Describe the energy transfer.'",
+      "steps": [
+        "Before release: energy is in the ELASTIC store (the bent bow holds it).",
+        "When released: elastic store transfers to KINETIC store (the moving arrow).",
+        "As the arrow rises: kinetic store transfers to GRAVITATIONAL store (height above ground)."
+      ],
+      "outcome": "Three named stores in the right order. The kid who wrote 'movement energy' instead of 'kinetic store' lost a mark per slip."
+    }
   },
   {
     "id": "sci-photosynthesis",
@@ -96,7 +116,17 @@
     "tagline": "Photosynthesis equation",
     "decode": "Carbon dioxide + water → glucose + oxygen (with light energy and chlorophyll above the arrow)",
     "when": "Always write LIGHT and CHLOROPHYLL above the arrow — examiners deduct marks if missing.",
-    "example": "Word equation: 'carbon dioxide plus water makes glucose plus oxygen'. Always include the conditions."
+    "example": "Word equation: 'carbon dioxide plus water makes glucose plus oxygen'. Always include the conditions.",
+    "context": "The photosynthesis equation is examined every year. Forgetting LIGHT or CHLOROPHYLL above the arrow is the single most common mark-loss — examiners deduct because without those conditions the reaction physically can't happen.",
+    "worked_example": {
+      "scenario": "Question: 'Write the word equation for photosynthesis.'",
+      "steps": [
+        "carbon dioxide + water → glucose + oxygen",
+        "Above the arrow, write: light + chlorophyll (NOT just 'sunlight').",
+        "The symbol equation if asked: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂."
+      ],
+      "outcome": "Both reactants, both products, both conditions named. Top-band answer. Skipping 'chlorophyll' is the trap that drops 80% of kids a mark."
+    }
   },
   {
     "id": "sci-fcd",
@@ -106,7 +136,18 @@
     "tagline": "Separation techniques",
     "decode": "Filtration, Crystallisation, Distillation (+ Evaporation, Chromatography)",
     "when": "Decide which method based on what's being separated.",
-    "example": "Salt from seawater? Distillation. Sand from water? Filtration. Ink colours? Chromatography."
+    "example": "Salt from seawater? Distillation. Sand from water? Filtration. Ink colours? Chromatography.",
+    "context": "Examiners give you a mixture and ask 'how would you separate it?'. The answer depends on what's in the mixture — solid in liquid, two solids, two liquids, dissolved colours. FCD names the four core methods so you can match each to the right scenario in seconds.",
+    "worked_example": {
+      "scenario": "Question: 'How would you separate salt from seawater?'",
+      "steps": [
+        "Salt is DISSOLVED in water — filtration won't work (the salt particles are too small).",
+        "We need to keep the salt and remove the water → distillation OR evaporation.",
+        "Evaporation: heat the water away, leave salt behind (if you want salt).",
+        "Distillation: capture the steam and condense it (if you want pure water too)."
+      ],
+      "outcome": "You named the right method AND explained why filtration fails. Two-mark question, two marks earned."
+    }
   },
   {
     "id": "sci-man-cells",
@@ -116,7 +157,17 @@
     "tagline": "Organelles in BOTH cell types",
     "decode": "Mitochondria, A nucleus, Membrane (cell membrane)",
     "when": "Comparing animal vs plant cells — MAN is the shared set; plants add cell wall + chloroplasts + large vacuole.",
-    "example": "Animal cell = MAN only. Plant cell = MAN + wall + chloroplasts + vacuole."
+    "example": "Animal cell = MAN only. Plant cell = MAN + wall + chloroplasts + vacuole.",
+    "context": "Animal vs plant cell questions trip kids up because the lists overlap. MAN locks the SHARED parts (mitochondria, nucleus, membrane) so the only thing left to add is the plant-only extras (cell wall, chloroplasts, big vacuole). Two simple lists instead of a confusing comparison.",
+    "worked_example": {
+      "scenario": "Question: 'Name three structures found in BOTH animal and plant cells.'",
+      "steps": [
+        "Run the MAN mnemonic: Mitochondria, A nucleus, Membrane (cell membrane).",
+        "Three structures, all shared. Tick.",
+        "Bonus: if asked what's in plant cells but NOT animal cells, the answer is the OPPOSITE — cell wall, chloroplasts, large vacuole."
+      ],
+      "outcome": "Three correct shared parts. The kid who wrote 'cell wall' lost the mark — that's plant-only."
+    }
   },
   {
     "id": "sci-particle-states",
@@ -126,7 +177,17 @@
     "tagline": "Particle behaviour by state",
     "decode": "Solid: tight regular pattern, vibrate only. Liquid: touching but slide. Gas: spread out, fast in all directions.",
     "when": "Any state-of-matter question. Heat adds energy → particles move more → state changes upward.",
-    "example": "Ice (solid) → water (liquid) at 0°C. Water → steam (gas) at 100°C. The PARTICLES don't change, only their arrangement."
+    "example": "Ice (solid) → water (liquid) at 0°C. Water → steam (gas) at 100°C. The PARTICLES don't change, only their arrangement.",
+    "context": "Solids, liquids and gases differ in HOW THE PARTICLES ARE ARRANGED, not in what the particles are. Locking the three patterns means you can answer any state-of-matter question (why ice has shape, why gas fills a container) by going back to the picture in your head.",
+    "worked_example": {
+      "scenario": "Question: 'Why does a gas expand to fill its container, but a solid keeps its shape?'",
+      "steps": [
+        "In a SOLID: particles are packed tight in a regular pattern. They vibrate but can't move past each other → fixed shape.",
+        "In a GAS: particles are spread far apart, moving fast in all directions → they spread out to fill any space available.",
+        "The PARTICLES are the same; only their ARRANGEMENT and ENERGY differ."
+      ],
+      "outcome": "Comparison answered with the particle picture, not vague words. Top-band."
+    }
   },
   {
     "id": "sci-force-pairs",
@@ -136,7 +197,18 @@
     "tagline": "The three laws — KS3 short version",
     "decode": "1: object stays still / moves the same unless a force acts. 2: F = m × a. 3: every action has equal opposite reaction.",
     "when": "Asked about why something speeds up, slows down, or stays still.",
-    "example": "A ball rolls until friction (a force) slows it. Push a wall — it pushes you back equally hard."
+    "example": "A ball rolls until friction (a force) slows it. Push a wall — it pushes you back equally hard.",
+    "context": "Force questions confuse kids because everyday language is sloppy ('a force makes it move'). Newton's three laws give you a precise toolkit: when does motion change? Why does pushing a wall hurt? They're not just for physicists — every KS3 forces question maps to one of the three.",
+    "worked_example": {
+      "scenario": "Question: 'A skater pushes off from a wall and glides backwards. Explain using Newton's third law.'",
+      "steps": [
+        "Newton's Third Law: every action has an equal and opposite reaction.",
+        "Action: skater pushes the wall.",
+        "Reaction: the wall pushes the skater back, with equal force.",
+        "Result: skater accelerates backwards (Second Law: force makes things accelerate)."
+      ],
+      "outcome": "You named the law, identified the action/reaction pair, and connected it to motion. Three marks at minimum."
+    }
   },
   {
     "id": "sci-acids-ph",
@@ -146,7 +218,17 @@
     "tagline": "The pH scale",
     "decode": "Below 7 = acid. Exactly 7 = neutral (water). Above 7 = alkali. Lower = stronger acid; higher = stronger alkali.",
     "when": "Any pH question — and remember: lemon juice ≈ 2, water = 7, soap ≈ 9.",
-    "example": "pH 1 is a strong acid (battery acid). pH 14 is a strong alkali (drain cleaner). Vinegar ≈ pH 3."
+    "example": "pH 1 is a strong acid (battery acid). pH 14 is a strong alkali (drain cleaner). Vinegar ≈ pH 3.",
+    "context": "pH questions look weird because the number scale is INVERTED — lower pH means stronger acid, but higher pH means stronger alkali, with 7 (water) bang in the middle. Locking the structure stops you from saying 'pH 14 must be the strongest' (it's the strongest ALKALI, not acid).",
+    "worked_example": {
+      "scenario": "Question: 'Lemon juice has pH 2 and soap has pH 9. Which is the acid, which is the alkali, and which is stronger?'",
+      "steps": [
+        "Below 7 = acid → lemon juice (pH 2) is the acid.",
+        "Above 7 = alkali → soap (pH 9) is the alkali.",
+        "Lemon is 5 below neutral (7 → 2). Soap is 2 above neutral. → lemon juice is the STRONGER of the two (further from neutral)."
+      ],
+      "outcome": "Identified both, judged the strength, all in two sentences. The pH scale is no longer scary."
+    }
   },
   {
     "id": "sci-condensation-evaporation",
@@ -156,7 +238,18 @@
     "tagline": "What's happening + which way",
     "decode": "Melting/freezing (solid↔liquid). Evaporation/condensation (liquid↔gas). Sublimation (solid→gas direct, e.g. dry ice).",
     "when": "Always name the precise change — 'melting' beats 'turning into water'.",
-    "example": "Steam on a cold mirror: condensation (gas→liquid). Wet washing drying: evaporation (liquid→gas)."
+    "example": "Steam on a cold mirror: condensation (gas→liquid). Wet washing drying: evaporation (liquid→gas).",
+    "context": "Examiners want the EXACT name of each state change, not 'turning into' or 'going to'. Memorising the words (melting, freezing, evaporation, condensation, sublimation) means you describe physical changes in scientific language — which is what marks reward.",
+    "worked_example": {
+      "scenario": "Question: 'Steam appears on a cold mirror after a hot shower. Name the change happening to the water.'",
+      "steps": [
+        "What was it before? A gas (steam).",
+        "What is it after? A liquid (water droplets on the mirror).",
+        "Gas → liquid is called CONDENSATION.",
+        "Why? The mirror is cold, so the gas particles lose energy and slow down enough to stick together as liquid."
+      ],
+      "outcome": "Named the change correctly, plus explained WHY (energy loss). Two marks; vague 'turning into water' would have got zero."
+    }
   },
   {
     "id": "math-bidmas",
@@ -189,7 +282,19 @@
     "tagline": "Expand two binomials",
     "decode": "First, Outer, Inner, Last — multiply each pair, then add",
     "when": "Expanding (a+b)(c+d).",
-    "example": "(x+2)(x+3): F=x·x, O=x·3, I=2·x, L=2·3 → x² + 3x + 2x + 6 → x² + 5x + 6."
+    "example": "(x+2)(x+3): F=x·x, O=x·3, I=2·x, L=2·3 → x² + 3x + 2x + 6 → x² + 5x + 6.",
+    "context": "Two-bracket expansion is a Year 8/9 staple. Without a system kids forget one of the four products and lose the mark. FOIL is the guarantee — four letters, four products, every time, in order.",
+    "worked_example": {
+      "scenario": "Expand: (x + 2)(x + 3)",
+      "steps": [
+        "F — First terms: x × x = x².",
+        "O — Outer terms: x × 3 = 3x.",
+        "I — Inner terms: 2 × x = 2x.",
+        "L — Last terms: 2 × 3 = 6.",
+        "Add them all: x² + 3x + 2x + 6 = x² + 5x + 6."
+      ],
+      "outcome": "Four products + simplification = correct quadratic. Without FOIL, 'I forgot the inner one' is a 1-mark slip every time."
+    }
   },
   {
     "id": "math-sohcahtoa",
@@ -199,7 +304,18 @@
     "tagline": "Trigonometry in right triangles",
     "decode": "Sin = Opp/Hyp · Cos = Adj/Hyp · Tan = Opp/Adj",
     "when": "Find a missing side or angle in a right-angled triangle.",
-    "example": "Find an angle when you know opp and adj → use Tan. Tan(θ) = opp/adj → θ = tan⁻¹(opp/adj)."
+    "example": "Find an angle when you know opp and adj → use Tan. Tan(θ) = opp/adj → θ = tan⁻¹(opp/adj).",
+    "context": "Trigonometry asks 'find an angle or a side in a right-angled triangle'. There are three formulas; pick the wrong one and you fail the question. SOH CAH TOA tells you which formula goes with which pair of sides — one of the highest-leverage 9 letters in maths.",
+    "worked_example": {
+      "scenario": "A right triangle has the side opposite the angle θ = 4 cm and the hypotenuse = 5 cm. Find θ.",
+      "steps": [
+        "Identify the sides: opposite (4) and hypotenuse (5).",
+        "OPP and HYP → SOH (sin θ = opp / hyp).",
+        "sin θ = 4/5 = 0.8.",
+        "θ = sin⁻¹(0.8) ≈ 53.1°."
+      ],
+      "outcome": "Correct formula chosen, calculation done, answer to 1 d.p. Without SOH CAH TOA you'd guess and probably pick cos."
+    }
   },
   {
     "id": "math-kfc",
@@ -232,7 +348,19 @@
     "tagline": "Magic 9 times table",
     "decode": "Hold up 10 fingers. Fold down the n-th finger. Fingers to the LEFT = tens, to the RIGHT = units.",
     "when": "Any 9 × 1 to 9 × 10 question.",
-    "example": "9 × 7: fold finger 7. 6 fingers left, 3 right → 63."
+    "example": "9 × 7: fold finger 7. 6 fingers left, 3 right → 63.",
+    "context": "Times tables under pressure are where kids slip. The 9× finger trick is essentially a calculator on your hands — works every time for 9 × 1 to 9 × 10. Once you've shown a younger sibling, you'll never forget how to do it.",
+    "worked_example": {
+      "scenario": "Calculate 9 × 7 without a calculator.",
+      "steps": [
+        "Hold up 10 fingers in front of you.",
+        "Fold down the 7th finger (count from the left).",
+        "Count fingers to the LEFT of the folded one: 6. That's the tens digit.",
+        "Count fingers to the RIGHT: 3. That's the units digit.",
+        "Answer: 63."
+      ],
+      "outcome": "9 × 7 = 63 with zero risk of error, in about 2 seconds."
+    }
   },
   {
     "id": "math-11-split",
@@ -242,7 +370,17 @@
     "tagline": "Multiply by 11 in your head",
     "decode": "Split the digits, sum them, place sum between (carry if sum > 9).",
     "when": "Any 11 × 2-digit number.",
-    "example": "11 × 24: split 2_4, sum middle (2+4=6), insert → 264. 11 × 75: 7_(7+5)_5 → 7_(12)_5 → 825."
+    "example": "11 × 24: split 2_4, sum middle (2+4=6), insert → 264. 11 × 75: 7_(7+5)_5 → 7_(12)_5 → 825.",
+    "context": "Multiplying by 11 looks tedious but has a beautiful pattern: just split the digits and add the gap. Memorise the trick and 11×24, 11×35, 11×72 all become instant — handy when 11 turns up in fraction or scaling questions.",
+    "worked_example": {
+      "scenario": "Calculate 11 × 24 in your head.",
+      "steps": [
+        "Split the two digits: 2 _ 4 (leave a gap in the middle).",
+        "Sum the two digits: 2 + 4 = 6.",
+        "Drop the sum into the gap: 2 _ 6 _ 4 → 264."
+      ],
+      "outcome": "11 × 24 = 264 in 3 seconds. (Carry trick: if the sum is 10+, carry the 1, e.g. 11 × 75 → 7_(12)_5 → 825.)"
+    }
   },
   {
     "id": "math-squares-club",
@@ -274,7 +412,17 @@
     "tagline": "Less common but huge for volume",
     "decode": "1, 8, 27, 64, 125, 216, 343, 512, 729, 1000",
     "when": "Volume questions, cube roots, surds.",
-    "example": "Volume of a cube is 125 cm³ → side = ∛125 = 5 cm."
+    "example": "Volume of a cube is 125 cm³ → side = ∛125 = 5 cm.",
+    "context": "Cubes show up in volume, surds and pattern questions. Memorising 1³ to 10³ removes a calculator step on every cube-root question — the difference between 'instant' and 'guess and check'.",
+    "worked_example": {
+      "scenario": "A cube has volume 125 cm³. What's the side length?",
+      "steps": [
+        "Volume of a cube = side³, so side = ∛125.",
+        "From the Cubes Club: 5³ = 125.",
+        "Therefore side = 5 cm."
+      ],
+      "outcome": "5 cm in two seconds because the cubes are loaded in your head. Without memorisation, you'd be guessing 4, 5, 6 and multiplying."
+    }
   },
   {
     "id": "math-prime-rules",
@@ -284,7 +432,18 @@
     "tagline": "Quick prime filters",
     "decode": "1 is NOT prime. 2 is the only even prime. After 2, all primes end in 1, 3, 7 or 9 (but not all numbers ending in those are prime).",
     "when": "Asked to list primes or check if a number is prime.",
-    "example": "Is 91 prime? Ends in 1 — possible. But 91 = 7 × 13. Not prime."
+    "example": "Is 91 prime? Ends in 1 — possible. But 91 = 7 × 13. Not prime.",
+    "context": "Prime number questions appear as 'list the primes between 1 and 30' or 'is 91 prime?'. The rules let you skip-test most numbers in a second instead of trying every divisor.",
+    "worked_example": {
+      "scenario": "Is 91 prime?",
+      "steps": [
+        "Doesn't end in even digit, doesn't end in 5 → not divisible by 2 or 5.",
+        "Try 3: 9+1 = 10, not divisible by 3 → not divisible by 3.",
+        "Try 7: 7 × 13 = 91. Got it.",
+        "91 = 7 × 13, so it's NOT prime."
+      ],
+      "outcome": "Answer: not prime, factors 7 and 13. Year 7 trap: 91 looks prime because 'it ends in 1', but the prime rules don't say that — only that primes >2 end in 1, 3, 7 or 9, not the reverse."
+    }
   },
   {
     "id": "math-index-laws",
@@ -294,7 +453,17 @@
     "tagline": "Same base — three rules",
     "decode": "Multiply: ADD powers (xᵃ × xᵇ = xᵃ⁺ᵇ). Divide: SUBTRACT. Power of a power: MULTIPLY. Anything⁰ = 1.",
     "when": "Simplifying expressions with the same base.",
-    "example": "x³ × x⁴ = x⁷. (x³)² = x⁶. x⁵ ÷ x² = x³."
+    "example": "x³ × x⁴ = x⁷. (x³)² = x⁶. x⁵ ÷ x² = x³.",
+    "context": "Powers (indices) get their own rules because they multiply differently from regular numbers. The three laws are short and they cover 95% of GCSE-prep index questions. Forget them and you can't even start.",
+    "worked_example": {
+      "scenario": "Simplify: x³ × x⁴ ÷ x²",
+      "steps": [
+        "Same base (x) → use index laws.",
+        "Multiplying: ADD powers. x³ × x⁴ = x⁷.",
+        "Dividing: SUBTRACT powers. x⁷ ÷ x² = x⁵."
+      ],
+      "outcome": "Final answer: x⁵. Three operations, no calculation needed — just add and subtract the powers."
+    }
   },
   {
     "id": "math-averages",
@@ -304,7 +473,19 @@
     "tagline": "Three averages, one trap",
     "decode": "Mean = aMount divided. Median = Middle (sort first!). Mode = MOst common. Range = highest − lowest.",
     "when": "Any 'find the average' question. The trap: forgetting to sort before finding the median.",
-    "example": "List: 4, 1, 7, 4, 9. Sorted: 1, 4, 4, 7, 9. Mean = 5. Median = 4. Mode = 4. Range = 8."
+    "example": "List: 4, 1, 7, 4, 9. Sorted: 1, 4, 4, 7, 9. Mean = 5. Median = 4. Mode = 4. Range = 8.",
+    "context": "Mean / median / mode is the easiest topic to memorise and the easiest to fluff. The classic mistake: forgetting to SORT before finding the median. The mnemonic locks each definition AND the order trap.",
+    "worked_example": {
+      "scenario": "Find the mean, median, and mode of: 4, 1, 7, 4, 9.",
+      "steps": [
+        "First: SORT. → 1, 4, 4, 7, 9.",
+        "Mean = sum ÷ count = 25 ÷ 5 = 5.",
+        "Median = middle of sorted list = 4 (the third value).",
+        "Mode = most common = 4 (appears twice).",
+        "Range = highest − lowest = 9 − 1 = 8."
+      ],
+      "outcome": "All four stats correct. The kid who skipped sorting got median = 7 (the middle of the unsorted list) and lost the mark."
+    }
   },
   {
     "id": "math-of-means-times",
@@ -314,7 +495,17 @@
     "tagline": "Percentage of an amount",
     "decode": "Convert % to decimal (÷ 100). Then multiply.",
     "when": "Any 'X% of Y' question.",
-    "example": "20% of 60: 0.20 × 60 = 12. 5% of 80: 0.05 × 80 = 4."
+    "example": "20% of 60: 0.20 × 60 = 12. 5% of 80: 0.05 × 80 = 4.",
+    "context": "Percentage questions hide behind the word 'of'. 'Find 20% of 60' confuses kids because they want to add or subtract. Once you know 'of' translates to MULTIPLY, every percentage-of-amount question becomes a one-step calculation.",
+    "worked_example": {
+      "scenario": "What is 20% of 60?",
+      "steps": [
+        "Convert the % to a decimal: 20% = 0.20 (divide by 100).",
+        "'Of' means times: 0.20 × 60.",
+        "Calculate: 12."
+      ],
+      "outcome": "12 — done in three steps. Same trick scales: 5% of 80 = 0.05 × 80 = 4."
+    }
   },
   {
     "id": "math-congruence",
@@ -324,7 +515,18 @@
     "tagline": "When two triangles are congruent",
     "decode": "Side-Side-Side · Side-Angle-Side · Angle-Side-Angle · Right-angle-Hypotenuse-Side",
     "when": "Asked to prove triangles are congruent. SSA is NOT valid (the donkey rule).",
-    "example": "Two triangles with all three pairs of sides equal → SSS → congruent."
+    "example": "Two triangles with all three pairs of sides equal → SSS → congruent.",
+    "context": "'Congruent' means two shapes are identical (same size + shape). Examiners ask you to prove triangles are congruent — but only certain combinations of sides and angles count as proof. The four valid conditions (SSS, SAS, ASA, RHS) are non-negotiable; the FAKE one (SSA) is the donkey trap.",
+    "worked_example": {
+      "scenario": "Two triangles each have sides 5, 7, 9 cm. Are they congruent? State your reason.",
+      "steps": [
+        "All three pairs of sides are equal.",
+        "Three pairs of equal sides = SSS condition (Side-Side-Side).",
+        "SSS is one of the four valid congruence conditions.",
+        "Therefore the triangles are congruent."
+      ],
+      "outcome": "Identified the condition, named it, justified the conclusion. Three marks. (SSA wouldn't be valid — that's the donkey rule trap.)"
+    }
   },
   {
     "id": "math-negatives-rules",
@@ -334,7 +536,17 @@
     "tagline": "Negative arithmetic",
     "decode": "Same signs multiply/divide → POSITIVE. Different signs → NEGATIVE. Subtracting a negative = adding a positive.",
     "when": "Any calculation with negative numbers.",
-    "example": "−3 × −4 = 12 (same signs). −3 × 4 = −12 (different). 5 − (−2) = 5 + 2 = 7."
+    "example": "−3 × −4 = 12 (same signs). −3 × 4 = −12 (different). 5 − (−2) = 5 + 2 = 7.",
+    "context": "Negatives confuse Year 7s constantly: minus a minus is a plus, two negatives multiplied are positive, etc. The two-signs rule cuts through the confusion in 5 words: SAME signs = positive, DIFFERENT = negative.",
+    "worked_example": {
+      "scenario": "Calculate: −3 × −4 and 5 − (−2).",
+      "steps": [
+        "−3 × −4: signs are SAME (both negative) → result is POSITIVE → 12.",
+        "5 − (−2): subtracting a negative is the same as adding the positive → 5 + 2 = 7.",
+        "Reason: two minuses cancel — '−(−2)' becomes '+2'."
+      ],
+      "outcome": "Both correct. The kid who said 5 − (−2) = 3 (treating the negative as a normal subtraction) lost the mark."
+    }
   },
   {
     "id": "eng-peel",
@@ -367,7 +579,19 @@
     "tagline": "PEEL upgraded — names the technique",
     "decode": "Point · Evidence · Technique · Analysis · Link",
     "when": "Better for poetry/prose analysis — forces you to NAME the device (simile, metaphor, etc.).",
-    "example": "P: tension builds. E: 'lonely as a cloud'. T: simile. A: 'cloud' = isolated and adrift. L: matches the speaker's mood the question asks about."
+    "example": "P: tension builds. E: 'lonely as a cloud'. T: simile. A: 'cloud' = isolated and adrift. L: matches the speaker's mood the question asks about.",
+    "context": "PETAL is PEEL with one extra letter (T for Technique). It forces you to NAME the language device — simile, metaphor, alliteration — instead of just describing it. Examiners reward technique-naming because it shows you can analyse, not just summarise.",
+    "worked_example": {
+      "scenario": "Question: 'Analyse how the writer creates a sense of isolation.'",
+      "steps": [
+        "P — Point: 'The writer creates isolation through imagery.'",
+        "E — Evidence: '\"as lonely as a cloud\".'",
+        "T — Technique: 'This is a simile.'",
+        "A — Analysis: 'The cloud image suggests being adrift, unanchored, and small against a vast sky — exactly what isolation feels like.'",
+        "L — Link: 'This connects directly to the question by giving the loneliness a concrete picture, not just a word.'"
+      ],
+      "outcome": "Top-band paragraph: structure, named technique, analysis of effect, explicit link. PEEL alone gets you to band 3; PETAL gets you to band 5."
+    }
   },
   {
     "id": "eng-peezl",
@@ -377,7 +601,19 @@
     "tagline": "Top-tier paragraph",
     "decode": "Point · Evidence · Explain · Zoom (one specific word) · Link",
     "when": "Top-band analysis — Zoom picks ONE word from the quote and analyses connotations.",
-    "example": "Quote: 'crept'. Zoom: 'crept' connotes nervous secrecy — the cat doesn't just walk, it sneaks, suggesting fear."
+    "example": "Quote: 'crept'. Zoom: 'crept' connotes nervous secrecy — the cat doesn't just walk, it sneaks, suggesting fear.",
+    "context": "PEEZL is PEEL with a Z in the middle — Zoom in on a SINGLE WORD. This is what separates good answers from top-1% answers. Picking apart one word's connotations shows examiners you're reading like a literary critic, not a summariser.",
+    "worked_example": {
+      "scenario": "Quote: 'The cat crept across the floor.'",
+      "steps": [
+        "P — Point: 'The verb choice creates tension.'",
+        "E — Evidence: '\"crept\".'",
+        "E — Explain: 'It's not a normal walking word.'",
+        "Z — Zoom: 'The word \"crept\" connotes secrecy and nervousness — like the cat is sneaking, scared of being noticed. A simple \"walked\" wouldn't carry that fear.'",
+        "L — Link: 'This builds the suspense the question asks about, by hinting at a threat the cat is avoiding.'"
+      ],
+      "outcome": "Top 1% paragraph. The Zoom on 'crept' shows analytical depth that 90% of kids never reach."
+    }
   },
   {
     "id": "eng-daforest",
@@ -411,7 +647,19 @@
     "tagline": "Poetry analysis framework",
     "decode": "Structure · Meaning · Imagery · Language · Effect",
     "when": "Stuck on an unseen poem — run through each letter for ideas.",
-    "example": "S: 14 lines (sonnet). M: about lost love. I: 'wilting flowers'. L: archaic vocabulary. E: feels mournful."
+    "example": "S: 14 lines (sonnet). M: about lost love. I: 'wilting flowers'. L: archaic vocabulary. E: feels mournful.",
+    "context": "Unseen poetry questions paralyse kids because there's no obvious place to start. SMILE gives you 5 launchpads — pick whichever the poem rewards. Use 3 of the 5 in your answer and you've covered the analysis grid examiners look for.",
+    "worked_example": {
+      "scenario": "Asked to analyse a poem about a stormy sea you've never read before.",
+      "steps": [
+        "S — Structure: 'The poem is in four stanzas, each shorter than the last — like the storm calming.'",
+        "M — Meaning: 'On the surface a storm; underneath, maybe an emotional crisis.'",
+        "I — Imagery: '\"Black foam\" suggests violence and decay.'",
+        "L — Language: 'Aggressive verbs (hurled, smashed) build force.'",
+        "E — Effect: 'The reader feels exhausted by the end, mirroring the calm after a fight.'"
+      ],
+      "outcome": "Five angles of analysis from a poem you'd never seen. SMILE turns blank-page panic into structured response."
+    }
   },
   {
     "id": "eng-flirt",
@@ -421,7 +669,19 @@
     "tagline": "Faster poetry framework",
     "decode": "Form · Language · Imagery · Rhyme · Tone",
     "when": "Time-pressed unseen poetry questions.",
-    "example": "F: free verse. L: simple, conversational. I: ocean metaphor. R: no scheme. T: contemplative."
+    "example": "F: free verse. L: simple, conversational. I: ocean metaphor. R: no scheme. T: contemplative.",
+    "context": "FLIRT is the time-pressed version of SMILE — five letters that hit slightly different aspects (Form, Rhyme, Tone added; Structure dropped). Use whichever mnemonic fits your hand better; both get you off the starting line on an unseen poem.",
+    "worked_example": {
+      "scenario": "Asked to analyse an unseen poem about loss.",
+      "steps": [
+        "F — Form: 'Free verse — no fixed structure suggests grief is uncontained.'",
+        "L — Language: 'Repeated negations (\"no\", \"never\") emphasise absence.'",
+        "I — Imagery: 'Empty rooms become a metaphor for the speaker's heart.'",
+        "R — Rhyme: 'Lack of rhyme = no resolution.'",
+        "T — Tone: 'Quiet, contemplative, weighted with silence.'"
+      ],
+      "outcome": "Five distinct points from one mnemonic. With FLIRT you can spend 3 minutes planning instead of staring at the page."
+    }
   },
   {
     "id": "eng-five-senses",
@@ -455,7 +715,18 @@
     "tagline": "Spot it instantly",
     "decode": "14 lines · ABAB CDCD EFEF GG (Shakespearean) · iambic pentameter (10 syllables, da-DUM × 5)",
     "when": "Any Shakespeare poem. The final couplet (GG) usually delivers the twist.",
-    "example": "Sonnet 18: 'Shall I compare thee to a summer's day?' — count syllables, count lines. Final couplet flips to immortality."
+    "example": "Sonnet 18: 'Shall I compare thee to a summer's day?' — count syllables, count lines. Final couplet flips to immortality.",
+    "context": "Spotting a sonnet instantly gets you marks because you can immediately discuss its structure (14 lines, ABAB CDCD EFEF GG, the volta turn at the final couplet). Without recognising it, you analyse the poem like prose and miss the structural mark.",
+    "worked_example": {
+      "scenario": "You're given Shakespeare's Sonnet 18 ('Shall I compare thee to a summer's day?').",
+      "steps": [
+        "Count lines: 14 → it's a sonnet.",
+        "Check rhyme: ABAB CDCD EFEF GG → Shakespearean sonnet form.",
+        "Find the final couplet (lines 13-14): 'So long as men can breathe, or eyes can see / So long lives this, and this gives life to thee.' → the 'turn' or volta.",
+        "The final couplet usually delivers the twist or conclusion → here, immortality through the poem itself."
+      ],
+      "outcome": "Identified the form, named the volta, analysed the twist. Three structural marks before you've even discussed the imagery."
+    }
   },
   {
     "id": "eng-narrative-arc",
@@ -465,7 +736,19 @@
     "tagline": "Story structure",
     "decode": "Exposition → Rising Action → Climax → Falling Action → Resolution",
     "when": "Plan creative writing along this arc — examiners spot a structured story instantly.",
-    "example": "Exposition: introduce the character. Rising: problem grows. Climax: confrontation. Falling: aftermath. Resolution: change."
+    "example": "Exposition: introduce the character. Rising: problem grows. Climax: confrontation. Falling: aftermath. Resolution: change.",
+    "context": "Creative-writing exam tasks are usually 30-45 minutes. Without a plan you write yourself into a dead end. The narrative arc is a 5-step plan that produces a satisfying story shape every time — a small win in planning pays off as a big mark in structure.",
+    "worked_example": {
+      "scenario": "Task: 'Write a story about an unexpected discovery.'",
+      "steps": [
+        "Exposition: introduce the character (e.g. a kid bored on a school trip).",
+        "Rising Action: they wander off, find something strange (a hidden door).",
+        "Climax: confrontation — what's behind the door?",
+        "Falling Action: the consequence (chased? rewarded? changed?).",
+        "Resolution: they return changed — calmer, scared, wiser."
+      ],
+      "outcome": "Five-stage plan in 90 seconds. Examiner spots the arc and ticks 'structured narrative' — band 4 minimum, possibly 5 with strong language."
+    }
   },
   {
     "id": "eng-fanboys",
@@ -475,7 +758,17 @@
     "tagline": "Coordinating conjunctions",
     "decode": "For · And · Nor · But · Or · Yet · So",
     "when": "Joining two complete sentences. Use a comma BEFORE the conjunction.",
-    "example": "'I revised hard, but the test was tough.' Two complete sentences joined with comma + 'but'."
+    "example": "'I revised hard, but the test was tough.' Two complete sentences joined with comma + 'but'.",
+    "context": "FANBOYS are the 7 conjunctions that join two complete sentences with a comma before them. Memorise them and you stop writing comma splices ('I revised hard, the test was tough') — which examiners catch and dock.",
+    "worked_example": {
+      "scenario": "Combine these sentences correctly: 'I revised hard.' + 'The test was tough.'",
+      "steps": [
+        "Pick a FANBOYS conjunction that fits the meaning: 'but' (contrast) works here.",
+        "Add a COMMA before the conjunction.",
+        "Result: 'I revised hard, but the test was tough.'"
+      ],
+      "outcome": "Comma + FANBOYS + complete sentence on each side = correct compound sentence. Without the comma it's a comma splice; without FANBOYS it's a fragment."
+    }
   },
   {
     "id": "eng-semicolon",
@@ -485,7 +778,17 @@
     "tagline": "Joins two complete sentences",
     "decode": "Use a semicolon to join two complete sentences that are closely related, no 'and' needed.",
     "when": "When two ideas are tightly linked but you want them to feel like one thought.",
-    "example": "'I love revision; it makes me calmer.' Both sides work as standalone sentences."
+    "example": "'I love revision; it makes me calmer.' Both sides work as standalone sentences.",
+    "context": "Semicolons are the 'I'm a top student' punctuation mark. Use one correctly and examiners notice. Use one incorrectly and they notice too. The rule: BOTH sides of the semicolon must work as standalone sentences.",
+    "worked_example": {
+      "scenario": "Should this be a comma or a semicolon: 'I love revision__ it makes me calmer.'",
+      "steps": [
+        "Test each side. 'I love revision' = complete sentence ✓. 'It makes me calmer' = complete sentence ✓.",
+        "Both sides work standalone → semicolon is allowed.",
+        "Result: 'I love revision; it makes me calmer.'"
+      ],
+      "outcome": "Correct semicolon, sophisticated tone, marks for sentence variety. With a comma here it'd be a comma splice and lose marks."
+    }
   },
   {
     "id": "eng-embedded-quotes",
@@ -495,7 +798,17 @@
     "tagline": "Slot it in, don't dump it",
     "decode": "Slot the quote INTO your sentence. Don't free-float it after a colon.",
     "when": "Every time you quote in an analytical essay.",
-    "example": "Bad: 'She is sad: \"lonely as a cloud\".' Good: 'The narrator describes herself as \"lonely as a cloud\", suggesting isolation.'"
+    "example": "Bad: 'She is sad: \"lonely as a cloud\".' Good: 'The narrator describes herself as \"lonely as a cloud\", suggesting isolation.'",
+    "context": "There are two ways to use quotes in an essay: dump them after a colon (lazy) or slot them INTO your sentence (slick). Embedded quotations are the difference between a school essay and a Year-12 essay — they show you're flowing prose, not pasting bits.",
+    "worked_example": {
+      "scenario": "Improve this: 'The narrator is sad: \"lonely as a cloud\".'",
+      "steps": [
+        "The colon-and-quote pattern dumps the quote on the page.",
+        "Embed it in a real sentence: 'The narrator describes herself as \"lonely as a cloud\", suggesting a deep isolation.'",
+        "Notice: the quote becomes part of the grammar of the sentence, not a tacked-on bit."
+      ],
+      "outcome": "Embedded version reads as a flowing analytical sentence. Examiners pick this up instantly and band you higher."
+    }
   },
   {
     "id": "eng-show-dont-tell",
@@ -505,7 +818,18 @@
     "tagline": "Better creative writing",
     "decode": "Describe the symptom, not the emotion. Let the reader infer.",
     "when": "Creative writing. Replaces flat statements with vivid description.",
-    "example": "Tell: 'She was scared.' Show: 'Her hands trembled as she reached for the door handle.'"
+    "example": "Tell: 'She was scared.' Show: 'Her hands trembled as she reached for the door handle.'",
+    "context": "Telling explains; showing makes the reader FEEL it. 'She was scared' is telling. 'Her hands trembled as she reached for the door' is showing. Top-band creative writing is built on this distinction.",
+    "worked_example": {
+      "scenario": "Task: 'Make this sentence stronger: She was scared.'",
+      "steps": [
+        "Identify the emotion: fear.",
+        "Pick a physical SYMPTOM of fear: trembling hands, shallow breath, dry mouth, racing heart.",
+        "Replace the abstract 'scared' with the concrete symptom: 'Her hands trembled as she reached for the door.'",
+        "Reader infers fear from the description, without you naming it."
+      ],
+      "outcome": "Stronger sentence, more vivid, examiner ticks 'shows rather than tells'. Same idea, much higher band."
+    }
   },
   {
     "id": "eng-sentence-types",
@@ -515,7 +839,18 @@
     "tagline": "Vary your sentences",
     "decode": "Simple · Compound (FANBOYS-joined) · Complex (with subordinate clause) · Compound-Complex",
     "when": "Vary deliberately. A short one. After a long flowing sentence, makes impact.",
-    "example": "Simple: 'She left.' Compound: 'She left, but he stayed.' Complex: 'She left because he stayed.' Mix all in a paragraph."
+    "example": "Simple: 'She left.' Compound: 'She left, but he stayed.' Complex: 'She left because he stayed.' Mix all in a paragraph.",
+    "context": "Sentence variety is one of the easiest marks in creative writing. Use only simple sentences = boring. Use only complex sentences = exhausting. Mix all four types deliberately and the prose has rhythm — examiners explicitly mark for it.",
+    "worked_example": {
+      "scenario": "Rewrite the same paragraph using all four sentence types.",
+      "steps": [
+        "Simple (one clause): 'She left.'",
+        "Compound (FANBOYS-joined): 'She left, but he stayed.'",
+        "Complex (subordinate clause): 'She left because he stayed.'",
+        "Compound-complex (both): 'She left because he stayed, but she didn't slam the door.'"
+      ],
+      "outcome": "Four types of sentence in one paragraph. Reader gets rhythm; examiner sees craft. Top-band tick."
+    }
   },
   {
     "id": "hist-nope",
@@ -548,7 +883,19 @@
     "tagline": "Quick source checklist",
     "decode": "Who · What · When · Where · Why (was it made)",
     "when": "Always check the basics before analysing. Useful for ANY source.",
-    "example": "Bayeux Tapestry: Who = Norman commissioners. What = embroidered narrative. When = ~1070s. Where = Normandy. Why = celebrate the conquest."
+    "example": "Bayeux Tapestry: Who = Norman commissioners. What = embroidered narrative. When = ~1070s. Where = Normandy. Why = celebrate the conquest.",
+    "context": "Sources lie or shade truth — but only if you ask the right questions. The 5 Ws are the basic interrogation toolkit. Run all 5 before you analyse anything and you'll spot bias examiners want you to spot.",
+    "worked_example": {
+      "scenario": "A propaganda poster from WWI showing a smiling soldier.",
+      "steps": [
+        "WHO made it? Government recruitment office.",
+        "WHAT does it show? A happy, well-fed soldier.",
+        "WHEN? 1915 (after early enthusiasm, before draft).",
+        "WHERE? Britain — for British recruits.",
+        "WHY? To encourage men to enlist voluntarily."
+      ],
+      "outcome": "Five questions, five answers, full picture of intent. Now you can analyse the BIAS (idealised soldier) and the CONTEXT (recruiting drive)."
+    }
   },
   {
     "id": "hist-persia",
@@ -602,7 +949,18 @@
     "tagline": "Magna Carta",
     "decode": "King John forced to sign the Magna Carta at Runnymede — limits royal power.",
     "when": "Foundation of English legal rights. Examiners love this.",
-    "example": "Barons revolted; John signed under duress. Established that even kings answer to law."
+    "example": "Barons revolted; John signed under duress. Established that even kings answer to law.",
+    "context": "The Magna Carta is the foundation of English legal rights — even kings answer to law. It's referenced in every history paper that touches medieval, Tudor or Stuart politics because every constitutional crisis afterwards goes back to 1215.",
+    "worked_example": {
+      "scenario": "Question: 'Why is the Magna Carta still important today?'",
+      "steps": [
+        "Date: 1215, signed at Runnymede.",
+        "Who: King John, forced by his rebellious barons.",
+        "What: limited the king's power to tax and imprison without legal process.",
+        "Why it lasts: established that even rulers are subject to the law — the seed of constitutional government."
+      ],
+      "outcome": "Four specific facts (date, place, people, principle), explicit modern relevance. Top-band answer in four sentences."
+    }
   },
   {
     "id": "hist-1348",
@@ -612,7 +970,19 @@
     "tagline": "Black Death hits England",
     "decode": "Bubonic plague kills around 1/3 of England's population.",
     "when": "Massive social/economic consequences — labour shortages, peasant power, decline of feudalism.",
-    "example": "After 1348: fewer peasants → labour valuable → wages rise → Statute of Labourers (1351) tried to cap them."
+    "example": "After 1348: fewer peasants → labour valuable → wages rise → Statute of Labourers (1351) tried to cap them.",
+    "context": "The Black Death kills roughly a third of England. The social and economic consequences (labour shortages, peasant power, decline of feudalism) drive every following question on medieval England. Lock the year and the chain of cause-and-effect unlocks itself.",
+    "worked_example": {
+      "scenario": "Question: 'How did the Black Death change life for English peasants?'",
+      "steps": [
+        "1348-50: bubonic plague kills ~1/3 of England's population.",
+        "Result: huge labour shortage — fewer peasants left to work the fields.",
+        "Demand for labour pushes wages UP. Peasants gain bargaining power.",
+        "Government tries to cap wages with the Statute of Labourers (1351) — but it's hard to enforce.",
+        "Long-term: feudalism declines as peasants demand more freedom; this contributes to the Peasants' Revolt (1381)."
+      ],
+      "outcome": "Specific date, named statute, named revolt, chain of cause-and-effect. Top band — 'multi-causal' analysis."
+    }
   },
   {
     "id": "hist-1485",
@@ -622,7 +992,19 @@
     "tagline": "Battle of Bosworth — Tudors begin",
     "decode": "Henry Tudor defeats Richard III. End of the Wars of the Roses. Start of the Tudor era.",
     "when": "The 'year the Middle Ages ended' in popular English history.",
-    "example": "Henry VII becomes king, marries Elizabeth of York to unite Lancaster + York. Founds the Tudor dynasty."
+    "example": "Henry VII becomes king, marries Elizabeth of York to unite Lancaster + York. Founds the Tudor dynasty.",
+    "context": "1485 is a hinge date in English history — the moment historians traditionally call 'the end of the Middle Ages'. The Tudor dynasty starts here. Every later Tudor question (Henry VIII, Reformation, Elizabeth) traces back to Bosworth.",
+    "worked_example": {
+      "scenario": "Question: 'Why is the Battle of Bosworth (1485) seen as the end of the Wars of the Roses?'",
+      "steps": [
+        "Henry Tudor (Lancastrian) defeats Richard III (Yorkist) at Bosworth.",
+        "Richard III is killed in battle — the last English king to die in combat.",
+        "Henry becomes Henry VII, founding the Tudor dynasty.",
+        "He marries Elizabeth of York — uniting the warring houses (red rose + white rose = Tudor rose).",
+        "Result: the cycle of York-vs-Lancaster wars ends; political stability follows."
+      ],
+      "outcome": "Specific date, battle, monarchs, symbolic marriage. Top-band answer."
+    }
   },
   {
     "id": "hist-1534",
@@ -632,7 +1014,19 @@
     "tagline": "Act of Supremacy",
     "decode": "Henry VIII breaks with Rome. Makes himself Supreme Head of the Church of England.",
     "when": "Core English Reformation date. Triggers monastery dissolution, religious upheaval.",
-    "example": "Henry wanted to divorce Catherine of Aragon; the Pope said no. Solution: become his own Pope."
+    "example": "Henry wanted to divorce Catherine of Aragon; the Pope said no. Solution: become his own Pope.",
+    "context": "The Act of Supremacy is the moment England becomes its own religious authority. Every later religious conflict (Mary I's Catholic restoration, Elizabeth's Protestant settlement, Civil War, Glorious Revolution) builds on this 1534 break.",
+    "worked_example": {
+      "scenario": "Question: 'Why did Henry VIII pass the Act of Supremacy in 1534?'",
+      "steps": [
+        "Henry wanted to divorce Catherine of Aragon (no male heir, plus Anne Boleyn waiting).",
+        "The Pope refused to grant the divorce.",
+        "Solution: become his own Pope. The Act made Henry 'Supreme Head of the Church of England'.",
+        "Consequence: dissolution of the monasteries (1536-40), seizure of Catholic wealth, England turns Protestant.",
+        "Long-term: founds the Church of England that still exists today."
+      ],
+      "outcome": "Direct cause, immediate consequence, long-term legacy. Top-band 'multi-causal' answer."
+    }
   },
   {
     "id": "hist-1588",
@@ -642,7 +1036,19 @@
     "tagline": "Spanish Armada",
     "decode": "England (under Elizabeth I) defeats the Spanish invasion fleet.",
     "when": "Marker of England as a sea power. 'God blew with His winds, and they were scattered.'",
-    "example": "Drake, fireships, Channel storms. Spain's Catholic invasion fails. Elizabeth's reputation cemented."
+    "example": "Drake, fireships, Channel storms. Spain's Catholic invasion fails. Elizabeth's reputation cemented.",
+    "context": "The defeat of the Spanish Armada is the moment England announces itself as a sea power. It also cements Elizabeth I's reputation as a successful Protestant queen against Catholic Europe — the foundation of the Elizabethan 'golden age' narrative.",
+    "worked_example": {
+      "scenario": "Question: 'Why was the defeat of the Armada significant for England?'",
+      "steps": [
+        "Date: July-August 1588. Philip II of Spain sends 130 ships to invade.",
+        "England's navy (under Drake, Howard) uses fireships + skill in the Channel.",
+        "Channel storms scatter the surviving Spanish fleet around Scotland and Ireland.",
+        "Result: Spain's invasion fails. England is safe from Catholic conquest.",
+        "Elizabeth's speech at Tilbury cements her image: 'I have the heart and stomach of a king'."
+      ],
+      "outcome": "Date, named tactics, named consequence, famous quote. The kid who just wrote 'England won' lost three marks."
+    }
   },
   {
     "id": "hist-1605",
@@ -652,7 +1058,19 @@
     "tagline": "Gunpowder Plot",
     "decode": "Guy Fawkes + co. try to blow up Parliament + James I. Caught the night before.",
     "when": "'Remember, remember the 5th of November.' Why we have Bonfire Night.",
-    "example": "Catholic conspirators stored 36 barrels of gunpowder under Parliament. Anonymous letter tipped off authorities."
+    "example": "Catholic conspirators stored 36 barrels of gunpowder under Parliament. Anonymous letter tipped off authorities.",
+    "context": "The Gunpowder Plot is the dramatic Catholic backlash against the Protestant settlement. Year 7s remember the Bonfire Night rhyme — the exam wants the political reasons WHY Catholics tried to blow up Parliament.",
+    "worked_example": {
+      "scenario": "Question: 'Why did Guy Fawkes and the conspirators try to blow up Parliament in 1605?'",
+      "steps": [
+        "Background: James I had been less tolerant of Catholics than they'd hoped.",
+        "Plan: 36 barrels of gunpowder in Parliament's cellars; blow it up at the State Opening on 5 November.",
+        "Goal: kill the Protestant king, MPs, and bishops in one strike — install a Catholic monarch.",
+        "Failure: anonymous letter tipped off authorities; Fawkes caught guarding the gunpowder.",
+        "Aftermath: harsher anti-Catholic laws; 'Remember, remember the 5th of November.'"
+      ],
+      "outcome": "Specific motive, specific plan, specific failure. Plus the cultural legacy. Full marks."
+    }
   },
   {
     "id": "hist-1649",
@@ -662,7 +1080,19 @@
     "tagline": "Charles I executed",
     "decode": "Only English king ever executed by his own people. England becomes a republic (briefly).",
     "when": "Climax of the English Civil War. Cromwell's faction wins.",
-    "example": "Charles tried for treason, beheaded outside Banqueting House, Whitehall. England becomes a 'Commonwealth'."
+    "example": "Charles tried for treason, beheaded outside Banqueting House, Whitehall. England becomes a 'Commonwealth'.",
+    "context": "The execution of Charles I is the most extreme moment in English political history — the only time an English king was tried and executed by his own people. It marks the climax of the Civil War and the start of the brief republican period.",
+    "worked_example": {
+      "scenario": "Question: 'Why was the execution of Charles I in 1649 a turning point?'",
+      "steps": [
+        "Civil War (1642-49) ended with Parliamentarians (Cromwell, Fairfax) defeating Royalists.",
+        "Charles refused to compromise even after losing — kept plotting from prison.",
+        "Parliament put him on trial for treason — unprecedented.",
+        "30 January 1649: Charles I beheaded outside the Banqueting House, Whitehall.",
+        "England becomes a 'Commonwealth' (republic) — first and only time without a monarch."
+      ],
+      "outcome": "Specific date, named building, named republic. The 'first and only' framing earns the 'turning point' mark."
+    }
   },
   {
     "id": "hist-1660",
@@ -672,7 +1102,19 @@
     "tagline": "Restoration",
     "decode": "Charles II returns from exile. Monarchy restored after 11 years of republic.",
     "when": "Memorise as a pair with 1649 — down then up.",
-    "example": "Cromwell dies 1658. Son fails. Parliament invites Charles II back. Monarchy back, but limited."
+    "example": "Cromwell dies 1658. Son fails. Parliament invites Charles II back. Monarchy back, but limited.",
+    "context": "The Restoration is what happens when republicanism fails — Cromwell dies in 1658, his son can't hold it together, and Parliament invites Charles II back. Memorise it as a PAIR with 1649: republic up, republic down.",
+    "worked_example": {
+      "scenario": "Question: 'Why did Charles II return as king in 1660?'",
+      "steps": [
+        "Oliver Cromwell dies (1658). His son Richard takes over but is weak.",
+        "The Commonwealth's military government collapses without Cromwell's authority.",
+        "Parliament fears another civil war and decides to restore the monarchy.",
+        "Charles II (in exile in France) is invited back — but with limits on royal power.",
+        "May 1660: Charles enters London. The Restoration begins."
+      ],
+      "outcome": "Cause (Cromwell's death) → consequence (instability) → solution (restoration). Top-band cause-and-effect."
+    }
   },
   {
     "id": "hist-1688",
@@ -682,7 +1124,19 @@
     "tagline": "Glorious Revolution",
     "decode": "William of Orange + Mary replace James II. Bloodless. Establishes parliamentary supremacy.",
     "when": "When constitutional monarchy actually begins. Bill of Rights 1689 follows.",
-    "example": "James II's Catholicism + heir threatens Protestant succession. Parliament invites Dutch William. James flees."
+    "example": "James II's Catholicism + heir threatens Protestant succession. Parliament invites Dutch William. James flees.",
+    "context": "The Glorious Revolution is when England becomes a CONSTITUTIONAL monarchy — kings can't ignore Parliament anymore. Every later British political idea (parliamentary supremacy, civil liberties) traces back to 1688 and the Bill of Rights (1689).",
+    "worked_example": {
+      "scenario": "Question: 'Why is the Glorious Revolution called \"glorious\"?'",
+      "steps": [
+        "Background: James II (Catholic) threatened the Protestant succession after his son was born.",
+        "Parliament invited William of Orange (Protestant, married to James's daughter Mary) to invade.",
+        "James II fled without a fight — almost no bloodshed in England.",
+        "William and Mary became joint monarchs, accepting limits set by the Bill of Rights (1689).",
+        "Outcome: 'glorious' because it was bloodless AND because it established Parliament's supremacy."
+      ],
+      "outcome": "Cause, mechanism, key document, two reasons for 'glorious'. Top-band answer."
+    }
   },
   {
     "id": "hist-peel-history",
@@ -692,7 +1146,18 @@
     "tagline": "History essays demand specific evidence",
     "decode": "Point · Evidence (a date, name, place, number) · Explain · Link",
     "when": "EVERY history paragraph. Generic evidence loses marks; specific evidence gains them.",
-    "example": "Bad: 'lots of people died'. Good: 'approximately 1/3 of England's population died from the Black Death between 1348 and 1350'."
+    "example": "Bad: 'lots of people died'. Good: 'approximately 1/3 of England's population died from the Black Death between 1348 and 1350'.",
+    "context": "PEEL works in history but with a CRUCIAL twist: evidence MUST be specific (a date, a name, a number, a place). 'Lots of people died' = no marks. '~1/3 of England died from the Black Death (1348-50)' = full marks. Specificity is the entire game.",
+    "worked_example": {
+      "scenario": "Question: 'How significant was the Black Death?'",
+      "steps": [
+        "P — Point: 'The Black Death was extremely significant because it transformed English society.'",
+        "E — Evidence (SPECIFIC): 'Approximately 1/3 of the population (about 1.5 million people) died between 1348 and 1350.'",
+        "E — Explain: 'This labour shortage forced wages up and gave peasants new bargaining power, undermining feudalism.'",
+        "L — Link: 'This connects to the question because the long-term changes — wages, mobility, eventual end of serfdom — make it one of the most significant events in medieval English history.'"
+      ],
+      "outcome": "Specific evidence (1/3, 1.5 million, 1348-50) + explanation + explicit link. Top band — the difference is in the specifics."
+    }
   },
   {
     "id": "geo-compass",
@@ -702,7 +1167,17 @@
     "tagline": "Compass points clockwise",
     "decode": "North · East · South · West",
     "when": "Any direction question. Always start at North, go clockwise.",
-    "example": "Settlements concentrated in the SE quadrant of the map → south-east of centre."
+    "example": "Settlements concentrated in the SE quadrant of the map → south-east of centre.",
+    "context": "Compass directions appear in every map skills paper, geography essay and historical battle question. Get N/E/S/W in the wrong order (it's clockwise!) and you've described a city in the wrong place. The mnemonic locks the order forever.",
+    "worked_example": {
+      "scenario": "Question: 'Most settlements on this map are concentrated in the south-east. What does this tell you?'",
+      "steps": [
+        "South-east means: south of centre AND east of centre. (Bottom-right of the map.)",
+        "Why might settlements concentrate there? Likely flat land, river valley, near the coast for trade.",
+        "Use compass directions to describe distributions: 'concentrated in the SE quadrant'."
+      ],
+      "outcome": "Direction read correctly, reason given. Examiner ticks both. The kid who reversed E and W lost both marks."
+    }
   },
   {
     "id": "geo-grid-refs",
@@ -758,7 +1233,19 @@
     "tagline": "River transportation",
     "decode": "Deposition · Traction (rolling) · Saltation (bouncing) · Suspension (floating) · Solution (dissolved)",
     "when": "Asked how rivers move material.",
-    "example": "Big rocks: traction (roll). Pebbles: saltation (bounce). Sand: suspension (float). Salt: solution (dissolved)."
+    "example": "Big rocks: traction (roll). Pebbles: saltation (bounce). Sand: suspension (float). Salt: solution (dissolved).",
+    "context": "Rivers don't just 'carry stuff downstream' — they carry it in 4 specific ways depending on the size of the load. Examiners want each method named with the technical word. DTSS gives you all four in one mnemonic.",
+    "worked_example": {
+      "scenario": "Question: 'Describe how a river transports its load.'",
+      "steps": [
+        "Traction: the heaviest rocks ROLL along the riverbed.",
+        "Saltation: pebbles BOUNCE along, lifted by the current then dropped.",
+        "Suspension: tiny particles (silt, fine sand) FLOAT in the water — what makes rivers look brown.",
+        "Solution: dissolved load (e.g. salts) — invisible but carried away.",
+        "Bonus: as the river slows, deposition occurs — heaviest particles drop first."
+      ],
+      "outcome": "Four named methods with explanations + bonus 5th process. Five marks possible from a single mnemonic."
+    }
   },
   {
     "id": "geo-earth-layers",
@@ -768,7 +1255,19 @@
     "tagline": "Outer to inner",
     "decode": "Crust · Mantle · Outer Core (LIQUID) · Inner Core (SOLID)",
     "when": "Tectonics or Earth-structure questions. Trick: outer core is liquid, inner core is solid.",
-    "example": "Earthquakes happen in the crust. Magma rises from the mantle. The Earth's magnetic field comes from the liquid outer core."
+    "example": "Earthquakes happen in the crust. Magma rises from the mantle. The Earth's magnetic field comes from the liquid outer core.",
+    "context": "Earth's structure is the backbone of every tectonics question. The trick: outer core is LIQUID (despite being deep), inner core is SOLID (despite being hottest). Knowing this lets you explain magnetism, magma, and earthquake propagation.",
+    "worked_example": {
+      "scenario": "Question: 'Why does Earth have a magnetic field?'",
+      "steps": [
+        "Layers from outside in: Crust, Mantle, Outer Core (liquid), Inner Core (solid).",
+        "The outer core is LIQUID iron and nickel.",
+        "Earth's rotation makes this liquid metal swirl.",
+        "Moving liquid metal generates electric currents → which create a magnetic field.",
+        "This is why compasses work and why solar wind is deflected."
+      ],
+      "outcome": "Layered structure, named contents, mechanism explained. Top-band physics-meets-geography answer."
+    }
   },
   {
     "id": "geo-plate-boundaries",
@@ -800,7 +1299,18 @@
     "tagline": "Reading the graph correctly",
     "decode": "Temperature = LINE. Rainfall = BARS. Months = X-axis.",
     "when": "Any climate-graph question. Always identify which Y-axis is which BEFORE answering.",
-    "example": "Describing a UK climate graph: 'Rainfall (bars) peaks at 90mm in October. Temperature (line) peaks at 18°C in July.'"
+    "example": "Describing a UK climate graph: 'Rainfall (bars) peaks at 90mm in October. Temperature (line) peaks at 18°C in July.'",
+    "context": "Climate graphs have TWO Y-axes (temperature and rainfall). Confuse them and you describe London as wetter than the Sahara. The rules lock which is which: temperature = LINE, rainfall = BARS, months = X-axis.",
+    "worked_example": {
+      "scenario": "Describe a climate graph for the UK that shows the line peaking at 18°C in July and bars peaking at 90mm in October.",
+      "steps": [
+        "Identify the LINE (temperature) and BARS (rainfall) — read each Y-axis carefully.",
+        "Temperature peak: 18°C in July (warmest month).",
+        "Rainfall peak: 90mm in October (wettest month).",
+        "Pattern: warm dry summer, cool wet autumn → typical maritime temperate climate."
+      ],
+      "outcome": "Specific numbers, correct units, pattern described. Without the rules, you'd have read the temperature off the rainfall axis and got the whole answer wrong."
+    }
   },
   {
     "id": "geo-bradshaw",
@@ -810,7 +1320,18 @@
     "tagline": "Downstream changes",
     "decode": "Going downstream: discharge UP, width UP, depth UP, velocity UP, load size DOWN, load roundness UP.",
     "when": "Comparing a river upstream vs downstream. Counter-intuitive: rivers actually flow FASTER downstream (less friction).",
-    "example": "Upper course: small fast-looking river but actually slow due to rocks. Lower course: wide deep river — moves faster despite looking calm."
+    "example": "Upper course: small fast-looking river but actually slow due to rocks. Lower course: wide deep river — moves faster despite looking calm.",
+    "context": "The BRADSHAW model describes how rivers change DOWNSTREAM. The counter-intuitive bit: rivers actually flow FASTER downstream (less friction in deeper channels) — but they look slower because they're wider and smoother. Know this and you can answer any 'compare upstream to downstream' question.",
+    "worked_example": {
+      "scenario": "Question: 'Why does a river typically flow faster in its lower course than its upper course?'",
+      "steps": [
+        "Upper course: narrow, shallow, full of rocks and waterfalls. LOTS of friction.",
+        "Lower course: wide, deep, smooth-bedded. LITTLE friction.",
+        "Less friction = faster flow.",
+        "Counter-intuitive: the river LOOKS calmer downstream but moves faster."
+      ],
+      "outcome": "Two named courses, friction explained, counter-intuitive truth nailed. Top-band — most kids assume mountain streams are 'faster' because they look turbulent."
+    }
   },
   {
     "id": "geo-water-cycle",
@@ -820,7 +1341,19 @@
     "tagline": "Hydrological cycle",
     "decode": "Evaporation → Condensation → Precipitation → Collection. Add transpiration (from plants) for top-band answers.",
     "when": "Any rain/clouds/water-flow question.",
-    "example": "Sun heats sea (evaporation) → vapour cools, forms clouds (condensation) → rain falls (precipitation) → flows back to sea."
+    "example": "Sun heats sea (evaporation) → vapour cools, forms clouds (condensation) → rain falls (precipitation) → flows back to sea.",
+    "context": "The water cycle is examined every year. Get the four (or five) stages in order and you bank marks. Bonus: add 'transpiration' (water from plants) and you've earned top-band.",
+    "worked_example": {
+      "scenario": "Question: 'Describe the water cycle.'",
+      "steps": [
+        "Evaporation: heat from the sun turns surface water (oceans, lakes) into water vapour.",
+        "Condensation: as the vapour rises and cools, it forms clouds.",
+        "Precipitation: when droplets get heavy enough, they fall as rain, snow, or hail.",
+        "Collection: water flows back into oceans, lakes, rivers — completing the cycle.",
+        "Bonus: transpiration — plants release water vapour from leaves, also feeding the cycle."
+      ],
+      "outcome": "Four stages in order + transpiration bonus = top-band answer. Diagram-style answer with arrows would also tick the 'use of geographical skills' box."
+    }
   },
   {
     "id": "geo-push-pull",
@@ -830,7 +1363,17 @@
     "tagline": "Why people migrate",
     "decode": "PUSH = reasons people LEAVE. PULL = reasons they GO TO.",
     "when": "Any migration question.",
-    "example": "Push: war, famine, unemployment. Pull: jobs, safety, education. List both sides for full marks."
+    "example": "Push: war, famine, unemployment. Pull: jobs, safety, education. List both sides for full marks.",
+    "context": "Migration questions ask 'why did people leave / why did they go there?' The two-bucket framework (push factors = leave; pull factors = go to) forces you to give BOTH sides — which examiners reward as 'balanced analysis'.",
+    "worked_example": {
+      "scenario": "Question: 'Why did Eastern Europeans migrate to the UK after 2004?'",
+      "steps": [
+        "Push factors (leaving): unemployment, low wages in home country.",
+        "Pull factors (going to): higher UK wages, EU freedom of movement, English-language jobs.",
+        "Both sides matter: people don't just LEAVE, they CHOOSE WHERE to go."
+      ],
+      "outcome": "Three push, three pull, balanced analysis. The kid who only wrote 'better jobs in the UK' got half the marks."
+    }
   },
   {
     "id": "geo-os-symbols",
@@ -840,7 +1383,18 @@
     "tagline": "Memorise the common 10",
     "decode": "Church (cross) · Pub (PH) · Post Office (PO) · Public Telephone (T) · Parking (P) · Information (i)",
     "when": "Any OS map-symbol question. Saves time vs looking up the key.",
-    "example": "Asked 'what's at grid 1245?' — recognise the cross icon as a church without checking the legend."
+    "example": "Asked 'what's at grid 1245?' — recognise the cross icon as a church without checking the legend.",
+    "context": "OS map symbols appear on every map skills paper. The legend is on the map but checking it for every symbol wastes minutes. Memorising the most common 10 means you read the map fluently — which lets you focus on the question, not the lookup.",
+    "worked_example": {
+      "scenario": "Question: 'Identify three features at grid square 1234 on the OS map.'",
+      "steps": [
+        "Cross with circle = church with steeple.",
+        "PH letters = pub.",
+        "P square = parking.",
+        "(Plus you can describe roads, rivers, contours visible at the same square.)"
+      ],
+      "outcome": "Three identified, full marks. Without memorisation you'd flip back to the legend three times and run out of time."
+    }
   },
   {
     "id": "geo-coast-stack",
@@ -850,7 +1404,19 @@
     "tagline": "Coastal erosion sequence",
     "decode": "Cliff (vertical face) → Cave → Arch (cave breaks through) → Stack (arch collapses, tower remains) → Stump (stack erodes to base).",
     "when": "Any coastal landforms question.",
-    "example": "Old Harry Rocks (Dorset): textbook stack-and-stump example. Will eventually erode into stumps."
+    "example": "Old Harry Rocks (Dorset): textbook stack-and-stump example. Will eventually erode into stumps.",
+    "context": "The coastal erosion sequence is a classic exam question — describe how a stack forms. The four stages (cliff → arch → stack → stump) tell the whole story; miss one and the chain breaks.",
+    "worked_example": {
+      "scenario": "Question: 'Explain how a coastal stack forms over time.'",
+      "steps": [
+        "Stage 1 — Cliff: waves attack a vertical rock face, hitting cracks (hydraulic action) and grinding (abrasion).",
+        "Stage 2 — Cave: a crack widens into a cave at the base.",
+        "Stage 3 — Arch: cave breaks all the way through the headland.",
+        "Stage 4 — Stack: arch collapses; the top falls in, leaving an isolated tower.",
+        "Stage 5 — Stump: the stack erodes down to a low rock at sea level. (Old Harry Rocks, Dorset, is a textbook stack-and-stump.)"
+      ],
+      "outcome": "Five named stages, named example. Top-band — the named UK example earns an extra 'use of case study' mark."
+    }
   },
   {
     "id": "comp-powers-2",
@@ -883,7 +1449,18 @@
     "tagline": "Cybersecurity principles",
     "decode": "Confidentiality · Integrity · Availability",
     "when": "Any security question — the three goals of any security system.",
-    "example": "Encrypting a file = Confidentiality. Hash check = Integrity. Backup server = Availability."
+    "example": "Encrypting a file = Confidentiality. Hash check = Integrity. Backup server = Availability.",
+    "context": "Cybersecurity questions sound complicated but boil down to three goals: keep data Confidential (only authorised people see it), Intact (no tampering), and Available (you can actually access it when needed). Lose any one and you've got a security failure.",
+    "worked_example": {
+      "scenario": "Question: 'A hospital is hit by ransomware that locks all patient files. Which part of the CIA Triad has been broken?'",
+      "steps": [
+        "Confidentiality: are the files leaked? Maybe not — they're encrypted but not stolen.",
+        "Integrity: have they been changed? They're locked but the data inside is intact.",
+        "Availability: can the hospital ACCESS them? NO — they're locked.",
+        "Therefore the broken pillar is AVAILABILITY."
+      ],
+      "outcome": "Identified the pillar, named why. Two-mark question, two marks earned. Without the framework you'd say 'something bad happened'."
+    }
   },
   {
     "id": "comp-fde",
@@ -939,7 +1516,18 @@
     "tagline": "OSI 7 layers (top to bottom)",
     "decode": "Application · Presentation · Session · Transport · Network · Data Link · Physical",
     "when": "Networking questions. Top sets only — TCP/IP's 4 layers are more practical.",
-    "example": "Email lives at Application. Routers work at Network. Cables are Physical."
+    "example": "Email lives at Application. Routers work at Network. Cables are Physical.",
+    "context": "The OSI model is a 7-layer textbook description of how data travels across networks. It's not what real systems use (TCP/IP is) but it's what exams ask about because it's clean. Memorising the layers means you can locate any networking concept (HTTP at App, IP at Network, etc.).",
+    "worked_example": {
+      "scenario": "Question: 'At which OSI layer does an email application live?'",
+      "steps": [
+        "Recall the mnemonic: All People Seem To Need Data Processing.",
+        "Decode: Application, Presentation, Session, Transport, Network, Data Link, Physical.",
+        "Email is a USER-FACING application (Outlook, Gmail).",
+        "Therefore: Layer 7 — Application."
+      ],
+      "outcome": "Right layer, right reasoning. Without the mnemonic, kids guess and pick Layer 4 (Transport, where TCP lives) — that's the protocol, not the app."
+    }
   },
   {
     "id": "comp-tcp-ip",
@@ -949,7 +1537,18 @@
     "tagline": "What the actual internet uses",
     "decode": "Application · Transport · Internet · Network Access",
     "when": "Modern networking questions. Simpler than OSI, what the real internet runs on.",
-    "example": "HTTP runs at Application. TCP at Transport. IP at Internet. Ethernet at Network Access."
+    "example": "HTTP runs at Application. TCP at Transport. IP at Internet. Ethernet at Network Access.",
+    "context": "TCP/IP is what the actual internet runs on — simpler than OSI's 7 layers. 4 layers, 4 marks if asked to name them. Pair with OSI for full networking coverage.",
+    "worked_example": {
+      "scenario": "Question: 'Name the 4 layers of the TCP/IP model and give an example protocol from each.'",
+      "steps": [
+        "Application: HTTP (web), SMTP (email).",
+        "Transport: TCP (reliable), UDP (fast).",
+        "Internet: IP (addressing).",
+        "Network Access: Ethernet, Wi-Fi (physical link)."
+      ],
+      "outcome": "Four named layers with named protocols = 8 marks possible. Without memorisation you might name 2 and guess at the others."
+    }
   },
   {
     "id": "comp-ram-rom",
@@ -959,7 +1558,18 @@
     "tagline": "Volatile vs not",
     "decode": "RAM: volatile, read+write, temporary (your open programs). ROM: non-volatile, read-only, permanent (BIOS).",
     "when": "Any memory question.",
-    "example": "What holds the BIOS? ROM. What holds your open Word doc? RAM. Power off → RAM loses everything, ROM doesn't."
+    "example": "What holds the BIOS? ROM. What holds your open Word doc? RAM. Power off → RAM loses everything, ROM doesn't.",
+    "context": "The RAM-vs-ROM question is a guaranteed multi-choice trap. Kids confuse them because both are 'memory'. The cheat: RAM is volatile and writable (your open Word doc); ROM is non-volatile and read-only (the BIOS that boots your computer).",
+    "worked_example": {
+      "scenario": "Question: 'When you switch off your computer, why does your unsaved work disappear?'",
+      "steps": [
+        "Unsaved work lives in RAM.",
+        "RAM is VOLATILE — it needs constant power to hold its contents.",
+        "Switch off → power gone → RAM contents gone.",
+        "(ROM, by contrast, holds the BIOS even when power is off — that's why you can switch on and start fresh.)"
+      ],
+      "outcome": "Identified RAM, named the property (volatile), explained why. Three marks. Most-missed answer: 'because it didn't save' — too vague."
+    }
   },
   {
     "id": "comp-search-algos",
@@ -969,7 +1579,19 @@
     "tagline": "Two ways to find an item",
     "decode": "Linear: check one-by-one (any list, slow). Binary: halve each time (sorted only, fast).",
     "when": "Any search algorithm question.",
-    "example": "Find 7 in [1,3,5,7,9,11]: Linear checks 1,3,5,7 (4 steps). Binary checks middle (5 — too low) → right half (9 — too high) → left of that (7 ✓) (3 steps)."
+    "example": "Find 7 in [1,3,5,7,9,11]: Linear checks 1,3,5,7 (4 steps). Binary checks middle (5 — too low) → right half (9 — too high) → left of that (7 ✓) (3 steps).",
+    "context": "Searching is the most-tested algorithm in KS3. Two methods: Linear (slow but works on anything) vs Binary (fast but requires sorted data). Knowing the trade-off lets you justify which to use in any question.",
+    "worked_example": {
+      "scenario": "Find the number 7 in [1, 3, 5, 7, 9, 11] using binary search.",
+      "steps": [
+        "List is sorted? YES → binary search is allowed.",
+        "Step 1: Look at middle (5). 7 > 5 → go RIGHT.",
+        "Step 2: New middle (9). 7 < 9 → go LEFT.",
+        "Step 3: Only 7 remains. Found.",
+        "Took 3 comparisons. Linear search would have taken 4."
+      ],
+      "outcome": "Binary search executed correctly, comparison count given. Bonus mark for noting the speed advantage."
+    }
   },
   {
     "id": "comp-bubble-sort",
@@ -979,7 +1601,17 @@
     "tagline": "Big numbers bubble to the top",
     "decode": "Compare adjacent pairs. Swap if wrong order. Repeat passes until no swaps needed.",
     "when": "Any sorting question. Easy to trace; not the fastest but commonly tested.",
-    "example": "[3,1,2] → pass 1: [1,2,3]. Pass 2: no swaps → done."
+    "example": "[3,1,2] → pass 1: [1,2,3]. Pass 2: no swaps → done.",
+    "context": "Bubble sort is the easiest sorting algorithm to trace through by hand. Examiners love it because they can give you a list and say 'show each pass' — and your working is the answer. Memorise the rule and you can trace any list.",
+    "worked_example": {
+      "scenario": "Use bubble sort on [3, 1, 2]. Show each pass.",
+      "steps": [
+        "Pass 1: compare 3 & 1 → swap → [1, 3, 2]. Compare 3 & 2 → swap → [1, 2, 3].",
+        "Pass 2: compare 1 & 2 → no swap. Compare 2 & 3 → no swap.",
+        "No swaps in pass 2 → sort complete."
+      ],
+      "outcome": "Sorted list + pass count. Examiner can follow your working and award method marks even if you slip on a final answer."
+    }
   },
   {
     "id": "comp-algo-vs-program",
@@ -989,7 +1621,18 @@
     "tagline": "Logic vs implementation",
     "decode": "Algorithm = the recipe (logic, language-free). Program = the implementation (code in a real language).",
     "when": "Any 'what's the difference' question on this topic.",
-    "example": "Algorithm: 'add two numbers'. Program: Python `sum = a + b`. Same algorithm, different programs in different languages."
+    "example": "Algorithm: 'add two numbers'. Program: Python `sum = a + b`. Same algorithm, different programs in different languages.",
+    "context": "An algorithm is the IDEA of how to solve something — language-free. A program is that idea written in a specific language (Python, Java, Scratch). Examiners ask 'what's the difference?' and want both halves named.",
+    "worked_example": {
+      "scenario": "Question: 'What's the difference between an algorithm and a program?'",
+      "steps": [
+        "Algorithm: the recipe — a step-by-step PLAN, written in pseudocode, English, or a flowchart. No specific language.",
+        "Program: the same plan IMPLEMENTED in a real programming language.",
+        "Example: 'add two numbers' is the algorithm. `sum = a + b` (in Python) is the program.",
+        "Same algorithm can become many different programs (Python, JavaScript, C++)."
+      ],
+      "outcome": "Two clean definitions + concrete example. Top-band 'compare and contrast' answer."
+    }
   },
   {
     "id": "comp-dpaa",
@@ -999,7 +1642,18 @@
     "tagline": "Computational thinking",
     "decode": "Decomposition (break problem down) · Pattern recognition (spot similarities) · Abstraction (ignore irrelevant detail) · Algorithms (write the steps)",
     "when": "Any 'how do you approach a problem' question.",
-    "example": "Building a calculator: D break into add/sub/mul/div, P spot the same input pattern, A ignore screen colour for now, A write the steps."
+    "example": "Building a calculator: D break into add/sub/mul/div, P spot the same input pattern, A ignore screen colour for now, A write the steps.",
+    "context": "Computational thinking sounds vague but it's actually 4 specific skills you can name: Decomposition, Pattern recognition, Abstraction, Algorithms. Use them as a framework for any 'how would you solve this problem?' question.",
+    "worked_example": {
+      "scenario": "Question: 'How would you design a calculator app using computational thinking?'",
+      "steps": [
+        "Decomposition: break it into smaller jobs — addition, subtraction, multiplication, division, display, input.",
+        "Pattern recognition: notice that all four operations follow the same shape (take 2 numbers, return 1).",
+        "Abstraction: ignore irrelevant details (button colour, app name) for now; focus on the maths.",
+        "Algorithms: write the steps for each operation in pseudocode."
+      ],
+      "outcome": "Four named pillars applied to a real problem = top-band. Without the framework you'd just describe a calculator."
+    }
   },
   {
     "id": "comp-cyber-threats",
@@ -1009,7 +1663,18 @@
     "tagline": "Three cyber threats — don't confuse",
     "decode": "Phishing = fake EMAILS that trick you. Pharming = fake WEBSITES that look real. Spoofing = fake IDENTITY (e.g. caller-ID).",
     "when": "Any cyber-threat multi-choice question. Common trap.",
-    "example": "Email pretending to be your bank → phishing. Site that looks like your bank but isn't → pharming. Caller saying they're from HMRC → spoofing."
+    "example": "Email pretending to be your bank → phishing. Site that looks like your bank but isn't → pharming. Caller saying they're from HMRC → spoofing.",
+    "context": "Phishing, pharming, spoofing — three cyber threats with similar names that get confused on multi-choice. The cheat: phishing uses fake EMAILS, pharming uses fake WEBSITES, spoofing uses fake IDENTITY (caller-ID, sender-ID).",
+    "worked_example": {
+      "scenario": "Question: 'You receive an email pretending to be from your bank. What kind of attack is this?'",
+      "steps": [
+        "Email-based attack tricking you into giving information → matches PHISHING.",
+        "Not pharming (no fake website yet, just an email).",
+        "Not spoofing (the attacker isn't impersonating a person directly — they're impersonating an organisation via email).",
+        "Answer: phishing."
+      ],
+      "outcome": "Named threat, ruled out the others, gave reasoning. Three marks earned, classic distinction nailed."
+    }
   },
   {
     "id": "comp-html-tags",
@@ -1019,7 +1684,18 @@
     "tagline": "Open and close",
     "decode": "Most tags need an opening and a closing: <p>...</p>. Some are self-closing: <br>, <img>.",
     "when": "Web design tasks. Common KS3 trick: spot a missing closing tag.",
-    "example": "<h1>Title</h1><p>Body</p> — both open AND close. <br> just goes by itself."
+    "example": "<h1>Title</h1><p>Body</p> — both open AND close. <br> just goes by itself.",
+    "context": "Web design tasks want kids to spot or fix HTML errors. The classic trap: a missing closing tag breaks the page. Knowing tags come in pairs (with two exceptions) means you can debug HTML at a glance.",
+    "worked_example": {
+      "scenario": "Find the error in this HTML: <h1>Title<h1><p>This is a paragraph.</p>",
+      "steps": [
+        "Look for opening tags: <h1>, <h1> (twice — that's wrong), <p>.",
+        "Look for closing tags: </p>. Where's the </h1>?",
+        "Line 1 has TWO opening <h1> tags and zero closing </h1> tags.",
+        "Fix: change the second <h1> to </h1> → <h1>Title</h1><p>This is a paragraph.</p>."
+      ],
+      "outcome": "Spotted the error, named the rule, gave the fix. Top-band debug answer."
+    }
   },
   {
     "id": "comp-bin-add",
@@ -1029,7 +1705,19 @@
     "tagline": "Carry the 1",
     "decode": "0+0=0. 0+1=1. 1+1=10 (carry the 1). 1+1+1=11 (write 1, carry 1).",
     "when": "Any binary-addition question.",
-    "example": "1011 + 0110: column 1 (1+0=1), column 2 (1+1=10, carry), column 3 (0+1+1=10, carry), column 4 (1+0+1=10) → 10001."
+    "example": "1011 + 0110: column 1 (1+0=1), column 2 (1+1=10, carry), column 3 (0+1+1=10, carry), column 4 (1+0+1=10) → 10001.",
+    "context": "Binary addition appears on every CS paper. The rules are simple — 1+1 gives 10 (carry the 1) — but easy to fluff under pressure. Memorising the patterns once means you never make a digit mistake again.",
+    "worked_example": {
+      "scenario": "Add the binary numbers 1011 + 0110.",
+      "steps": [
+        "Right-most column: 1 + 0 = 1. Write 1.",
+        "Next: 1 + 1 = 10. Write 0, carry 1.",
+        "Next: 0 + 1 + carry-1 = 10. Write 0, carry 1.",
+        "Next: 1 + 0 + carry-1 = 10. Write 0, carry 1.",
+        "Final carry: 1. Result: 10001."
+      ],
+      "outcome": "1011 + 0110 = 10001 (which is 17 in decimal — a quick sanity check: 11 + 6 = 17 ✓)."
+    }
   },
   {
     "id": "fr-vandertramp",
@@ -1061,7 +1749,21 @@
     "tagline": "Memorising MRS VANDERTRAMP",
     "decode": "All MRS VANDERTRAMP verbs describe MOVING in/out of a house — going up, down, in, out, arriving, leaving, returning.",
     "when": "Stuck remembering the list? Visualise a house and the actions you do around it.",
-    "example": "monter (go up), descendre (go down), entrer (enter), sortir (leave), arriver (arrive), partir (depart). House logic."
+    "example": "monter (go up), descendre (go down), entrer (enter), sortir (leave), arriver (arrive), partir (depart). House logic.",
+    "context": "MRS VANDERTRAMP is 17 verbs to memorise — most kids forget half of them. The House Trick is the unlock: every verb in the list describes MOVING in or out of a house. Visualise the actions and the list comes back in order.",
+    "worked_example": {
+      "scenario": "Recall the MRS VANDERTRAMP verbs using the House Trick.",
+      "steps": [
+        "You ARRIVE at the house (arriver).",
+        "You ENTER (entrer).",
+        "You go UP the stairs (monter).",
+        "You STAY in your room (rester).",
+        "You come DOWN (descendre).",
+        "You GO out (sortir) — and PARTIR (leave) at the end.",
+        "Plus the life-events ones: NAÎTRE (born), MOURIR (die), TOMBER (fall), etc."
+      ],
+      "outcome": "Visual story = recallable list. Most kids forget 'tomber' and 'naître'; the house image keeps them anchored."
+    }
   },
   {
     "id": "fr-bangs",
@@ -1071,7 +1773,18 @@
     "tagline": "Adjectives BEFORE the noun",
     "decode": "Beauty · Age · Number · Goodness · Size",
     "when": "Most French adjectives go AFTER the noun, but BANGS go BEFORE.",
-    "example": "Une belle voiture (beauty — before). Un petit chien (size — before). Une voiture rouge (colour — after)."
+    "example": "Une belle voiture (beauty — before). Un petit chien (size — before). Une voiture rouge (colour — after).",
+    "context": "Most French adjectives go AFTER the noun (la voiture rouge), but a small set goes BEFORE. BANGS is the 5-letter list of categories: Beauty, Age, Number, Goodness, Size. Get the order wrong and you sound like a tourist; get it right and your French jumps a level.",
+    "worked_example": {
+      "scenario": "Translate: 'a beautiful little red car'.",
+      "steps": [
+        "Beautiful = Beauty (BANGS) → BEFORE the noun.",
+        "Little = Size (BANGS) → BEFORE the noun.",
+        "Red = colour (NOT in BANGS) → AFTER the noun.",
+        "Result: 'une belle petite voiture rouge'."
+      ],
+      "outcome": "Three adjectives correctly placed, native-sounding French. The kid who said 'une rouge petite belle voiture' got everything wrong."
+    }
   },
   {
     "id": "fr-careful",
@@ -1105,7 +1818,18 @@
     "tagline": "Unlock conversation",
     "decode": "Qui (who) · Quoi/Que (what) · Où (where) · Quand (when) · Pourquoi (why) · Comment (how) · Combien (how many)",
     "when": "Year 7 essential. Memorise all 7 — they unlock asking ANY question.",
-    "example": "Où habites-tu? (where do you live?). Comment ça va? (how are you?). Combien ça coûte? (how much does it cost?)."
+    "example": "Où habites-tu? (where do you live?). Comment ça va? (how are you?). Combien ça coûte? (how much does it cost?).",
+    "context": "You can't have a conversation without question words. The 7 (qui/quoi/où/quand/pourquoi/comment/combien) cover essentially every question you'd ask in French — and they're in the speaking + listening exam every year. Memorise them as a unit.",
+    "worked_example": {
+      "scenario": "Year 7 speaking task: ask three personal questions in French.",
+      "steps": [
+        "OÙ habites-tu? (Where do you live?)",
+        "QUEL âge as-tu? (How old are you? — uses combien/quel age framework.)",
+        "QUAND est ton anniversaire? (When is your birthday?)",
+        "Bonus: COMMENT t'appelles-tu? (What's your name?) — uses comment."
+      ],
+      "outcome": "Four functional questions in 30 seconds — exactly what a Year-7 oral exam wants."
+    }
   },
   {
     "id": "fr-er-endings",
@@ -1137,7 +1861,18 @@
     "tagline": "Regular -ir verbs",
     "decode": "je -is · tu -is · il/elle -it · nous -issons · vous -issez · ils -issent",
     "when": "Any regular -IR verb. Note the -iss- in plural forms.",
-    "example": "Finir (to finish): je finis, tu finis, il finit, nous finissons, vous finissez, ils finissent."
+    "example": "Finir (to finish): je finis, tu finis, il finit, nous finissons, vous finissez, ils finissent.",
+    "context": "After mastering -ER verbs, -IR is the next group. The endings are different (note the -iss- in plural forms), which trips up students who try to apply -ER patterns. Memorising the -IR set unlocks another big chunk of vocabulary.",
+    "worked_example": {
+      "scenario": "Conjugate 'finir' (to finish) in the present tense.",
+      "steps": [
+        "Stem: fin- (drop the -ir).",
+        "je finis · tu finis · il/elle finit (singular endings: -is, -is, -it).",
+        "nous finissons · vous finissez · ils finissent (plural — note the -iss-).",
+        "Same pattern works for choisir, réussir, grandir."
+      ],
+      "outcome": "Six conjugations from one mnemonic. The -iss- in plurals is the trap; once you've memorised it, you don't fall in."
+    }
   },
   {
     "id": "fr-re-endings",
@@ -1147,7 +1882,18 @@
     "tagline": "Regular -re verbs",
     "decode": "je -s · tu -s · il/elle (no ending) · nous -ons · vous -ez · ils -ent",
     "when": "Any regular -RE verb. Note: il/elle has NO ending added.",
-    "example": "Vendre (to sell): je vends, tu vends, il vend, nous vendons, vous vendez, ils vendent."
+    "example": "Vendre (to sell): je vends, tu vends, il vend, nous vendons, vous vendez, ils vendent.",
+    "context": "-RE verbs are the third group, less common than -ER but still essential. The trap: il/elle has NO ENDING ADDED (just the bare stem). Most kids automatically add an -e — wrong.",
+    "worked_example": {
+      "scenario": "Conjugate 'vendre' (to sell) in the present tense.",
+      "steps": [
+        "Stem: vend- (drop the -re).",
+        "je vends · tu vends · il/elle VEND (no extra letter).",
+        "nous vendons · vous vendez · ils vendent.",
+        "Same pattern: répondre, attendre, perdre."
+      ],
+      "outcome": "Six conjugations correct. The 'il vend' trap claims most kids — they write 'il vende' from instinct."
+    }
   },
   {
     "id": "fr-imperfect-vs-perfect",
@@ -1157,7 +1903,17 @@
     "tagline": "Two past tenses, one trick",
     "decode": "Imperfect = background / used to / was -ing. Perfect = single completed event.",
     "when": "Any past-tense question. The trick: one is the SETTING, the other is the ACTION.",
-    "example": "'I was eating (imperfect — background) when she arrived (perfect — single event).' Il mangeait quand elle est arrivée."
+    "example": "'I was eating (imperfect — background) when she arrived (perfect — single event).' Il mangeait quand elle est arrivée.",
+    "context": "Two French past tenses, used differently: imperfect for BACKGROUND or ONGOING actions, perfect for COMPLETED single events. Mixing them up makes your French sound off; using both correctly puts you in the top band immediately.",
+    "worked_example": {
+      "scenario": "Translate: 'I was eating when she arrived.'",
+      "steps": [
+        "'I was eating' = ongoing background action → IMPERFECT → 'je mangeais'.",
+        "'She arrived' = single completed event → PERFECT → 'elle est arrivée'.",
+        "Combine: 'Je mangeais quand elle est arrivée.'"
+      ],
+      "outcome": "Both tenses in one sentence, used correctly. This single construction earns top-band marks in any KS3 French essay."
+    }
   },
   {
     "id": "fr-a-vs-de",
@@ -1167,7 +1923,18 @@
     "tagline": "To/at vs of/from",
     "decode": "À = to / at (location, direction). De = of / from (origin, possession).",
     "when": "Any preposition question.",
-    "example": "Je vais à Paris (I'm going TO Paris). Je viens de Londres (I come FROM London). Le livre de Marie (Marie's book)."
+    "example": "Je vais à Paris (I'm going TO Paris). Je viens de Londres (I come FROM London). Le livre de Marie (Marie's book).",
+    "context": "À means TO/AT (where you're going); de means OF/FROM (where you came from or what something belongs to). Year 7s use them interchangeably; getting them right sounds instantly more French.",
+    "worked_example": {
+      "scenario": "Translate: 'I'm going TO Paris and I come FROM London.'",
+      "steps": [
+        "'Going TO' → use à. 'Je vais à Paris.'",
+        "'Come FROM' → use de. 'Je viens de Londres.'",
+        "Bonus: possession also uses de — 'le livre de Marie' = 'Marie's book' (literally: the book of Marie).",
+        "À + le = au; de + le = du. À + la = à la; de + la = de la (don't combine before feminine)."
+      ],
+      "outcome": "Both prepositions, plus the contraction rule. This is the kind of detail that flips a B answer into an A."
+    }
   },
   {
     "id": "fr-avoir-age",
@@ -1199,7 +1966,19 @@
     "tagline": "French numbers break the pattern",
     "decode": "70 = soixante-dix (60+10). 80 = quatre-vingts (4×20). 90 = quatre-vingt-dix (4×20+10).",
     "when": "Any number question above 69. Belgians/Swiss say septante/octante/nonante (easier!) but exam wants the French version.",
-    "example": "78 = soixante-dix-huit (60+18). 95 = quatre-vingt-quinze (4×20+15)."
+    "example": "78 = soixante-dix-huit (60+18). 95 = quatre-vingt-quinze (4×20+15).",
+    "context": "French counting works fine until 69. Then 70 becomes 'sixty-ten', 80 becomes 'four-twenties', and 90 becomes 'four-twenties-ten'. It's weird and it trips everyone up. Memorise these three odd ones and the rest of counting falls into place.",
+    "worked_example": {
+      "scenario": "Say 95 in French.",
+      "steps": [
+        "70 = soixante-dix (60 + 10).",
+        "80 = quatre-vingts (4 × 20).",
+        "90 = quatre-vingt-dix (4 × 20 + 10).",
+        "95 = 90 + 5 = quatre-vingt-quinze (literally '4 × 20 + 15').",
+        "Belgians and Swiss say 'septante, octante, nonante' — easier — but the exam wants the French version."
+      ],
+      "outcome": "Quatre-vingt-quinze. The kid who said 'nonante-cinq' technically said 95 (in Belgian French), but lost the mark because the exam expects standard French."
+    }
   },
   {
     "id": "fr-articles",
@@ -1209,7 +1988,18 @@
     "tagline": "Definite articles by gender",
     "decode": "Le = masculine. La = feminine. L' = before vowel sound (le → l'). Les = plural (any gender).",
     "when": "Always check gender BEFORE writing — wrong article = wrong adjective ending too.",
-    "example": "Le chien (m), la chatte (f), l'école (vowel start), les chiens (plural). Note: -e ending often feminine but exceptions exist (le problème)."
+    "example": "Le chien (m), la chatte (f), l'école (vowel start), les chiens (plural). Note: -e ending often feminine but exceptions exist (le problème).",
+    "context": "Every French noun has a gender — masculine (le) or feminine (la). Get it wrong and you get the adjective ending wrong, which cascades. The articles are the quickest way to lock in gender, plus they tell you when to apostrophise (l').",
+    "worked_example": {
+      "scenario": "Add the right article to: ___ chien, ___ école, ___ chats.",
+      "steps": [
+        "chien = masculine → LE chien.",
+        "école = starts with a vowel → L' (apostrophe), regardless of gender.",
+        "chats = plural → LES chats.",
+        "Trap: many -e endings are feminine (la table) but exceptions exist (le problème, le système)."
+      ],
+      "outcome": "Three correct articles, plus the apostrophe rule. This is foundational — every adjective and pronoun afterwards depends on getting these right."
+    }
   },
   {
     "id": "fr-wow-phrases",
@@ -1219,6 +2009,18 @@
     "tagline": "Instant top-band marks",
     "decode": "À mon avis (in my opinion) · Il faut que (it's necessary that) · J'aimerais bien (I'd really like) · C'est-à-dire (that is to say) · D'une part... d'autre part (on one hand... on the other)",
     "when": "Any writing or speaking task. Memorise 5-6 of these and slot them in.",
-    "example": "À mon avis, le sport est important parce qu'il faut être en forme. (In my opinion, sport is important because one must be fit.)"
+    "example": "À mon avis, le sport est important parce qu'il faut être en forme. (In my opinion, sport is important because one must be fit.)",
+    "context": "Year 7 speaking and writing tasks are usually marked on grammar AND on the use of 'sophisticated language'. Drop one of these phrases into an essay and the marker bumps you a band — they signal you've moved past Year 7 vocabulary.",
+    "worked_example": {
+      "scenario": "Year 7 essay: write your opinion on whether sport is important. Use a 'wow' phrase.",
+      "steps": [
+        "Plain: 'I think sport is important because you need to be fit.'",
+        "Wow upgrade: 'À mon avis, le sport est important parce qu'il faut être en forme.'",
+        "'À mon avis' = in my opinion (sophisticated framing).",
+        "'il faut' = it is necessary (Year 9-level construction).",
+        "Bonus phrases: c'est-à-dire (that is to say), j'aimerais bien (I would really like)."
+      ],
+      "outcome": "Same idea, two upgraded phrases, one band higher. Memorise 5-6 of these and you've banked easy marks for life."
+    }
   }
 ]
