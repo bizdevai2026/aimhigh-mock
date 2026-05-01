@@ -17,10 +17,10 @@ import {
   writeJson as storageWriteJson,
   readString as storageReadString,
   writeString as storageWriteString
-} from "../../platform/storage.js?v=20260611";
+} from "../../platform/storage.js?v=20260612";
 
-import { todayIso, isoWeekStart } from "../../shared/dates.js?v=20260611";
-import { shouldSkipWrites } from "./policy.js?v=20260611";
+import { todayIso, isoWeekStart } from "../../shared/dates.js?v=20260612";
+import { shouldSkipWrites } from "./policy.js?v=20260612";
 
 const KEY = "aimhigh-mock-week";
 const KEY_LAST_HIT = "aimhigh-mock-week-last-hit-day";

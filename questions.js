@@ -24,9 +24,9 @@
 // two stay in lockstep; if they ever drift the smoke test fails
 // before the build can be deployed.
 
-import { readSeen, weakTopics } from "./engagement.js?v=20260611";
-import * as logger from "./platform/logger.js?v=20260611";
-import { validateQuestions, reportProblems } from "./diagnostics/schema-validator.js?v=20260611";
+import { readSeen, weakTopics } from "./engagement.js?v=20260612";
+import * as logger from "./platform/logger.js?v=20260612";
+import { validateQuestions, reportProblems } from "./diagnostics/schema-validator.js?v=20260612";
 
 const SUBJECTS = [
   { id: "science",   name: "Science"          },

@@ -12,8 +12,8 @@
 // auth check at the top of every page that isn't welcome.html or
 // landing.html.
 
-import { signedInRole } from "./session.js?v=20260611";
-import { readJson } from "../platform/storage.js?v=20260611";
+import { signedInRole } from "./session.js?v=20260612";
+import { readJson } from "../platform/storage.js?v=20260612";
 
 const PREFIX = "aimhigh-mock-";
 

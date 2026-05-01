@@ -27,15 +27,15 @@ import {
   clearLegacyProfile,
   migratedChildName,
   startDemoSession
-} from "./profile.js?v=20260611";
+} from "./profile.js?v=20260612";
 
-import { playWelcomeStinger } from "./sounds.js?v=20260611";
-import * as logger from "./platform/logger.js?v=20260611";
-import { escapeHtml, escapeAttr, byId } from "./shared/dom.js?v=20260611";
+import { playWelcomeStinger } from "./sounds.js?v=20260612";
+import * as logger from "./platform/logger.js?v=20260612";
+import { escapeHtml, escapeAttr, byId } from "./shared/dom.js?v=20260612";
 
 // Dev diagnostics panel — only when ?diag=1 in the URL.
 if (/[?&]diag=1\b/.test(location.search)) {
-  import("./diagnostics/panel.js?v=20260611").catch(function (e) {
+  import("./diagnostics/panel.js?v=20260612").catch(function (e) {
     logger.error("diag", "panel failed to load", e);
   });
 }

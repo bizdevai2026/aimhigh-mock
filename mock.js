@@ -17,22 +17,31 @@ import {
   todayIso,
   weakTopics,
   isPaused
-} from "./engagement.js?v=20260611";
+} from "./engagement.js?v=20260612";
 
-import { readSoundOn, toggleSound } from "./sounds.js?v=20260611";
-import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260611";
-import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260611";
-import { readString as storageReadString, writeString as storageWriteString } from "./platform/storage.js?v=20260611";
-import * as logger from "./platform/logger.js?v=20260611";
-import { escapeHtml } from "./shared/dom.js?v=20260611";
+import { readSoundOn, toggleSound } from "./sounds.js?v=20260612";
+import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260612";
+import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260612";
+import { readString as storageReadString, writeString as storageWriteString } from "./platform/storage.js?v=20260612";
+import * as logger from "./platform/logger.js?v=20260612";
+import { escapeHtml } from "./shared/dom.js?v=20260612";
 
 // Dev / parent diagnostics panel. ?diag=1 in the URL loads it; otherwise
 // the import is never resolved (zero cost on normal page loads).
 if (/[?&]diag=1\b/.test(location.search)) {
-  import("./diagnostics/panel.js?v=20260611").catch(function (e) {
+  import("./diagnostics/panel.js?v=20260612").catch(function (e) {
     logger.error("diag", "panel failed to load", e);
   });
 }
+
+// Trial-mode click/event tracker. The module imports cheaply but binds
+// no listeners unless the trial-active flag is set in localStorage.
+// Activated/deactivated via the diag panel toggle. See diagnostics/trial.js.
+import("./diagnostics/trial.js?v=20260612").then(function (mod) {
+  if (mod && typeof mod.bindGlobal === "function") mod.bindGlobal();
+}).catch(function (e) {
+  logger.error("trial", "tracker failed to bind", e);
+});
 
 function $(id) { return document.getElementById(id); }
 

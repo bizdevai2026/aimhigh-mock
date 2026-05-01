@@ -20,7 +20,7 @@
 // migrate consumers to import directly from domain/engagement/<area>.js;
 // once the last consumer moves over, this file can be deleted.
 
-export { todayIso, isoOffset, isoWeekStart } from "./shared/dates.js?v=20260611";
+export { todayIso, isoOffset, isoWeekStart } from "./shared/dates.js?v=20260612";
 
 export {
   isDemoMode,
@@ -29,17 +29,17 @@ export {
   shouldSkipWrites,
   readExamDate,
   writeExamDate
-} from "./domain/engagement/policy.js?v=20260611";
+} from "./domain/engagement/policy.js?v=20260612";
 
-export { readStreak } from "./domain/engagement/streak.js?v=20260611";
-export { readXpToday } from "./domain/engagement/xp.js?v=20260611";
-export { readWeek } from "./domain/engagement/week.js?v=20260611";
+export { readStreak } from "./domain/engagement/streak.js?v=20260612";
+export { readXpToday } from "./domain/engagement/xp.js?v=20260612";
+export { readWeek } from "./domain/engagement/week.js?v=20260612";
 
 export {
   readSeen,
   markSeen,
   isDue
-} from "./domain/engagement/scheduler.js?v=20260611";
+} from "./domain/engagement/scheduler.js?v=20260612";
 
 export {
   readResults,
@@ -48,9 +48,9 @@ export {
   noteMiss,
   weakTopics,
   noteSessionResult
-} from "./domain/engagement/results.js?v=20260611";
+} from "./domain/engagement/results.js?v=20260612";
 
 export {
   topicLadder,
   subjectLadder
-} from "./domain/engagement/ladder.js?v=20260611";
+} from "./domain/engagement/ladder.js?v=20260612";
