@@ -32,15 +32,15 @@ import {
   playWrong,
   playStreak3,
   playStreak5
-} from "../media/sounds.js?v=20260613";
+} from "../media/sounds.js?v=20260614";
 
 import {
   hapticCorrect,
   hapticWrong,
   hapticStrike
-} from "../media/haptics.js?v=20260613";
+} from "../media/haptics.js?v=20260614";
 
-import { triggerBolt } from "./strike.js?v=20260613";
+import { triggerBolt } from "./strike.js?v=20260614";
 
 function isStreakPeak(n) {
   if (n === 3) return true;
