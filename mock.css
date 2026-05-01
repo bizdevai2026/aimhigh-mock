@@ -2433,12 +2433,13 @@ section.mock-learn-cta {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 220px;
+  /* No max-height: the SVG should render at its natural width-based
+     height so the viewBox scales 1:1 with width. Capping height was
+     scaling fonts down to ~7px on phone, which was the "tiny labels
+     and clipped 'nucleus' → leus'" complaint. */
   position: relative;
   z-index: 1;
-}
-@media (max-width: 380px) {
-  .mock-visual-svg { max-height: 170px; }
+  overflow: visible;
 }
 
 /* AI-hybrid: PNG backdrop layered under the SVG. The <img> uses

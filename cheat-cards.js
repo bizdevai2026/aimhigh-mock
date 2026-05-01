@@ -42,11 +42,11 @@
 // worked examples. Front prompt comes from card.prompt or is derived
 // from the mnemonic at runtime.
 
-import "./mock.js?v=20260609";
-import { listSubjects, subjectName } from "./questions.js?v=20260609";
-import { subjectTone } from "./shared/subjects.js?v=20260609";
-import { escapeHtml, match } from "./shared/dom.js?v=20260609";
-import { readJson, writeJson } from "./platform/storage.js?v=20260609";
+import "./mock.js?v=20260610";
+import { listSubjects, subjectName } from "./questions.js?v=20260610";
+import { subjectTone } from "./shared/subjects.js?v=20260610";
+import { escapeHtml, match } from "./shared/dom.js?v=20260610";
+import { readJson, writeJson } from "./platform/storage.js?v=20260610";
 
 const STATE_KEY_V1 = "aimhigh-mock-cheat-cards-memorised";        // legacy
 const STATE_KEY_V2 = "aimhigh-mock-cheat-cards-state-v2";

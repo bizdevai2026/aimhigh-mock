@@ -39,7 +39,7 @@ const VISUALS = {
 
   // Animal vs plant cell — side-by-side with external callout labels.
   "cell-comparison": [
-    '<svg viewBox="0 0 360 200" role="img" aria-label="Animal and plant cell comparison" class="mock-visual-svg">',
+    '<svg viewBox="0 0 360 200" role="img" aria-label="Animal and plant cell comparison" overflow="visible" class="mock-visual-svg">',
       '<defs>',
         '<radialGradient id="cellAniRef" cx="50%" cy="40%">',
           '<stop offset="0%" stop-color="#243054"/>',
@@ -58,13 +58,18 @@ const VISUALS = {
         '<ellipse cx="20" cy="20" rx="5" ry="2.5" fill="#ffd13a" opacity="0.85"/>',
         '<ellipse cx="-24" cy="22" rx="5" ry="2.5" fill="#ffd13a" opacity="0.85"/>',
       '</g>',
-      '<g font-family="Outfit, sans-serif" font-size="8.5" fill="#c4cce0" font-weight="500">',
-        '<line x1="83" y1="100" x2="20" y2="55" stroke="#6da7ff" stroke-width="0.8" opacity="0.6"/>',
-        '<text x="14" y="51" text-anchor="end">nucleus</text>',
-        '<line x1="107" y1="88" x2="155" y2="60" stroke="#ffd13a" stroke-width="0.8" opacity="0.6"/>',
-        '<text x="158" y="56">mitochondrion</text>',
-        '<line x1="40" y1="115" x2="14" y2="148" stroke="#6da7ff" stroke-width="0.8" opacity="0.6"/>',
-        '<text x="14" y="160">cell membrane</text>',
+      '<g font-family="Outfit, sans-serif" font-size="11" fill="#c4cce0" font-weight="500">',
+        // Labels positioned safely INSIDE the viewBox (origin 0,0 → 360,200).
+        // Earlier version put nucleus + cell-membrane labels at x=14 with
+        // text-anchor="end" so the words extended OUT of the viewBox to the
+        // left. On phone-sized renders the parent .mock-visual-stack clips
+        // overflow and the user saw "leus" instead of "nucleus".
+        '<line x1="83" y1="100" x2="38" y2="55" stroke="#6da7ff" stroke-width="0.8" opacity="0.6"/>',
+        '<text x="36" y="51" text-anchor="end">nucleus</text>',
+        '<line x1="107" y1="88" x2="158" y2="60" stroke="#ffd13a" stroke-width="0.8" opacity="0.6"/>',
+        '<text x="160" y="56">mitochondrion</text>',
+        '<line x1="42" y1="115" x2="42" y2="155" stroke="#6da7ff" stroke-width="0.8" opacity="0.6"/>',
+        '<text x="40" y="167" text-anchor="middle">cell membrane</text>',
       '</g>',
       '<g transform="translate(275, 100)">',
         '<rect x="-55" y="-45" width="110" height="90" rx="6" fill="#1a2440" stroke="#6da7ff" stroke-width="2.5"/>',
@@ -75,7 +80,7 @@ const VISUALS = {
         '<ellipse cx="0" cy="25" rx="7" ry="3.5" fill="#5eead4" opacity="0.9"/>',
         '<ellipse cx="22" cy="18" rx="7" ry="3.5" fill="#5eead4" opacity="0.9"/>',
       '</g>',
-      '<g font-family="Outfit, sans-serif" font-size="8.5" fill="#c4cce0" font-weight="500">',
+      '<g font-family="Outfit, sans-serif" font-size="11" fill="#c4cce0" font-weight="500">',
         '<line x1="220" y1="60" x2="195" y2="40" stroke="#6da7ff" stroke-width="0.8" opacity="0.6"/>',
         '<text x="190" y="36" text-anchor="end">cell wall</text>',
         '<line x1="275" y1="120" x2="260" y2="148" stroke="#5eead4" stroke-width="0.8" opacity="0.6"/>',
@@ -90,7 +95,7 @@ const VISUALS = {
 
   // Particle states — solid lattice / liquid cluster / gas spread.
   "particle-states": [
-    '<svg viewBox="0 0 360 180" role="img" aria-label="Particle arrangement in solid, liquid and gas" class="mock-visual-svg">',
+    '<svg viewBox="0 0 360 180" role="img" aria-label="Particle arrangement in solid, liquid and gas" overflow="visible" class="mock-visual-svg">',
       '<defs>',
         '<linearGradient id="psBox" x1="0%" x2="0%" y1="0%" y2="100%">',
           '<stop offset="0%" stop-color="#243054"/>',
@@ -129,7 +134,7 @@ const VISUALS = {
         '<text x="296" y="28" text-anchor="middle" fill="#ffd13a">GAS</text>',
       '</g>',
       // kinetic-energy footnote
-      '<g font-family="Outfit, sans-serif" font-size="8" fill="#8a92a8" text-anchor="middle">',
+      '<g font-family="Outfit, sans-serif" font-size="11" fill="#8a92a8" text-anchor="middle">',
         '<text x="64" y="158">low energy · fixed</text>',
         '<text x="180" y="158">medium · flowing</text>',
         '<text x="296" y="158">high · free</text>',
@@ -139,7 +144,7 @@ const VISUALS = {
 
   // pH scale — coloured bar with neutral marker, acid/alkali chips.
   "ph-scale": [
-    '<svg viewBox="0 0 360 130" role="img" aria-label="pH scale from 0 to 14" class="mock-visual-svg">',
+    '<svg viewBox="0 0 360 130" role="img" aria-label="pH scale from 0 to 14" overflow="visible" class="mock-visual-svg">',
       '<defs>',
         '<linearGradient id="phGrad" x1="0%" y1="0%" x2="100%" y2="0%">',
           '<stop offset="0%" stop-color="#dc2626"/>',
@@ -181,7 +186,7 @@ const VISUALS = {
       // neutral marker
       '<line x1="188" y1="42" x2="188" y2="80" stroke="#5eead4" stroke-width="1.5"/>',
       '<rect x="166" y="14" width="44" height="16" rx="3" fill="#1a2440" stroke="#5eead4" stroke-width="1"/>',
-      '<text x="188" y="25" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" font-weight="700" fill="#5eead4" letter-spacing="0.1em">NEUTRAL</text>',
+      '<text x="188" y="25" text-anchor="middle" font-family="Outfit, sans-serif" font-size="11" font-weight="700" fill="#5eead4" letter-spacing="0.1em">NEUTRAL</text>',
       // acid / alkali chips below
       '<g font-family="Outfit, sans-serif" font-weight="700" font-size="9" letter-spacing="0.1em">',
         '<rect x="40" y="92" width="60" height="20" rx="4" fill="#1a2440" stroke="#ff5e3a" stroke-width="1"/>',
@@ -190,7 +195,7 @@ const VISUALS = {
         '<text x="290" y="106" text-anchor="middle" fill="#6da7ff">ALKALI</text>',
       '</g>',
       // tiny example labels
-      '<g font-family="Outfit, sans-serif" font-size="7.5" fill="#8a92a8">',
+      '<g font-family="Outfit, sans-serif" font-size="10" fill="#8a92a8">',
         '<text x="44" y="124" text-anchor="middle">lemon</text>',
         '<text x="164" y="124" text-anchor="middle">water</text>',
         '<text x="284" y="124" text-anchor="middle">soap</text>',
@@ -200,7 +205,7 @@ const VISUALS = {
 
   // Sound wave — sine + amplitude + wavelength callouts.
   "sound-wave": [
-    '<svg viewBox="0 0 360 150" role="img" aria-label="Sound wave with amplitude and wavelength" class="mock-visual-svg">',
+    '<svg viewBox="0 0 360 150" role="img" aria-label="Sound wave with amplitude and wavelength" overflow="visible" class="mock-visual-svg">',
       '<defs>',
         '<linearGradient id="swGrad" x1="0%" x2="0%" y1="0%" y2="100%">',
           '<stop offset="0%" stop-color="rgba(255,94,58,0.35)"/>',
@@ -240,7 +245,7 @@ const VISUALS = {
 
   // Function machine — input + 5 × 2 → output.
   "function-machine": [
-    '<svg viewBox="0 0 360 110" role="img" aria-label="Function machine: input through two operations to output" class="mock-visual-svg">',
+    '<svg viewBox="0 0 360 110" role="img" aria-label="Function machine: input through two operations to output" overflow="visible" class="mock-visual-svg">',
       '<defs>',
         '<linearGradient id="fmIn" x1="0%" x2="0%" y1="0%" y2="100%">',
           '<stop offset="0%" stop-color="rgba(94,234,212,0.18)"/>',
@@ -277,7 +282,7 @@ const VISUALS = {
       '<rect x="272" y="34" width="74" height="36" rx="8" fill="url(#fmOut)" stroke="#ffd13a" stroke-width="1.8"/>',
       '<text x="309" y="58" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="11" fill="#ffd13a">output</text>',
       // axis-style labels above
-      '<g font-family="Outfit, sans-serif" font-size="8" fill="#8a92a8" text-anchor="middle" letter-spacing="0.12em">',
+      '<g font-family="Outfit, sans-serif" font-size="11" fill="#8a92a8" text-anchor="middle" letter-spacing="0.12em">',
         '<text x="44" y="22">x</text>',
         '<text x="130" y="22">+5</text>',
         '<text x="216" y="22">×2</text>',
@@ -290,7 +295,7 @@ const VISUALS = {
 
   // Distance-time graph — fast / slow / stationary, gradient fills.
   "distance-time": [
-    '<svg viewBox="0 0 360 220" role="img" aria-label="Distance-time graph: fast, slow, stationary" class="mock-visual-svg">',
+    '<svg viewBox="0 0 360 220" role="img" aria-label="Distance-time graph: fast, slow, stationary" overflow="visible" class="mock-visual-svg">',
       '<defs>',
         '<linearGradient id="dtFastFill" x1="0%" x2="0%" y1="0%" y2="100%">',
           '<stop offset="0%" stop-color="rgba(255,94,58,0.35)"/>',
@@ -342,7 +347,7 @@ const VISUALS = {
 
   // Feudal pyramid — gradient pyramid, numbered tiers, exchange flows.
   "feudal-pyramid": [
-    '<svg viewBox="0 0 280 240" role="img" aria-label="Feudal pyramid: King, Barons, Knights, Peasants" class="mock-visual-svg">',
+    '<svg viewBox="0 0 280 240" role="img" aria-label="Feudal pyramid: King, Barons, Knights, Peasants" overflow="visible" class="mock-visual-svg">',
       '<defs>',
         '<linearGradient id="pyrGrad" x1="0%" x2="0%" y1="0%" y2="100%">',
           '<stop offset="0%" stop-color="#ffd13a"/>',
@@ -376,7 +381,7 @@ const VISUALS = {
         '<text x="140" y="178" text-anchor="middle" font-size="9" fill="#5eead4">PEASANTS</text>',
         '<text x="140" y="188" text-anchor="middle" font-size="6.5" fill="#8a92a8" font-weight="500" letter-spacing="0">~1.5 million</text>',
       '</g>',
-      '<g font-family="Outfit, sans-serif" font-size="7.5" fill="#c4cce0" opacity="0.85">',
+      '<g font-family="Outfit, sans-serif" font-size="10" fill="#c4cce0" opacity="0.85">',
         '<text x="40" y="60" text-anchor="middle">↓ grants</text>',
         '<text x="40" y="105" text-anchor="middle">↓ titles</text>',
         '<text x="40" y="150" text-anchor="middle">↓ duties</text>',
@@ -391,7 +396,7 @@ const VISUALS = {
 
   // River meander — survey-map style, callout chips outside the channel.
   "river-meander": [
-    '<svg viewBox="0 0 360 200" role="img" aria-label="River meander showing erosion and deposition" class="mock-visual-svg">',
+    '<svg viewBox="0 0 360 200" role="img" aria-label="River meander showing erosion and deposition" overflow="visible" class="mock-visual-svg">',
       '<defs>',
         '<linearGradient id="rivCobalt" x1="0%" x2="0%" y1="0%" y2="100%">',
           '<stop offset="0%" stop-color="#3a4d7a"/>',
@@ -412,23 +417,23 @@ const VISUALS = {
       '<g stroke="#6da7ff" stroke-width="1.4" fill="#6da7ff">',
         '<line x1="40" y1="55" x2="68" y2="55"/>',
         '<polyline points="62,51 68,55 62,59" fill="none"/>',
-        '<text x="22" y="48" font-family="Outfit, sans-serif" font-size="8.5" fill="#6da7ff" font-weight="600" letter-spacing="0.1em">FLOW</text>',
+        '<text x="22" y="48" font-family="Outfit, sans-serif" font-size="11" fill="#6da7ff" font-weight="600" letter-spacing="0.1em">FLOW</text>',
       '</g>',
       '<g>',
         '<circle cx="120" cy="78" r="3" fill="#ff5e3a"/>',
         '<line x1="120" y1="78" x2="135" y2="40" stroke="#ff5e3a" stroke-width="1" opacity="0.7"/>',
         '<rect x="135" y="22" width="105" height="32" rx="4" fill="#1a2440" stroke="#ff5e3a" stroke-width="1"/>',
         '<text x="187" y="36" text-anchor="middle" font-family="Outfit, sans-serif" font-size="9" font-weight="700" fill="#ff5e3a" letter-spacing="0.1em">EROSION</text>',
-        '<text x="187" y="48" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#c4cce0">outer bank · fast flow</text>',
+        '<text x="187" y="48" text-anchor="middle" font-family="Outfit, sans-serif" font-size="11" fill="#c4cce0">outer bank · fast flow</text>',
       '</g>',
       '<g>',
         '<circle cx="220" cy="118" r="3" fill="#5eead4"/>',
         '<line x1="220" y1="118" x2="235" y2="160" stroke="#5eead4" stroke-width="1" opacity="0.7"/>',
         '<rect x="180" y="160" width="120" height="32" rx="4" fill="#1a2440" stroke="#5eead4" stroke-width="1"/>',
         '<text x="240" y="174" text-anchor="middle" font-family="Outfit, sans-serif" font-size="9" font-weight="700" fill="#5eead4" letter-spacing="0.1em">DEPOSITION</text>',
-        '<text x="240" y="186" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#c4cce0">inner bank · slow flow</text>',
+        '<text x="240" y="186" text-anchor="middle" font-family="Outfit, sans-serif" font-size="11" fill="#c4cce0">inner bank · slow flow</text>',
       '</g>',
-      '<g font-family="Outfit, sans-serif" font-size="7.5" fill="#8a92a8">',
+      '<g font-family="Outfit, sans-serif" font-size="10" fill="#8a92a8">',
         '<line x1="300" y1="190" x2="345" y2="190" stroke="#8a92a8" stroke-width="1"/>',
         '<line x1="300" y1="187" x2="300" y2="193" stroke="#8a92a8"/>',
         '<line x1="345" y1="187" x2="345" y2="193" stroke="#8a92a8"/>',
@@ -439,7 +444,7 @@ const VISUALS = {
 
   // Coastal erosion sequence — cliff → arch → stack → stump, with arrows.
   "coast-stack": [
-    '<svg viewBox="0 0 360 180" role="img" aria-label="Coastal erosion sequence" class="mock-visual-svg">',
+    '<svg viewBox="0 0 360 180" role="img" aria-label="Coastal erosion sequence" overflow="visible" class="mock-visual-svg">',
       '<defs>',
         '<linearGradient id="rockGrad" x1="0%" x2="0%" y1="0%" y2="100%">',
           '<stop offset="0%" stop-color="#3a4565"/>',
@@ -485,7 +490,7 @@ const VISUALS = {
       // 4. stump
       '<rect x="305" y="105" width="36" height="20" fill="url(#rockGrad)" stroke="#6da7ff" stroke-width="1.2"/>',
       // chip labels
-      '<g font-family="Outfit, sans-serif" font-weight="700" font-size="8.5" letter-spacing="0.08em">',
+      '<g font-family="Outfit, sans-serif" font-weight="700" font-size="11" letter-spacing="0.08em">',
         '<rect x="22" y="148" width="44" height="18" rx="3" fill="#1a2440" stroke="#6da7ff" stroke-width="1"/>',
         '<text x="44" y="160" text-anchor="middle" fill="#6da7ff">CLIFF</text>',
         '<rect x="110" y="148" width="46" height="18" rx="3" fill="#1a2440" stroke="#6da7ff" stroke-width="1"/>',
@@ -496,13 +501,13 @@ const VISUALS = {
         '<text x="323" y="160" text-anchor="middle" fill="#ffd13a">STUMP</text>',
       '</g>',
       // direction-of-erosion footnote
-      '<text x="180" y="20" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#8a92a8" letter-spacing="0.1em">EROSION OVER TIME →</text>',
+      '<text x="180" y="20" text-anchor="middle" font-family="Outfit, sans-serif" font-size="11" fill="#8a92a8" letter-spacing="0.1em">EROSION OVER TIME →</text>',
     '</svg>'
   ].join(""),
 
   // Contour rings — concentric ellipses with height chips.
   "contour-hill": [
-    '<svg viewBox="0 0 280 180" role="img" aria-label="Contour rings showing a hill summit" class="mock-visual-svg">',
+    '<svg viewBox="0 0 280 180" role="img" aria-label="Contour rings showing a hill summit" overflow="visible" class="mock-visual-svg">',
       '<defs>',
         '<radialGradient id="hillGrad" cx="50%" cy="50%">',
           '<stop offset="0%" stop-color="rgba(255,209,58,0.18)"/>',
@@ -521,7 +526,7 @@ const VISUALS = {
       // summit marker
       '<circle cx="140" cy="90" r="3" fill="#ffd13a"/>',
       // height chips on the right side of each ring
-      '<g font-family="Outfit, sans-serif" font-size="8" font-weight="700">',
+      '<g font-family="Outfit, sans-serif" font-size="11" font-weight="700">',
         '<rect x="245" y="84" width="32" height="14" rx="3" fill="#1a2440" stroke="#ffd13a" stroke-width="1"/>',
         '<text x="261" y="94" text-anchor="middle" fill="#ffd13a">100</text>',
         '<rect x="184" y="68" width="28" height="13" rx="3" fill="#1a2440" stroke="#ff5e3a" stroke-width="1"/>',
@@ -542,7 +547,7 @@ const VISUALS = {
 
   // Solar system — sun + 8 planets, gradient orbital line, glow on sun.
   "solar-system": [
-    '<svg viewBox="0 0 360 110" role="img" aria-label="Solar system: Sun and eight planets in order" class="mock-visual-svg">',
+    '<svg viewBox="0 0 360 110" role="img" aria-label="Solar system: Sun and eight planets in order" overflow="visible" class="mock-visual-svg">',
       '<defs>',
         '<linearGradient id="orbitGrad" x1="0%" x2="100%">',
           '<stop offset="0%" stop-color="rgba(255,209,58,0.4)"/>',
@@ -570,7 +575,7 @@ const VISUALS = {
       '<circle cx="298" cy="50" r="7"   fill="#a3e8e0"/>',
       '<circle cx="332" cy="50" r="7"   fill="#3a6dc8"/>',
       // chip names
-      '<g font-family="Outfit, sans-serif" font-size="7.5" fill="#c4cce0" text-anchor="middle" font-weight="600" letter-spacing="0.04em">',
+      '<g font-family="Outfit, sans-serif" font-size="10" fill="#c4cce0" text-anchor="middle" font-weight="600" letter-spacing="0.04em">',
         '<text x="36"  y="92" fill="#ffd13a" font-weight="700" font-size="9">SUN</text>',
         '<text x="84"  y="92">Mercury</text>',
         '<text x="108" y="92">Venus</text>',
@@ -588,7 +593,7 @@ const VISUALS = {
 
   // Triangle types — equilateral, isosceles, right-angled — with markers.
   "triangle-types": [
-    '<svg viewBox="0 0 360 150" role="img" aria-label="Triangle types: equilateral, isosceles, right-angled" class="mock-visual-svg">',
+    '<svg viewBox="0 0 360 150" role="img" aria-label="Triangle types: equilateral, isosceles, right-angled" overflow="visible" class="mock-visual-svg">',
       '<defs>',
         '<linearGradient id="triFill" x1="0%" x2="0%" y1="0%" y2="100%">',
           '<stop offset="0%" stop-color="rgba(109,167,255,0.22)"/>',
@@ -616,7 +621,7 @@ const VISUALS = {
         '<polyline points="312,100 312,92 320,92"/>',
       '</g>',
       // chip labels
-      '<g font-family="Outfit, sans-serif" font-weight="700" font-size="8.5" letter-spacing="0.06em">',
+      '<g font-family="Outfit, sans-serif" font-weight="700" font-size="11" letter-spacing="0.06em">',
         '<rect x="38" y="116" width="84" height="20" rx="3" fill="#1a2440" stroke="#5eead4" stroke-width="1"/>',
         '<text x="80" y="130" text-anchor="middle" fill="#5eead4">EQUILATERAL</text>',
         '<rect x="158" y="116" width="84" height="20" rx="3" fill="#1a2440" stroke="#5eead4" stroke-width="1"/>',
@@ -629,7 +634,7 @@ const VISUALS = {
 
   // Polygon family — pentagon, hexagon, octagon, side counts.
   "polygon-family": [
-    '<svg viewBox="0 0 360 150" role="img" aria-label="Pentagon, hexagon and octagon" class="mock-visual-svg">',
+    '<svg viewBox="0 0 360 150" role="img" aria-label="Pentagon, hexagon and octagon" overflow="visible" class="mock-visual-svg">',
       '<defs>',
         '<linearGradient id="polyFill" x1="0%" x2="0%" y1="0%" y2="100%">',
           '<stop offset="0%" stop-color="rgba(94,234,212,0.22)"/>',
@@ -658,7 +663,7 @@ const VISUALS = {
 
   // Powers grid — 1², 2², 3², 4², 5² as actual squares.
   "powers-grid": [
-    '<svg viewBox="0 0 360 150" role="img" aria-label="Square numbers shown as actual squares" class="mock-visual-svg">',
+    '<svg viewBox="0 0 360 150" role="img" aria-label="Square numbers shown as actual squares" overflow="visible" class="mock-visual-svg">',
       '<defs>',
         '<linearGradient id="pwrFill" x1="0%" x2="0%" y1="0%" y2="100%">',
           '<stop offset="0%" stop-color="rgba(255,209,58,0.30)"/>',
@@ -668,7 +673,7 @@ const VISUALS = {
       // 1²
       '<rect x="20" y="100" width="16" height="16" fill="url(#pwrFill)" stroke="#ffd13a" stroke-width="1.2"/>',
       '<text x="28" y="132" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="11" fill="#ffd13a">1²</text>',
-      '<text x="28" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#c4cce0" font-weight="500">= 1</text>',
+      '<text x="28" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-size="11" fill="#c4cce0" font-weight="500">= 1</text>',
       // 2²
       '<rect x="60" y="84" width="32" height="32" fill="url(#pwrFill)" stroke="#ffd13a" stroke-width="1.2"/>',
       '<g stroke="#ffd13a" stroke-width="0.4" opacity="0.5">',
@@ -676,7 +681,7 @@ const VISUALS = {
         '<line x1="60" y1="100" x2="92" y2="100"/>',
       '</g>',
       '<text x="76" y="132" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="11" fill="#ffd13a">2²</text>',
-      '<text x="76" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#c4cce0" font-weight="500">= 4</text>',
+      '<text x="76" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-size="11" fill="#c4cce0" font-weight="500">= 4</text>',
       // 3²
       '<rect x="116" y="68" width="48" height="48" fill="url(#pwrFill)" stroke="#ff5e3a" stroke-width="1.2"/>',
       '<g stroke="#ff5e3a" stroke-width="0.4" opacity="0.5">',
@@ -686,7 +691,7 @@ const VISUALS = {
         '<line x1="116" y1="100" x2="164" y2="100"/>',
       '</g>',
       '<text x="140" y="132" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="11" fill="#ff5e3a">3²</text>',
-      '<text x="140" y="58" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#c4cce0" font-weight="500">= 9</text>',
+      '<text x="140" y="58" text-anchor="middle" font-family="Outfit, sans-serif" font-size="11" fill="#c4cce0" font-weight="500">= 9</text>',
       // 4²
       '<rect x="196" y="52" width="64" height="64" fill="url(#pwrFill)" stroke="#ff5e3a" stroke-width="1.2"/>',
       '<g stroke="#ff5e3a" stroke-width="0.4" opacity="0.5">',
@@ -698,11 +703,11 @@ const VISUALS = {
         '<line x1="196" y1="100" x2="260" y2="100"/>',
       '</g>',
       '<text x="228" y="132" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="11" fill="#ff5e3a">4²</text>',
-      '<text x="228" y="42" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#c4cce0" font-weight="500">= 16</text>',
+      '<text x="228" y="42" text-anchor="middle" font-family="Outfit, sans-serif" font-size="11" fill="#c4cce0" font-weight="500">= 16</text>',
       // 5²
       '<rect x="276" y="36" width="80" height="80" fill="url(#pwrFill)" stroke="#6da7ff" stroke-width="1.2"/>',
       '<text x="316" y="132" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="11" fill="#6da7ff">5²</text>',
-      '<text x="316" y="26" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#c4cce0" font-weight="500">= 25</text>',
+      '<text x="316" y="26" text-anchor="middle" font-family="Outfit, sans-serif" font-size="11" fill="#c4cce0" font-weight="500">= 25</text>',
     '</svg>'
   ].join(""),
 
@@ -710,7 +715,7 @@ const VISUALS = {
 
   // Skeleton — clean stick figure, callout chips outside.
   "skeleton": [
-    '<svg viewBox="0 0 240 230" role="img" aria-label="Simplified human skeleton with key bones" class="mock-visual-svg">',
+    '<svg viewBox="0 0 240 230" role="img" aria-label="Simplified human skeleton with key bones" overflow="visible" class="mock-visual-svg">',
       '<defs>',
         '<radialGradient id="boneGlow" cx="50%" cy="50%">',
           '<stop offset="0%" stop-color="rgba(109,167,255,0.06)"/>',
@@ -739,7 +744,7 @@ const VISUALS = {
         '<line x1="140" y1="190" x2="146" y2="218" stroke="#ff5e3a"/>',
       '</g>',
       // callout chips
-      '<g font-family="Outfit, sans-serif" font-size="8.5" font-weight="700" letter-spacing="0.06em">',
+      '<g font-family="Outfit, sans-serif" font-size="11" font-weight="700" letter-spacing="0.06em">',
         '<line x1="134" y1="36" x2="180" y2="20" stroke="#6da7ff" stroke-width="0.8" opacity="0.6"/>',
         '<rect x="180" y="10" width="56" height="18" rx="3" fill="#1a2440" stroke="#6da7ff" stroke-width="1"/>',
         '<text x="208" y="22" text-anchor="middle" fill="#6da7ff">SKULL</text>',
@@ -760,7 +765,7 @@ const VISUALS = {
 
   // Word classes — eight chips in 2x4 grid, colour-coded example sentence.
   "word-classes-chart": [
-    '<svg viewBox="0 0 360 210" role="img" aria-label="The eight main word classes with examples" class="mock-visual-svg">',
+    '<svg viewBox="0 0 360 210" role="img" aria-label="The eight main word classes with examples" overflow="visible" class="mock-visual-svg">',
       // grid of 8 chips, each with class name + example
       '<g font-family="Outfit, sans-serif">',
         // row 1
@@ -796,39 +801,39 @@ const VISUALS = {
           '<tspan fill="#ffb088">The</tspan> <tspan fill="#ffd13a">huge</tspan> <tspan fill="#6da7ff">dog</tspan> <tspan fill="#ff5e3a">barked</tspan> <tspan fill="#5eead4">loudly</tspan> <tspan fill="#c0a3f5">under</tspan> <tspan fill="#ffb088">the</tspan> <tspan fill="#6da7ff">table</tspan>.',
         '</text>',
       '</g>',
-      '<text x="180" y="172" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#8a92a8" letter-spacing="0.08em">DET · ADJ · NOUN · VERB · ADV · PREP · DET · NOUN</text>',
+      '<text x="180" y="172" text-anchor="middle" font-family="Outfit, sans-serif" font-size="11" fill="#8a92a8" letter-spacing="0.08em">DET · ADJ · NOUN · VERB · ADV · PREP · DET · NOUN</text>',
       '<text x="180" y="196" text-anchor="middle" font-family="Outfit, sans-serif" font-size="9" fill="#c4cce0" font-style="italic" opacity="0.85">every word in a sentence belongs to a class</text>',
     '</svg>'
   ].join(""),
 
   // Figurative-language quick reference — five technique cards.
   "figurative-quick-ref": [
-    '<svg viewBox="0 0 360 230" role="img" aria-label="Quick reference for figurative language techniques" class="mock-visual-svg">',
+    '<svg viewBox="0 0 360 230" role="img" aria-label="Quick reference for figurative language techniques" overflow="visible" class="mock-visual-svg">',
       '<g font-family="Outfit, sans-serif">',
         // SIMILE
         '<rect x="14" y="14" width="160" height="50" rx="6" fill="rgba(109,167,255,0.12)" stroke="#6da7ff" stroke-width="1.2"/>',
         '<text x="22" y="30" font-weight="700" font-size="10" fill="#6da7ff" letter-spacing="0.08em">SIMILE</text>',
-        '<text x="22" y="44" font-size="8.5" fill="#c4cce0">uses <tspan font-weight="700" fill="#f0f4ff">like</tspan> or <tspan font-weight="700" fill="#f0f4ff">as</tspan></text>',
+        '<text x="22" y="44" font-size="11" fill="#c4cce0">uses <tspan font-weight="700" fill="#f0f4ff">like</tspan> or <tspan font-weight="700" fill="#f0f4ff">as</tspan></text>',
         '<text x="22" y="58" font-size="9" font-style="italic" fill="#8a92a8">"as quiet as a mouse"</text>',
         // METAPHOR
         '<rect x="184" y="14" width="160" height="50" rx="6" fill="rgba(255,94,58,0.12)" stroke="#ff5e3a" stroke-width="1.2"/>',
         '<text x="192" y="30" font-weight="700" font-size="10" fill="#ff5e3a" letter-spacing="0.08em">METAPHOR</text>',
-        '<text x="192" y="44" font-size="8.5" fill="#c4cce0">says it <tspan font-weight="700" fill="#f0f4ff">is</tspan> something else</text>',
+        '<text x="192" y="44" font-size="11" fill="#c4cce0">says it <tspan font-weight="700" fill="#f0f4ff">is</tspan> something else</text>',
         '<text x="192" y="58" font-size="9" font-style="italic" fill="#8a92a8">"the classroom was a zoo"</text>',
         // PERSONIFICATION
         '<rect x="14" y="76" width="160" height="50" rx="6" fill="rgba(255,209,58,0.12)" stroke="#ffd13a" stroke-width="1.2"/>',
         '<text x="22" y="92" font-weight="700" font-size="10" fill="#ffd13a" letter-spacing="0.08em">PERSONIFICATION</text>',
-        '<text x="22" y="106" font-size="8.5" fill="#c4cce0">human action for a non-human</text>',
+        '<text x="22" y="106" font-size="11" fill="#c4cce0">human action for a non-human</text>',
         '<text x="22" y="120" font-size="9" font-style="italic" fill="#8a92a8">"the wind whispered"</text>',
         // ALLITERATION
         '<rect x="184" y="76" width="160" height="50" rx="6" fill="rgba(94,234,212,0.12)" stroke="#5eead4" stroke-width="1.2"/>',
         '<text x="192" y="92" font-weight="700" font-size="10" fill="#5eead4" letter-spacing="0.08em">ALLITERATION</text>',
-        '<text x="192" y="106" font-size="8.5" fill="#c4cce0">same starting sound, repeated</text>',
+        '<text x="192" y="106" font-size="11" fill="#c4cce0">same starting sound, repeated</text>',
         '<text x="192" y="120" font-size="9" font-style="italic" fill="#8a92a8">"slithering, slimy snakes"</text>',
         // ONOMATOPOEIA
         '<rect x="100" y="138" width="160" height="50" rx="6" fill="rgba(255,126,185,0.12)" stroke="#ff7eb9" stroke-width="1.2"/>',
         '<text x="108" y="154" font-weight="700" font-size="10" fill="#ff7eb9" letter-spacing="0.08em">ONOMATOPOEIA</text>',
-        '<text x="108" y="168" font-size="8.5" fill="#c4cce0">word sounds like the noise</text>',
+        '<text x="108" y="168" font-size="11" fill="#c4cce0">word sounds like the noise</text>',
         '<text x="108" y="182" font-size="9" font-style="italic" fill="#8a92a8">"bang!" · "splat!"</text>',
       '</g>',
       // footnote
