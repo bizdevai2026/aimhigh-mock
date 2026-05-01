@@ -2859,6 +2859,351 @@ section.mock-learn-cta {
   margin: 0.4rem 1.25rem 2rem;
 }
 
+/* Cheat Cards tile on the LEARN hub — directs to the deck. Sibling of
+   the Study Smart tile but tonally cooler (cobalt-led) since this is the
+   "load these in before the test" content, not the meta-skill primer. */
+.cheat-cards-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.4rem 1.3rem 1.3rem;
+  margin: 0 1.25rem 1.1rem;
+  border-radius: var(--mock-radius-lg);
+  background:
+    linear-gradient(135deg, rgba(109, 167, 255, 0.14) 0%, rgba(94, 234, 212, 0.10) 100%),
+    var(--mock-card);
+  border: 1px solid var(--mock-border-hi);
+  text-decoration: none;
+  color: var(--mock-text);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 32px -16px rgba(109, 167, 255, 0.30);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.cheat-cards-tile::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, var(--mock-cobalt-soft, rgba(109, 167, 255, 0.16)) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cheat-cards-tile:hover, .cheat-cards-tile:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px -16px rgba(109, 167, 255, 0.45);
+  outline: none;
+}
+.cheat-cards-tile-eyebrow {
+  font-family: var(--mock-font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-cobalt);
+  position: relative;
+  z-index: 1;
+}
+.cheat-cards-tile-title {
+  font-family: var(--mock-font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--mock-text-strong);
+  position: relative;
+  z-index: 1;
+}
+.cheat-cards-tile-body {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--mock-text);
+  max-width: 32rem;
+  position: relative;
+  z-index: 1;
+}
+.cheat-cards-tile-cta {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.4rem;
+  font-family: var(--mock-font-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--mock-cobalt);
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================================================================
+   CHEAT CARDS — flippable mnemonic deck (cheat-cards.html)
+   =========================================================================== */
+
+.cheat-progress-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  margin: 1rem 1.25rem 1.4rem;
+  padding: 1rem 1.2rem;
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, rgba(255, 209, 58, 0.12) 0%, rgba(255, 94, 58, 0.10) 100%),
+    var(--mock-card);
+  border: 1px solid var(--mock-border-hi);
+}
+.cheat-progress-banner-num {
+  font-family: var(--mock-font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--mock-fire);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.cheat-progress-banner-label {
+  font-size: 0.85rem;
+  color: var(--mock-text-dim);
+  letter-spacing: 0.04em;
+}
+
+.cheat-subject-tiles {
+  margin: 0 1.25rem;
+}
+.cheat-subject-tile {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto;
+  gap: 0.2rem 0.5rem;
+  padding: 1.1rem 1rem;
+  border-radius: 12px;
+  background: var(--mock-card);
+  border: 1px solid var(--mock-border);
+  border-left: 4px solid var(--tile-color, var(--mock-lime));
+  text-decoration: none;
+  color: var(--mock-text);
+  transition: transform 80ms ease, border-color 80ms ease;
+}
+.cheat-subject-tile:hover, .cheat-subject-tile:focus {
+  transform: translateY(-1px);
+  border-color: var(--tile-color, var(--mock-lime));
+  outline: none;
+}
+.cheat-subject-tile-tag {
+  grid-column: 1;
+  font-family: var(--mock-font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tile-color, var(--mock-lime));
+}
+.cheat-subject-tile-title {
+  grid-column: 1;
+  font-family: var(--mock-font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--mock-text-strong);
+}
+.cheat-subject-tile-count {
+  grid-column: 1;
+  font-size: 0.85rem;
+  color: var(--mock-text-dim);
+}
+.cheat-subject-tile-arrow {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  align-self: center;
+  color: var(--tile-color, var(--mock-lime));
+  font-size: 1.4rem;
+}
+
+/* Deck for one subject. */
+.cheat-deck-meta {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 1.25rem 0.7rem;
+}
+.cheat-deck-count {
+  font-family: var(--mock-font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--mock-text-dim);
+  letter-spacing: 0.06em;
+}
+.cheat-deck {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+  margin: 0 1.25rem 1.4rem;
+}
+@media (min-width: 700px) {
+  .cheat-deck { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1100px) {
+  .cheat-deck { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Card with 3D flip. The .cheat-card is the perspective container;
+   .cheat-card-inner is the rotated layer; .cheat-card-face is each side. */
+.cheat-card {
+  perspective: 1200px;
+  cursor: pointer;
+  user-select: none;
+}
+.cheat-card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+  transform-style: preserve-3d;
+  transition: transform 480ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cheat-card.is-flipped .cheat-card-inner {
+  transform: rotateY(180deg);
+}
+.cheat-card-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  padding: 1.2rem 1.1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--mock-border-hi);
+}
+.cheat-card-front {
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.04) 0%, transparent 60%),
+    linear-gradient(135deg, var(--tile-color, var(--mock-lime)) 0%, var(--mock-card-hi) 80%);
+  background-blend-mode: normal, normal;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  position: relative;
+}
+.cheat-card-back {
+  background: linear-gradient(160deg, var(--mock-card) 0%, var(--mock-card-hi) 100%);
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
+.cheat-card-priority {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  font-family: var(--mock-font-display);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.2rem 0.5rem;
+  background: rgba(15, 23, 41, 0.7);
+  color: var(--mock-fire);
+  border: 1px solid rgba(255, 209, 58, 0.55);
+  border-radius: 999px;
+}
+.cheat-card-mnemonic {
+  font-family: var(--mock-font-display);
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--mock-bg);
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+.cheat-card-tagline {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--mock-bg);
+  opacity: 0.85;
+  margin: 0;
+  max-width: 22rem;
+}
+.cheat-card-flip-hint {
+  position: absolute;
+  bottom: 0.7rem;
+  right: 0.9rem;
+  font-family: var(--mock-font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--mock-bg);
+  opacity: 0.7;
+  letter-spacing: 0.04em;
+}
+.cheat-card-back-label {
+  font-family: var(--mock-font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--tile-color, var(--mock-cobalt));
+  margin: 0 0 0.25rem;
+  text-transform: uppercase;
+}
+.cheat-card-back-label + .cheat-card-back-label { margin-top: 0.7rem; }
+.cheat-card-decode,
+.cheat-card-when,
+.cheat-card-example {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--mock-text);
+  margin: 0 0 0.7rem;
+}
+.cheat-card-decode { color: var(--mock-text-strong); font-weight: 600; }
+.cheat-card-actions {
+  margin-top: auto;
+  padding-top: 0.6rem;
+  display: flex;
+  justify-content: center;
+}
+.cheat-card-mem-btn {
+  font-family: var(--mock-font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.55rem 1rem;
+  background: linear-gradient(135deg, var(--mock-lime), var(--mock-fire));
+  color: var(--mock-bg);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 80ms ease, box-shadow 80ms ease;
+}
+.cheat-card-mem-btn:hover, .cheat-card-mem-btn:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0 18px rgba(255, 94, 58, 0.40);
+  outline: none;
+}
+.cheat-card.is-memorised .cheat-card-mem-btn {
+  background: rgba(94, 234, 212, 0.18);
+  color: var(--mock-cyan);
+  border: 1px solid var(--mock-cyan);
+}
+.cheat-card.is-memorised .cheat-card-front {
+  opacity: 0.8;
+}
+.cheat-card.is-memorised .cheat-card-front::after {
+  content: "✓ Memorised";
+  position: absolute;
+  bottom: 0.7rem;
+  left: 0.9rem;
+  font-family: var(--mock-font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.18rem 0.5rem;
+  background: rgba(15, 23, 41, 0.7);
+  color: var(--mock-cyan);
+  border: 1px solid var(--mock-cyan);
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cheat-card-inner { transition: none; }
+}
+
 /* Print stylesheet — strips chrome and reformats for A4. */
 @media print {
   body { background: white !important; color: black !important; }

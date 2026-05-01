@@ -1,0 +1,970 @@
+[
+  {
+    "id": "sci-mrs-gren",
+    "subject": "science",
+    "topic": "reproduction",
+    "mnemonic": "MRS GREN",
+    "tagline": "The 7 life processes",
+    "decode": "Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition",
+    "when": "Use whenever you're asked 'is X alive?' — run through the 7 letters and check.",
+    "example": "'Is a virus alive?' Run MRS GREN. Viruses fail Respiration and Nutrition (they need a host cell), so the answer is no.",
+    "priority": true
+  },
+  {
+    "id": "sci-oil-rig",
+    "subject": "science",
+    "topic": "chemical-reactions",
+    "mnemonic": "OIL RIG",
+    "tagline": "Oxidation vs reduction",
+    "decode": "Oxidation Is Loss (of electrons), Reduction Is Gain (of electrons)",
+    "when": "Any redox reaction — work out which atom lost or gained electrons.",
+    "example": "Magnesium loses 2 electrons to form Mg²⁺ → that's oxidation. The oxygen gains them → that's reduction.",
+    "priority": true
+  },
+  {
+    "id": "sci-roygbiv",
+    "subject": "science",
+    "topic": "sound-waves",
+    "mnemonic": "ROY G BIV",
+    "tagline": "Visible spectrum order",
+    "decode": "Red, Orange, Yellow, Green, Blue, Indigo, Violet",
+    "when": "Any question about prisms, refraction, the rainbow, or visible light wavelengths.",
+    "example": "Asked to list visible light from longest to shortest wavelength → Red (longest) → Violet (shortest)."
+  },
+  {
+    "id": "sci-reactivity",
+    "subject": "science",
+    "topic": "chemical-reactions",
+    "mnemonic": "Please Stop Calling Me A Careless Zebra",
+    "tagline": "Reactivity series of metals",
+    "decode": "Potassium, Sodium, Calcium, Magnesium, Aluminium, Carbon, Zinc, then Iron, (Hydrogen), Copper, Silver, Gold",
+    "when": "Displacement reactions — the more reactive metal kicks the less reactive one out.",
+    "example": "Iron + copper sulfate → iron sulfate + copper. Iron's higher up so it displaces copper.",
+    "priority": true
+  },
+  {
+    "id": "sci-energy-stores",
+    "subject": "science",
+    "topic": "energy",
+    "mnemonic": "8 Energy Stores",
+    "tagline": "Not 'types' — STORES",
+    "decode": "Kinetic, Gravitational, Elastic, Chemical, Nuclear, Thermal, Magnetic, Electrostatic",
+    "when": "Any question about energy. Examiners now want STORES, not 'types'.",
+    "example": "A stretched bow has elastic store. Released, that becomes kinetic. The arrow at height has gravitational store too."
+  },
+  {
+    "id": "sci-photosynthesis",
+    "subject": "science",
+    "topic": "cells",
+    "mnemonic": "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂",
+    "tagline": "Photosynthesis equation",
+    "decode": "Carbon dioxide + water → glucose + oxygen (with light energy and chlorophyll above the arrow)",
+    "when": "Always write LIGHT and CHLOROPHYLL above the arrow — examiners deduct marks if missing.",
+    "example": "Word equation: 'carbon dioxide plus water makes glucose plus oxygen'. Always include the conditions."
+  },
+  {
+    "id": "sci-fcd",
+    "subject": "science",
+    "topic": "mixtures",
+    "mnemonic": "FCD",
+    "tagline": "Separation techniques",
+    "decode": "Filtration, Crystallisation, Distillation (+ Evaporation, Chromatography)",
+    "when": "Decide which method based on what's being separated.",
+    "example": "Salt from seawater? Distillation. Sand from water? Filtration. Ink colours? Chromatography."
+  },
+  {
+    "id": "sci-man-cells",
+    "subject": "science",
+    "topic": "cells",
+    "mnemonic": "MAN",
+    "tagline": "Organelles in BOTH cell types",
+    "decode": "Mitochondria, A nucleus, Membrane (cell membrane)",
+    "when": "Comparing animal vs plant cells — MAN is the shared set; plants add cell wall + chloroplasts + large vacuole.",
+    "example": "Animal cell = MAN only. Plant cell = MAN + wall + chloroplasts + vacuole."
+  },
+  {
+    "id": "sci-particle-states",
+    "subject": "science",
+    "topic": "particles-states",
+    "mnemonic": "Solid → Liquid → Gas",
+    "tagline": "Particle behaviour by state",
+    "decode": "Solid: tight regular pattern, vibrate only. Liquid: touching but slide. Gas: spread out, fast in all directions.",
+    "when": "Any state-of-matter question. Heat adds energy → particles move more → state changes upward.",
+    "example": "Ice (solid) → water (liquid) at 0°C. Water → steam (gas) at 100°C. The PARTICLES don't change, only their arrangement."
+  },
+  {
+    "id": "sci-force-pairs",
+    "subject": "science",
+    "topic": "forces-motion",
+    "mnemonic": "Newton's Three",
+    "tagline": "The three laws — KS3 short version",
+    "decode": "1: object stays still / moves the same unless a force acts. 2: F = m × a. 3: every action has equal opposite reaction.",
+    "when": "Asked about why something speeds up, slows down, or stays still.",
+    "example": "A ball rolls until friction (a force) slows it. Push a wall — it pushes you back equally hard."
+  },
+  {
+    "id": "sci-acids-ph",
+    "subject": "science",
+    "topic": "acids-alkalis",
+    "mnemonic": "0 ← acid · 7 = neutral · alkali → 14",
+    "tagline": "The pH scale",
+    "decode": "Below 7 = acid. Exactly 7 = neutral (water). Above 7 = alkali. Lower = stronger acid; higher = stronger alkali.",
+    "when": "Any pH question — and remember: lemon juice ≈ 2, water = 7, soap ≈ 9.",
+    "example": "pH 1 is a strong acid (battery acid). pH 14 is a strong alkali (drain cleaner). Vinegar ≈ pH 3."
+  },
+  {
+    "id": "sci-condensation-evaporation",
+    "subject": "science",
+    "topic": "particles-states",
+    "mnemonic": "State Change Words",
+    "tagline": "What's happening + which way",
+    "decode": "Melting/freezing (solid↔liquid). Evaporation/condensation (liquid↔gas). Sublimation (solid→gas direct, e.g. dry ice).",
+    "when": "Always name the precise change — 'melting' beats 'turning into water'.",
+    "example": "Steam on a cold mirror: condensation (gas→liquid). Wet washing drying: evaporation (liquid→gas)."
+  },
+
+  {
+    "id": "math-bidmas",
+    "subject": "maths",
+    "topic": "number",
+    "mnemonic": "BIDMAS",
+    "tagline": "Order of operations",
+    "decode": "Brackets, Indices, Division, Multiplication, Addition, Subtraction",
+    "when": "Any expression with mixed operations. Wrong order = wrong answer.",
+    "example": "3 + 4 × 2 = 11 (not 14). Multiply first because M comes before A.",
+    "priority": true
+  },
+  {
+    "id": "math-foil",
+    "subject": "maths",
+    "topic": "algebra",
+    "mnemonic": "FOIL",
+    "tagline": "Expand two binomials",
+    "decode": "First, Outer, Inner, Last — multiply each pair, then add",
+    "when": "Expanding (a+b)(c+d).",
+    "example": "(x+2)(x+3): F=x·x, O=x·3, I=2·x, L=2·3 → x² + 3x + 2x + 6 → x² + 5x + 6."
+  },
+  {
+    "id": "math-sohcahtoa",
+    "subject": "maths",
+    "topic": "geometry",
+    "mnemonic": "SOH CAH TOA",
+    "tagline": "Trigonometry in right triangles",
+    "decode": "Sin = Opp/Hyp · Cos = Adj/Hyp · Tan = Opp/Adj",
+    "when": "Find a missing side or angle in a right-angled triangle.",
+    "example": "Find an angle when you know opp and adj → use Tan. Tan(θ) = opp/adj → θ = tan⁻¹(opp/adj)."
+  },
+  {
+    "id": "math-kfc",
+    "subject": "maths",
+    "topic": "fractions",
+    "mnemonic": "KFC",
+    "tagline": "Dividing fractions",
+    "decode": "Keep the first fraction, Flip the second, Change ÷ to ×",
+    "when": "Any fraction division question.",
+    "example": "2/3 ÷ 4/5 → Keep 2/3, Flip 4/5 → 5/4, Change ÷ → × → 2/3 × 5/4 = 10/12 = 5/6.",
+    "priority": true
+  },
+  {
+    "id": "math-9-finger",
+    "subject": "maths",
+    "topic": "number",
+    "mnemonic": "9× Finger Trick",
+    "tagline": "Magic 9 times table",
+    "decode": "Hold up 10 fingers. Fold down the n-th finger. Fingers to the LEFT = tens, to the RIGHT = units.",
+    "when": "Any 9 × 1 to 9 × 10 question.",
+    "example": "9 × 7: fold finger 7. 6 fingers left, 3 right → 63."
+  },
+  {
+    "id": "math-11-split",
+    "subject": "maths",
+    "topic": "number",
+    "mnemonic": "11× Split Trick",
+    "tagline": "Multiply by 11 in your head",
+    "decode": "Split the digits, sum them, place sum between (carry if sum > 9).",
+    "when": "Any 11 × 2-digit number.",
+    "example": "11 × 24: split 2_4, sum middle (2+4=6), insert → 264. 11 × 75: 7_(7+5)_5 → 7_(12)_5 → 825."
+  },
+  {
+    "id": "math-squares-club",
+    "subject": "maths",
+    "topic": "powers",
+    "mnemonic": "Squares 1²–15²",
+    "tagline": "Memorise these cold",
+    "decode": "1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225",
+    "when": "Comes up in factorising, surds, Pythagoras, area. Highest-leverage memory work in KS3 maths.",
+    "example": "Area of a square is 144 cm² → side = √144 = 12 cm (instantly).",
+    "priority": true
+  },
+  {
+    "id": "math-cubes-club",
+    "subject": "maths",
+    "topic": "powers",
+    "mnemonic": "Cubes 1³–10³",
+    "tagline": "Less common but huge for volume",
+    "decode": "1, 8, 27, 64, 125, 216, 343, 512, 729, 1000",
+    "when": "Volume questions, cube roots, surds.",
+    "example": "Volume of a cube is 125 cm³ → side = ∛125 = 5 cm."
+  },
+  {
+    "id": "math-prime-rules",
+    "subject": "maths",
+    "topic": "number",
+    "mnemonic": "Prime Rules",
+    "tagline": "Quick prime filters",
+    "decode": "1 is NOT prime. 2 is the only even prime. After 2, all primes end in 1, 3, 7 or 9 (but not all numbers ending in those are prime).",
+    "when": "Asked to list primes or check if a number is prime.",
+    "example": "Is 91 prime? Ends in 1 — possible. But 91 = 7 × 13. Not prime."
+  },
+  {
+    "id": "math-index-laws",
+    "subject": "maths",
+    "topic": "powers",
+    "mnemonic": "Index Laws",
+    "tagline": "Same base — three rules",
+    "decode": "Multiply: ADD powers (xᵃ × xᵇ = xᵃ⁺ᵇ). Divide: SUBTRACT. Power of a power: MULTIPLY. Anything⁰ = 1.",
+    "when": "Simplifying expressions with the same base.",
+    "example": "x³ × x⁴ = x⁷. (x³)² = x⁶. x⁵ ÷ x² = x³."
+  },
+  {
+    "id": "math-averages",
+    "subject": "maths",
+    "topic": "statistics",
+    "mnemonic": "Mean · Median · Mode",
+    "tagline": "Three averages, one trap",
+    "decode": "Mean = aMount divided. Median = Middle (sort first!). Mode = MOst common. Range = highest − lowest.",
+    "when": "Any 'find the average' question. The trap: forgetting to sort before finding the median.",
+    "example": "List: 4, 1, 7, 4, 9. Sorted: 1, 4, 4, 7, 9. Mean = 5. Median = 4. Mode = 4. Range = 8."
+  },
+  {
+    "id": "math-of-means-times",
+    "subject": "maths",
+    "topic": "percentages",
+    "mnemonic": "'Of' Means Times",
+    "tagline": "Percentage of an amount",
+    "decode": "Convert % to decimal (÷ 100). Then multiply.",
+    "when": "Any 'X% of Y' question.",
+    "example": "20% of 60: 0.20 × 60 = 12. 5% of 80: 0.05 × 80 = 4."
+  },
+  {
+    "id": "math-congruence",
+    "subject": "maths",
+    "topic": "geometry",
+    "mnemonic": "SSS · SAS · ASA · RHS",
+    "tagline": "When two triangles are congruent",
+    "decode": "Side-Side-Side · Side-Angle-Side · Angle-Side-Angle · Right-angle-Hypotenuse-Side",
+    "when": "Asked to prove triangles are congruent. SSA is NOT valid (the donkey rule).",
+    "example": "Two triangles with all three pairs of sides equal → SSS → congruent."
+  },
+  {
+    "id": "math-negatives-rules",
+    "subject": "maths",
+    "topic": "negatives",
+    "mnemonic": "Two Signs",
+    "tagline": "Negative arithmetic",
+    "decode": "Same signs multiply/divide → POSITIVE. Different signs → NEGATIVE. Subtracting a negative = adding a positive.",
+    "when": "Any calculation with negative numbers.",
+    "example": "−3 × −4 = 12 (same signs). −3 × 4 = −12 (different). 5 − (−2) = 5 + 2 = 7."
+  },
+
+  {
+    "id": "eng-peel",
+    "subject": "english",
+    "topic": "writing-skills",
+    "mnemonic": "PEEL",
+    "tagline": "Every analysis paragraph",
+    "decode": "Point · Evidence · Explain · Link (back to the question)",
+    "when": "Every body paragraph in an essay or analysis.",
+    "example": "P: The author creates tension. E: 'her hands shook'. E: the verb shows physical fear without saying she's scared. L: this builds the suspense the question asks about.",
+    "priority": true
+  },
+  {
+    "id": "eng-petal",
+    "subject": "english",
+    "topic": "figurative-language",
+    "mnemonic": "PETAL",
+    "tagline": "PEEL upgraded — names the technique",
+    "decode": "Point · Evidence · Technique · Analysis · Link",
+    "when": "Better for poetry/prose analysis — forces you to NAME the device (simile, metaphor, etc.).",
+    "example": "P: tension builds. E: 'lonely as a cloud'. T: simile. A: 'cloud' = isolated and adrift. L: matches the speaker's mood the question asks about."
+  },
+  {
+    "id": "eng-peezl",
+    "subject": "english",
+    "topic": "writing-skills",
+    "mnemonic": "PEEZL",
+    "tagline": "Top-tier paragraph",
+    "decode": "Point · Evidence · Explain · Zoom (one specific word) · Link",
+    "when": "Top-band analysis — Zoom picks ONE word from the quote and analyses connotations.",
+    "example": "Quote: 'crept'. Zoom: 'crept' connotes nervous secrecy — the cat doesn't just walk, it sneaks, suggesting fear."
+  },
+  {
+    "id": "eng-daforest",
+    "subject": "english",
+    "topic": "writing-skills",
+    "mnemonic": "DAFOREST",
+    "tagline": "Persuasive writing devices",
+    "decode": "Direct address · Alliteration · Facts · Opinion · Repetition · Emotive language · Statistics · Triples (rule of three)",
+    "when": "Any persuasive writing task. Aim for at least 5 of the 8.",
+    "example": "Persuasive speech: 'You [DA] won't believe these statistics [S]: 9 in 10 students [F] feel stressed, anxious, overwhelmed [T].'",
+    "priority": true
+  },
+  {
+    "id": "eng-smile",
+    "subject": "english",
+    "topic": "figurative-language",
+    "mnemonic": "SMILE",
+    "tagline": "Poetry analysis framework",
+    "decode": "Structure · Meaning · Imagery · Language · Effect",
+    "when": "Stuck on an unseen poem — run through each letter for ideas.",
+    "example": "S: 14 lines (sonnet). M: about lost love. I: 'wilting flowers'. L: archaic vocabulary. E: feels mournful."
+  },
+  {
+    "id": "eng-flirt",
+    "subject": "english",
+    "topic": "figurative-language",
+    "mnemonic": "FLIRT",
+    "tagline": "Faster poetry framework",
+    "decode": "Form · Language · Imagery · Rhyme · Tone",
+    "when": "Time-pressed unseen poetry questions.",
+    "example": "F: free verse. L: simple, conversational. I: ocean metaphor. R: no scheme. T: contemplative."
+  },
+  {
+    "id": "eng-five-senses",
+    "subject": "english",
+    "topic": "writing-skills",
+    "mnemonic": "5 Senses",
+    "tagline": "Descriptive writing",
+    "decode": "Sight · Sound · Smell · Touch · Taste",
+    "when": "Aim to use at least 3 senses per descriptive paragraph — instantly lifts your writing above peers.",
+    "example": "'The kitchen smelled of cinnamon [smell]. Steam hissed from the pan [sound]. The countertop was cold under her hand [touch].'",
+    "priority": true
+  },
+  {
+    "id": "eng-sonnet",
+    "subject": "english",
+    "topic": "figurative-language",
+    "mnemonic": "Sonnet Structure",
+    "tagline": "Spot it instantly",
+    "decode": "14 lines · ABAB CDCD EFEF GG (Shakespearean) · iambic pentameter (10 syllables, da-DUM × 5)",
+    "when": "Any Shakespeare poem. The final couplet (GG) usually delivers the twist.",
+    "example": "Sonnet 18: 'Shall I compare thee to a summer's day?' — count syllables, count lines. Final couplet flips to immortality."
+  },
+  {
+    "id": "eng-narrative-arc",
+    "subject": "english",
+    "topic": "writing-skills",
+    "mnemonic": "Narrative Arc",
+    "tagline": "Story structure",
+    "decode": "Exposition → Rising Action → Climax → Falling Action → Resolution",
+    "when": "Plan creative writing along this arc — examiners spot a structured story instantly.",
+    "example": "Exposition: introduce the character. Rising: problem grows. Climax: confrontation. Falling: aftermath. Resolution: change."
+  },
+  {
+    "id": "eng-fanboys",
+    "subject": "english",
+    "topic": "punctuation",
+    "mnemonic": "FANBOYS",
+    "tagline": "Coordinating conjunctions",
+    "decode": "For · And · Nor · But · Or · Yet · So",
+    "when": "Joining two complete sentences. Use a comma BEFORE the conjunction.",
+    "example": "'I revised hard, but the test was tough.' Two complete sentences joined with comma + 'but'."
+  },
+  {
+    "id": "eng-semicolon",
+    "subject": "english",
+    "topic": "punctuation",
+    "mnemonic": "Semicolon = Super-Comma",
+    "tagline": "Joins two complete sentences",
+    "decode": "Use a semicolon to join two complete sentences that are closely related, no 'and' needed.",
+    "when": "When two ideas are tightly linked but you want them to feel like one thought.",
+    "example": "'I love revision; it makes me calmer.' Both sides work as standalone sentences."
+  },
+  {
+    "id": "eng-embedded-quotes",
+    "subject": "english",
+    "topic": "writing-skills",
+    "mnemonic": "Embedded Quotations",
+    "tagline": "Slot it in, don't dump it",
+    "decode": "Slot the quote INTO your sentence. Don't free-float it after a colon.",
+    "when": "Every time you quote in an analytical essay.",
+    "example": "Bad: 'She is sad: \"lonely as a cloud\".' Good: 'The narrator describes herself as \"lonely as a cloud\", suggesting isolation.'"
+  },
+  {
+    "id": "eng-show-dont-tell",
+    "subject": "english",
+    "topic": "writing-skills",
+    "mnemonic": "Show, Don't Tell",
+    "tagline": "Better creative writing",
+    "decode": "Describe the symptom, not the emotion. Let the reader infer.",
+    "when": "Creative writing. Replaces flat statements with vivid description.",
+    "example": "Tell: 'She was scared.' Show: 'Her hands trembled as she reached for the door handle.'"
+  },
+  {
+    "id": "eng-sentence-types",
+    "subject": "english",
+    "topic": "sentence-types",
+    "mnemonic": "4 Sentence Types",
+    "tagline": "Vary your sentences",
+    "decode": "Simple · Compound (FANBOYS-joined) · Complex (with subordinate clause) · Compound-Complex",
+    "when": "Vary deliberately. A short one. After a long flowing sentence, makes impact.",
+    "example": "Simple: 'She left.' Compound: 'She left, but he stayed.' Complex: 'She left because he stayed.' Mix all in a paragraph."
+  },
+
+  {
+    "id": "hist-nope",
+    "subject": "history",
+    "topic": "norman-conquest",
+    "mnemonic": "NOPE",
+    "tagline": "Source analysis",
+    "decode": "Nature · Origin · Purpose · Effectiveness (for your specific question)",
+    "when": "Any source analysis question.",
+    "example": "Source: a king's letter (Nature). Written 1530 by Henry VIII (Origin). Purpose: justify the divorce. Effective for the question? Useful but biased.",
+    "priority": true
+  },
+  {
+    "id": "hist-5ws",
+    "subject": "history",
+    "topic": "medieval-england",
+    "mnemonic": "The 5 Ws",
+    "tagline": "Quick source checklist",
+    "decode": "Who · What · When · Where · Why (was it made)",
+    "when": "Always check the basics before analysing. Useful for ANY source.",
+    "example": "Bayeux Tapestry: Who = Norman commissioners. What = embroidered narrative. When = ~1070s. Where = Normandy. Why = celebrate the conquest."
+  },
+  {
+    "id": "hist-persia",
+    "subject": "history",
+    "topic": "english-civil-war",
+    "mnemonic": "PERSIA",
+    "tagline": "Categorising causes",
+    "decode": "Political · Economic · Religious · Social · Intellectual · Artistic",
+    "when": "'Why did X happen?' essays — find at least three different categories.",
+    "example": "Causes of English Civil War: Political (king vs Parliament), Economic (taxes), Religious (Catholic queen). Three categories beats three of the same.",
+    "priority": true
+  },
+  {
+    "id": "hist-1066",
+    "subject": "history",
+    "topic": "norman-conquest",
+    "mnemonic": "1066",
+    "tagline": "Battle of Hastings",
+    "decode": "William of Normandy beats Harold Godwinson at Hastings. Crowned King of England on Christmas Day.",
+    "when": "Year 7 cornerstone date. The single most-tested year in KS3.",
+    "example": "14 October 1066 — Harold killed (arrow through eye, per the Bayeux Tapestry). Norman conquest begins.",
+    "priority": true
+  },
+  {
+    "id": "hist-1215",
+    "subject": "history",
+    "topic": "medieval-england",
+    "mnemonic": "1215",
+    "tagline": "Magna Carta",
+    "decode": "King John forced to sign the Magna Carta at Runnymede — limits royal power.",
+    "when": "Foundation of English legal rights. Examiners love this.",
+    "example": "Barons revolted; John signed under duress. Established that even kings answer to law."
+  },
+  {
+    "id": "hist-1348",
+    "subject": "history",
+    "topic": "black-death",
+    "mnemonic": "1348",
+    "tagline": "Black Death hits England",
+    "decode": "Bubonic plague kills around 1/3 of England's population.",
+    "when": "Massive social/economic consequences — labour shortages, peasant power, decline of feudalism.",
+    "example": "After 1348: fewer peasants → labour valuable → wages rise → Statute of Labourers (1351) tried to cap them."
+  },
+  {
+    "id": "hist-1485",
+    "subject": "history",
+    "topic": "tudors",
+    "mnemonic": "1485",
+    "tagline": "Battle of Bosworth — Tudors begin",
+    "decode": "Henry Tudor defeats Richard III. End of the Wars of the Roses. Start of the Tudor era.",
+    "when": "The 'year the Middle Ages ended' in popular English history.",
+    "example": "Henry VII becomes king, marries Elizabeth of York to unite Lancaster + York. Founds the Tudor dynasty."
+  },
+  {
+    "id": "hist-1534",
+    "subject": "history",
+    "topic": "tudors",
+    "mnemonic": "1534",
+    "tagline": "Act of Supremacy",
+    "decode": "Henry VIII breaks with Rome. Makes himself Supreme Head of the Church of England.",
+    "when": "Core English Reformation date. Triggers monastery dissolution, religious upheaval.",
+    "example": "Henry wanted to divorce Catherine of Aragon; the Pope said no. Solution: become his own Pope."
+  },
+  {
+    "id": "hist-1588",
+    "subject": "history",
+    "topic": "tudors",
+    "mnemonic": "1588",
+    "tagline": "Spanish Armada",
+    "decode": "England (under Elizabeth I) defeats the Spanish invasion fleet.",
+    "when": "Marker of England as a sea power. 'God blew with His winds, and they were scattered.'",
+    "example": "Drake, fireships, Channel storms. Spain's Catholic invasion fails. Elizabeth's reputation cemented."
+  },
+  {
+    "id": "hist-1605",
+    "subject": "history",
+    "topic": "gunpowder-plot",
+    "mnemonic": "1605",
+    "tagline": "Gunpowder Plot",
+    "decode": "Guy Fawkes + co. try to blow up Parliament + James I. Caught the night before.",
+    "when": "'Remember, remember the 5th of November.' Why we have Bonfire Night.",
+    "example": "Catholic conspirators stored 36 barrels of gunpowder under Parliament. Anonymous letter tipped off authorities."
+  },
+  {
+    "id": "hist-1649",
+    "subject": "history",
+    "topic": "english-civil-war",
+    "mnemonic": "1649",
+    "tagline": "Charles I executed",
+    "decode": "Only English king ever executed by his own people. England becomes a republic (briefly).",
+    "when": "Climax of the English Civil War. Cromwell's faction wins.",
+    "example": "Charles tried for treason, beheaded outside Banqueting House, Whitehall. England becomes a 'Commonwealth'."
+  },
+  {
+    "id": "hist-1660",
+    "subject": "history",
+    "topic": "cromwell",
+    "mnemonic": "1660",
+    "tagline": "Restoration",
+    "decode": "Charles II returns from exile. Monarchy restored after 11 years of republic.",
+    "when": "Memorise as a pair with 1649 — down then up.",
+    "example": "Cromwell dies 1658. Son fails. Parliament invites Charles II back. Monarchy back, but limited."
+  },
+  {
+    "id": "hist-1688",
+    "subject": "history",
+    "topic": "tudors",
+    "mnemonic": "1688",
+    "tagline": "Glorious Revolution",
+    "decode": "William of Orange + Mary replace James II. Bloodless. Establishes parliamentary supremacy.",
+    "when": "When constitutional monarchy actually begins. Bill of Rights 1689 follows.",
+    "example": "James II's Catholicism + heir threatens Protestant succession. Parliament invites Dutch William. James flees."
+  },
+  {
+    "id": "hist-peel-history",
+    "subject": "history",
+    "topic": "norman-conquest",
+    "mnemonic": "PEEL — with specifics",
+    "tagline": "History essays demand specific evidence",
+    "decode": "Point · Evidence (a date, name, place, number) · Explain · Link",
+    "when": "EVERY history paragraph. Generic evidence loses marks; specific evidence gains them.",
+    "example": "Bad: 'lots of people died'. Good: 'approximately 1/3 of England's population died from the Black Death between 1348 and 1350'."
+  },
+
+  {
+    "id": "geo-compass",
+    "subject": "geography",
+    "topic": "map-skills",
+    "mnemonic": "Never Eat Shredded Wheat",
+    "tagline": "Compass points clockwise",
+    "decode": "North · East · South · West",
+    "when": "Any direction question. Always start at North, go clockwise.",
+    "example": "Settlements concentrated in the SE quadrant of the map → south-east of centre."
+  },
+  {
+    "id": "geo-grid-refs",
+    "subject": "geography",
+    "topic": "map-skills",
+    "mnemonic": "Along the Corridor, Up the Stairs",
+    "tagline": "Grid references — order matters",
+    "decode": "Read EASTINGS first (along), NORTHINGS second (up). Always.",
+    "when": "Any OS map grid reference question.",
+    "example": "Grid ref 23 45 → along to 23, then up to 45. Reversing this is the most common error in map-skills papers.",
+    "priority": true
+  },
+  {
+    "id": "geo-hase",
+    "subject": "geography",
+    "topic": "rivers",
+    "mnemonic": "HASE",
+    "tagline": "River erosion processes",
+    "decode": "Hydraulic action · Abrasion · Solution · (Erosion / attrition)",
+    "when": "Asked 'how does a river erode?'",
+    "example": "Hydraulic action: water force smashes air into cracks. Abrasion: rocks scrape the bed. Attrition: rocks knock each other smoother.",
+    "priority": true
+  },
+  {
+    "id": "geo-dtss",
+    "subject": "geography",
+    "topic": "rivers",
+    "mnemonic": "DTSS",
+    "tagline": "River transportation",
+    "decode": "Deposition · Traction (rolling) · Saltation (bouncing) · Suspension (floating) · Solution (dissolved)",
+    "when": "Asked how rivers move material.",
+    "example": "Big rocks: traction (roll). Pebbles: saltation (bounce). Sand: suspension (float). Salt: solution (dissolved)."
+  },
+  {
+    "id": "geo-earth-layers",
+    "subject": "geography",
+    "topic": "uk-geography",
+    "mnemonic": "4 Layers of Earth",
+    "tagline": "Outer to inner",
+    "decode": "Crust · Mantle · Outer Core (LIQUID) · Inner Core (SOLID)",
+    "when": "Tectonics or Earth-structure questions. Trick: outer core is liquid, inner core is solid.",
+    "example": "Earthquakes happen in the crust. Magma rises from the mantle. The Earth's magnetic field comes from the liquid outer core."
+  },
+  {
+    "id": "geo-plate-boundaries",
+    "subject": "geography",
+    "topic": "uk-geography",
+    "mnemonic": "3 Plate Boundaries",
+    "tagline": "Tectonic plate types",
+    "decode": "Constructive (apart, new crust) · Destructive (together, subduction) · Conservative (sliding past, earthquakes only)",
+    "when": "Any tectonics question. Match the boundary to the volcano/earthquake pattern.",
+    "example": "San Andreas Fault: conservative (earthquakes, no volcano). Mid-Atlantic Ridge: constructive (new crust forming).",
+    "priority": true
+  },
+  {
+    "id": "geo-climate-graph",
+    "subject": "geography",
+    "topic": "weather-and-climate",
+    "mnemonic": "Climate Graph Rules",
+    "tagline": "Reading the graph correctly",
+    "decode": "Temperature = LINE. Rainfall = BARS. Months = X-axis.",
+    "when": "Any climate-graph question. Always identify which Y-axis is which BEFORE answering.",
+    "example": "Describing a UK climate graph: 'Rainfall (bars) peaks at 90mm in October. Temperature (line) peaks at 18°C in July.'"
+  },
+  {
+    "id": "geo-bradshaw",
+    "subject": "geography",
+    "topic": "rivers",
+    "mnemonic": "BRADSHAW Model",
+    "tagline": "Downstream changes",
+    "decode": "Going downstream: discharge UP, width UP, depth UP, velocity UP, load size DOWN, load roundness UP.",
+    "when": "Comparing a river upstream vs downstream. Counter-intuitive: rivers actually flow FASTER downstream (less friction).",
+    "example": "Upper course: small fast-looking river but actually slow due to rocks. Lower course: wide deep river — moves faster despite looking calm."
+  },
+  {
+    "id": "geo-water-cycle",
+    "subject": "geography",
+    "topic": "weather-and-climate",
+    "mnemonic": "Water Cycle",
+    "tagline": "Hydrological cycle",
+    "decode": "Evaporation → Condensation → Precipitation → Collection. Add transpiration (from plants) for top-band answers.",
+    "when": "Any rain/clouds/water-flow question.",
+    "example": "Sun heats sea (evaporation) → vapour cools, forms clouds (condensation) → rain falls (precipitation) → flows back to sea."
+  },
+  {
+    "id": "geo-push-pull",
+    "subject": "geography",
+    "topic": "settlement",
+    "mnemonic": "Push & Pull Factors",
+    "tagline": "Why people migrate",
+    "decode": "PUSH = reasons people LEAVE. PULL = reasons they GO TO.",
+    "when": "Any migration question.",
+    "example": "Push: war, famine, unemployment. Pull: jobs, safety, education. List both sides for full marks."
+  },
+  {
+    "id": "geo-os-symbols",
+    "subject": "geography",
+    "topic": "map-skills",
+    "mnemonic": "Top OS Symbols",
+    "tagline": "Memorise the common 10",
+    "decode": "Church (cross) · Pub (PH) · Post Office (PO) · Public Telephone (T) · Parking (P) · Information (i)",
+    "when": "Any OS map-symbol question. Saves time vs looking up the key.",
+    "example": "Asked 'what's at grid 1245?' — recognise the cross icon as a church without checking the legend."
+  },
+  {
+    "id": "geo-coast-stack",
+    "subject": "geography",
+    "topic": "coasts",
+    "mnemonic": "Cliff → Arch → Stack → Stump",
+    "tagline": "Coastal erosion sequence",
+    "decode": "Cliff (vertical face) → Cave → Arch (cave breaks through) → Stack (arch collapses, tower remains) → Stump (stack erodes to base).",
+    "when": "Any coastal landforms question.",
+    "example": "Old Harry Rocks (Dorset): textbook stack-and-stump example. Will eventually erode into stumps."
+  },
+
+  {
+    "id": "comp-powers-2",
+    "subject": "computing",
+    "topic": "hardware-software",
+    "mnemonic": "Powers of 2",
+    "tagline": "Binary place values",
+    "decode": "1 · 2 · 4 · 8 · 16 · 32 · 64 · 128 · 256 · 512 · 1024",
+    "when": "Every binary conversion. Memorise cold.",
+    "example": "8 bits → max value = 255 (256 different values). Place values: 128 64 32 16 8 4 2 1.",
+    "priority": true
+  },
+  {
+    "id": "comp-cia",
+    "subject": "computing",
+    "topic": "e-safety",
+    "mnemonic": "CIA Triad",
+    "tagline": "Cybersecurity principles",
+    "decode": "Confidentiality · Integrity · Availability",
+    "when": "Any security question — the three goals of any security system.",
+    "example": "Encrypting a file = Confidentiality. Hash check = Integrity. Backup server = Availability."
+  },
+  {
+    "id": "comp-fde",
+    "subject": "computing",
+    "topic": "hardware-software",
+    "mnemonic": "FDE Cycle",
+    "tagline": "What the CPU does",
+    "decode": "Fetch (instruction from RAM) · Decode (work out what it means) · Execute (do it)",
+    "when": "Any CPU operation question.",
+    "example": "CPU fetches the next instruction (address from Program Counter), decodes it, executes it. Repeat billions of times per second.",
+    "priority": true
+  },
+  {
+    "id": "comp-smart",
+    "subject": "computing",
+    "topic": "e-safety",
+    "mnemonic": "SMART (e-safety)",
+    "tagline": "Online safety basics",
+    "decode": "Safe (don't share personal info) · Meet (don't meet strangers) · Accept (don't accept random files/friends) · Reliable (check info) · Tell (a trusted adult)",
+    "when": "Any e-safety question. Childnet's classic.",
+    "example": "Strangers asking for your address? Fails Safe + Tell — share with parent immediately, don't reply.",
+    "priority": true
+  },
+  {
+    "id": "comp-osi",
+    "subject": "computing",
+    "topic": "networks",
+    "mnemonic": "All People Seem To Need Data Processing",
+    "tagline": "OSI 7 layers (top to bottom)",
+    "decode": "Application · Presentation · Session · Transport · Network · Data Link · Physical",
+    "when": "Networking questions. Top sets only — TCP/IP's 4 layers are more practical.",
+    "example": "Email lives at Application. Routers work at Network. Cables are Physical."
+  },
+  {
+    "id": "comp-tcp-ip",
+    "subject": "computing",
+    "topic": "networks",
+    "mnemonic": "TCP/IP — 4 Layers",
+    "tagline": "What the actual internet uses",
+    "decode": "Application · Transport · Internet · Network Access",
+    "when": "Modern networking questions. Simpler than OSI, what the real internet runs on.",
+    "example": "HTTP runs at Application. TCP at Transport. IP at Internet. Ethernet at Network Access."
+  },
+  {
+    "id": "comp-ram-rom",
+    "subject": "computing",
+    "topic": "hardware-software",
+    "mnemonic": "RAM vs ROM",
+    "tagline": "Volatile vs not",
+    "decode": "RAM: volatile, read+write, temporary (your open programs). ROM: non-volatile, read-only, permanent (BIOS).",
+    "when": "Any memory question.",
+    "example": "What holds the BIOS? ROM. What holds your open Word doc? RAM. Power off → RAM loses everything, ROM doesn't."
+  },
+  {
+    "id": "comp-search-algos",
+    "subject": "computing",
+    "topic": "algorithms",
+    "mnemonic": "Binary vs Linear Search",
+    "tagline": "Two ways to find an item",
+    "decode": "Linear: check one-by-one (any list, slow). Binary: halve each time (sorted only, fast).",
+    "when": "Any search algorithm question.",
+    "example": "Find 7 in [1,3,5,7,9,11]: Linear checks 1,3,5,7 (4 steps). Binary checks middle (5 — too low) → right half (9 — too high) → left of that (7 ✓) (3 steps)."
+  },
+  {
+    "id": "comp-bubble-sort",
+    "subject": "computing",
+    "topic": "algorithms",
+    "mnemonic": "Bubble Sort",
+    "tagline": "Big numbers bubble to the top",
+    "decode": "Compare adjacent pairs. Swap if wrong order. Repeat passes until no swaps needed.",
+    "when": "Any sorting question. Easy to trace; not the fastest but commonly tested.",
+    "example": "[3,1,2] → pass 1: [1,2,3]. Pass 2: no swaps → done."
+  },
+  {
+    "id": "comp-algo-vs-program",
+    "subject": "computing",
+    "topic": "computational-thinking",
+    "mnemonic": "Algorithm vs Program",
+    "tagline": "Logic vs implementation",
+    "decode": "Algorithm = the recipe (logic, language-free). Program = the implementation (code in a real language).",
+    "when": "Any 'what's the difference' question on this topic.",
+    "example": "Algorithm: 'add two numbers'. Program: Python `sum = a + b`. Same algorithm, different programs in different languages."
+  },
+  {
+    "id": "comp-dpaa",
+    "subject": "computing",
+    "topic": "computational-thinking",
+    "mnemonic": "DPAA — 4 Pillars",
+    "tagline": "Computational thinking",
+    "decode": "Decomposition (break problem down) · Pattern recognition (spot similarities) · Abstraction (ignore irrelevant detail) · Algorithms (write the steps)",
+    "when": "Any 'how do you approach a problem' question.",
+    "example": "Building a calculator: D break into add/sub/mul/div, P spot the same input pattern, A ignore screen colour for now, A write the steps."
+  },
+  {
+    "id": "comp-cyber-threats",
+    "subject": "computing",
+    "topic": "e-safety",
+    "mnemonic": "Phishing · Pharming · Spoofing",
+    "tagline": "Three cyber threats — don't confuse",
+    "decode": "Phishing = fake EMAILS that trick you. Pharming = fake WEBSITES that look real. Spoofing = fake IDENTITY (e.g. caller-ID).",
+    "when": "Any cyber-threat multi-choice question. Common trap.",
+    "example": "Email pretending to be your bank → phishing. Site that looks like your bank but isn't → pharming. Caller saying they're from HMRC → spoofing."
+  },
+  {
+    "id": "comp-html-tags",
+    "subject": "computing",
+    "topic": "scratch-programming",
+    "mnemonic": "HTML Tags",
+    "tagline": "Open and close",
+    "decode": "Most tags need an opening and a closing: <p>...</p>. Some are self-closing: <br>, <img>.",
+    "when": "Web design tasks. Common KS3 trick: spot a missing closing tag.",
+    "example": "<h1>Title</h1><p>Body</p> — both open AND close. <br> just goes by itself."
+  },
+  {
+    "id": "comp-bin-add",
+    "subject": "computing",
+    "topic": "hardware-software",
+    "mnemonic": "Binary Addition",
+    "tagline": "Carry the 1",
+    "decode": "0+0=0. 0+1=1. 1+1=10 (carry the 1). 1+1+1=11 (write 1, carry 1).",
+    "when": "Any binary-addition question.",
+    "example": "1011 + 0110: column 1 (1+0=1), column 2 (1+1=10, carry), column 3 (0+1+1=10, carry), column 4 (1+0+1=10) → 10001."
+  },
+
+  {
+    "id": "fr-vandertramp",
+    "subject": "french",
+    "topic": "verbs",
+    "mnemonic": "MRS VANDERTRAMP",
+    "tagline": "Verbs that take ÊTRE in passé composé",
+    "decode": "Monter, Rester, Sortir, Venir, Aller, Naître, Descendre, Entrer, Retourner, Tomber, Rentrer, Arriver, Mourir, Partir (+ Devenir, Revenir for the longer version)",
+    "when": "Past tense (passé composé). With these verbs, past participle agrees with subject.",
+    "example": "Elle est allée (she went, fem) — note the extra -e. Ils sont arrivés (they arrived, masc plural) — extra -s.",
+    "priority": true
+  },
+  {
+    "id": "fr-house-trick",
+    "subject": "french",
+    "topic": "verbs",
+    "mnemonic": "The House Trick",
+    "tagline": "Memorising MRS VANDERTRAMP",
+    "decode": "All MRS VANDERTRAMP verbs describe MOVING in/out of a house — going up, down, in, out, arriving, leaving, returning.",
+    "when": "Stuck remembering the list? Visualise a house and the actions you do around it.",
+    "example": "monter (go up), descendre (go down), entrer (enter), sortir (leave), arriver (arrive), partir (depart). House logic."
+  },
+  {
+    "id": "fr-bangs",
+    "subject": "french",
+    "topic": "adjectives",
+    "mnemonic": "BANGS",
+    "tagline": "Adjectives BEFORE the noun",
+    "decode": "Beauty · Age · Number · Goodness · Size",
+    "when": "Most French adjectives go AFTER the noun, but BANGS go BEFORE.",
+    "example": "Une belle voiture (beauty — before). Un petit chien (size — before). Une voiture rouge (colour — after)."
+  },
+  {
+    "id": "fr-careful",
+    "subject": "french",
+    "topic": "speaking",
+    "mnemonic": "CaReFuL",
+    "tagline": "Final consonants you DO pronounce",
+    "decode": "C, R, F, L — pronounce these at the end of words. Most other final consonants are silent.",
+    "when": "French pronunciation. Instantly improves your accent above 90% of classmates.",
+    "example": "Sport — pronounce the t (it's part of 'rt'). Petit — silent t. Sac — pronounce the c.",
+    "priority": true
+  },
+  {
+    "id": "fr-question-words",
+    "subject": "french",
+    "topic": "speaking",
+    "mnemonic": "7 Question Words",
+    "tagline": "Unlock conversation",
+    "decode": "Qui (who) · Quoi/Que (what) · Où (where) · Quand (when) · Pourquoi (why) · Comment (how) · Combien (how many)",
+    "when": "Year 7 essential. Memorise all 7 — they unlock asking ANY question.",
+    "example": "Où habites-tu? (where do you live?). Comment ça va? (how are you?). Combien ça coûte? (how much does it cost?)."
+  },
+  {
+    "id": "fr-er-endings",
+    "subject": "french",
+    "topic": "verbs",
+    "mnemonic": "-ER Endings",
+    "tagline": "About 80% of French verbs",
+    "decode": "je -e · tu -es · il/elle/on -e · nous -ons · vous -ez · ils/elles -ent",
+    "when": "Any regular -ER verb in present tense. Memorise these 6 endings — they unlock most conversation.",
+    "example": "Parler (to speak): je parle, tu parles, il parle, nous parlons, vous parlez, ils parlent.",
+    "priority": true
+  },
+  {
+    "id": "fr-ir-endings",
+    "subject": "french",
+    "topic": "verbs",
+    "mnemonic": "-IR Endings",
+    "tagline": "Regular -ir verbs",
+    "decode": "je -is · tu -is · il/elle -it · nous -issons · vous -issez · ils -issent",
+    "when": "Any regular -IR verb. Note the -iss- in plural forms.",
+    "example": "Finir (to finish): je finis, tu finis, il finit, nous finissons, vous finissez, ils finissent."
+  },
+  {
+    "id": "fr-re-endings",
+    "subject": "french",
+    "topic": "verbs",
+    "mnemonic": "-RE Endings",
+    "tagline": "Regular -re verbs",
+    "decode": "je -s · tu -s · il/elle (no ending) · nous -ons · vous -ez · ils -ent",
+    "when": "Any regular -RE verb. Note: il/elle has NO ending added.",
+    "example": "Vendre (to sell): je vends, tu vends, il vend, nous vendons, vous vendez, ils vendent."
+  },
+  {
+    "id": "fr-imperfect-vs-perfect",
+    "subject": "french",
+    "topic": "verbs",
+    "mnemonic": "Imperfect vs Perfect",
+    "tagline": "Two past tenses, one trick",
+    "decode": "Imperfect = background / used to / was -ing. Perfect = single completed event.",
+    "when": "Any past-tense question. The trick: one is the SETTING, the other is the ACTION.",
+    "example": "'I was eating (imperfect — background) when she arrived (perfect — single event).' Il mangeait quand elle est arrivée."
+  },
+  {
+    "id": "fr-a-vs-de",
+    "subject": "french",
+    "topic": "speaking",
+    "mnemonic": "À vs De",
+    "tagline": "To/at vs of/from",
+    "decode": "À = to / at (location, direction). De = of / from (origin, possession).",
+    "when": "Any preposition question.",
+    "example": "Je vais à Paris (I'm going TO Paris). Je viens de Londres (I come FROM London). Le livre de Marie (Marie's book)."
+  },
+  {
+    "id": "fr-avoir-age",
+    "subject": "french",
+    "topic": "age-and-names",
+    "mnemonic": "Avoir for Age",
+    "tagline": "You HAVE an age",
+    "decode": "In French you HAVE 12 years. NOT 'I am 12'. J'ai 12 ans (literally: 'I have 12 years').",
+    "when": "Any age question. Year 7 classic trap.",
+    "example": "How old are you? Quel âge as-tu? I'm 11 → J'ai onze ans. (NOT 'je suis onze').",
+    "priority": true
+  },
+  {
+    "id": "fr-numbers-70-90",
+    "subject": "french",
+    "topic": "birthday-and-months",
+    "mnemonic": "70 / 80 / 90 — the weird ones",
+    "tagline": "French numbers break the pattern",
+    "decode": "70 = soixante-dix (60+10). 80 = quatre-vingts (4×20). 90 = quatre-vingt-dix (4×20+10).",
+    "when": "Any number question above 69. Belgians/Swiss say septante/octante/nonante (easier!) but exam wants the French version.",
+    "example": "78 = soixante-dix-huit (60+18). 95 = quatre-vingt-quinze (4×20+15)."
+  },
+  {
+    "id": "fr-articles",
+    "subject": "french",
+    "topic": "spelling",
+    "mnemonic": "Le · La · L' · Les",
+    "tagline": "Definite articles by gender",
+    "decode": "Le = masculine. La = feminine. L' = before vowel sound (le → l'). Les = plural (any gender).",
+    "when": "Always check gender BEFORE writing — wrong article = wrong adjective ending too.",
+    "example": "Le chien (m), la chatte (f), l'école (vowel start), les chiens (plural). Note: -e ending often feminine but exceptions exist (le problème)."
+  },
+  {
+    "id": "fr-wow-phrases",
+    "subject": "french",
+    "topic": "speaking",
+    "mnemonic": "Wow Phrases",
+    "tagline": "Instant top-band marks",
+    "decode": "À mon avis (in my opinion) · Il faut que (it's necessary that) · J'aimerais bien (I'd really like) · C'est-à-dire (that is to say) · D'une part... d'autre part (on one hand... on the other)",
+    "when": "Any writing or speaking task. Memorise 5-6 of these and slot them in.",
+    "example": "À mon avis, le sport est important parce qu'il faut être en forme. (In my opinion, sport is important because one must be fit.)"
+  }
+]

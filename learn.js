@@ -39,14 +39,14 @@ if (typeof window !== "undefined") {
   });
 }
 
-import "./mock.js?v=20260601"; // shared header behaviour
-import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260601";
-import { topicLadder, weakTopics } from "./engagement.js?v=20260601";
-import { getVisual } from "./visuals.js?v=20260601";
-import { validateLearning, reportProblems } from "./diagnostics/schema-validator.js?v=20260601";
-import { escapeHtml, match } from "./shared/dom.js?v=20260601";
-import { subjectTone, prettyTopic } from "./shared/subjects.js?v=20260601";
-import { readString } from "./platform/storage.js?v=20260601";
+import "./mock.js?v=20260602"; // shared header behaviour
+import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260602";
+import { topicLadder, weakTopics } from "./engagement.js?v=20260602";
+import { getVisual } from "./visuals.js?v=20260602";
+import { validateLearning, reportProblems } from "./diagnostics/schema-validator.js?v=20260602";
+import { escapeHtml, match } from "./shared/dom.js?v=20260602";
+import { subjectTone, prettyTopic } from "./shared/subjects.js?v=20260602";
+import { readString } from "./platform/storage.js?v=20260602";
 
 // Study Smart completion key — same string is set by study-smart.js when
 // the kid reaches the final card. Used here only to swap "Start here" for
@@ -152,8 +152,21 @@ function paintHub() {
         "<a class=\"study-smart-strip-link\" href=\"study-smart.html\">Re-take</a>" +
         "<span class=\"study-smart-strip-sep\" aria-hidden=\"true\">&middot;</span>" +
         "<a class=\"study-smart-strip-link\" href=\"exam-day.html\">Exam-Day Drill</a>" +
+        "<span class=\"study-smart-strip-sep\" aria-hidden=\"true\">&middot;</span>" +
+        "<a class=\"study-smart-strip-link\" href=\"cheat-cards.html\">Cheat Cards</a>" +
       "</div>";
   }
+
+  // Cheat Cards tile — promoted on the LEARN hub for everyone (whether or
+  // not they've completed Study Smart). Lives between the Study Smart
+  // tile/strip and the weak-topics block.
+  const cheatCardsTileHtml =
+    "<a class=\"cheat-cards-tile\" href=\"cheat-cards.html\">" +
+      "<span class=\"cheat-cards-tile-eyebrow\">The named shortcuts</span>" +
+      "<span class=\"cheat-cards-tile-title\">Cheat Cards</span>" +
+      "<span class=\"cheat-cards-tile-body\">BIDMAS, OIL RIG, PEEL, MRS VANDERTRAMP&hellip; the mnemonics top students load before the test.</span>" +
+      "<span class=\"cheat-cards-tile-cta\">Open the deck &rarr;</span>" +
+    "</a>";
 
   let weakHtml = "";
   if (weak.length > 0) {
@@ -197,6 +210,7 @@ function paintHub() {
       "<p class=\"mock-stub-quote\">Pick a subject. Examples, visuals and tips in plain English — then test what stuck.</p>" +
     "</section>" +
     studySmartHtml +
+    cheatCardsTileHtml +
     weakHtml +
     "<nav class=\"mock-tiles\" aria-label=\"Learning subjects\">" + tilesHtml + "</nav>";
 }

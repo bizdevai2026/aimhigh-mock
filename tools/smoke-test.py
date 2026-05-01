@@ -42,7 +42,7 @@ def ok(check, msg):
 
 HTML_PAGES = ['index.html', 'welcome.html', 'daily.html', 'subject.html',
               'paper.html', 'dashboard.html', 'learn.html',
-              'study-smart.html', 'exam-day.html']
+              'study-smart.html', 'exam-day.html', 'cheat-cards.html']
 
 for p in HTML_PAGES:
     if not Path(p).exists():
@@ -184,6 +184,43 @@ if empty_drills:
     for d in empty_drills: fail("learn-drill-link", d)
 else:
     ok("learning-drill-links", "every LEARN topic has 5+ questions in its pool")
+
+# === 4d. Cheat Cards schema =================================================
+# data/cheat-cards.json is loaded by cheat-cards.js. Catch malformed cards
+# here, where it's cheap, before they reach the kid as a half-broken deck.
+
+REQUIRED_CARD_FIELDS = {'id', 'subject', 'mnemonic', 'decode', 'tagline'}
+KNOWN_SUBJECTS = set([s['id'] for s in (REGISTRY or {}).get('subjects', [])])
+
+try:
+    CHEAT_CARDS = json.load(open('data/cheat-cards.json', encoding='utf-8'))
+except Exception as e:
+    fail("json-parse", f"data/cheat-cards.json: {e}")
+    CHEAT_CARDS = []
+
+cheat_problems = []
+cheat_ids = set()
+cheat_by_subject = {}
+for c in CHEAT_CARDS:
+    if not isinstance(c, dict):
+        cheat_problems.append("non-object card entry")
+        continue
+    missing = REQUIRED_CARD_FIELDS - set(c.keys())
+    if missing:
+        cheat_problems.append(f"{c.get('id','?')} missing fields: {sorted(missing)}")
+    cid = c.get('id')
+    if cid in cheat_ids:
+        cheat_problems.append(f"duplicate id: {cid}")
+    cheat_ids.add(cid)
+    s = c.get('subject')
+    if KNOWN_SUBJECTS and s not in KNOWN_SUBJECTS:
+        cheat_problems.append(f"{cid} subject '{s}' not in registry")
+    cheat_by_subject[s] = cheat_by_subject.get(s, 0) + 1
+
+if cheat_problems:
+    for p in cheat_problems: fail("cheat-cards-schema", p)
+else:
+    ok("cheat-cards", f"{len(CHEAT_CARDS)} cards across {len(cheat_by_subject)} subjects, ids unique, schema valid")
 
 # === 5. Cache-bust version consistency =======================================
 

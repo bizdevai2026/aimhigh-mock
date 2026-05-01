@@ -11,7 +11,7 @@ import {
   readJson as storageReadJson,
   writeJson as storageWriteJson,
   remove as storageRemove
-} from "../platform/storage.js?v=20260601";
+} from "../platform/storage.js?v=20260602";
 
 const KEY_SESSION = "aimhigh-mock-session";
 
