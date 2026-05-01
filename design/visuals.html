@@ -84,10 +84,13 @@
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 1200px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 700px) {
       .grid { grid-template-columns: 1fr; }
     }
     .col {
@@ -100,8 +103,8 @@
     }
     .col.current { border-style: dashed; opacity: 0.95; }
     .col-tag {
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       font-weight: 700;
       padding: 0.25rem 0.55rem;
@@ -109,9 +112,63 @@
       align-self: flex-start;
       margin-bottom: 0.6rem;
     }
-    .current .col-tag { background: rgba(138, 146, 168, 0.15); color: var(--text-dim); }
+    .current  .col-tag { background: rgba(138, 146, 168, 0.15); color: var(--text-dim); }
     .friendly .col-tag { background: rgba(255, 126, 185, 0.15); color: var(--pink); }
-    .refined .col-tag { background: rgba(109, 167, 255, 0.15); color: var(--cobalt); }
+    .refined  .col-tag { background: rgba(109, 167, 255, 0.15); color: var(--cobalt); }
+    .ai       .col-tag { background: rgba(155, 109, 222, 0.18); color: #c0a3f5; }
+
+    /* AI-hybrid column: a painterly backdrop placeholder + SVG overlay
+       on top, plus a prompt block. The placeholder is intentionally
+       hand-mocked (CSS gradients + a noise filter) — it stands in for
+       what the user would feed in from their image-gen tool. */
+    .ai .col-frame {
+      background: #1a1230;
+      border-color: #2c1f4a;
+      position: relative;
+      overflow: hidden;
+    }
+    .ai .placeholder-tag {
+      position: absolute;
+      top: 0.4rem;
+      right: 0.5rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.45rem;
+      background: rgba(0, 0, 0, 0.4);
+      color: #c0a3f5;
+      border: 1px solid rgba(192, 163, 245, 0.4);
+      border-radius: 4px;
+      z-index: 5;
+      font-weight: 700;
+      font-family: var(--display);
+    }
+    .prompt {
+      margin-top: 0.7rem;
+      padding: 0.7rem 0.8rem;
+      background: rgba(155, 109, 222, 0.08);
+      border: 1px solid rgba(155, 109, 222, 0.25);
+      border-radius: 8px;
+      font-size: 0.78rem;
+      color: var(--text);
+      line-height: 1.45;
+    }
+    .prompt-label {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c0a3f5;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .prompt code {
+      display: block;
+      font-family: 'Manrope', monospace;
+      font-style: italic;
+      color: var(--text-strong);
+      font-size: 0.78rem;
+    }
     .col-frame {
       background: linear-gradient(160deg, #1f2a4a 0%, #243054 100%);
       border: 1px solid #2f3c5e;
@@ -168,7 +225,7 @@
   <div class="page">
     <header>
       <h1>Visual style — current vs proposed</h1>
-      <p>Four representative diagrams from <code>visuals.js</code>, each shown three ways: as it is now, redrawn in a friendly illustrated style (Bitesize-feel), and redrawn in a technical refined style (cobalt-premium). All assets shown are originally drawn — none lifted from third-party sources. Pick one direction and the rest of the 17 visuals get redrawn to match.</p>
+      <p>Four representative diagrams from <code>visuals.js</code>, each shown four ways: as it is now, friendly illustrated (Bitesize-feel), technical refined (cobalt-premium), and AI hybrid (painterly backdrop + clean SVG overlay). All assets shown here are originally drawn — none lifted from third-party sources. The AI-hybrid column shows a hand-mocked stand-in for the backdrop plus the actual prompt you'd paste into ChatGPT / DALL-E / Midjourney / Imagen / Firefly. Pick one direction and the rest of the 17 visuals get redrawn to match.</p>
     </header>
 
     <!-- ============================================================
@@ -324,6 +381,59 @@
             </svg>
           </div>
           <p class="col-caption">Cobalt + coral palette aligned with the brand, callout lines extend outside the cell to keep labels uncrowded, gradient fills give weight without clutter. <strong>Reads as:</strong> "this is serious revision tech".</p>
+        </div>
+
+        <!-- OPTION C — AI HYBRID (painterly backdrop + SVG overlay) -->
+        <div class="col ai">
+          <span class="col-tag">C · AI hybrid</span>
+          <div class="col-frame">
+            <span class="placeholder-tag">Backdrop placeholder</span>
+            <svg viewBox="0 0 360 200" role="img" aria-label="AI hybrid cell">
+              <defs>
+                <radialGradient id="cellAiBlobL" cx="22%" cy="50%" r="55%">
+                  <stop offset="0%" stop-color="#ffb3d4" stop-opacity="0.85"/>
+                  <stop offset="55%" stop-color="#d18bc0" stop-opacity="0.45"/>
+                  <stop offset="100%" stop-color="#1a1230" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="cellAiBlobR" cx="78%" cy="50%" r="55%">
+                  <stop offset="0%" stop-color="#a3e8b3" stop-opacity="0.8"/>
+                  <stop offset="55%" stop-color="#5fa07a" stop-opacity="0.45"/>
+                  <stop offset="100%" stop-color="#1a1230" stop-opacity="0"/>
+                </radialGradient>
+                <filter id="grain" x="0" y="0" width="100%" height="100%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>
+                  <feColorMatrix values="0 0 0 0 1  0 0 0 0 0.95  0 0 0 0 1  0 0 0 0.06 0"/>
+                  <feComposite in2="SourceGraphic" operator="in"/>
+                </filter>
+              </defs>
+              <!-- painterly backdrop placeholder -->
+              <rect x="0" y="0" width="360" height="200" fill="#1a1230"/>
+              <ellipse cx="80" cy="100" rx="90" ry="65" fill="url(#cellAiBlobL)"/>
+              <ellipse cx="280" cy="100" rx="90" ry="65" fill="url(#cellAiBlobR)"/>
+              <rect x="0" y="0" width="360" height="200" filter="url(#grain)"/>
+              <!-- SVG overlay (clean labels, lifted from Option B style) -->
+              <g font-family="Outfit, sans-serif" font-weight="700" font-size="11" fill="#f0f4ff" letter-spacing="0.08em">
+                <text x="80" y="30" text-anchor="middle">ANIMAL</text>
+                <text x="280" y="30" text-anchor="middle">PLANT</text>
+              </g>
+              <g font-family="Outfit, sans-serif" font-size="8.5" font-weight="500" fill="#f0f4ff">
+                <line x1="80" y1="100" x2="40" y2="60" stroke="#ff5e3a" stroke-width="0.8" opacity="0.85"/>
+                <circle cx="80" cy="100" r="2" fill="#ff5e3a"/>
+                <text x="36" y="56" text-anchor="end">nucleus</text>
+                <line x1="280" y1="120" x2="320" y2="160" stroke="#5eead4" stroke-width="0.8" opacity="0.85"/>
+                <circle cx="280" cy="120" r="2" fill="#5eead4"/>
+                <text x="324" y="172">chloroplasts</text>
+                <line x1="220" y1="100" x2="180" y2="170" stroke="#6da7ff" stroke-width="0.8" opacity="0.85"/>
+                <circle cx="220" cy="100" r="2" fill="#6da7ff"/>
+                <text x="180" y="182" text-anchor="middle">cell wall</text>
+              </g>
+            </svg>
+          </div>
+          <div class="prompt">
+            <span class="prompt-label">Image-gen prompt</span>
+            <code>"Side-by-side watercolour cross-sections of an animal cell (round, pink-purple) and a plant cell (boxy, green), microscope-stained painterly look, soft pastel wash, no text or labels, gentle bokeh, educational illustration style. 16:9, dark navy background."</code>
+          </div>
+          <p class="col-caption">Watercolour AI backdrop carries the vibe; SVG overlay carries the precision (labels, callout lines, accuracy). <strong>Reads as:</strong> "warm and accurate at the same time".</p>
         </div>
 
       </div>
@@ -487,6 +597,62 @@
           <p class="col-caption">Same content, but read like a field-survey map: faint grid, flow arrow, callout boxes off to the side, scale bar. <strong>Reads as:</strong> "this is what real geographers see".</p>
         </div>
 
+        <!-- OPTION C — AI HYBRID -->
+        <div class="col ai">
+          <span class="col-tag">C · AI hybrid</span>
+          <div class="col-frame">
+            <span class="placeholder-tag">Backdrop placeholder</span>
+            <svg viewBox="0 0 360 200" role="img" aria-label="AI hybrid river">
+              <defs>
+                <radialGradient id="rivBank1" cx="20%" cy="20%" r="80%">
+                  <stop offset="0%" stop-color="#9bc77a" stop-opacity="0.6"/>
+                  <stop offset="100%" stop-color="#1a1230" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="rivBank2" cx="80%" cy="80%" r="80%">
+                  <stop offset="0%" stop-color="#c9a570" stop-opacity="0.55"/>
+                  <stop offset="100%" stop-color="#1a1230" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="rivWater" x1="0%" x2="100%">
+                  <stop offset="0%" stop-color="#7ab8e8"/>
+                  <stop offset="100%" stop-color="#3a7eb8"/>
+                </linearGradient>
+                <filter id="grainR" x="0" y="0" width="100%" height="100%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7"/>
+                  <feColorMatrix values="0 0 0 0 0.6  0 0 0 0 0.5  0 0 0 0 0.7  0 0 0 0.07 0"/>
+                  <feComposite in2="SourceGraphic" operator="in"/>
+                </filter>
+              </defs>
+              <rect x="0" y="0" width="360" height="200" fill="#1a1230"/>
+              <rect x="0" y="0" width="360" height="200" fill="url(#rivBank1)"/>
+              <rect x="0" y="0" width="360" height="200" fill="url(#rivBank2)"/>
+              <!-- river path (broad painterly) -->
+              <path d="M -10,55 Q 90,55 115,95 Q 140,135 220,135 Q 290,135 370,95"
+                fill="none" stroke="url(#rivWater)" stroke-width="32" stroke-linecap="round" opacity="0.75"/>
+              <path d="M -10,55 Q 90,55 115,95 Q 140,135 220,135 Q 290,135 370,95"
+                fill="none" stroke="#a8d4f0" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+              <rect x="0" y="0" width="360" height="200" filter="url(#grainR)"/>
+              <!-- SVG overlay: callout chips lifted from Option B -->
+              <g font-family="Outfit, sans-serif" font-weight="700" font-size="9" letter-spacing="0.1em">
+                <circle cx="120" cy="78" r="3" fill="#ff5e3a"/>
+                <line x1="120" y1="78" x2="135" y2="38" stroke="#ff5e3a" stroke-width="1" opacity="0.9"/>
+                <rect x="135" y="20" width="105" height="30" rx="4" fill="rgba(15,23,41,0.85)" stroke="#ff5e3a" stroke-width="1"/>
+                <text x="187" y="34" text-anchor="middle" fill="#ff5e3a">EROSION</text>
+                <text x="187" y="46" text-anchor="middle" font-size="7.5" font-weight="500" fill="#f0f4ff">outer · fast</text>
+                <circle cx="220" cy="118" r="3" fill="#5eead4"/>
+                <line x1="220" y1="118" x2="225" y2="160" stroke="#5eead4" stroke-width="1" opacity="0.9"/>
+                <rect x="170" y="160" width="120" height="30" rx="4" fill="rgba(15,23,41,0.85)" stroke="#5eead4" stroke-width="1"/>
+                <text x="230" y="174" text-anchor="middle" fill="#5eead4">DEPOSITION</text>
+                <text x="230" y="186" text-anchor="middle" font-size="7.5" font-weight="500" fill="#f0f4ff">inner · slow</text>
+              </g>
+            </svg>
+          </div>
+          <div class="prompt">
+            <span class="prompt-label">Image-gen prompt</span>
+            <code>"Aerial watercolour painting of a single sweeping river meander curving from upper-left to lower-right, soft sage-green and dusty-gold banks, gentle blue water with subtle ripples, no text or labels, no human figures, peaceful overhead view, painterly impressionist style. 16:9."</code>
+          </div>
+          <p class="col-caption">AI generates the painterly aerial; SVG layers EROSION/DEPOSITION chips on top. The kid sees a real-feeling river AND the precise terms. <strong>Reads as:</strong> "geography you'd actually want to look at".</p>
+        </div>
+
       </div>
     </section>
 
@@ -633,6 +799,72 @@
             </svg>
           </div>
           <p class="col-caption">Same lines, but with subtle area-fills, endpoint markers, chip labels, axis units, and a faint grid. <strong>Reads as:</strong> "exam-quality graph".</p>
+        </div>
+
+        <!-- OPTION C — AI HYBRID -->
+        <div class="col ai">
+          <span class="col-tag">C · AI hybrid</span>
+          <div class="col-frame">
+            <span class="placeholder-tag">Backdrop placeholder</span>
+            <svg viewBox="0 0 360 220" role="img" aria-label="AI hybrid distance-time">
+              <defs>
+                <linearGradient id="dtSky" x1="0%" x2="0%" y1="0%" y2="100%">
+                  <stop offset="0%" stop-color="#3a2851"/>
+                  <stop offset="100%" stop-color="#7a4a30"/>
+                </linearGradient>
+                <linearGradient id="dtHill" x1="0%" x2="100%">
+                  <stop offset="0%" stop-color="#5a3a18" stop-opacity="0.7"/>
+                  <stop offset="100%" stop-color="#a26a30" stop-opacity="0.85"/>
+                </linearGradient>
+                <filter id="grainDT" x="0" y="0" width="100%" height="100%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="11"/>
+                  <feColorMatrix values="0 0 0 0 1  0 0 0 0 0.85  0 0 0 0 0.7  0 0 0 0.06 0"/>
+                  <feComposite in2="SourceGraphic" operator="in"/>
+                </filter>
+              </defs>
+              <!-- painterly hill/road backdrop -->
+              <rect x="0" y="0" width="360" height="220" fill="url(#dtSky)"/>
+              <path d="M 0,200 L 360,200 L 360,90 L 200,160 L 40,200 Z" fill="url(#dtHill)" opacity="0.85"/>
+              <!-- distant sun -->
+              <circle cx="290" cy="60" r="22" fill="#ffd13a" opacity="0.5"/>
+              <circle cx="290" cy="60" r="14" fill="#ffd13a" opacity="0.8"/>
+              <rect x="0" y="0" width="360" height="220" filter="url(#grainDT)"/>
+              <!-- SVG overlay: clean graph on top -->
+              <g stroke="#2a3658" stroke-width="0.5" opacity="0.4">
+                <line x1="40" y1="60" x2="340" y2="60"/>
+                <line x1="40" y1="120" x2="340" y2="120"/>
+                <line x1="40" y1="180" x2="340" y2="180"/>
+                <line x1="100" y1="20" x2="100" y2="180"/>
+                <line x1="180" y1="20" x2="180" y2="180"/>
+                <line x1="260" y1="20" x2="260" y2="180"/>
+              </g>
+              <line x1="40" y1="20" x2="40" y2="180" stroke="#f0f4ff" stroke-width="1.5"/>
+              <line x1="40" y1="180" x2="340" y2="180" stroke="#f0f4ff" stroke-width="1.5"/>
+              <line x1="40" y1="180" x2="150" y2="40" stroke="#ff5e3a" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="150" cy="40" r="3.5" fill="#ff5e3a" stroke="#fff" stroke-width="1"/>
+              <line x1="40" y1="180" x2="240" y2="100" stroke="#6da7ff" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="240" cy="100" r="3.5" fill="#6da7ff" stroke="#fff" stroke-width="1"/>
+              <line x1="40" y1="150" x2="240" y2="150" stroke="#5eead4" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="6 3"/>
+              <circle cx="240" cy="150" r="3.5" fill="#5eead4" stroke="#fff" stroke-width="1"/>
+              <g font-family="Outfit, sans-serif" font-weight="700" font-size="9" letter-spacing="0.06em">
+                <rect x="155" y="32" width="46" height="16" rx="3" fill="rgba(15,23,41,0.9)" stroke="#ff5e3a" stroke-width="1"/>
+                <text x="178" y="43" text-anchor="middle" fill="#ff5e3a">FAST</text>
+                <rect x="245" y="92" width="46" height="16" rx="3" fill="rgba(15,23,41,0.9)" stroke="#6da7ff" stroke-width="1"/>
+                <text x="268" y="103" text-anchor="middle" fill="#6da7ff">SLOW</text>
+                <rect x="245" y="142" width="76" height="16" rx="3" fill="rgba(15,23,41,0.9)" stroke="#5eead4" stroke-width="1"/>
+                <text x="283" y="153" text-anchor="middle" fill="#5eead4">STATIONARY</text>
+              </g>
+              <g font-family="Outfit, sans-serif" font-size="9" fill="#f0f4ff" font-weight="500">
+                <text x="14" y="22">distance</text>
+                <text x="305" y="200">time</text>
+              </g>
+            </svg>
+          </div>
+          <div class="prompt">
+            <span class="prompt-label">Image-gen prompt</span>
+            <code>"Soft painterly background of a winding hill road ascending from lower-left to upper-right, dusk golden-hour light, dusty pastel earthy palette, no text, no signs, no road markings, blurred to support a diagram overlay. 16:9, painterly impressionist."</code>
+          </div>
+          <p class="col-caption">For pure graphs the hybrid adds atmosphere but doesn't really teach more than Option B does — the precise lines are the lesson. <strong>Verdict:</strong> on graphs, pretty but redundant.</p>
         </div>
 
       </div>
@@ -819,6 +1051,78 @@
           <p class="col-caption">One unified pyramid with a coral-to-cobalt gradient, numbered tier chips, population scale per tier, exchange flow ↑↓ on either side. <strong>Reads as:</strong> "this is an analytical model, not a chart".</p>
         </div>
 
+        <!-- OPTION C — AI HYBRID -->
+        <div class="col ai">
+          <span class="col-tag">C · AI hybrid</span>
+          <div class="col-frame">
+            <span class="placeholder-tag">Backdrop placeholder</span>
+            <svg viewBox="0 0 280 240" role="img" aria-label="AI hybrid feudal pyramid">
+              <defs>
+                <linearGradient id="medSky" x1="0%" x2="0%" y1="0%" y2="100%">
+                  <stop offset="0%" stop-color="#5a4a8a"/>
+                  <stop offset="50%" stop-color="#a87a4a"/>
+                  <stop offset="100%" stop-color="#c89968"/>
+                </linearGradient>
+                <linearGradient id="castleSh" x1="0%" x2="0%" y1="0%" y2="100%">
+                  <stop offset="0%" stop-color="#3a2a4a" stop-opacity="0.85"/>
+                  <stop offset="100%" stop-color="#5a4030" stop-opacity="0.95"/>
+                </linearGradient>
+                <filter id="grainP" x="0" y="0" width="100%" height="100%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="13"/>
+                  <feColorMatrix values="0 0 0 0 1  0 0 0 0 0.85  0 0 0 0 0.65  0 0 0 0.07 0"/>
+                  <feComposite in2="SourceGraphic" operator="in"/>
+                </filter>
+              </defs>
+              <rect x="0" y="0" width="280" height="240" fill="url(#medSky)"/>
+              <!-- distant hills -->
+              <path d="M 0,180 Q 70,160 140,170 Q 210,180 280,165 L 280,220 L 0,220 Z" fill="#7a5530" opacity="0.5"/>
+              <!-- castle silhouette -->
+              <g fill="url(#castleSh)">
+                <rect x="50" y="150" width="50" height="60"/>
+                <rect x="48" y="142" width="8" height="10"/>
+                <rect x="62" y="142" width="8" height="10"/>
+                <rect x="76" y="142" width="8" height="10"/>
+                <rect x="90" y="142" width="8" height="10"/>
+                <rect x="100" y="135" width="20" height="75"/>
+                <polygon points="100,135 110,120 120,135"/>
+                <rect x="180" y="160" width="40" height="50"/>
+                <rect x="178" y="152" width="8" height="10"/>
+                <rect x="192" y="152" width="8" height="10"/>
+                <rect x="206" y="152" width="8" height="10"/>
+              </g>
+              <rect x="0" y="0" width="280" height="240" filter="url(#grainP)"/>
+              <!-- SVG overlay: pyramid + tier chips lifted from Option B -->
+              <polygon points="140,15 220,205 60,205" fill="rgba(15,23,41,0.55)" stroke="#6da7ff" stroke-width="1.5"/>
+              <g stroke="#6da7ff" stroke-width="0.8" opacity="0.7">
+                <line x1="120" y1="55" x2="160" y2="55"/>
+                <line x1="106" y1="100" x2="174" y2="100"/>
+                <line x1="92" y1="145" x2="188" y2="145"/>
+              </g>
+              <g font-family="Outfit, sans-serif" font-weight="800" font-size="10">
+                <circle cx="220" cy="35" r="11" fill="rgba(15,23,41,0.95)" stroke="#ffd13a" stroke-width="1.5"/>
+                <text x="220" y="39" text-anchor="middle" fill="#ffd13a">1</text>
+                <circle cx="220" cy="78" r="11" fill="rgba(15,23,41,0.95)" stroke="#ff5e3a" stroke-width="1.5"/>
+                <text x="220" y="82" text-anchor="middle" fill="#ff5e3a">2</text>
+                <circle cx="220" cy="123" r="11" fill="rgba(15,23,41,0.95)" stroke="#6da7ff" stroke-width="1.5"/>
+                <text x="220" y="127" text-anchor="middle" fill="#6da7ff">3</text>
+                <circle cx="220" cy="175" r="11" fill="rgba(15,23,41,0.95)" stroke="#5eead4" stroke-width="1.5"/>
+                <text x="220" y="179" text-anchor="middle" fill="#5eead4">4</text>
+              </g>
+              <g font-family="Outfit, sans-serif" font-weight="700" letter-spacing="0.08em">
+                <text x="140" y="38" text-anchor="middle" font-size="9" fill="#ffd13a">KING</text>
+                <text x="140" y="80" text-anchor="middle" font-size="9" fill="#ff5e3a">BARONS</text>
+                <text x="140" y="125" text-anchor="middle" font-size="9" fill="#6da7ff">KNIGHTS</text>
+                <text x="140" y="178" text-anchor="middle" font-size="9" fill="#5eead4">PEASANTS</text>
+              </g>
+            </svg>
+          </div>
+          <div class="prompt">
+            <span class="prompt-label">Image-gen prompt</span>
+            <code>"Soft painterly medieval English village in summer afternoon, distant stone castle on a hill, golden-hour purple-and-amber sky, warm earthy palette, no people in the foreground, no text, no flags or banners, blurred to support diagram overlay. 16:9, painterly impressionist."</code>
+          </div>
+          <p class="col-caption">Painted village + castle backdrop sets the period; SVG pyramid + numbered tier chips do the analytical work. <strong>Reads as:</strong> "you are looking at history, not just a diagram".</p>
+        </div>
+
       </div>
     </section>
 
@@ -828,9 +1132,11 @@
         <li><strong>Current</strong> column lifts the SVG straight out of <code>visuals.js</code>. No filter, no flattering — that's exactly what a kid sees.</li>
         <li><strong>Option A — Friendly illustrated</strong> commits to characters, soft colour, hand-drawn-feel outlines, and explanatory metaphors (rocket = fast, grass tufts = banks, tiny knights with swords). Bitesize-feel without copying any Bitesize asset.</li>
         <li><strong>Option B — Technical refined</strong> stays diagrammatic but pushes hard on craft: gradients, callout lines extending outside the subject, axis units, tier chips, scale bars. Cobalt-premium feel that matches the chosen palette.</li>
-        <li>Both options are <em>originally drawn</em> SVG. No imagery is sourced from Bitesize or any other site. For topics where a real photo would help (e.g. a real meander, real cells under a microscope), I'd separately source CC-licensed imagery from Wikimedia Commons / Pexels / Unsplash and pair it with the chosen diagram style — that's an additive layer, not a replacement.</li>
+        <li><strong>Option C — AI hybrid</strong> uses an AI-generated painterly background <em>under</em> a clean SVG overlay. The backdrops here are hand-mocked stand-ins (CSS gradients + a noise filter); the real workflow is: you paste the listed prompt into your image-gen tool, save the PNG to <code>assets/visuals/&lt;key&gt;.png</code>, and I wire <code>getVisual()</code> to render the PNG with the SVG layer on top. Hybrid solves AI's three weaknesses (style drift, accuracy errors, garbled text) by keeping precision in the SVG layer where it can't hallucinate.</li>
+        <li>Caveats on the AI route: every backdrop needs your eye for accuracy before going live (AI invents six-legged frogs and mislabelled organs); style consistency across 17 images takes a locked prompt template; outputs are originally created so copyright is clean, but the <em>training</em> of generative models on copyrighted material remains contested — for a personal-use revision app it's a non-issue, but worth knowing.</li>
+        <li>For topics where a real photo would beat any illustration (e.g. real cells under a microscope, real river meanders from satellite), an additive Option D is to source CC-licensed photos from Wikimedia Commons / Pexels / Unsplash and pair them with the chosen overlay style. Doesn't conflict with A/B/C — it's a per-topic call.</li>
       </ol>
-      <p style="margin-top:1rem"><strong>To pick:</strong> tell me <code>A</code> or <code>B</code>. I'll redraw the remaining 13 visuals to match, swap them into <code>visuals.js</code>, and bump the cache. If you like neither and want a third direction, say what's missing and I'll mock that too.</p>
+      <p style="margin-top:1rem"><strong>To pick:</strong> tell me <code>A</code>, <code>B</code>, or <code>C</code>. If <code>C</code>, I'll list the prompts for all 17 visuals so you can batch-generate the backdrops, then wire them up. If you like none and want a fourth direction, say what's missing and I'll mock it.</p>
     </div>
   </div>
 </body>
