@@ -2148,5 +2148,690 @@
       "When using rien/jamais/personne, you DON'T also add 'pas' — they replace it."
     ],
     "year_level": 7
+  },
+  {
+    "subject": "history",
+    "topic": "tudors",
+    "title": "The Tudors — five monarchs, one wild family",
+    "subtitle": "1485–1603: the dynasty that broke with Rome and built the Royal Navy",
+    "readTimeMin": 5,
+    "sections": [
+      {
+        "heading": "Why the Tudors matter",
+        "predict": {
+          "question": "Before you read: how many Tudor monarchs were there, and which one is most famous?",
+          "answer": "FIVE Tudor monarchs ruled England between 1485 and 1603: Henry VII, Henry VIII, Edward VI, Mary I, Elizabeth I. The most famous is Henry VIII (six wives, broke with the Pope) — but the longest-reigning and arguably most consequential was Elizabeth I (45 years, defeated the Spanish Armada, set up modern England)."
+        },
+        "body": "The Tudor period (1485–1603) is one of the most-tested topics at KS3 because so much of MODERN England traces back to it: the Church of England, the Royal Navy, the start of the British Empire, even the English language itself (Shakespeare wrote during Elizabeth I's reign).\n\nFive monarchs in 118 years. Memorise them in order — examiners ALWAYS ask for the sequence."
+      },
+      {
+        "heading": "The five Tudors — in order",
+        "list": [
+          "HENRY VII (1485–1509) — won the Battle of Bosworth, ended the Wars of the Roses, founded the dynasty.",
+          "HENRY VIII (1509–1547) — six wives, broke with Rome, dissolved the monasteries, made England Protestant.",
+          "EDWARD VI (1547–1553) — Henry VIII's son, became king at age 9, died at 15. Strongly Protestant.",
+          "MARY I (1553–1558) — \"Bloody Mary\". Reverted England to Catholic, burned ~280 Protestants.",
+          "ELIZABETH I (1558–1603) — \"the Virgin Queen\". 45-year reign. Defeated the Spanish Armada (1588). Golden age."
+        ],
+        "callout": {
+          "tone": "tip",
+          "title": "Memory hook",
+          "body": "HE-HE-EME = Henry, Henry, Edward, Mary, Elizabeth. Or remember the rhyme: \"All Henry's children took a turn — boy, Catholic, Protestant — until Elizabeth burned bright.\" The order matters more than dates."
+        }
+      },
+      {
+        "heading": "Henry VIII's six wives — DIVORCED, BEHEADED, DIED…",
+        "body": "Memorise the fates of Henry VIII's six wives with this classic rhyme:\n\nDIVORCED — BEHEADED — DIED — DIVORCED — BEHEADED — SURVIVED.\n\n1. Catherine of Aragon — DIVORCED (Henry broke with the Pope to do it — created the Church of England)\n2. Anne Boleyn — BEHEADED (mother of Elizabeth I)\n3. Jane Seymour — DIED (in childbirth — gave Henry his son Edward)\n4. Anne of Cleves — DIVORCED (Henry didn't fancy her)\n5. Catherine Howard — BEHEADED (for adultery)\n6. Catherine Parr — SURVIVED (outlived Henry)",
+        "callout": {
+          "tone": "tip",
+          "title": "The break with Rome",
+          "body": "Henry VIII wanted to divorce Catherine of Aragon because she hadn't given him a son. The Pope refused. Henry's response: declare himself head of the Church of England in 1534, breaking from Rome. This is WHY England is Protestant today — purely because the Pope wouldn't let one king have a divorce."
+        }
+      },
+      {
+        "heading": "Elizabeth I — the golden age",
+        "body": "Elizabeth I's 45-year reign is called the ELIZABETHAN GOLDEN AGE because of:\n\n• Defeating the Spanish Armada in 1588 (a huge invasion fleet — beaten by smaller English ships and stormy weather)\n• Shakespeare and the explosion of English theatre and poetry\n• Sir Francis Drake circumnavigating the globe\n• The start of English colonies in North America (Virginia)\n• Creating a stable Protestant settlement that ended decades of religious civil war\n\nElizabeth never married — she said she was \"married to England\". When she died in 1603, the Tudor dynasty ended. Her cousin James VI of Scotland became James I of England.",
+        "why_prompt": {
+          "question": "Why was 1588 (the defeat of the Spanish Armada) such a turning point for England?",
+          "answer": "Before 1588, England was a small Protestant island threatened by the most powerful Catholic empire in Europe (Spain). After 1588, England had proven it could defeat a superpower at sea. Confidence soared. Trade and exploration boomed. The seed was planted for the Royal Navy, and eventually the British Empire. It also shifted the balance of power across Europe — Spain never recovered the same dominance."
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "List the five Tudor monarchs in order, and say one important thing each one is remembered for.",
+          "checklist": [
+            "Henry VII — founded the dynasty / won Battle of Bosworth",
+            "Henry VIII — six wives / broke with Rome / Church of England",
+            "Edward VI — boy king / strongly Protestant / died at 15",
+            "Mary I — 'Bloody Mary' / reverted to Catholic / burned Protestants",
+            "Elizabeth I — 45-year reign / Spanish Armada / golden age"
+          ],
+          "model_answer": "Henry VII founded the dynasty by winning the Battle of Bosworth in 1485. Henry VIII had six wives and broke with the Pope to create the Church of England. Edward VI was a boy king who pushed England further into Protestantism but died at 15. Mary I was 'Bloody Mary' — she tried to make England Catholic again and burned ~280 Protestants. Elizabeth I reigned for 45 years, defeated the Spanish Armada in 1588, and oversaw the Elizabethan golden age."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "Five Tudors in order: Henry VII, Henry VIII, Edward VI, Mary I, Elizabeth I.",
+      "Henry VIII's wives: Divorced, Beheaded, Died, Divorced, Beheaded, Survived.",
+      "1485 = Tudors begin (Bosworth). 1534 = break with Rome. 1588 = Spanish Armada. 1603 = Tudors end.",
+      "Henry VIII broke with the Pope over a divorce — that's why England is Protestant today."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "history",
+    "topic": "english-civil-war",
+    "title": "The English Civil War — when England executed its own king",
+    "subtitle": "1642–1651: King vs Parliament, the only time we ran without a monarch",
+    "readTimeMin": 5,
+    "sections": [
+      {
+        "heading": "The most dramatic decade in English history",
+        "predict": {
+          "question": "Before you read: what's the only time in history that England executed its own monarch?",
+          "answer": "1649 — Charles I was beheaded outside the Banqueting House in Whitehall. After his execution, England had NO KING for 11 years (1649–1660), the only republican period in English history. Oliver Cromwell ruled instead, as 'Lord Protector'. This is hugely significant because it set the precedent that even a king is not above Parliament — a foundation of modern British democracy."
+        },
+        "body": "The English Civil War (1642–1651) was a series of armed conflicts between supporters of King Charles I (CAVALIERS) and supporters of Parliament (ROUNDHEADS). It ended with Charles I's execution in 1649 — the first and only time the English have killed their own monarch. The country then ran as a republic under Oliver Cromwell until 1660, when Charles II was invited back."
+      },
+      {
+        "heading": "Why the war started",
+        "list": [
+          "MONEY — Charles I tried to raise taxes WITHOUT Parliament's permission. Parliament was furious.",
+          "RELIGION — Charles married a Catholic princess (Henrietta Maria of France). Many feared he'd turn England Catholic.",
+          "POWER — Charles believed in the 'Divine Right of Kings' (God put him on the throne, no human can question him). Parliament disagreed.",
+          "RULING WITHOUT PARLIAMENT — Charles tried to rule for ELEVEN years (1629–1640) without calling Parliament at all (the 'Personal Rule')."
+        ],
+        "callout": {
+          "tone": "tip",
+          "title": "Memory hook — the 3 Ms",
+          "body": "MONEY. MORALITY (religion). MONARCHY (who's in charge). The three big causes of the Civil War. Almost every essay on this topic comes back to one of those three."
+        }
+      },
+      {
+        "heading": "Cavaliers vs Roundheads",
+        "body": "The two sides had memorable nicknames:\n\n• CAVALIERS — King's supporters. Wore long hair, fancy clothes, feathered hats. Mostly nobles and the gentry. Catholic-friendly. Royalists.\n\n• ROUNDHEADS — Parliament's supporters. Cropped (round) haircuts, plain clothes. Many were Puritans (strict Protestants who disapproved of luxury). Led eventually by OLIVER CROMWELL.\n\nThe Roundheads' New Model Army was the first professional army in English history — disciplined, well-trained, and famously hard to beat. They won.",
+        "example": {
+          "title": "Key battles in order",
+          "steps": [
+            "1642 — Battle of Edgehill (first major battle, draw)",
+            "1644 — Battle of Marston Moor (Roundhead victory, turning point in the north)",
+            "1645 — Battle of Naseby (decisive Roundhead victory — Cromwell's New Model Army crushes the Royalists)",
+            "1649 — Charles I beheaded in Whitehall",
+            "1651 — Battle of Worcester (final defeat of Charles II's attempt to retake the throne)"
+          ]
+        }
+      },
+      {
+        "heading": "The Commonwealth & the Restoration",
+        "body": "After Charles I's execution, England had no king. Parliament tried to run things, but in 1653 OLIVER CROMWELL took control as LORD PROTECTOR — basically a king without the title.\n\nCromwell ran a strict Puritan regime: no Christmas (he banned celebrations), no theatre, no dancing, no Sunday football. People HATED it. When Cromwell died in 1658, his son Richard couldn't hold things together.\n\nIn 1660, Parliament invited Charles I's son back from exile. He became CHARLES II, and this period is called the RESTORATION (the monarchy was 'restored'). Theatres reopened, parties returned, Christmas was back.",
+        "why_prompt": {
+          "question": "Why is the English Civil War still seen as a turning point in British democracy, even though England got its king back in 1660?",
+          "answer": "Because the Civil War proved — once and for all — that NO KING is above the law. Future monarchs knew that defying Parliament could literally cost them their head. This shifted the balance of power permanently: by 1689, Parliament had passed the Bill of Rights, locking in its supremacy. The Civil War didn't END the monarchy, but it forever LIMITED it. That's why Britain today is a 'constitutional monarchy' — the king reigns, but Parliament rules."
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "Tell a friend the 3 main causes of the Civil War, who fought, and why it matters today.",
+          "checklist": [
+            "Causes: money (taxes), religion, power/divine right",
+            "Sides: Cavaliers (King) vs Roundheads (Parliament)",
+            "Outcome: Charles I beheaded 1649, Cromwell rules, Charles II restored 1660",
+            "Significance: established that monarchs answer to Parliament"
+          ],
+          "model_answer": "Three causes: MONEY (Charles raised taxes without Parliament), RELIGION (fears he'd make England Catholic), and POWER (Divine Right of Kings vs Parliament's authority). Sides: Cavaliers (Royalists, fancy clothes) vs Roundheads (Parliament, cropped hair, Puritans). Outcome: Charles I executed 1649, Cromwell ruled until 1658, Charles II restored 1660. Why it matters: it set the precedent that monarchs answer to Parliament — the foundation of British democracy."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "3 Ms of Civil War causes: Money, Morality (religion), Monarchy (power).",
+      "Cavaliers = King's side (long hair). Roundheads = Parliament's side (cropped hair).",
+      "1642 war starts. 1649 Charles I beheaded. 1660 Restoration of Charles II.",
+      "Only time England executed its own king. Only republican period in English history."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "history",
+    "topic": "black-death",
+    "title": "The Black Death — Europe's worst pandemic",
+    "subtitle": "1348–1350: how a flea-borne plague killed a third of England",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "The plague that changed everything",
+        "predict": {
+          "question": "Before you read: roughly what percentage of England died in the Black Death of 1348–1350?",
+          "answer": "Around 30–40% — between a third and nearly a half of the entire population. In some villages, EVERYONE died. The total death toll across Europe was 25–50 million people. To put that in perspective: in 2 years, the Black Death killed more people than every war the UK has ever fought, combined. It is the most catastrophic single event in European history."
+        },
+        "body": "The Black Death arrived in England in JUNE 1348, carried on trading ships from mainland Europe. Within 2 years it had killed roughly a THIRD of the population. The disease was so terrifying because:\n\n• It killed within 3–5 days of symptoms appearing.\n• No-one understood what caused it (they had no germ theory).\n• It killed the rich and the poor, the healthy and the weak.\n• Whole villages could be wiped out before help arrived."
+      },
+      {
+        "heading": "What the disease actually was",
+        "body": "The Black Death was BUBONIC PLAGUE, caused by the bacterium Yersinia pestis. It spread via FLEAS that lived on RATS that travelled on SHIPS.\n\nSymptoms:\n• Painful black/purple LUMPS (called BUBOES, hence 'bubonic') in the armpit, groin, and neck.\n• High fever, vomiting, headache, exhaustion.\n• Fingers and toes turned black as tissue died — this is where the name 'Black Death' comes from.\n• Death usually within 3–5 days.\n\nMedieval people didn't know any of this. They blamed: bad air ('miasma'), God's punishment for sins, Jewish people (this led to terrible massacres in some European cities), planets aligning, foreigners.",
+        "callout": {
+          "tone": "tip",
+          "title": "Why \"Ring a Ring o' Roses\" is NOT about the plague",
+          "body": "There's a popular myth that the nursery rhyme is about the Black Death (rosy rash, sneezing, falling down dead). It isn't — the rhyme first appears in 1881, over 500 years too late. Folk-historians invented the connection in the 1960s. Real Black Death symptoms didn't include rosy rashes or sneezing."
+        }
+      },
+      {
+        "heading": "Cures people tried (none worked)",
+        "list": [
+          "Bleeding the patient — let out the 'bad blood'. Usually killed them faster.",
+          "Praying / flagellation — groups whipped themselves in public to atone for sins.",
+          "Lancing the buboes — sometimes worked if the bubo broke and drained.",
+          "Wearing flowers / herbs — believed to ward off bad air.",
+          "Burning incense in the streets — same logic, no effect.",
+          "Plague doctors with bird-beak masks (came LATER, in the 1600s) — the beak was stuffed with herbs."
+        ]
+      },
+      {
+        "heading": "Why the Black Death changed England forever",
+        "body": "Before 1348, England's population was around 5 million. After, it was about 3 million. This crash had MASSIVE consequences:\n\n• PEASANTS' WAGES ROSE — fewer workers meant lords had to PAY to attract them. Peasants who had been tied to a lord (serfs) could now demand wages and move to where the work was.\n• THE FEUDAL SYSTEM WEAKENED — when peasants discovered their labour had value, the medieval social order started cracking.\n• THE PEASANTS' REVOLT (1381) followed — partly because the government tried to FREEZE wages back at pre-plague levels.\n• RELIGIOUS UPHEAVAL — many lost faith in the Church (which couldn't stop the plague despite endless prayers).\n• EMPTY VILLAGES — some entire villages were abandoned and never resettled. You can still find their outlines in fields today.",
+        "why_prompt": {
+          "question": "Why did the Black Death — a horrific tragedy — actually IMPROVE conditions for the surviving peasants?",
+          "answer": "Simple supply and demand. Before the plague, lords had MORE peasants than they needed, so peasants had no power to negotiate. After the plague killed a third of workers, lords were desperate for labour — and peasants could refuse to work unless they were paid better, treated better, or freed from feudal obligations. It's a brutal lesson in economics: the survivors of a disaster are often more valuable than they were before it."
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain in 30 seconds: what caused the Black Death, how many died in England, and one major social consequence.",
+          "checklist": [
+            "Cause: bacterium Yersinia pestis, spread by fleas on rats on ships",
+            "Death toll: about 1/3 of England's population (roughly 2 million of 5 million)",
+            "Consequence: peasants' wages rose / feudal system weakened / Peasants' Revolt 1381"
+          ],
+          "model_answer": "The Black Death was bubonic plague, caused by a bacterium spread by fleas living on rats that arrived on trading ships in 1348. About a third of England's population died — roughly 2 million people out of 5 million. One huge consequence: surviving peasants had so much bargaining power (because workers were now scarce) that wages rose, the feudal system started cracking, and within a generation peasants were demanding rights — leading to the Peasants' Revolt in 1381."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "Cause: bacterium Yersinia pestis. Spread by fleas → rats → trading ships.",
+      "Symptoms: black/purple buboes in armpit/groin/neck, fever, dead in 3–5 days.",
+      "Killed about 1/3 of England's population in 1348–1350.",
+      "Consequence: weakened feudalism; surviving peasants had more bargaining power."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "geography",
+    "topic": "rivers",
+    "title": "Rivers — from source to mouth",
+    "subtitle": "How rivers shape the land and the famous 3 stages every river has",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "Every river has a journey",
+        "predict": {
+          "question": "Before you read: where does a river START? And which way does its water flow — uphill or downhill?",
+          "answer": "Every river starts at its SOURCE — almost always in HIGH ground (a hill, mountain, lake, or spring). Water always flows DOWNHILL because of gravity. The journey ends at the MOUTH, where the river meets the sea (or sometimes a lake). In between, the river behaves very differently depending on which stage it's in."
+        },
+        "body": "A river has THREE stages along its journey from source (start) to mouth (end). Each stage looks different and creates different landforms.\n\n• UPPER COURSE (near the source — hilly, fast, narrow, deep)\n• MIDDLE COURSE (the middle section — wider, slower, meanders)\n• LOWER COURSE (near the mouth — wide, slow, often muddy)\n\nThe key driver of all of this is EROSION (the river wearing rock away) and DEPOSITION (the river dropping the stuff it's carrying)."
+      },
+      {
+        "heading": "Upper course — narrow, fast, vertical",
+        "body": "The river starts in steep hills. Lots of energy, very narrow channel. Erosion is happening DOWNWARDS (cutting down into the rock).\n\nKey landforms:\n• V-SHAPED VALLEY — the river cuts a steep V into the hillside.\n• WATERFALLS — where soft rock under hard rock gets eroded away, leaving the hard rock to overhang. Eventually the overhang collapses, and the waterfall retreats upstream.\n• GORGES — the deep narrow valley left behind as a waterfall slowly retreats.\n• INTERLOCKING SPURS — where the river winds around bits of harder rock that stick out from each side.",
+        "callout": {
+          "tone": "tip",
+          "title": "Memory hook for upper course",
+          "body": "Upper = HIGH and FAST. Think 'V for Vertical' — V-shaped valleys, vertical erosion (cutting DOWN), velocity (fast). Three Vs. Easy."
+        }
+      },
+      {
+        "heading": "Middle course — wider, meanders begin",
+        "body": "By now the river is bigger (tributaries have joined in). The land flattens. The river still has energy, but now it erodes SIDEWAYS as well as down — this carves out wider valleys.\n\nKey landform: MEANDERS. These are the bendy, snake-like loops you see on a map. They form because:\n• The water flows FASTER on the outside of a bend (because it has further to travel) — this erodes the outer bank into a CLIFF.\n• The water flows SLOWER on the inside of a bend — this drops sediment, building up a SLIP-OFF SLOPE (a small beach inside the curve).\n• Over time, meanders grow more and more curved. Sometimes the river cuts straight across the neck of a tight loop, leaving the loop behind as an OXBOW LAKE.",
+        "example": {
+          "title": "Why meanders form (in 4 steps)",
+          "steps": [
+            "Tiny bend forms in the river.",
+            "Outside of the bend: water faster → erodes the bank → forms a river cliff.",
+            "Inside of the bend: water slower → drops sediment → forms a slip-off slope (beach).",
+            "Over time, the bend grows into a horseshoe shape — a meander."
+          ]
+        }
+      },
+      {
+        "heading": "Lower course — slow, wide, depositing",
+        "body": "Now the river is huge, slow, and tired. It has tons of sediment but not much energy. So it DROPS the sediment everywhere.\n\nKey landforms:\n• FLOODPLAIN — flat land either side of the river. Brilliant for farming (flood deposits leave rich soil).\n• LEVÉES — natural raised banks at the edge of the river, built up by repeated flooding.\n• ESTUARY / DELTA — at the mouth, where the river meets the sea. An estuary is a wide tidal mouth (like the Thames). A delta is a fan of sediment built up where the river dumps everything (like the Nile).",
+        "why_prompt": {
+          "question": "Why is the lower course of a river often the most populated and best for farming?",
+          "answer": "Because the floodplain is FLAT (good for building) and the soil is RICH (the river deposits nutrients every time it floods). Easy access to water for drinking, washing, and trade routes. Plus the river itself is wide and navigable for boats. Almost every major world city (London, Paris, Cairo, Shanghai) sits on the lower course of a major river — it's no coincidence."
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "A friend asks why the same river looks like a steep V-valley near a mountain but a slow snake on a map of low country. Explain.",
+          "checklist": [
+            "Mentioned the river has 3 courses (upper / middle / lower)",
+            "Upper: fast, narrow, eroding DOWN (V-shape)",
+            "Middle: wider, slower, eroding sideways (meanders)",
+            "Lower: slow, deposits sediment, wide floodplain"
+          ],
+          "model_answer": "Rivers have three stages. Near the source the land is steep so the water moves fast and erodes downwards — that's why you see a sharp V-shaped valley. As the river moves through flatter country in the middle stage, it erodes sideways instead, creating big bends called meanders. By the lower course, the river is huge and slow, so it drops sediment, forming wide flat floodplains. Same river, three completely different shapes — because the speed and the slope have changed."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "Source = start (high ground). Mouth = end (sea/lake). Tributary = smaller river that joins.",
+      "Upper course: fast, V-shaped valley, waterfalls, vertical erosion.",
+      "Middle course: meanders form (fast outside cliff, slow inside slip-off slope).",
+      "Lower course: slow, floodplain, levées, estuary or delta at the mouth."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "geography",
+    "topic": "coasts",
+    "title": "Coasts — how the sea shapes the land",
+    "subtitle": "Erosion, deposition, and the famous Old Harry Rocks",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "The coast is constantly changing",
+        "predict": {
+          "question": "Before you read: why do white cliffs (like the White Cliffs of Dover) exist? Why don't they just slope gently into the sea?",
+          "answer": "Because the SEA is constantly cutting INTO the land. Waves erode the bottom of a cliff, undercutting the rock above until it COLLAPSES. This leaves a sheer vertical face — a cliff. Soft rock erodes faster, hard rock more slowly. So coastal cliffs are always evolving — every storm, every wave, the coastline shifts a little. The Holderness coast in Yorkshire loses about 2 metres per year on average."
+        },
+        "body": "The coast is a battleground between the sea and the land. There are two main processes:\n\n• EROSION — the sea wearing the land away.\n• DEPOSITION — the sea dropping sediment to build new land (beaches, spits, bars).\n\nWhich one wins depends on: rock type (hard vs soft), wave energy (calm vs stormy coast), the shape of the coastline."
+      },
+      {
+        "heading": "How waves erode — 4 ways",
+        "list": [
+          "HYDRAULIC ACTION — the sheer force of water hitting rock pushes air into cracks and forces them open.",
+          "ABRASION — waves throw sand and pebbles AT the cliff, sandpapering it down.",
+          "ATTRITION — the rocks themselves smash into each other in the waves and grind down into smaller pebbles, then sand.",
+          "SOLUTION — sea water (slightly acidic) dissolves rocks like limestone or chalk over time."
+        ],
+        "callout": {
+          "tone": "tip",
+          "title": "Memory hook — HAAS",
+          "body": "HAAS = Hydraulic action, Abrasion, Attrition, Solution. The four ways the sea erodes a coast. Examiners often ask 'name three processes of coastal erosion' — HAAS gets you four."
+        }
+      },
+      {
+        "heading": "Erosion landforms — caves, arches, stacks, stumps",
+        "body": "When waves hit a cliff with a weak point (a crack), they slowly enlarge it. This creates a famous SEQUENCE of landforms:\n\n1. CRACK in the cliff face (a weakness)\n2. CAVE forms as waves enlarge the crack\n3. ARCH forms when the sea cuts all the way through the headland\n4. STACK forms when the top of the arch collapses, leaving a tall column of rock standing alone\n5. STUMP forms when the stack itself eventually erodes down to a low remnant\n\nCLASSIC EXAMPLE: Old Harry Rocks (Dorset) — a famous arch and stack on the Jurassic Coast. Durdle Door is another famous arch in the same area.",
+        "example": {
+          "title": "From crack to stump — the timeline",
+          "steps": [
+            "Crack: a few months of weather and waves.",
+            "Cave: years to decades.",
+            "Arch: many decades to centuries.",
+            "Stack: arch collapses (one violent storm can do it).",
+            "Stump: stack erodes down over centuries."
+          ],
+          "outro": "Most coastlines have several of these stages visible at once — different headlands at different points in the cycle."
+        }
+      },
+      {
+        "heading": "Deposition — beaches, spits, bars",
+        "body": "Deposition happens where waves LOSE energy and drop their sediment. Calm bays are classic deposition sites.\n\n• BEACH — sand and pebbles deposited where waves break gently.\n• SPIT — a long finger of sand/pebbles sticking out from the coast (formed where the coastline bends sharply but waves keep moving sediment in a straight line). Famous example: Spurn Point in Yorkshire.\n• BAR — a spit that has grown all the way across a bay, cutting off a lagoon behind it.\n• TOMBOLO — a sandbar that joins an island to the mainland (e.g. Chesil Beach links the Isle of Portland to Dorset).\n\nThe process moving sand along a coast is called LONGSHORE DRIFT — waves come in at an angle but retreat straight out, gradually shifting sediment along the coast in a zig-zag.",
+        "why_prompt": {
+          "question": "Why does longshore drift cause beaches to need expensive 'groynes' (wooden barriers built out into the sea)?",
+          "answer": "Without groynes, longshore drift would gradually move ALL the sand off a beach and dump it further down the coast — leaving the original beach bare and exposing the cliffs behind to direct wave attack. Groynes act like fences, trapping sand on the upstream side. They protect property and tourism beaches. Look at any English seaside beach (Brighton, Bournemouth) — you'll see groynes every 100 metres or so."
+        }
+      },
+      {
+        "heading": "Hard vs soft engineering — managing the coast",
+        "list": [
+          "HARD: sea walls (concrete barriers), groynes (wooden fences), gabions (cages of rocks), rock armour. Effective but expensive and ugly.",
+          "SOFT: beach nourishment (adding sand), managed retreat (letting some areas flood naturally), creating salt marshes. Cheaper and more environmental, but slower.",
+          "MOST COASTLINES use a MIX. Pure hard engineering can shift erosion problems further down the coast."
+        ]
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain to a younger sibling how a STACK like Old Harry Rocks formed.",
+          "checklist": [
+            "Started as a CRACK in a cliff",
+            "Crack widened into a CAVE by waves",
+            "Cave became an ARCH (sea cut all the way through)",
+            "Arch top collapsed leaving a STACK"
+          ],
+          "model_answer": "It started as a tiny crack in the cliff. Waves bashed at it for years until it grew into a CAVE. The waves kept cutting through the headland until they broke through the other side, making an ARCH (a hole all the way through). Eventually the top of the arch got too heavy and crashed into the sea — leaving a tall column of rock all on its own. That's a STACK. Old Harry Rocks is a famous example in Dorset."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "HAAS = the 4 erosion processes: Hydraulic action, Abrasion, Attrition, Solution.",
+      "Erosion sequence: crack → cave → arch → stack → stump.",
+      "Deposition landforms: beach, spit, bar, tombolo.",
+      "Longshore drift moves sand along the coast in a zig-zag — groynes stop it."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "geography",
+    "topic": "weather-and-climate",
+    "title": "Weather vs climate — the difference matters",
+    "subtitle": "Why a cold week doesn't disprove climate change",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "Two words people mix up",
+        "predict": {
+          "question": "Before you read: someone says 'It's freezing this week, so much for global warming!' What's wrong with their argument?",
+          "answer": "They've confused WEATHER with CLIMATE. Weather is what's happening RIGHT NOW (today, this week). Climate is the LONG-TERM AVERAGE (decades). One cold week tells you nothing about climate change — climate is measured over 30+ years. It's like saying 'I had a bad day today, so my whole life is a disaster'. Weather and climate are different time scales."
+        },
+        "body": "WEATHER = the day-to-day state of the atmosphere — temperature, rain, wind, sun, clouds. It changes hour by hour.\n\nCLIMATE = the long-term average weather of an area, measured over at least 30 years.\n\nMemory hook: 'Climate is what you EXPECT, weather is what you GET.' Britain's CLIMATE is mild and rainy. The WEATHER on any given day might be sunny, snowy, or stormy."
+      },
+      {
+        "heading": "What affects climate",
+        "list": [
+          "LATITUDE — how far you are from the equator. Equator is hot, poles are cold.",
+          "ALTITUDE — higher up = colder (about 1°C drop per 100m of climb).",
+          "DISTANCE FROM THE SEA — coastal areas have milder, more stable temperatures. Inland areas have hotter summers and colder winters.",
+          "OCEAN CURRENTS — warm currents (like the Gulf Stream) heat nearby coasts. The UK is much warmer than Canada at the same latitude because of the Gulf Stream.",
+          "PREVAILING WINDS — the direction wind usually comes from. UK winds come from the south-west, off the Atlantic — so they bring warm wet air."
+        ],
+        "callout": {
+          "tone": "tip",
+          "title": "Memory hook — LADP",
+          "body": "LADP = Latitude, Altitude, Distance from sea, Prevailing winds. The four big climate factors. (Some books also add Ocean currents — LADPO.)"
+        }
+      },
+      {
+        "heading": "The water cycle — where weather comes from",
+        "body": "All weather involves water moving through the atmosphere. The cycle has 4 stages:\n\n1. EVAPORATION — sun heats water in oceans/lakes, water becomes invisible water vapour.\n2. CONDENSATION — vapour rises, cools, and turns back into tiny droplets — these form CLOUDS.\n3. PRECIPITATION — droplets get heavier and fall as rain, snow, sleet, or hail.\n4. COLLECTION — water collects in rivers and oceans, ready to evaporate again.\n\nThis cycle drives all rain, all snow, all storms.",
+        "example": {
+          "title": "Why it rains more on the west of the UK",
+          "steps": [
+            "Prevailing winds from the south-west pick up moisture over the Atlantic.",
+            "Wet air hits the high ground in Wales / the Lake District / west Scotland.",
+            "Air is forced UP by the mountains. Rising air COOLS.",
+            "Cooler air can hold less moisture → CONDENSATION → CLOUDS → RAIN.",
+            "By the time the air reaches the east coast, it has 'rained itself out' — east is much drier (London is drier than Manchester)."
+          ],
+          "outro": "This is called RELIEF RAINFALL — caused by air rising over high ground."
+        }
+      },
+      {
+        "heading": "Climate change vs natural variation",
+        "body": "Earth's climate has CHANGED before — ice ages, warm periods, the medieval warm period — all natural. Volcanic eruptions, sun cycles, slight wobbles in Earth's orbit can all shift climate.\n\nBUT: the change happening now (since about 1850) is MUCH FASTER than any natural cycle, and it tracks closely with humans burning fossil fuels (coal, oil, gas) and releasing CARBON DIOXIDE. CO₂ traps heat — like a greenhouse — so the planet warms.\n\nKey statistics:\n• Earth has warmed ~1.2°C since 1850.\n• 2023 and 2024 were the hottest years on record (a new record almost every year now).\n• Sea levels are rising ~3.4 mm per year.",
+        "why_prompt": {
+          "question": "Why is a 1.2°C global average temperature rise such a big deal? It sounds tiny.",
+          "answer": "Because that's an AVERAGE — and averages hide extremes. A small rise in average temperature dramatically increases how often you get extreme heat (heatwaves), extreme rain (floods), and extreme storms. It also melts ice (raising sea levels) and shifts where crops can grow. The last ice age was only ~5°C colder than today — and that was enough to put London under a glacier. Tiny averages = huge consequences."
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "A friend says: 'It snowed in April so climate change must be fake.' Reply with the correct geography point in 3 sentences.",
+          "checklist": [
+            "Distinguished WEATHER (one event) from CLIMATE (long-term average)",
+            "Mentioned climate is measured over decades",
+            "Pointed out that one cold event doesn't disprove a long-term warming trend"
+          ],
+          "model_answer": "Snow in April is WEATHER — a single event. Climate is the long-term AVERAGE, measured over decades. One cold week or one unusual day says nothing about whether climate is changing — and globally, the last ten years have been the hottest on record. You can't judge climate by one day's weather, just like you can't judge a film by one frame."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "Weather = right now. Climate = long-term average over 30+ years.",
+      "LADP = Latitude, Altitude, Distance from sea, Prevailing winds. The 4 climate factors.",
+      "Water cycle: evaporation → condensation → precipitation → collection.",
+      "Climate has always changed naturally, but the current rise is faster and tracks fossil-fuel use."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "computing",
+    "topic": "algorithms",
+    "title": "Algorithms — recipes for computers",
+    "subtitle": "What an algorithm actually is, and why ORDER matters more than anything",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "An algorithm is just a recipe",
+        "predict": {
+          "question": "Before you read: is making a cup of tea an algorithm?",
+          "answer": "YES. Any set of step-by-step instructions to achieve a goal is an algorithm. Boil water, put tea bag in cup, pour water, wait 3 minutes, remove tea bag, add milk. That's an algorithm. Computer algorithms are the same idea — just written in code instead of English. The recipe analogy is exactly right: every computer program is, at heart, a recipe."
+        },
+        "body": "An ALGORITHM is a precise sequence of instructions to solve a problem or complete a task. Three rules:\n\n• Each step must be CLEAR (no ambiguity).\n• Steps must be in the RIGHT ORDER.\n• The algorithm must END (not loop forever).\n\nAlgorithms aren't just for computers — recipes, knitting patterns, IKEA instructions, board game rules are all algorithms."
+      },
+      {
+        "heading": "The 3 ways to write an algorithm",
+        "list": [
+          "ENGLISH (or pseudocode) — a clear list of steps written in plain language. Best for designing.",
+          "FLOWCHART — a diagram with shapes (oval = start/end, rectangle = action, diamond = decision). Best for visualising decisions.",
+          "CODE — actual programming language (Python, Scratch, JavaScript). Best for execution."
+        ],
+        "callout": {
+          "tone": "tip",
+          "title": "Pseudocode = halfway",
+          "body": "Pseudocode is the most useful tool for planning. It's clearer than English and easier to write than code. Top students sketch in pseudocode FIRST, then translate to actual code. Saves bugs."
+        }
+      },
+      {
+        "heading": "Three building blocks: SEQUENCE, SELECTION, ITERATION",
+        "body": "Every algorithm — even huge ones — is made of just 3 building blocks. Memorise them:\n\n• SEQUENCE — steps run in order, one after another. (Step 1, Step 2, Step 3...)\n• SELECTION — IF something is true, do this; ELSE do that. (Decisions / branching.)\n• ITERATION — REPEAT something until a condition is met. (Loops.)\n\nThat's it. Every video game, app, and operating system is built from these three things, in different combinations.",
+        "example": {
+          "title": "All 3 in a 'crossing the road' algorithm",
+          "steps": [
+            "1. Walk to the kerb. (SEQUENCE)",
+            "2. IF the road is clear, cross. ELSE wait. (SELECTION)",
+            "3. WHILE there are still cars coming, keep waiting. (ITERATION)",
+            "4. Cross the road. (SEQUENCE)",
+            "5. Reach the other side. (SEQUENCE — done)"
+          ],
+          "outro": "Every program you'll ever write uses these three building blocks."
+        }
+      },
+      {
+        "heading": "Why ORDER matters",
+        "body": "An algorithm with the right STEPS but the wrong ORDER will fail.\n\nExample — making toast:\n• 1. Put bread in toaster. 2. Press the button. 3. Wait. 4. Remove toast. ✓ (works)\n• 1. Press the button. 2. Put bread in toaster. 3. Wait. 4. Remove toast. ✗ (button does nothing — empty toaster)\n• 1. Wait. 2. Put bread in toaster. 3. Press the button. 4. Remove toast. ✗ (waiting for nothing)\n\nThis is why programmers say 'a program is correct if and only if every step is in the right order'. Most bugs are ORDER bugs — not missing steps, just steps in the wrong sequence.",
+        "why_prompt": {
+          "question": "Why do programmers spend more time DEBUGGING (fixing programs) than writing them in the first place?",
+          "answer": "Because algorithms have to be PERFECT. A recipe with a typo still works (humans guess). A program with a typo crashes. And humans are bad at predicting all the edge cases — what happens if the input is empty? What if the user clicks twice? What if the network drops mid-step? Most bugs aren't 'I forgot a step' — they're 'I forgot a CASE'. That's why testing and debugging take longer than coding."
+        }
+      },
+      {
+        "heading": "Famous algorithms you've used today",
+        "list": [
+          "GOOGLE SEARCH — ranks billions of pages by relevance in 0.2 seconds.",
+          "SAT NAV — finds the shortest route between two points (Dijkstra's algorithm, 1956).",
+          "TIK-TOK FOR YOU PAGE — predicts what you'll watch next based on viewing patterns.",
+          "YOUR PHONE'S AUTOCORRECT — guesses the most likely word as you type.",
+          "SPOTIFY SHUFFLE — chooses the order of songs (it's NOT random; real random feels too clumpy)."
+        ]
+      },
+      {
+        "teach_back": {
+          "prompt": "Write an algorithm in 5 steps for a friend to brush their teeth correctly. Include at least one SELECTION (if/else).",
+          "checklist": [
+            "Steps in clear order (sequence)",
+            "Includes an IF / ELSE decision somewhere",
+            "Algorithm has an end (not infinite)",
+            "Each step unambiguous"
+          ],
+          "model_answer": "1. Put toothpaste on the brush. 2. Wet the brush. 3. Brush each set of teeth for 30 seconds (front, top, back, both sides). 4. IF you see any food bits remaining, brush again. ELSE, rinse mouth. 5. Spit, rinse the brush, put it back. (Steps in order = sequence; IF in step 4 = selection.)"
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "An algorithm is a precise step-by-step recipe. Not just for computers.",
+      "3 building blocks: SEQUENCE (order), SELECTION (if/else), ITERATION (loop).",
+      "Order of steps matters — most bugs are wrong-order bugs.",
+      "Sketch in pseudocode FIRST, then translate to actual code."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "computing",
+    "topic": "hardware-software",
+    "title": "Hardware vs software — and the CPU/RAM/storage trio",
+    "subtitle": "The body and the brain of every computer",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "The kick / drop test",
+        "predict": {
+          "question": "Before you read: is Microsoft Word HARDWARE or SOFTWARE? What about your laptop's screen? What about a USB stick?",
+          "answer": "Microsoft Word = SOFTWARE (a program — instructions, not a thing you can hold). Laptop's screen = HARDWARE (you can touch it). USB stick = HARDWARE (the physical stick) — but the FILES on it are SOFTWARE/DATA. Quick rule: if you can drop it on your foot, it's hardware. If you can't, it's software. (Joke is older than the internet.)"
+        },
+        "body": "Every computer has TWO parts:\n\n• HARDWARE — the physical stuff. Anything you can touch. Screen, keyboard, mouse, motherboard, RAM, hard drive, CPU.\n• SOFTWARE — the instructions that tell the hardware what to do. Programs, apps, operating system, files, the website you're reading.\n\nNeither works alone. Hardware without software is a useless lump of plastic and metal. Software without hardware is just an idea."
+      },
+      {
+        "heading": "Two types of software",
+        "list": [
+          "SYSTEM SOFTWARE — runs the computer itself. Examples: Windows, macOS, Linux, iOS, Android. The OPERATING SYSTEM is the most important system software — it manages the hardware and runs all the apps.",
+          "APPLICATION SOFTWARE (apps) — the programs YOU choose to use: Chrome, Roblox, Word, Spotify, TikTok, Minecraft. They run ON TOP OF the operating system."
+        ],
+        "callout": {
+          "tone": "tip",
+          "title": "OS = Operating System",
+          "body": "When you turn on a computer, the very first thing that loads is the operating system. It's the 'manager' that makes sure all the hardware works and lets apps talk to the keyboard, screen, and storage. Without an OS, your laptop wouldn't even reach a login screen."
+        }
+      },
+      {
+        "heading": "The big trio: CPU, RAM, Storage",
+        "body": "Three pieces of hardware do the heavy lifting. Memorise these — they come up CONSTANTLY.\n\n• CPU (Central Processing Unit) — the BRAIN. Does the actual calculations. Speed measured in GHz (billions of operations per second). \"Faster CPU = faster computer.\"\n\n• RAM (Random Access Memory) — the DESK. Where the computer keeps everything it's currently working on. Loses everything when you switch off. More RAM = more apps open at once.\n\n• STORAGE (HDD or SSD) — the FILING CABINET. Where files are KEPT, even when the power is off. SSDs are faster than HDDs. Measured in GB or TB.\n\nMemory hook: BRAIN, DESK, FILING CABINET. Or: CPU thinks. RAM holds today's work. Storage keeps everything for tomorrow.",
+        "example": {
+          "title": "Why this matters when buying a laptop",
+          "intro": "When parents debate buying a laptop, three numbers usually decide it:",
+          "steps": [
+            "CPU SPEED — e.g. 'Intel i5 at 3.0 GHz'. Higher = faster computing.",
+            "RAM AMOUNT — e.g. '8 GB' or '16 GB'. More = more apps open without slowing down.",
+            "STORAGE SIZE — e.g. '256 GB SSD' or '1 TB SSD'. Bigger = more files, photos, games.",
+            "If a laptop runs slowly, it's usually because it's RUNNING OUT OF RAM (too many tabs open) or has a slow HARD DRIVE."
+          ]
+        }
+      },
+      {
+        "heading": "Input, process, output, storage",
+        "body": "Every computer task fits into 4 stages:\n\n• INPUT — data goes IN. Examples: keyboard, mouse, microphone, camera, touchscreen, scanner.\n• PROCESS — the CPU works on the data.\n• OUTPUT — results come OUT. Examples: screen, speakers, printer, lights.\n• STORAGE — data is KEPT for later (RAM = short-term, SSD = long-term).\n\nThis is called the IPO+S model. Every program you write at school will ask: what's the input? what's the processing? what's the output? — and that order.",
+        "why_prompt": {
+          "question": "Why does a computer have BOTH RAM (which forgets when off) AND storage (which remembers)? Why not just one?",
+          "answer": "Because of SPEED vs PERMANENCE. RAM is incredibly fast (the CPU can access it in nanoseconds) but loses everything when power's off — and it's expensive per GB. Storage (SSD/HDD) is slower but keeps data without power, and is cheap. The computer USES RAM for everything 'in progress' (your open document, the game you're playing) and USES STORAGE to save the file at the end. If a computer had only RAM, every restart would wipe everything. If it had only storage, every operation would be 100x slower."
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "A grandparent asks: 'why does my laptop slow down when I open lots of tabs?' Explain in 30 seconds using CPU, RAM, and storage.",
+          "checklist": [
+            "Mentioned RAM is the working memory (the 'desk')",
+            "Said too many tabs = RAM fills up",
+            "Explained the computer then has to swap to slower storage to cope"
+          ],
+          "model_answer": "Every tab uses some RAM (the computer's short-term working memory — its 'desk'). When the desk fills up, the laptop has to start swapping things back to storage (the slower 'filing cabinet') to make room. That swapping is what slows everything down. Closing a few tabs frees up RAM and the laptop speeds up again. If you regularly hit this, you need more RAM."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "Hardware = touchable. Software = instructions. (\"Drop it on your foot\" test.)",
+      "System software (OS like Windows) vs application software (apps like Chrome).",
+      "Big trio: CPU = brain. RAM = desk. Storage = filing cabinet.",
+      "IPO+S = Input, Process, Output, Storage. The model behind every program."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "computing",
+    "topic": "networks",
+    "title": "Networks — how the internet actually works",
+    "subtitle": "LAN vs WAN, why your phone has an IP address, and what 'the cloud' really is",
+    "readTimeMin": 5,
+    "sections": [
+      {
+        "heading": "The internet is not a magic cloud",
+        "predict": {
+          "question": "Before you read: when you load a YouTube video, where is the video actually STORED — and how does it physically reach your phone?",
+          "answer": "The video is stored on a SERVER (a powerful computer in a giant data centre — Google has buildings full of them, often near rivers for cooling). When you tap play, your phone sends a REQUEST through your wifi → your router → your internet provider → undersea fibre-optic cables → Google's server. The server sends the video back the same way, broken into thousands of tiny PACKETS. The 'cloud' isn't a cloud. It's just OTHER PEOPLE'S COMPUTERS, connected by physical cables."
+        },
+        "body": "A NETWORK is two or more computers connected together so they can share data. The biggest network in the world is the INTERNET — billions of computers all connected.\n\nKey idea: 'the cloud' is not a magical fluffy thing. It's literally other people's computers (called SERVERS) housed in big buildings called DATA CENTRES, connected to you by cables and radio signals."
+      },
+      {
+        "heading": "LAN vs WAN — local vs global",
+        "list": [
+          "LAN — Local Area Network. A small network in one place. Your home wifi, a school network, an office network. Usually uses a router and ethernet cables / wifi.",
+          "WAN — Wide Area Network. Computers connected over a large area, often via the internet. The biggest WAN of all is the internet itself.",
+          "Quick test: if you can walk between the connected devices in 10 minutes, it's a LAN. If they're in different cities or countries, it's a WAN."
+        ],
+        "callout": {
+          "tone": "tip",
+          "title": "Memory hook",
+          "body": "L for Local, W for Wide. LAN = home, school, office. WAN = the internet. They join together: your home LAN connects to a WAN (the internet) via your ROUTER and your ISP (Internet Service Provider — BT, Sky, Virgin)."
+        }
+      },
+      {
+        "heading": "IP addresses — the postcode of the internet",
+        "body": "Every device on a network has a unique IP ADDRESS (Internet Protocol address). It's basically a postcode — it tells data where to go.\n\nIP v4 looks like: 192.168.1.4 (four numbers, 0–255 each)\nIP v6 looks like: 2001:0db8:85a3::7334 (much longer, used now we've run out of v4 addresses)\n\nWhen you visit youtube.com, your computer first asks a DNS (Domain Name System) server: 'What's the IP for youtube.com?' DNS replies with the IP address (e.g. 142.250.180.46). Then your computer uses that IP to reach the actual server.\n\nDNS = the internet's PHONEBOOK. youtube.com is the friendly name; the IP is the actual number to ring.",
+        "example": {
+          "title": "What happens when you type 'bbc.co.uk' and hit enter",
+          "steps": [
+            "1. Your browser asks DNS: 'what's the IP of bbc.co.uk?'",
+            "2. DNS replies with an IP (e.g. 151.101.0.81).",
+            "3. Your phone sends a REQUEST to that IP via your wifi.",
+            "4. The request travels: phone → router → ISP → fibre cables → BBC's data centre.",
+            "5. The BBC server responds with HTML, images, videos — broken into PACKETS.",
+            "6. Packets arrive in any order, your browser reassembles them into the page.",
+            "All of this takes about 0.2 seconds."
+          ]
+        }
+      },
+      {
+        "heading": "How data actually travels — packets",
+        "body": "Computers don't send a whole video or page in one big chunk. They break it into small PACKETS — typically a few KB each. Each packet has:\n\n• A piece of the actual data (e.g. 1/1000th of a video)\n• A header with the destination IP\n• A sequence number (so they can be reassembled in order)\n\nPackets travel by different routes across the internet — wherever the path is fastest at that moment. They might arrive out of order, and your computer reassembles them. If a packet is lost, it gets re-sent.\n\nThis is called PACKET SWITCHING and it's what makes the internet so resilient — there's no single fragile cable, just thousands of possible routes.",
+        "why_prompt": {
+          "question": "Why does the internet break data into packets instead of sending a whole file as one chunk?",
+          "answer": "Three reasons. (1) RESILIENCE — if a cable breaks, only the missing packets need to be re-sent, not the whole file. (2) FAIRNESS — many people can share the same line; packets from different users get mixed together so no-one hogs the bandwidth. (3) SPEED — packets can take different routes at the same time, like commuters splitting up to avoid traffic. Packet switching was invented in the 1960s precisely so a Cold War-era network could survive bombs hitting individual cables — the internet inherits that design."
+        }
+      },
+      {
+        "heading": "Servers, clients, and the cloud",
+        "list": [
+          "CLIENT — a device that REQUESTS data. Your phone, laptop, console.",
+          "SERVER — a powerful computer that STORES and SENDS data when asked. YouTube, Instagram, the BBC all run on servers.",
+          "DATA CENTRE — a building full of servers. Some have over 100,000 servers. They use huge amounts of electricity and water (for cooling).",
+          "'THE CLOUD' = data and apps stored on someone else's servers somewhere on the internet. Your photos backed up to iCloud are sitting on Apple's servers, not on a magic cloud."
+        ]
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain to a friend what happens behind the scenes when they tap a YouTube video, in 5 short steps.",
+          "checklist": [
+            "Phone sends a request via wifi/router/ISP",
+            "DNS converts youtube.com to an IP address",
+            "Request travels through cables to YouTube's server",
+            "Server sends video back as PACKETS",
+            "Phone reassembles packets and plays the video"
+          ],
+          "model_answer": "1. You tap play. 2. Your phone asks DNS for YouTube's IP address (the internet 'postcode'). 3. Your request travels through your wifi, your router, your ISP, and fibre cables to a Google server in a data centre. 4. The server sends the video back, broken into thousands of packets. 5. Your phone reassembles the packets in the right order and plays the video. The whole journey takes about 0.2 seconds."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "LAN = Local Area Network (home/school). WAN = Wide Area Network (the internet).",
+      "Every device has an IP address (the internet postcode). DNS = the internet phonebook.",
+      "Data travels as PACKETS, not in one chunk — that's what makes the internet resilient.",
+      "'The cloud' is just other people's servers in big data centres."
+    ],
+    "year_level": 7
   }
 ]
