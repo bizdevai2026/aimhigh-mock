@@ -1618,5 +1618,535 @@
       "Mode is the only average that works with non-numbers (e.g. favourite colour)."
     ],
     "year_level": 7
+  },
+  {
+    "subject": "english",
+    "topic": "punctuation",
+    "title": "Punctuation — full stops, commas, semi-colons",
+    "subtitle": "The five marks that lift a Year-7 paragraph from a 4 to a 7",
+    "readTimeMin": 5,
+    "sections": [
+      {
+        "heading": "Why punctuation actually matters",
+        "predict": {
+          "question": "Before you read: which sentence is correct?\n(a) Let's eat, Grandma.\n(b) Let's eat Grandma.",
+          "answer": "Both are 'correct' grammatically — but they mean wildly different things. (a) is inviting Grandma to dinner. (b) is suggesting eating her. The comma changes meaning entirely. Punctuation isn't decoration — it's how the reader knows what you actually mean."
+        },
+        "body": "In KS3 papers, examiners explicitly look for varied, accurate punctuation. Use only full stops and basic commas, you'll cap at a Level 4. Use semi-colons, colons, and dashes correctly — even once or twice — and you signal a writer who knows what they're doing.\n\nThis lesson covers the five highest-impact marks: full stop, comma, semi-colon, colon, dash."
+      },
+      {
+        "heading": "The full stop & the comma",
+        "list": [
+          "FULL STOP (.) — ends a complete sentence. A sentence needs a subject and a verb (\"The dog barked.\")",
+          "COMMA (,) — adds a pause. Used for: lists (apples, pears, plums), after a fronted adverbial (Suddenly, the door opened), to mark a clause (My brother, who is 8, can't ride a bike yet)",
+          "DON'T comma-splice. Two full sentences joined by a comma is wrong: \"It rained, we went home.\" Use a full stop, semi-colon, or a connective."
+        ],
+        "callout": {
+          "tone": "warning",
+          "title": "The biggest comma mistake",
+          "body": "The COMMA SPLICE — using a comma where you need a full stop. \"I was tired, I went to bed\" is wrong. Either: \"I was tired. I went to bed.\" (full stop) OR \"I was tired, so I went to bed.\" (comma + connective)"
+        }
+      },
+      {
+        "heading": "The semi-colon — the secret weapon",
+        "body": "The semi-colon (;) joins two CLOSELY-RELATED full sentences. Both halves must be able to stand alone.\n\n• \"It was raining; I stayed inside.\" ✓ (both halves are complete sentences, closely related)\n• \"It was raining; my dog.\" ✗ (\"my dog\" isn't a sentence)\n\nUse it when the two ideas feel too tightly linked for a full stop, but a comma alone would be too weak. Examiners LOVE the correct use of a semi-colon — it's a Level-7 indicator.",
+        "example": {
+          "title": "Semi-colon vs full stop",
+          "intro": "Compare these two:",
+          "steps": [
+            "Full stop: \"The match was over. We went home.\" (Two separate facts.)",
+            "Semi-colon: \"The match was over; we went home.\" (Same facts, but the semi-colon shows the second is a CONSEQUENCE of the first.)",
+            "The semi-colon adds a relationship that the full stop just leaves blank."
+          ]
+        }
+      },
+      {
+        "heading": "The colon & the dash",
+        "list": [
+          "COLON (:) — introduces a list, an example, or an explanation. \"He had one rule: never quit.\"",
+          "DASH (—) — used for a sudden interruption or aside. \"She turned around — and there it was.\" Often replaceable with brackets but more dramatic.",
+          "Don't confuse hyphens (-) with dashes (—). Hyphens connect words (well-known); dashes break up sentences."
+        ],
+        "why_prompt": {
+          "question": "When would you choose a semi-colon over a full stop, given they both join complete sentences?",
+          "answer": "A semi-colon signals that the two halves are CONNECTED — usually a cause-effect, a contrast, or an elaboration. A full stop is neutral. If the second sentence directly explains, contradicts, or follows from the first, a semi-colon shows that link to the reader. If the ideas aren't tightly related, full stop is better."
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain the difference between a comma splice and a correct compound sentence to a friend.",
+          "checklist": [
+            "Said a comma splice joins two full sentences with just a comma",
+            "Explained that's wrong — needs a full stop, semi-colon, or a connective",
+            "Gave a correct example using one of the three fixes"
+          ],
+          "model_answer": "A comma splice is when you join two complete sentences with just a comma — like 'It was raining, we went home.' That's wrong. To fix it, use a full stop ('It was raining. We went home.'), a semi-colon ('It was raining; we went home.'), or a connective with the comma ('It was raining, so we went home.')."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "Comma splice = two full sentences joined by a comma. WRONG. Use . or ; or a connective.",
+      "Semi-colon joins two related complete sentences. Examiner gold.",
+      "Colon introduces: a list, an example, or an explanation.",
+      "Vary your punctuation. Full-stops only = capped at Level 4."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "english",
+    "topic": "sentence-types",
+    "title": "Sentence types — simple, compound, complex",
+    "subtitle": "Three patterns that make your writing feel grown-up",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "Why sentence variety matters",
+        "predict": {
+          "question": "Before you read: read these two passages aloud. Which sounds better?\n(a) The cat sat. It was sleepy. It closed its eyes. It dreamed.\n(b) The cat sat, sleepy and still; as it closed its eyes, it began to dream.",
+          "answer": "(b) — by miles. Same content. Same facts. But (a) is four short, repetitive simple sentences (sounds like a Year-2 reader). (b) varies the sentence structure with a compound and a complex sentence. Examiners reward variety because it shows you're a confident writer with control — not just stringing facts together."
+        },
+        "body": "There are three core sentence types. Top students don't just know them — they DELIBERATELY mix them in their writing.\n\n• SIMPLE — one main clause (one complete idea)\n• COMPOUND — two main clauses joined by a connective\n• COMPLEX — a main clause + a subordinate clause"
+      },
+      {
+        "heading": "Simple sentences",
+        "body": "A SIMPLE sentence has one subject and one verb expressing one complete idea.\n\n• \"The dog barked.\"\n• \"She was late.\"\n• \"It rained for hours.\"\n\nPower move: use a punchy simple sentence after a long one for impact. \"After hours of climbing, exhaustion clinging to her every step, she paused and looked up at the summit. It was further than ever.\" That short final sentence HITS because the long one set it up.",
+        "callout": {
+          "tone": "tip",
+          "title": "Short sentences = drama",
+          "body": "Pros use short simple sentences for emphasis. \"He stopped. He listened. Nothing.\" The brevity creates tension. Don't be afraid of a 3-word sentence."
+        }
+      },
+      {
+        "heading": "Compound sentences — FANBOYS",
+        "body": "A COMPOUND sentence joins two equal main clauses with a co-ordinating conjunction. Memorise them with FANBOYS:\n\n• F — For\n• A — And\n• N — Nor\n• B — But\n• O — Or\n• Y — Yet\n• S — So\n\nExample: \"It was raining, so we stayed inside.\" Two complete ideas (it was raining / we stayed inside) joined by 'so' with a comma before it.",
+        "example": {
+          "title": "Spot the FANBOYS",
+          "intro": "Each of these is a compound sentence — pick out the connective:",
+          "steps": [
+            "\"He was tired, but he kept running.\" → BUT",
+            "\"She studied hard, and she passed.\" → AND",
+            "\"You can walk, or you can take the bus.\" → OR",
+            "\"It was cold, yet she wore no coat.\" → YET"
+          ]
+        }
+      },
+      {
+        "heading": "Complex sentences — main + subordinate",
+        "body": "A COMPLEX sentence has a MAIN clause (which can stand alone) and a SUBORDINATE clause (which can't stand alone — it depends on the main clause). Subordinate clauses often start with words like: although, because, when, while, since, if, after, before, even though, unless.\n\n• \"Although it was raining, we went out.\" (\"Although it was raining\" can't stand alone)\n• \"She left because she was tired.\"\n• \"When the bell rang, the class cheered.\"\n\nYou can put the subordinate clause FIRST (with a comma) for variety: \"Although tired, he kept going.\"",
+        "why_prompt": {
+          "question": "Why is varying sentence types more important in creative writing than in, say, a science report?",
+          "answer": "Creative writing relies on rhythm and pace to control the reader's emotion. A series of short sentences feels tense; a long flowing sentence feels calm or reflective. Mixing them lets you steer the mood. A science report is informational — clarity matters more than rhythm — so simpler structures work fine."
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "Write THREE sentences about a thunderstorm — one simple, one compound, one complex. Talk a friend through what makes each what it is.",
+          "checklist": [
+            "Simple: one main clause (e.g. 'Thunder cracked.')",
+            "Compound: two main clauses + FANBOYS (e.g. 'Thunder cracked, and the dog hid.')",
+            "Complex: main clause + subordinate clause (e.g. 'When thunder cracked, the dog hid under the bed.')",
+            "Identified the connective in each case"
+          ],
+          "model_answer": "Simple: 'Lightning flashed.' One main clause. Compound: 'Lightning flashed, and thunder rolled.' Two main clauses joined by 'and' (FANBOYS). Complex: 'Although the lightning was bright, the dog stayed asleep.' The 'although' clause is subordinate — it can't stand alone — and the main clause 'the dog stayed asleep' completes the idea."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "FANBOYS = For, And, Nor, But, Or, Yet, So. The compound-sentence joiners.",
+      "Subordinate clauses often start with: although, because, when, while, since, if.",
+      "Mix short and long sentences for rhythm. A 3-word sentence after a long one HITS.",
+      "Vary sentence types deliberately — examiners reward it explicitly."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "english",
+    "topic": "tenses",
+    "title": "Tenses — past, present, future (and don't switch by accident)",
+    "subtitle": "The biggest grammar marks-loser in Year 7 writing",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "What tense even means",
+        "predict": {
+          "question": "Before you read: spot the mistake in this Year-7 sentence:\n\"I was walking to school when I see a fox.\"",
+          "answer": "TENSE SHIFT. The first verb 'was walking' is past tense, but 'see' is present tense. They should match. Either: 'I was walking to school when I SAW a fox' (both past) or 'I am walking to school when I see a fox' (both present). Switching mid-sentence is the #1 grammar mistake examiners flag in Year-7 papers."
+        },
+        "body": "TENSE tells the reader WHEN something happens. There are three core tenses:\n\n• PAST — already happened (\"I walked\")\n• PRESENT — happening now (\"I walk\" / \"I am walking\")\n• FUTURE — going to happen (\"I will walk\")\n\nWithin each, there are sub-tenses (perfect, continuous, etc.) but these three matter most."
+      },
+      {
+        "heading": "The three core tenses",
+        "list": [
+          "PAST simple: \"She kicked the ball.\" — finished action.",
+          "PRESENT simple: \"She kicks the ball.\" — habit or general truth.",
+          "PRESENT continuous: \"She IS kicking the ball.\" — happening RIGHT NOW.",
+          "FUTURE: \"She will kick the ball.\" — going to happen.",
+          "PAST continuous: \"She was kicking the ball.\" — was happening over a period."
+        ],
+        "callout": {
+          "tone": "tip",
+          "title": "Stories are usually past tense",
+          "body": "When you write a story or recount, default to PAST tense and stay there. Even if it feels like the action is happening 'now', past tense ('she ran', 'he shouted') is the convention. Switching to present ('she runs', 'he shouts') mid-story is the classic Year-7 error."
+        }
+      },
+      {
+        "heading": "The big trap: tense shift",
+        "body": "TENSE SHIFT means starting in one tense and accidentally switching mid-sentence or mid-paragraph. Examiners flag this every time.\n\nWRONG: \"I was reading my book when suddenly the phone rings.\"\n• 'was reading' = past, 'rings' = present. They don't match.\n\nRIGHT (past): \"I was reading my book when suddenly the phone rang.\"\nRIGHT (present): \"I am reading my book when suddenly the phone rings.\"\n\nPick a tense, stick with it. The only time you legitimately switch is when the meaning genuinely demands a different time-frame.",
+        "example": {
+          "title": "Spot & fix",
+          "intro": "Each sentence below has a tense error. Spot it, then fix it.",
+          "steps": [
+            "WRONG: 'Yesterday I go to the park and met my friend.' → FIX: 'Yesterday I WENT to the park and met my friend.' (past)",
+            "WRONG: 'She walks into the room and saw the cake.' → FIX: 'She WALKED into the room and saw the cake.' (past)",
+            "WRONG: 'When the music starts, everyone stood up.' → FIX: 'When the music STARTED, everyone stood up.' (past)"
+          ],
+          "outro": "The #1 fix: read your work back aloud. Tense shifts SOUND wrong even if you can't name the rule."
+        }
+      },
+      {
+        "heading": "Common irregular past-tense verbs",
+        "body": "Most past tenses just add -ed (kick → kicked). But irregular verbs change unpredictably. Memorise these — they come up constantly:\n\n• go → went\n• see → saw\n• do → did\n• run → ran\n• swim → swam\n• begin → began\n• break → broke\n• catch → caught\n• teach → taught\n• think → thought\n• bring → brought\n• buy → bought\n• drink → drank\n• eat → ate\n• fall → fell\n• give → gave\n• know → knew\n• say → said\n• take → took\n• write → wrote",
+        "why_prompt": {
+          "question": "Why does 'goed' or 'runned' feel wrong to a native speaker, even if they don't know the rule?",
+          "answer": "Because we hear the correct forms (went, ran) thousands of times growing up. Native speakers internalise patterns through exposure rather than rules. When we hear 'I goed to school', it triggers a 'that's not how it sounds' alarm — even if we can't explain why. That's why reading your work aloud catches errors silent reading misses."
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "Tell a friend the simplest way to avoid the tense-shift mistake when writing a story.",
+          "checklist": [
+            "Said pick ONE tense (usually past) and stick with it",
+            "Mentioned reading work aloud as a check",
+            "Acknowledged irregular verbs (went, saw, ran) as memorisation"
+          ],
+          "model_answer": "Pick one tense at the start — usually past tense for stories — and stay in it. Don't drift into present tense by accident. Read your work aloud at the end: tense shifts almost always SOUND wrong even before you spot the rule. And memorise the most common irregular past tenses (went, saw, ran, ate, took) because they don't follow the -ed pattern."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "Pick a tense. Stick with it. Stories default to past tense.",
+      "Read work ALOUD at the end — tense shifts sound wrong even if rules don't help.",
+      "Most common irregulars: go→went, see→saw, do→did, run→ran, eat→ate, take→took.",
+      "Tense shift is the #1 grammar mistake in Year-7 writing. Catch it and you jump a level."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "english",
+    "topic": "writing-skills",
+    "title": "Writing skills — show don't tell + AFOREST",
+    "subtitle": "Two techniques that lift creative and persuasive writing",
+    "readTimeMin": 5,
+    "sections": [
+      {
+        "heading": "Two writing modes, two toolkits",
+        "predict": {
+          "question": "Before you read: which is more powerful?\n(a) She was sad.\n(b) Her shoulders sagged. She stared at the floor, unable to lift her eyes.",
+          "answer": "(b). It SHOWS the sadness through specific physical details rather than TELLING us with a label. The reader feels the sadness because they imagine the body language; in (a) they just receive a flat fact. This is the single biggest skill-jump in Year-7 creative writing."
+        },
+        "body": "There are two main types of writing you'll be marked on at KS3:\n\n• CREATIVE (a story, a description) — the toolkit is SHOW DON'T TELL\n• PERSUASIVE (a speech, a letter, an article) — the toolkit is AFOREST\n\nKnowing which technique fits which task is half the battle."
+      },
+      {
+        "heading": "Creative — Show, don't tell",
+        "body": "TELLING uses labels: \"He was angry.\" \"It was scary.\" \"She was rich.\"\nSHOWING uses sensory detail and action: \"His fists clenched.\" \"My breath caught in my throat.\" \"Diamonds glittered on her wrist.\"\n\nThe reader works out the emotion from what you describe. That's far more powerful than a label.\n\nFour show-don't-tell tools:\n• PHYSICAL — what's the body doing? (clenched fists, shaking hands, sagging shoulders)\n• SENSORY — what can you see / hear / smell / feel? (the metallic tang of fear)\n• DIALOGUE — what does the character say (or refuse to say)?\n• ENVIRONMENT — what's around them, and how does it mirror the mood?",
+        "callout": {
+          "tone": "tip",
+          "title": "The five senses test",
+          "body": "Before submitting a piece of creative writing, scan it: have you used at least three of the five senses (sight, sound, smell, taste, touch)? Most students rely on sight only. Adding even one sound or smell makes a description feel ALIVE."
+        },
+        "example": {
+          "title": "Tell vs Show",
+          "intro": "Same scene, two ways:",
+          "steps": [
+            "TELL: 'It was a scary house.'",
+            "SHOW: 'The hinges screamed as the door swung open. A draught of cold, damp air hit my face. Somewhere upstairs, a floorboard creaked — though no-one had been in the house for years.'",
+            "Notice the SHOW version uses sound (screamed, creaked), touch (cold, damp), and a hint of action (no-one had been in for years). It builds atmosphere instead of stating it."
+          ]
+        }
+      },
+      {
+        "heading": "Persuasive — AFOREST",
+        "body": "AFOREST is a memory hook for the seven techniques that win marks in persuasive writing.\n\n• A — ALLITERATION (\"silent and still\")\n• F — FACTS (real numbers and statistics)\n• O — OPINIONS (your strong, clear viewpoint)\n• R — RHETORICAL QUESTIONS (\"How can we accept this?\")\n• E — EMOTIVE LANGUAGE (\"devastating\", \"heart-breaking\")\n• S — STATISTICS (\"9 out of 10 doctors agree…\")\n• T — TRIPLES (the rule of three: \"calm, controlled, and committed\")\n\nUse at least one of each in any persuasive piece. Examiners literally tick them off.",
+        "why_prompt": {
+          "question": "Why is the rule of three (\"triples\") so persuasive — what's the psychology?",
+          "answer": "Three is the smallest number that establishes a pattern. Two items feel like a contrast; three feels like a rule. \"Friends, Romans, countrymen.\" \"Liberty, equality, fraternity.\" \"Stop, look, listen.\" The brain registers it as complete and memorable. Famous speeches use triples constantly because they make a claim feel definitive — like there's nothing more to say."
+        }
+      },
+      {
+        "heading": "When to use which",
+        "list": [
+          "Story / description / recount → Show don't tell.",
+          "Speech / letter to MP / persuasive article → AFOREST.",
+          "Both: vary sentence length for rhythm. Drop a short sentence after a long one for impact.",
+          "Both: open with a HOOK — a question, a shocking fact, a vivid image."
+        ]
+      },
+      {
+        "teach_back": {
+          "prompt": "Take the sentence 'The classroom was boring' and SHOW it instead of telling. Then list the AFOREST techniques in order.",
+          "checklist": [
+            "Replaced 'boring' with sensory/physical detail",
+            "Used at least 2 senses or specific actions",
+            "Listed: Alliteration, Facts, Opinions, Rhetorical questions, Emotive language, Statistics, Triples"
+          ],
+          "model_answer": "SHOW version: 'The clock's second-hand crawled. Somewhere a pen tapped, slow and steady. My eyelids felt like lead, and the teacher's voice melted into a faraway hum.' AFOREST: Alliteration, Facts, Opinions, Rhetorical questions, Emotive language, Statistics, Triples."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "Show don't tell: replace emotion-labels with body language and sensory detail.",
+      "AFOREST = Alliteration / Facts / Opinions / Rhetorical Q / Emotive lang / Stats / Triples.",
+      "Use at least 3 of the 5 senses in any descriptive piece.",
+      "Triples (\"calm, controlled, committed\") are the most persuasive sentence pattern in English."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "french",
+    "topic": "verbs",
+    "title": "French verbs — être, avoir, and -ER endings",
+    "subtitle": "The three patterns that unlock half of Year-7 French",
+    "readTimeMin": 5,
+    "sections": [
+      {
+        "heading": "Verbs are the engine",
+        "predict": {
+          "question": "Before you read: 'je suis' and 'j'ai' are the two most useful French phrases a Year-7 can know. Why?",
+          "answer": "'Je suis' = 'I am' (être). 'J'ai' = 'I have' (avoir). These two verbs alone power dozens of sentences: I am tired, I am 11 years old (in French you say 'I have 11 years'), I am hungry (literally 'I have hunger'), I have a brother. Master être and avoir and you can speak about yourself, your family, your age, and how you feel — almost the entire Year-7 syllabus."
+        },
+        "body": "Verbs change ENDING depending on WHO is doing the action — this is called 'conjugation'. In English we barely do this (I run, you run, he runS — only one tiny change). In French, the ending changes for every person. You have to memorise the patterns.\n\nThis lesson covers the three biggest patterns:\n• ÊTRE (to be) — irregular, must be memorised\n• AVOIR (to have) — irregular, must be memorised\n• Regular -ER verbs (the largest verb group) — follow a pattern"
+      },
+      {
+        "heading": "ÊTRE — to be (irregular, memorise)",
+        "list": [
+          "je suis — I am",
+          "tu es — you are (one person, friend/family)",
+          "il / elle est — he / she is",
+          "nous sommes — we are",
+          "vous êtes — you are (formal OR plural)",
+          "ils / elles sont — they are"
+        ],
+        "callout": {
+          "tone": "tip",
+          "title": "Memory hook",
+          "body": "Chant 'suis-es-est-sommes-êtes-sont' aloud five times. It's the single most-tested verb in Year-7 French — you'll lose marks every time you stumble on it. Worth burning into memory now."
+        }
+      },
+      {
+        "heading": "AVOIR — to have (irregular, memorise)",
+        "list": [
+          "j'ai — I have",
+          "tu as — you have",
+          "il / elle a — he / she has",
+          "nous avons — we have",
+          "vous avez — you have (formal/plural)",
+          "ils / elles ont — they have"
+        ],
+        "callout": {
+          "tone": "warning",
+          "title": "Don't say 'je suis 11 ans'",
+          "body": "In French, you HAVE a number of years, not BE that age. So 'I am 11' is 'J'AI 11 ans' — literally 'I have 11 years'. Same with hunger and thirst: J'ai faim ('I have hunger' = I'm hungry), J'ai soif ('I have thirst' = I'm thirsty). Use AVOIR, not ÊTRE, for these."
+        }
+      },
+      {
+        "heading": "Regular -ER verbs — the pattern",
+        "body": "The biggest verb group in French ends in -ER (parler — to speak, jouer — to play, manger — to eat, regarder — to watch, écouter — to listen, aimer — to like).\n\nTo conjugate ANY regular -ER verb:\n1. Drop the -er from the end.\n2. Add the right ending for the person.\n\nUsing PARLER (to speak) as the model:\n• je parl-E\n• tu parl-ES\n• il / elle parl-E\n• nous parl-ONS\n• vous parl-EZ\n• ils / elles parl-ENT\n\nMemory hook: '-e, -es, -e, -ons, -ez, -ent' — chant it. These six endings unlock hundreds of verbs.",
+        "example": {
+          "title": "Conjugate JOUER (to play)",
+          "steps": [
+            "Drop -er → jou-",
+            "je jou-E → I play",
+            "tu jou-ES → you play",
+            "il / elle jou-E → he / she plays",
+            "nous jou-ONS → we play",
+            "vous jou-EZ → you (formal/plural) play",
+            "ils / elles jou-ENT → they play"
+          ],
+          "outro": "Same pattern works for parler, regarder, écouter, manger, aimer, habiter, danser, chanter… the list goes on."
+        },
+        "why_prompt": {
+          "question": "Why does French bother changing the verb ending for every person, when English mostly doesn't?",
+          "answer": "French inherited the system from Latin, which marked the doer with verb endings so strongly that you didn't always need a separate pronoun. English slowly dropped most of those endings (only -s for 'he/she/it' survives). The flip side: French verb endings make the meaning clear even without the pronoun, so you can sometimes drop subjects in poetry or commands."
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "Translate these into French, talking yourself through which verb (être / avoir / regular -ER) you're using:\n1. I am 11 years old.\n2. We speak French.\n3. They are tired.",
+          "checklist": [
+            "1. Used AVOIR: 'J'ai 11 ans.' (you HAVE years in French)",
+            "2. Used regular -ER (parler): 'Nous parlons français.'",
+            "3. Used ÊTRE: 'Ils sont fatigués.' (or 'Elles sont fatiguées' if female group)"
+          ],
+          "model_answer": "1. 'J'ai 11 ans.' Use AVOIR because in French you HAVE a number of years, not BE that age. 2. 'Nous parlons français.' Parler is a regular -ER verb; nous form takes -ons. 3. 'Ils sont fatigués.' Use ÊTRE because we're saying THEY ARE — a state of being. Ils form of être is 'sont'."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "Être (to be): suis, es, est, sommes, êtes, sont. Memorise — most-tested verb in Year-7.",
+      "Avoir (to have): ai, as, a, avons, avez, ont. Used for age, hunger, thirst.",
+      "Regular -ER: drop -er, add e/es/e/ons/ez/ent. Unlocks hundreds of verbs.",
+      "Age in French = AVOIR + ans. NEVER être. 'J'ai 11 ans' not 'Je suis 11 ans'."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "french",
+    "topic": "adjectives",
+    "title": "French adjectives — agreement & BAGS rule",
+    "subtitle": "Why adjectives change ending and where they sit in the sentence",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "Adjectives must AGREE",
+        "predict": {
+          "question": "Before you read: in French, why is it 'un chien noir' but 'une voiture noire'? Same colour — different word.",
+          "answer": "ADJECTIVE AGREEMENT. The adjective has to MATCH the noun in gender (masculine / feminine) and number (singular / plural). 'Chien' (dog) is masculine — adjective stays as 'noir'. 'Voiture' (car) is feminine — adjective adds an 'e' to become 'noire'. This rule applies to almost every adjective, so you have to think about both the noun's gender and number every time."
+        },
+        "body": "In English, adjectives never change: 'a black dog', 'a black car', 'black dogs' — all use 'black'. In French, the adjective MUST AGREE with the noun in two ways:\n\n• GENDER — masculine (le, un) or feminine (la, une)?\n• NUMBER — singular (one) or plural (more than one)?\n\nForgetting agreement is the most-flagged mistake on Year-7 French papers."
+      },
+      {
+        "heading": "The four-form agreement table",
+        "body": "Most adjectives follow this pattern, using NOIR (black) as the model:\n\n• Masculine singular → noir (un chien noir)\n• Feminine singular → noire (add -e — une voiture noire)\n• Masculine plural → noirs (add -s — des chiens noirs)\n• Feminine plural → noires (add -es — des voitures noires)\n\nAdd -e for feminine. Add -s for plural. Add both for feminine plural. The rule covers most adjectives.",
+        "callout": {
+          "tone": "tip",
+          "title": "Adjectives that already end in -e",
+          "body": "If the masculine form already ends in -e (like 'rouge' = red), the feminine form is the SAME (la voiture rouge). You only add -e if it's not already there. So: rouge / rouge / rouges / rouges — only the plural changes."
+        }
+      },
+      {
+        "heading": "Where does the adjective go?",
+        "body": "DEFAULT POSITION: AFTER the noun. This is the opposite of English.\n\n• English: 'a red car'\n• French: 'une voiture rouge' (literally 'a car red')\n\nMost adjectives — colours, nationalities, shapes — go AFTER. But some short, common adjectives go BEFORE the noun. The memory hook is BAGS:\n\n• B — Beauty (beau, belle, joli)\n• A — Age (jeune, vieux, nouveau)\n• G — Goodness (bon, mauvais)\n• S — Size (grand, petit, gros)",
+        "example": {
+          "title": "BAGS in action",
+          "steps": [
+            "Beauty: 'un beau garçon' — a handsome boy (BEFORE the noun)",
+            "Age: 'une jeune fille' — a young girl (BEFORE)",
+            "Goodness: 'un bon film' — a good film (BEFORE)",
+            "Size: 'un grand chien' — a big dog (BEFORE)",
+            "Colour (NOT BAGS): 'un chien noir' — AFTER the noun"
+          ],
+          "outro": "If the adjective is one of the BAGS categories, it goes BEFORE the noun. Everything else goes AFTER."
+        },
+        "why_prompt": {
+          "question": "Why might French speakers find English adjective placement confusing?",
+          "answer": "Because English ALWAYS puts adjectives before the noun ('a red car', 'a tall building') with no gender variation. A French speaker has to suppress the urge to say 'a car red', and remember that English doesn't change adjectives based on what they describe. It's not that one is right and the other wrong — they're just different conventions."
+        }
+      },
+      {
+        "heading": "Common irregular adjectives",
+        "list": [
+          "BEAU → masc beau, fem belle, masc plural beaux, fem plural belles",
+          "VIEUX → masc vieux, fem vieille, masc plural vieux, fem plural vieilles",
+          "NOUVEAU → masc nouveau, fem nouvelle, masc plural nouveaux, fem plural nouvelles",
+          "BLANC → masc blanc, fem blanche (drops the c, adds -he)"
+        ]
+      },
+      {
+        "teach_back": {
+          "prompt": "Translate into French, explaining the adjective placement and any agreement: 'a small black dog', 'a beautiful red car'.",
+          "checklist": [
+            "'A small black dog' = 'un petit chien noir' — petit goes BEFORE (BAGS-Size), noir goes AFTER",
+            "'A beautiful red car' = 'une belle voiture rouge' — belle goes BEFORE (BAGS-Beauty) and is feminine because voiture is feminine; rouge goes AFTER and stays the same (already ends in -e)",
+            "Mentioned both BAGS for placement AND agreement for endings"
+          ],
+          "model_answer": "'A small black dog' = 'un petit chien noir'. 'Petit' is BAGS-Size, so it goes BEFORE the noun. 'Noir' is a colour, so it goes AFTER. Both are masculine (chien is masculine). 'A beautiful red car' = 'une belle voiture rouge'. 'Belle' is BAGS-Beauty, goes BEFORE, and is the feminine form (voiture is feminine). 'Rouge' goes AFTER and doesn't need to change because it already ends in -e."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "ADJECTIVES AGREE: match the noun's gender (m/f) and number (singular/plural).",
+      "Most adjectives go AFTER the noun. BAGS go BEFORE: Beauty, Age, Goodness, Size.",
+      "Add -e for feminine, -s for plural, -es for both. (Skip -e if it's already there.)",
+      "Beau / belle / vieux / vieille / nouveau / nouvelle — irregular, memorise them."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "french",
+    "topic": "negation",
+    "title": "French negation — the ne...pas sandwich",
+    "subtitle": "How to say 'not' in French (it's two words, not one)",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "Two words, around the verb",
+        "predict": {
+          "question": "Before you read: how would you say 'I don't speak French' in French?",
+          "answer": "'Je ne parle pas français.' Notice it's TWO bits: 'ne' BEFORE the verb, 'pas' AFTER. They wrap around the verb like a sandwich. English uses one word ('not' or 'don't'); French uses two. Forgetting the 'ne' is the classic Year-7 mistake — the sentence still sounds OK in casual speech but examiners mark it down."
+        },
+        "body": "To make any French sentence NEGATIVE, wrap the verb with two words: NE … PAS.\n\n• Positive: Je parle français. (I speak French.)\n• Negative: Je NE parle PAS français. (I do not speak French.)\n\nThe pattern: subject + NE + verb + PAS + the rest.\n\nThis is the most basic and most-tested grammar pattern in Year-7 French."
+      },
+      {
+        "heading": "The drop-the-e rule",
+        "body": "If the verb starts with a vowel (a, e, i, o, u) or a silent h, 'ne' drops its e and becomes 'n''. This is just for ease of pronunciation.\n\n• Je n'aime pas les choux. (I don't like cabbage.) — NOT 'je ne aime pas'\n• Il n'a pas faim. (He's not hungry.)\n• Nous n'écoutons pas. (We're not listening.)\n\nIt's the same idea as 'j'ai' instead of 'je ai'. Two vowels next to each other → squish them.",
+        "callout": {
+          "tone": "tip",
+          "title": "Memory hook",
+          "body": "NE...PAS = the verb sandwich. NE on the left, PAS on the right, verb in the middle. Drop the 'e' of 'ne' if the verb starts with a vowel or silent h."
+        }
+      },
+      {
+        "heading": "Other negation partners",
+        "body": "PAS isn't the only word that pairs with NE. Here are the other negation patterns — same sandwich, different filling:\n\n• ne … jamais — never (\"Je ne fume jamais\" — I never smoke)\n• ne … rien — nothing (\"Je ne mange rien\" — I'm not eating anything / I'm eating nothing)\n• ne … personne — nobody (\"Je ne connais personne\" — I don't know anyone)\n• ne … plus — no more / not anymore (\"Je n'ai plus d'argent\" — I have no more money)\n• ne … que — only (\"Je n'ai que cinq euros\" — I only have five euros)\n\nNotice 'ne … que' looks like a negative but actually means 'only' — a common trap.",
+        "example": {
+          "title": "Spot the negation",
+          "intro": "Translate each, naming the partner word:",
+          "steps": [
+            "'I never go to school' → 'Je ne vais jamais à l'école.' Partner: jamais (never).",
+            "'She has nothing to eat' → 'Elle n'a rien à manger.' Partner: rien (nothing).",
+            "'We don't have any more money' → 'Nous n'avons plus d'argent.' Partner: plus (no more).",
+            "'He only knows me' → 'Il ne connaît que moi.' Partner: que (only — careful, looks negative but isn't)."
+          ]
+        },
+        "why_prompt": {
+          "question": "Why do French speakers in everyday speech often DROP the 'ne' (saying 'je sais pas' instead of 'je ne sais pas')?",
+          "answer": "Casual French speech drops the 'ne' because the 'pas' alone carries the negative meaning — listeners understand fine. It's like English speakers saying 'gonna' instead of 'going to'. BUT in WRITING, especially exams, you MUST keep the 'ne'. Examiners mark down a missing 'ne' every time. The dropped-ne is fine in conversation, never in your written paper."
+        }
+      },
+      {
+        "heading": "Avoid double negatives English-style",
+        "body": "In English, two negatives cancel out: 'I don't know nothing' = 'I know something' (and is marked as wrong English anyway). In French, the second negative is REQUIRED — it's not a double negative, it's the standard form.\n\n'I don't know anything' = 'Je ne sais rien' (literally: I not know nothing — but this is correct French).\n\nIf you try to translate word-for-word from English ('Je ne sais pas rien' = 'I don't know nothing'), you'll get it wrong. Just use NE + the partner word. No 'pas' needed when you have rien / jamais / personne / plus / que."
+      },
+      {
+        "teach_back": {
+          "prompt": "Translate three sentences into French, naming the negation pattern each time: 'I don't watch TV' / 'I never eat fish' / 'She has nothing in her bag'.",
+          "checklist": [
+            "'I don't watch TV' = 'Je ne regarde pas la télé.' (ne...pas)",
+            "'I never eat fish' = 'Je ne mange jamais de poisson.' (ne...jamais)",
+            "'She has nothing in her bag' = 'Elle n'a rien dans son sac.' (ne...rien)",
+            "Spotted the dropped 'e' on 'n'a' (verb starts with vowel)"
+          ],
+          "model_answer": "1. 'Je ne regarde pas la télé.' — ne...pas sandwich around 'regarde'. 2. 'Je ne mange jamais de poisson.' — ne...jamais (never). Note 'jamais' replaces 'pas'. 3. 'Elle n'a rien dans son sac.' — ne...rien (nothing). The 'ne' drops its 'e' to 'n'' because 'a' starts with a vowel."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "NE...PAS = the verb sandwich. Wraps around the verb. Both words required in writing.",
+      "Drop the 'e' of 'ne' before a vowel or silent h: je n'aime, il n'a, nous n'écoutons.",
+      "Other partners: jamais (never), rien (nothing), personne (nobody), plus (no more), que (only).",
+      "When using rien/jamais/personne, you DON'T also add 'pas' — they replace it."
+    ],
+    "year_level": 7
   }
 ]
