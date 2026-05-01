@@ -11,8 +11,8 @@
 // Not intended for end users — but harmless if a kid stumbles on it.
 // No state mutation, no destructive actions.
 
-import { snapshot as logSnapshot } from "../platform/logger.js?v=20260527";
-import { snapshot as storageSnapshot } from "../platform/storage.js?v=20260527";
+import { snapshot as logSnapshot } from "../platform/logger.js?v=20260528";
+import { snapshot as storageSnapshot } from "../platform/storage.js?v=20260528";
 
 // Build version is read from this module's own ?v= query string, which
 // tools/bump-version.py keeps current across the whole repo. No second

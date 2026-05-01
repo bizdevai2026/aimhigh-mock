@@ -23,13 +23,13 @@ import {
   playWrong,
   playStreak3,
   playStreak5
-} from "../media/sounds.js?v=20260527";
+} from "../media/sounds.js?v=20260528";
 
 import {
   hapticCorrect,
   hapticWrong,
   hapticStreak
-} from "../media/haptics.js?v=20260527";
+} from "../media/haptics.js?v=20260528";
 
 export function onAnswerCorrect(streakCount) {
   playCorrect();

@@ -37,16 +37,20 @@
   --mock-muted: #8e8678;
 
   /* Background atmospheric glow — tuned down for light mode */
-  --mock-bg-glow-1: rgba(255, 61, 0, 0.06);
-  --mock-bg-glow-2: rgba(255, 0, 110, 0.03);
+  --mock-bg-glow-1: rgba(255, 94, 58, 0.06);
+  --mock-bg-glow-2: rgba(109, 167, 255, 0.04);
 
-  /* Accents — same scarlet/amber/cyan/magenta in both themes (the brand) */
-  --mock-lime: #ff3d00;
-  --mock-lime-strong: #d94b00;
-  --mock-lime-soft: rgba(255, 61, 0, 0.10);
+  /* Accents — Deep cobalt brand (Option 4): coral primary, gold bright,
+     cobalt blue secondary. Same set lights both themes; the surfaces
+     change between light and dark. */
+  --mock-lime: #ff5e3a;            /* coral (was scarlet #ff3d00) */
+  --mock-lime-strong: #e84a26;
+  --mock-lime-soft: rgba(255, 94, 58, 0.12);
   --mock-coral: #f97316;
   --mock-coral-soft: rgba(249, 115, 22, 0.14);
-  --mock-fire: #ffb300;
+  --mock-fire: #ffd13a;            /* gold (was amber #ffb300) */
+  --mock-cobalt: #6da7ff;          /* secondary cobalt blue */
+  --mock-cobalt-soft: rgba(109, 167, 255, 0.16);
   --mock-cyan: #00b8a0;            /* deeper cyan for legibility on light */
   --mock-magenta: #ff006e;
 
@@ -57,7 +61,7 @@
   --tier-diamond: #0d9488;
 
   /* Per-mode strip colours — kept distinct so subject tiles still read */
-  --tile-warmup:   #ff3d00;
+  --tile-warmup:   #ff5e3a;
   --tile-sprint:   #00b8a0;
   --tile-distance: #ff006e;
   --tile-coach:    #d97706;
@@ -66,36 +70,40 @@
   --mock-radius: 14px;
   --mock-radius-lg: 20px;
 
-  /* Type */
-  --mock-font-display: 'Anton', 'Impact', 'Arial Black', sans-serif;
-  --mock-font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Type — Outfit display + Manrope body (Option 4 pairing) */
+  --mock-font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mock-font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 [data-theme="dark"] {
-  /* === DARK overrides === */
-  --mock-bg: #0a0a0f;
-  --mock-bg-grad: #14141a;
-  --mock-card: #14141a;
-  --mock-card-hi: #1f1f2a;
-  --mock-border: #1f1f2a;
-  --mock-border-hi: #2a2a35;
-  --mock-header-bg: rgba(10, 10, 15, 0.85);
+  /* === DARK overrides — Deep cobalt (Option 4) ===
+     Deep navy surface, NOT pure black — the testing-fatigue concern
+     that made dark a toggle-only mode was driven by the old near-black
+     palette. Cobalt navy + warm coral accents is tuned for late-evening
+     study without the eye-burn. */
+  --mock-bg: #0f1729;
+  --mock-bg-grad: #1a2440;
+  --mock-card: #1a2440;
+  --mock-card-hi: #243054;
+  --mock-border: #2a3658;
+  --mock-border-hi: #38456a;
+  --mock-header-bg: rgba(15, 23, 41, 0.85);
 
-  --mock-text: #c4c4d1;
-  --mock-text-strong: #fafafa;
-  --mock-text-dim: #9ca3af;
-  --mock-muted: #7a7a8c;
+  --mock-text: #c4cce0;
+  --mock-text-strong: #f0f4ff;
+  --mock-text-dim: #8a92a8;
+  --mock-muted: #6a7290;
 
-  --mock-bg-glow-1: rgba(255, 61, 0, 0.12);
-  --mock-bg-glow-2: rgba(255, 0, 110, 0.06);
+  --mock-bg-glow-1: rgba(255, 94, 58, 0.18);
+  --mock-bg-glow-2: rgba(109, 167, 255, 0.12);
 
-  /* Cyan can stay bright in dark; tier colours readable on dark */
-  --mock-cyan: #00f5d4;
+  /* Tier colours readable on cobalt navy */
+  --mock-cyan: #5eead4;
   --tier-silver: #cbd5e1;
-  --tier-gold: #ffb300;
-  --tier-diamond: #00f5d4;
-  --tile-sprint: #00f5d4;
-  --tile-coach: #ffb300;
+  --tier-gold: #ffd13a;
+  --tier-diamond: #5eead4;
+  --tile-sprint: #5eead4;
+  --tile-coach: #ffd13a;
 }
 
 * { box-sizing: border-box; }
@@ -129,20 +137,38 @@ body.first-time .mock-mission { display: none; }
   border-radius: var(--mock-radius-lg);
   background: linear-gradient(135deg, var(--mock-card) 0%, var(--mock-card-hi) 100%);
   border: 1px solid var(--mock-border);
-  box-shadow: 0 12px 32px -16px rgba(255, 61, 0, 0.30);
+  box-shadow: 0 12px 32px -16px rgba(255, 94, 58, 0.30);
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
+/* Ember halo — soft radial glow sits behind the flame and the headline,
+   pulses subtly so the page feels alive without strobing. The halo is
+   drawn on the card's ::before so it doesn't shift layout. */
+.mock-hero-firsttime::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, var(--mock-lime-soft) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+.mock-hero-firsttime > * { position: relative; z-index: 1; }
 .mock-hero-firsttime-flame {
   display: inline-block;
   font-size: 2.6rem;
   line-height: 1;
   margin-bottom: 0.4rem;
-  filter: drop-shadow(0 0 12px rgba(255, 61, 0, 0.45));
+  filter: drop-shadow(0 0 14px var(--mock-lime));
   animation: heroFirstFlame 2.4s ease-in-out infinite;
 }
 @keyframes heroFirstFlame {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-2px) scale(1.05); }
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px var(--mock-lime)); }
+  50%      { transform: scale(1.06); filter: drop-shadow(0 0 18px var(--mock-fire)); }
 }
 .mock-hero-firsttime-title {
   font-family: var(--mock-font-display);

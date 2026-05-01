@@ -53,7 +53,7 @@
     // Sync the iOS / Android browser-chrome colour to match the theme.
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) {
-      meta.setAttribute("content", theme === "dark" ? "#0a0a0f" : "#faf9f6");
+      meta.setAttribute("content", theme === "dark" ? "#0f1729" : "#faf9f6");
     }
   }
 
