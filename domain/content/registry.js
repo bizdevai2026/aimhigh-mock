@@ -7,7 +7,7 @@
 //
 // One module-scope cache per page load (same pattern as questions.js).
 
-import * as logger from "../../platform/logger.js?v=20260612";
+import * as logger from "../../platform/logger.js?v=20260613";
 
 let _cache = null;
 let _inFlight = null;

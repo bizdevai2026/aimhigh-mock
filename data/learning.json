@@ -861,5 +861,402 @@
       "Treize (13) and trente (30) sound similar but not the same. Treize ends with a soft 'z' sound; trente ends like 'tont'."
     ],
     "year_level": 7
+  },
+  {
+    "subject": "science",
+    "topic": "forces-motion",
+    "title": "Forces and motion",
+    "subtitle": "Why things speed up, slow down, or stay still",
+    "readTimeMin": 5,
+    "sections": [
+      {
+        "heading": "What is a force?",
+        "predict": {
+          "question": "Before you read: name three things that can SPEED UP a moving object.",
+          "answer": "Pushing it (like kicking a football). Pulling it (towing a car). And gravity (a falling apple). All three are forces — pushes or pulls."
+        },
+        "body": "A force is a push or a pull. You feel forces every second: gravity pulling you down into your chair, friction stopping you sliding when you walk, the wind pushing you when you cycle.\n\nForces are measured in newtons (N) — named after Sir Isaac Newton. A medium apple weighs about 1 N. The pull of Earth's gravity on a 50 kg kid is about 500 N.",
+        "quickfact": {
+          "value": "1 N",
+          "label": "weight of one medium apple"
+        }
+      },
+      {
+        "heading": "Newton's three laws — Year-7 short version",
+        "list": [
+          "1st law: a thing keeps doing what it's doing (still or moving the same way) UNLESS a force acts on it.",
+          "2nd law: bigger force = bigger acceleration. Heavier object = smaller acceleration for the same force. (F = m × a.)",
+          "3rd law: every push has an equal and opposite push back. You push the ground; the ground pushes you forward."
+        ],
+        "callout": {
+          "tone": "tip",
+          "title": "Memory hook",
+          "body": "1st: lazy. 2nd: maths. 3rd: pairs. If you can remember those three words, you can rebuild the laws."
+        }
+      },
+      {
+        "heading": "Balanced vs unbalanced",
+        "body": "When forces on an object are BALANCED (equal, opposite), the object stays still or keeps moving the same way. When they're UNBALANCED, the object speeds up, slows down, or changes direction.\n\nA book on a table: gravity pulls it down, the table pushes it up — balanced, book sits still. Push the book — your push is unbalanced by friction → book accelerates briefly until friction matches, then stops.",
+        "example": {
+          "title": "A skydiver",
+          "intro": "Force changes during a skydive show all of this in action:",
+          "steps": [
+            "Just out of the plane: gravity pulls down (large force), air resistance is small. UNBALANCED → accelerates downward.",
+            "Faster fall: air resistance grows.",
+            "When air resistance equals gravity → balanced → constant speed (terminal velocity).",
+            "Parachute opens: air resistance suddenly huge, MORE than gravity. Net force points up → DECELERATES.",
+            "New balance at much slower speed → safe landing."
+          ]
+        },
+        "why_prompt": {
+          "question": "Why does the skydiver eventually fall at a constant speed?",
+          "answer": "Because air resistance grows with speed. Once it's big enough to balance gravity, there's no NET force, so no more acceleration. The skydiver keeps falling at the speed where the two forces are equal — terminal velocity."
+        }
+      },
+      {
+        "heading": "Friction — the force that resists motion",
+        "body": "Friction is the force that opposes movement between two surfaces touching each other. Rough surfaces have lots of friction (rubber on tarmac); smooth ones have less (ice on ice). Without friction, your feet would slip every time you tried to walk.\n\nFriction always acts AGAINST motion. Push a box right → friction points left.",
+        "callout": {
+          "tone": "note",
+          "title": "Useful AND annoying",
+          "body": "Friction lets you walk, brake, hold a pen. It also wears down trainers, slows down cars (so you need more fuel) and makes machines hot. Engineers spend a lot of time deciding when to add friction (brakes) and when to remove it (oiled bearings)."
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain to a 7-year-old why you don't slip on a normal floor but you do slip on ice.",
+          "checklist": [
+            "Used the word 'friction'",
+            "Said ice is smooth / floors are rough",
+            "Linked it to your feet not slipping"
+          ],
+          "model_answer": "Walking works because of friction — a grippy force between your foot and the floor that stops your foot sliding. A normal floor is rough enough for lots of friction. Ice is super-smooth, so there's barely any friction, and your foot slides instead of pushing you forward."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "Force is measured in newtons (N). Weight is also a force, so it's in newtons — a 50 kg kid WEIGHS about 500 N.",
+      "If forces are balanced, motion DOESN'T change. If unbalanced, it does.",
+      "Friction always opposes motion. Air resistance is just friction with air."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "science",
+    "topic": "energy",
+    "title": "Energy — the 8 stores",
+    "subtitle": "Where energy is held, and how it moves between things",
+    "readTimeMin": 5,
+    "sections": [
+      {
+        "heading": "Energy isn't 'made'",
+        "predict": {
+          "question": "Before you read: when a battery powers a torch, where does the light energy come from?",
+          "answer": "From the chemical store inside the battery. The battery doesn't 'make' light — it transfers chemical energy to the bulb, which turns it into light + heat. Energy is never created; only moved."
+        },
+        "body": "The most important rule in physics: energy is never created or destroyed, only TRANSFERRED from one store to another. This is called the conservation of energy.\n\nWhen you eat a sandwich, chemical energy in the bread moves to chemical energy in your muscles, then to kinetic (movement) energy as you run, then to thermal (heat) energy as friction slows you down. Same energy. Different stores."
+      },
+      {
+        "heading": "The 8 energy stores",
+        "list": [
+          "Kinetic — anything that's moving (a running kid, a thrown ball)",
+          "Gravitational — anything raised up high (a book on a shelf, a kid on a slide)",
+          "Elastic — anything stretched or squashed (a bow, a spring, a trampoline)",
+          "Chemical — anything with energy locked in chemical bonds (food, fuel, batteries)",
+          "Nuclear — energy locked in the nucleus of atoms (uranium, the Sun)",
+          "Thermal — anything hotter than its surroundings (a kettle, a fire)",
+          "Magnetic — energy in magnetic fields (a magnet pulling iron)",
+          "Electrostatic — energy in static charges (rubbed balloon sticking to hair)"
+        ],
+        "callout": {
+          "tone": "warn",
+          "title": "Watch out — examiners want STORES, not 'types'",
+          "body": "Old textbooks say 'types of energy' (like 'sound energy', 'light energy'). The new spec says STORES — and 'sound' and 'light' aren't stores, they're ways energy MOVES (called pathways). Use the 8 names above, exactly."
+        }
+      },
+      {
+        "heading": "Energy pathways — how energy MOVES",
+        "body": "Energy moves between stores along PATHWAYS. There are four:\n• Mechanical (forces) — pushing, pulling, lifting\n• Electrical — current in a wire\n• Heating — warmer thing → cooler thing\n• Radiation — light, sound, infrared, etc.",
+        "example": {
+          "title": "A torch in action",
+          "intro": "Trace the energy through the system:",
+          "steps": [
+            "Start: chemical store (battery).",
+            "Pathway: electrical (current flows when you press the switch).",
+            "Bulb: chemical → thermal store (the filament gets hot).",
+            "Pathway: radiation (light leaves the bulb).",
+            "Some energy: thermal pathway too (the bulb feels warm — that's wasted energy)."
+          ],
+          "outro": "All the energy is still there — just split between useful (light) and wasted (heat in the bulb)."
+        }
+      },
+      {
+        "heading": "Useful vs wasted — efficiency",
+        "body": "Real systems always waste some energy as heat. Efficiency = useful energy out ÷ total energy in (× 100%).\n\nA modern LED bulb is about 90% efficient — almost all the electrical energy becomes light. An old-style filament bulb is about 5% — most of the energy goes to heat (which is why old bulbs got so hot).",
+        "quickfact": {
+          "value": "5%",
+          "label": "efficiency of a 1950s filament bulb (the rest = heat)"
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain to a 7-year-old where the energy goes when you eat a banana and run around.",
+          "checklist": [
+            "Said 'chemical store' for the banana",
+            "Said 'kinetic store' for the running",
+            "Mentioned heat (thermal) as the wasted bit"
+          ],
+          "model_answer": "The banana has chemical energy locked in its sugars. Your stomach unlocks it and your muscles use it to move (kinetic energy). Some of it leaks out as heat (thermal energy) — that's why you feel warm after running. Same energy, different stores."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "Use STORE names exactly: kinetic, gravitational, elastic, chemical, nuclear, thermal, magnetic, electrostatic. Saying 'movement energy' instead of 'kinetic store' loses marks.",
+      "Energy is never destroyed. If it 'disappears' it's been transferred — usually to heat.",
+      "Pathways move energy between stores. The four are: mechanical, electrical, heating, radiation."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "science",
+    "topic": "acids-alkalis",
+    "title": "Acids and alkalis",
+    "subtitle": "The pH scale and what it actually measures",
+    "readTimeMin": 4,
+    "visual": "ph-scale",
+    "sections": [
+      {
+        "heading": "What is pH?",
+        "predict": {
+          "question": "Before you read: which has a lower pH — lemon juice or soap?",
+          "answer": "Lemon juice. Lower pH = more acidic. Lemon juice is around pH 2 (acidic); soap is around pH 9 (alkaline). Pure water sits in the middle at pH 7."
+        },
+        "body": "pH is a number from 0 to 14 that tells you how acidic or alkaline something is. The scale has THREE zones:\n• 0–6: ACIDIC (lower = stronger acid)\n• 7: NEUTRAL (pure water)\n• 8–14: ALKALINE (higher = stronger alkali)\n\npH is measured with universal indicator (changes colour) or a pH meter (digital number)."
+      },
+      {
+        "heading": "Common examples",
+        "list": [
+          "pH 1 — battery acid (very strong acid, dangerous)",
+          "pH 2 — lemon juice, stomach acid",
+          "pH 4 — orange juice, vinegar",
+          "pH 5 — coffee, milk",
+          "pH 7 — pure water (neutral)",
+          "pH 8 — sea water, baking soda",
+          "pH 9 — soap, washing-up liquid",
+          "pH 11 — household ammonia",
+          "pH 14 — drain cleaner (very strong alkali, dangerous)"
+        ],
+        "callout": {
+          "tone": "tip",
+          "title": "Memory hook",
+          "body": "Acid vs alkali: think 'A for Acid, A for Below 7'. The Cs (Caustic, Cleaning products) live above 7."
+        }
+      },
+      {
+        "heading": "Neutralisation — opposites cancel",
+        "body": "Mix an acid and an alkali → they react and cancel each other out. The product is a SALT plus WATER. The pH moves towards 7.\n\nThis is how indigestion tablets work: stomach acid (pH 2) is too strong → take a base like calcium carbonate → it neutralises the acid up to a comfortable pH 5–6.",
+        "example": {
+          "title": "Hydrochloric acid + sodium hydroxide",
+          "intro": "Classic neutralisation reaction:",
+          "steps": [
+            "Acid: HCl (hydrochloric acid, pH 1).",
+            "Alkali: NaOH (sodium hydroxide, pH 13).",
+            "Mix them in equal amounts: HCl + NaOH → NaCl + H₂O.",
+            "Products: salt (sodium chloride — same as table salt) + water (pH 7).",
+            "The strong acid and strong alkali both disappeared. They neutralised."
+          ]
+        },
+        "why_prompt": {
+          "question": "Why do bee stings hurt less if you put bicarbonate of soda on them?",
+          "answer": "A bee sting is acidic. Bicarbonate of soda is a weak alkali. The two NEUTRALISE each other, moving the pH near the sting back towards 7 — which stops the chemical reaction in your skin that causes the pain."
+        }
+      },
+      {
+        "heading": "Indicators — colours that tell you pH",
+        "body": "An indicator is a chemical that changes colour at different pHs. The most common at school is universal indicator:\n• Red → strong acid\n• Orange/Yellow → weak acid\n• Green → neutral\n• Blue → weak alkali\n• Purple → strong alkali\n\nLitmus paper is simpler — red in acid, blue in alkali, no colour gradient.",
+        "quickfact": {
+          "value": "7",
+          "label": "pH of pure water (neutral)"
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain to a 7-year-old how pH works using lemon juice and soap.",
+          "checklist": [
+            "Mentioned pH is a number from 0 to 14",
+            "Said acids are below 7 and alkalis above",
+            "Used lemon as acid + soap as alkali"
+          ],
+          "model_answer": "pH is a number that says how acidic or alkaline something is. Lemon juice is sour and has pH 2 — that means strong acid. Soap is bitter and has pH 9 — that means alkali. Pure water sits at 7 in the middle, neither sour nor bitter."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "Lower pH = STRONGER acid (not weaker). pH 1 is way more acidic than pH 6.",
+      "Neutralisation always makes a salt + water.",
+      "Universal indicator: red→orange→yellow→green→blue→purple. Memorise the order."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "science",
+    "topic": "reproduction",
+    "title": "Reproduction & MRS GREN",
+    "subtitle": "What makes something alive — and how living things make more of themselves",
+    "readTimeMin": 5,
+    "sections": [
+      {
+        "heading": "What does 'alive' actually mean?",
+        "predict": {
+          "question": "Before you read: is a flame alive? Quick yes or no — and why?",
+          "answer": "No. A flame moves, grows, and 'eats' fuel — but it can't reproduce (make a baby flame), and it doesn't sense its environment. Two missing letters of MRS GREN is enough."
+        },
+        "body": "Biologists test for life with 7 things every living thing does. The mnemonic is MRS GREN.",
+        "callout": {
+          "tone": "tip",
+          "title": "MRS GREN — the 7 life processes",
+          "body": "Movement · Respiration · Sensitivity · Growth · Reproduction · Excretion · Nutrition. Memorise the 7 letters and you can answer any 'is X alive?' question in under 30 seconds."
+        }
+      },
+      {
+        "heading": "The 7 in plain English",
+        "list": [
+          "M — Movement: it can move or move parts of itself.",
+          "R — Respiration: it gets energy from food (NOT just breathing — that's a separate thing).",
+          "S — Sensitivity: it senses its surroundings and reacts (a plant turning toward light counts).",
+          "G — Growth: it gets bigger or develops over time.",
+          "R — Reproduction: it can make more of its own kind.",
+          "E — Excretion: it gets rid of waste from chemical reactions inside it.",
+          "N — Nutrition: it takes in food (plants make their own; animals eat)."
+        ]
+      },
+      {
+        "heading": "Reproduction — two big types",
+        "body": "Reproduction comes in two flavours:\n\nSEXUAL — needs two parents (male + female). The offspring mix DNA from both. Most animals (humans, dogs, fish, birds) and many plants do this.\n\nASEXUAL — one parent only. The offspring is genetically IDENTICAL to the parent (a clone). Bacteria, some plants (strawberry runners, potatoes growing 'eyes'), and a few animals (some lizards) reproduce this way.\n\nBoth count as life-process R. But sexual reproduction has a big advantage: VARIATION — kids are slightly different from their parents, which helps the species adapt over generations.",
+        "example": {
+          "title": "Why kids look like a mix of their parents",
+          "intro": "When a sperm cell meets an egg cell:",
+          "steps": [
+            "The egg has half of mum's DNA (23 chromosomes in humans).",
+            "The sperm has half of dad's DNA (23 chromosomes).",
+            "They fuse → the resulting cell has all 46 chromosomes.",
+            "Result: the kid's DNA is a mix of mum's + dad's. Brown eyes from mum, dad's nose, etc."
+          ],
+          "outro": "Identical twins are an exception — one egg splits into two, so they share 100% of their DNA."
+        }
+      },
+      {
+        "heading": "Why reproduction matters",
+        "body": "Reproduction is what keeps a species going. If lions stopped reproducing, lions would go extinct in one generation. Variation through sexual reproduction also lets species adapt — a tiny advantage (faster, smarter, better camouflaged) that's passed to offspring spreads through the species over many generations. That's evolution.",
+        "quickfact": {
+          "value": "23",
+          "label": "chromosomes in a human egg or sperm cell (half of full set)"
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain MRS GREN to a 7-year-old in 2 sentences.",
+          "checklist": [
+            "Decoded all 7 letters",
+            "Said it tests if something is alive",
+            "Used kid-friendly words"
+          ],
+          "model_answer": "MRS GREN is a list of the 7 things every living thing does: Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition. If something does all 7 it's alive — if it misses any, like fire (which can't reproduce), it's not."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "MRS GREN — memorise it. One mnemonic = guaranteed marks on every 'is X alive?' question.",
+      "Sexual reproduction = two parents, mixed DNA. Asexual = one parent, identical clone.",
+      "Respiration ≠ breathing. Respiration is a chemical reaction inside cells that releases energy."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "science",
+    "topic": "sound-waves",
+    "title": "Sound waves",
+    "subtitle": "How sound travels — and why it can't travel through space",
+    "readTimeMin": 4,
+    "visual": "sound-wave",
+    "sections": [
+      {
+        "heading": "Sound is a vibration",
+        "predict": {
+          "question": "Before you read: can a scream be heard in space?",
+          "answer": "No. Sound needs particles to travel through (it's a vibration of particles). Space is a near-vacuum — almost no particles — so sound can't propagate. Light can travel through space because it's an electromagnetic wave, not a particle vibration."
+        },
+        "body": "Sound is what happens when something VIBRATES and the vibration spreads through a medium (air, water, solid). The vibration pushes particles, which push the next particles, which push the next — like a domino effect. Your ear detects the wave when it arrives.\n\nBecause sound needs particles to travel, it can't move through a vacuum. This is why space is silent."
+      },
+      {
+        "heading": "Two key features of a sound wave",
+        "list": [
+          "AMPLITUDE — how big the vibration is. Bigger amplitude = LOUDER sound. Measured by the height of the wave.",
+          "WAVELENGTH (and FREQUENCY) — how close together the vibrations are. Higher frequency = HIGHER pitch. Measured in hertz (Hz)."
+        ],
+        "callout": {
+          "tone": "tip",
+          "title": "Memory hook",
+          "body": "Amplitude = how LOUD. Frequency = how HIGH-PITCHED. A whisper has small amplitude. A whistle has high frequency."
+        }
+      },
+      {
+        "heading": "What humans can hear",
+        "body": "Humans hear sound between roughly 20 Hz (very low rumble) and 20,000 Hz (very high whistle). As you get older, the high-frequency end shrinks — a 50-year-old typically can't hear above ~12,000 Hz, while a teenager can.\n\nDogs hear up to 45,000 Hz (which is why dog whistles work — too high for us). Bats hear up to 100,000 Hz, which they use for echolocation.",
+        "quickfact": {
+          "value": "20–20,000 Hz",
+          "label": "human hearing range (when young)"
+        }
+      },
+      {
+        "heading": "Speed of sound",
+        "body": "Sound travels at different speeds in different materials:\n• In air: about 343 m/s (1,235 km/h)\n• In water: about 1,500 m/s (4× faster)\n• In steel: about 5,000 m/s (15× faster)\n\nLight is WAY faster — about 300,000,000 m/s. That's why lightning flashes BEFORE you hear thunder, even though they happen at the same time. Count the seconds between flash and thunder, divide by 3 — that's roughly how many kilometres away the storm is.",
+        "example": {
+          "title": "How far is a storm?",
+          "intro": "You see a flash of lightning. You count to '6' before the thunder. How far away is the storm?",
+          "steps": [
+            "Sound travels ~343 m/s in air. So in 6 seconds it travels ~2,058 m.",
+            "That's about 2 km away.",
+            "Quick rule: divide the count by 3 to get rough km. (6 ÷ 3 = 2 km.)"
+          ]
+        },
+        "why_prompt": {
+          "question": "Why do you see lightning before you hear thunder, even though they happen at the same instant?",
+          "answer": "Light is about a million times faster than sound. The flash arrives at your eyes almost instantly; the sound takes time to reach your ears (~3 seconds per kilometre). The bigger the gap, the further away the lightning struck."
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain why a film of an explosion in space is scientifically wrong.",
+          "checklist": [
+            "Mentioned space is a vacuum / has no particles",
+            "Said sound needs particles to travel",
+            "Therefore explosions in space are silent"
+          ],
+          "model_answer": "Sound is particles vibrating against each other. Space is a near-vacuum — almost no particles. So even a huge explosion in space wouldn't make a sound. The film is wrong because we'd hear nothing through space, no matter how big the explosion looked."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "Sound = vibration. No particles = no sound. Space is silent.",
+      "Amplitude = volume (how loud). Frequency = pitch (how high or low).",
+      "Light travels MUCH faster than sound — that's why you see lightning before hearing thunder."
+    ],
+    "year_level": 7
   }
 ]

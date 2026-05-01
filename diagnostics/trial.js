@@ -34,7 +34,7 @@ import {
   writeJson as storageWriteJson,
   remove as storageRemove,
   keys as storageKeys
-} from "../platform/storage.js?v=20260612";
+} from "../platform/storage.js?v=20260613";
 
 const PREFIX = "aimhigh-mock-";
 const KEY_ACTIVE = PREFIX + "trial-active";

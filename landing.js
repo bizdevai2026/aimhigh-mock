@@ -14,7 +14,7 @@
 //   - If a session is already active, kick the user straight into the
 //     app (no need to look at marketing copy).
 
-import { signedInRole } from "./auth/session.js?v=20260612";
+import { signedInRole } from "./auth/session.js?v=20260613";
 
 (function init() {
   // Already signed in? Skip the landing entirely.
