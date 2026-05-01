@@ -7,7 +7,7 @@
 //
 // All read-only — never mutates state from here.
 
-import "./mock.js?v=20260608"; // shared header behaviour (sound toggle)
+import "./mock.js?v=20260609"; // shared header behaviour (sound toggle)
 import {
   readResults,
   weakTopics,
@@ -17,19 +17,19 @@ import {
   subjectLadder,
   isPaused,
   setPaused
-} from "./engagement.js?v=20260608";
+} from "./engagement.js?v=20260609";
 
-import { subjectName, listSubjects } from "./questions.js?v=20260608";
-import { playCoachEnter } from "./sounds.js?v=20260608";
-import { isParentRole } from "./profile.js?v=20260608";
+import { subjectName, listSubjects } from "./questions.js?v=20260609";
+import { playCoachEnter } from "./sounds.js?v=20260609";
+import { isParentRole } from "./profile.js?v=20260609";
 import {
   remove as storageRemove,
   writeString as storageWriteString,
   keys as storageKeys,
   snapshot as storageSnapshot
-} from "./platform/storage.js?v=20260608";
-import { escapeHtml } from "./shared/dom.js?v=20260608";
-import { prettyTopic } from "./shared/subjects.js?v=20260608";
+} from "./platform/storage.js?v=20260609";
+import { escapeHtml } from "./shared/dom.js?v=20260609";
+import { prettyTopic } from "./shared/subjects.js?v=20260609";
 
 // Wrap paint() in try/finally so a single broken painter doesn't strand
 // the page. The error catcher will surface the throw; finally guarantees
@@ -325,14 +325,14 @@ function importProgress(file) {
 function paintRoleBadge() {
   const greet = document.getElementById("dashGreeting");
   if (!greet) return;
-  // The kid sees their own name as the role badge; parent sees "PARENT VIEW".
-  // Keeps the parent registrar tone out of the kid-facing surface.
-  const role = isParentRole() ? "PARENT VIEW" : "MY VIEW";
+  // The kid sees their own name as the role badge; the Coach sees "COACH VIEW".
+  // Keeps the registrar tone out of the kid-facing surface.
+  const role = isParentRole() ? "COACH VIEW" : "MY VIEW";
   // Insert badge before the existing greeting line; preserve any name text.
   if (!document.getElementById("dashRoleBadge")) {
     const badge = document.createElement("span");
     badge.id = "dashRoleBadge";
-    badge.className = "mock-coach-role-badge " + (isParentRole() ? "is-parent" : "is-child");
+    badge.className = "mock-coach-role-badge " + (isParentRole() ? "is-coach" : "is-child");
     badge.textContent = role;
     greet.parentNode.insertBefore(badge, greet);
   }

@@ -34,7 +34,7 @@ export {
   playModeStartSprint,
   playModeStartMock,
   playCoachEnter
-} from "./media/sounds.js?v=20260608";
+} from "./media/sounds.js?v=20260609";
 
 export {
   speechAvailable,
@@ -45,11 +45,11 @@ export {
   speechRecognitionAvailable,
   recordFrench,
   frenchSpeechMatches
-} from "./media/speech.js?v=20260608";
+} from "./media/speech.js?v=20260609";
 
 export {
   hapticCorrect,
   hapticWrong,
   hapticStreak,
   hapticPerfect
-} from "./media/haptics.js?v=20260608";
+} from "./media/haptics.js?v=20260609";

@@ -15,7 +15,7 @@
 // no second AudioContext. That separation is deliberate (see the
 // architecture review in docs/reviews/2026-04-30-architecture.md).
 
-import { readString as storageReadString, writeString as storageWriteString } from "../platform/storage.js?v=20260608";
+import { readString as storageReadString, writeString as storageWriteString } from "../platform/storage.js?v=20260609";
 
 const SOUND_KEY = "aimhigh-mock-sound";
 

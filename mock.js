@@ -17,19 +17,19 @@ import {
   todayIso,
   weakTopics,
   isPaused
-} from "./engagement.js?v=20260608";
+} from "./engagement.js?v=20260609";
 
-import { readSoundOn, toggleSound } from "./sounds.js?v=20260608";
-import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260608";
-import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260608";
-import { readString as storageReadString, writeString as storageWriteString } from "./platform/storage.js?v=20260608";
-import * as logger from "./platform/logger.js?v=20260608";
-import { escapeHtml } from "./shared/dom.js?v=20260608";
+import { readSoundOn, toggleSound } from "./sounds.js?v=20260609";
+import { profileName, requireProfileOrRedirect, clearProfile, isParentRole, isChildRole, isDemoRole, signedInRole } from "./profile.js?v=20260609";
+import { todaysSubjects, dayName, isSchoolDay } from "./timetable.js?v=20260609";
+import { readString as storageReadString, writeString as storageWriteString } from "./platform/storage.js?v=20260609";
+import * as logger from "./platform/logger.js?v=20260609";
+import { escapeHtml } from "./shared/dom.js?v=20260609";
 
 // Dev / parent diagnostics panel. ?diag=1 in the URL loads it; otherwise
 // the import is never resolved (zero cost on normal page loads).
 if (/[?&]diag=1\b/.test(location.search)) {
-  import("./diagnostics/panel.js?v=20260608").catch(function (e) {
+  import("./diagnostics/panel.js?v=20260609").catch(function (e) {
     logger.error("diag", "panel failed to load", e);
   });
 }
@@ -408,18 +408,18 @@ function gateParentFromTraining() {
   return true;
 }
 
-// Parent home page: hide training tiles, show a small banner. Coach
+// Coach home page: hide training tiles, show a small banner. Coach
 // remains visible. Read-only by design — engagement state is the kid's.
 function applyParentHomeView() {
   if (!isParentRole()) return;
-  document.body.classList.add("role-parent");
+  document.body.classList.add("role-coach");
   const trainingTiles = document.querySelectorAll(".mock-tile-warmup, .mock-tile-sprint, .mock-tile-distance");
   trainingTiles.forEach(function (t) { t.style.display = "none"; });
   const main = document.querySelector(".mock-main");
-  if (main && !document.querySelector(".mock-parent-banner")) {
+  if (main && !document.querySelector(".mock-coach-banner")) {
     const banner = document.createElement("div");
-    banner.className = "mock-parent-banner";
-    banner.textContent = "Parent view — read only. Your visit doesn't affect their streak or XP.";
+    banner.className = "mock-coach-banner";
+    banner.textContent = "Coach view — read only. Your visit doesn't affect their streak or XP.";
     main.insertBefore(banner, main.firstChild);
   }
 }
@@ -503,7 +503,7 @@ function maybeShowOnboardingTour() {
         "<strong>WARM-UP</strong> &mdash; 10 quick questions, every day",
         "<strong>SPRINT</strong> &mdash; pick one subject, go deep",
         "<strong>FULL MOCK</strong> &mdash; the whole paper, timed",
-        "<strong>COACH</strong> &mdash; the parent view of your progress"
+        "<strong>COACH</strong> &mdash; the grown-up view of your progress"
       ],
       next: "Let's go"
     }

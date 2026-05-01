@@ -16,10 +16,10 @@
 import {
   readJson as storageReadJson,
   writeJson as storageWriteJson
-} from "../../platform/storage.js?v=20260608";
+} from "../../platform/storage.js?v=20260609";
 
-import { todayIso, isoOffset, daysBetween } from "../../shared/dates.js?v=20260608";
-import { shouldSkipWrites } from "./policy.js?v=20260608";
+import { todayIso, isoOffset, daysBetween } from "../../shared/dates.js?v=20260609";
+import { shouldSkipWrites } from "./policy.js?v=20260609";
 
 const KEY = "aimhigh-mock-streak";
 const DEFAULT = { current: 0, longest: 0, lastDateIso: null, freezes: 2 };

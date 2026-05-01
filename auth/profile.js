@@ -1,32 +1,47 @@
-// GradeBlaze — child + parent profiles, login, recovery.
+// GradeBlaze — child + coach profiles, login, recovery.
 //
 // Two profile records:
 //   profile-child  = { name, pinHash, createdAt }
-//   profile-parent = { pinHash, createdAt }
+//   profile-coach  = { pinHash, createdAt }
+//
+// "Coach" was previously called "parent". The rename (v20260609) was
+// driven by the role-terminology decision to move away from surveillance-
+// coded language and to widen the buyer TAM (any supportive adult, not
+// just biological parent). On first read we silently migrate
+// `aimhigh-mock-profile-parent` to `aimhigh-mock-profile-coach` so
+// existing kids keep their access without re-setup.
 //
 // PINs are 4 digits, hashed with SHA-256 via auth/pin.js before
-// being persisted. Recovery: parent can reset the child's PIN by
-// entering their own parent PIN. If the parent PIN itself is lost
+// being persisted. Recovery: the Coach can reset the child's PIN by
+// entering their own Coach PIN. If the Coach PIN itself is lost
 // there is no recovery without wiping localStorage (no backend, no
 // email).
-//
-// Migration: a pre-existing "aimhigh-mock-profile" key from the
-// single-profile version of the app is detected on first read; its
-// `name` becomes the default for the new child profile.
 
 import {
   readJson as storageReadJson,
   writeJson as storageWriteJson,
   remove as storageRemove
-} from "../platform/storage.js?v=20260608";
+} from "../platform/storage.js?v=20260609";
 
-import { hashPin } from "./pin.js?v=20260608";
-import { writeSession, clearSession } from "./session.js?v=20260608";
+import { hashPin } from "./pin.js?v=20260609";
+import { writeSession, clearSession } from "./session.js?v=20260609";
 
 const PREFIX = "aimhigh-mock-";
-const KEY_CHILD   = PREFIX + "profile-child";
-const KEY_PARENT  = PREFIX + "profile-parent";
-const KEY_LEGACY  = PREFIX + "profile";
+const KEY_CHILD       = PREFIX + "profile-child";
+const KEY_COACH       = PREFIX + "profile-coach";
+const KEY_LEGACY_COACH = PREFIX + "profile-parent"; // pre-rename key
+const KEY_LEGACY      = PREFIX + "profile";         // pre-multi-role key
+
+// One-shot migration. Runs at module load. Idempotent — if the new key
+// already exists it leaves the old one alone (in case of rollback).
+(function migrateLegacyCoachProfile() {
+  try {
+    const newP = storageReadJson(KEY_COACH, null);
+    if (newP) return;
+    const oldP = storageReadJson(KEY_LEGACY_COACH, null);
+    if (oldP) storageWriteJson(KEY_COACH, oldP);
+  } catch (e) { /* storage off — fine, app still boots */ }
+})();
 
 // --- Child profile ---------------------------------------------------------
 
@@ -34,16 +49,19 @@ export function readChildProfile() { return storageReadJson(KEY_CHILD, null); }
 export function writeChildProfile(p) { storageWriteJson(KEY_CHILD, p); }
 export function clearChildProfile() { storageRemove(KEY_CHILD); }
 
-// --- Parent profile --------------------------------------------------------
+// --- Coach profile ---------------------------------------------------------
 
-export function readParentProfile() { return storageReadJson(KEY_PARENT, null); }
-export function writeParentProfile(p) { storageWriteJson(KEY_PARENT, p); }
-export function clearParentProfile() { storageRemove(KEY_PARENT); }
+export function readCoachProfile() { return storageReadJson(KEY_COACH, null); }
+export function writeCoachProfile(p) { storageWriteJson(KEY_COACH, p); }
+export function clearCoachProfile() {
+  storageRemove(KEY_COACH);
+  storageRemove(KEY_LEGACY_COACH);
+}
 
 // --- Status helpers --------------------------------------------------------
 
 export function isFullySetUp() {
-  return !!(readChildProfile() && readParentProfile());
+  return !!(readChildProfile() && readCoachProfile());
 }
 
 // Pre-fill name when migrating from the legacy single-profile key.
@@ -56,9 +74,9 @@ export function clearLegacyProfile() { storageRemove(KEY_LEGACY); }
 
 // --- Setup -----------------------------------------------------------------
 
-export async function setupParentProfile(pin) {
+export async function setupCoachProfile(pin) {
   const pinHash = await hashPin(pin);
-  writeParentProfile({ pinHash: pinHash, createdAt: Date.now() });
+  writeCoachProfile({ pinHash: pinHash, createdAt: Date.now() });
 }
 
 export async function setupChildProfile(name, pin) {
@@ -80,23 +98,23 @@ export async function tryLoginChild(pin) {
   return false;
 }
 
-export async function tryLoginParent(pin) {
-  const p = readParentProfile();
+export async function tryLoginCoach(pin) {
+  const p = readCoachProfile();
   if (!p || !p.pinHash) return false;
   const h = await hashPin(pin);
   if (h === p.pinHash) {
-    writeSession("parent");
+    writeSession("coach");
     return true;
   }
   return false;
 }
 
-// --- Reset (parent overrides child) ----------------------------------------
+// --- Reset (Coach overrides child) ----------------------------------------
 
-export async function resetChildPinViaParent(parentPin, newPin) {
-  const p = readParentProfile();
+export async function resetChildPinViaCoach(coachPin, newPin) {
+  const p = readCoachProfile();
   if (!p) return false;
-  const h = await hashPin(parentPin);
+  const h = await hashPin(coachPin);
   if (h !== p.pinHash) return false;
   const newHash = await hashPin(newPin);
   const c = readChildProfile() || {};
@@ -109,18 +127,18 @@ export async function resetChildPinViaParent(parentPin, newPin) {
 
 // Nuclear option — wipes both profiles and the session. Engagement data
 // (streak, XP, results, seen, misses) is intentionally NOT wiped here so
-// a parent who restores the device by setting up new PINs keeps the kid's
+// a Coach who restores the device by setting up new PINs keeps the kid's
 // training history.
 export function wipeProfiles() {
   clearChildProfile();
-  clearParentProfile();
+  clearCoachProfile();
   clearSession();
   clearLegacyProfile();
 }
 
 // --- Display helpers -------------------------------------------------------
 
-// `profileName()` returns the child name (parents read the kid's stats).
+// `profileName()` returns the child name (Coaches read the kid's stats).
 export function profileName() {
   const c = readChildProfile();
   return c ? c.name : "";
@@ -131,7 +149,9 @@ export function signedInName(roleHint) {
     const c = readChildProfile();
     return c ? c.name : null;
   }
-  if (roleHint === "parent") return "Parent";
-  if (roleHint === "demo")   return "Demo";
+  // Accept both new "coach" and legacy "parent" during the transitional
+  // window; either returns the new label.
+  if (roleHint === "coach" || roleHint === "parent") return "Coach";
+  if (roleHint === "demo") return "Demo";
   return null;
 }

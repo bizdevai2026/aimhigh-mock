@@ -5,9 +5,9 @@
 //
 //   pin.js     — SHA-256 PIN hashing (the only place crypto.subtle
 //                is referenced)
-//   session.js — current session role (child / parent / demo) +
+//   session.js — current session role (child / coach / demo) +
 //                session storage key
-//   profile.js — child + parent profile records + setup, login,
+//   profile.js — child + coach profile records + setup, login,
 //                recovery, wipe
 //   gate.js    — page-level requireSignInOrRedirect
 //
@@ -17,12 +17,18 @@
 // migrate consumers to import directly from auth/<area>.js; once the
 // last consumer moves over, this file can be deleted.
 //
+// Naming: the role formerly known as "parent" is now "Coach" (the
+// rename happened at v20260609 — see memory/role_terminology.md). The
+// old function names (isParentRole, setupParentProfile, etc.) are
+// re-exported under both their new names AND their legacy names so
+// callers can migrate at their own pace.
+//
 // Privacy note (unchanged): PIN hashing is privacy, not security.
 // A determined attacker can read the page source and bypass any
 // client-side gate. The point is to keep random passers-by, classmates,
 // or anyone who finds the URL out of the kid's progress data.
 
-export { hashPin } from "./auth/pin.js?v=20260608";
+export { hashPin } from "./auth/pin.js?v=20260609";
 
 export {
   readSession,
@@ -30,34 +36,46 @@ export {
   clearSession,
   signedInRole,
   isChildRole,
-  isParentRole,
+  isCoachRole,
   isDemoRole,
   startDemoSession,
   signOut
-} from "./auth/session.js?v=20260608";
+} from "./auth/session.js?v=20260609";
+
+// Legacy alias for callers that still use the old name. Will be removed
+// once dashboard/paper/sprint/warmup/mock have all been updated.
+export { isCoachRole as isParentRole } from "./auth/session.js?v=20260609";
 
 export {
   readChildProfile,
   writeChildProfile,
   clearChildProfile,
-  readParentProfile,
-  writeParentProfile,
-  clearParentProfile,
+  readCoachProfile,
+  writeCoachProfile,
+  clearCoachProfile,
   isFullySetUp,
   migratedChildName,
   clearLegacyProfile,
-  setupParentProfile,
+  setupCoachProfile,
   setupChildProfile,
   tryLoginChild,
-  tryLoginParent,
-  resetChildPinViaParent,
+  tryLoginCoach,
+  resetChildPinViaCoach,
   wipeProfiles,
   profileName,
   signedInName
-} from "./auth/profile.js?v=20260608";
+} from "./auth/profile.js?v=20260609";
 
-export { requireSignInOrRedirect } from "./auth/gate.js?v=20260608";
+// Legacy aliases for callers that still use the old "parent" names.
+export { readCoachProfile as readParentProfile } from "./auth/profile.js?v=20260609";
+export { writeCoachProfile as writeParentProfile } from "./auth/profile.js?v=20260609";
+export { clearCoachProfile as clearParentProfile } from "./auth/profile.js?v=20260609";
+export { setupCoachProfile as setupParentProfile } from "./auth/profile.js?v=20260609";
+export { tryLoginCoach as tryLoginParent } from "./auth/profile.js?v=20260609";
+export { resetChildPinViaCoach as resetChildPinViaParent } from "./auth/profile.js?v=20260609";
+
+export { requireSignInOrRedirect } from "./auth/gate.js?v=20260609";
 
 // Backward-compat shims — older code calls these names.
-export { requireSignInOrRedirect as requireProfileOrRedirect } from "./auth/gate.js?v=20260608";
-export { signOut as clearProfile } from "./auth/session.js?v=20260608";
+export { requireSignInOrRedirect as requireProfileOrRedirect } from "./auth/gate.js?v=20260609";
+export { signOut as clearProfile } from "./auth/session.js?v=20260609";

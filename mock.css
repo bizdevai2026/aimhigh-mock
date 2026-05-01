@@ -1326,11 +1326,11 @@ body.mode-coach    { --tile-color: var(--tile-coach); }
   font-size: 1.4rem;
   letter-spacing: 0.04em;
 }
-.mock-role-btn.role-parent .mock-role-name { color: var(--mock-cyan); }
+.mock-role-btn.role-coach .mock-role-name { color: var(--mock-cyan); }
 .mock-role-btn.role-child .mock-role-name { color: var(--mock-lime); }
 
-/* Parent home banner — shown when parent role is signed in */
-.mock-parent-banner {
+/* Coach home banner — shown when the Coach role is signed in. */
+.mock-coach-banner {
   margin: 0 0 0.9rem;
   padding: 0.65rem 0.9rem;
   background: rgba(0, 245, 212, 0.10);
@@ -1641,7 +1641,7 @@ section.mock-learn-cta {
   letter-spacing: 0.18em;
   font-weight: 700;
 }
-.mock-coach-role-badge.is-parent {
+.mock-coach-role-badge.is-coach {
   background: rgba(0, 245, 212, 0.15);
   color: var(--mock-cyan);
   border: 1px solid rgba(0, 245, 212, 0.4);
