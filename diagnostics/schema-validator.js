@@ -19,7 +19,7 @@
 // whether the situation warrants a user-visible banner (see
 // shouldShowBanner below).
 
-import * as logger from "../platform/logger.js?v=20260602";
+import * as logger from "../platform/logger.js?v=20260603";
 
 const VALID_SUBJECTS = ["science", "maths", "english", "french", "history", "geography", "computing"];
 const VALID_QTYPES   = ["mc", "mcq", "spell", "speak"];
@@ -117,6 +117,31 @@ function validateLearningSection(s, sectionIndex, ctx) {
     if (!isObject(s.quickfact)) bad("quickfact must be an object");
     else if (!isString(s.quickfact.value)) bad("quickfact.value required");
     else if (!isString(s.quickfact.label)) bad("quickfact.label required");
+  }
+  // Phase 3 cognitive-science section types — see design/learn-module-audit.md §6.3
+  if (s.predict != null) {
+    if (!isObject(s.predict)) bad("predict must be an object");
+    else if (!isString(s.predict.question) || !s.predict.question.length) bad("predict.question required");
+    else if (!isString(s.predict.answer) || !s.predict.answer.length) bad("predict.answer required");
+  }
+  if (s.why_prompt != null) {
+    if (!isObject(s.why_prompt)) bad("why_prompt must be an object");
+    else if (!isString(s.why_prompt.question) || !s.why_prompt.question.length) bad("why_prompt.question required");
+    else if (!isString(s.why_prompt.answer) || !s.why_prompt.answer.length) bad("why_prompt.answer required");
+  }
+  if (s.teach_back != null) {
+    if (!isObject(s.teach_back)) bad("teach_back must be an object");
+    else if (!isString(s.teach_back.prompt) || !s.teach_back.prompt.length) bad("teach_back.prompt required");
+    // checklist + model_answer are optional but if present must be sane
+    else if (s.teach_back.checklist != null && (!isArray(s.teach_back.checklist) || !s.teach_back.checklist.every(isString))) {
+      bad("teach_back.checklist must be an array of strings");
+    }
+    else if (s.teach_back.model_answer != null && !isString(s.teach_back.model_answer)) {
+      bad("teach_back.model_answer must be a string");
+    }
+  }
+  if (s.confidence_check != null && s.confidence_check !== true) {
+    bad("confidence_check must be true (it's a marker, not an object)");
   }
   return problems;
 }

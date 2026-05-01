@@ -39,20 +39,32 @@ if (typeof window !== "undefined") {
   });
 }
 
-import "./mock.js?v=20260602"; // shared header behaviour
-import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260602";
-import { topicLadder, weakTopics } from "./engagement.js?v=20260602";
-import { getVisual } from "./visuals.js?v=20260602";
-import { validateLearning, reportProblems } from "./diagnostics/schema-validator.js?v=20260602";
-import { escapeHtml, match } from "./shared/dom.js?v=20260602";
-import { subjectTone, prettyTopic } from "./shared/subjects.js?v=20260602";
-import { readString } from "./platform/storage.js?v=20260602";
+import "./mock.js?v=20260603"; // shared header behaviour
+import { listSubjects, subjectName, topicsForSubject, loadAllQuestions } from "./questions.js?v=20260603";
+import { topicLadder, weakTopics } from "./engagement.js?v=20260603";
+import { getVisual } from "./visuals.js?v=20260603";
+import { validateLearning, reportProblems } from "./diagnostics/schema-validator.js?v=20260603";
+import { escapeHtml, match } from "./shared/dom.js?v=20260603";
+import { subjectTone, prettyTopic } from "./shared/subjects.js?v=20260603";
+import { readString, writeString } from "./platform/storage.js?v=20260603";
 
 // Study Smart completion key — same string is set by study-smart.js when
 // the kid reaches the final card. Used here only to swap "Start here" for
 // "Re-take" copy on the LEARN hub tile, so we read directly from storage
 // and avoid importing the whole onboarding module on the LEARN page.
 const STUDY_SMART_KEY = "aimhigh-mock-study-smart-complete";
+
+// Phase 3 storage keys — per-topic teach-back answers + confidence ratings.
+// See design/learn-module-audit.md §6.3 for rationale (Feynman + protégé
+// effect for teach_back; metacognitive self-monitoring for confidence_check
+// — confidence ratings will feed the spaced-recap schedule once that lands
+// in Phase 5).
+function teachBackKey(subjectId, topic) {
+  return "aimhigh-mock-learn-teachback-" + subjectId + "-" + topic;
+}
+function confidenceKey(subjectId, topic) {
+  return "aimhigh-mock-learn-confidence-" + subjectId + "-" + topic;
+}
 
 let learning = null; // array of learning entries from data/learning.json
 let pool = null;     // question pool from data/<subject>.json — used to enumerate topics
@@ -282,9 +294,13 @@ function paintTopic(subjectId, topic) {
     return;
   }
 
+  // Per-topic context passed to renderSection so Phase 3 sections
+  // (teach_back, confidence_check) can scope their localStorage reads.
+  const ctx = { subjectId: subjectId, topic: topic };
+
   let sectionsHtml = "";
   (entry.sections || []).forEach(function (s) {
-    sectionsHtml += renderSection(s);
+    sectionsHtml += renderSection(s, ctx);
   });
 
   const tipsHtml = (entry.tips && entry.tips.length > 0)
@@ -318,19 +334,35 @@ function paintTopic(subjectId, topic) {
       "<a class=\"mock-button\" href=\"" + drillHref + "\">Test what stuck &mdash; 5 questions &rarr;</a>" +
       "<a class=\"mock-button mock-button-ghost\" href=\"" + backHref + "\">&larr; Back to topics</a>" +
     "</section>";
+
+  // Phase 3 sections need post-render JS — bind teach-back save + confidence
+  // ratings once the DOM exists. predict/why_prompt are <details>/<summary>
+  // and need no JS (browser handles tap-to-reveal natively).
+  bindLearnInteractions(ctx);
 }
 
 // Section renderer — composes the visual elements that make a learning
 // page feel CGP-grade rather than a wall of text. A section can mix:
-//   heading, body, list             — basic prose
-//   callout: { title?, body, tone? } — highlighted aside (Top Tip / Watch Out)
+//   heading, body, list                  — basic prose
+//   callout: { title?, body, tone? }     — highlighted aside
 //   example: { title?, intro?, steps[] } — boxed worked example
-//   quickfact: { value, label }      — big-number stat highlight
-//   visual: <key>                    — inline diagram from visuals.js
-// Any combination is valid; missing fields are skipped.
-function renderSection(s) {
+//   quickfact: { value, label }          — big-number stat highlight
+//   visual: <key>                        — inline diagram from visuals.js
+//
+// Phase 3 section types (cognitive-science-backed):
+//   predict: { question, answer }        — pretesting prompt (tap-to-reveal)
+//   why_prompt: { question, answer }     — elaborative interrogation (tap-to-reveal)
+//   teach_back: { prompt, checklist?,    — protégé-effect free-text
+//                 model_answer? }
+//   confidence_check: true               — RAG self-rating
+//
+// Any combination is valid; missing fields are skipped. The `ctx`
+// argument carries { subjectId, topic } so the persistent section types
+// (teach_back + confidence_check) can scope their localStorage keys.
+function renderSection(s, ctx) {
   let html = "<section class=\"mock-learn-section\">";
   if (s.heading) html += "<h2 class=\"mock-learn-heading\">" + escapeHtml(s.heading) + "</h2>";
+  if (s.predict) html += renderPredict(s.predict);
   if (s.body) html += "<p class=\"mock-learn-body\">" + paragraphHtml(s.body) + "</p>";
   if (Array.isArray(s.list)) {
     html += "<ul class=\"mock-learn-list\">" + s.list.map(function (x) {
@@ -343,8 +375,165 @@ function renderSection(s) {
   if (s.callout) html += renderCallout(s.callout);
   if (s.example) html += renderExample(s.example);
   if (s.quickfact) html += renderQuickfact(s.quickfact);
+  if (s.why_prompt) html += renderWhyPrompt(s.why_prompt);
+  if (s.teach_back) html += renderTeachBack(s.teach_back, ctx);
+  if (s.confidence_check === true) html += renderConfidenceCheck(ctx);
   html += "</section>";
   return html;
+}
+
+// ---- Phase 3 section types ------------------------------------------------
+
+// Predict — pretesting effect. Pre-reading "what do you think X does?"
+// prompt; tap to reveal the model answer. Native <details> handles the
+// tap-to-reveal so no JS needed (works with reduced motion + screen readers).
+function renderPredict(p) {
+  return (
+    "<details class=\"mock-learn-predict\">" +
+      "<summary>" +
+        "<span class=\"mock-learn-predict-eyebrow\">Before you read</span>" +
+        "<span class=\"mock-learn-predict-question\">" + escapeHtml(p.question) + "</span>" +
+        "<span class=\"mock-learn-predict-hint\">Tap to reveal</span>" +
+      "</summary>" +
+      "<p class=\"mock-learn-predict-answer\">" + escapeHtml(p.answer) + "</p>" +
+    "</details>"
+  );
+}
+
+// Why prompt — elaborative interrogation. "Why does this work?" prompt;
+// tap to reveal a 1-2 sentence causal explanation. Same pattern as
+// predict but distinct visual styling.
+function renderWhyPrompt(w) {
+  return (
+    "<details class=\"mock-learn-why\">" +
+      "<summary>" +
+        "<span class=\"mock-learn-why-eyebrow\">Why does this work?</span>" +
+        "<span class=\"mock-learn-why-question\">" + escapeHtml(w.question) + "</span>" +
+        "<span class=\"mock-learn-why-hint\">Tap to reveal</span>" +
+      "</summary>" +
+      "<p class=\"mock-learn-why-answer\">" + escapeHtml(w.answer) + "</p>" +
+    "</details>"
+  );
+}
+
+// Teach-back — Feynman / protégé effect. The kid types a 1-2 sentence
+// kid-friendly explanation; we save it. Next visit shows their previous
+// answer alongside the model so they spot their own gaps.
+function renderTeachBack(t, ctx) {
+  const stored = ctx ? safeRead(teachBackKey(ctx.subjectId, ctx.topic)) : null;
+  const checklistHtml = (Array.isArray(t.checklist) && t.checklist.length > 0)
+    ? "<ul class=\"mock-learn-teachback-checklist\">" +
+        t.checklist.map(function (item) {
+          return "<li>" + escapeHtml(item) + "</li>";
+        }).join("") +
+      "</ul>"
+    : "";
+  const previousHtml = stored
+    ? "<div class=\"mock-learn-teachback-previous\">" +
+        "<p class=\"mock-learn-teachback-label\">Last time you wrote:</p>" +
+        "<p class=\"mock-learn-teachback-previous-text\">" + escapeHtml(stored) + "</p>" +
+      "</div>"
+    : "";
+  const modelAnswerHtml = (stored && t.model_answer)
+    ? "<div class=\"mock-learn-teachback-model\">" +
+        "<p class=\"mock-learn-teachback-label\">A 7-year-old version:</p>" +
+        "<p class=\"mock-learn-teachback-model-text\">" + escapeHtml(t.model_answer) + "</p>" +
+      "</div>"
+    : "";
+  return (
+    "<aside class=\"mock-learn-teachback\" data-teachback=\"1\">" +
+      "<p class=\"mock-learn-teachback-eyebrow\">Teach the goldfish</p>" +
+      "<p class=\"mock-learn-teachback-prompt\">" + escapeHtml(t.prompt) + "</p>" +
+      checklistHtml +
+      previousHtml +
+      "<textarea class=\"mock-learn-teachback-input\" rows=\"3\" placeholder=\"In your own words…\">" + escapeHtml(stored || "") + "</textarea>" +
+      "<div class=\"mock-learn-teachback-actions\">" +
+        "<button type=\"button\" class=\"mock-button mock-button-sm\" data-teachback-save>Save my answer</button>" +
+        "<span class=\"mock-learn-teachback-status\" data-teachback-status>" + (stored ? "&#10003; Saved" : "") + "</span>" +
+      "</div>" +
+      modelAnswerHtml +
+    "</aside>"
+  );
+}
+
+// Confidence check — three-button RAG. Feeds the spaced-recap schedule
+// once Phase 5 lands; for now just persists the rating per topic so the
+// kid + parent dashboard can see what's shaky.
+function renderConfidenceCheck(ctx) {
+  const stored = ctx ? safeRead(confidenceKey(ctx.subjectId, ctx.topic)) : null;
+  function btn(value, label, hint) {
+    const isActive = stored === value;
+    const cls = "mock-learn-confidence-btn mock-learn-confidence-" + value + (isActive ? " is-active" : "");
+    return (
+      "<button type=\"button\" class=\"" + cls + "\" data-confidence=\"" + value + "\">" +
+        "<span class=\"mock-learn-confidence-label\">" + escapeHtml(label) + "</span>" +
+        "<span class=\"mock-learn-confidence-hint\">" + escapeHtml(hint) + "</span>" +
+      "</button>"
+    );
+  }
+  return (
+    "<aside class=\"mock-learn-confidence\" data-confidence-check=\"1\">" +
+      "<p class=\"mock-learn-confidence-eyebrow\">RAG yourself</p>" +
+      "<p class=\"mock-learn-confidence-prompt\">How confident are you on this topic?</p>" +
+      "<div class=\"mock-learn-confidence-row\">" +
+        btn("got",   "Got it",    "Could explain it") +
+        btn("shaky", "Bit shaky", "Mostly there") +
+        btn("lost",  "Lost",      "Re-learn this") +
+      "</div>" +
+      "<p class=\"mock-learn-confidence-status\" data-confidence-status>" +
+        (stored ? "&#10003; Saved as <strong>" + escapeHtml(stored) + "</strong> — shaky/lost topics will resurface sooner." : "") +
+      "</p>" +
+    "</aside>"
+  );
+}
+
+function safeRead(key) {
+  try { return readString(key); } catch (e) { return null; }
+}
+
+// Wires up post-render interactions for the Phase 3 sections. Idempotent
+// — if there are no teach-back / confidence sections on the page, this
+// silently no-ops.
+function bindLearnInteractions(ctx) {
+  // Teach-back save buttons.
+  const saveBtns = document.querySelectorAll("[data-teachback-save]");
+  saveBtns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const wrap = btn.closest("[data-teachback]");
+      if (!wrap) return;
+      const input = wrap.querySelector(".mock-learn-teachback-input");
+      const status = wrap.querySelector("[data-teachback-status]");
+      if (!input) return;
+      const value = (input.value || "").trim();
+      try { writeString(teachBackKey(ctx.subjectId, ctx.topic), value); } catch (e2) { /* storage off */ }
+      if (status) {
+        status.innerHTML = value ? "&#10003; Saved" : "Cleared";
+        // Briefly highlight that the save fired.
+        status.classList.add("is-flash");
+        setTimeout(function () { status.classList.remove("is-flash"); }, 1200);
+      }
+    });
+  });
+  // Confidence-check buttons.
+  const confBtns = document.querySelectorAll("[data-confidence]");
+  confBtns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const wrap = btn.closest("[data-confidence-check]");
+      if (!wrap) return;
+      const value = btn.getAttribute("data-confidence");
+      try { writeString(confidenceKey(ctx.subjectId, ctx.topic), value); } catch (e2) { /* storage off */ }
+      // Update active state across the row.
+      wrap.querySelectorAll("[data-confidence]").forEach(function (b) {
+        b.classList.toggle("is-active", b === btn);
+      });
+      const status = wrap.querySelector("[data-confidence-status]");
+      if (status) {
+        status.innerHTML = "&#10003; Saved as <strong>" + escapeHtml(value) + "</strong> — shaky/lost topics will resurface sooner.";
+      }
+    });
+  });
 }
 
 function renderCallout(c) {

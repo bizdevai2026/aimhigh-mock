@@ -2464,6 +2464,321 @@ section.mock-learn-cta {
 }
 
 /* ===========================================================================
+   LEARN — Phase 3 cognitive-science section types
+   (predict / why_prompt / teach_back / confidence_check)
+   =========================================================================== */
+
+/* Predict (pretesting effect) — pre-reading "what do you think?" prompt
+   with native <details>/<summary> tap-to-reveal. Cobalt-led to feel like
+   a question rather than a tip. */
+.mock-learn-predict {
+  background: rgba(109, 167, 255, 0.08);
+  border: 1px solid rgba(109, 167, 255, 0.30);
+  border-left: 3px solid var(--mock-cobalt);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  margin: 0.7rem 0;
+}
+.mock-learn-predict > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.mock-learn-predict > summary::-webkit-details-marker { display: none; }
+.mock-learn-predict-eyebrow {
+  font-family: var(--mock-font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-cobalt);
+}
+.mock-learn-predict-question {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--mock-text-strong);
+  line-height: 1.45;
+}
+.mock-learn-predict-hint {
+  font-size: 0.78rem;
+  color: var(--mock-text-dim);
+  font-style: italic;
+}
+.mock-learn-predict[open] .mock-learn-predict-hint { display: none; }
+.mock-learn-predict-answer {
+  margin: 0.6rem 0 0;
+  padding-top: 0.6rem;
+  border-top: 1px dashed rgba(109, 167, 255, 0.35);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--mock-text);
+}
+
+/* Why prompt (elaborative interrogation) — same shape as predict but
+   gold-led to feel like an "aha, here's the reason". */
+.mock-learn-why {
+  background: rgba(255, 209, 58, 0.07);
+  border: 1px solid rgba(255, 209, 58, 0.30);
+  border-left: 3px solid var(--mock-fire);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  margin: 0.7rem 0;
+}
+.mock-learn-why > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.mock-learn-why > summary::-webkit-details-marker { display: none; }
+.mock-learn-why-eyebrow {
+  font-family: var(--mock-font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-fire);
+}
+.mock-learn-why-question {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--mock-text-strong);
+  line-height: 1.45;
+}
+.mock-learn-why-hint {
+  font-size: 0.78rem;
+  color: var(--mock-text-dim);
+  font-style: italic;
+}
+.mock-learn-why[open] .mock-learn-why-hint { display: none; }
+.mock-learn-why-answer {
+  margin: 0.6rem 0 0;
+  padding-top: 0.6rem;
+  border-top: 1px dashed rgba(255, 209, 58, 0.35);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--mock-text);
+}
+
+/* Teach-back (Feynman / protégé effect) — kid types a 7-year-old version
+   in their own words. We save it. Next visit shows their previous answer
+   alongside the model so they can see their own gaps. Highest-leverage
+   minute of any lesson per the audit. */
+.mock-learn-teachback {
+  background: linear-gradient(160deg, rgba(94, 234, 212, 0.10) 0%, rgba(94, 234, 212, 0.04) 100%);
+  border: 1px solid rgba(94, 234, 212, 0.40);
+  border-radius: 14px;
+  padding: 1.1rem 1.1rem 1rem;
+  margin: 1.1rem 0 0.4rem;
+}
+.mock-learn-teachback-eyebrow {
+  font-family: var(--mock-font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-cyan);
+  margin: 0 0 0.4rem;
+}
+.mock-learn-teachback-prompt {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--mock-text-strong);
+  line-height: 1.45;
+  margin: 0 0 0.7rem;
+}
+.mock-learn-teachback-checklist {
+  list-style: none;
+  margin: 0 0 0.8rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.mock-learn-teachback-checklist li {
+  position: relative;
+  padding-left: 1.3rem;
+  font-size: 0.86rem;
+  color: var(--mock-text-dim);
+  line-height: 1.5;
+}
+.mock-learn-teachback-checklist li::before {
+  content: "•";
+  position: absolute;
+  left: 0.4rem;
+  color: var(--mock-cyan);
+  font-weight: 700;
+}
+.mock-learn-teachback-previous {
+  margin: 0 0 0.7rem;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(94, 234, 212, 0.30);
+  border-radius: 8px;
+}
+.mock-learn-teachback-label {
+  font-family: var(--mock-font-display);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mock-cyan);
+  margin: 0 0 0.25rem;
+}
+.mock-learn-teachback-previous-text,
+.mock-learn-teachback-model-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--mock-text);
+  line-height: 1.5;
+  font-style: italic;
+}
+.mock-learn-teachback-input {
+  display: block;
+  width: 100%;
+  font-family: var(--mock-font-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding: 0.7rem 0.8rem;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--mock-text-strong);
+  border: 1px solid var(--mock-border-hi);
+  border-radius: 10px;
+  resize: vertical;
+  min-height: 3.5rem;
+}
+.mock-learn-teachback-input:focus {
+  outline: none;
+  border-color: var(--mock-cyan);
+  box-shadow: 0 0 0 3px rgba(94, 234, 212, 0.18);
+}
+.mock-learn-teachback-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.6rem;
+  flex-wrap: wrap;
+}
+.mock-learn-teachback-status {
+  font-size: 0.85rem;
+  color: var(--mock-cyan);
+  font-weight: 600;
+  transition: opacity 200ms ease;
+}
+.mock-learn-teachback-status.is-flash { opacity: 0.4; }
+.mock-learn-teachback-model {
+  margin-top: 0.7rem;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 209, 58, 0.07);
+  border: 1px solid rgba(255, 209, 58, 0.30);
+  border-radius: 8px;
+}
+.mock-learn-teachback-model .mock-learn-teachback-label {
+  color: var(--mock-fire);
+}
+.mock-learn-teachback-model-text {
+  font-style: normal;
+  color: var(--mock-text);
+}
+
+/* Small button variant for inline form actions. */
+.mock-button.mock-button-sm {
+  padding: 0.45rem 0.85rem;
+  font-size: 0.85rem;
+}
+
+/* Confidence check (RAG self-rating) — Red/Amber/Green for honesty. */
+.mock-learn-confidence {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--mock-border);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  margin: 1.1rem 0 0.4rem;
+}
+.mock-learn-confidence-eyebrow {
+  font-family: var(--mock-font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-text-dim);
+  margin: 0 0 0.3rem;
+}
+.mock-learn-confidence-prompt {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--mock-text-strong);
+  margin: 0 0 0.7rem;
+}
+.mock-learn-confidence-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+.mock-learn-confidence-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.7rem 0.5rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1.5px solid var(--mock-border);
+  color: var(--mock-text);
+  cursor: pointer;
+  font-family: var(--mock-font-body);
+  transition: transform 80ms ease, border-color 80ms ease, background 80ms ease;
+}
+.mock-learn-confidence-btn:hover, .mock-learn-confidence-btn:focus {
+  transform: translateY(-1px);
+  outline: none;
+}
+.mock-learn-confidence-label {
+  font-family: var(--mock-font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.mock-learn-confidence-hint {
+  font-size: 0.74rem;
+  color: var(--mock-text-dim);
+}
+/* Per-rating colours: green / amber / red. */
+.mock-learn-confidence-got       { border-color: rgba(94, 234, 212, 0.45); }
+.mock-learn-confidence-got:hover,
+.mock-learn-confidence-got:focus,
+.mock-learn-confidence-got.is-active {
+  background: rgba(94, 234, 212, 0.12);
+  border-color: var(--mock-cyan);
+}
+.mock-learn-confidence-got.is-active .mock-learn-confidence-label { color: var(--mock-cyan); }
+.mock-learn-confidence-shaky      { border-color: rgba(255, 209, 58, 0.45); }
+.mock-learn-confidence-shaky:hover,
+.mock-learn-confidence-shaky:focus,
+.mock-learn-confidence-shaky.is-active {
+  background: rgba(255, 209, 58, 0.10);
+  border-color: var(--mock-fire);
+}
+.mock-learn-confidence-shaky.is-active .mock-learn-confidence-label { color: var(--mock-fire); }
+.mock-learn-confidence-lost       { border-color: rgba(255, 94, 58, 0.45); }
+.mock-learn-confidence-lost:hover,
+.mock-learn-confidence-lost:focus,
+.mock-learn-confidence-lost.is-active {
+  background: rgba(255, 94, 58, 0.10);
+  border-color: var(--mock-lime);
+}
+.mock-learn-confidence-lost.is-active .mock-learn-confidence-label { color: var(--mock-lime); }
+.mock-learn-confidence-status {
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  color: var(--mock-text-dim);
+  min-height: 1.2em;
+}
+
+/* ===========================================================================
    STUDY SMART — meta-skill onboarding (study-smart.html + tile on LEARN hub)
    =========================================================================== */
 

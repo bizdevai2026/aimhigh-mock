@@ -9,6 +9,10 @@
     "sections": [
       {
         "heading": "What is a cell?",
+        "predict": {
+          "question": "Before you read: what's the smallest part of a living thing that's still alive on its own?",
+          "answer": "A cell. It's the smallest unit that can take in food, grow, and copy itself. Anything smaller (like an organelle or a molecule) only works AS PART OF a cell."
+        },
         "body": "Every living thing is made of cells. You are made of trillions. A cell is the smallest unit that can do all the jobs of being alive — taking in food, getting rid of waste, growing, and copying itself.\n\nThere are two big families: animal cells and plant cells. They share a lot but plant cells have extra parts because plants make their own food.",
         "quickfact": {
           "value": "0.02 mm",
@@ -41,11 +45,29 @@
             "Chloroplasts — catch sunlight to make food (animals eat food, no need).",
             "Big vacuole — stores water and keeps the plant firm (animals are mostly soft tissue)."
           ]
+        },
+        "why_prompt": {
+          "question": "Why don't animal cells need chloroplasts?",
+          "answer": "Animals eat food that already has energy locked in it (plants, or other animals that ate plants). Plants can't move to find food, so they make their own from sunlight — that's what chloroplasts do."
         }
       },
       {
         "heading": "How small are they?",
         "body": "Most cells are too small to see without a microscope. A typical animal cell is about 0.02 mm wide — you'd fit fifty of them across the dot above this 'i'."
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain animal vs plant cells to a 7-year-old in 2 sentences.",
+          "checklist": [
+            "Said which one has a cell wall",
+            "Mentioned chloroplasts for plants",
+            "Used simple words (no jargon)"
+          ],
+          "model_answer": "Plant cells have a stiff outer wall and little green bits called chloroplasts that grab sunlight to make food. Animal cells are softer and can't make their own food, so animals have to eat."
+        }
+      },
+      {
+        "confidence_check": true
       }
     ],
     "tips": [
@@ -98,6 +120,20 @@
           "value": "100°C",
           "label": "boiling point of water at sea level"
         }
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain why ice floats on water to a 7-year-old.",
+          "checklist": [
+            "Mentioned ice is less dense than water",
+            "Used the word 'particles'",
+            "Kept it under 30 seconds"
+          ],
+          "model_answer": "When water freezes into ice, the particles lock into a pattern that's actually more spaced out than liquid water. Same particles, bigger space — that makes ice lighter (less dense), so it floats on top."
+        }
+      },
+      {
+        "confidence_check": true
       }
     ],
     "tips": [
@@ -159,6 +195,20 @@
           "value": "27.3 days",
           "label": "time for the Moon to orbit Earth once"
         }
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain why we have day and night to a 7-year-old.",
+          "checklist": [
+            "Said the Earth spins",
+            "Mentioned the Sun stays still (from our view)",
+            "Didn't say 'the Sun goes round the Earth'"
+          ],
+          "model_answer": "The Earth spins like a slow top — once every 24 hours. When your side faces the Sun it's day; when your side faces away it's night. The Sun isn't moving across the sky — we are."
+        }
+      },
+      {
+        "confidence_check": true
       }
     ],
     "tips": [
@@ -224,6 +274,20 @@
           "title": "Greek prefix tip",
           "body": "Penta = 5, hexa = 6, octa = 8 (think octopus, eight legs), deca = 10 (decade = 10 years)."
         }
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain to a 7-year-old how to tell a hexagon from an octagon.",
+          "checklist": [
+            "Said to count the sides",
+            "Hexagon = 6, octagon = 8",
+            "Linked octagon to 'octopus = 8 legs'"
+          ],
+          "model_answer": "Count the sides. A hexagon has 6 sides (think honeycomb). An octagon has 8 sides (think OCTopus — 8 legs)."
+        }
+      },
+      {
+        "confidence_check": true
       }
     ],
     "tips": [
@@ -280,6 +344,20 @@
           "7² = 49   ·   8² = 64   ·   9² = 81",
           "10² = 100   ·   11² = 121   ·   12² = 144"
         ]
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain what 5² means to a 7-year-old in 2 sentences.",
+          "checklist": [
+            "Said it's 5 × 5",
+            "Mentioned the answer is 25",
+            "Used 'a square' as a visual"
+          ],
+          "model_answer": "5² means 5 times 5. Imagine making a square that's 5 wide and 5 tall — you'd need 25 little tiles to fill it, and 25 is the answer."
+        }
+      },
+      {
+        "confidence_check": true
       }
     ],
     "tips": [
@@ -347,6 +425,20 @@
           "value": "8",
           "label": "main word classes in English"
         }
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain to a 7-year-old what a verb is.",
+          "checklist": [
+            "Called it a 'doing word'",
+            "Gave at least one example",
+            "Didn't use the word 'predicate'"
+          ],
+          "model_answer": "A verb is a doing word — it tells you what someone is DOING in a sentence. 'Run', 'jump', 'eat', 'sleep', 'is' — they're all verbs."
+        }
+      },
+      {
+        "confidence_check": true
       }
     ],
     "tips": [
@@ -405,6 +497,20 @@
           "value": "5",
           "label": "main techniques to know — simile, metaphor, personification, alliteration, onomatopoeia"
         }
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain the difference between a simile and a metaphor to a 7-year-old.",
+          "checklist": [
+            "Said simile uses 'like' or 'as'",
+            "Said metaphor says it IS the thing",
+            "Gave one example of each"
+          ],
+          "model_answer": "A simile says one thing is LIKE another — 'her hair was like sunshine'. A metaphor says one thing IS another — 'her hair was sunshine'. The metaphor commits, which makes the picture stronger."
+        }
+      },
+      {
+        "confidence_check": true
       }
     ],
     "tips": [
@@ -457,6 +563,20 @@
       {
         "heading": "The feudal system",
         "body": "Society was organised as a pyramid:\n\n• King (William) at the top — owned all the land in theory\n• Barons — held big chunks from the King in return for loyalty + soldiers\n• Knights — held smaller chunks from the Barons in return for fighting\n• Peasants — at the bottom — worked the land\n\nThis is what the diagram above shows."
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain why 1066 matters to a 7-year-old in 2 sentences.",
+          "checklist": [
+            "Mentioned William or the Normans winning",
+            "Said England changed afterwards",
+            "Didn't try to list every detail"
+          ],
+          "model_answer": "In 1066 a French duke called William invaded England, won a big battle at Hastings, and made himself king. He swapped almost every English noble for a French one — that's why English now has loads of French-origin words like 'beef' and 'castle'."
+        }
+      },
+      {
+        "confidence_check": true
       }
     ],
     "tips": [
@@ -513,6 +633,20 @@
       {
         "heading": "Contour lines",
         "body": "Brown lines on an OS map joining points of equal height. They turn a flat map into 3D in your head:\n\n• Lines close together = steep slope (the land rises sharply over a short distance).\n• Lines far apart = gentle slope.\n• Concentric rings = a hill (the smallest ring at the centre is the summit). The diagram above shows this.\n\nThe number on each contour tells you the height in metres above sea level."
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain how to read a 4-figure grid reference to a 7-year-old.",
+          "checklist": [
+            "Mentioned 'along the corridor, up the stairs'",
+            "Said eastings come first",
+            "Gave a specific example"
+          ],
+          "model_answer": "Read the first two numbers ALONG (left to right). Read the next two numbers UP (bottom to top). Always 'along the corridor, then up the stairs' — that order, every time. So 23 45 means: along to 23, then up to 45."
+        }
+      },
+      {
+        "confidence_check": true
       }
     ],
     "tips": [
@@ -568,6 +702,20 @@
       {
         "heading": "Copyright",
         "body": "Anything original someone creates — a song, a video, a piece of writing, a photo — is automatically theirs by law. That's copyright. Using their work without permission can be illegal, even for a school project.\n\nIf you want music for a video, look for 'royalty-free' tracks (legal to use freely) or get the creator's permission."
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain SMART e-safety to a 7-year-old.",
+          "checklist": [
+            "Decoded at least 3 of the SMART letters",
+            "Used 'don't' for at least one",
+            "Mentioned telling an adult"
+          ],
+          "model_answer": "SMART means: Stay safe (don't share your address or phone number), don't Meet anyone you only know online, don't Accept random messages or files, check info is Reliable before believing it, and Tell a trusted grown-up if anything feels weird."
+        }
+      },
+      {
+        "confidence_check": true
       }
     ],
     "tips": [
@@ -618,6 +766,20 @@
           "value": "DPAA",
           "label": "Decompose · Pattern · Abstract · Algorithm"
         }
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain decomposition to a 7-year-old.",
+          "checklist": [
+            "Used the phrase 'break it down' or similar",
+            "Gave an everyday example",
+            "Didn't use jargon"
+          ],
+          "model_answer": "Decomposition means breaking a big problem into small steps. Like getting dressed: you don't think 'get dressed' as one job — you think 'put on socks, put on shirt, put on trousers'. Computers solve problems the same way."
+        }
+      },
+      {
+        "confidence_check": true
       }
     ],
     "tips": [
@@ -677,6 +839,20 @@
       {
         "heading": "Pleased to meet you",
         "body": "After someone tells you their name, the polite response is \"Enchanté\" (boy speaking) or \"Enchantée\" (girl speaking) — \"Pleased to meet you\". They sound exactly the same out loud; only the spelling differs."
+      },
+      {
+        "teach_back": {
+          "prompt": "Tell a 7-year-old how to ask someone's age in French and what's weird about the answer.",
+          "checklist": [
+            "Used 'Quel âge as-tu?' or similar",
+            "Mentioned the verb avoir (to have)",
+            "Said you HAVE an age, not ARE one"
+          ],
+          "model_answer": "Ask 'Quel âge as-tu?' — literally 'what age have you?' To answer, you say 'J'ai 12 ans' which means 'I have 12 years'. In French you HAVE an age, not ARE one — that's the classic trap."
+        }
+      },
+      {
+        "confidence_check": true
       }
     ],
     "tips": [

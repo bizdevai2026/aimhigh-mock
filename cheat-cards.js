@@ -13,11 +13,11 @@
 // Data lives at data/cheat-cards.json — ~94 cards across 7 subjects.
 // Source content: design/learn-module-audit.md §5 (the mnemonic bank).
 
-import "./mock.js?v=20260602";
-import { listSubjects, subjectName } from "./questions.js?v=20260602";
-import { subjectTone } from "./shared/subjects.js?v=20260602";
-import { escapeHtml, match } from "./shared/dom.js?v=20260602";
-import { readJson, writeJson } from "./platform/storage.js?v=20260602";
+import "./mock.js?v=20260603";
+import { listSubjects, subjectName } from "./questions.js?v=20260603";
+import { subjectTone } from "./shared/subjects.js?v=20260603";
+import { escapeHtml, match } from "./shared/dom.js?v=20260603";
+import { readJson, writeJson } from "./platform/storage.js?v=20260603";
 
 const MEMORISED_KEY = "aimhigh-mock-cheat-cards-memorised";
 

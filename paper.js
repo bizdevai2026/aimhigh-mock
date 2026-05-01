@@ -6,14 +6,14 @@
 //
 // Two states: idle (intro + START button) and running (timer + session).
 
-import "./mock.js?v=20260602"; // shared header behaviour (sound toggle)
-import { loadAllQuestions, listSubjects, subjectName } from "./questions.js?v=20260602";
-import { noteSessionResult, readStreak } from "./engagement.js?v=20260602";
-import { playLevelUp, playModeStartMock, makeListenButton, hapticStreak } from "./sounds.js?v=20260602";
-import { getVisual } from "./visuals.js?v=20260602";
-import { isParentRole } from "./profile.js?v=20260602";
-import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260602";
-import { escapeHtml } from "./shared/dom.js?v=20260602";
+import "./mock.js?v=20260603"; // shared header behaviour (sound toggle)
+import { loadAllQuestions, listSubjects, subjectName } from "./questions.js?v=20260603";
+import { noteSessionResult, readStreak } from "./engagement.js?v=20260603";
+import { playLevelUp, playModeStartMock, makeListenButton, hapticStreak } from "./sounds.js?v=20260603";
+import { getVisual } from "./visuals.js?v=20260603";
+import { isParentRole } from "./profile.js?v=20260603";
+import { readJson as storageReadJson, writeJson as storageWriteJson, remove as storageRemove } from "./platform/storage.js?v=20260603";
+import { escapeHtml } from "./shared/dom.js?v=20260603";
 
 // Parent role: route them to Coach view. Cancel the loading guard
 // before the async redirect (timeout card mustn't flash on slow nav).
