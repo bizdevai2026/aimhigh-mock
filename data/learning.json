@@ -1258,5 +1258,365 @@
       "Light travels MUCH faster than sound — that's why you see lightning before hearing thunder."
     ],
     "year_level": 7
+  },
+  {
+    "subject": "maths",
+    "topic": "fractions",
+    "title": "Fractions — add, subtract, multiply, divide",
+    "subtitle": "The four operations on fractions, in plain English",
+    "readTimeMin": 5,
+    "sections": [
+      {
+        "heading": "Adding & subtracting — same denominator first",
+        "predict": {
+          "question": "Before you read: what is 1/4 + 1/2?",
+          "answer": "3/4. You can't add 1/4 and 1/2 directly because the denominators (the bottom numbers) are different. Convert 1/2 into 2/4 first, then 1/4 + 2/4 = 3/4. Same denominator means same-size pieces — only then can you count them up."
+        },
+        "body": "RULE: you can only add or subtract fractions when the bottom numbers (denominators) match. If they don't, find a common denominator first.\n\nExample: 1/3 + 1/6\n• Lowest common denominator is 6 (because 6 ÷ 3 = 2, so 1/3 becomes 2/6)\n• 2/6 + 1/6 = 3/6 = 1/2\n\nThink of it like pizza slices. You can't add a third of a pizza to a sixth of a pizza unless you cut the bigger slice up so the pieces are the same size.",
+        "callout": {
+          "tone": "tip",
+          "title": "Common denominator trick",
+          "body": "If you can't spot the lowest common denominator, just MULTIPLY the two denominators together. It works every time, even if the answer needs simplifying."
+        }
+      },
+      {
+        "heading": "Multiplying — straight across, no hassle",
+        "body": "Multiplying is the EASIEST operation on fractions: just multiply the top numbers together, and multiply the bottom numbers together.\n\n2/3 × 4/5 = (2×4) / (3×5) = 8/15\n\nNo common denominator needed. Just go straight across.",
+        "example": {
+          "title": "1/2 × 1/4",
+          "steps": [
+            "Multiply the tops: 1 × 1 = 1.",
+            "Multiply the bottoms: 2 × 4 = 8.",
+            "Answer: 1/8."
+          ],
+          "outro": "Notice: multiplying fractions makes them SMALLER. Half of a quarter is an eighth."
+        }
+      },
+      {
+        "heading": "Dividing — KFC (Keep, Flip, Change)",
+        "body": "Dividing fractions has a famous mnemonic: KFC.\n\n• KEEP the first fraction the same\n• FLIP the second fraction upside down (this is called the reciprocal)\n• CHANGE the ÷ to a ×\n\nThen multiply straight across like normal.\n\nExample: 1/2 ÷ 1/4\n• Keep 1/2\n• Flip 1/4 to 4/1\n• Change ÷ to ×\n• Now: 1/2 × 4/1 = 4/2 = 2",
+        "callout": {
+          "tone": "tip",
+          "title": "KFC — Keep, Flip, Change",
+          "body": "The mnemonic that every top student knows. Keep the first, Flip the second, Change the sign. Works every time."
+        },
+        "why_prompt": {
+          "question": "Why does flipping the second fraction work for division?",
+          "answer": "Dividing by a number is the same as multiplying by its reciprocal. ÷2 means the same as ×1/2. So ÷1/4 means the same as ×4/1. The flip turns a tricky division into an easy multiplication. Same answer, easier maths."
+        }
+      },
+      {
+        "heading": "Simplifying at the end",
+        "body": "Always check if your answer simplifies. Find the highest number that divides into BOTH the top and the bottom, then divide.\n\n6/8 → both divide by 2 → 3/4 ✓\n10/15 → both divide by 5 → 2/3 ✓\n\nMost mark schemes give the final mark for fully simplified answers."
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain to a Year 5 student how to do 2/3 ÷ 1/6.",
+          "checklist": [
+            "Said keep the 2/3 (KFC: Keep)",
+            "Said flip 1/6 to 6/1 (KFC: Flip)",
+            "Said change ÷ to × (KFC: Change)",
+            "Got the answer 12/3 = 4"
+          ],
+          "model_answer": "Use KFC: Keep, Flip, Change. Keep the 2/3 the same. Flip the 1/6 upside down to make 6/1. Change the divide sign to a times sign. Now do 2/3 × 6/1 = 12/3 = 4. So 2/3 ÷ 1/6 = 4."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "+ and − need a common denominator. × and ÷ don't.",
+      "KFC for dividing fractions: Keep, Flip, Change.",
+      "Always simplify at the end — most mark schemes give a mark for it.",
+      "Multiplying fractions makes the answer SMALLER, not bigger."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "maths",
+    "topic": "percentages",
+    "title": "Percentages — the 'of means times' trick",
+    "subtitle": "Why \"30% of 80\" is just multiplication in disguise",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "Percent literally means 'out of 100'",
+        "predict": {
+          "question": "Before you read: which is bigger — 30% of £80, or 80% of £30?",
+          "answer": "They're EQUAL. Both equal £24. Percentages multiply, and multiplication is commutative — order doesn't matter. 30% × 80 = 0.3 × 80 = 24. 80% × 30 = 0.8 × 30 = 24. Top students notice this trick and use it to flip awkward percentages into easy ones."
+        },
+        "body": "The word \"percent\" comes from Latin: per cent = \"per hundred\". So 50% literally means 50 out of 100, which is 50/100 = 1/2.\n\nKey conversions to memorise:\n• 50% = 1/2 = 0.5\n• 25% = 1/4 = 0.25\n• 10% = 1/10 = 0.1\n• 75% = 3/4 = 0.75\n• 1% = 1/100 = 0.01"
+      },
+      {
+        "heading": "The big rule: 'of' means 'times'",
+        "body": "Whenever you see the word \"of\" in a percentage question, swap it for ×.\n\n\"30% of 80\" becomes \"30% × 80\" which becomes \"0.30 × 80\" = 24.\n\"15% of 200\" becomes \"0.15 × 200\" = 30.\n\nConvert the percentage to a decimal first (drop the % sign and divide by 100), then multiply.",
+        "callout": {
+          "tone": "tip",
+          "title": "The non-calculator method",
+          "body": "10% is just \"divide by 10\". 1% is \"divide by 100\". So 30% of 80 = (3 × 10%) of 80 = 3 × 8 = 24. Build up percentages from 10% chunks — fast and no calculator needed."
+        }
+      },
+      {
+        "heading": "Percentage increase & decrease",
+        "body": "INCREASE by 20% means: keep the original AND add 20% on top. So you multiply by 1.20.\nDECREASE by 20% means: keep the original AND take 20% off. So you multiply by 0.80.\n\nExample: a £50 jumper goes up by 20%.\n• 1.20 × £50 = £60. Done.\n\nExample: a £50 jumper has 30% off in a sale.\n• 0.70 × £50 = £35. Done.",
+        "example": {
+          "title": "Sale price — 25% off £80",
+          "steps": [
+            "25% off means you pay 75% (because 100% − 25% = 75%).",
+            "75% as a decimal is 0.75.",
+            "0.75 × £80 = £60.",
+            "Sale price is £60."
+          ],
+          "outro": "One multiplication, no \"work out the discount then subtract\" two-step. Top students always go straight to the multiplier."
+        },
+        "why_prompt": {
+          "question": "Why does \"increase by 20%\" mean × 1.20 and not × 0.20?",
+          "answer": "Because you're keeping the original (that's the 1, or 100%) AND adding 20% on top (that's the 0.20). 1 + 0.20 = 1.20. If you multiplied by 0.20 you'd get 20% of the original — that's the increase amount, not the new total."
+        }
+      },
+      {
+        "heading": "Reverse percentages — finding the original",
+        "body": "If a price went UP by 25% and is now £100, what was it before?\n\nDON'T just take 25% off £100. That gives £75 — wrong, because 25% of £100 isn't the same as 25% of the original.\n\nThe trick: divide by the multiplier.\n• Price went up by 25%, so multiplier is 1.25\n• Original = £100 ÷ 1.25 = £80 ✓\n• Check: £80 × 1.25 = £100 ✓"
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain how to work out 35% of £60 without a calculator.",
+          "checklist": [
+            "Found 10% by dividing by 10 (= £6)",
+            "Multiplied by 3 to get 30% (= £18)",
+            "Halved 10% to get 5% (= £3)",
+            "Added 30% + 5% to get 35% (= £21)"
+          ],
+          "model_answer": "Find 10% first by dividing by 10: £6. Multiply by 3 to get 30%: £18. Halve 10% to get 5%: £3. Add 30% and 5%: £21. So 35% of £60 = £21."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "\"Of\" means \"times\". 30% of 80 = 0.30 × 80.",
+      "Increase by X%: × (1 + X/100). Decrease: × (1 − X/100).",
+      "10% = ÷10, 1% = ÷100. Build any percentage from these.",
+      "Reverse percentages: divide by the multiplier, don't subtract."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "maths",
+    "topic": "algebra",
+    "title": "Algebra — like terms, brackets, and FOIL",
+    "subtitle": "Why 3a + 2a = 5a but 3a + 2b stays as 3a + 2b",
+    "readTimeMin": 5,
+    "sections": [
+      {
+        "heading": "Letters are just placeholders",
+        "predict": {
+          "question": "Before you read: can you simplify 3a + 4b + 2a − b?",
+          "answer": "5a + 3b. Add the a-terms: 3a + 2a = 5a. Add the b-terms: 4b − b = 3b. You can ONLY combine terms that have the same letter (same power). 5a and 3b can't be merged any further — they're different things."
+        },
+        "body": "In algebra, a letter (usually x, y, a, b) stands in for an unknown number. \"3a\" doesn't mean \"3 and a\" — it means \"3 lots of a\", or 3 × a.\n\nThe golden rule: you can only add or subtract terms if they have EXACTLY the same letter and power. These are called LIKE TERMS.\n\nLike terms (can be combined): 3a + 2a = 5a\nUnlike terms (cannot be combined): 3a + 2b stays as 3a + 2b\nUnlike terms: 5x and 5x² stay separate (different powers)"
+      },
+      {
+        "heading": "Collecting like terms",
+        "body": "Step through the expression, group the same letters together, then add the numbers in front (the COEFFICIENTS).\n\nExample: 4x + 3y − 2x + 5y\n• x-terms: 4x − 2x = 2x\n• y-terms: 3y + 5y = 8y\n• Answer: 2x + 8y\n\nWatch the signs! The − belongs to the term AFTER it.",
+        "callout": {
+          "tone": "warning",
+          "title": "Don't drop the minus",
+          "body": "If a term has a − sign in front, that minus belongs to it. 4x − 2x means \"4x and negative 2x\", which equals 2x. If you forget the minus you'll get 6x instead — and lose marks."
+        }
+      },
+      {
+        "heading": "Expanding single brackets",
+        "body": "When you see a number outside a bracket, multiply EVERY term inside the bracket by it.\n\n3(x + 4) = 3 × x + 3 × 4 = 3x + 12\n2(5y − 3) = 2 × 5y + 2 × (−3) = 10y − 6\n−4(a + 2) = −4a − 8 (the negative outside affects every term inside)\n\nDon't forget the second term — it's the most common mistake in Year 7."
+      },
+      {
+        "heading": "Double brackets — FOIL",
+        "body": "When you multiply two brackets together, like (x + 2)(x + 5), use FOIL:\n\n• F — First terms: x × x = x²\n• O — Outer terms: x × 5 = 5x\n• I — Inner terms: 2 × x = 2x\n• L — Last terms: 2 × 5 = 10\n\nAdd them all up: x² + 5x + 2x + 10 = x² + 7x + 10",
+        "example": {
+          "title": "(x + 3)(x − 4)",
+          "steps": [
+            "F (Firsts): x × x = x²",
+            "O (Outers): x × −4 = −4x",
+            "I (Inners): 3 × x = 3x",
+            "L (Lasts): 3 × −4 = −12",
+            "Combine: x² − 4x + 3x − 12 = x² − x − 12"
+          ],
+          "outro": "FOIL guarantees you don't miss any of the four products. It's the difference between getting the question right and getting it half-right."
+        },
+        "why_prompt": {
+          "question": "Why does FOIL give you four terms (before simplifying), not two?",
+          "answer": "Because each term in the first bracket has to multiply with each term in the second bracket. 2 terms × 2 terms = 4 products. FOIL is just a memory hook for \"do all four pairs\". Skip a pair, lose a mark."
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain to a friend how to expand (x + 6)(x + 2) using FOIL.",
+          "checklist": [
+            "Mentioned F, O, I, L (or all four pairs)",
+            "Got x × x = x² for the firsts",
+            "Got 8x in the middle (2x + 6x)",
+            "Got 12 for the lasts",
+            "Final answer: x² + 8x + 12"
+          ],
+          "model_answer": "FOIL means First, Outer, Inner, Last. First: x × x = x². Outer: x × 2 = 2x. Inner: 6 × x = 6x. Last: 6 × 2 = 12. Add them: x² + 2x + 6x + 12 = x² + 8x + 12."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "Like terms have the SAME letter and SAME power. Only those can be combined.",
+      "When expanding a single bracket, multiply EVERY term inside — not just the first.",
+      "FOIL: First, Outer, Inner, Last. Four products from two brackets.",
+      "The minus sign belongs to the term that follows it. Track signs carefully."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "maths",
+    "topic": "negatives",
+    "title": "Negative numbers — the two-signs rule",
+    "subtitle": "Why minus a minus equals plus",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "The number line is your best friend",
+        "predict": {
+          "question": "Before you read: what is −3 − 5?",
+          "answer": "−8. Start at −3 on the number line. Subtract 5 means move 5 places to the LEFT. You land on −8. The trap is thinking the answer is somewhere positive — but two negatives next to each other (−3 and then −5) just take you further left."
+        },
+        "body": "Imagine a number line with 0 in the middle, positives stretching right, negatives stretching left.\n\n• ADDING moves you RIGHT (more positive)\n• SUBTRACTING moves you LEFT (more negative)\n\nExample: −2 + 5\n• Start at −2. Move 5 places right. Land on +3.\n\nExample: 4 − 7\n• Start at 4. Move 7 places left. Land on −3.\n\nDraw the number line if you ever get stuck. It's faster than guessing."
+      },
+      {
+        "heading": "The two-signs rule (the big one)",
+        "body": "When you see TWO signs next to each other (with no number between), apply this rule:\n\n• Two SAME signs (++ or − −) → makes a PLUS\n• Two DIFFERENT signs (+− or −+) → makes a MINUS\n\nExamples:\n• 5 − (−3) = 5 + 3 = 8       (− − becomes +)\n• 5 + (−3) = 5 − 3 = 2       (+ − becomes −)\n• −4 − (−6) = −4 + 6 = 2     (− − becomes +)",
+        "callout": {
+          "tone": "tip",
+          "title": "Memory hook",
+          "body": "Same signs = positive. Different signs = negative. Or: \"two minuses make a plus\". Or visualise: two minus signs next to each other look like a plus sign if you stack them."
+        }
+      },
+      {
+        "heading": "Multiplying & dividing — same rule",
+        "body": "The two-signs rule works for × and ÷ too:\n\n• POSITIVE × POSITIVE = POSITIVE   (3 × 4 = 12)\n• NEGATIVE × NEGATIVE = POSITIVE   (−3 × −4 = +12)\n• POSITIVE × NEGATIVE = NEGATIVE   (3 × −4 = −12)\n• NEGATIVE × POSITIVE = NEGATIVE   (−3 × 4 = −12)\n\nSame for division. Two same signs → positive. Two different signs → negative.",
+        "why_prompt": {
+          "question": "Why does negative × negative equal positive?",
+          "answer": "One way to see it: think of −3 as \"the opposite of 3\". So −(−3) means \"the opposite of the opposite of 3\" — which lands you back at 3. Multiplying by a negative is like flipping direction. Flip twice and you're facing the same way you started. Two flips = no flip."
+        }
+      },
+      {
+        "heading": "Real-life check",
+        "body": "Negative numbers come up everywhere in real life:\n• Temperatures below freezing (−5°C means 5 below zero)\n• Bank balances when you're overdrawn (−£20 means you owe £20)\n• Floors below ground (−1 = basement)\n\nIf an answer feels weird, picture a thermometer or a lift. \"Subtract 5 from −2\" is the same as \"the temperature was −2°C and dropped by 5\" — it's now −7°C.",
+        "example": {
+          "title": "Temperature drop",
+          "intro": "It was 3°C at noon. By midnight it had dropped by 8°C. What's the new temperature?",
+          "steps": [
+            "Start at 3.",
+            "Drop by 8: 3 − 8.",
+            "Move 8 places left on the number line: land on −5.",
+            "Answer: −5°C."
+          ]
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "Explain to a Year 5 student why 7 − (−4) equals 11.",
+          "checklist": [
+            "Spotted the two negatives next to each other",
+            "Said two minuses make a plus",
+            "Rewrote it as 7 + 4",
+            "Got 11 as the answer"
+          ],
+          "model_answer": "When you see two minus signs next to each other (the take-away sign and the minus 4), they cancel out and become a plus. So 7 − (−4) is the same as 7 + 4, which equals 11. Two minuses make a plus."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "Same signs make a plus. Different signs make a minus. Works for ± and × ÷.",
+      "Add → move RIGHT on the number line. Subtract → move LEFT.",
+      "If stuck, draw the number line. Always.",
+      "Negative × negative = positive. Negative × positive = negative."
+    ],
+    "year_level": 7
+  },
+  {
+    "subject": "maths",
+    "topic": "statistics",
+    "title": "Mean, median, mode & range",
+    "subtitle": "The four averages — and which one to use when",
+    "readTimeMin": 4,
+    "sections": [
+      {
+        "heading": "Three averages, one spread",
+        "predict": {
+          "question": "Before you read: data set is 2, 3, 3, 4, 88. Which average is misleading here, and why?",
+          "answer": "The MEAN. Adding everything (2+3+3+4+88 = 100) and dividing by 5 gives 20 — but four out of five numbers are below 5. The 88 is an outlier that drags the mean way up. The median (3) and mode (3) describe this data far better. Knowing when each average misleads you is what separates a 4 from a 7."
+        },
+        "body": "An \"average\" is a single number that summarises a whole list. There are THREE different averages, and each tells you something different.\n\n• MEAN — add them all up and divide by how many.\n• MEDIAN — line them up smallest to largest, take the middle one.\n• MODE — the most common number (the one that appears most often).\n\nThe RANGE isn't an average — it's the spread (largest minus smallest)."
+      },
+      {
+        "heading": "MEAN — add them up, divide",
+        "body": "List: 4, 7, 9, 10, 5\n• Add: 4 + 7 + 9 + 10 + 5 = 35\n• Count: 5 numbers\n• Mean = 35 ÷ 5 = 7\n\nThe mean is what people usually mean when they say \"average\". It uses every number, but it gets pulled toward outliers (very large or very small values).",
+        "callout": {
+          "tone": "warning",
+          "title": "Watch out",
+          "body": "If your data has one huge or tiny value (an OUTLIER), the mean lies about the typical. \"Average house price\" is a famous example — one £10m mansion in a village can lift the mean above what 99% of houses actually cost."
+        }
+      },
+      {
+        "heading": "MEDIAN — line them up, take the middle",
+        "body": "List: 4, 7, 9, 10, 5\n• Reorder smallest to largest: 4, 5, 7, 9, 10\n• Middle one is 7. Median = 7.\n\nIf there's an EVEN number of values, take the two middle ones and find their mean.\nList: 3, 5, 8, 12 → middle two are 5 and 8 → median = (5 + 8) ÷ 2 = 6.5\n\nThe median ignores extreme values — that's why it's used for things like \"average salary\" in the news."
+      },
+      {
+        "heading": "MODE — the most common",
+        "body": "List: 2, 5, 5, 7, 8, 8, 8, 9\n• Count how often each appears: 2 (×1), 5 (×2), 7 (×1), 8 (×3), 9 (×1)\n• 8 appears most. Mode = 8.\n\nIf no number repeats, there's NO mode. If two numbers tie for the most, both are modes (it's bimodal). Mode is the only average that works with non-numbers like favourite colours.",
+        "why_prompt": {
+          "question": "Which average should the news use to describe \"typical UK salary\" — mean, median, or mode?",
+          "answer": "The MEDIAN. The mean gets pulled up by a small number of very high earners (CEOs, footballers), making the typical worker look richer than they are. The median ignores outliers and represents the middle of the pack — which is what \"typical\" actually means. Mean is misleading when the data is skewed."
+        }
+      },
+      {
+        "heading": "RANGE — how spread out",
+        "body": "Range = LARGEST − SMALLEST. It tells you how spread out the data is.\n\nList: 4, 7, 9, 10, 5\n• Largest = 10, smallest = 4\n• Range = 10 − 4 = 6\n\nA small range means values are tightly clustered. A big range means they're spread out.",
+        "example": {
+          "title": "Test scores: 6, 7, 8, 8, 11",
+          "steps": [
+            "Mean: (6+7+8+8+11) ÷ 5 = 40 ÷ 5 = 8.",
+            "Median: line up — 6, 7, 8, 8, 11 — middle is 8.",
+            "Mode: 8 appears twice, others once. Mode = 8.",
+            "Range: 11 − 6 = 5."
+          ],
+          "outro": "When mean = median = mode, the data is symmetric and well-behaved. When they disagree, that's a sign of skew or outliers."
+        }
+      },
+      {
+        "teach_back": {
+          "prompt": "A friend writes down: 2, 3, 3, 5, 9. Talk them through finding all four (mean, median, mode, range).",
+          "checklist": [
+            "Mean: added them (= 22) and divided by 5 (= 4.4)",
+            "Median: lined them up and picked middle (= 3)",
+            "Mode: 3 appears most often (= 3)",
+            "Range: 9 − 2 (= 7)"
+          ],
+          "model_answer": "Mean: add them all — 2+3+3+5+9 = 22. Divide by 5 = 4.4. Median: they're already in order, pick the middle one — that's 3. Mode: 3 appears twice, everything else once, so mode = 3. Range: biggest minus smallest = 9 − 2 = 7."
+        }
+      },
+      {
+        "confidence_check": true
+      }
+    ],
+    "tips": [
+      "Mean = total ÷ count. Median = middle. Mode = most common. Range = max − min.",
+      "Mean is pulled by outliers. Median ignores them.",
+      "If there's an even count, median is the mean of the two middle numbers.",
+      "Mode is the only average that works with non-numbers (e.g. favourite colour)."
+    ],
+    "year_level": 7
   }
 ]
