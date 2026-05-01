@@ -21,9 +21,9 @@
 //     portrait, so the kid can swipe through without losing context.
 //   - "Got it" advances; "Skip the toolkit" exists but is buried.
 
-import "./mock.js?v=20260604";
-import { readString, writeString } from "./platform/storage.js?v=20260604";
-import { escapeHtml, match } from "./shared/dom.js?v=20260604";
+import "./mock.js?v=20260605";
+import { readString, writeString } from "./platform/storage.js?v=20260605";
+import { escapeHtml, match } from "./shared/dom.js?v=20260605";
 
 const STUDY_SMART_KEY = "aimhigh-mock-study-smart-complete";
 

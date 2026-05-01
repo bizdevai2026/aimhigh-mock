@@ -3333,235 +3333,486 @@ section.mock-learn-cta {
   font-size: 1.4rem;
 }
 
-/* Deck for one subject. */
-.cheat-deck-meta {
-  display: flex;
-  justify-content: flex-end;
-  margin: 0 1.25rem 0.7rem;
-}
-.cheat-deck-count {
-  font-family: var(--mock-font-display);
-  font-size: 0.85rem;
-  font-weight: 700;
+/* Hub progress banner — extra "X practising · Y new" subtitle line. */
+.cheat-progress-banner-sub {
+  font-size: 0.78rem;
   color: var(--mock-text-dim);
-  letter-spacing: 0.06em;
-}
-.cheat-deck {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.9rem;
-  margin: 0 1.25rem 1.4rem;
-}
-@media (min-width: 700px) {
-  .cheat-deck { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 1100px) {
-  .cheat-deck { grid-template-columns: repeat(3, 1fr); }
+  letter-spacing: 0.04em;
+  margin-top: 0.2rem;
 }
 
-/* Card with 3D flip. The .cheat-card is the perspective container;
-   .cheat-card-inner is the rotated layer; .cheat-card-face is each side. */
-.cheat-card {
-  perspective: 1200px;
-  cursor: pointer;
-  user-select: none;
-}
-.cheat-card-inner {
+/* ---------------------------------------------------------------------------
+   FOCUS MODE — single card on stage, three states (prompt → reveal → rate)
+   --------------------------------------------------------------------------- */
+
+.cheat-stage {
   position: relative;
-  width: 100%;
-  min-height: 280px;
-  transform-style: preserve-3d;
-  transition: transform 480ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-/* When a card is flipped and has rich content, let the back grow so the
-   worked example doesn't get clipped — the front's min-height kept the
-   deck visually consistent before the flip. */
-.cheat-card.is-flipped .cheat-card-inner {
-  min-height: auto;
-}
-.cheat-card.is-flipped .cheat-card-inner {
-  transform: rotateY(180deg);
-}
-.cheat-card-face {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: 14px;
-  padding: 1.2rem 1.1rem 1rem;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 1rem 1.1rem 7rem; /* extra bottom padding so the fixed footer doesn't overlap */
+  min-height: calc(100vh - 70px);
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--mock-border-hi);
+  gap: 1rem;
 }
-.cheat-card-front {
-  background:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.04) 0%, transparent 60%),
-    linear-gradient(135deg, var(--tile-color, var(--mock-lime)) 0%, var(--mock-card-hi) 80%);
-  background-blend-mode: normal, normal;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 0.5rem;
-  position: relative;
+.cheat-stage-exit {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  width: 36px;
+  height: 36px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--mock-border);
+  color: var(--mock-text);
+  text-decoration: none;
+  font-size: 1.1rem;
+  z-index: 2;
 }
-.cheat-card-back {
+.cheat-stage-exit:hover, .cheat-stage-exit:focus {
+  background: var(--mock-card-hi);
+  outline: none;
+}
+
+/* Stories-style segmented progress bar at the top. */
+.cheat-progress {
+  display: flex;
+  gap: 0.3rem;
+  padding: 0 0 0 56px; /* clear the back button */
+  margin-bottom: 0.4rem;
+}
+.cheat-progress-seg {
+  flex: 1;
+  height: 4px;
+  background: var(--mock-border);
+  border-radius: 999px;
+  overflow: hidden;
+  transition: background 200ms ease;
+}
+.cheat-progress-seg.is-current { background: var(--tile-color, var(--mock-fire)); }
+.cheat-progress-seg.is-done    { background: var(--mock-cyan); opacity: 0.8; }
+
+/* The card itself. Two states are rendered into the DOM; the active one
+   is shown via class on the card. No 3D flip — flip felt good once but
+   killed momentum after the first 5 cards (per the Year-7 critique). */
+.cheat-focus-card {
   background: linear-gradient(160deg, var(--mock-card) 0%, var(--mock-card-hi) 100%);
-  transform: rotateY(180deg);
-  overflow-y: auto;
+  border: 1px solid var(--mock-border-hi);
+  border-left: 4px solid var(--tile-color, var(--mock-lime));
+  border-radius: var(--mock-radius-lg);
+  padding: 1.4rem 1.3rem 1.5rem;
+  box-shadow: 0 14px 40px -16px rgba(0, 0, 0, 0.45);
+  position: relative;
+  transition: transform 280ms ease, box-shadow 280ms ease;
+}
+.cheat-focus-card.just-memorised {
+  animation: cheatMemorisedPulse 600ms ease-out;
+  border-color: var(--mock-cyan);
+  box-shadow: 0 0 40px -8px rgba(94, 234, 212, 0.45);
+}
+@keyframes cheatMemorisedPulse {
+  0%, 100% { transform: scale(1); }
+  40%      { transform: scale(1.025); }
+}
+
+/* Top metadata row — subject + priority + state badge. */
+.cheat-focus-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.cheat-focus-subject {
+  font-family: var(--mock-font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tile-color, var(--mock-lime));
 }
 .cheat-card-priority {
-  position: absolute;
-  top: 0.7rem;
-  right: 0.7rem;
   font-family: var(--mock-font-display);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  padding: 0.2rem 0.5rem;
-  background: rgba(15, 23, 41, 0.7);
+  padding: 0.18rem 0.5rem;
+  background: rgba(15, 23, 41, 0.55);
   color: var(--mock-fire);
   border: 1px solid rgba(255, 209, 58, 0.55);
   border-radius: 999px;
 }
-.cheat-card-mnemonic {
+.cheat-state-badge {
+  margin-left: auto;
   font-family: var(--mock-font-display);
-  font-size: 1.7rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+}
+.cheat-state-new        { background: rgba(255, 255, 255, 0.04); color: var(--mock-text-dim); border: 1px solid var(--mock-border); }
+.cheat-state-practising { background: rgba(255, 209, 58, 0.10); color: var(--mock-fire); border: 1px solid rgba(255, 209, 58, 0.40); }
+.cheat-state-memorised  { background: rgba(94, 234, 212, 0.12); color: var(--mock-cyan); border: 1px solid var(--mock-cyan); }
+
+/* Show only one state at a time. */
+.cheat-focus-prompt-state,
+.cheat-focus-reveal-state {
+  display: none;
+}
+.cheat-focus-card.state-prompt   .cheat-focus-prompt-state { display: block; }
+.cheat-focus-card.state-revealed .cheat-focus-reveal-state { display: block; }
+
+/* === PROMPT STATE === */
+.cheat-focus-mnemonic {
+  font-family: var(--mock-font-display);
+  font-size: 2.4rem;
   font-weight: 800;
   letter-spacing: 0.02em;
-  color: var(--mock-bg);
-  margin: 0;
-  line-height: 1.1;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+  color: var(--mock-text-strong);
+  margin: 0 0 0.4rem;
+  line-height: 1.05;
 }
-.cheat-card-tagline {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--mock-bg);
-  opacity: 0.85;
-  margin: 0;
-  max-width: 22rem;
-}
-.cheat-card-flip-hint {
-  position: absolute;
-  bottom: 0.7rem;
-  right: 0.9rem;
-  font-family: var(--mock-font-body);
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--mock-bg);
-  opacity: 0.7;
-  letter-spacing: 0.04em;
-}
-.cheat-card-back-label {
-  font-family: var(--mock-font-display);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--tile-color, var(--mock-cobalt));
-  margin: 0 0 0.25rem;
-  text-transform: uppercase;
-}
-.cheat-card-back-label + .cheat-card-back-label { margin-top: 0.7rem; }
-.cheat-card-decode,
-.cheat-card-when,
-.cheat-card-example,
-.cheat-card-context,
-.cheat-card-scenario,
-.cheat-card-outcome {
-  font-size: 0.88rem;
-  line-height: 1.5;
-  color: var(--mock-text);
-  margin: 0 0 0.7rem;
-}
-.cheat-card-decode { color: var(--mock-text-strong); font-weight: 600; }
-.cheat-card-context {
-  font-style: italic;
+.cheat-focus-tagline {
+  font-size: 0.95rem;
   color: var(--mock-text-dim);
-  border-left: 2px solid var(--tile-color, var(--mock-cobalt));
-  padding-left: 0.6rem;
-  margin-left: 0;
+  margin: 0 0 1.2rem;
+  line-height: 1.4;
 }
-.cheat-card-scenario {
+.cheat-focus-prompt-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--mock-border);
+  border-left: 3px solid var(--tile-color, var(--mock-cobalt));
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+}
+.cheat-focus-prompt-eyebrow {
+  font-family: var(--mock-font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tile-color, var(--mock-cobalt));
+  margin: 0 0 0.4rem;
+}
+.cheat-focus-prompt-question {
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--mock-text-strong);
+  line-height: 1.45;
+  margin: 0 0 0.5rem;
+}
+.cheat-focus-prompt-hint {
+  font-size: 0.8rem;
+  color: var(--mock-text-dim);
   font-style: italic;
+  margin: 0;
 }
-.cheat-card-steps {
-  margin: 0 0 0.7rem;
-  padding-left: 1.4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+
+/* === REVEAL STATE === */
+.cheat-focus-decode-eyebrow {
+  font-family: var(--mock-font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tile-color, var(--mock-cobalt));
+  margin: 0 0 0.4rem;
 }
-.cheat-card-steps li {
-  font-size: 0.86rem;
+.cheat-focus-decode {
+  font-family: var(--mock-font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  line-height: 1.35;
+  color: var(--mock-text-strong);
+  margin: 0 0 1rem;
+}
+.cheat-focus-when {
+  font-size: 0.95rem;
   line-height: 1.5;
   color: var(--mock-text);
+  margin: 0 0 1rem;
 }
-.cheat-card-steps li::marker {
-  color: var(--tile-color, var(--mock-fire));
-  font-weight: 700;
-}
-.cheat-card-outcome {
-  padding: 0.5rem 0.7rem;
-  background: rgba(255, 209, 58, 0.08);
-  border-left: 2px solid var(--mock-fire);
-  border-radius: 4px;
+.cheat-focus-walkthrough {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+  padding: 0.55rem 0.85rem;
+  background: rgba(109, 167, 255, 0.10);
+  border: 1px solid rgba(109, 167, 255, 0.35);
+  border-radius: 8px;
+  color: var(--mock-cobalt);
+  font-family: var(--mock-font-body);
+  font-size: 0.88rem;
   font-weight: 600;
-  color: var(--mock-text-strong);
+  cursor: pointer;
 }
-.cheat-card-actions {
-  margin-top: auto;
-  padding-top: 0.6rem;
+.cheat-focus-walkthrough:hover, .cheat-focus-walkthrough:focus {
+  background: rgba(109, 167, 255, 0.18);
+  outline: none;
+}
+
+/* Footer actions — fixed at the bottom for thumb reach. Two layouts,
+   driven by .is-revealed on the stage. */
+.cheat-stage-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.7rem 1rem 1rem;
+  background: linear-gradient(180deg, transparent 0%, var(--mock-bg) 50%);
+  z-index: 5;
   display: flex;
   justify-content: center;
 }
-.cheat-card-mem-btn {
+.cheat-stage-footer-prompt,
+.cheat-stage-footer-reveal {
+  display: none;
+  width: 100%;
+  max-width: 520px;
+  gap: 0.6rem;
+}
+.cheat-stage:not(.is-revealed) .cheat-stage-footer-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.cheat-stage.is-revealed .cheat-stage-footer-reveal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.cheat-stage-reveal-btn {
+  width: 100%;
+  text-align: center;
+}
+.cheat-stage-skip-btn {
+  background: none;
+  border: none;
+  color: var(--mock-text-dim);
   font-family: var(--mock-font-body);
   font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  padding: 0.55rem 1rem;
-  background: linear-gradient(135deg, var(--mock-lime), var(--mock-fire));
-  color: var(--mock-bg);
-  border: none;
-  border-radius: 8px;
   cursor: pointer;
-  transition: transform 80ms ease, box-shadow 80ms ease;
+  padding: 0.5rem;
 }
-.cheat-card-mem-btn:hover, .cheat-card-mem-btn:focus {
-  transform: translateY(-1px);
-  box-shadow: 0 0 18px rgba(255, 94, 58, 0.40);
+.cheat-stage-skip-btn:hover, .cheat-stage-skip-btn:focus {
+  color: var(--mock-text);
+  text-decoration: underline;
   outline: none;
 }
-.cheat-card.is-memorised .cheat-card-mem-btn {
-  background: rgba(94, 234, 212, 0.18);
-  color: var(--mock-cyan);
-  border: 1px solid var(--mock-cyan);
+
+.cheat-rate-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.85rem 0.5rem;
+  border-radius: 12px;
+  background: var(--mock-card);
+  border: 1.5px solid var(--mock-border);
+  color: var(--mock-text);
+  cursor: pointer;
+  font-family: var(--mock-font-body);
+  transition: transform 80ms ease, border-color 80ms ease, background 80ms ease;
 }
-.cheat-card.is-memorised .cheat-card-front {
-  opacity: 0.8;
+.cheat-rate-btn:hover, .cheat-rate-btn:focus {
+  transform: translateY(-1px);
+  outline: none;
 }
-.cheat-card.is-memorised .cheat-card-front::after {
-  content: "✓ Memorised";
-  position: absolute;
-  bottom: 0.7rem;
-  left: 0.9rem;
+.cheat-rate-icon {
   font-family: var(--mock-font-display);
-  font-size: 0.65rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+.cheat-rate-label {
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  padding: 0.18rem 0.5rem;
-  background: rgba(15, 23, 41, 0.7);
-  color: var(--mock-cyan);
-  border: 1px solid var(--mock-cyan);
-  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+.cheat-rate-again { border-color: rgba(255, 209, 58, 0.45); color: var(--mock-fire); }
+.cheat-rate-again:hover, .cheat-rate-again:focus { background: rgba(255, 209, 58, 0.10); }
+.cheat-rate-got   { border-color: rgba(94, 234, 212, 0.55); color: var(--mock-cyan); }
+.cheat-rate-got:hover, .cheat-rate-got:focus { background: rgba(94, 234, 212, 0.12); }
+
+/* Out-animation when a rating is recorded — quick slide before the
+   reload-to-next pages. */
+.cheat-stage.is-rated .cheat-focus-card { transition: transform 280ms ease, opacity 280ms ease; }
+.cheat-stage.is-rated-got .cheat-focus-card    { transform: translateX(80px); opacity: 0; }
+.cheat-stage.is-rated-again .cheat-focus-card  { transform: translateX(-80px); opacity: 0; }
+
+/* ---------------------------------------------------------------------------
+   BOTTOM SHEET — worked example, on demand
+   --------------------------------------------------------------------------- */
+.cheat-sheet-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 50;
+  animation: cheatScrimIn 200ms ease-out;
+}
+@keyframes cheatScrimIn { from { opacity: 0; } to { opacity: 1; } }
+.cheat-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 85vh;
+  background: var(--mock-card);
+  border-top: 1px solid var(--mock-border-hi);
+  border-radius: 18px 18px 0 0;
+  z-index: 51;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.cheat-sheet.is-open { transform: translateY(0); }
+.cheat-sheet-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.2rem 0.7rem;
+  border-bottom: 1px solid var(--mock-border);
+}
+.cheat-sheet-head h3 {
+  margin: 0;
+  font-family: var(--mock-font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--mock-text-strong);
+}
+.cheat-sheet-close {
+  background: none;
+  border: none;
+  color: var(--mock-text-dim);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+}
+.cheat-sheet-close:hover, .cheat-sheet-close:focus {
+  color: var(--mock-text);
+  outline: none;
+}
+.cheat-sheet-body {
+  padding: 1rem 1.2rem 1.4rem;
+  overflow-y: auto;
+}
+.cheat-sheet-scenario {
+  font-weight: 600;
+  font-style: italic;
+  color: var(--mock-text-strong);
+  margin: 0 0 0.8rem;
+  line-height: 1.5;
+}
+.cheat-sheet-steps {
+  margin: 0 0 0.9rem;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cheat-sheet-steps li {
+  font-size: 0.93rem;
+  line-height: 1.55;
+  color: var(--mock-text);
+}
+.cheat-sheet-steps li::marker {
+  color: var(--mock-fire);
+  font-weight: 700;
+}
+.cheat-sheet-outcome {
+  padding: 0.7rem 0.9rem;
+  background: rgba(255, 209, 58, 0.08);
+  border-left: 3px solid var(--mock-fire);
+  border-radius: 6px;
+  font-weight: 600;
+  color: var(--mock-text-strong);
+  line-height: 1.5;
+  margin: 0;
 }
 
+/* ---------------------------------------------------------------------------
+   SESSION COMPLETE
+   --------------------------------------------------------------------------- */
+.cheat-complete {
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+  margin: 0 auto;
+  max-width: 480px;
+}
+.cheat-complete-burst {
+  font-size: 4rem;
+  color: var(--mock-fire);
+  filter: drop-shadow(0 0 14px rgba(255, 209, 58, 0.5));
+  animation: cheatBurst 800ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes cheatBurst {
+  0%   { transform: scale(0.5); opacity: 0; }
+  60%  { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.cheat-complete-title {
+  font-family: var(--mock-font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--mock-text-strong);
+  margin: 0.3rem 0 0.4rem;
+  letter-spacing: -0.01em;
+}
+.cheat-complete-sub {
+  font-size: 0.95rem;
+  color: var(--mock-text-dim);
+  margin: 0 0 1.4rem;
+}
+.cheat-complete-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 1rem 1.2rem;
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, rgba(94, 234, 212, 0.10) 0%, rgba(109, 167, 255, 0.10) 100%),
+    var(--mock-card);
+  border: 1px solid var(--mock-border-hi);
+  margin: 0 0 1.6rem;
+}
+.cheat-complete-stat-num {
+  font-family: var(--mock-font-display);
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--mock-cyan);
+  line-height: 1;
+}
+.cheat-complete-stat-label {
+  font-size: 0.85rem;
+  color: var(--mock-text-dim);
+  margin-top: 0.3rem;
+}
+.cheat-complete-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: stretch;
+}
+
+/* Legacy v1 flip-card styles removed wholesale. v2 uses focus mode
+   above (.cheat-stage / .cheat-focus-card / .cheat-stage-footer / etc).
+   Why the rewrite: two parallel critiques (specialist UX + Year-7
+   perspective) found the wall-of-flippable-cards layout killed
+   momentum after card 5, the four-section back was a textbook page,
+   and the "I've got this" tap was self-attestation without proof. */
+
 @media (prefers-reduced-motion: reduce) {
-  .cheat-card-inner { transition: none; }
+  .cheat-focus-card,
+  .cheat-stage.is-rated .cheat-focus-card,
+  .cheat-sheet { transition: none; animation: none; }
+  .cheat-progress-seg { transition: none; }
 }
 
 /* Print stylesheet — strips chrome and reformats for A4. */

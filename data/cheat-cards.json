@@ -19,7 +19,8 @@
         "Fire fails several of the 7 — most importantly Reproduction and Sensitivity."
       ],
       "outcome": "Answer: not alive. You named the framework, applied it letter-by-letter, and identified the failing ones. Full marks."
-    }
+    },
+    "prompt": "Can you name the 7 life processes? (Hint: they spell MRS GREN.)"
   },
   {
     "id": "sci-oil-rig",
@@ -41,7 +42,8 @@
         "RIG: Gain = Reduction. So oxygen was REDUCED."
       ],
       "outcome": "Magnesium oxidised, oxygen reduced. Two letters of OIL RIG, four marks in the bag."
-    }
+    },
+    "prompt": "What do OIL and RIG stand for in a redox reaction?"
   },
   {
     "id": "sci-roygbiv",
@@ -73,7 +75,8 @@
         "Visible result: brown copper coats the nail; the blue solution fades to pale green."
       ],
       "outcome": "You predicted the reaction without doing it, named the products, and described what you'd see. Three sentences, top-band answer."
-    }
+    },
+    "prompt": "Roughly, what's the order of metals from most reactive to least?"
   },
   {
     "id": "sci-energy-stores",
@@ -175,7 +178,8 @@
         "Now Addition: 3 + 8 = 11."
       ],
       "outcome": "Answer: 11 (NOT 14). The kid who added first got 14 and lost the mark. You followed BIDMAS and didn't."
-    }
+    },
+    "prompt": "Calculate 3 + 4 × 2. Which operation comes first, and why?"
   },
   {
     "id": "math-foil",
@@ -217,7 +221,8 @@
         "Multiply across: (2 × 5) / (3 × 4) = 10/12. Simplify: 5/6."
       ],
       "outcome": "Answer: 5/6. The divide became a multiply, and you nailed it without panicking."
-    }
+    },
+    "prompt": "How do you divide 2/3 by 4/5?"
   },
   {
     "id": "math-9-finger",
@@ -258,7 +263,8 @@
         "Therefore side = 12 m."
       ],
       "outcome": "Answer: 12 m. Took 2 seconds because the squares are loaded in your head. Without memorising, you'd guess-and-check for a minute."
-    }
+    },
+    "prompt": "Without a calculator: what's 12²? And √144?"
   },
   {
     "id": "math-cubes-club",
@@ -350,7 +356,8 @@
         "L — Link: 'This connects to the question about tension by mimicking the character's own held breath.'"
       ],
       "outcome": "Four marks. Each PEEL step did one job. The examiner ticked along as you went."
-    }
+    },
+    "prompt": "What four steps does PEEL ask you to write in every analysis paragraph?"
   },
   {
     "id": "eng-petal",
@@ -393,7 +400,8 @@
         "Rhetorical question: 'Do you really want our oceans to die on our watch?'"
       ],
       "outcome": "Five DAFOREST devices in five sentences. Same content as a basic speech, but every sentence ticks a marked box. Top band."
-    }
+    },
+    "prompt": "Name 5 of the 8 persuasive devices in DAFOREST."
   },
   {
     "id": "eng-smile",
@@ -436,7 +444,8 @@
         "Taste: 'The first sip tasted faintly of yesterday's biscuit.'"
       ],
       "outcome": "Five senses in five sentences. The reader is fully in the kitchen with you. Marker = impressed = top of the band."
-    }
+    },
+    "prompt": "Which 5 senses can you write into a description?"
   },
   {
     "id": "eng-sonnet",
@@ -528,7 +537,8 @@
         "Effectiveness: Useful — shows Henry's frustration directly. BUT biased — he had every reason to overstate his case."
       ],
       "outcome": "You showed analysis, balance, AND awareness of bias in 4 sentences. Far more marks than a kid who just wrote 'this is a letter from Henry'."
-    }
+    },
+    "prompt": "What 4 things does NOPE check on a history source?"
   },
   {
     "id": "hist-5ws",
@@ -559,7 +569,8 @@
         "Economic: Charles raised taxes (Ship Money) without Parliament's permission, infuriating merchants."
       ],
       "outcome": "Three causes from THREE different categories of PERSIA. Examiner ticks 'multi-causal analysis'. Top-band."
-    }
+    },
+    "prompt": "Name the 6 categories of cause in PERSIA."
   },
   {
     "id": "hist-1066",
@@ -580,7 +591,8 @@
         "Aftermath: Normans replaced English nobles within 5 years; built 500+ castles; Domesday Book (1086) recorded everything for tax."
       ],
       "outcome": "Specific date, named battle, named king, dated follow-on. An anchored answer = full marks. A floppy 'lots of changes happened' answer = nothing."
-    }
+    },
+    "prompt": "What happened in 1066, and what changed in England as a result?"
   },
   {
     "id": "hist-1215",
@@ -712,7 +724,8 @@
         "Where the two lines cross — that's your square."
       ],
       "outcome": "You found the right square. The kid who reversed it landed in the wrong place and lost the mark. The mnemonic stopped you doing that."
-    }
+    },
+    "prompt": "Which numbers come first in a grid reference — eastings or northings?"
   },
   {
     "id": "geo-hase",
@@ -734,7 +747,8 @@
         "Attrition: rocks knock against each other, smoothing them down (some teach this as the E)."
       ],
       "outcome": "Four named mechanisms = four marks. Without the mnemonic you'd guess 2 and lose half the marks."
-    }
+    },
+    "prompt": "Name 4 ways a river erodes (HASE)."
   },
   {
     "id": "geo-dtss",
@@ -775,7 +789,8 @@
         "Conservative = no plate going down (no subduction) = no magma rising = NO volcanoes."
       ],
       "outcome": "You predicted both behaviours from the boundary type alone. Earthquakes ✓, no volcanoes ✓. Full marks for the explanation."
-    }
+    },
+    "prompt": "What are the 3 types of tectonic plate boundary, and what happens at each?"
   },
   {
     "id": "geo-climate-graph",
@@ -857,7 +872,8 @@
         "Total: 181."
       ],
       "outcome": "Answer: 181. With place values memorised, this took 30 seconds. Without them, you'd be working slowly for 5 minutes."
-    }
+    },
+    "prompt": "What are the first 8 powers of 2 (binary place values)?"
   },
   {
     "id": "comp-cia",
@@ -889,7 +905,8 @@
         "Repeat: Program Counter increments; cycle starts again for the next instruction."
       ],
       "outcome": "Three named stages plus the loop = top-band answer. This is a guaranteed question on every CS paper."
-    }
+    },
+    "prompt": "What are the 3 stages of the CPU instruction cycle?"
   },
   {
     "id": "comp-smart",
@@ -911,7 +928,8 @@
         "Tell a trusted adult straight away (T)."
       ],
       "outcome": "You named the SMART letters as you applied each one. 4 marks minimum, possibly all 5 if you'd added Meet (don't agree to meet up)."
-    }
+    },
+    "prompt": "What do the 5 letters of SMART e-safety stand for?"
   },
   {
     "id": "comp-osi",
@@ -1032,7 +1050,8 @@
         "Construct: 'Elle est allée à l'école.'"
       ],
       "outcome": "Correct être verb, correct agreement, perfect sentence. If you'd used 'avoir' or skipped the -e, you'd lose marks. The mnemonic stopped both errors."
-    }
+    },
+    "prompt": "Which French verbs use ÊTRE (not avoir) in the perfect tense?"
   },
   {
     "id": "fr-house-trick",
@@ -1075,7 +1094,8 @@
         "mal — l IS in CaReFuL → pronounce it. 'mahl'."
       ],
       "outcome": "Six words, six correct accents. Speakers who know CaReFuL sound French; speakers who don't, sound English. Same vocab, very different mark."
-    }
+    },
+    "prompt": "Which 4 final consonants do you actually pronounce in French?"
   },
   {
     "id": "fr-question-words",
@@ -1106,7 +1126,8 @@
         "Same pattern works for jouer, manger, regarder, écouter, donner, aimer, chanter — hundreds of verbs."
       ],
       "outcome": "Six endings memorised = thousands of verbs conjugated. The biggest single unlock in early French."
-    }
+    },
+    "prompt": "List the 6 endings of a regular -ER verb in the present tense."
   },
   {
     "id": "fr-ir-endings",
@@ -1167,7 +1188,8 @@
         "Don't say 'Je suis 11.' That's the English-thinking trap most of your class will fall into."
       ],
       "outcome": "Question and answer both correct. Two marks safe. The kid next to you said 'je suis 11' and lost both."
-    }
+    },
+    "prompt": "How do you say 'I am 12' in French — and what's the trap?"
   },
   {
     "id": "fr-numbers-70-90",
